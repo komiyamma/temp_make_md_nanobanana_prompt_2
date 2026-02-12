@@ -29,6 +29,8 @@ Spanは「処理の区切り」をタイムラインで見えるようにする�
 
 ## 2) Spanを切る“いちばん強い基準”4つ💪✨
 
+![observer_cs_study_024_span_boundaries](./picture/observer_cs_study_024_span_boundaries.png)
+
 ### ① 境界（Boundary）で切る🚧
 
 **プロセス外に出るところ**は、まずSpan候補！
@@ -115,6 +117,8 @@ mindmap
 
 ## 4) 命名ルール：Span名は“低カーディナリティ”が正義🏷️⚖️
 
+![observer_cs_study_024_low_cardinality](./picture/observer_cs_study_024_low_cardinality.png)
+
 Span名は、**増えすぎない（＝低カーディナリティ）**のが超大事！
 OpenTelemetryのAPI仕様でも、**ID入りみたいな高カーディナリティ名はNG**って明確に言ってるよ🚫 ([OpenTelemetry][1])
 
@@ -129,6 +133,8 @@ OpenTelemetryのAPI仕様でも、**ID入りみたいな高カーディナリテ
 ## 5) “公式に寄せる”命名テンプレ集📚✨（これ使えば迷わない）
 
 ### A. HTTP（サーバー側）🌐🧑‍💻
+
+![observer_cs_study_024_http_naming](./picture/observer_cs_study_024_http_naming.png)
 
 HTTPのSpan名は、基本こう👇
 
@@ -145,6 +151,8 @@ HTTPのSpan名は、基本こう👇
 
 ### B. DB（クライアント側）🗄️🐘
 
+![observer_cs_study_024_db_naming](./picture/observer_cs_study_024_db_naming.png)
+
 DBのSpan名は、ざっくりこの優先順👇
 
 1. `db.query.summary` があればそれ
@@ -160,6 +168,8 @@ DBのSpan名は、ざっくりこの優先順👇
 ---
 
 ### C. アプリ内（内部Span）🏠🧠
+
+![observer_cs_study_024_internal_naming](./picture/observer_cs_study_024_internal_naming.png)
 
 ここはあなたの設計センスが光るところ✨
 おすすめは「業務の意味」が伝わる名前👇
@@ -218,6 +228,8 @@ public class OrderService
 ---
 
 ## 7) “ちょうどいい”Spanツリー例🌳✨（完成形のイメージ）
+
+![observer_cs_study_024_span_tree_example](./picture/observer_cs_study_024_span_tree_example.png)
 
 たとえば「注文作成」なら👇
 

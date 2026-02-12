@@ -22,6 +22,8 @@
 
 ## A案：Aspire Dashboard（いちばん楽）🪄✨
 
+![observer_cs_study_021_aspire_dashboard_vs_prometheus](./picture/observer_cs_study_021_aspire_dashboard_vs_prometheus.png)
+
 Dockerで起動して、**OTLPで送ったログ/メトリクス/トレースを一気に見れる**やつです。
 開発者向けで、セットアップ少なめなのが強い💪✨ ([Microsoft Learn][1])
 
@@ -173,6 +175,8 @@ choco install k6
 
 ## 3つの検証シナリオ🔥（この章のメイン！）
 
+![observer_cs_study_021_three_scenarios](./picture/observer_cs_study_021_three_scenarios.png)
+
 ```mermaid
 graph TD
     subgraph S1["Scenario 1: 負荷 (Load)"]
@@ -227,6 +231,8 @@ k6 run baseline.js
 
 ## シナリオ1：負荷（Traffic）を増やす📈💨
 
+![observer_cs_study_021_traffic_increase](./picture/observer_cs_study_021_traffic_increase.png)
+
 「ユーザー増えた！」を再現✨
 
 * VU（仮想ユーザー）を増やすだけでOK！
@@ -261,6 +267,8 @@ k6 run load.js
 
 ## シナリオ2：失敗（Errors）を増やす💥🚨
 
+![observer_cs_study_021_failure_increase](./picture/observer_cs_study_021_failure_increase.png)
+
 「外部API死んだ」「DB接続落ちた」みたいなのを再現😈
 
 ```javascript
@@ -293,6 +301,8 @@ k6 run errors.js
 
 ## シナリオ3：遅延（Duration）を増やす🐢⏱️
 
+![observer_cs_study_021_latency_distribution](./picture/observer_cs_study_021_latency_distribution.png)
+
 「なんか遅い…」を再現😇（これが一番“体感”しやすい！）
 
 ```javascript
@@ -320,6 +330,8 @@ k6 run latency.js
 ---
 
 ## “見る順番”テンプレ（迷子防止）🧭✨
+
+![observer_cs_study_021_inspection_order](./picture/observer_cs_study_021_inspection_order.png)
 
 検証でも障害でも、この順が強いです👇
 
