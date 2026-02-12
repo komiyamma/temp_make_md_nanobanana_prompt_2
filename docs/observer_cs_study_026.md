@@ -45,6 +45,8 @@ graph TD
 
 ## 3) “付ける前”に知っておく分類 🧠✨
 
+![observer_cs_study_026_attribute_categories](./picture/observer_cs_study_026_attribute_categories.png)
+
 同じ「属性」でも、置き場所が違うと意味が変わるよ👀
 
 * **Resource attributes**：サービスそのもの（例：`service.name`）🏢
@@ -60,6 +62,8 @@ graph TD
 
 ### ルールA：**標準（Semantic Conventions）を最優先** 📘✨
 
+![observer_cs_study_026_semantic_conventions](./picture/observer_cs_study_026_semantic_conventions.png)
+
 HTTP/DB/例外など、よくあるものは **すでに標準のキー名がある**よ！
 標準に寄せるメリット👇
 
@@ -71,6 +75,8 @@ Semantic Conventions 自体が「共通の名前を決める仕組み」だよ�
 ---
 
 ### ルールB：**低カーディナリティ**（種類が増えすぎない）🧨⚠️
+
+![observer_cs_study_026_cardinality_rule](./picture/observer_cs_study_026_cardinality_rule.png)
 
 ダメ例（増えすぎる）👇
 
@@ -87,6 +93,8 @@ Semantic Conventions 自体が「共通の名前を決める仕組み」だよ�
 ---
 
 ### ルールC：**個人情報・秘密情報は入れない** 🔒🫣
+
+![observer_cs_study_026_pii_warning](./picture/observer_cs_study_026_pii_warning.png)
 
 属性は「いろんな場所に運ばれる」前提が安全✨
 
@@ -131,6 +139,8 @@ HTTP は安定してるけど、分野によっては変更が入ることも。
 
 ### 5-1) まず質問を3つ作る（これ超重要）❓❓❓
 
+![observer_cs_study_026_minimal_set](./picture/observer_cs_study_026_minimal_set.png)
+
 例（Web API あるある）👇
 
 1. どの機能が遅い？🐢
@@ -153,6 +163,8 @@ HTTP は安定してるけど、分野によっては変更が入ることも。
 
 ### 6-1) HTTP サーバー/クライアント系 🌐
 
+![observer_cs_study_026_http_attributes](./picture/observer_cs_study_026_http_attributes.png)
+
 HTTP系は標準の属性名がしっかり決まってるよ✨
 代表例：
 
@@ -170,6 +182,8 @@ HTTP系は標準の属性名がしっかり決まってるよ✨
 ---
 
 ### 6-2) 例外（Exception）は “イベント” として残す 💥
+
+![observer_cs_study_026_exception_event](./picture/observer_cs_study_026_exception_event.png)
 
 例外は、Spanに「文字列で貼る」より、**exceptionイベント**として残すのが標準✨
 

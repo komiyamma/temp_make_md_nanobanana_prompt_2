@@ -51,6 +51,8 @@ OpenTelemetryでは、これを **Propagator（プロパゲータ）**が担当�
 
 ### W3C Trace Context ってなに？🧾
 
+![observer_cs_study_025_traceparent_header](./picture/observer_cs_study_025_traceparent_header.png)
+
 いまの分散トレースの基本は、**W3C Trace Context**（標準のHTTPヘッダ）だよ📌
 代表がこれ👇
 
@@ -74,12 +76,16 @@ ASP.NET Core側で受け、HttpClientで呼ぶ、みたいな「よくある形�
 
 ## 2) 非同期越し：Activity.Current が消えると切れる🫥⚡
 
+![observer_cs_study_025_async_propagation](./picture/observer_cs_study_025_async_propagation.png)
+
 .NETの分散トレースの中心は `System.Diagnostics.Activity` だよ🧵
 そして **いまの実行の親コンテキスト**は `Activity.Current` に入る感じ👀✨ ([Microsoft Learn][4])
 
 しかも `Activity.Current` は **非同期呼び出し間でフローする**（つまりawaitをまたいでも基本ついてくる）って明記されてるよ✅ ([Microsoft Learn][5])
 
 ### それでも切れやすい “あるある” 😭
+
+![observer_cs_study_025_broken_trace](./picture/observer_cs_study_025_broken_trace.png)
 
 * 🔥 **await しないで投げっぱなし**（親が先に終わる）
 * 🧵 **新しいスレッド/独自の実行基盤**に飛ぶ（文脈を持っていかない）
@@ -96,6 +102,8 @@ ASP.NET Core側で受け、HttpClientで呼ぶ、みたいな「よくある形�
 ---
 
 ## 4) ハンズオン：HTTPで「つながってる」を体感しよ🧪👀✨
+
+![observer_cs_study_025_handson_verification](./picture/observer_cs_study_025_handson_verification.png)
 
 ここは「A → B」で、**同じトレースになってる**のを確認するよ🧵🔗
 （表示はコンソールでもOK！）
@@ -178,6 +186,8 @@ Instrumentationを使うのが基本的にラクで安全、というベスト�
 
 ## 5) HTTP以外（メッセージング等）は「自前Inject/Extract」が出やすい📦🧩
 
+![observer_cs_study_025_messaging_propagation](./picture/observer_cs_study_025_messaging_propagation.png)
+
 キューや独自プロトコルだと、自動でやってくれない場面があるから
 **ヘッダに入れて渡す**を自分でやることがあるよ〜💪
 
@@ -189,6 +199,8 @@ OpenTelemetryのPropagatorは、まさにそのためのAPI✨ ([OpenTelemetry][
 ---
 
 ## 6) つながらない時の原因チェック表🔍📋✨（ここが本題！）
+
+![observer_cs_study_025_troubleshooting_checklist](./picture/observer_cs_study_025_troubleshooting_checklist.png)
 
 「切れた！」って時は、順番に潰すのが最短だよ🕵️‍♀️💨
 

@@ -36,11 +36,15 @@ Root（サーバーが受けたリクエストのSpan）が **全体時間**だ�
 
 ### ステップC：「直列」か「並列」かを見る🧠
 
+![observer_cs_study_027_serial_vs_parallel](./picture/observer_cs_study_027_serial_vs_parallel.png)
+
 * **直列（順番待ち）**なら、長いSpanがそのまま全体を伸ばす😇
 * **並列**なら、合計は長く見えても「実際の支配」は別のSpanだったりする⚡
 
 ここで大事なのが👇
 **“クリティカルパス（最長の道）”**を意識すること！🧠🧵
+
+![observer_cs_study_027_critical_path](./picture/observer_cs_study_027_critical_path.png)
 
 ---
 
@@ -100,6 +104,8 @@ gantt
 
 ### パターン③ Rootは長いのに、子Spanが短い（空白がある）🕳️😱
 
+![observer_cs_study_027_gap_analysis](./picture/observer_cs_study_027_gap_analysis.png)
+
 これ、めっちゃあるある！
 **「測れてない時間」**があるってこと。
 
@@ -125,6 +131,8 @@ HTTP系の属性名は、できれば **セマンティック規約**に寄せ�
 * `server.address` など ([OpenTelemetry][4])
 
 ### ✅ イベントは「途中経過メモ」📝
+
+![observer_cs_study_027_span_events](./picture/observer_cs_study_027_span_events.png)
 
 “Spanの途中”に出来事を残せるよ！
 .NET だと `Activity.AddEvent(...)` がある🥳 ([Microsoft Learn][5])
@@ -183,6 +191,8 @@ app.MapGet("/work", async () =>
 ---
 
 ## 7) UIでの調査の“型”🧭✨（迷子にならない）
+
+![observer_cs_study_027_investigation_workflow](./picture/observer_cs_study_027_investigation_workflow.png)
 
 Aspire Dashboard みたいに **ログ/トレース/メトリクス**を一緒に見れるUIがあると、調査が超スムーズだよ〜！
 トレースは「リクエストがどんな経路で処理されたか」を見せてくれて、**ボトルネック特定に役立つ**ってハッキリ言われてる👍 ([Aspire][6])
