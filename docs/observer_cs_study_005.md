@@ -7,6 +7,8 @@
 
 ## 0) 今日のゴール🎯✨
 
+![subject_app_endpoints](./picture/observer_cs_study_005_subject_app_endpoints.png)
+
 できあがりはこんな感じ👇
 
 * `GET /health`：生存確認（必ず成功）💚
@@ -29,6 +31,8 @@
 
 ### 2-1) 新規作成の手順🧩
 
+![vs_setup_wizard](./picture/observer_cs_study_005_vs_setup_wizard.png)
+
 1. Visual Studio を開く
 2. **Create a new project**
 3. 検索で **“Web API”**
@@ -45,6 +49,8 @@
 ---
 
 ## 3) エンドポイントを作る（/health /work /fail）🧱✨
+
+![minimal_api_code_structure](./picture/observer_cs_study_005_minimal_api_code_structure.png)
 
 ![画像を挿入予定](./picture/observer_cs_study_005_minimal_api.png)
 
@@ -121,6 +127,8 @@ app.Run();
 
 ### 4-1) まずはF5（デバッグ実行）▶️✨
 
+![testing_flow](./picture/observer_cs_study_005_testing_flow.png)
+
 起動したらブラウザで👇を開くよ（ポート番号は環境で変わるよ〜）
 
 * `https://localhost:<port>/health` → `status: ok` が返る💚
@@ -146,6 +154,8 @@ flowchart TD
 
 ## 5) おまけ：Swagger UI / Scalar を付けたい人へ（超おすすめ）🧁✨
 
+![swagger_ui_mockup](./picture/observer_cs_study_005_swagger_ui_mockup.png)
+
 OpenAPIはJSONだけだと味気ないので、**ローカル確認用にUIを付ける** と幸せ🥰
 公式ドキュメントに「Swagger UI と Scalar の付け方」が載ってるよ📚✨ ([Microsoft Learn][6])
 
@@ -167,6 +177,8 @@ OpenAPIはJSONだけだと味気ないので、**ローカル確認用にUIを�
 
 ### 演習A：失敗ルートを“それっぽく”する😈🧾
 
+![custom_error_masks](./picture/observer_cs_study_005_custom_error_masks.png)
+
 `/fail` の例外メッセージを、次のどれかに変えてみて👇
 
 * `"DB timeout"`
@@ -176,6 +188,8 @@ OpenAPIはJSONだけだと味気ないので、**ローカル確認用にUIを�
 （後でログ設計の題材にするためだよ〜！🪵✨）
 
 ### 演習B：/work を3パターンにする🎭✨
+
+![latency_race](./picture/observer_cs_study_005_latency_race.png)
 
 * `delayMs=0`：成功🟢
 * `delayMs=800`：遅延🟡

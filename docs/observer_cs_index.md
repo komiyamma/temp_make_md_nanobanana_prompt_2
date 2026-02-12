@@ -4,6 +4,8 @@
 
 ### 第1章：オブザーバビリティって何？👀✨（監視との違い）
 
+![monitoring_vs_observability](./picture/observer_cs_index_monitoring_vs_observability.png)
+
 * ねらい：Logs/Metrics/Tracesの役割を“ひとことで”言える
 * 学ぶ：後付けがしんどい理由／「原因に辿り着ける」って何？
 * ミニ演習：自分の言葉で定義を1文で書く📝
@@ -11,11 +13,15 @@
 
 ### 第2章：3本柱の“得意技”を掴む🪵📈🧵
 
+![three_pillars](./picture/observer_cs_index_three_pillars.png)
+
 * ねらい：ログ＝調査、メトリクス＝健康診断、トレース＝旅の地図
 * 学ぶ：何が起きた？（ログ）／どれくらい？（メト）／どこで？（トレ）
 * ミニ演習：同じ障害を3視点で説明してみる🎭
 
 ### 第3章：何を測るべき？ゴールデンシグナル入門🌟📏
+
+![golden_signals](./picture/observer_cs_index_golden_signals.png)
 
 * ねらい：「測るもの迷子」にならない
 * 学ぶ：Latency/Traffic/Errors/Saturationの感覚
@@ -70,6 +76,8 @@
 * 演習：ログに入れるキー候補を列挙🏷️
 
 ### 第11章：相関ID（Correlation ID）🔗✨（同じ処理を追える）
+
+![correlation_id](./picture/observer_cs_index_correlation_id.png)
 
 * ねらい：1リクエストのログを1本の糸で追う
 * 学ぶ：requestId/operationIdの考え方
@@ -151,6 +159,8 @@
 
 ### 第23章：トレース入門🧵✨（Trace/Spanの世界）
 
+![trace_spans](./picture/observer_cs_index_trace_spans.png)
+
 * ねらい：1リクエストの“旅”をイメージできる
 * 学ぶ：親子Span／どこで時間を食ってるか
 * 演習：Spanの候補を洗い出す🗺️
@@ -184,6 +194,8 @@
 ## 統合・運用編（28〜30章）🧩🚀
 
 ### 第28章：3本柱を“つなげる設計”🧩🔗（ログ×メト×トレ）
+
+![unified_observability](./picture/observer_cs_index_unified_observability.png)
 
 * ねらい：1つの障害を3視点で一貫して追える
 * 学ぶ：共通キー（相関ID、traceId）／同じ用語・同じ粒度

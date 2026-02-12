@@ -20,6 +20,8 @@
 
 ## 2) ゴールデンシグナル4つ🌟🌟🌟🌟
 
+![golden_signals_overview](./picture/observer_cs_study_003_golden_signals_overview.png)
+
 ![画像を挿入予定](./picture/observer_cs_study_003_golden_signals.png)
 
 ```mermaid
@@ -41,6 +43,8 @@ mindmap
 
 ## A. Latency（レイテンシ：遅さ）🐢⏱️
 
+![latency_split](./picture/observer_cs_study_003_latency_split.png)
+
 **「返事が返ってくるまで、どれくらい時間かかった？」**
 
 * 例：APIの応答時間（ms）
@@ -61,6 +65,8 @@ mindmap
 
 ## B. Traffic（トラフィック：量）🚗🚗🚗📬
 
+![traffic_flow](./picture/observer_cs_study_003_traffic_flow.png)
+
 **「どれくらいのリクエスト（需要）が来てる？」**
 
 * 例：Requests/sec（RPS）
@@ -72,6 +78,8 @@ Webならだいたい **HTTPリクエスト/秒** が王道だよ〜 ([Google SR
 ---
 
 ## C. Errors（エラー：失敗）💥🚨
+
+![error_types](./picture/observer_cs_study_003_error_types.png)
 
 **「どれくらい失敗してる？」**
 
@@ -87,6 +95,8 @@ Webならだいたい **HTTPリクエスト/秒** が王道だよ〜 ([Google SR
 ---
 
 ## D. Saturation（サチュレーション：詰まり具合）🍱🧯
+
+![saturation_cup](./picture/observer_cs_study_003_saturation_cup.png)
 
 **「どれくらい“満タン”で、これ以上ムリそう？」**
 
@@ -113,6 +123,8 @@ Webならだいたい **HTTPリクエスト/秒** が王道だよ〜 ([Google SR
 ---
 
 ## 4) “測るもの迷子”にならない決め方🎯✨（超大事）
+
+![selection_steps](./picture/observer_cs_study_003_selection_steps.png)
 
 次の順で決めると、ほぼ迷子にならないよ〜🧠🪄
 
@@ -141,6 +153,8 @@ Webならだいたい **HTTPリクエスト/秒** が王道だよ〜 ([Google SR
 ---
 
 ## 5) ミニ演習：題材アプリの“最重要3指標”を決める🎯🧩
+
+![top_metrics_podium](./picture/observer_cs_study_003_top_metrics_podium.png)
 
 **お題：** 「/work（重めの処理）」「/health（死活）」「/fail（わざと失敗）」があるとするね😈
 

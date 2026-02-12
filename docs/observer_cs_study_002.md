@@ -16,6 +16,8 @@
 
 ## 1) まずは1枚絵でイメージ👀✨
 
+![three_pillars_roles](./picture/observer_cs_study_002_three_pillars_roles.png)
+
 ![画像を挿入予定](./picture/observer_cs_study_002_three_pillars.png)
 
 ## 3本柱は、役割がぜんぶ違う！
@@ -31,6 +33,8 @@ OpenTelemetryでも、この3つ（logs/metrics/traces）が“観測の基本�
 ## 2) 得意技をしっかり掴もう💪✨
 
 ## A. ログ（Logs）🪵＝「調査のための証言」🕵️‍♀️
+
+![logs_evidence](./picture/observer_cs_study_002_logs_evidence.png)
 
 **ログが得意なこと**👇
 
@@ -49,6 +53,8 @@ OpenTelemetryでも、この3つ（logs/metrics/traces）が“観測の基本�
 
 ## B. メトリクス（Metrics）📈＝「健康診断の数値」🩺
 
+![metrics_vitals](./picture/observer_cs_study_002_metrics_vitals.png)
+
 **メトリクスが得意なこと**👇
 
 * 失敗率や遅延が“増えてる”をすぐ見つけられる👀
@@ -66,6 +72,8 @@ OpenTelemetryでも、この3つ（logs/metrics/traces）が“観測の基本�
 
 ## C. トレース（Traces）🧵＝「リクエストの旅の地図」🗺️
 
+![trace_map](./picture/observer_cs_study_002_trace_map.png)
+
 **トレースが得意なこと**👇
 
 * 1リクエストが、どこを通って、どこで遅く/失敗したか分かる🐢💥
@@ -82,6 +90,8 @@ OpenTelemetryでも、この3つ（logs/metrics/traces）が“観測の基本�
 ---
 
 ## 3) 迷ったらこの3つの質問で決める❓✨
+
+![decision_signpost](./picture/observer_cs_study_002_decision_signpost.png)
 
 困ったら、まずこの順で考えるのが超おすすめ👇
 
@@ -105,6 +115,8 @@ flowchart TD
 ---
 
 ## 4) ミニ演習：同じ障害を3視点で説明してみる🎭✨
+
+![checkout_incident](./picture/observer_cs_study_002_checkout_incident.png)
 
 ## お題（あるある障害）😈
 
@@ -167,6 +179,8 @@ checkoutの旅をスパンで見ると…
 ---
 
 ## 6) 3本柱を“つなげる”と最強になる🔗✨（ちょい先取り）
+
+![connected_pillars](./picture/observer_cs_study_002_connected_pillars.png)
 
 ここ、超大事ポイント👇
 
