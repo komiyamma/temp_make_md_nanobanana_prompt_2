@@ -12,6 +12,8 @@
 
 ## まず結論！オブザーバビリティを1文で言うと…🧠✨
 
+![definition_detective](./picture/observer_cs_study_001_definition_detective.png)
+
 **「システムが出しているデータ（ログ・メトリクス・トレース）から、内部で何が起きてるかを“あとから推理できる力”」**です🕵️‍♀️🔎✨
 もともとの言葉の由来は「外から見える出力から、内部状態がどれだけ分かるか」っていう考え方です📚✨ ([Honeycomb][1])
 
@@ -20,6 +22,8 @@
 ## “監視”と“オブザーバビリティ”の違いって何？👀⚖️
 
 ### ざっくりイメージ図 🧁✨
+
+![monitoring_vs_observability_goals](./picture/observer_cs_study_001_monitoring_vs_observability_goals.png)
 
 * **監視（Monitoring）**：
   「異常が起きたか？」を**決め打ちで検知**する🚨（アラート中心）
@@ -60,6 +64,8 @@ graph TD
 
 ## Logs / Metrics / Traces は何者？（この章は“雰囲気”でOK）🪵📈🧵
 
+![three_pillars_metaphor](./picture/observer_cs_study_001_three_pillars_metaphor.png)
+
 OpenTelemetry の整理がすごく分かりやすいので、その定義を借ります👇 ([OpenTelemetry][3])
 
 * **Logs（ログ）🪵**：イベントの記録（「いつ」「何が起きた」）
@@ -76,17 +82,23 @@ OpenTelemetry の整理がすごく分かりやすいので、その定義を借
 
 ### 理由1：あとから必要な情報が“存在しない”😱
 
+![missing_info_cabinet](./picture/observer_cs_study_001_missing_info_cabinet.png)
+
 たとえば障害が起きたあとに…
 「どのユーザーの」「どの注文IDで」「どの外部APIが遅くて」みたいな情報が必要になっても、
 **ログに出してなければ永遠に分からない**ことがあります🫠🕳️
 
 ### 理由2：設計の“通り道”に埋め込む必要がある🚧
 
+![retrofitting_pipes](./picture/observer_cs_study_001_retrofitting_pipes.png)
+
 ログ・メトリクス・トレースって、
 **入口（HTTP）→業務処理→DB/外部API**みたいな「通り道」に沿って入れると強いんだけど、
 この通り道は設計そのものなので、後から直すと改修が増えがちです🔧💥
 
 ### 理由3：チームの言葉がバラける🌀
+
+![terminology_confusion](./picture/observer_cs_study_001_terminology_confusion.png)
 
 「成功って何？」「失敗って何？」「遅延ってどこから？」が人によって違うと、
 **見ても判断できないダッシュボード**が爆誕します📊😇
@@ -96,6 +108,8 @@ OpenTelemetry の整理がすごく分かりやすいので、その定義を借
 ## 「原因に辿り着ける」ってどういう状態？🧭✨
 
 ### ゴールはこれ！🎯
+
+![investigation_funnel](./picture/observer_cs_study_001_investigation_funnel.png)
 
 障害が起きたときに、こう動ける状態👇
 

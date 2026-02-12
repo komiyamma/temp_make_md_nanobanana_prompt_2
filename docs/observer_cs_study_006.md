@@ -25,6 +25,8 @@
 
 ## 1. 最短で「3本柱」を一気見する方法👑✨（Aspire Dashboard）
 
+![otlp_data_flow](./picture/observer_cs_study_006_otlp_data_flow.png)
+
 ![画像を挿入予定](./picture/observer_cs_study_006_otel_pipeline.png)
 
 ローカル検証でいちばん楽なのが **Aspire Dashboard（単体）** です🎛️✨
@@ -46,6 +48,8 @@ flowchart LR
 ---
 
 ## 1-1. ダッシュボードを起動する（Docker）🐳✨
+
+![docker_run_aspire](./picture/observer_cs_study_006_docker_run_aspire.png)
 
 PowerShellで👇（そのまま貼ってOK）
 
@@ -77,6 +81,8 @@ docker run --rm -it `
 
 ## 2-1. NuGet（必要最小限）📦✨
 
+![nuget_toolbox](./picture/observer_cs_study_006_nuget_toolbox.png)
+
 章5のWeb APIに追加してね👇（例：csproj）
 
 ```xml
@@ -94,6 +100,8 @@ docker run --rm -it `
 ---
 
 ## 2-2. Program.cs（“見える化”の骨組み）🦴✨
+
+![wiring_circuit](./picture/observer_cs_study_006_wiring_circuit.png)
 
 章5の題材（/health, /work, /fail, /slow みたいな）に、最小でこうするのが分かりやすいです👇
 （※ すでに似た実装があるなら、差分だけでOK🙆‍♀️）
@@ -222,6 +230,8 @@ app.Run();
 
 ## 3-1. ログ🪵：まず「イベントが出たか」
 
+![structured_log_ui](./picture/observer_cs_study_006_structured_log_ui.png)
+
 Aspire DashboardのLogsで見ると、**構造化ログ（フィールド付き）**で見えるのが嬉しいポイント✨
 「elapsedMs」が列で絞り込みできる感じです🧡 ([Microsoft Learn][1])
 
@@ -234,6 +244,8 @@ Aspire DashboardのLogsで見ると、**構造化ログ（フィールド付き�
 ---
 
 ## 3-2. メトリクス📈：数字が“動く”のを確認
+
+![metric_graph_spike](./picture/observer_cs_study_006_metric_graph_spike.png)
 
 Aspire DashboardのMetricsは、**受け取ったメトリクスが自動で並ぶ**タイプです✨ ([Microsoft Learn][1])
 
@@ -248,6 +260,8 @@ Aspire DashboardのMetricsは、**受け取ったメトリクスが自動で並�
 ---
 
 ## 3-3. トレース🧵：遅い場所が“一目で分かる”
+
+![trace_waterfall_view](./picture/observer_cs_study_006_trace_waterfall_view.png)
 
 Tracing画面では、**traceIdで1リクエストの一連がまとまって**見えます🧵
 Spanの親子がツリーで見えるので、「どこで時間食ってるか」が超分かりやすいです⏱️ ([Microsoft Learn][1])
