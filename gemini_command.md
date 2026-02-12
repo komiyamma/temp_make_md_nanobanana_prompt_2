@@ -27,7 +27,7 @@ description: Generate an image generation plan for a range of Markdown files bas
             - **Loop**: Perform the following steps (c to f) for EACH identified image location (up to 7):
                 - **Filename Construction**:
                     - Use the target Markdown filename (without extension) as the base (e.g., `react_study_001.md` -> `react_study_001`).
-                    - Append a detailed description with at least 2 English words: e.g., `_split_number`.
+                    - Append a detailed description with at least 2 English words (snake_case): e.g., `_visual_concept`.
                     - Final: `<md_filename>_<description>.png`.
                 - **Global Uniqueness Check (ABSOLUTE RULE)**:
                     - **Step 1: Check Existing Images in Current Markdown**:
