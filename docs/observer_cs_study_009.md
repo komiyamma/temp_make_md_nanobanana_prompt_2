@@ -61,6 +61,8 @@ graph TD
 
 ## 軸A：正常？異常？（期待してた？）🙂😖
 
+![observer_cs_study_009_level_pyramid](./picture/observer_cs_study_009_level_pyramid.png)
+
 * 仕様どおりに起きる → `Information`
 * 仕様上あり得るけど「気持ち悪い」→ `Warning`
 * 失敗した（機能としてアウト）→ `Error`
@@ -68,11 +70,15 @@ graph TD
 
 ## 軸B：誰が今すぐ動く？🚨👩‍💻
 
+![observer_cs_study_009_who_acts](./picture/observer_cs_study_009_who_acts.png)
+
 * すぐ対応が必要（オンコール叩く）→ `Critical / Error`
 * すぐじゃないけど放置はNG → `Warning`
 * 調査用・記録用 → `Information / Debug / Trace`
 
 ## 軸C：そのログが“本番で常時出てOK？”💸🧯
+
+![observer_cs_study_009_prod_filter](./picture/observer_cs_study_009_prod_filter.png)
 
 * 常時出てもいい（量が少ない・価値が高い）→ `Information`
 * 常時だと多すぎる（詳細すぎ）→ `Debug / Trace`
@@ -80,6 +86,8 @@ graph TD
 ---
 
 ## 4) レベル別「こういう時に使う」早見表📋✨
+
+![observer_cs_study_009_level_icons](./picture/observer_cs_study_009_level_icons.png)
 
 ## Trace 🧬（超詳細・原則 本番OFF）
 
@@ -130,6 +138,8 @@ Infoを出しすぎると、**Warning/Errorが埋もれる**😱
 
 ## ルール2：Warningは「放置すると痛い」だけにする⚠️
 
+![observer_cs_study_009_warning_wolf](./picture/observer_cs_study_009_warning_wolf.png)
+
 Warningが多いと **狼少年🐺** になるよ〜
 
 * 例：一時的な外部遅延を「数回まで耐えた」はWarning
@@ -143,6 +153,8 @@ Warningが多いと **狼少年🐺** になるよ〜
 ---
 
 ## 6) “本番で出しすぎ地獄”を防ぐ：基本の設定イメージ⚙️😇
+
+![observer_cs_study_009_appsettings_config](./picture/observer_cs_study_009_appsettings_config.png)
 
 ASP.NET Core では `appsettings.json` の `Logging:LogLevel` で「最低レベル」をカテゴリごとに決められるよ([Microsoft Learn][1])
 
@@ -213,6 +225,8 @@ public class CheckoutService(ILogger<CheckoutService> logger)
 ---
 
 ## 8) ちょい背伸び（でも効く）：ホットパスは“高速ロギング”も検討🏎️✨
+
+![observer_cs_study_009_hot_path](./picture/observer_cs_study_009_hot_path.png)
 
 「超頻繁に呼ばれる場所」でログを出すと、レベルが低くてもコストが出ることがあるよ〜💸
 .NET には `LoggerMessageAttribute`（ソース生成）で高性能ロギングする仕組みが公式にあるよ([Microsoft Learn][3])

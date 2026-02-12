@@ -10,6 +10,8 @@
 
 ## 1) 構造化ログってなに？（1文で）🧱✨
 
+![observer_cs_study_010_text_vs_struct](./picture/observer_cs_study_010_text_vs_struct.png)
+
 **構造化ログ = 「文章」だけじゃなくて、検索・集計できる“項目（フィールド）”を一緒に残すログ**だよ🪵🔎
 
 たとえば「注文失敗😱」って文章だけだと、後で「どの注文？」「どのユーザー？」「どのAPI？」って絞り込みがしんどい…
@@ -20,6 +22,8 @@
 ---
 
 ## 2) 文字列ログ vs 構造化ログ：同じ出来事で比べよ🆚👀
+
+![observer_cs_study_010_searchability](./picture/observer_cs_study_010_searchability.png)
 
 ![画像を挿入予定](./picture/observer_cs_study_010_structured_log.png)
 
@@ -55,6 +59,8 @@ logger.LogInformation("Order failed. OrderId={OrderId} UserId={UserId}", orderId
 
 ## 3) .NETの `ILogger` は最初から“構造化ログ対応”だよ✨🪵
 
+![observer_cs_study_010_message_template](./picture/observer_cs_study_010_message_template.png)
+
 `.NET / ASP.NET Core` のロギングは、`ILogger` を中心に **メッセージテンプレート（Message Template）**で書くのが基本で、`{Name}` みたいなプレースホルダが **フィールド名**になるよ〜！ ([Microsoft Learn][2])
 
 さらに、プレースホルダ名は **PascalCase推奨**（`{firstName}`より`{FirstName}`）みたいなルールも、公式の解析ルールとして出てるよ📏✨ ([Microsoft Learn][3])
@@ -62,6 +68,8 @@ logger.LogInformation("Order failed. OrderId={OrderId} UserId={UserId}", orderId
 ---
 
 ## 4) ハンズオン🧪💻：JSONで出して「キーと値」を目で見る👀✨
+
+![observer_cs_study_010_json_output](./picture/observer_cs_study_010_json_output.png)
 
 ここでは「本当にキーと値が出てる！」を体感するために、コンソール出力を JSON 形式にするよ🧱🪵
 `.NET` には `AddJsonConsole()` が用意されてるよ📦✨ ([Microsoft Learn][4])
@@ -121,6 +129,8 @@ app.Run();
 
 ## 5) 設計のコツ💡：キー（フィールド名）は“あとで探す軸”にする🏷️🔎
 
+![observer_cs_study_010_key_selection](./picture/observer_cs_study_010_key_selection.png)
+
 「何をキーにする？」って迷うけど、まずはこの考え方でOKだよ😊✨
 
 ## キー選びの基本ルール📏
@@ -159,6 +169,8 @@ app.Run();
 
 ## NG1：文字列補間で“項目”が消える🥲
 
+![observer_cs_study_010_interpolation_trap](./picture/observer_cs_study_010_interpolation_trap.png)
+
 ```csharp
 logger.LogInformation($"Order failed. OrderId={orderId}");
 ```
@@ -171,6 +183,8 @@ logger.LogInformation("Order failed. OrderId={OrderId}", orderId);
 ```
 
 ## NG2：プレースホルダ名がバラバラ🌀
+
+![observer_cs_study_010_pascal_case](./picture/observer_cs_study_010_pascal_case.png)
 
 `{id}` `{ID}` `{order_id}` が混ざると、検索が地獄😇🔥
 → ✅ PascalCaseで揃えるのが無難（公式ルールにも寄ってる）📏✨ ([Microsoft Learn][3])

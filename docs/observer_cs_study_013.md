@@ -12,6 +12,8 @@
 
 ## 1) なんでこんなに大事？😱💥（ログは“コピーされる前提”）
 
+![observer_cs_study_013_log_proliferation](./picture/observer_cs_study_013_log_proliferation.png)
+
 ![画像を挿入予定](./picture/observer_cs_study_013_redaction.png)
 
 ログって便利だけど、同時に**流通しやすい情報**でもあるよね📦💨
@@ -37,6 +39,8 @@ graph LR
 
 ## 2) まず作る！NG一覧（出しちゃダメ表）🚫🧾
 
+![observer_cs_study_013_ng_traffic_light](./picture/observer_cs_study_013_ng_traffic_light.png)
+
 OWASP も「ログには直接入れず、削除/マスク/ハッシュ/暗号化を検討してね」ってはっきり言ってるよ👇 ([OWASPチートシートシリーズ][2])
 
 特に危険なのはこれ👇（最優先でNGに入れよう🔥）
@@ -57,6 +61,8 @@ OWASP も「ログには直接入れず、削除/マスク/ハッシュ/暗号�
 ---
 
 ## 3) マスキング設計の基本4パターン🧰✨（どれを選ぶ？）
+
+![observer_cs_study_013_masking_techniques](./picture/observer_cs_study_013_masking_techniques.png)
 
 「隠す」っていっても方法はいろいろ。目的で使い分けようね🧠💡
 
@@ -85,6 +91,8 @@ OWASP も「ログには直接入れず、削除/マスク/ハッシュ/暗号�
 
 ## 4) 漏れポイントあるある😵‍💫（ここが事故りやすい！）
 
+![observer_cs_study_013_leak_points](./picture/observer_cs_study_013_leak_points.png)
+
 ### ① HTTPの“全部ログ”📮💥
 
 HTTPログは便利だけど、**PIIが入りやすい**ので注意って Microsoft も警告してるよ⚠️ ([Microsoft Learn][3])
@@ -110,6 +118,8 @@ HTTPログは便利だけど、**PIIが入りやすい**ので注意って Micro
 ## 5) .NET 10で“仕組み”にする🛡️✨（おすすめ2本立て）
 
 ### 5-1) HTTPログは「許可したヘッダーだけ表示」方式にする✅
+
+![observer_cs_study_013_http_redaction](./picture/observer_cs_study_013_http_redaction.png)
 
 ASP.NET Core の HTTP logging は、**指定したヘッダー名だけ値をログに出して、それ以外は [Redacted] にする**設計になってるよ👍✨ ([Microsoft Learn][3])
 つまり、方針はこれ👇
@@ -147,6 +157,8 @@ app.Run();
 ```
 
 ### 5-2) 「ログに出す前に自動マスク」もできる🔧✨（Redaction）
+
+![observer_cs_study_013_redaction_pipeline](./picture/observer_cs_study_013_redaction_pipeline.png)
 
 .NET には **データ編集（Redaction）**の仕組みが用意されてて、
 ログに機密情報が混ざるのを減らせるよ🧤✨ ([Microsoft Learn][4])
