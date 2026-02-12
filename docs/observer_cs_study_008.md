@@ -10,6 +10,8 @@
 
 ## まず結論：ログは“読書”じゃなく“捜査”📚❌→🕵️‍♀️✅
 
+![observer_cs_study_008_reading_vs_searching](./picture/observer_cs_study_008_reading_vs_searching.png)
+
 ![画像を挿入予定](./picture/observer_cs_study_008_log_search.png)
 
 ログって、**キレイな文章を残すため**じゃないんだよね😇
@@ -30,6 +32,8 @@ graph TD
 ---
 
 ## 良いログの条件：この5つだけ覚えておけば強い💪✨
+
+![observer_cs_study_008_good_log_conditions](./picture/observer_cs_study_008_good_log_conditions.png)
 
 ### ① 探せる（検索性）🔍
 
@@ -64,6 +68,8 @@ graph TD
 ---
 
 ## ダメログあるある博物館🏛️😱（そして何がダメか）
+
+![observer_cs_study_008_bad_log_types](./picture/observer_cs_study_008_bad_log_types.png)
 
 ![画像を挿入予定](./picture/observer_cs_study_008_bad_logs.png)
 
@@ -101,6 +107,8 @@ graph LR
 ---
 
 ## 良いログの“型”📐✨：5W1H + Next をミニで
+
+![observer_cs_study_008_5w1h_next](./picture/observer_cs_study_008_5w1h_next.png)
 
 全部を書く必要はないよ😊
 でも困ったときはこの順で考えると強い！
@@ -181,6 +189,8 @@ graph LR
 
 ### 例4：補間で埋め込み → テンプレ（プレースホルダ）へ🧩
 
+![observer_cs_study_008_interpolation_vs_template](./picture/observer_cs_study_008_interpolation_vs_template.png)
+
 `ILogger` は **メッセージテンプレ**で値を渡すのが基本の流れだよ（後で第10章に繋がる！） ([Microsoft Learn][3])
 
 ```csharp
@@ -217,6 +227,8 @@ logger.LogInformation(
 
 ## “検索する前提”のログ設計：まずは検索クエリを想像しよ🧠🔍
 
+![observer_cs_study_008_search_query_design](./picture/observer_cs_study_008_search_query_design.png)
+
 ログ設計でいちばん強いのはこれ👇
 
 > **「障害が起きたとき、自分は何で検索する？」を先に決める**✨
@@ -235,6 +247,8 @@ logger.LogInformation(
 ---
 
 ## ちょい上級：性能の地雷を踏まない⚡🧨
+
+![observer_cs_study_008_performance_minefield](./picture/observer_cs_study_008_performance_minefield.png)
 
 「ログレベルでフィルタするから大丈夫でしょ？」って思いがちなんだけど、
 **重い文字列づくり**や **高コストな処理**をログのためにやると、無駄が出ることがあるよ😇

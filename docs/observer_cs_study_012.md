@@ -25,6 +25,8 @@
 
 ## 2) 例外を2種類に分けよう（ここ超重要）✂️✨
 
+![observer_cs_study_012_expected_vs_unexpected](./picture/observer_cs_study_012_expected_vs_unexpected.png)
+
 例外って全部同じじゃないよ〜！分類すると楽になるよ〜！🧸💡
 
 ### A. 期待される例外（想定内）🙂
@@ -131,6 +133,10 @@ classDiagram
 
 ## 6) 実装：ProblemDetails + グローバル例外ハンドラ（王道）👑🧩
 
+![observer_cs_study_012_problem_details](./picture/observer_cs_study_012_problem_details.png)
+
+![observer_cs_study_012_global_safety_net](./picture/observer_cs_study_012_global_safety_net.png)
+
 ASP.NET Core は API のエラー応答を **ProblemDetails（RFC 7807ベース）**で返せます。 ([Microsoft Learn][3])
 `AddProblemDetails()` で一貫したエラー応答に寄せるのが流れです。 ([Microsoft Learn][4])
 
@@ -220,6 +226,8 @@ public sealed class GlobalExceptionHandler : IExceptionHandler
 
 ## 7) “二重ログ”を防ぐテク🎯（超大事）
 
+![observer_cs_study_012_double_logging](./picture/observer_cs_study_012_double_logging.png)
+
 * ✅ **グローバルで LogError するなら、下位層で LogError しない**
 * ✅ 下位層では
 
@@ -231,6 +239,8 @@ public sealed class GlobalExceptionHandler : IExceptionHandler
 ---
 
 ## 8) トレースとつなげる：例外は“記録”できる🧵💥
+
+![observer_cs_study_012_trace_record](./picture/observer_cs_study_012_trace_record.png)
 
 OpenTelemetry では、スパンに例外を「記録」する（record）やり方が整理されています。 ([OpenTelemetry][5])
 ログに `traceId` を入れておけば、**ログ→トレース**の行き来が超ラクになるよ🧭✨
@@ -245,6 +255,8 @@ OpenTelemetry では、スパンに例外を「記録」する（record）やり
 ---
 
 ## 10) ミニ演習①：例外ログテンプレを作ろう🧾🖊️
+
+![observer_cs_study_012_exception_classification](./picture/observer_cs_study_012_exception_classification.png)
 
 次のフォーマットで、あなたの題材アプリ版を埋めてみてね👇✨
 

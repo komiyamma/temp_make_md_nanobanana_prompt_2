@@ -10,6 +10,8 @@
 
 ## 1. そもそも相関IDって何？🤔🔗
 
+![observer_cs_study_011_isolated_logs](./picture/observer_cs_study_011_isolated_logs.png)
+
 ![画像を挿入予定](./picture/observer_cs_study_011_correlation.png)
 
 障害調査で一番つらいのがこれ👇
@@ -44,6 +46,8 @@ graph TD
 * 目的：ユーザーが「このIDです！」って伝えられるようにする📞✨
 
 ## B) 「分散トレース標準」向けのID 🧵🌍（いま主流）
+
+![observer_cs_study_011_w3c_trace_parent](./picture/observer_cs_study_011_w3c_trace_parent.png)
 
 * **W3C Trace Context**：`traceparent` / `tracestate` という標準ヘッダで伝播するよ📦✨ ([W3C][1])
 * .NET では `Activity`（トレースの器）に **TraceId / SpanId** が入るよ🧩 ([Microsoft Learn][2])
@@ -91,12 +95,16 @@ OpenTelemetry 的にも、ログとトレースを結びつける「公式のキ
 
 ## 5. 実装：ASP.NET Coreで“自動で入る”形にする🧰✨
 
+![observer_cs_study_011_auto_propagation](./picture/observer_cs_study_011_auto_propagation.png)
+
 ## 5.1 まずは「TraceId/SpanId」をログに出せるようにする🧵📝
 
 ASP.NET Core のログは **Scope** を使うと「このリクエスト中のログ全部に共通項目を付与」しやすいよ📌
 （ログ基盤側でも、Scope を含める設定ができるよ） ([Microsoft Learn][6])
 
 ## ✅ ミドルウェア例：CorrelationIdを受け取り/生成し、Scopeに入れて返す
+
+![observer_cs_study_011_scope_injection](./picture/observer_cs_study_011_scope_injection.png)
 
 ```csharp
 using System.Diagnostics;
@@ -159,6 +167,8 @@ app.UseMiddleware<CorrelationIdMiddleware>();
 
 ## 5.2 外部HTTP呼び出しでも“同じ糸”をつなぐ🌬️🔗
 
+![observer_cs_study_011_bucket_relay](./picture/observer_cs_study_011_bucket_relay.png)
+
 良いニュース📣✨
 .NET の世界では、`Activity` が動いていると **HttpClient が traceparent を付けて伝播する**流れが基本にあるよ（分散トレースがつながりやすい） ([Microsoft for Developers][7])
 
@@ -204,6 +214,8 @@ app.UseMiddleware<CorrelationIdMiddleware>();
 ---
 
 ## 7. よくある失敗あるある😱➡️対策✅
+
+![observer_cs_study_011_distributed_trace](./picture/observer_cs_study_011_distributed_trace.png)
 
 ## 失敗1：ログ行ごとにIDが違う（地獄）🔥
 
