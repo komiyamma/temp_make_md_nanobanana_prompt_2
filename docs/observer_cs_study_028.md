@@ -9,6 +9,8 @@
 
 ## 28-1. まず結論：つなげるのは「3つの共通点」だけでOK🎯
 
+![画像を挿入予定](./picture/observer_cs_study_028_three_common_points.png)
+
 ログ・メトリクス・トレースを“つなぐ”って、全部を混ぜる話じゃないよ🙅‍♀️
 **共通点を3つそろえる**のが本質✨
 
@@ -69,6 +71,8 @@ flowchart TD
 
 ## 28-3. 共通キー設計：traceId を“第一キー”にする🔑🧵
 
+![画像を挿入予定](./picture/observer_cs_study_028_w3c_trace_context.png)
+
 ### 1) `traceId` / `spanId` を全信頼（基本の軸）✅
 
 * HTTP でサービスをまたいでも、**W3C Trace Context** のヘッダー（`traceparent` など）で伝播する設計が標準だよ🌬️ ([w3.org][3])
@@ -83,6 +87,8 @@ flowchart TD
 ---
 
 ## 28-4. 共通の“名札”をそろえる：Resource Attributes 設計🏷️✨
+
+![画像を挿入予定](./picture/observer_cs_study_028_resource_attributes.png)
 
 ここ、地味だけどめっちゃ効くやつ😇
 
@@ -103,6 +109,8 @@ Microsoftの例でも、`OTEL_SERVICE_NAME` や `OTEL_RESOURCE_ATTRIBUTES` で R
 ---
 
 ## 28-5. .NETで“つながる最小実装”を作る🧪💻
+
+![画像を挿入予定](./picture/observer_cs_study_028_otlp_integration.png)
 
 Microsoft Learn のサンプルは、**ログ・メトリクス・トレースを同じOTLPで出す最短ルート**になってて超参考になるよ✨ ([Microsoft Learn][2])
 
@@ -201,6 +209,8 @@ app.Run();
 
 ## 28-6. 「メト→トレ」ジャンプを成立させる：exemplar の考え方💎🧵
 
+![画像を挿入予定](./picture/observer_cs_study_028_exemplar_mechanism.png)
+
 メトリクスって集計だから、本来は「この1回の遅いリクエスト」を直接は持てないのね🤔
 そこで **exemplar**（代表点）を使うと、**集計の中の“この1点”に trace_id を付けてリンクできる**✨ ([OpenTelemetry][4])
 
@@ -216,6 +226,8 @@ app.Run();
 ---
 
 ## 28-7. 「トレ→ログ」ジャンプを成立させる：TraceId をログに持たせる🪵🔗
+
+![画像を挿入予定](./picture/observer_cs_study_028_log_traceid.png)
 
 ここが繋がると、調査が気持ちよくなる🥹✨
 
@@ -234,6 +246,8 @@ app.Run();
 ---
 
 ## 28-8. “同じ用語・同じ粒度”に揃えるテンプレ🧩🗂️
+
+![画像を挿入予定](./picture/observer_cs_study_028_unified_granularity.png)
 
 ここ、設計として文章化するとブレないよ✨
 

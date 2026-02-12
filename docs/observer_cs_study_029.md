@@ -18,6 +18,8 @@
 
 ## 1) ダッシュボードって「グラフ集」じゃないよ📌✨
 
+![画像を挿入予定](./picture/observer_cs_study_029_dashboard_story.png)
+
 ダッシュボードは **“ストーリー”** です📖👀
 見た人がこう動けるように作ります👇
 
@@ -28,6 +30,8 @@
 ---
 
 ## 2) まず決める3つ📝✨（ここが設計の9割）
+
+![画像を挿入予定](./picture/observer_cs_study_029_three_decisions.png)
 
 ### A. 誰が見る？👩‍💻👨‍💻
 
@@ -55,6 +59,8 @@
 ---
 
 ## 3) 王道の型：RED → 深掘り → 調査リンク🟥🟨🟩
+
+![画像を挿入予定](./picture/observer_cs_study_029_red_indicators.png)
 
 Grafanaのベストプラクティスでも、**RED/USEなどの戦略を使う**ことが推奨されています。([Grafana Labs][3])
 ここではアプリ視点で **RED** を軸にします😊
@@ -115,6 +121,8 @@ graph TD
 
 ## 5) ログ/トレースへ“つなげる”設計🔗✨（超重要）
 
+![画像を挿入予定](./picture/observer_cs_study_029_log_to_trace.png)
+
 ### 5-1. ログに trace_id / span_id を入れておく🪵🧵
 
 OpenTelemetryのログ仕様でも、**リクエスト文脈から trace id / span id を取り、ログに自動的に含める**話が出ています。([OpenTelemetry][4])
@@ -132,6 +140,8 @@ Grafanaでは **ログに含まれる trace ID を使って Tempo のトレー�
 ---
 
 ## 6) “名前”と“切り口”の設計（ダッシュボードが死なないコツ）🏷️✨
+
+![画像を挿入予定](./picture/observer_cs_study_029_naming_rules.png)
 
 ### 6-1. サービスの名札（Resource Attributes）を揃える📛
 
@@ -160,6 +170,8 @@ OpenTelemetryの命名ルールでは、文字種や区切りなどの制約が�
 ---
 
 ## 8) ミニ演習：紙ワイヤーフレームで設計しよう📝✨（最強）
+
+![画像を挿入予定](./picture/observer_cs_study_029_wireframe_sketch.png)
 
 ### 手順🪄
 
