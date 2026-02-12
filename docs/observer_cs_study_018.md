@@ -18,6 +18,8 @@
 
 ## 1) まず全体像👀：「数字」はどうやって“メトリクス”になるの？🧩
 
+![Metrics Pipeline Flow](./picture/observer_cs_study_018_metrics_pipeline.png)
+
 アプリが出すのは「数値（計測点の記録）」なんだけど、監視で使える形にするには流れがあるよ〜🌊
 
 1. **計測コード**が数値を記録する（例：処理時間、件数）
@@ -30,6 +32,8 @@
 ---
 
 ## 2) 計測ポイントは3カ所だけ覚えて🧠✨（入口/業務/外部I/O）
+
+![Three Measurement Points](./picture/observer_cs_study_018_measurement_points.png)
 
 第4章でやった「観測の境界」💡を、メトリクスでももう一回だけ固定しよ！
 
@@ -52,6 +56,8 @@
 ---
 
 ## 3) この章の主役：「計測の責務を薄くする」作戦🪶✨
+
+![Thin Responsibility (Decorator)](./picture/observer_cs_study_018_thin_responsibility.png)
 
 メトリクス実装で一番やりがち事故はこれ👇😱
 
@@ -79,6 +85,8 @@ ASP.NET Core のメトリクス手順（Prometheus/Grafana例）も公式にあ�
 ---
 
 ## 4) 置き方の定番パターン3つ🍰（これだけでOK）
+
+![Placement Patterns](./picture/observer_cs_study_018_placement_patterns.png)
 
 ## パターンA：入口に置く（Middleware/Filter）🚪✨
 
@@ -111,6 +119,8 @@ ASP.NET Core のメトリクス手順（Prometheus/Grafana例）も公式にあ�
 
 ## ✅ “メトリクス定義を1箇所に集める”例（おすすめ）🏠
 
+![Centralized Metrics Definition](./picture/observer_cs_study_018_central_metrics.png)
+
 ```csharp
 using System.Diagnostics.Metrics;
 
@@ -138,7 +148,7 @@ public static class AppMetrics
 
 ## 6) “業務の外側で巻く”いちばん実用的な例🎀🧠（Decorator）
 
-![画像を挿入予定](./picture/observer_cs_study_018_decorator.png)
+![Decorator Pattern Diagram](./picture/observer_cs_study_018_decorator_diagram.png)
 
 ```mermaid
 classDiagram
@@ -212,6 +222,8 @@ public sealed class WorkUseCaseMetricsDecorator : IWorkUseCase
 ---
 
 ## 7) ミニ演習🧪✨「計測の責務を“薄く”保つ作戦を作る🪶」
+
+![Metrics Practice Sheet](./picture/observer_cs_study_018_practice_sheet.png)
 
 あなたの題材アプリ（/work など）を想定して、次を埋めてね📝💕
 

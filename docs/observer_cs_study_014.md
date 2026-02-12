@@ -32,7 +32,7 @@
 
 ## 粒度ってなに？🍚✨（ざっくり定義）
 
-![画像を挿入予定](./picture/observer_cs_study_014_granularity.png)
+![Log Granularity Balance](./picture/observer_cs_study_014_granularity_balance.png)
 
 ログの粒度＝
 **「どのタイミングで」「何を」「どれくらいの量で」「どんな形（検索できる形）で」残すか**の設計だよ🧠✨
@@ -55,6 +55,8 @@ graph TD
 ---
 
 ## 粒度を決める4つの軸🧭✨
+
+![Four Axes of Granularity](./picture/observer_cs_study_014_four_axes.png)
 
 ### ① 置き場所（どこで出す？）📍
 
@@ -84,6 +86,8 @@ graph TD
 ---
 
 ## “3点固定ログ”のおすすめテンプレ🧩✨
+
+![Three Point Fixed Log](./picture/observer_cs_study_014_three_points.png)
 
 ### 1) 入口ログ（Request In）🚪
 
@@ -127,6 +131,8 @@ graph TD
 
 ## 追加ログは「条件つき」にするのがコツ⚖️✨
 
+![Conditional Logging Gate](./picture/observer_cs_study_014_conditional_gate.png)
+
 ### ✅ 追加ログの出しどころ（おすすめ）
 
 * **失敗したときだけ**💥
@@ -143,6 +149,8 @@ graph TD
 ---
 
 ## 実装：まずは「入口＋出口」をミドルウェアで固定化🧱✨
+
+![Middleware Log Structure](./picture/observer_cs_study_014_middleware_structure.png)
 
 > ASP.NET Coreのログは `ILogger<T>` をDIから受け取るのが基本だよ📌 ([Microsoft Learn][2])
 
@@ -362,6 +370,8 @@ public static partial class AppLog
 
 ## よくある“粒度事故”あるある😇💥
 
+![Logging Accidents](./picture/observer_cs_study_014_logging_accidents.png)
+
 ### 事故①：成功ログが詳細すぎる📚😱
 
 * 1リクエストで50行とか出る
@@ -386,6 +396,8 @@ public static partial class AppLog
 ---
 
 ## 仕上げ：粒度設計チェックリスト✅✨
+
+![Granularity Checklist](./picture/observer_cs_study_014_checklist.png)
 
 * [ ] 成功時ログは「入口/外部I/O/出口」の固定セットに収まってる？🍙
 * [ ] 1リクエストの成功ログ、**だいたい数行**で済む？（目安：4〜6）🧮

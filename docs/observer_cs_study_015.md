@@ -15,6 +15,8 @@
 
 ## 0. まず最初にやる「3つの前提チェック」✅🧯
 
+![Investigation Prerequisites](./picture/observer_cs_study_015_prerequisites.png)
+
 調査は、ここでズレると全部ズレるよ〜😂💦
 
 1. **時間（タイムゾーン）** ⏰🌏
@@ -35,7 +37,7 @@
 
 ## 1. 現場で使う「ログ調査の型」🧭🕵️‍♀️
 
-![画像を挿入予定](./picture/observer_cs_study_015_investigation.png)
+![Investigation Flow Steps](./picture/observer_cs_study_015_investigation_flow.png)
 
 覚える順番はこれだけ👇（超大事）
 
@@ -50,6 +52,8 @@ flowchart TD
 ### 型A：フィルタ → 時系列 → 相関ID → 原因候補🪵⏱️🔗💡
 
 #### Step 1：フィルタする（母集団を小さく）🧹🪵
+
+![Filtering Logs](./picture/observer_cs_study_015_filter_funnel.png)
 
 最初は“広く薄く”じゃなくて **“狭く濃く”** が勝ち！😤✨
 
@@ -80,6 +84,8 @@ flowchart TD
 
 #### Step 3：相関IDで“1リクエストの物語”を束ねる🔗📚
 
+![Correlation ID Thread](./picture/observer_cs_study_015_correlation_thread.png)
+
 ここがログ調査の核！🔥
 
 * `CorrelationId` / `RequestId` / `TraceId` のどれかを見つける
@@ -94,6 +100,8 @@ ASP.NET Core のログは設定で `TraceId` / `SpanId` をスコープに載せ
 ---
 
 #### Step 4：原因候補を“3つ”出す（仮説ガチャ防止）🎰🚫
+
+![Three Hypothesis Candidates](./picture/observer_cs_study_015_hypothesis_trio.png)
 
 いきなり1個に決めないのが賢い〜！😎✨
 
@@ -121,6 +129,8 @@ ASP.NET Core のログは設定で `TraceId` / `SpanId` をスコープに載せ
 ---
 
 ## 2. 相関が強くなる設定（最小だけ）🔗🧱（※調査がラクになる✨）
+
+![Scope Configuration](./picture/observer_cs_study_015_scope_config.png)
 
 「TraceId がログに出てこない〜😭」って時はこれが効くよ〜！
 ASP.NET Core では `ActivityTrackingOptions` を使って、スコープに `TraceId` 等を載せられるよ🔗✨ ([Microsoft Learn][2])
@@ -236,6 +246,8 @@ Get-Content .\app.log | Select-String "2026-01-17T02:10"
 ---
 
 ## 7. AI活用（調査を爆速にするテンプレ）🤖⚡
+
+![AI Investigation Assistant](./picture/observer_cs_study_015_ai_assistant.png)
 
 Copilot / ChatGPT に“丸投げ”じゃなくて、**型を渡して働いてもらう**のがコツだよ〜😎✨
 

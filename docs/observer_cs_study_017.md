@@ -14,7 +14,7 @@ RED（Rate/Errors/Duration）は、リクエスト駆動のサービス（API）
 
 ## 1) REDってなに？なんで強いの？🧠✨
 
-![画像を挿入予定](./picture/observer_cs_study_017_red_method.png)
+![RED Method Overview](./picture/observer_cs_study_017_red_method.png)
 
 REDはざっくり言うと、
 
@@ -39,6 +39,8 @@ graph TD
 ---
 
 ## 2) “何を1つのサービス（Resource）として見る？”を決めよう🏷️✨
+
+![Resource Levels](./picture/observer_cs_study_017_resource_levels.png)
 
 REDは「**各サービス（Resource）**」に対して当てはめるのが基本だよ🧩
 
@@ -71,6 +73,8 @@ Rateは「来てる量」なんだけど、設計で迷うのはココ👇
 
 ### 3-2. 「成功/失敗」はRate側に含める？🤔
 
+![Rate Definition (Total)](./picture/observer_cs_study_017_rate_pipe.png)
+
 おすすめは👇
 
 * **Rate = 総リクエスト数（成功も失敗も含む）**
@@ -86,6 +90,8 @@ Rateは「来てる量」なんだけど、設計で迷うのはココ👇
 「失敗」を雑にすると、アラートが地獄になります🥲🚨
 
 ### 4-1. まずは“3種類の失敗”に分けよう🧩
+
+![Three Error Types](./picture/observer_cs_study_017_error_types.png)
 
 APIの失敗はだいたいこの3つに分かれるよ👇
 
@@ -120,6 +126,8 @@ Durationも迷いポイント多いよね〜！🥹
 
 ### 5-2. 平均は捨てて、分布で見る📊✨
 
+![Duration Distribution](./picture/observer_cs_study_017_duration_distribution.png)
+
 平均だけだと、こういう事故が起きるよ👇
 
 * 99%は速いのに、1%が激遅 → 平均だと隠れる😇
@@ -131,6 +139,8 @@ Durationも迷いポイント多いよね〜！🥹
 ---
 
 ## 6) “まず作るREDセット”のテンプレ🧾✨（これを埋めればOK！）
+
+![RED Card Template](./picture/observer_cs_study_017_red_card.png)
 
 エンドポイントごとに、これを埋めるだけでRED設計が完成するよ😊✨
 
@@ -231,6 +241,8 @@ Copilot / Codex みたいなAIがいる前提で、ここは超おいしいと�
 ---
 
 ## 10) よくある事故トップ5⚠️😱（ここ踏むと泣く）
+
+![RED Implementation Accidents](./picture/observer_cs_study_017_red_accidents.png)
 
 1. **Errorsの定義が曖昧** → チームで揉める＆アラート地獄😇
 2. **4xxを障害扱いにして鳴りまくる** → 本当の障害が埋もれる🥲
