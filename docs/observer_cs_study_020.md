@@ -14,6 +14,8 @@
 
 ## 1. そもそもラベル（タグ）って何？🏷️😊
 
+![Labels as Dimensions](./picture/observer_cs_study_020_labels_dimensions.png)
+
 メトリクスって、ざっくり言うと「数の集計」📈
 でも、集計って **“切り口（軸）”** がないと役に立ちにくいよね？
 
@@ -30,7 +32,7 @@
 
 ## 2. cardinality（組み合わせの数）って何？💣😱
 
-![画像を挿入予定](./picture/observer_cs_study_020_cardinality.png)
+![Cardinality Explosion](./picture/observer_cs_study_020_cardinality_explosion.png)
 
 **cardinality = ラベル値の“ユニークな組み合わせ数”**のこと！
 たとえば
@@ -75,6 +77,8 @@ OpenTelemetry側も「爆発はよくある課題」ってはっきり書いて�
 
 ### 鉄則①：**値が“有限で小さい集合”か？** 🧊
 
+![Finite vs Infinite Sets](./picture/observer_cs_study_020_finite_vs_infinite.png)
+
 * ✅ OK：`method=GET|POST`、`status_code=200|500`、`result=success|fail`
 * ❌ NG：`user_id=12345`、`request_id=uuid`、`email=...`
   （無限に増える＝爆発🔥）([Prometheus][2])
@@ -85,6 +89,8 @@ OpenTelemetry側も「爆発はよくある課題」ってはっきり書いて�
 * メトリクスは「全体の健康診断」📊が得意！
 
 ### 鉄則③：**“URLの生”を入れない** 🌐😱
+
+![URL Templating](./picture/observer_cs_study_020_url_templating.png)
 
 OpenTelemetryのHTTPメトリクスでは `http.route` について
 **「低cardinalityであること（MUST）」**って明記されてるよ。
@@ -106,6 +112,8 @@ OpenTelemetryでは `service.name` は “サービスの論理名”で、明�
 ---
 
 ## 4. “OKタグ / NGタグ” 早見表 📋🏷️✨
+
+![Tag Safety Traffic Light](./picture/observer_cs_study_020_tag_traffic_light.png)
 
 | 目的        | OKタグ例 ✅                            | NGタグ例 ❌（爆発しがち）                 |         |                    |
 | --------- | ---------------------------------- | ------------------------------ | ------- | ------------------ |
@@ -130,6 +138,8 @@ ASP.NET Core には `http.server.request.duration` があって、
 ---
 
 ## 6. C#で“良いタグ”の付け方（ミニ例）🧪🏷️
+
+![Tag Rounding Strategy](./picture/observer_cs_study_020_tag_rounding.png)
 
 ポイントはこれ👇
 
@@ -183,6 +193,8 @@ catch (Exception ex)
 ---
 
 ## 7. それでも“高cardinalityで見たい”ときどうする？🧵🪵✨
+
+![Metrics vs Logs Detail](./picture/observer_cs_study_020_metrics_vs_logs_detail.png)
 
 「ユーザー別に遅い人を特定したい！」みたいな要望、あるよね🥺
 
