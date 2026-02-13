@@ -15,6 +15,8 @@
 
 ![画像を挿入予定](./picture/observer_ts_study_015_relay_baton.png)
 
+![ID Scope Layers](./picture/observer_ts_study_015_id_scope_layers.png)
+
 ここ、最初に整理すると超ラクだよ〜😊✨
 
 * **① userActionId（ユーザー操作ID）**：クリック1回・送信1回など「操作」に付けるID🖱️
@@ -56,6 +58,8 @@ sequenceDiagram
 
 ### ✅ userActionIdの良さ
 
+![UserAction Spotlight](./picture/observer_ts_study_015_useraction_spotlight.png)
+
 * ログで「この操作の話！」ってすぐ絞れる🔍✨
 * 失敗時の問い合わせ（ユーザー申告）と結びつけやすい📩
 * トレース導入の前段としても最適🧱
@@ -63,6 +67,8 @@ sequenceDiagram
 ---
 
 ## 4) 設計ルール（超だいじ）🛡️✨
+
+![Design Rules Shield](./picture/observer_ts_study_015_design_rules_shield.png)
 
 ### 4-1. IDは“漏れても困らない”にする🧼
 
@@ -89,6 +95,8 @@ sequenceDiagram
 ---
 
 ## 5) ハンズオン①：フロントで userActionId を発行して API に渡す🖱️➡️📨✨
+
+![Frontend Flow](./picture/observer_ts_study_015_frontend_flow.png)
 
 ### 5-1. “操作の入口”でIDを作る🎟️
 
@@ -143,6 +151,8 @@ async function onClickSlow() {
 ---
 
 ## 6) ハンズオン②：API側で受け取ってログを“つなぐ”🪵🔗✨
+
+![API Receiver](./picture/observer_ts_study_015_api_receiver.png)
 
 ### 6-1. Expressのミドルウェアで拾う🧤
 
@@ -199,6 +209,8 @@ app.listen(3000, () => console.log("server started"));
 
 ## 7) “別オリジン”のときの落とし穴：CORS🧨（でも直せる！）
 
+![CORS Gate](./picture/observer_ts_study_015_cors_gate.png)
+
 フロントとAPIが別オリジン（例：ポートが違う）だと、**カスタムヘッダー**はCORSで止まりやすいの🥺
 そのときは **サーバーが許可するヘッダー**を返す必要があるよ〜。
 `Access-Control-Allow-Headers` は「そのヘッダー送っていいよ」って意味だよ📮✨ ([MDN Web Docs][2])
@@ -213,6 +225,8 @@ CORSの全体像もここが公式で安心🧠 ([MDN Web Docs][3])
 ---
 
 ## 8) 発展：traceparent（W3C）で“本物の分散トレース”に乗る🧵🚀
+
+![Distributed Tracing Map](./picture/observer_ts_study_015_distributed_map.png)
 
 ここから先は「任意」だけど、めっちゃ強い世界🌈
 W3C Trace Context では、HTTPヘッダー `traceparent` がトレースの親子関係を渡す標準だよ ([W3C][1])
