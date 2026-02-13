@@ -20,11 +20,15 @@ Sagaはざっくり言うと、
 
 …って流れですよね😊
 
+![saga_cs_study_010_saga_hike_flow.png](./picture/saga_cs_study_010_saga_hike_flow.png)
+
 でも現実のシステムは、**リトライ**や**重複メッセージ（at-least-once）**が普通に起きます🔁📨
 つまり、こんな事故が起きやすいの…👇
 
 * 決済が **2回** 実行される💸💸（二重課金）
 * 返金が **2回** 走る💸➡️💸➡️（二重返金）
+
+![saga_cs_study_010_double_refund_danger.png](./picture/saga_cs_study_010_double_refund_danger.png)
 * 状態が **2回** 遷移して、Sagaが迷子になる🌀
 
 だから、Sagaでは「進む操作」だけじゃなくて、**“補償（戻す操作）”も冪等にする**のが超大事です🛡️✨
@@ -79,6 +83,8 @@ graph TD
 「別の新しい操作」なら、**別のキー**を使う
 これが基本だよ😊🔁
 
+![saga_cs_study_010_key_scope_tickets.png](./picture/saga_cs_study_010_key_scope_tickets.png)
+
 ## 3.2 形式はどうする？（UUIDが安牌🎲）
 
 多くのAPIでは UUID（ランダム文字列）がよく使われます。Stripeも UUID v4 を推奨してます。([Stripe Documentation][2])
@@ -97,6 +103,8 @@ Stripeも、**同じ冪等キーでパラメータが違うとエラー**にし�
 
 * 冪等キーと一緒に **RequestHash（内容のハッシュ）** を保存
 * 同じキーで来たとき、ハッシュが違えば **409 Conflict** などで拒否🚫
+
+![saga_cs_study_010_key_content_mismatch.png](./picture/saga_cs_study_010_key_content_mismatch.png)
 
 ## 3.4 いつまで保存する？（TTLの考え方）⏳🧠
 
@@ -130,6 +138,8 @@ Stripeも、**同じ冪等キーでパラメータが違うとエラー**にし�
 
 **ポイント**：`(Scope, IdempotencyKey)` に **ユニーク制約**を張るのが強いです💪✨
 （同時に2個入れようとしても、DBが1個しか許さない＝勝ち🏆）
+
+![saga_cs_study_010_db_table_structure.png](./picture/saga_cs_study_010_db_table_structure.png)
 
 ---
 
@@ -236,6 +246,8 @@ public static class HashUtil
 * Processingなら「処理中だよ」返す
 
 ここは擬似コードで示すね（雰囲気を掴めればOK！）😊✨
+
+![saga_cs_study_010_decision_logic_flow.png](./picture/saga_cs_study_010_decision_logic_flow.png)
 
 ```csharp
 public sealed class EfIdempotencyStore : IIdempotencyStore
@@ -637,3 +649,6 @@ C#も最新系列が更新され続けているので、コードは「素直に
 [4]: https://stripe.com/blog/idempotency?utm_source=chatgpt.com "Designing robust and predictable APIs with idempotency"
 [5]: https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core?utm_source=chatgpt.com "NET and .NET Core official support policy"
 [6]: https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history?utm_source=chatgpt.com "The history of C# | Microsoft Learn"
+
+
+![saga_cs_study_010_saga_state_hud.png](./picture/saga_cs_study_010_saga_state_hud.png)

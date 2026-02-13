@@ -18,6 +18,8 @@
 
 これを混ぜると、Sagaはすぐ事故るよ〜😵‍💫💥
 
+![saga_cs_study_013_captain_vs_reporter.png](./picture/saga_cs_study_013_captain_vs_reporter.png)
+
 ### Command vs Event イメージ 📨🎯📣
 ```mermaid
 graph LR
@@ -49,6 +51,8 @@ graph LR
 
 Commandは「お願い」なので、**断られることもある**（在庫ない、カードNGなど）😢
 
+![saga_cs_study_013_command_letter.png](./picture/saga_cs_study_013_command_letter.png)
+
 ---
 
 ## Event（イベント）＝「起きた事実をみんなに知らせるメッセージ」📣🗞️
@@ -62,6 +66,8 @@ Commandは「お願い」なので、**断られることもある**（在庫な
   * `OrderCanceled`（注文キャンセルされた！）
 
 Eventは「ニュース」だから、**受け手が止めることはできない**（止めたいなら、その前にCommandで止める）🧯
+
+![saga_cs_study_013_event_newspaper.png](./picture/saga_cs_study_013_event_newspaper.png)
 
 ---
 
@@ -100,6 +106,8 @@ Eventは「ニュース」だから、**受け手が止めることはできな�
 
 この並びだと、Sagaの「状態機械（第11〜12章）」にも落とし込みやすいよ〜⚙️✨
 
+![saga_cs_study_013_saga_ping_pong.png](./picture/saga_cs_study_013_saga_ping_pong.png)
+
 ---
 
 # 13-4. 命名ルール（ここが一番効く！）📝💥
@@ -116,7 +124,9 @@ Eventは「ニュース」だから、**受け手が止めることはできな�
 * `PaymentCharged`
 * `OrderCanceled`
 
-「Eventは過去形が自然」みたいな命名ルールは、メッセージング系の実務ドキュメントでも定番だよ📚✨ ([docs.particular.net][1])
+「Eventは過去形が自然」みたいな命名ルールは、メッセージング系の実務ドキュメントでも定番だよ📚✨
+
+![saga_cs_study_013_naming_grammar.png](./picture/saga_cs_study_013_naming_grammar.png) ([docs.particular.net][1])
 
 ---
 
@@ -157,6 +167,8 @@ Eventは「ニュース」だから、**受け手が止めることはできな�
 
 ログや監視で死ぬ😇🧾
 → **CommandとEventは“見ただけで違う”名前にする**のが安全！
+
+![saga_cs_study_013_ambiguous_robot.png](./picture/saga_cs_study_013_ambiguous_robot.png)
 
 ---
 
@@ -212,6 +224,8 @@ public sealed record InventoryReserved(
 * Azureでも CloudEvents が推奨フォーマットとして扱われてるよ📨 ([Microsoft Learn][4])
 
 ※ CommandまでCloudEventsに寄せるかはチーム次第だけど、まずは「Eventの外側標準」くらいの理解でOK😊
+
+![saga_cs_study_013_cloudevents_container.png](./picture/saga_cs_study_013_cloudevents_container.png)
 
 ---
 

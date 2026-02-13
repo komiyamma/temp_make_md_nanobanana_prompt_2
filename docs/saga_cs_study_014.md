@@ -20,7 +20,9 @@
 * **順序入れ替え**：A→Bのはずが、B→Aで届く🔀
 * **遅延・一部欠落っぽく見える**：しばらく来ない…⏳（あとで来るかも）
 
-特に「少なくとも1回届ける」系のキューだと、**重複や順序の乱れが普通に起きる**。たとえば SQS の Standard Queue は、複数回届くことや、順序が前後することがあると明記されてるよ📌 ([AWS ドキュメント][1])
+特に「少なくとも1回届ける」系のキューだと、**重複や順序の乱れが普通に起きる**。
+
+![saga_cs_study_014_mail_chaos.png](./picture/saga_cs_study_014_mail_chaos.png)たとえば SQS の Standard Queue は、複数回届くことや、順序が前後することがあると明記されてるよ📌 ([AWS ドキュメント][1])
 
 ### メッセージの「ズレ」のイメージ 📮🌪️
 ```mermaid
@@ -44,6 +46,8 @@ graph LR
 **例：** `PaymentAuthorized` が2回来る
 → 何も考えず処理すると「二重出荷」「二重予約」「二重補償」になりがち💥
 
+![saga_cs_study_014_double_steak.png](./picture/saga_cs_study_014_double_steak.png)
+
 **なぜ起きる？**
 
 * 送信側が「送れたか不明」で再送する
@@ -60,6 +64,8 @@ graph LR
 
 **例：** `InventoryReserved` が `PaymentAuthorized` より先に届く
 → Sagaの状態機械が「え？まだ決済できてないよ？」ってなる😵‍💫
+
+![saga_cs_study_014_shoes_before_socks.png](./picture/saga_cs_study_014_shoes_before_socks.png)
 
 **順序が欲しいなら“束ねるキー”が必要**🧷
 
@@ -89,6 +95,8 @@ graph LR
 ## 14.3 じゃあどう守る？対策カタログ🛡️📚
 
 Sagaの受信側（イベント/コマンドのハンドラ）で、次の4択に分類できると強いよ💪✨
+
+![saga_cs_study_014_defense_sorting.png](./picture/saga_cs_study_014_defense_sorting.png)
 
 ### ✅ A. 無視（Ignore）
 
@@ -185,6 +193,8 @@ CREATE TABLE ProcessedMessage (
   決済が前提の設計なら「前提が揃うまで Pending に置く」📥⏸️
 * **Q2：無視（＋冪等記録）**
   Inbox（ProcessedMessage）にあれば即return🔁🚫
+
+![saga_cs_study_014_puzzle_piece_pending.png](./picture/saga_cs_study_014_puzzle_piece_pending.png)
 
 ---
 
@@ -368,3 +378,6 @@ public sealed class SagaHandler
 [4]: https://www.confluent.io/learn/kafka-partition-key/?utm_source=chatgpt.com "Apache Kafka Partition Key: A Comprehensive Guide"
 [5]: https://www.rabbitmq.com/docs/queues?utm_source=chatgpt.com "Queues"
 [6]: https://learn.microsoft.com/en-us/azure/service-bus-messaging/advanced-features-overview "Azure Service Bus messaging - advanced features - Azure Service Bus | Microsoft Learn"
+
+
+![saga_cs_study_014_guest_list_check.png](./picture/saga_cs_study_014_guest_list_check.png)

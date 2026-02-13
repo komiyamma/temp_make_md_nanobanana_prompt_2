@@ -20,6 +20,8 @@
 * この「移り方（遷移）」をルールとして持つ
 
 つまり **「状態」×「イベント」→「次の状態」** のルールブック📖✨
+
+![saga_cs_study_011_board_game_rules.png](./picture/saga_cs_study_011_board_game_rules.png)
 これがあると、Sagaの「途中で落ちた」「同じ通知が2回来た」「順番が入れ替わった」みたいな世界でも、落ち着いて扱えるようになるよ😇🔁 ([ウィキペディア][1])
 
 ---
@@ -27,6 +29,8 @@
 # 2) Sagaを“状態”で考えると何が嬉しいの？😆🎁
 
 Sagaはだいたい「長い処理」＋「途中失敗が普通」だから、コードだけで追うと迷子になりやすい🌀😵‍💫
+
+![saga_cs_study_011_spaghetti_vs_map.png](./picture/saga_cs_study_011_spaghetti_vs_map.png)
 状態機械にすると嬉しいこと👇
 
 * ✅ **禁止ルートが明確**（やっちゃダメな遷移を止められる）🚫
@@ -46,12 +50,16 @@ Sagaはだいたい「長い処理」＋「途中失敗が普通」だから、�
 * **Guard（ガード条件）**：この条件なら遷移OK（例：リトライ回数が残ってる）🧱
 * **Action（アクション）**：状態に入った時／出る時にやること（ログ、通知、次コマンド発行など）🧾
 
+![saga_cs_study_011_turnstile_terminology.png](./picture/saga_cs_study_011_turnstile_terminology.png)
+
 ---
 
 # 4) 状態の作り方：まずは「大きい粒」でOK🙆‍♀️✨
 
 初心者がやりがち失敗👇
 「状態を細かくしすぎて、表がぐちゃぐちゃ」😵‍💫💥
+
+![saga_cs_study_011_state_granularity.png](./picture/saga_cs_study_011_state_granularity.png)
 
 まずは **“大きい粒”** でOKだよ〜😊
 例：注文Sagaならこんな感じ👇
@@ -85,6 +93,8 @@ Sagaはだいたい「長い処理」＋「途中失敗が普通」だから、�
 ここで注意⚠️
 
 * 「ボタン押した」みたいなUI起点より、分散処理では「**結果が返ってきた**」の方がトリガになりがち📩
+
+![saga_cs_study_011_event_trigger_waiter.png](./picture/saga_cs_study_011_event_trigger_waiter.png)
 * そして同じイベントが**2回来ることもある**（冪等性の世界🔁）
 
 ---
@@ -92,6 +102,8 @@ Sagaはだいたい「長い処理」＋「途中失敗が普通」だから、�
 ## 6) ガード条件（Guard）：現実を守る“門番”🧱🧠
 
 ガード条件は、「その遷移を許すかどうか」の条件だよ😊
+
+![saga_cs_study_011_guard_bouncer.png](./picture/saga_cs_study_011_guard_bouncer.png)
 例👇
 
 * PaymentPending のときだけ PaymentSucceeded を受け付ける✅
@@ -158,6 +170,8 @@ Sagaの補償って、実際は「元に戻す」だけじゃなくて
 
 だから補償を「処理の1回きり」と思うより、
 **補償中という状態を持って、終端までたどり着かせる**
+
+![saga_cs_study_011_compensation_gear.png](./picture/saga_cs_study_011_compensation_gear.png)
 これがめちゃ大事だよ〜😊🛡️
 
 ---
