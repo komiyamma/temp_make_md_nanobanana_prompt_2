@@ -16,6 +16,8 @@ Minimal APIは「依存を最小にしたHTTP API」を作るための設計で�
 # 1) まずは全体像（紙に描くと超ラク）📝💡
 
 ### オーケストレーションと補償のループ 🧑‍✈️🔁
+
+![Orchestration Flow](./picture/saga_cs_study_022_orchestration_loop.png)
 ```mermaid
 graph TD
     Orch[Orchestrator] -- "1: Charge" --> Pay[Payment API]
@@ -27,12 +29,16 @@ graph TD
 ---
 ## 成功フロー😊
 
+![Success Flow Steps](./picture/saga_cs_study_022_success_flow.png)
+
 1. Orchestrator：注文を「作成」（状態：Pending）
 2. Orchestrator → Payment：チャージ（成功したら状態：PaymentDone）
 3. Orchestrator → Inventory：引当（成功したら状態：InventoryDone）
 4. Orchestrator：注文を「確定」（状態：Completed）🎉
 
 ## 失敗フロー😵（例：在庫引当が失敗）
+
+![Failure Flow Steps](./picture/saga_cs_study_022_failure_flow.png)
 
 1. 注文作成 ✅
 2. 決済 ✅
@@ -42,6 +48,8 @@ graph TD
 ---
 
 # 2) プロジェクト構成（3つのミニAPI）🏗️✨
+
+![3 Mini APIs](./picture/saga_cs_study_022_project_structure.png)
 
 * `Orchestrator.Api`（司令塔🧑‍✈️）
 * `Payment.Api`（決済💳）
@@ -76,6 +84,8 @@ dotnet sln add Orchestrator.Api/Orchestrator.Api.csproj
 ---
 
 # 4) Payment.Api（決済サービス）💳✨
+
+![Payment API Logic](./picture/saga_cs_study_022_payment_logic.png)
 
 `Payment.Api/Program.cs` をまるごと置き換え👇
 
@@ -148,6 +158,8 @@ record PaymentRecord(Guid SagaId, string OrderId, decimal Amount, PaymentStatus 
 ---
 
 # 5) Inventory.Api（在庫サービス）📦✨
+
+![Inventory API Logic](./picture/saga_cs_study_022_inventory_logic.png)
 
 `Inventory.Api/Program.cs` をまるごと置き換え👇
 
@@ -375,6 +387,8 @@ record OrderRecord(string OrderId, OrderStatus Status, string ProductId, int Qty
 ---
 
 # 7) 3つ同時に起動する（ポート固定）🚦✨
+
+![3 Terminals Running](./picture/saga_cs_study_022_3_terminals.png)
 
 今回はわかりやすく **7001/7002/7003** にします🎯
 （Orchestrator=7001 / Payment=7002 / Inventory=7003）

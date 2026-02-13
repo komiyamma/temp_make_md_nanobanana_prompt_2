@@ -12,6 +12,8 @@
 
 ## 19.2 Outboxって何を解決するの？🤔📦
 
+![Outbox Solving Dual Write](./picture/saga_cs_study_019_solution_concept.png)
+
 Sagaでは、だいたいこんな流れになります👇
 
 1. 注文をDBに保存する🧾
@@ -31,6 +33,8 @@ Outboxパターンはこの問題を、
 ---
 
 ## 19.3 最小構成の全体図🧩✨
+
+![Minimum Outbox Architecture](./picture/saga_cs_study_019_min_architecture.png)
 
 登場人物は3つだけ👇
 
@@ -63,6 +67,8 @@ Outboxパターンはこの問題を、
 * `LockedUntilUtc`：ワーカーが掴んだロック期限（多重ワーカー対策）
 
 ### SQL Serverの例（シンプル版）🧱
+
+![Outbox Table Schema Visual](./picture/saga_cs_study_019_table_schema.png)
 
 ```sql
 CREATE TABLE dbo.OutboxMessages (
@@ -130,6 +136,8 @@ public sealed class OutboxMessage
 
 ### 追加のしかた（超わかりやすい手動版）🧩
 
+![Transaction Code Flow](./picture/saga_cs_study_019_tx_flow.png)
+
 ```csharp
 public async Task<Guid> CreateOrderAsync(string customerId, decimal total, CancellationToken ct)
 {
@@ -183,6 +191,8 @@ public async Task<Guid> CreateOrderAsync(string customerId, decimal total, Cance
 ## 19.6 送信ワーカー（Outbox Dispatcher）🏃‍♀️📮
 
 ### 送信ワーカー（Dispatcher）のサイクル 🏃‍♀️📮
+
+![Dispatcher Cycle Diagram](./picture/saga_cs_study_019_dispatcher_cycle.png)
 ```mermaid
 loop 定期スキャン
     Worker[Dispatcher] -- "1: 掴む (Update Status=1)" --> DB[(Outbox Table)]
@@ -344,6 +354,8 @@ Outboxは「送信漏れ」を減らす仕組みで、配送は基本 **at-least
 
 ### Inboxの超定番パターン（受信側）📥✨
 
+![Inbox Pattern Logic](./picture/saga_cs_study_019_inbox_pattern.png)
+
 * 受信した`MessageId`（またはOutboxのId）を **Inboxテーブルに保存**
 * **同じIDが来たら無視**（二重処理しない）
 
@@ -391,6 +403,8 @@ public async Task HandleAsync(Guid messageId, string payloadJson, CancellationTo
 ---
 
 ## 19.8 失敗の扱い：RetryとPoison（毒メッセージ）☠️🔄
+
+![Poison Message Handling](./picture/saga_cs_study_019_poison_message.png)
 
 送信がずっと失敗するメッセージもあります😵‍💫
 例：Payloadが壊れてる／宛先設定ミス／相手が永遠に受け付けない…など
