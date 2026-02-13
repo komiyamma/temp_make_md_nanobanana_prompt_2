@@ -21,6 +21,8 @@ ECで「注文→決済→在庫→配送」をやってるとするよ🛒📦�
 * ❌ NullReferenceException → だいたい **バグ**（インフラというより「想定外」）🐛😱
 
 この「種類の違い」を分けないと、Sagaがすぐ事故るよ🚑💦
+
+![saga_cs_study_015_vending_machine_errors.png](./picture/saga_cs_study_015_vending_machine_errors.png)
 たとえば「残高不足」なのにリトライしまくると、永遠に失敗するだけ…🥲🔁
 
 ### エラーの仕分けと基本アクション 🚧🎯
@@ -88,6 +90,8 @@ Sagaは「前に進むステップ」と「戻す（補償）ステップ」が�
 
 ここでエラー種別を分けると、判断がスッキリするの👇✨
 
+![saga_cs_study_015_gps_error_handling.png](./picture/saga_cs_study_015_gps_error_handling.png)
+
 * **業務エラー**：
 
   * 「これ以上進めない」が確定 ✅
@@ -108,6 +112,8 @@ Sagaは「前に進むステップ」と「戻す（補償）ステップ」が�
 ## 事故①：業務エラーを例外で投げて 500 にしちゃう😇➡️🔥
 
 * APIクライアントから見ると「サーバ障害」に見える
+
+![saga_cs_study_015_fire_alarm_overreaction.png](./picture/saga_cs_study_015_fire_alarm_overreaction.png)
 * リトライが走る
 * 二重実行や二重補償の温床👿
 
@@ -177,6 +183,8 @@ public sealed record Result<T>(bool IsSuccess, T? Value, AppError? Error)
 {
     public static Result<T> Ok(T value) => new(true, value, null);
     public static Result<T> Fail(AppError error) => new(false, default, error);
+
+![saga_cs_study_015_result_box.png](./picture/saga_cs_study_015_result_box.png)
 }
 ```
 
@@ -389,3 +397,9 @@ app.MapPost("/orders/{orderId:guid}/pay", async (
 [4]: https://devblogs.microsoft.com/dotnet/announcing-dotnet-10/?utm_source=chatgpt.com "Announcing .NET 10"
 [5]: https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history "The history of C# | Microsoft Learn"
 [6]: https://devblogs.microsoft.com/visualstudio/visual-studio-november-update-visual-studio-2026-cloud-agent-preview-and-more/?utm_source=chatgpt.com "Visual Studio 2026 November 2025 Update"
+
+
+![saga_cs_study_015_error_translation_chain.png](./picture/saga_cs_study_015_error_translation_chain.png)
+
+
+![saga_cs_study_015_medical_report_standard.png](./picture/saga_cs_study_015_medical_report_standard.png)

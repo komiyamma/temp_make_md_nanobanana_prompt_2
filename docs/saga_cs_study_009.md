@@ -31,6 +31,8 @@
 
 > **同じ操作を何回繰り返しても、結果が“増えない”性質**🔁🧾
 
+![saga_cs_study_009_stamp_vs_coin.png](./picture/saga_cs_study_009_stamp_vs_coin.png)
+
 ### 例でわかる冪等/非冪等🧸
 
 * ✅ 冪等：
@@ -51,6 +53,8 @@
 * **Safe（安全）**：呼んでも状態が変わらない（読むだけ）📖
 * **Idempotent（冪等）**：状態は変わることがあるけど、**同じ操作の繰り返しで増えない**🔁
 
+![saga_cs_study_009_safe_vs_idempotent.png](./picture/saga_cs_study_009_safe_vs_idempotent.png)
+
 RESTの定番ルールだと、**PUTは冪等であるべき**とされています🧭✨ ([Microsoft Learn][1])
 （「同じ内容でPUTを何回しても、最終状態は同じ」ってイメージ🙂）
 
@@ -68,6 +72,8 @@ Sagaは「ステップが連鎖」するので、**どこかが二重実行す�
 どれかが2回走ると…二重注文/二重課金/在庫ズレ/配送2回 など💥
 ```
 
+![saga_cs_study_009_saga_chain_failure.png](./picture/saga_cs_study_009_saga_chain_failure.png)
+
 しかも、失敗したら「補償」も走りますよね？
 この補償が二重で走ったら… **返金を2回**とか普通に起こり得ます💸💸😇（地獄）
 
@@ -81,7 +87,9 @@ Sagaは「ステップが連鎖」するので、**どこかが二重実行す�
 
 「この操作は同じものですよ」を識別するキーを送る/持つ方法です🔁
 決済APIなどは **Idempotency-Key** みたいなキーでリトライを安全にします💳🛡️
-Stripeは、同じキーのリクエストには**最初の結果（成功/失敗含む）を返す**方式を説明しています📌 ([Stripe ドキュメント][2])
+Stripeは、同じキーのリクエストには**最初の結果（成功/失敗含む）を返す**方式を説明しています📌
+
+![saga_cs_study_009_idempotency_key_bouncer.png](./picture/saga_cs_study_009_idempotency_key_bouncer.png) ([Stripe ドキュメント][2])
 
 ### ② 一意制約（ユニーク制約）🧱
 
@@ -96,6 +104,8 @@ DBで「同じ注文番号は1つだけ」みたいに縛る✨
 
 「このメッセージIDは処理済み？」を保存して、2回目以降は捨てる/同じ結果を返す🗑️✅
 （Sagaだと超よく使います）
+
+![saga_cs_study_009_inbox_pattern_check.png](./picture/saga_cs_study_009_inbox_pattern_check.png)
 
 ### 冪等性を守る多層防御 🛡️🧰
 ```mermaid
@@ -251,6 +261,8 @@ Invoke-RestMethod -Method Post -Uri http://localhost:5000/orders -Headers @{ "Id
 ### ❌ 落とし穴3：同時に2リクエストが来たときのレース
 
 * “ほぼ同時”だと両方が「初回」と思って二重作成することがある⚡
+
+![saga_cs_study_009_race_condition_runners.png](./picture/saga_cs_study_009_race_condition_runners.png)
   （次章以降でちゃんと潰します🛡️）
 
 ---
