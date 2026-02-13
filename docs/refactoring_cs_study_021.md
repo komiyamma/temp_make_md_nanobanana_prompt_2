@@ -38,6 +38,8 @@ graph TD
 
 ## 2. バグとスメルの違い🧯🆚👃
 
+![bug_vs_smell](./picture/refactoring_cs_study_021_bug_vs_smell.png)
+
 ### バグ💥
 
 * 期待と違う動きをする（例：合計金額が間違う、落ちる、例外が出る）😱
@@ -60,6 +62,8 @@ graph TD
 
 ### ① 長いメソッド（Long Method）📜✂️
 
+![long_method](./picture/refactoring_cs_study_021_long_method.png)
+
 **サイン**：スクロールが長い、途中で何やってるか忘れる😵
 **困ること**：理解が遅い、ちょっと直すのが怖い
 **最初の一手**：意味のまとまりで **Extract Method**（切って名前をつける）✂️🏷️
@@ -67,6 +71,8 @@ graph TD
 ---
 
 ### ② 巨大クラス（Large Class）🏢➡️🏠🏠
+
+![large_class](./picture/refactoring_cs_study_021_large_class.png)
 
 **サイン**：フィールドもメソッドも多い、変更理由がいっぱい😮
 **困ること**：責務が混ざって、影響範囲が読めない
@@ -76,6 +82,8 @@ graph TD
 
 ### ③ 重複コード（Duplicate Code）♻️😵
 
+![duplicate_code](./picture/refactoring_cs_study_021_duplicate_code.png)
+
 **サイン**：同じような処理がコピペで何回も出てくる
 **困ること**：仕様変更のたびに全部直す＝直し漏れ💦
 **最初の一手**：「同じ“知識”」だけ共通化（まずは Extract Method）🧠✂️
@@ -83,6 +91,8 @@ graph TD
 ---
 
 ### ④ 密結合（Tight Coupling）🧲💦
+
+![tight_coupling](./picture/refactoring_cs_study_021_tight_coupling.png)
 
 **サイン**：あちこちのクラスを new してる／外部（DB・HTTP・ファイル）直呼びが多い
 **困ること**：テストしづらい、ちょっと直したら連鎖で崩れる😱
@@ -92,6 +102,8 @@ graph TD
 
 ### ⑤ 引数が多い（Long Parameter List / Data Clumps）🧳📦
 
+![long_parameter](./picture/refactoring_cs_study_021_long_parameter.png)
+
 **サイン**：メソッド呼び出しが引数だらけ、しかも同じ組み合わせが何度も出る
 **困ること**：順番間違い・渡し忘れが起きる、読むだけで疲れる🥺
 **最初の一手**：まとめて **Parameter Object**（小さな型にする）📦✨
@@ -99,6 +111,8 @@ graph TD
 ---
 
 ## 4. スメルを見つける「超実用」チェックリスト📝👀
+
+![smell_checklist](./picture/refactoring_cs_study_021_smell_checklist.png)
 
 コードを見た瞬間に、これを心の中でチェック✅✨
 

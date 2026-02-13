@@ -46,6 +46,8 @@ graph TD
 
 ## ✅ 超カンタンな数え方
 
+![dependency_counter](./picture/refactoring_cs_study_026_dependency_counter.png)
+
 次のどれかが多いと黄色信号🚦💛
 
 * **コンストラクタ引数が多い**（例：6個以上）🧳💦
@@ -57,6 +59,8 @@ graph TD
 ---
 
 ## 密結合チェックリスト👃🔎（サイン集）
+
+![coupling_signs](./picture/refactoring_cs_study_026_coupling_signs.png)
 
 当てはまるほど密結合のにおい強め👃💨
 
@@ -82,6 +86,8 @@ graph TD
 ---
 
 ## 例題：全部入りサービス🍱💦（密結合あるある）
+
+![all_in_one_chef](./picture/refactoring_cs_study_026_all_in_one_chef.png)
 
 「注文確定」をするメソッドが、いろいろ抱えすぎの例だよ👇
 
@@ -201,6 +207,8 @@ public sealed class OrderService
 
 ## 何が嬉しいの？🥰✨
 
+![loose_coupling_freedom](./picture/refactoring_cs_study_026_loose_coupling_freedom.png)
+
 * `OrderService` が **DBやSMTPを知らなくてよくなる**🙆‍♀️
 * テストで `IClock` を偽物にできる（時間固定できる）⏰🧪
 * DBなしでロジック検証できる（速い！）🚀
@@ -208,6 +216,8 @@ public sealed class OrderService
 ---
 
 ## ミニ演習📝✨：外部参照を1つ減らそう🔧
+
+![clock_abstraction](./picture/refactoring_cs_study_026_clock_abstraction.png)
 
 ## お題🎯
 
@@ -228,6 +238,8 @@ public sealed class OrderService
 
 ## Visual Studioで「密結合ポイント」を探す🔍🧭
 
+![vs_dependency_map](./picture/refactoring_cs_study_026_vs_dependency_map.png)
+
 * **Find All References**：どこから使われてるか追う👣
 * **Call Hierarchy**：呼び出しの流れを木で見る🌳
 * **Go To Definition / Peek Definition**：依存先を覗いて「重さ」を感じ取る👀
@@ -237,6 +249,8 @@ public sealed class OrderService
 ---
 
 ## AI活用🤖✨（密結合の見つけ方＆ほどき方）
+
+![ai_untangling](./picture/refactoring_cs_study_026_ai_untangling.png)
 
 ## ✅ 依存の列挙をさせる（見える化👀）
 

@@ -45,6 +45,8 @@ graph TD
 
 ## 2. 巨大クラスの「よくあるサイン」チェックリスト👃🔎
 
+![signs_dashboard](./picture/refactoring_cs_study_024_signs_dashboard.png)
+
 次のサインが複数当てはまったら、巨大クラス疑い強めです⚠️
 
 ## サインA：変更理由が多い🌀
@@ -83,6 +85,8 @@ graph TD
 
 ## 3. でも「大きい＝悪」ではない🙅‍♀️⭕
 
+![size_vs_mess](./picture/refactoring_cs_study_024_size_vs_mess.png)
+
 サイズが大きくても、必ずしも悪ではありません🙂✨
 たとえば…
 
@@ -116,6 +120,8 @@ graph TD
 ---
 
 ## 5. 分割の“良い切り方”と“微妙な切り方”🍰⚔️
+
+![splitting_strategies](./picture/refactoring_cs_study_024_splitting_strategies.png)
 
 ## 良い切り方（おすすめ）👍✨
 
@@ -192,6 +198,8 @@ public sealed class OrderProcessor
 
 ## 7. 安全に切る手順（小さく！）🛡️✂️
 
+![extraction_steps](./picture/refactoring_cs_study_024_extraction_steps.png)
+
 巨大クラスは「一気に分割」すると壊れやすいので、**小さな勝ち**を積み上げます🏆✨
 （リファクタはステップを小さく＆テストで確認が基本、という整理もあります📚） ([refactoring.guru][4])
 
@@ -223,6 +231,8 @@ public sealed class OrderProcessor
 ---
 
 ## 8. After：計算だけ外に出してスッキリ🧮✨
+
+![delegation_structure](./picture/refactoring_cs_study_024_delegation_structure.png)
 
 ```csharp
 public sealed class OrderPricing
@@ -274,6 +284,8 @@ public sealed class OrderProcessor
 
 ## 9. Visual Studioでの探索テク（巨大クラスほど効く）🔍💻
 
+![vs_navigation](./picture/refactoring_cs_study_024_vs_navigation.png)
+
 * **Find All References**：そのフィールド/メソッドがどこで使われてるか一撃👀
 * **Call Hierarchy**：呼び出しの流れを迷子にならずに追う🧭
 * **Go To Definition**：依存先をすぐ開ける📌
@@ -284,6 +296,8 @@ Visual Studio 2026 は AI 統合やパフォーマンス改善を前面に出し
 ---
 
 ## 10. AIに頼むときの“安全プロンプト”集🤖🛡️
+
+![ai_prompts](./picture/refactoring_cs_study_024_ai_prompts.png)
 
 AIはめっちゃ便利だけど、「一気に全部直して」は事故りやすいです😇
 **1コミット分の小ささ**で頼むのがコツです🌿✨

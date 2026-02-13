@@ -40,6 +40,8 @@ graph TD
 
 ## 攻略のコツは「段落」📖➡️✂️
 
+![paragraph_strategy](./picture/refactoring_cs_study_022_paragraph_strategy.png)
+
 長いメソッドは、いきなり切り始めると事故りがち💥
 まずは **“読むための整頓” → “切る”** の順にするのが安定だよ😊✨
 
@@ -60,11 +62,15 @@ graph TD
 
 ### ルール②：抽出メソッド名は “やること” を言い切る🏷️
 
+![good_naming](./picture/refactoring_cs_study_022_good_naming.png)
+
 * `DoWork()` ❌
 * `ValidateRequest()` ✅
 * `CalculateTotals()` ✅
 
 ### ルール③：引数が増えすぎたら“まとめるサイン”📦
+
+![argument_explosion](./picture/refactoring_cs_study_022_argument_explosion.png)
 
 Extract Method したら引数が6個…みたいになったら、
 
@@ -171,6 +177,8 @@ public class OrderService
 ---
 
 ## After：短くて読める😍✨（“やること”が見出しになる）
+
+![main_method_toc](./picture/refactoring_cs_study_022_main_method_toc.png)
 
 ```csharp
 public async Task<PlaceOrderResult> PlaceOrderAsync(PlaceOrderRequest request, CancellationToken ct)
@@ -301,6 +309,8 @@ public readonly record struct Totals(decimal Subtotal, decimal Shipping, decimal
 
 ## AI活用🤖✨：「分割案3パターン」を出させるコツ
 
+![ai_split_patterns](./picture/refactoring_cs_study_022_ai_split_patterns.png)
+
 Visual Studio 2026 はAI連携が強化されていて、IDE内で相談→差分確認がしやすい流れが続いてるよ🧰🤖 ([Microsoft for Developers][2])
 
 ## おすすめ依頼テンプレ（コピペOK）📋✨
@@ -327,6 +337,8 @@ Visual Studio 2026 はAI連携が強化されていて、IDE内で相談→差�
 
 ## 仕上げチェックリスト✅📌
 
+![finish_checklist](./picture/refactoring_cs_study_022_finish_checklist.png)
+
 * [ ] 元メソッドが **10〜20行くらい**の“読み物”になった？📖
 * [ ] 抽出メソッド名が `Do/Handle/Process` だらけになってない？😇（もっと言い切る🏷️）
 * [ ] 抽出メソッドの引数が増えすぎてない？🧳💦
@@ -336,6 +348,8 @@ Visual Studio 2026 はAI連携が強化されていて、IDE内で相談→差�
 ---
 
 ## よくある失敗🙅‍♀️💥（ここだけ注意！）
+
+![tiny_method_maze](./picture/refactoring_cs_study_022_tiny_method_maze.png)
 
 * **切ったけど名前が雑**で、結局読めない😵‍💫
 * Extract Method の結果、**引数だらけ**になって余計つらい🧳
