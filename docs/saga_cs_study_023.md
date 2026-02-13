@@ -28,6 +28,8 @@ DBアクセスは **EF Core 10（LTS / .NET 10必須）** が基準になりま�
 
 ## 23.2 今日作る“3サービス構成”の完成イメージ🧩🧑‍✈️
 
+![3 Services Architecture](./picture/saga_cs_study_023_3_services_arch.png)
+
 第22章のミニSaga（Orchestration）を、こんな感じに育てます👇
 
 * **Orchestrator（司令塔）**：Saga状態を持つ・遷移する・Outboxを書く🧑‍✈️
@@ -42,6 +44,8 @@ DBアクセスは **EF Core 10（LTS / .NET 10必須）** が基準になりま�
 ## 23.3 重複リクエスト対策：Idempotency-Key を“入口”に立てる🔑🔁
 
 ### 冪等キーのガードレール 🔑🛡️
+
+![Idempotency Key Gate](./picture/saga_cs_study_023_idempotency_gate.png)
 ```mermaid
 graph LR
     Client[クライアント] -- "Idempotency-Key" --> Gateway[Orchestrator]
@@ -60,6 +64,8 @@ graph LR
 * 同じキーが来たら **“前と同じ結果”を返す**（二重にSagaを作らない）✅
 
 ### 23.3.2 DBテーブル：IdempotencyRecords🧾
+
+![Idempotency Record Table](./picture/saga_cs_study_023_idempotency_table.png)
 
 「キー → 作ったSagaId」を保存します。
 
@@ -133,6 +139,8 @@ app.MapPost("/orders", async (HttpRequest req, SagaDbContext db) =>
 ---
 
 ## 23.4 リトライ戦略：HttpClient に“標準の回復力”を載せる🛟🔄
+
+![Resilience Handler Pipeline](./picture/saga_cs_study_023_resilience_pipeline.png)
 
 通信はコケます😇
 なので **Orchestrator → Payment/Inventory** の呼び出しには、標準のリトライ・タイムアウトを入れます。
@@ -211,6 +219,8 @@ public sealed class OutboxMessage
 ```
 
 ### 23.5.2 OutboxDispatcher（送信ワーカー）🔧🚚
+
+![Outbox Dispatcher Loop](./picture/saga_cs_study_023_dispatcher_loop.png)
 
 * 未送信（`ProcessedAtUtc == null`）を拾う
 * 送れたら `ProcessedAtUtc` を入れる
@@ -304,6 +314,8 @@ public sealed class OutboxDispatcher : BackgroundService
 
 ## 23.6 二重実行防止：受信側に Inbox（ProcessedMessages）を置く📥🧷
 
+![Inbox Guard Logic](./picture/saga_cs_study_023_inbox_guard.png)
+
 Payment/Inventory 側は、同じコマンドが2回来ても **1回しか実行しない**必要があります💥
 そこで Inbox（処理済み一覧）を入れます👇
 
@@ -357,6 +369,8 @@ app.MapPost("/commands/PayCommand", async (PayCommand cmd, PaymentDbContext db) 
 ---
 
 ## 23.7 二重補償・二重遷移を止める：状態＋バージョンでガードする🚦🧠
+
+![State Transition Guard](./picture/saga_cs_study_023_state_guard.png)
 
 Orchestrator は、イベントが **遅延・重複・順不同**で来ても壊れない必要があります😵‍💫
 そのために👇

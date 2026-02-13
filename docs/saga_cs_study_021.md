@@ -12,6 +12,8 @@
 
 ## 観測の3点セット（超ざっくり）🍱✨
 
+![Metrics and Traces Focus](./picture/saga_cs_study_021_metrics_focus.png)
+
 * **ログ（Logs）**：文章（いつ・何が・なぜ）🧾
 * **メトリクス（Metrics）**：数字（回数・率・時間）📈
 * **トレース（Traces）**：処理の道筋（A→B→Cの流れ）🧵
@@ -26,6 +28,8 @@
 # 2. メトリクス入門：数字で見る世界📈✨
 
 ## メトリクスの種類（よく使う3つ）🧩
+
+![Metric Types Trio](./picture/saga_cs_study_021_metric_types.png)
 
 * **Counter（カウンター）**：増えるだけ（例：Saga開始回数、補償回数）🔢
 * **Gauge（ゲージ）**：上下する（例：キューの滞留数、処理中Saga数）🎚️
@@ -53,6 +57,8 @@ Sagaで“効きやすい”指標はだいたいこのへん👇
 
 # 3. メトリクスの落とし穴：ラベル地獄😵‍💫🕳️
 
+![Label Explosion](./picture/saga_cs_study_021_label_explosion.png)
+
 メトリクスには「ラベル（タグ）」を付けられるけど、**付けすぎると死ぬ**😇
 
 * 悪い例：`SagaId=（UUID）` をラベルにする❌（種類が無限に増える…）
@@ -63,6 +69,8 @@ Sagaで“効きやすい”指標はだいたいこのへん👇
 # 4. トレース入門：処理の“道筋”をつなぐ🧵✨
 
 ## トレースの基本用語（超ミニ）📚
+
+![Trace and Span Structure](./picture/saga_cs_study_021_trace_structure.png)
 
 * **Trace**：一連の処理（1つの注文の旅）🧳
 * **Span**：処理の区間（決済、在庫確保…）📌
@@ -99,6 +107,8 @@ W3Cの仕様として定義されてるよ（`traceparent` と `tracestate`）�
 ---
 
 ## 6.1 観測を表示する場所：Aspire Dashboard（超便利）📊🧵🧾
+
+![Aspire Dashboard View](./picture/saga_cs_study_021_aspire_dashboard.png)
 
 Aspire Dashboardは **OTLPで飛んできたログ/メトリクス/トレースを可視化** できるダッシュボード✨
 しかも **Aspireを使ってなくても**、OTLP送れるアプリなら見れるよ👍([Microsoft Learn][6])
@@ -178,6 +188,8 @@ app.Run();
 ## 7.2 トレース：Spanの切り方（Sagaっぽく）🧵📌
 
 ### 分散トレースのタイムライン（ガントチャート）🧵📌
+
+![Saga Span Timeline](./picture/saga_cs_study_021_saga_timeline.png)
 ```mermaid
 gantt
     title Saga トレースのイメージ
@@ -310,6 +322,8 @@ finally
 ---
 
 # 9. 非同期（メッセージ）で“トレースをつなぐ”感覚🔗📨✨
+
+![Context Propagation](./picture/saga_cs_study_021_context_propagation.png)
 
 HTTPは自動でつながりやすいけど、**メッセージングは自前で運ぶ場面が多い**よ🧠
 そこで大事なのが **Context Propagation**（コンテキスト伝搬）✨([OpenTelemetry][10])

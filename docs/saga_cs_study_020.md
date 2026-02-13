@@ -1,6 +1,8 @@
 # 第20章：観測の最低ライン（ログ＋CorrelationId）🧾🔗
 
 ### CorrelationId でログを束ねるイメージ 🔗🧵
+
+![Correlation ID Thread](./picture/saga_cs_study_020_correlation_thread.png)
 ```mermaid
 graph TD
     subgraph Req1 [リクエスト A]
@@ -30,6 +32,8 @@ graph TD
 
 # 20-1. Sagaは“失敗が普通”だから、ログが命 🧯😵‍💫
 
+![Saga Failure Scenario](./picture/saga_cs_study_020_failure_scene.png)
+
 Sagaは「複数ステップがまたがる」から、次のどれかがよく起きるよね👇
 
 * ネットワークが不安定でリトライが入る🔁
@@ -43,6 +47,8 @@ Sagaは「複数ステップがまたがる」から、次のどれかがよく�
 ---
 
 # 20-2. 最低ラインの2本柱（これだけは入れる！）🧱✨
+
+![Two Pillars of Observation](./picture/saga_cs_study_020_two_pillars.png)
 
 ## ✅ ① ログ（重要イベントが残る）
 
@@ -69,6 +75,8 @@ Sagaは「複数ステップがまたがる」から、次のどれかがよく�
 
 ## できれば一緒に持ちたいID（強い順）🏋️‍♀️✨
 
+![ID Types Hierarchy](./picture/saga_cs_study_020_id_types.png)
+
 * **SagaId**：SagaそのもののID（CorrelationIdと同一でもOK）
 * **MessageId**：そのメッセージの一意ID（重複排除にも使う）
 * **CausationId**：直前の原因メッセージID（因果チェーン追跡）
@@ -84,6 +92,8 @@ Sagaは「複数ステップがまたがる」から、次のどれかがよく�
 ログに「何を書けばいいの？」問題、ここで固定しちゃおう💪😊
 
 ## ✅ 最低限のログ項目（まずはこれ）
+
+![Log Fields Checklist](./picture/saga_cs_study_020_log_checklist.png)
 
 * [ ] **Timestamp**（いつ）
 * [ ] **LogLevel**（重要度：Info/Warn/Error…）([Microsoft Learn][2])
@@ -115,6 +125,8 @@ Sagaは「複数ステップがまたがる」から、次のどれかがよく�
 * **Log Scope** を使うと、CorrelationIdみたいな共通項目を“まとめて付与”できる！([Microsoft Learn][2])
 
 ## スコープ（BeginScope）がSagaと相性抜群 🔗✨
+
+![Log Scope Wrapper](./picture/saga_cs_study_020_scope_wrapper.png)
 
 「毎回 `CorrelationId=...` を書く」より、スコープで包んだ方がミスが減るよ😊
 
@@ -292,6 +304,8 @@ public sealed class OrderSagaOrchestrator
 # 20-7. “ログで追跡”のやり方（運用の最短手順）🕵️‍♀️🔍
 
 ## 手順（これができれば最低ラインOK）✅
+
+![Tracing Workflow](./picture/saga_cs_study_020_trace_workflow.png)
 
 1. 失敗報告を受ける（例：「注文が失敗した」）📩
 2. そのときの **CorrelationId** を入手する
