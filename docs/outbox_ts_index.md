@@ -2,12 +2,16 @@
 
 ## 第1章：まず“事故”を知ろう（Outboxが必要な理由）😵‍💫💥
 
+![Dual Write Problem](./picture/outbox_ts_index_dual_write_problem.png)
+
 * ありがち事故①：DB更新OK、イベント送信NG → **送信漏れ**📭
 * ありがち事故②：送ったつもりが再送で **二重送信**🔁
 * ありがち事故③：順序が崩れて **状態がねじれる**🌀
 * ゴール🎯：Outboxが「何を守る技」かイメージする
 
 ## 第2章：Outboxを一言で（超ざっくり定義）🧠✨
+
+![Outbox Solution](./picture/outbox_ts_index_outbox_solution.png)
 
 * Outboxとは：**“送る予定”をDBに安全に残す仕組み**📦🧾
 * ポイント：業務更新とOutbox記録を **同じトランザクション** でやる🔐
@@ -91,6 +95,8 @@
 
 ## 第13章：Publisher入門（まずは“疑似送信”でOK）📤🙂
 
+![Relay Worker](./picture/outbox_ts_index_relay_worker.png)
+
 * 未送信のOutboxを拾って処理する（ポーリング）⏱️
 * 送信先は最初ダミーでOK（コンソール出力でも学べる）📢
 * 送信成功 → status更新✅
@@ -162,6 +168,8 @@
 ---
 
 ## 第22章：総合演習ミニプロジェクト（段階クリア方式）🎓🎉
+
+![Course Roadmap](./picture/outbox_ts_index_course_roadmap.png)
 
 * 22-A 最低限：Outboxが動く（書く→拾う→送る）✅
 * 22-B 発展：ロック・リトライ・バックオフ・DLQを追加🚀

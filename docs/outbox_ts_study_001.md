@@ -10,6 +10,8 @@
 
 ## まずは舞台：よくある「注文確定」サービス 🛒📦
 
+![Inconsistency Gap](./picture/outbox_ts_study_001_inconsistency_gap.png)
+
 想像してみてね🙂
 「注文が確定したら、別の仕組みに“注文確定イベント”を送る」みたいな場面。
 
@@ -26,6 +28,8 @@
 ---
 
 ## ありがち事故①：DB更新OK、イベント送信NG → 送信漏れ📭😱
+
+![Order Flow Accident](./picture/outbox_ts_study_001_order_flow_accident.png)
 
 ## 何が起きる？🧨
 
@@ -121,6 +125,8 @@ graph TD
 
 ## Outboxが“守るもの”はこれ🛡️📦
 
+![Outbox Mechanism](./picture/outbox_ts_study_001_outbox_mechanism.png)
+
 Outboxが守るイメージは、ひとことで言うと👇
 
 **「送る予定」を“消えない形”で残しておく** 🧾✨
@@ -191,6 +197,8 @@ sequenceDiagram
 
 ## いまどき実装ルート：ポーリング or CDC 🔁👀
 
+![Polling vs CDC](./picture/outbox_ts_study_001_polling_vs_cdc.png)
+
 Outboxの“届け方”は大きく2つが定番だよ👇
 
 ## 1) ポーリング（送信係が定期的にDBを見に行く）⏱️
@@ -222,6 +230,8 @@ Outboxの“届け方”は大きく2つが定番だよ👇
 * そのときユーザーや運用は何に困る？😵‍💫
 
 ## 演習2：二重送信が起きたら？🔁
+
+![Reliability Shield](./picture/outbox_ts_study_001_reliability_shield.png)
 
 * 2回届いても壊れない処理になってる？🛡️
 * 「2回届くとヤバい処理」はどれ？💥

@@ -31,6 +31,7 @@ Outboxパターンでは、送信側が持ってる **Outboxの行ID（OutboxId�
 ## 3) 受け手側の重複排除：2つの王道 👑
 
 ![Inbox Guard](./picture/outbox_cs_study_020_inbox_guard.png)
+![Method Comparison](./picture/outbox_cs_study_020_method_comparison.png)
 
 ## 方法A：処理済みテーブル（Inbox的なもの）📥🧾（おすすめ！）
 
@@ -82,6 +83,8 @@ Inboxテーブルや業務テーブルに **ユニーク制約**（Unique Index 
 
 ## 6) DB設計：Inbox（処理済み）テーブル 📥🧾
 
+![Inbox Schema](./picture/outbox_cs_study_020_inbox_schema.png)
+
 ## 6.1 最小カラム案（これでOK）✅
 
 * `Consumer`：この受け手アプリ名（例 `"ReceiverApi"`）
@@ -90,6 +93,8 @@ Inboxテーブルや業務テーブルに **ユニーク制約**（Unique Index 
 * `ReceivedAt` / `ProcessedAt`：いつ受けた？いつ処理した？⏰
 
 ## 6.2 超重要：ユニーク制約 🧱✨
+
+![Unique Puzzle Fit](./picture/outbox_cs_study_020_unique_puzzle.png)
 
 **同じ Consumer に同じ MessageId は1回だけ** にする！
 
@@ -199,6 +204,8 @@ public sealed class ReceiverDbContext : DbContext
 ---
 
 ## 7.5 Program.cs：受け手の重複排除ロジック（本丸）👑
+
+![Transaction Train](./picture/outbox_cs_study_020_transaction_train.png)
 
 ポイント付与の処理は **「トランザクションの中で」** こう流すよ👇
 
@@ -370,6 +377,8 @@ SELECT * FROM PointGrants ORDER BY Id DESC;
 
 ## 落とし穴1：`SELECTしてからINSERT` で判定する（レースに弱い）🏃‍♀️💥
 
+![Select Insert Race](./picture/outbox_cs_study_020_select_insert_race.png)
+
 「処理済みか確認して、未処理ならINSERT」ってやると、
 並列で同時に来たときに **両方とも未処理に見えて二重処理** が起きることがあるよ😵‍💫
 
@@ -388,6 +397,8 @@ SELECT * FROM PointGrants ORDER BY Id DESC;
 ---
 
 ## 落とし穴3：Consumer（受け手名）を入れずに MessageId だけでユニークにする 🤔
+
+![Consumer Lanes](./picture/outbox_cs_study_020_consumer_lanes.png)
 
 同じDBを複数の受け手が共有してると、別の受け手まで巻き添えで弾いちゃうことがあるよ〜😵
 

@@ -10,6 +10,8 @@
 
 ## 1) なんで冪等性が必要なの？🤔📬
 
+![Double Point Accident](./picture/outbox_cs_study_019_double_point_accident.png)
+
 Outbox の配送は、だいたい **At-least-once（最低1回は届く）** の発想だよね📩🔁
 この世界では「届かない」より安全にする代わりに、**“同じメッセージが2回以上届くことがある”** のが自然な挙動になるよ〜😅
 
@@ -28,6 +30,7 @@ Outbox の配送は、だいたい **At-least-once（最低1回は届く）** �
 ## 2) 冪等性ってなに？🧷📘（超やさしく）
 
 ![Idempotency Concept](./picture/outbox_cs_study_019_idempotency_concept.png)
+![Idempotency Stamp](./picture/outbox_cs_study_019_idempotency_stamp.png)
 
 **冪等性＝同じお願いを何回されても、最終結果が変わらないこと** 🔁➡️🟰
 
@@ -52,6 +55,8 @@ Outbox の配送は、だいたい **At-least-once（最低1回は届く）** �
 
 ## 3) 「HTTPの冪等性」と似てる話 🌐🧠
 
+![HTTP Methods Idempotency](./picture/outbox_cs_study_019_http_methods.png)
+
 Web API の世界でも、冪等性は超重要だよ〜📡✨
 一般に **PUT は冪等**（同じ内容を何回送っても同じ状態に落ち着く）で、**POST は冪等じゃない**（作成が2回走るかも）って扱いが多いんだ📮
 Microsoft の API設計ガイドでも「PUTは冪等、POST/PATCHは保証されない」って整理されてるよ。([Microsoft Learn][2])
@@ -62,6 +67,8 @@ IETF のドラフトでも「POST/PATCHを再試行可能にする」目的が�
 ---
 
 ## 4) Outbox での冪等性：どこで守る？🤝🛡️
+
+![Receiver Goalie](./picture/outbox_cs_study_019_receiver_goalie.png)
 
 結論から言うね👇
 **基本は “受け手（コンシューマ）” が守る** ✅
@@ -76,6 +83,8 @@ IETF のドラフトでも「POST/PATCHを再試行可能にする」目的が�
 
 ## 5) Idempotency Key（冪等キー）って何？🪪🔑
 
+![Golden Idempotency Key](./picture/outbox_cs_study_019_golden_key.png)
+
 冪等性を守るために、メッセージに **“この処理はこれだよ”** って分かる **一意のID** を付けるのが定番だよ📌
 
 Outbox だとだいたいこうなる👇
@@ -88,6 +97,8 @@ Outbox だとだいたいこうなる👇
 ---
 
 ## 6) 受け手の基本戦略（考え方）📥✅
+
+![Atomic Scope Safe](./picture/outbox_cs_study_019_atomic_scope.png)
 
 受け手側はこう考えると分かりやすいよ👇
 

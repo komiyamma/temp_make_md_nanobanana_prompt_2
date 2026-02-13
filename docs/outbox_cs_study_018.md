@@ -11,6 +11,8 @@
 
 ## 1. 配達保証の3兄弟 📦👨‍👩‍👧‍👦
 
+![Delivery Types](./picture/outbox_cs_study_018_delivery_types.png)
+
 メッセージ配達の世界には、ざっくり3つの「保証レベル」があるよ〜😊✨
 
 ## 1) At-most-once（最大1回）🎯
@@ -48,6 +50,7 @@ Outboxの基本ゴールは、超シンプルに言うとこれ👇
 ## 3. 「最低1回」は、なぜ重複するの？👯💥
 
 ![At Least Once](./picture/outbox_cs_study_018_at_least_once.png)
+![Ack Lost Bridge](./picture/outbox_cs_study_018_ack_lost_bridge.png)
 
 ここが超大事〜！！！😺✨
 重複が起きる理由は、だいたい **“失敗したように見える”** からだよ。
@@ -77,6 +80,8 @@ Relay（配送係）             ブローカー/送信先
 
 ## 4. 「送れたかどうか」は意外と曖昧 🤷‍♀️🌀
 
+![Schrodinger's ACK](./picture/outbox_cs_study_018_schrodingers_ack.png)
+
 送信処理って、結果がだいたい3種類あるのね👇
 
 ## A. 成功が確定 ✅
@@ -103,6 +108,8 @@ Relay（配送係）             ブローカー/送信先
 
 ## 5. Outboxで重複が生まれる“穴”はここ 🕳️👀
 
+![Crash Runner](./picture/outbox_cs_study_018_crash_runner.png)
+
 Outboxはざっくり二段階だよね👇
 
 1. 業務テーブル更新＋Outbox行追加（同一トランザクション）🔒
@@ -123,6 +130,8 @@ Outboxはざっくり二段階だよね👇
 
 ## 6. 「じゃあExactly-onceって無理なの？」への現実的な答え 🧠✨
 
+![Azure Duplicate Detection](./picture/outbox_cs_study_018_azure_duplicate_detection.png)
+
 エンドツーエンド（DB更新＋外部副作用まで含めて）で「ちょうど1回」をやるのは難しい、ってのが基本姿勢だよ〜💦
 たとえばKafkaの設計ドキュメントでも、Exactly-onceには「消費位置と出力の協調（必要なら2PC的な話）」が絡む、というニュアンスが説明されてるよ。([kafka.apache.org][3])
 
@@ -142,6 +151,8 @@ Azure Service Bus は、MessageId の履歴を一定期間保持して、同じI
 ---
 
 ## 7. ミニ実験：重複が“自然に”起きるのを体感しよう 🧪👯
+
+![Flaky Dice Publisher](./picture/outbox_cs_study_018_flaky_dice.png)
 
 本物のブローカーを使わなくても、「ACKが消える」を疑似的に作ると理解が爆速だよ〜🚀
 
