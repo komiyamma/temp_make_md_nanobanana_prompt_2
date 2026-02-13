@@ -28,6 +28,8 @@ Nodeって、リクエストが来るたびに別スレッドが立つ…みた�
 
 ## 2) “await”があると何が起きる？（ここがミソ）🧠🧵
 
+![await_pause](./picture/observer_ts_study_005_await_pause.png)
+
 ## ✅ 同期処理（まっすぐ一本道）🏃‍♀️💨
 
 普通の同期関数は、だいたいこう👇
@@ -48,6 +50,8 @@ Nodeって、リクエストが来るたびに別スレッドが立つ…みた�
 ---
 
 ## 3) いちばんイメージしやすい“混ざる例”🍝🌀
+
+![kitchen_analogy](./picture/observer_ts_study_005_kitchen_analogy.png)
 
 「2人分の料理を同時に作ってるキッチン」みたいなもの👩‍🍳🍳
 
@@ -83,6 +87,8 @@ sequenceDiagram
 ---
 
 ## 4) ミニコードで“ログが混ざる”を体験しよ🧪😆
+
+![mixed_logs](./picture/observer_ts_study_005_mixed_logs.png)
 
 「同時に2リクエストが来た」つもりで、処理をわざと待たせる例だよ👇
 
