@@ -8,6 +8,10 @@ Sagaの世界は「外部I/O（ネットワーク・別サービス）」が前�
 タイムアウトが無いとどうなる？👇
 
 * リクエストがず〜っと待ち続けて、スレッド/コネクション/メモリを食い続ける🍔🧠
+
+![saga_ts_study_021_zombie_request](./picture/saga_ts_study_021_zombie_request.png)
+
+
 * 「どこまで進んだか分からない」まま、Sagaが迷子になる🚶‍♀️💫
 * リトライが遅れて、復旧がさらに遅くなる🐢💦
 * 最悪、待ち続けが増えてサービスが詰む（雪だるま）⛄💥
@@ -19,6 +23,10 @@ Sagaの世界は「外部I/O（ネットワーク・別サービス）」が前�
 ## 21.2 まず整理！タイムアウトは1種類じゃないよ📚🧩
 
 ざっくり、タイムアウトには「どこまで待つ？」が複数あります👇（用語は実装やライブラリで多少ズレます）
+
+![saga_ts_study_021_timeout_types_hurdles](./picture/saga_ts_study_021_timeout_types_hurdles.png)
+
+
 
 * **接続タイムアウト（connect timeout）**：そもそも繋がらない…の待ち時間🔌⏳
 * **ヘッダ受信タイムアウト（headers timeout）**：相手が応答開始しない…の待ち時間📨⌛
@@ -40,6 +48,10 @@ Sagaの世界は「外部I/O（ネットワーク・別サービス）」が前�
 * **ネットワーク**：途中で返事が落ちただけかも
 
 つまりタイムアウトは、しばしば **「失敗」ではなく「結果が分からない（Unknown）」** です😵‍💫
+
+![saga_ts_study_021_timeout_unknown_cat](./picture/saga_ts_study_021_timeout_unknown_cat.png)
+
+
 
 だからSagaでは、タイムアウトを受けたら次のどれにするかを決めます👇
 
@@ -89,6 +101,10 @@ graph TD
 
 今どきは **AbortController / AbortSignal** でキャンセル（中断）を統一するのが超王道です✋✨
 特に `AbortSignal.timeout()` は「指定時間で自動中断」できて便利です⏰🛑 ([MDNウェブドキュメント][2])
+
+![saga_ts_study_021_abort_signal_whistle](./picture/saga_ts_study_021_abort_signal_whistle.png)
+
+
 
 ### 21.5.1 fetch にタイムアウトを付ける（いちばんシンプル）🌟
 
@@ -145,6 +161,10 @@ Nodeの `fetch` は内部で undici を使うため、**headers/body のタイ�
 
 Axiosは `timeout` オプションで「何msで打ち切るか」を指定できます🔧
 そして既定は `0`（= タイムアウト無し）です😱 ([axios-http.com][6])
+
+![saga_ts_study_021_axios_infinite_trap](./picture/saga_ts_study_021_axios_infinite_trap.png)
+
+
 
 ```ts
 import axios from "axios";
@@ -282,6 +302,10 @@ const reserveStockStep: StepDefinition = {
 
 Sagaは途中で止まることがあるので、**放置しない仕組み**が必要です📌
 
+![saga_ts_study_021_saga_watchdog](./picture/saga_ts_study_021_saga_watchdog.png)
+
+
+
 * Saga状態に `deadlineAt`（いつまでに終えるか）を保存🗓️
 * 定期ジョブで「deadlineを超えたSaga」を検出🔎
 * 超えてたら `TimedOut` にして、運用通知 or 自動補償（慎重に）📣🧯
@@ -323,6 +347,10 @@ Copilot/Codexに投げると便利なお願い例👇
 1. 各Stepの「1回の呼び出しタイムアウト(A)」を決めてみてね✍️
 2. リトライ込みの「Stepタイムアウト(B)」も決めてみてね🔁
 3. 合計が全体20秒(C)を超えないように調整してみてね🧠✨
+
+![saga_ts_study_021_timeout_budget_pie](./picture/saga_ts_study_021_timeout_budget_pie.png)
+
+
 
 ### 演習2：TIMEOUTの扱いを決めよう😵‍💫❓
 

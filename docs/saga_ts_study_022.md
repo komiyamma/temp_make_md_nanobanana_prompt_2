@@ -18,6 +18,10 @@
 
 Google Cloudのガイドも「一時的エラーだけをリトライしてね」ってはっきり言ってるよ📌([Google Cloud Documentation][2])
 
+![saga_ts_study_022_transient_vs_permanent](./picture/saga_ts_study_022_transient_vs_permanent.png)
+
+
+
 ### ❌ リトライしない方がいい（＝永続的：permanent）🧱
 
 代表例：
@@ -56,6 +60,10 @@ Azureのガイドでも、タイムアウトとリトライ間隔と回数を合
 ### (C) ジッター（ランダムな揺らぎ）🎲
 
 みんなが同時に「2秒後に再試行！」ってなると、また同時に殺到して再び落ちるの…😱🌀
+
+![saga_ts_study_022_jitter_crowd](./picture/saga_ts_study_022_jitter_crowd.png)
+
+
 だから“ちょいランダム”を混ぜて、再試行タイミングをバラけさせるのがコツだよ🎯([Amazon Web Services, Inc.][4])
 
 ![Backoff & Jitter](./picture/saga_ts_study_022_backoff.png)
@@ -86,6 +94,10 @@ graph LR
 ### ルール③：バックオフは“上限（cap）”を必ず付ける🧢
 
 指数バックオフは放置すると待ちが長くなりすぎるから、上限で止めるよ（例：最大30秒）⛔
+
+![saga_ts_study_022_retry_cap](./picture/saga_ts_study_022_retry_cap.png)
+
+
 AWSも「上限を付けよう」って強調してる📌([Amazon Web Services, Inc.][1])
 
 ---
@@ -99,6 +111,10 @@ Sagaは分割処理だから、リトライを雑に入れると事故りやす�
 サービス呼び出しが何段も重なってると、各段で3回リトライ…みたいにすると、下流への負荷が爆増しちゃう🥶
 AWSは「レイヤーごとに勝手にリトライが増えると、負荷が掛け算で増える」って具体例まで出して警告してるよ⚠️([Amazon Web Services, Inc.][1])
 
+![saga_ts_study_022_multi_layer_retry](./picture/saga_ts_study_022_multi_layer_retry.png)
+
+
+
 👉 だからSagaでは基本、
 
 * **オーケストレーター（司令塔）側で“まとめて制御”**
@@ -110,9 +126,17 @@ AWSは「レイヤーごとに勝手にリトライが増えると、負荷が�
 リトライ＝同じStepが複数回走る可能性がある、ってこと。
 「二重決済」「二重出荷」みたいな地獄が起きるから、**冪等性（第16〜17章）とセット**で考えるのが大前提だよ🔑💕
 
+![saga_ts_study_022_idempotency_safety](./picture/saga_ts_study_022_idempotency_safety.png)
+
+
+
 ### 肝③：Sagaログに「試行回数」「次回実行予定」を残す📒🖊️
 
 最低でもこんな感じを持つと運用しやすい👇
+
+![saga_ts_study_022_saga_log](./picture/saga_ts_study_022_saga_log.png)
+
+
 
 * attemptCount（何回目？）🔢
 * nextRetryAt（次はいつ？）🗓️
@@ -124,6 +148,10 @@ AWSは「レイヤーごとに勝手にリトライが増えると、負荷が�
 ## 6) バックオフ＋ジッターの定番：Full Jitter（超よく使う）🎲📉
 
 AWSの解説では、ジッターの入れ方として **Full Jitter** みたいなバリエーションが紹介されてるよ✨([Amazon Web Services, Inc.][4])
+
+![saga_ts_study_022_full_jitter_dice](./picture/saga_ts_study_022_full_jitter_dice.png)
+
+
 
 ```mermaid
 graph TD

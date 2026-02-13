@@ -18,11 +18,19 @@ Sagaは、複数サービスにまたがる処理を「各サービスのロー�
 * ほかの処理も同時に走ってるので、単純に巻き戻すと**別の正しい変更まで消える**ことがある😱
 * だから補償は、基本 **“意味的（セマンティック）に帳尻を合わせる操作”**になるよ🧠✨ ([temporal.io][2])
 
+![saga_ts_study_020_semantic_consistency](./picture/saga_ts_study_020_semantic_consistency.png)
+
+
+
 ---
 
 # 2. 「戻せない」が発生する典型パターン集😵‍💫📦💸
 
 「戻せない」って、だいたい次のどれかだよ👇
+
+![saga_ts_study_020_irreversible_spill](./picture/saga_ts_study_020_irreversible_spill.png)
+
+
 
 ## A. 現実世界に出ちゃった系（不可逆）🚚📦
 
@@ -90,6 +98,10 @@ graph LR
 
 “元に戻す”じゃなくて“帳尻を合わせる”方式！
 
+![saga_ts_study_020_strategy_correct](./picture/saga_ts_study_020_strategy_correct.png)
+
+
+
 * 決済済み → 返金（返金は「逆決済」ではなく「別取引」だと思うと理解が楽）💸
 * メール送信済み → 訂正メールを送る📩
 * 発送済み → 返品フローを起動する📦↩️
@@ -100,6 +112,10 @@ graph LR
 
 “本番確定”を最後に回すと事故が減るよ〜！
 TCC（Try-Confirm-Cancel）は、リソースをまず**予約状態（Try）**にして、最後に**確定（Confirm）**、ダメなら**取消（Cancel）**する考え方だよ📦🔒 ([docs.oracle.com][4])
+
+![saga_ts_study_020_strategy_tcc](./picture/saga_ts_study_020_strategy_tcc.png)
+
+
 
 * 在庫：いきなり「減らす」じゃなく「取り置き」
 * 発送：いきなり「発送」じゃなく「ラベル作成」や「出荷予約」
@@ -114,6 +130,10 @@ TCC（Try-Confirm-Cancel）は、リソースをまず**予約状態（Try）**�
 * 監査ログと証跡を残して、人が判断できるようにする📝
 
 これ、逃げじゃなくて**現実的に最強**なこと多いよ😌✨
+
+![saga_ts_study_020_strategy_escalate](./picture/saga_ts_study_020_strategy_escalate.png)
+
+
 
 ```mermaid
 mindmap
@@ -170,6 +190,10 @@ mindmap
 4. 発送 “予約” → 最後に本発送🚚✨（Pivotをできるだけ後ろへ）
 
 「不可逆を遅らせる」だけで、補償がめちゃラクになるよ〜！🥹✨ ([Microsoft Learn][3])
+
+![saga_ts_study_020_reorder_steps](./picture/saga_ts_study_020_reorder_steps.png)
+
+
 
 ```mermaid
 flowchart LR
@@ -250,6 +274,10 @@ Temporalの解説でも、補償は「実行されたか不明でも安全に動
 ## コツ② 補償の順番は「逆順」が基本🔁
 
 Sagaの定番：進んだ順の逆に戻す（最後にやった副作用からほどく）🧵
+
+![saga_ts_study_020_compensation_lifo](./picture/saga_ts_study_020_compensation_lifo.png)
+
+
 （Saga解説でもこの“補償で元に戻す”考え方が中心だよ） ([Microsoft Learn][3])
 
 ## コツ③ Escalate を恥ずかしがらない🧑‍💼✨
