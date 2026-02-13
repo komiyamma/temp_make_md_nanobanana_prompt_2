@@ -11,6 +11,8 @@ Outboxテーブルは「**あとで送るメッセージ（イベント）を、
 * Outboxテーブル：「送る封筒」✉️（イベントを入れておく）
 * 送信係（Publisher/Relay）：封筒を拾って外へ届ける📤
 
+![safe_keeping](./picture/outbox_ts_study_009_safe_keeping.png)
+
 ---
 
 ## 9.2 まずは“最小カラム”でOK！🧠✨（最初の5つ）
@@ -28,6 +30,8 @@ erDiagram
 
 ![table schema](./picture/outbox_ts_study_009_table_schema.png)
 学習用は、まずこの5つでいけます👍✨
+
+![five_fingers](./picture/outbox_ts_study_009_five_fingers.png)
 
 1. **id（イベントID）** 🆔
 
@@ -68,11 +72,15 @@ statusは「送信係が安全に動く」ための超重要パーツです🚦
 * **sent**：送信できた✅
 * （発展）**failed**：失敗した😢 → リトライや隔離へ
 
+![status_traffic_light](./picture/outbox_ts_study_009_status_traffic_light.png)
+
 ### 👯‍♀️ “送信係が複数”でも二重送信しにくくする考え方
 
 複数ワーカーでOutboxを拾うとき、DBロックで「同じ行を同時に取らない」ようにする方法がよく使われます🔒
 代表が **SELECT … FOR UPDATE SKIP LOCKED**（ロックできない行は飛ばす）です🏃‍♀️💨
 これは「キューっぽいテーブル」を複数の消費者で処理するときの競合回避に使える、と説明されています📌 ([PostgreSQL][2])
+
+![skip_locked](./picture/outbox_ts_study_009_skip_locked.png)
 
 ---
 
@@ -86,11 +94,15 @@ Outboxテーブルは、送信係がだいたいこういう条件で取りに�
 
 つまり、**status** と **createdAt** は最小でも必要になりやすいです👍✨
 
+![query_filter](./picture/outbox_ts_study_009_query_filter.png)
+
 ---
 
 ## 9.5 最小→実戦の“成長カラム”🪜✨（後から足せる）
 
 最初から全部盛りにしない！でも将来こう足せる！が大事🙂🌱
+
+![growth_levels](./picture/outbox_ts_study_009_growth_levels.png)
 
 ### レベル0（学習最小）🌱
 
@@ -175,6 +187,8 @@ export type OutboxEvent = {
 題材：**注文確定（OrderPlaced）** 🛒✅
 
 ✅ Outbox 1行に入れるものを埋めてみよう👇
+
+![envelope_fill](./picture/outbox_ts_study_009_envelope_fill.png)
 
 * id：どんな形式？（UUID？連番？）🆔
 * eventType：OrderPlaced でOK？ もっと細かくする？🏷️

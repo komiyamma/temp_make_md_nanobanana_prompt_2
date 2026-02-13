@@ -48,6 +48,8 @@ flowchart LR
 
 だから多くの分散システムでは、**一部は非同期にして“追いつかせる”**設計をすることが多いよ🌈 ([ウィキペディア][1])
 
+![reality_check](./picture/outbox_ts_study_005_reality_check.png)
+
 ---
 
 ## 3. “すぐ一致” と “あとで一致” の違い（超イメージ）🧠✨
@@ -65,6 +67,8 @@ flowchart LR
 ここで大事なのは👇
 **最終的整合性＝テキトー**じゃないよ！🙅‍♀️
 「遅れてもいい範囲」を決めて、**安全に遅らせる**のが設計なんだ😊
+
+![consistency_comparison](./picture/outbox_ts_study_005_consistency_comparison.png)
 
 ---
 
@@ -96,6 +100,8 @@ flowchart LR
 
 この領域が、Outboxと相性がいいことが多いよ📦✨
 
+![ux_scale](./picture/outbox_ts_study_005_ux_scale.png)
+
 ### 4.3 “遅れてる”を優しく見せるUIの工夫 🪄😊
 
 最終的整合性を採用するなら、UIで不安を減らすのが超大事！✨
@@ -113,6 +119,8 @@ flowchart LR
 
   * 送信ボタン連打を防止（押したら無効化）🛑
   * 「同じ操作を繰り返しても大丈夫」な設計（冪等性は後の章でやるよ🛡️）
+
+![status_ui](./picture/outbox_ts_study_005_status_ui.png)
 
 ---
 
@@ -134,6 +142,8 @@ Outbox（Transactional Outbox）はざっくり👇
 
 という考え方だよ🧾📤
 （“確実に送る”ための定番パターンとして整理されているよ）([microservices.io][2])
+
+![safety_net](./picture/outbox_ts_study_005_safety_net.png)
 
 また、最近だと分散アプリ基盤（例：Dapr）でも Outbox の考え方が “How-To” として整理されてたりするよ🧰✨ ([Dapr Docs][3])
 
@@ -168,6 +178,8 @@ Outbox（Transactional Outbox）はざっくり👇
 **「送信失敗しても、後で再挑戦できる」**
 を支える仕組みなんだ🛡️📦 ([AWS ドキュメント][4])
 
+![convergence](./picture/outbox_ts_study_005_convergence.png)
+
 ---
 
 ## 7. よくある落とし穴 😱🌀（最終的整合性あるある）
@@ -176,6 +188,8 @@ Outbox（Transactional Outbox）はざっくり👇
 
 * 一覧は別サービス or 別キャッシュ参照で遅れてる
   👉 対策：状態表示・自動更新・検索条件の工夫🙂🔄
+
+![pitfall_missing](./picture/outbox_ts_study_005_pitfall_missing.png)
 
 ### 落とし穴②：「メール来ないから、もう一回注文した」🛒🔁
 

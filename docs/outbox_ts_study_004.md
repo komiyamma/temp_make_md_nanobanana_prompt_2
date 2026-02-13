@@ -54,6 +54,8 @@
 * タイムアウト増える⌛💥
 * 再試行でさらに混む🔁🔥（地獄ループ）
 
+![three_realities](./picture/outbox_ts_study_004_three_realities.png)
+
 ---
 
 ## 3) 同期でやると起きやすい“事故”を見てみよう😵‍💫💥
@@ -77,6 +79,8 @@
 ここで起きるのが、まさにOutboxが防ぎたい世界観📦🛡️
 （「業務更新は成功したのに、通知だけ落ちた」みたいなやつ）📭
 
+![sync_accident](./picture/outbox_ts_study_004_sync_accident.png)
+
 ---
 
 ## 4) 非同期にすると“何が嬉しい”の？🌈✨
@@ -96,6 +100,8 @@
 一時的に失敗したら、あとで再送すればOK🙆‍♀️
 この「再送前提」が超重要😇
 
+![async_benefits](./picture/outbox_ts_study_004_async_benefits.png)
+
 ---
 
 ## 5) 「非同期＝別スレッド？」って思いがち問題🧠🌀
@@ -110,6 +116,8 @@
 * **待ち時間（I/O）を抱えない**（外部呼び出し・ネットワーク・DBなど）📡
 * **処理を分ける**（今やる／あとでやる）✂️
 * **失敗の回収ルートを用意する**（リトライ・隔離）🧯
+
+![waiter_metaphor](./picture/outbox_ts_study_004_waiter_metaphor.png)
 
 ---
 
@@ -128,6 +136,8 @@
 1. **一時的**：ネットワーク不安定、相手が一瞬落ちた🌧️ → リトライで治る可能性大
 2. **恒久的**：データ不正、送信先が存在しない🧱 → 何回やっても無理
 3. **仕様的**：その状態では送っちゃダメ🚫 → ロジック修正が必要
+
+![failure_types](./picture/outbox_ts_study_004_failure_types.png)
 
 ---
 
@@ -149,6 +159,8 @@
 
 この「送る予定」こそが Outbox の芯📦🧠
 （まだ深掘りしないけど、“非同期の考え方”としてここで覚えるのが大事）✨
+
+![now_vs_later](./picture/outbox_ts_study_004_now_vs_later.png)
 
 ---
 

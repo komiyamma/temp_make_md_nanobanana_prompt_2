@@ -41,6 +41,8 @@ Outboxに入れるのは、ざっくり言うと **“送る内容そのもの�
 * いつ作られたか（作成日時）🕒
 * （あとで章が進むと）状態（未送信/送信済み/失敗など）🚦
 
+![message_structure](./picture/outbox_ts_study_002_message_structure.png)
+
 ここでは細かい設計はまだやらないよ🙂
 大事なのは、**「送信に必要な情報を、あとで取り出せる形で残す」**って感覚！
 
@@ -59,6 +61,8 @@ Transactional Outboxは、これをこうする👇
 
 * **注文確定（業務データ更新）＋Outboxに“送る予定”追加**を
   **同じトランザクションでコミット**する🔐✅
+
+![atomicity_lock](./picture/outbox_ts_study_002_atomicity_lock.png)
 
 すると、こう言えるようになる🎯
 
@@ -82,6 +86,8 @@ Outboxは **保管場所**📦
 * 🗄️ **DB**：業務テーブル＋Outboxテーブル
 * 📦 **Outbox**：送る予定のメッセージ置き場
 * 📤 **Message Relay / Publisher（送信係）**：Outboxから拾って実際に送る係
+
+![storage_vs_delivery](./picture/outbox_ts_study_002_storage_vs_delivery.png)
 
 この形が基本パターンとして整理されてるよ📚
 ([microservices.io][1])
@@ -115,6 +121,8 @@ flowchart TD
 
 ### B) 変更検知（CDC：Change Data Capture）🔍⚡
 
+![polling_vs_cdc_visual](./picture/outbox_ts_study_002_polling_vs_cdc_visual.png)
+
 DBの変更（ログやストリーム）を見て「Outboxに追加された！」を検知して送る方式。
 例えば Debezium はOutboxテーブルの変更をキャプチャしてイベント化する考え方を公式ドキュメントで説明してるよ📘
 ([Debezium][4])
@@ -131,6 +139,8 @@ Outboxが刺さるのは、だいたいこのへん👇
 * 🔗 **外部連携**：決済OK → 会計システムへ連携
 * 🧩 **非同期処理**：画像生成依頼 → バックグラウンド処理へ投入
 * 🧱 **マイクロサービス間のイベント連携**：在庫更新 → 別サービスへ伝える
+
+![use_case_hub](./picture/outbox_ts_study_002_use_case_hub.png)
 
 要するに、**「DB更新の結果を、他の場所へ伝えたい」**って時に使う📣✨
 “内部状態（DB）”と“外部に流したイベント”のズレを避ける、という説明も代表的だよ🛡️
@@ -156,6 +166,8 @@ Outboxが刺さるのは、だいたいこのへん👇
 ## 2.8 “超ざっくり”擬似コード（TypeScript）🧩✨
 
 ※ここでは概念をつかむための雰囲気コードだよ🙂（DBライブラリは何でもOK）
+
+![transaction_scope_visual](./picture/outbox_ts_study_002_transaction_scope_visual.png)
 
 ```ts
 type Order = { id: string; status: "PLACED" | "CANCELLED" };
