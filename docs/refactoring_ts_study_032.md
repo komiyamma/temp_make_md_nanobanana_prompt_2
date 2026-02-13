@@ -18,6 +18,8 @@
 ---
 
 ## まず知っておきたい：any が危ない理由💣😵‍💫
+![refactoring_ts_study_032_any_trap_unknown_box](./picture/refactoring_ts_study_032_any_trap_unknown_box.png)
+
 
 `any` は「何でもできる」代わりに、TypeScript の型チェックがほぼ効かなくなる“脱法ハッチ”です🚪💨
 プロパティもメソッドも、存在してなくても通ってしまい、**実行時に落ちる**可能性が上がります⚠️
@@ -66,6 +68,8 @@ graph LR
 ---
 
 ## いつ unknown を使うの？🧭✨（使いどころは“境界”）
+![refactoring_ts_study_032_boundary_protection](./picture/refactoring_ts_study_032_boundary_protection.png)
+
 
 `unknown` は、だいたいここで出てきます👇
 
@@ -107,6 +111,8 @@ graph LR
 ---
 
 ## 例①：JSON.parse の any を卒業🎓🧾
+![refactoring_ts_study_032_json_parse_danger](./picture/refactoring_ts_study_032_json_parse_danger.png)
+
 
 ### ビフォー😵‍💫（any でスルーしちゃう）
 
@@ -161,6 +167,8 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 ---
 
 ## 例②：fetch().json() の戻りを unknown で受ける🌐🧪
+![refactoring_ts_study_032_fetch_unknown_flow](./picture/refactoring_ts_study_032_fetch_unknown_flow.png)
+
 
 `Response.json()` は型的に扱いがゆるくなりがちなので、境界として `unknown` で受けるのが安全です🛡️
 
@@ -203,6 +211,8 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 ## “unknown化”のコツ🌸（失敗しにくい考え方）
 
 ### コツ1：unknown をアプリの奥まで運ばない🚫📦
+![refactoring_ts_study_032_containment_strategy](./picture/refactoring_ts_study_032_containment_strategy.png)
+
 
 `unknown` のままアプリ内部に持ち込むと、毎回チェックが必要でしんどいです😵‍💫
 **境界で受けて、早めに型を確定**させましょう✅
@@ -217,6 +227,8 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 ---
 
 ## Lintで any を増やさない🚫🧯（おすすめ設定）
+![refactoring_ts_study_032_eslint_guard](./picture/refactoring_ts_study_032_eslint_guard.png)
+
 
 `@typescript-eslint/no-explicit-any` を有効にすると、明示的な `any` を検出できます👮‍♀️⚠️
 ルールページでも、`unknown` が代替案として挙げられています。 ([TypeScript ESLint][2])
@@ -261,6 +273,8 @@ ESLint の無効化コメントの書き方は定番として知られていま�
 ---
 
 ## AI活用ポイント🤖✨（お願い方＋チェック観点✅）
+![refactoring_ts_study_032_ai_any_scanner](./picture/refactoring_ts_study_032_ai_any_scanner.png)
+
 
 ### ① any 探し＆置換案を出してもらう🔍
 

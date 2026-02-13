@@ -18,6 +18,8 @@
 ---
 
 ## まずは超ざっくり：null と undefined の違い🧃
+![refactoring_ts_study_030_null_vs_undefined](./picture/refactoring_ts_study_030_null_vs_undefined.png)
+
 
 * **undefined**：値が「まだ無い／渡されてない／存在しない」🫥
   例）オプション引数を渡さなかった、`find` が見つけられなかった、プロパティが無い、など
@@ -30,6 +32,8 @@
 ---
 
 ## null/undefined が出る7つの“あるある”パターン👀✨
+![refactoring_ts_study_030_seven_patterns](./picture/refactoring_ts_study_030_seven_patterns.png)
+
 
 ### ① 未設定（オプション引数・初期化漏れ）🫧
 
@@ -75,6 +79,8 @@
 ## コード例（ビフォー/アフター）🧩➡️✨
 
 ### 例1：検索失敗（`find`）で落ちる💥
+![refactoring_ts_study_030_find_failure](./picture/refactoring_ts_study_030_find_failure.png)
+
 
 **ビフォー（見つかる前提で書いちゃう）**
 
@@ -123,6 +129,8 @@ export function greet(userId: string) {
 ---
 
 ### 例2：DOM（`querySelector`）は null を返す🧩
+![refactoring_ts_study_030_dom_failure](./picture/refactoring_ts_study_030_dom_failure.png)
+
 
 **ビフォー（要素ある前提）**
 
@@ -151,6 +159,8 @@ if (!button) {
 ---
 
 ## 「どこで生まれて、どこで落ちる？」マップ作り🗺️✨
+![refactoring_ts_study_030_propagation_river](./picture/refactoring_ts_study_030_propagation_river.png)
+
 
 ![Concept: Null Map](./picture/refactoring_ts_study_030_null_map.png)
 
@@ -192,6 +202,8 @@ null/undefined は、**1点で生まれて、川みたいに下流へ流れる**
 ---
 
 ## 見つける力が上がる「守りのスイッチ」3つ🔧🧷
+![refactoring_ts_study_030_safety_switches](./picture/refactoring_ts_study_030_safety_switches.png)
+
 
 “理解”のために、**型が気づかせてくれる状態**に寄せるのがコツだよ✅
 
@@ -247,6 +259,8 @@ function getProductPrice(products: Product[], id: string) {
 ---
 
 ## AI活用ポイント🤖✅（お願い方＋チェック観点）
+![refactoring_ts_study_030_ai_map_analysis](./picture/refactoring_ts_study_030_ai_map_analysis.png)
+
 
 ### 1) 発生源の洗い出しをしてもらう🔍
 

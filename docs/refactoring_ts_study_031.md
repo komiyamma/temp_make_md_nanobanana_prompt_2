@@ -36,8 +36,12 @@ graph TD
 ```
 
 ## まず覚える！安全な3点セット🧰✨
+![refactoring_ts_study_031_safe_tools_trio](./picture/refactoring_ts_study_031_safe_tools_trio.png)
+
 
 ### ① オプショナルチェーン `?.`（無いならそこで止まる）⛔️➡️🫧
+![refactoring_ts_study_031_optional_chaining](./picture/refactoring_ts_study_031_optional_chaining.png)
+
 
 * `a?.b` / `a?.[0]` / `a?.()` みたいに書けるよ🙂
 * `a` が `null/undefined` なら、**例外を投げずに `undefined` になる**🛟
@@ -84,6 +88,8 @@ const displayName = user?.profile?.nickname ?? "ゲスト";
 ---
 
 ### パターンC：`||` を `??` に直して “0事故” を防ぐ🔧🛟
+![refactoring_ts_study_031_nullish_vs_or](./picture/refactoring_ts_study_031_nullish_vs_or.png)
+
 
 **ビフォー（地味にバグる）**😵
 
@@ -118,6 +124,8 @@ function normalize(o: Options) {
 ---
 
 ### パターンE：「無いのはエラー」なら、最初に止める🚨
+![refactoring_ts_study_031_early_return_guard](./picture/refactoring_ts_study_031_early_return_guard.png)
+
 
 「無いのに進める」より、**分かりやすいエラー**にする方が安全なことも多いよ🧯
 
@@ -133,6 +141,8 @@ function requireUser(user: { id: string } | null | undefined) {
 ---
 
 ### パターンF：`!`（non-null assertion）は“最後の手段”にする🙅‍♀️
+![refactoring_ts_study_031_bang_danger](./picture/refactoring_ts_study_031_bang_danger.png)
+
 
 ```ts
 user!.profile!.nickname! // ← これ、実行時は普通に落ちる可能性ある😭
@@ -181,6 +191,8 @@ export function getDiscountPercent(user: User | null): number {
 ---
 
 ## “無い”をどう扱う？ミニ方針（迷ったらこれ）🧭✨
+![refactoring_ts_study_031_handling_no_value](./picture/refactoring_ts_study_031_handling_no_value.png)
+
 
 ![Concept: Empty Box](./picture/refactoring_ts_study_031_empty_box.png)
 
@@ -208,6 +220,8 @@ export function getDiscountPercent(user: User | null): number {
 ---
 
 ## 手順（小さく刻む）👣🛟
+![refactoring_ts_study_031_refactoring_workflow](./picture/refactoring_ts_study_031_refactoring_workflow.png)
+
 
 1. **落ちる場所を特定**（例：`Cannot read properties of undefined`）🔍
 2. その場所に「無いならどうする？」を決める🧭

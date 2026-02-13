@@ -37,6 +37,8 @@ graph TD
 
 * **重複（duplication）**：似たコードが複数ある状態🔁
 * **同じ知識（same knowledge）**：
+![refactoring_ts_study_026_knowledge_vs_lines](./picture/refactoring_ts_study_026_knowledge_vs_lines.png)
+
   “何をするか”じゃなくて **「なぜそうするか（仕様・ルール）」が同じ** ってこと🧠✨
 * **変更理由が同じなら一緒にする**🧩
   変更理由が別なら、似てても分けてOK🙆‍♀️
@@ -46,6 +48,8 @@ graph TD
 ### まず大事なこと（ここがコツ）💡
 
 #### ✅ 重複は「行」じゃなくて「知識」で判断する
+![refactoring_ts_study_026_coupon_vs_rank](./picture/refactoring_ts_study_026_coupon_vs_rank.png)
+
 
 同じように見えても…
 
@@ -58,6 +62,8 @@ graph TD
 ---
 
 ### よくある重複パターン👃✨
+![refactoring_ts_study_026_duplication_patterns](./picture/refactoring_ts_study_026_duplication_patterns.png)
+
 
 * 計算ロジックがコピペ（合計、税、割引、送料…）🧾
 * バリデーションがコピペ（入力チェック）🧪
@@ -67,6 +73,8 @@ graph TD
 ---
 
 ### 手順（安全に小さく刻むよ👣🛟）
+![refactoring_ts_study_026_refactoring_steps](./picture/refactoring_ts_study_026_refactoring_steps.png)
+
 
 1. **今の動作を固定する**🧷
 
@@ -121,6 +129,8 @@ function calcOrderTotal(order: Order) {
 ---
 
 #### After（同じ知識を1か所へ）✨
+![refactoring_ts_study_026_before_after_structure](./picture/refactoring_ts_study_026_before_after_structure.png)
+
 
 ```ts
 type LineItem = { unitPrice: number; quantity: number };
@@ -163,6 +173,8 @@ function calcOrderTotal(order: Order) {
 * 変更されるときは **一緒に変わる**可能性が高い🔁
 
 #### ⚠️ まとめすぎ注意（やりがち）🧯
+![refactoring_ts_study_026_utility_hell](./picture/refactoring_ts_study_026_utility_hell.png)
+
 
 * `calc(x, y, z, a, b, c...)` みたいに **引数だらけ**になる
 * 名前が `util`, `helper` で “何の知識？” ってなる
@@ -210,6 +222,8 @@ Before例のような重複を、**抽出関数2つまで**で共通化してみ
 ---
 
 ### AI活用ポイント🤖✅（お願い方＋チェック観点）
+![refactoring_ts_study_026_ai_request](./picture/refactoring_ts_study_026_ai_request.png)
+
 
 #### お願い方（コピペOK）📝✨
 

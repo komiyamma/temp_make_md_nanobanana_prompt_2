@@ -17,6 +17,8 @@
 ---
 
 ### まず結論：narrowing（型の絞り込み）って何？🧠✨
+![refactoring_ts_study_033_narrowing_funnel](./picture/refactoring_ts_study_033_narrowing_funnel.png)
+
 
 ![Concept: Gatekeeper](./picture/refactoring_ts_study_034_gatekeeper.png)
 
@@ -52,6 +54,8 @@ TypeScript は、if / switch などの「実行時の判定」をヒントにし
 ---
 
 ## 1) ビフォー：any はラクだけど、落とし穴だらけ😵‍💫🕳️
+![refactoring_ts_study_033_any_vs_unknown_net](./picture/refactoring_ts_study_033_any_vs_unknown_net.png)
+
 
 外から来る値（API / JSON / localStorage / フォーム）は、だいたい「型があいまい」だよね。
 
@@ -104,6 +108,8 @@ unknown は「そのままでは触れない」けど、判定すれば安全に
 ---
 
 ## 3) 基本の narrowing 4点セット🧰✨
+![refactoring_ts_study_033_narrowing_tools](./picture/refactoring_ts_study_033_narrowing_tools.png)
+
 
 ### A. typeof：プリミティブ判定の王様👑
 
@@ -132,6 +138,8 @@ function normalize(input: unknown) {
 ---
 
 ### B. “null だけ特別”に注意⚠️🫧
+![refactoring_ts_study_033_null_trap](./picture/refactoring_ts_study_033_null_trap.png)
+
 
 JavaScript では null も “object 扱い” なので、ここは定番の罠！😇
 
@@ -177,6 +185,8 @@ function formatError(e: unknown) {
 ---
 
 ## 4) union 型でも narrowing は超強い💪✨（if / switch の基本）
+![refactoring_ts_study_033_union_fork](./picture/refactoring_ts_study_033_union_fork.png)
+
 
 ### 例：文字列 or 数値を受け取って処理を変える🚦
 
@@ -204,6 +214,8 @@ function getHp(mode: Mode) {
 ---
 
 ## 5) 最近のTypeScriptだと「キーアクセス」も絞り込みが効きやすい🧠✨
+![refactoring_ts_study_033_key_access](./picture/refactoring_ts_study_033_key_access.png)
+
 
 TypeScript 5.5 では、条件が揃うと「obj[key]」みたいなアクセスでも、制御フロー解析で絞り込みしやすくなったよ🧷
 （レコード型＋キーが実質固定、みたいなケース） ([TypeScript][2])
@@ -225,6 +237,8 @@ function upperIfString(obj: Record<string, unknown>, key: "title" | "label") {
 ---
 
 ## 6) リファクタ手順（小さく刻む）👣🛟
+![refactoring_ts_study_033_refactor_steps](./picture/refactoring_ts_study_033_refactor_steps.png)
+
 
 「any を消す」って聞くと怖いけど、順番を守れば大丈夫🙆‍♀️✨
 

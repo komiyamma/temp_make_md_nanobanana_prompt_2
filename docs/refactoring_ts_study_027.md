@@ -43,6 +43,8 @@ graph TD
 ---
 
 ## 1. ユーティリティ地獄ってなに？😱🧰
+![refactoring_ts_study_027_utils_blackhole](./picture/refactoring_ts_study_027_utils_blackhole.png)
+
 
 ### よくある症状🩹
 
@@ -59,6 +61,8 @@ graph TD
 ---
 
 ## 2. 置き場を決める超シンプルルール📁✨
+![refactoring_ts_study_027_placement_rules](./picture/refactoring_ts_study_027_placement_rules.png)
+
 
 ### ルールA：まずは“近く”に置く🏠
 
@@ -76,6 +80,8 @@ graph TD
 「将来他でも使いそう」はだいたい罠🙈（未来予測で shared を増やすと散らかる）
 
 ### ルールC：全体共有は“名前で縛る”🔒
+![refactoring_ts_study_027_shared_naming](./picture/refactoring_ts_study_027_shared_naming.png)
+
 
 全体共有にするなら、フォルダ名を **ドメイン or 技術の意味が伝わる** ものにするのが大事✨
 
@@ -121,6 +127,8 @@ export function buildOrderTitle(o: Order) { /* ... */ } // それドメイン…
 ---
 
 ### After（“意味で分けて”置く）✨📁
+![refactoring_ts_study_027_before_after_placement](./picture/refactoring_ts_study_027_before_after_placement.png)
+
 
 ✅ 金額の「表示」は技術寄り（UIで使う共通表現）
 → `shared/money` に置くのが自然💴✨
@@ -167,6 +175,8 @@ export function calcTax(amount: number): number {
 ---
 
 ## 4. “置き場”判断チェックリスト✅🧠
+![refactoring_ts_study_027_placement_checklist](./picture/refactoring_ts_study_027_placement_checklist.png)
+
 
 共通化したくなったら、この順で質問してね💡
 
@@ -189,6 +199,8 @@ export function calcTax(amount: number): number {
 ---
 
 ## 5. 安全な進め方（小さく刻む）👣🛟
+![refactoring_ts_study_027_safe_steps](./picture/refactoring_ts_study_027_safe_steps.png)
+
 
 1. **重複してる関数を1つに決める**（片方を“正”にする）👑
 2. もう片方を **import に置き換える**🔁
@@ -231,6 +243,8 @@ export function calcTax(amount: number): number {
 ---
 
 ## 8. AI活用ポイント🤖✅（お願い方＋チェック観点）
+![refactoring_ts_study_027_ai_template](./picture/refactoring_ts_study_027_ai_template.png)
+
 
 ### AIへのお願いテンプレ📝
 

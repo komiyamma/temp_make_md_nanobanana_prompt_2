@@ -38,6 +38,8 @@ graph TD
 ---
 
 ## まず知っておく！分岐が巨大化する“よくある原因”👃💦
+![refactoring_ts_study_028_bloated_switch_causes](./picture/refactoring_ts_study_028_bloated_switch_causes.png)
+
 
 ### ① 1つの関数に色んな役割が混ざってる🎭
 
@@ -140,6 +142,8 @@ export function buildMessage(
 ---
 
 ### 1️⃣ 「共通」と「差分」を分けてメモ📝
+![refactoring_ts_study_028_common_vs_diff](./picture/refactoring_ts_study_028_common_vs_diff.png)
+
 
 この例だと…
 
@@ -187,6 +191,8 @@ function passwordResetMessage(user: User, payload: Payload): Message {
 ---
 
 ### 3️⃣ switchを“薄く”して、見通しを良くする🚦✨
+![refactoring_ts_study_028_switch_traffic_cop](./picture/refactoring_ts_study_028_switch_traffic_cop.png)
+
 
 ```ts
 export function buildMessage(type: NotifyType, user: User, payload: Payload): Message {
@@ -215,6 +221,8 @@ export function buildMessage(type: NotifyType, user: User, payload: Payload): Me
 ---
 
 ### 4️⃣ 「ただの振り分け」なら、辞書（マップ）にする📚✨
+![refactoring_ts_study_028_dictionary_map](./picture/refactoring_ts_study_028_dictionary_map.png)
+
 
 `switch` が **“type → 関数”** の対応だけなら、こう書けるよ👇
 
@@ -238,6 +246,8 @@ export function buildMessage(type: NotifyType, user: User, payload: Payload): Me
 ---
 
 ## 超だいじ！defaultの扱い🧨➡️✅
+![refactoring_ts_study_028_default_strategy](./picture/refactoring_ts_study_028_default_strategy.png)
+
 
 ### ✅ default を置くのが自然なとき
 
@@ -252,6 +262,8 @@ export function buildMessage(type: NotifyType, user: User, payload: Payload): Me
 ---
 
 ## ケース追加の「抜け」を機械に見つけてもらう🤖🧷✅
+![refactoring_ts_study_028_exhaustiveness_check](./picture/refactoring_ts_study_028_exhaustiveness_check.png)
+
 
 ### 1) ESLintで switch 網羅性チェックをON👮‍♀️✨
 
@@ -280,6 +292,8 @@ export function buildMessage(type: NotifyType, user: User, payload: Payload): Me
 ---
 
 ## AI活用ポイント🤖✨（お願い方＋チェック観点✅）
+![refactoring_ts_study_028_ai_switch_slice](./picture/refactoring_ts_study_028_ai_switch_slice.png)
+
 
 ### 使いどころ①：caseの分割案を出してもらう🧩
 

@@ -30,6 +30,8 @@ graph LR
 ---
 
 ## 1) ループが読みにくくなる典型パターン👃💦
+![refactoring_ts_study_029_mixed_loop_blender](./picture/refactoring_ts_study_029_mixed_loop_blender.png)
+
 
 ### よくある“混ぜ込みループ”😵‍💫
 
@@ -47,6 +49,8 @@ graph LR
 ---
 
 ## 2) まずは“目的→メソッド”早見表📌🌸
+![refactoring_ts_study_029_array_toolbox](./picture/refactoring_ts_study_029_array_toolbox.png)
+
 
 * **変換したい** → `map` 🧁
 * **条件で絞りたい** → `filter` 🥦
@@ -67,6 +71,8 @@ graph LR
 ### パターンA：`if + push` は `filter + map` へ🍃
 
 #### Before（目的が埋もれがち💦）
+![refactoring_ts_study_029_filter_map_conveyor](./picture/refactoring_ts_study_029_filter_map_conveyor.png)
+
 
 ```ts
 type User = { id: string; name: string; isActive: boolean };
@@ -106,6 +112,8 @@ function getActiveUserNames(users: User[]): string[] {
 ### パターンB：合計・集計は `reduce` へ🧮💖
 
 #### Before（合計なのに、処理が散らばる）
+![refactoring_ts_study_029_reduce_funnel](./picture/refactoring_ts_study_029_reduce_funnel.png)
+
 
 ```ts
 type Item = { price: number; quantity: number };
@@ -139,6 +147,8 @@ function calcTotal(items: Item[]): number {
 ### パターンC：探すだけなら `find`、判定なら `some/every` 🔎✅
 
 #### Before（breakやフラグでややこしくなる）
+![refactoring_ts_study_029_find_vs_filter](./picture/refactoring_ts_study_029_find_vs_filter.png)
+
 
 ```ts
 type Order = { id: string; isPaid: boolean };
@@ -216,6 +226,8 @@ function pickErrorMessages(logs: Log[]): string[] {
 ---
 
 ### パターンE：更新系は “破壊しない” を優先（map / 新しめAPI）🧊✨
+![refactoring_ts_study_029_immutable_update](./picture/refactoring_ts_study_029_immutable_update.png)
+
 
 配列の中身を更新したいとき、`for` で直接書き換えると副作用で事故りやすい💥
 `map` で **新しい配列** を作るのが安全🛟✨
@@ -318,6 +330,8 @@ await Promise.all(items.map(item => save(item)));
 ---
 
 ## 5) ループ整理の手順（小さく刻む）👣🛟
+![refactoring_ts_study_029_refactoring_steps](./picture/refactoring_ts_study_029_refactoring_steps.png)
+
 
 1. **そのループの目的を1行で書く**📝
    例：「アクティブユーザーの名前一覧を作る」
