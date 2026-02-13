@@ -16,6 +16,7 @@
 ## 1) まず整理：属性ってなに？イベントと何が違うの？🧠✨
 
 ![画像を挿入予定](./picture/observer_ts_study_027_luggage_tags.png)
+![Attribute vs Event](./picture/observer_ts_study_027_attribute_vs_event.png)
 
 ```mermaid
 graph TD
@@ -59,6 +60,8 @@ OpenTelemetry では例外を `exception` というイベントで記録する�
 
 ### 原則A：まず “公式の名前（Semantic Conventions）” を優先📚✨
 
+![Naming Convention](./picture/observer_ts_study_027_naming_convention.png)
+
 HTTP なら `http.request.method` や `http.response.status_code` みたいに標準名が決まってます。古い `http.method` は deprecated 扱いで、置き換え先が明記されています🧠 ([OpenTelemetry][2])
 
 > **ポイント**：新旧の属性名が混在しやすいので、HTTP系は “安定版に寄せる” 意識が大事✨
@@ -67,6 +70,8 @@ HTTP なら `http.request.method` や `http.response.status_code` みたいに�
 ---
 
 ### 原則B：検索に強い＝「低カーディナリティ」を意識🧊
+
+![Cardinality Bomb](./picture/observer_ts_study_027_cardinality_bomb.png)
 
 * 例：`http.route` は **低カーディナリティにすべき**で、パス（`/users/123`）で代用しちゃダメ🙅‍♀️（テンプレにする！） ([OpenTelemetry][2])
 * 例：`error.type` は **予測可能・低カーディナリティ推奨**（timeout / 500 / class名 など） ([OpenTelemetry][4])
@@ -77,12 +82,16 @@ HTTP なら `http.request.method` や `http.response.status_code` みたいに�
 
 ### 原則C：セキュリティ＆プライバシー優先🛡️
 
+![Sanitization Shield](./picture/observer_ts_study_027_sanitization_shield.png)
+
 HTTP ヘッダーは全部取ると危険なので、**「取るヘッダーを明示的に設定しろ」**という注意が仕様側にあります🔐 ([OpenTelemetry][2])
 なので属性に載せるのは、基本「安全で短くて安定なもの」だけに寄せようね😊
 
 ---
 
 ## 3) 「載せすぎ注意⚠️」には理由がある（上限がある）📦
+
+![Limit Overflow](./picture/observer_ts_study_027_limit_overflow.png)
 
 OpenTelemetry には **Span に載せられる数の上限**の考え方があり、環境変数でのデフォルト値も整理されています。
 たとえばデフォルトだと：
@@ -183,6 +192,8 @@ export function enrichBusinessSpan(
 ---
 
 ### 6-2) エラー時の “正しい3点セット” 🧯💥
+
+![Error Status Set](./picture/observer_ts_study_027_error_status_set.png)
 
 ```ts
 import { Span, SpanStatusCode } from "@opentelemetry/api";

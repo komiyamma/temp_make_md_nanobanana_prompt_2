@@ -12,6 +12,8 @@
 
 ## 1) そもそも“コンテキスト”って何？📎✨（超ざっくり）
 
+![Context Bookmark](./picture/observer_ts_study_025_context_bookmark.png)
+
 コンテキストは、ざっくり言うと **「今この処理は、どのリクエスト／どのトレースに属してる？」** を表す“しおり”みたいなもの📘✨
 中身は例えばこんな感じ👇
 
@@ -69,10 +71,14 @@ sequenceDiagram
 
 ### ① 同一プロセス内（Nodeの非同期）で落ちる 🧵🌪️
 
+![Async Loss Mechanism](./picture/observer_ts_study_025_async_loss_mechanism.png)
+
 Nodeは “非同期の連鎖” の上を処理が走るので、しおり（コンテキスト）を**ちゃんと連鎖に載せない**と落ちます。
 Nodeには `AsyncLocalStorage` という「非同期の間ずっと持ち歩ける入れ物」が用意されてます（スレッドローカルっぽい、と説明されてるやつ）([nodejs.org][2])
 
 ### ② プロセス境界（HTTP/メッセージ）で受け渡しされない 🌐📦
+
+![Process Boundary](./picture/observer_ts_study_025_process_boundary.png)
 
 別サービスにHTTPで飛んだ瞬間、しおりは自然には移動しません。
 この受け渡しの標準が **W3C Trace Context（`traceparent` / `tracestate`）** です([W3C][3])
@@ -89,6 +95,8 @@ OTelは多くの場合、HTTP/Expressなどの **instrumentation が自動で伝
 ここ、**今日のメイン**だよ〜！✨（このリストが次章で超効く）
 
 ### ① “awaitしない” fire-and-forget 🔥🏃‍♂️
+
+![Fire and Forget Risk](./picture/observer_ts_study_025_fire_and_forget_risk.png)
 
 ```text
 doSomethingAsync(); // awaitしない
@@ -109,6 +117,8 @@ return res.end();   // 先に返しちゃう
 * たとえば「IDをグローバル変数に置く」みたいなのは爆死する💣
 
 ### ④ EventEmitter / callback地獄 🎧📣
+
+![Callback Hell Maze](./picture/observer_ts_study_025_callback_hell_maze.png)
 
 * `.on('event', handler)` の handler が**いつ呼ばれるか**で文脈が変わる
 * Node公式も「まれに store が失われる」→「promisify する」「AsyncResource を使う」みたいな話をしてます([nodejs.org][2])
@@ -214,6 +224,8 @@ Node公式が言ってるやり方がこれ：
 ---
 
 ## 7) 今日のミニ演習：途切れやすい場所チェックリスト化 ✅📝💖
+
+![Checklist Clipboard](./picture/observer_ts_study_025_checklist_clipboard.png)
 
 あなたの題材API（/work /slow /fail みたいなやつ）を思い出して、**途切れポイントを“先に”書く**よ！
 

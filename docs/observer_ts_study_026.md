@@ -17,6 +17,8 @@
 
 ## 2) まず「何を繋ぐの？」を超ざっくり理解 🧵👀
 
+![Trace vs Span](./picture/observer_ts_study_026_trace_vs_span.png)
+
 分散トレースで繋げたいのは、ざっくり言うとこの2つ👇
 
 * **Trace（旅のID）**：このリクエストの“旅全体”のID 🧳
@@ -62,10 +64,14 @@ graph LR
 
 ### 条件B：外に出るとき “標準ヘッダー”で渡す 📨🌍
 
+![HTTP Header Packet](./picture/observer_ts_study_026_http_header_packet.png)
+
 * HTTPなら **traceparent / tracestate**（W3C Trace Context）を使うのが王道🧾
 * ここがズレると、別サービスが受け取れない/解釈できない💦 ([OpenTelemetry][3])
 
 ### 条件C：受け取った側が “親として採用”する 👨‍👧🔗
+
+![Context Adoption](./picture/observer_ts_study_026_context_adoption.png)
 
 * 受信側がヘッダーから取り出して（extract）
 * そのコンテキストを **「このリクエストの親」** としてサーバーSpanを作る
@@ -90,6 +96,8 @@ OpenTelemetryでは baggage（追加のkey/value）もあるけど、入れす�
 ---
 
 ## 5) “どこを通って渡す？”の設計：経路ごとにルール化 🗺️🔗
+
+![Link vs Parent](./picture/observer_ts_study_026_link_vs_parent.png)
 
 ### (1) HTTP（王道）🌐
 
@@ -130,6 +138,8 @@ npm i @opentelemetry/exporter-trace-otlp-http
 ```
 
 ### 6-2) `src/otel.ts`（初期化ファイル）🔧🧵
+
+![Async Local Storage Box](./picture/observer_ts_study_026_async_local_storage_box.png)
 
 ポイントはここ👇
 
@@ -178,6 +188,8 @@ export async function startOtel() {
 * Propagatorの考え方（Composite + W3C tracecontext + baggage）は、OpenTelemetryのJSドキュメント側でも紹介されてるよ✨ ([OpenTelemetry][9])
 
 ### 6-3) `src/main.ts`（起動順を守る）🚀
+
+![Initialization Order](./picture/observer_ts_study_026_initialization_order.png)
 
 ```ts
 import { startOtel } from "./otel";
