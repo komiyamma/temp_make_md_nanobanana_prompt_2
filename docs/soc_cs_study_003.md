@@ -18,6 +18,8 @@
 
 ## 1) まず整理：SoCとSOLIDってどう違うの？🧭✨
 
+![soc cs study 003 soc vs solid](./picture/soc_cs_study_003_soc_vs_solid.png)
+
 ### SoC（関心の分離）って？
 
 ざっくり言うと、**種類の違う関心ごとを混ぜない**ことだよ🧺❌
@@ -37,6 +39,8 @@
 ---
 
 ## 2) SRP（単一責務）＝SoCの“実戦ルール”になりやすい🧩✨
+
+![soc cs study 003 single responsibility](./picture/soc_cs_study_003_single_responsibility.png)
 
 ### SRPの有名な言い方👑
 
@@ -64,6 +68,8 @@ SRPはよくこう説明されるよ👇
 ---
 
 ## 4) “アクター”で考えると一気に分かりやすい👭✨
+
+![soc cs study 003 actor confusion](./picture/soc_cs_study_003_actor_confusion.png)
 
 ![soc_cs_study_003_srp_actors](./picture/soc_cs_study_003_srp_actors.png)
 
@@ -123,6 +129,8 @@ public class OrderService
 ---
 
 ## 6) SRPで直すとこうなる✨（“まとめる・分ける”のバランス版）
+
+![soc cs study 003 refactored roles](./picture/soc_cs_study_003_refactored_roles.png)
 
 ポイントは「**責務を“言葉”にしてから分ける**」だよ✍️✨
 （いきなりクラス増やすと迷子になりやすい😵‍💫）
@@ -237,6 +245,8 @@ SRPで強いのは **“誰の都合（アクター）で変わるか”** だ�
 ---
 
 ## 8) “責務を言葉にする”練習✍️✨（ここ超大事！）
+
+![soc cs study 003 class labeling](./picture/soc_cs_study_003_class_labeling.png)
 
 次のクラス名を見て、責務を1行で言ってみてね👇😊
 （※1クラスに2行以上出たら、混ざってるサイン🚨）

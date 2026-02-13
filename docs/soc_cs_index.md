@@ -2,6 +2,8 @@
 
 ## 第1章：SoCって何？まずは一言で掴む📌😊
 
+![soc cs index messy vs clean](./picture/soc_cs_index_messy_vs_clean.png)
+
 * SoCの超短い定義
 * “混ぜると地獄”が起きる理由
 * 今日のゴール
@@ -19,6 +21,8 @@
 * まずは“責務を言葉にする”練習
 
 ## 第4章：分離の基本はこの3つだけ覚えればOK🙆‍♀️🪄
+
+![soc cs index three concerns](./picture/soc_cs_index_three_concerns.png)
 
 * 表示（UI）
 * ルール（業務）
@@ -98,6 +102,8 @@
 * AIの提案を採用する前のチェック✅
 
 ## 第17章：サイト用「共通リソース集」🧰🌸
+
+![soc cs index happy developer](./picture/soc_cs_index_happy_developer.png)
 
 * 開発環境まとめ（Windows / Visual Studio / 必要ならVS Code）🪟
 * この教材で使う**用語集**（責務、境界、依存、I/O、DTO…）📖
