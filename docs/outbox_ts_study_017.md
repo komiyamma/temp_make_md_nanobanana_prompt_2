@@ -11,6 +11,8 @@
 
 ## 1) Outboxでも二重送信は“起こり得る”😇📮
 
+![Duplicate Delivery](./picture/outbox_ts_study_017_duplicate_delivery.png)
+
 Outbox は「送る予定をDBに残す」ので **送信漏れ**を減らせるけど、送信処理は現実世界（ネットワーク、外部API、メッセージ基盤）と戦うから、どうしても **“少なくとも1回” 配信（＝時々重複する）**が起きがちなんだよね📨🌩️
 たとえば AWS の標準キューは “at-least-once” で、**同じメッセージが複数回届く可能性がある**って説明されてるよ📦🔁。([AWS ドキュメント][1])
 
@@ -60,6 +62,8 @@ Outboxのイベント処理って、放っておくと「+=」や「メール送
 
 ## 3-2) 冪等キーの作り方（定番）🍱
 
+![Idempotency Key Types](./picture/outbox_ts_study_017_key_types.png)
+
 代表的にはこのへん👇
 
 * **イベントID（UUID）**を冪等キーとして使う🆔
@@ -75,6 +79,8 @@ HTTP でも **Idempotency-Key ヘッダー**を標準化しようという仕様
 ---
 
 ## 4) 冪等性はどこで守るのが正解？🛡️🏰
+
+![Defense Roles](./picture/outbox_ts_study_017_defense_roles.png)
 
 結論：**受け側で守るのが最強**💪✨
 （送る側でもできる範囲で守ると、さらに強い）
@@ -99,6 +105,8 @@ HTTP でも **Idempotency-Key ヘッダー**を標準化しようという仕様
 ---
 
 ## 5) ハンズオン：Inboxで重複排除を実装しよう🧪🛠️✨
+
+![Inbox Bouncer](./picture/outbox_ts_study_017_inbox_bouncer.png)
 
 ここからは「最小で強い」実装を作るよ💪
 ポイントは **DBの一意制約（unique）**に仕事を任せること🎛️✨
@@ -228,6 +236,8 @@ async function handleOrderConfirmed(event: IntegrationEvent, idem: InboxIdempote
 
 ## 6-1) 外部APIが Idempotency-Key をサポートしてるなら最優先で使う🔑✨
 
+![External API Idempotency](./picture/outbox_ts_study_017_external_api_idempotency.png)
+
 Stripe みたいに **同じキーなら同じ結果**を返す仕組みがあると、リトライ地獄が一気に楽になるよ🙏✨([docs.stripe.com][2])
 
 ```ts
@@ -258,6 +268,8 @@ await fetch("https://example.com/payments", {
 ## 7) ありがち落とし穴集⚠️😇
 
 ## 落とし穴①：リトライのたびに冪等キーを作り直す🔑❌
+
+![Regenerating Key Pitfall](./picture/outbox_ts_study_017_regenerating_key_pitfall.png)
 
 * それ、毎回“別操作”になっちゃうよ😭
 * ✅ **同じ操作なら同じキー**！

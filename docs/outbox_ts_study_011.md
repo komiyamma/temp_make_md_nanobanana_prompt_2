@@ -12,6 +12,8 @@
 
 ## 1. トランザクションってなに？（超ざっくり）🍙✨
 
+![Transaction Metaphor (Onigiri)](./picture/outbox_ts_study_011_transaction_onigiri.png)
+
 トランザクションは、ひとことで言うと…
 
 > **「この一連の処理、ぜんぶ成功したら確定。どれか失敗したら“ぜんぶ無かったこと”にする」** 仕組み✅❌
@@ -28,6 +30,8 @@ Outboxでいちばん怖い事故はこれ👇
 
 ### 2-1. 事故パターンA：業務DBは更新できたのに、Outboxに書けなかった📭😱
 
+![Accident A (Send Leak)](./picture/outbox_ts_study_011_accident_a.png)
+
 例：注文を「確定」にした✅ でもOutboxレコードが無い📦❌
 → つまり「外部通知イベントが永遠に飛ばない」＝ **送信漏れ**📭
 
@@ -38,6 +42,8 @@ Outbox INSERT ❌
 ```
 
 ### 2-2. 事故パターンB：Outboxには書けたのに、業務DBが更新できなかった📨😱
+
+![Accident B (False Positive)](./picture/outbox_ts_study_011_accident_b.png)
 
 例：Outboxに「注文確定イベント」📨 が入ったのに、注文は未確定のまま❌
 → 外側の世界が「確定した」と誤解して、状態がねじれる🌀
@@ -89,6 +95,8 @@ ROLLBACK（どれか失敗なら全部取り消し）❌
 ---
 
 ## 4. ACIDって聞くけど…ここでは2つだけ覚えよ🙂📚
+
+![ACID Pillars](./picture/outbox_ts_study_011_acid_pillars.png)
 
 トランザクションにはよく **ACID** って言葉が出てくるけど、Outbox入門では **まず2つ** でOK🫶
 
@@ -145,6 +153,8 @@ export function initDb(db: Database.Database) {
 
 ## 7. まず“事故る書き方”を見てみる😈💥（トランザクション無し）
 
+![Crash No Transaction](./picture/outbox_ts_study_011_crash_no_tx.png)
+
 ```ts
 import Database from "better-sqlite3";
 
@@ -191,6 +201,8 @@ export function confirmOrder_NO_TX(db: Database.Database, orderId: string) {
 ---
 
 ## 8. 正しい書き方：トランザクションで“セット確定”✅🔐
+
+![Crash With Transaction](./picture/outbox_ts_study_011_crash_with_tx.png)
 
 better-sqlite3は `db.transaction(() => { ... })` があって超ラク🪄([GitHub][3])
 
@@ -307,6 +319,8 @@ Outboxとトランザクションの学習用に、
 ---
 
 ## 12. まとめ（この章で覚える1行）🧠✨
+
+![Summary Anchor](./picture/outbox_ts_study_011_summary_anchor.png)
 
 > **Outboxは「業務更新＋Outbox追加」を“同じトランザクション”で確定するから、安全装置として機能する**📦🔐✅
 

@@ -14,6 +14,8 @@
 
 ## ✅ ゴールの動き（書き込み側）
 
+![Correct Flow Chart](./picture/outbox_ts_study_012_correct_flow.png)
+
 1. 入力を受ける（例：orderId）📝
 2. **トランザクション開始**🔐
 3. 注文を読み込み → ドメインルールで「確定」する🧠
@@ -23,6 +25,8 @@
 7. トランザクション外で、Publisherがあとで送る📤（第13章）
 
 ## ❌ やっちゃダメ（事故のもと）😵‍💫
+
+![Bad Flow (Direct Send)](./picture/outbox_ts_study_012_bad_flow.png)
 
 * 「注文確定した！→ その場で外部へ送信（HTTP/Kafka/etc）」
   → **DBは成功したけど送信は失敗**が起きる（送信漏れ📭）
@@ -74,6 +78,8 @@ Node.jsはLTSを使うのが安心（例：Node v24がActive LTS扱い）。([No
 ---
 
 ## 12.5 DB（Prisma schema）最低限の形 🧾🧱
+
+![Prisma Schema Visual](./picture/outbox_ts_study_012_prisma_schema.png)
 
 ```prisma
 // prisma/schema.prisma
@@ -295,6 +301,8 @@ export class ConfirmOrderUseCase {
 
 ## ここがこの章の心臓💓
 
+![Transaction Heart](./picture/outbox_ts_study_012_transaction_heart.png)
+
 * `prisma.$transaction(async (tx) => { ... })` の中で
 
   * **注文UPDATE** ✅
@@ -326,6 +334,8 @@ export class ConfirmOrderUseCase {
 ---
 
 ## 12.11 よくあるミス集（先に潰しとこ）💥🧯
+
+![Common Mistakes Holes](./picture/outbox_ts_study_012_common_mistakes.png)
 
 ## ミス①：Outboxだけ保存して、注文保存が失敗
 

@@ -43,6 +43,8 @@ Publisher（または Relay / Sender）は、Outboxテーブルに溜まった *
 
 ## 13.1 Publisherってなに？（一言で）🧠💡
 
+![Separation of Concerns](./picture/outbox_ts_study_013_separation.png)
+
 Publisherは、アプリ本体とは別に動く「配送係」だよ📮✨
 
 * アプリ本体（書き込み側）🛒：注文確定などの業務処理 + Outboxに「送る予定」を記録
@@ -55,6 +57,8 @@ Publisherは、アプリ本体とは別に動く「配送係」だよ📮✨
 
 ## 13.2 まずは「ポーリング型」でいくよ⏱️🔁
 
+![Polling Loop Cycle](./picture/outbox_ts_study_013_polling_loop.png)
+
 この章は **ポーリング（定期的にDBを見る）** で作るよ🙂
 「一定間隔で未送信を探す → 送る → 更新する」ってやつ！🔍📤✅
 
@@ -63,6 +67,8 @@ Publisherは、アプリ本体とは別に動く「配送係」だよ📮✨
 ---
 
 ## 13.3 status設計（最小）🚦✨
+
+![Status Lifecycle](./picture/outbox_ts_study_013_status_lifecycle.png)
 
 第9章で最小カラムを作ってる前提で、この章では **最小の状態**だけ使うよ🙂
 
@@ -319,6 +325,8 @@ console.log("📦 inserted pending outbox:", id);
 
 ## 13.6.4 実行方法（VS Codeで2ターミナル）🪟🧑‍💻
 
+![Split Terminal View](./picture/outbox_ts_study_013_terminal_view.png)
+
 1. **ターミナルA**：Publisher起動📤
 2. **ターミナルB**：demo-writeでOutbox投入📦
 
@@ -349,6 +357,8 @@ tsx を使うと楽ちんだよ（TypeScriptをそのまま実行しやすい）
 ## 13.7 つまずきポイント集（ありがち）🧯💡
 
 ## 13.7.1 「ずっと回るとCPUが心配」😵‍💫
+
+![Sleep Efficiency](./picture/outbox_ts_study_013_sleep_efficiency.png)
 
 * 未送信が0件のときに **sleep** が入ってればOK😴
 * もしログがうるさければ「0件時は何も出さない」でもOK🙂
