@@ -55,11 +55,15 @@ graph TD
 
 ## 3.1 次に進むか？止めるか？を決める🚦
 
+![decision_traffic_light](./picture/saga_ts_study_012_decision_traffic_light.png)
+
 * Step Aが成功 → Step Bへ✅
 * Step Bが失敗 → 補償へ🧯
 * タイムアウトした → 失敗扱い？リトライ？⏰
 
 ## 3.2 “進捗”を記録する📍🧾
+
+![log_recording](./picture/saga_ts_study_012_log_recording.png)
 
 * どこまで終わった？
 * どのStepが成功した？
@@ -81,6 +85,8 @@ graph LR
 
 ## 3.3 失敗時に「補償」を発動する🧯🔁
 
+![compensation_trigger](./picture/saga_ts_study_012_compensation_trigger.png)
+
 * 成功したStepだけを逆順で戻す（できる範囲で）
 * 補償が失敗したら？ → 追加のエラー扱い（人手対応や再試行）へ🚨
 
@@ -92,11 +98,15 @@ graph LR
 
 ## ❌ 司令塔に入れない方がいいもの
 
+![fat_micromanager](./picture/saga_ts_study_012_fat_micromanager.png)
+
 * 決済の細かいロジック全部💳（それは決済サービスの責務）
 * 在庫計算の詳細📦（在庫サービスの責務）
 * 発送会社ごとの分岐地獄🚚（発送サービスの責務）
 
 ## ✅ 司令塔が持つのは「薄い判断」
+
+![thin_conductor](./picture/saga_ts_study_012_thin_conductor.png)
 
 * 成功/失敗の判定
 * 次のStepの選択
@@ -137,6 +147,8 @@ flowchart TD
 
 # 6) “最小構成”の全体図（コマンドと結果）🗺️📨
 
+![command_loop_conversation](./picture/saga_ts_study_012_command_loop_conversation.png)
+
 司令塔方式は、ざっくりこういう会話になるよ👇
 
 * 司令塔 → 決済サービス：「決済して」📣
@@ -150,6 +162,8 @@ flowchart TD
 ---
 
 # 7) TypeScriptで見る「司令塔の骨格」🦴🧑‍💻
+
+![skeleton_flow](./picture/saga_ts_study_012_skeleton_flow.png)
 
 ここでは**最小の形**を見て、頭の中に型を作るよ😊✨
 （本格実装は次章以降で育てていくイメージ🌱）

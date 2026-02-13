@@ -10,6 +10,8 @@
 
 # 1. まずは地獄のストーリーから🛒💳📦😇➡️😈
 
+![duplicate_payment](./picture/saga_ts_study_016_duplicate_payment.png)
+
 あなたが作った注文Sagaがこんな流れだったとするね👇
 
 1. **決済**（カードをチャージ）💳
@@ -53,6 +55,8 @@ HTTPでも「冪等な操作は、返事が読めなかったときに自動リ�
 
 ## 2.2 “少なくとも1回”配送の世界：重複は仕様📬📬
 
+![at_least_once_queue](./picture/saga_ts_study_016_at_least_once_queue.png)
+
 メッセージキューやイベント配送は、信頼性のために **at-least-once（少なくとも1回）** を採用しがち。
 つまり「必ず届く」代わりに **同じメッセージが複数回届くことがある** のが前提😳
 
@@ -88,6 +92,8 @@ Step Functionsみたいな世界でも、**冪等性は自動で面倒見てく�
 ---
 
 # 3. “重複実行”で壊れるもの一覧💥🧨
+
+![broken_items](./picture/saga_ts_study_016_broken_items.png)
 
 | 何が2回起きる？  | 何が壊れる？          | 例😱                     |
 | --------- | --------------- | ----------------------- |
@@ -137,6 +143,8 @@ HTTPでは、あるリクエストメソッドが「繰り返しても同じ意�
 
 ## 5.2 だから「POSTでも冪等にしたい」→ Idempotency-Key 🪪✨
 
+![post_idempotency_key](./picture/saga_ts_study_016_post_idempotency_key.png)
+
 POSTみたいな“本来冪等じゃない操作”を、リトライしても安全にするために
 **Idempotency-Key** ヘッダーを標準化しよう、という動きもあるよ（IETFのドラフト）🧠📜 ([IETF Datatracker][5])
 
@@ -150,6 +158,8 @@ POSTみたいな“本来冪等じゃない操作”を、リトライしても�
 ---
 
 # 7. “決済API”が冪等性を用意してくれてる例：Stripe💳🔑
+
+![stripe_mechanism](./picture/saga_ts_study_016_stripe_mechanism.png)
 
 Stripeは **idempotency key** を使った再試行の仕組みを用意していて、
 同じキーでの再送は「最初の結果（ステータスコードやレスポンスボディ）」を返す、という挙動を説明してるよ📘 ([Stripe ドキュメント][7])
@@ -219,6 +229,8 @@ runWithRetry().catch(console.error);
 
 # 9. じゃあどう防ぐの？（この章では“全体像”だけ）🛡️✨
 
+![defense_strategies](./picture/saga_ts_study_016_defense_strategies.png)
+
 冪等性の作り方は色々あるけど、超ざっくり分類するとこう👇
 
 ## A) “同じ依頼”にIDを付ける（冪等キー）🔑🪪
@@ -278,6 +290,8 @@ Stripeのように「同じキーは同じ結果を返す」仕組みがある�
 ---
 
 # 11. “冪等性が必要な場所”チェックリスト✅🧠
+
+![checklist_clipboard](./picture/saga_ts_study_016_checklist_clipboard.png)
 
 Sagaの各Stepについて、これを毎回チェックするよ👇
 
