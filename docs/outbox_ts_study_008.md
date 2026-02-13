@@ -18,6 +18,8 @@
 > バージョン数字は“絶対暗記”じゃなくてOKだよ😊
 > 「LTSを使う」「設定を固定する（浮かせない）」のほうが100倍大事！💪✨
 
+![version_compass](./picture/outbox_ts_study_008_version_compass.png)
+
 ---
 
 ## 1) Node.js を入れて、動作確認する 🧩⚙️
@@ -39,6 +41,8 @@ npm -v
 
 Node には `corepack` が同梱される期間があり、**corepack enable** で pnpm を使えるようにできるよ🧡 ([GitHub][4])
 
+![corepack_switch](./picture/outbox_ts_study_008_corepack_switch.png)
+
 ### ✅ 有効化（PowerShell）
 
 ```txt
@@ -58,6 +62,8 @@ corepack use pnpm@latest-10
 ## 3) プロジェクトを作る（最小構成）📦🧪📁
 
 今回は学習用に、まず **1プロジェクト** でシンプルにいくよ🍀
+
+![simple_project_box](./picture/outbox_ts_study_008_simple_project_box.png)
 
 ### ✅ 作成（PowerShell）
 
@@ -104,6 +110,8 @@ mkdir src tests scripts
 ## 6) TypeScript 設定（Node向け最小 tsconfig）🧠⚙️
 
 TypeScript 5.9 では、Node向け設定に **`module: "node20"`** みたいな“安定オプション”が用意されてるよ📌（挙動がフラつきにくい） ([TypeScript][2])
+
+![minimal_tsconfig](./picture/outbox_ts_study_008_minimal_tsconfig.png)
 
 プロジェクト直下に `tsconfig.json` を作って、これを貼ってね👇
 
@@ -162,6 +170,8 @@ graph LR
 * `test`：テスト一発 🧪
 * `build` → `start`：配布/本番っぽい動き 🏗️▶️
 
+![npm_scripts_panel](./picture/outbox_ts_study_008_npm_scripts_panel.png)
+
 ---
 
 ## 8) “まず動く” main.ts を置く ▶️😊
@@ -183,6 +193,8 @@ pnpm run dev
 ## 9) テストの最小セット（Vitest）🧪✨
 
 Vitest は 4.0 が公開されてて、4.x 系で運用されてるよ📌 ([vitest.dev][7])
+
+![smoke_test_signal](./picture/outbox_ts_study_008_smoke_test_signal.png)
 
 `tests/smoke.test.ts` を作って、これ👇
 
@@ -221,6 +233,8 @@ pnpm run test
 
 > まだESLint/Prettierを入れてなくても、import整理だけでも気持ちいいよ🥰✨
 > ルール追加は後でOK！（詰め込み防止🧊）
+
+![vscode_autopilot](./picture/outbox_ts_study_008_vscode_autopilot.png)
 
 ---
 

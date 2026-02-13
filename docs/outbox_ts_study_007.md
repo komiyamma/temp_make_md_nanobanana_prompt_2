@@ -8,6 +8,8 @@ Outbox（トランザクショナル・アウトボックス）は、いきな�
 だからこの章では、**Outboxの核心（＝事故るポイント）だけが入った“小さな世界”**を先に決めます🧊💡
 小さいほど、理解が速いし、あとで拡張もしやすいよ〜🪜🌱
 
+![small_world](./picture/outbox_ts_study_007_small_world.png)
+
 ---
 
 ### 7.2 ミニ題材に入れておくべき“必須条件”✅📦
@@ -23,6 +25,8 @@ Outbox（トランザクショナル・アウトボックス）は、いきな�
 
 この“二重書き問題（DB更新と通知送信の両方が絡む）”を、Transactional Outbox が解決する、という位置づけだよ🛡️📦
 ([AWS ドキュメント][1])
+
+![perfect_storm](./picture/outbox_ts_study_007_perfect_storm.png)
 
 ---
 
@@ -58,6 +62,8 @@ graph TD
 * 送信は失敗❌（通信エラー）
   → 「確定したのに通知が飛んでない！」📭 みたいな事故が起きる
 
+![scenario_emotional](./picture/outbox_ts_study_007_scenario_emotional.png)
+
 だから、**“送る予定”をDBに残す Outbox** が必要になる、という流れです📦🧾
 Outbox は「業務DBと同じ場所にメッセージ（イベント）を保存して、あとでリレーが送る」という登場人物構成で語られることが多いよ👥📤
 ([microservices.io][2])
@@ -91,6 +97,8 @@ Outbox は「業務DBと同じ場所にメッセージ（イベント）を保�
 
 この章の成果物はこれ！👇
 （このテンプレを埋めれば、次章以降が超ラクになります🪄）
+
+![spec_sheet](./picture/outbox_ts_study_007_spec_sheet.png)
 
 #### 🧾 ミニ仕様：注文確定
 
@@ -128,12 +136,16 @@ Outbox は「業務DBと同じ場所にメッセージ（イベント）を保�
 「Outboxに入れるメッセージは、あとでリレー（送信係）が外へ出す」ので、**後で見返して意味が分かる形**にするのが大事だよ👀📦
 ([microservices.io][2])
 
+![payload_gift](./picture/outbox_ts_study_007_payload_gift.png)
+
 ---
 
 ### 7.7 TypeScriptで“型”として固定しておく（迷いを消す）🧠✨
 
 ここでは実装をガッツリ進めなくてOK🙆‍♀️
 でも、**型だけは先に決める**と「仕様のブレ」が激減します📌
+
+![type_mold](./picture/outbox_ts_study_007_type_mold.png)
 
 ```ts
 // まずはイベント種別を固定（タイポ防止✨）
@@ -168,6 +180,8 @@ export type OutboxMessage = {
 ミニ題材づくりは、AIに手伝わせると速いよ⚡
 例えば GitHub の Copilot や、OpenAI の Codex系ツールにこう聞くと便利🧠✨
 （※“答えを丸写し”じゃなくて、“仕様の穴を見つける”使い方がおすすめ！👀）
+
+![ai_pair](./picture/outbox_ts_study_007_ai_pair.png)
 
 #### 💬 そのまま使えるプロンプト例
 

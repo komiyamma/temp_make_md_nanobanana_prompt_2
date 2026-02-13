@@ -27,6 +27,8 @@
 * **イベントは“起きた”こと**（もう戻らない）🕰️
 * **イベントは基本的に書き換えない**（あとで「実は違いました」は別のイベントで扱うことが多い）🧾🔒
 
+![event_definition](./picture/outbox_ts_study_003_event_definition.png)
+
 「イベント駆動」って言うと、実際に飛んでいるのは“イベントそのもの”というより、**イベントの通知メッセージ**として扱われることが多いよ〜📩🙂（用語が混ざりやすいので注意！） ([ウィキペディア][1])
 
 ---
@@ -47,6 +49,8 @@
 
 * 「起きた時刻」と「気づいた時刻」がズレることもあるよ〜（分散あるある）⌛👀 ([martinfowler.com][2])
 
+![event_fields](./picture/outbox_ts_study_003_event_fields.png)
+
 ---
 
 ## 3. イベント vs コマンド（ここ超大事！）⚡📩
@@ -58,6 +62,8 @@
 
 イベントっぽい言葉で「実は依頼」をやると、設計がぐちゃりやすい😵‍💫
 （“イベントのふりをした命令”が混乱の元になりやすい、という話があるよ） ([martinfowler.com][3])
+
+![event_vs_command](./picture/outbox_ts_study_003_event_vs_command.png)
 
 ---
 
@@ -109,6 +115,8 @@
 * モデルをムリに共有すると事故りやすい😵‍💫
 
 Bounded Context は「どこまで同じモデルが適用されるか」を区切る考え方として説明されるよ📌 ([Microsoft Learn][5])
+
+![bounded_context_meaning](./picture/outbox_ts_study_003_bounded_context_meaning.png)
 
 ---
 
@@ -162,6 +170,8 @@ CloudEvents では、だいたいこんな“外側の封筒”を付けるイ�
 * `time`（時刻）
   などなど🧾✨ ([cloudevents.github.io][7])
 
+![cloudevents_envelope](./picture/outbox_ts_study_003_cloudevents_envelope.png)
+
 ### TypeScriptで“封筒＋中身”の最小イメージ📦🧩
 
 ```ts
@@ -202,6 +212,8 @@ type OrderConfirmedData = {
 * 他サービス・外部システムが読む？✅
 * 長く残る“契約”になる？✅
 * 購読者が増える可能性がある？✅
+
+![decision_scale](./picture/outbox_ts_study_003_decision_scale.png)
 
 ---
 

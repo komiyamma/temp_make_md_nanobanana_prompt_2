@@ -21,6 +21,8 @@ graph TD
 * **Message Relay / Publisher（配送係）** 🏃‍♀️📤
   Outboxを見て、メッセージブローカーや外部へ“運ぶ”係。 ([microservices.io][1])
 
+![cast_characters](./picture/outbox_ts_study_006_cast_characters.png)
+
 ---
 
 ## 6-2. “最小アーキ図”はこれだけでOK 🧩✨
@@ -66,6 +68,8 @@ Outboxの流れは、ほぼこの順番で覚えれば勝ち🎯
 
 「同じトランザクションでOutboxに保存してから配送する」ことで、**内部状態と外部イベントの不整合を避ける**のが狙いだよ🛡️ ([Debezium][2])
 
+![flow_steps](./picture/outbox_ts_study_006_flow_steps.png)
+
 ---
 
 ## 6-4. “後で送る”って、何がうれしいの？😇📨
@@ -78,6 +82,8 @@ Outboxの流れは、ほぼこの順番で覚えれば勝ち🎯
   「Outboxに残ってる＝まだ送れてない」が見える。
 * **確実な配信（少なくとも一度）に寄せやすい** 📮
   ただし、その代わり **二重送信は起こり得る** → だから後の章で冪等性が大事になるよ🛡️🔑（ここ超重要！） ([Microsoft Learn][3])
+
+![isolation_cut](./picture/outbox_ts_study_006_isolation_cut.png)
 
 ---
 
@@ -99,6 +105,8 @@ Outboxの流れは、ほぼこの順番で覚えれば勝ち🎯
 
 教材ではまず **A) ポーリング** で理解して、余裕が出たら **B) CDC** に進むのがやさしいよ〜🙂🪜
 
+![polling_cdc_metaphor](./picture/outbox_ts_study_006_polling_cdc_metaphor.png)
+
 ---
 
 ## 6-6. “図に描くべき線”チェックリスト ✅🖊️
@@ -114,6 +122,8 @@ Outboxの流れは、ほぼこの順番で覚えれば勝ち🎯
   Senderは業務、配送係は配送。混ぜない！
 * **状態遷移（最低限）🚦**
   Outboxが「未送信 → 送信中 → 送信済/失敗」みたいに動くことが想像できる
+
+![blueprint_checklist](./picture/outbox_ts_study_006_blueprint_checklist.png)
 
 ---
 
@@ -180,6 +190,8 @@ sequenceDiagram
 ### 例外と失敗の洗い出し 🧯
 
 * 「Outbox方式で起こり得る失敗（DB成功/送信失敗/二重送信/配送係停止など）を列挙して、どのコンポーネントが面倒を見るべきか分類して」
+
+![ai_architect](./picture/outbox_ts_study_006_ai_architect.png)
 
 ---
 
