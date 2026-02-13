@@ -13,6 +13,8 @@
 
 ## 11-1. まず「書き込み側」で起きがちな事故 😱💥
 
+![Mixed Responsibilities](./picture/outbox_cs_study_011_mixed_responsibilities.png)
+
 ## ❌ アンチパターン：全部を1か所でやっちゃう
 
 * 注文をDBへ保存📝
@@ -51,6 +53,8 @@ Outboxの基本の考え方（DB更新とイベントを確実に揃える）は
 
 ## 11-3. SoC（関心の分離）の“3つの約束”🍱✨
 
+![UseCase Role](./picture/outbox_cs_study_011_usecase_role.png)
+
 ## 約束①：ドメインは「送信」を知らない 🙈📩
 
 ドメインは「メッセージ送るぞ！」って考えないでOK🙆‍♀️
@@ -75,6 +79,8 @@ Outboxで送るネタ（イベント/メッセージ）を **どこで作るか*
 結論、初心者はこの順でOKです👇
 
 ## パターンA（初心者おすすめ）🌱：アプリ層（ユースケース）で作る
+
+![Pattern A Flow](./picture/outbox_cs_study_011_pattern_a_flow.png)
 
 * いちばん分かりやすい😊
 * 設計の学習コストが低い📉
@@ -116,6 +122,8 @@ Outboxで送るネタ（イベント/メッセージ）を **どこで作るか*
 
 ## 11-6. 依存方向のルール（超やさしく）➡️💞
 
+![Dependency Direction](./picture/outbox_cs_study_011_dependency_direction.png)
+
 矢印は「依存（知ってる）」の方向ね😊
 
 * アプリ層 → ドメイン を知ってOK ✅
@@ -147,6 +155,8 @@ public sealed record OutboxMessage(
 ---
 
 ## 11-8. 「イベント生成」を1か所に寄せる（Factoryでスッキリ）🏭✨
+
+![Factory Pattern](./picture/outbox_cs_study_011_factory_pattern.png)
 
 ユースケースがOutboxを作るとき、ベタ書きが増えると読みにくい😵
 だから「OutboxMessageを作る責務」も分けちゃうのがオススメです😊
@@ -239,6 +249,8 @@ public sealed class CreateOrderUseCase
 ## 11-11. よくある分離ミス集（チェックリスト）✅🔍
 
 ## ❌ ミス1：ユースケースから外部送信しちゃう 📩💥
+
+![Don't Send](./picture/outbox_cs_study_011_dont_send_from_usecase.png)
 
 * HTTPを叩く
 * キューにPublishする

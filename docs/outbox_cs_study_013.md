@@ -10,6 +10,8 @@
 
 ## 1) Payloadってなに？超ざっくり言うと📦✨
 
+![Payload Contract](./picture/outbox_cs_study_013_payload_contract.png)
+
 Outbox の Payload は、「あとで配送係（Relay）が外に送る“荷物の中身”」だよ〜📮🚚
 つまり、**別プロセス・別サービスに渡っても意味が伝わるデータ** が入っているのが理想👍
 
@@ -31,6 +33,8 @@ Outbox の Payload は、「あとで配送係（Relay）が外に送る“荷�
 
 ## ルールB：個人情報（PII）は詰めすぎない🙈🔒
 
+![PII Warning](./picture/outbox_cs_study_013_pii_warning.png)
+
 * PayloadはログやDBに残りやすい（＝漏れたら痛い）😱
 * 例えばメールアドレス・住所・氏名などは **原則入れない** 方向で考えるのが安全💖
 
@@ -42,6 +46,8 @@ Outbox の Payload は、「あとで配送係（Relay）が外に送る“荷�
 ---
 
 ## 3) Payloadの代表的な3パターン🧩✨
+
+![Payload Patterns](./picture/outbox_cs_study_013_payload_patterns.png)
 
 | パターン          | どんな形？                          | いいところ😍        | 注意点😅                      |
 | ------------- | ------------------------------ | -------------- | -------------------------- |
@@ -101,6 +107,8 @@ Outboxテーブルに `Type` があるとしても、送信先（キュー/HTTP�
 
 ## 6) サイズ感の話：Payloadは小さいほど運用がラク📏🧹
 
+![Size Impact](./picture/outbox_cs_study_013_payload_size_impact.png)
+
 Payload が大きいと、地味にこうなるよ〜😵‍💫
 
 * DBが太る🐘💥（バックアップも遅くなる）
@@ -116,6 +124,8 @@ Payload が大きいと、地味にこうなるよ〜😵‍💫
 ---
 
 ## 7) C#でPayloadをJSON化する（System.Text.Json）🧑‍💻✨
+
+![Serialization Process](./picture/outbox_cs_study_013_serialization_process.png)
 
 JSONは .NET 標準の `System.Text.Json` を使うのが今の基本だよ〜🧡
 `System.Text.Json` は .NET のランタイムに含まれる（.NET Core 3.1 以降）って明記されてるよ。([Microsoft Learn][2])

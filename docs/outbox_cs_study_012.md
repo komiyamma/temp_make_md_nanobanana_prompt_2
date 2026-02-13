@@ -116,6 +116,8 @@ public sealed class AppDbContext : DbContext
 
 ## 4. 「同一トランザクション」実装の核心 👑🔒
 
+![Transaction Scope Visual](./picture/outbox_cs_study_012_transaction_scope_visual.png)
+
 ## 4.1 重要ポイント（ここ試験に出るやつ）📌😺
 
 * **Orders 保存**と**Outbox 追加**が「別々のトランザクション」だとズレる 😱
@@ -128,6 +130,8 @@ public sealed class AppDbContext : DbContext
 ここでは「アプリ層のサービス（UseCase）」として実装するよ（第11章の責務分離の続き）🍱✨
 
 ## 5.1 送るイベント（Payload用のDTO）📩
+
+![Payload Serialization](./picture/outbox_cs_study_012_payload_serialization.png)
 
 ```csharp
 public sealed record OrderCreatedEventV1(
@@ -224,6 +228,8 @@ EF Core 10 は .NET 10 とセットのLTS世代で、公式も .NET 10 前提に
 
 ## ケースA：SaveChanges 前に落ちた 😴💥
 
+![Crash Before Commit](./picture/outbox_cs_study_012_crash_before_commit.png)
+
 * まだDBに何も書かれてない
 * ✅ Orders も Outbox も **0件**（何も残らない）
 
@@ -234,6 +240,8 @@ EF Core 10 は .NET 10 とセットのLTS世代で、公式も .NET 10 前提に
 * 結果：Orders も Outbox も **残らない**（＝ズレない！）🎉
 
 ## ケースC：Commit 後に落ちた 🧨
+
+![Crash After Commit](./picture/outbox_cs_study_012_crash_after_commit.png)
 
 * ✅ Orders と Outbox は **両方残る**
 * これは OK（次章以降で Relay が拾って送る）🚚📩
@@ -249,12 +257,16 @@ EF Core 10 は .NET 10 とセットのLTS世代で、公式も .NET 10 前提に
 
 ## 7.2 次に “クラッシュ注入” 😈💥
 
+![Simulate Crash Switch](./picture/outbox_cs_study_012_simulate_crash_switch.png)
+
 * `simulateCrash = true` で実行
 * ✅ Orders も OutboxMessages も **増えてない**（ロールバック確認）🎯
 
 ---
 
 ## 8. 最小のAPIにつなぐ（呼べるようにする）📮🛒
+
+![API Integration](./picture/outbox_cs_study_012_api_integration.png)
 
 Minimal API 例（コントローラでもOK）🙂
 
