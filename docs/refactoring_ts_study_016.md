@@ -8,6 +8,8 @@
 ---
 
 ## 1. コードの「臭い」ってなに？👃🧠
+![Code Smell Detection](./picture/refactoring_ts_study_016_smell_detection.png)
+
 
 ![Concept: Triage Tags](./picture/refactoring_ts_study_017_triage_tags.png)
 
@@ -70,6 +72,8 @@ mindmap
 この章では、特に出会いがちな4つに絞るよ📌
 
 ### A. 長い関数（Long Function）📏😵‍💫
+![Long Function Scroll](./picture/refactoring_ts_study_016_long_function.png)
+
 
 **サイン👀**
 
@@ -95,6 +99,8 @@ mindmap
 ---
 
 ### B. 重複（Duplication）🔁😬
+![Duplication Twins](./picture/refactoring_ts_study_016_duplication.png)
+
 
 **サイン👀**
 
@@ -115,6 +121,8 @@ mindmap
 ---
 
 ### C. 巨大 if / ネスト地獄（Huge if / Deep Nesting）🧱🧨
+![Huge If Maze](./picture/refactoring_ts_study_016_huge_if.png)
+
 
 **サイン👀**
 
@@ -134,6 +142,8 @@ mindmap
 ---
 
 ### D. 曖昧な名前（Mysterious Name）😶‍🌫️🏷️
+![Mysterious Name Box](./picture/refactoring_ts_study_016_mysterious_name.png)
+
 
 **サイン👀**
 
@@ -270,6 +280,8 @@ function calculateShipping(totalYen: number) {
 ---
 
 ## 6. 進め方（臭いを見つけたらこの順番）👣✅
+![Refactoring Tools](./picture/refactoring_ts_study_016_refactor_first_step.png)
+
 
 いきなり大工事しないのがコツだよ🪚😌
 
@@ -284,6 +296,8 @@ function calculateShipping(totalYen: number) {
 ## 7. ミニ課題✍️🎯
 
 ### ミニ課題①：臭い探しビンゴ🎯👃
+![Smell Bingo Card](./picture/refactoring_ts_study_016_smell_bingo.png)
+
 
 下の25マス、1つのファイルを見て**当てはまるところに印**をつけてね✅
 （いっぱい当てはまるほど“改善チャンスの宝庫”だよ💎✨）

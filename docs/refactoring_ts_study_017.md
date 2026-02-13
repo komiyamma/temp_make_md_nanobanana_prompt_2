@@ -31,6 +31,8 @@ graph TD
 ---
 
 ## まず結論（超ざっくり）⚡
+![Prioritization Venn Diagram](./picture/refactoring_ts_study_017_prioritization.png)
+
 
 優先順位は、だいたいこれで決まります👇
 
@@ -53,18 +55,24 @@ graph TD
 ## 優先順位の“3本柱”🧱✨
 
 ### 1) 変更頻度（Code Churn）🔁
+![Churn Graph](./picture/refactoring_ts_study_017_churn_graph.png)
+
 
 * ざっくり言うと「そのファイル、最近めっちゃ触ってる？」ってこと👀
 * churn は「どれくらい頻繁に変更されているか」の指標として説明されます。 ([Stepsize][3])
 * **触る回数が多い＝将来も触る可能性が高い** → 直す価値が高い📈
 
 ### 2) 複雑さ（理解コスト）🌀
+![Complexity Knot](./picture/refactoring_ts_study_017_complexity.png)
+
 
 * ネストが深い、条件が難しい、関数が長い、名前が曖昧…😵‍💫
 * “難しいところ”は、少しの変更でも事故りやすい💥
 * churn と complexity を組み合わせて優先順位をつける（ホットスポット分析）は実務でよく使われます。 ([DEV Community][4])
 
 ### 3) 壊れやすさ（バグ履歴・事故履歴）🐛🚑
+![Bug History File](./picture/refactoring_ts_study_017_bug_history.png)
+
 
 * 「ここ、よく障害が出る」「バグ修正コミットが多い」みたいな場所
 * churn（変更量）や変更範囲（変更ファイル数）は、修正の影響や作業量の予測にも関係します。 ([ACM Digital Library][5])
@@ -76,6 +84,8 @@ graph TD
 難しい計測ツールがなくても、まずはこの“雑でも強い”やつでOKです👌💕
 
 ### 採点表📝
+![Hotspot Scorecard](./picture/refactoring_ts_study_017_hotspot_score.png)
+
 
 | 軸       | 1点     | 3点       | 5点              |
 | ------- | ------ | -------- | --------------- |
@@ -90,6 +100,8 @@ graph TD
 ## データの集め方（最小セット）🔎✨
 
 ### A. Gitで「最近よく変わるファイル」を出す🔁
+![Git Churn Command](./picture/refactoring_ts_study_017_git_churn.png)
+
 
 #### PowerShell（Windows向け）🪟
 
@@ -169,6 +181,8 @@ git log --since="90 days ago" --name-only --pretty=format: \
 ---
 
 ## ビフォー/アフター（優先順位の付け方）🔀✨
+![Priority Focus](./picture/refactoring_ts_study_017_before_after.png)
+
 
 ### ビフォー😇（ありがち）
 

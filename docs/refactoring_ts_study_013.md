@@ -27,6 +27,8 @@ graph LR
 ## 今日のキーワード📌
 
 ### ゴールデンマスターってなに？👑
+![Golden Master Concept](./picture/refactoring_ts_study_013_golden_master_concept.png)
+
 
 「既存の動作をそのまま保存して、次回以降に差分が出たら気づけるようにする」テクニックだよ🛟
 別名がたくさんあって、Characterization tests（特性テスト）、Approval tests（承認テスト）、Snapshot testing（スナップショット）などが“ほぼ同じ文脈”で使われることが多いよ📚✨ ([tdd.mooc.fi][1])
@@ -42,6 +44,8 @@ graph LR
 ---
 
 ## ざっくり手順（これだけ覚えればOK）👣🛟
+![Snapshot Diff](./picture/refactoring_ts_study_013_snapshot_diff.png)
+
 
 1. **入口（関数/処理）を1つ決める**🎯
 2. **いくつかの入力で実行して、出力を保存**💾
@@ -84,6 +88,8 @@ export function buildReceipt(items: Item[]): string {
 ---
 
 ### アフター：ゴールデンマスターで“今の動き”を固定👑🛟
+![Normalization Process](./picture/refactoring_ts_study_013_normalization.png)
+
 
 ポイントは2つ👇
 
@@ -146,6 +152,8 @@ npm test
 * **差分が出たら“何が変わったか”をレビュー**👀✅
 
 ### 3) 変更が意図したものならスナップショット更新🔁
+![Update Snapshot Command](./picture/refactoring_ts_study_013_update_snapshot.png)
+
 
 ```bash
 npx vitest -u
@@ -158,11 +166,15 @@ npx vitest -u
 ## 失敗しないコツ（ここ超大事）🧷⚠️
 
 ### コツ1：スナップショットは“コード扱い”でレビューする👀📝
+![Reviewing Snapshot](./picture/refactoring_ts_study_013_review_snapshot.png)
+
 
 スナップショットは生成物だけど、**コミットしてレビュー対象にする**のが基本だよ✅ ([jestjs.io][4])
 差分を見ずに更新連打しちゃうと、守りにならない…😵‍💫
 
 ### コツ2：テストは“毎回同じ結果”になるようにする🎲❌
+![Deterministic Output](./picture/refactoring_ts_study_013_deterministic.png)
+
 
 日時・乱数・順序・環境依存の文字列は、スナップショットを壊しやすいよ💥
 
@@ -173,6 +185,8 @@ npx vitest -u
 「決定的（deterministic）にしよう」っていうのはスナップショットの大原則だよ🧷 ([jestjs.io][4])
 
 ### コツ3：入力パターンは“少なすぎ”が一番危ない😇
+![Input Patterns Coverage](./picture/refactoring_ts_study_013_input_patterns.png)
+
 
 「通常」「空」「境界」「変な値」みたいに、代表ケースを増やすと守りが強くなるよ🛡️
 （入力を増やしていろんなシナリオをカバーするのが大事、という流れもよく語られるよ）📌 ([Understand Legacy Code][5])

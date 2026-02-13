@@ -37,6 +37,8 @@ graph TD
 ---
 
 ### 今日のゴール🏁✨
+![First Test Goal](./picture/refactoring_ts_study_012_first_test_goal.png)
+
 
 ✅ `npm run test` でテストが緑になる
 ✅ “重要な関数”に対して **ユニットテスト1本**を追加できる
@@ -66,6 +68,8 @@ npm i -D vitest
 ```
 
 ### 2-2. `package.json` にスクリプト追加🧷
+![Vitest Watch Mode](./picture/refactoring_ts_study_012_vitest_watch.png)
+
 
 ```json
 {
@@ -102,6 +106,8 @@ export function calcShippingFeeYen(subtotalYen: number, isRemoteArea: boolean): 
 ```
 
 ### 3-2. テストファイルを作る🧪📝
+![Test File Naming](./picture/refactoring_ts_study_012_test_file_naming.png)
+
 
 Vitest はファイル名に `.test.` か `.spec.` が入ってるものをテストとして拾うよ👀 ([Vitest][2])
 
@@ -146,6 +152,8 @@ npm run test
 * `toEqual`（オブジェクト/配列を中身で比較）
 
 ### 4-2. 例外（throw）をテストする⚠️
+![Throw Error Test](./picture/refactoring_ts_study_012_throw_error.png)
+
 
 例外テストは **関数で包む**のがポイント！そうしないとエラーを捕まえられないよ🙅‍♀️ ([Vitest][3])
 
@@ -154,6 +162,8 @@ expect(() => someFn()).toThrowError("SOME_ERROR");
 ```
 
 ### 4-3. async の失敗（reject）をテストする🌩️
+![Async Rejects Test](./picture/refactoring_ts_study_012_async_rejects.png)
+
 
 async は `rejects` を使うよ✨（Promise をちゃんとほどいて確認してくれる） ([Vitest][3])
 
@@ -184,12 +194,16 @@ it("壊れたJSONは reject する", async () => {
 ## 5) まずは “守れる形” にするコツ👣🛡️
 
 ### 5-1. AAA で書く（超ラク）🧁
+![AAA Pattern](./picture/refactoring_ts_study_012_aaa_pattern.png)
+
 
 * Arrange：準備🍽️
 * Act：実行🏃‍♀️
 * Assert：確認✅
 
 ### 5-2. テスト名は「日本語の仕様書」📄✨
+![Test Name as Spec](./picture/refactoring_ts_study_012_test_name_spec.png)
+
 
 * ❌ `works`
 * ✅ `5000円以上なら通常エリアは送料無料になる`

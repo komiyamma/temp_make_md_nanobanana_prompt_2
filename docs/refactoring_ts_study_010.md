@@ -33,6 +33,8 @@ graph TD
 ---
 
 ## 1) Lintってなに？🧹🔍（フォーマットと何が違うの？）
+![Lint vs Formatter](./picture/refactoring_ts_study_010_lint_vs_formatter.png)
+
 
 * **フォーマッタ（Prettier）**：見た目を整える🎀（改行・インデント・クォートなど）
 * **Linter（ESLint）**：危ない書き方を見つける👮‍♀️（未使用変数・到達不能コード・うっかりミス…）
@@ -43,6 +45,8 @@ ESLintは「バグの芽🌱」を早めに見つけるための“校閲さん�
 ---
 
 ## 2) まずは導入して動かす👣🛠️（最短ルート）
+![Flat Config Concept](./picture/refactoring_ts_study_010_flat_config.png)
+
 
 ### Step 1: インストール📦
 
@@ -117,6 +121,8 @@ VS Codeの **ESLint拡張（dbaeumer.vscode-eslint）** を入れると、エデ
 この拡張は Flat Config 周りも継続的に改善されていて、`eslint.useFlatConfig` の挙動も説明されてるよ📌 ([Visual Studio Marketplace][3])
 
 ### 保存時に自動で直す💾🧹
+![Auto Fix on Save](./picture/refactoring_ts_study_010_auto_fix_save.png)
+
 
 `.vscode/settings.json`（またはユーザー設定JSON）に👇
 
@@ -133,6 +139,8 @@ VS Codeの **ESLint拡張（dbaeumer.vscode-eslint）** を入れると、エデ
 ---
 
 ## 4) まずは「警告の読み方」を覚える📣👓
+![Reading ESLint Output](./picture/refactoring_ts_study_010_eslint_output.png)
+
 
 ESLintの出力はだいたいこんな感じ👇
 
@@ -151,6 +159,8 @@ src/sample.ts
 ---
 
 ## 5) ビフォー／アフターで“3つ直す”練習🔧✨
+![Before and After Fix](./picture/refactoring_ts_study_010_before_after_fix.png)
+
 
 ### Before（ありがち危ないセット⚠️）
 
@@ -192,6 +202,8 @@ export function calcDiscount(price: number, coupon?: string) {
 ---
 
 ## 6) ルールの強さを調整する🎚️（最初は“ゆるく”でもOK）
+![Rule Severity Knob](./picture/refactoring_ts_study_010_rule_severity.png)
+
 
 ESLintのルールはだいたいこの3段階👇
 
@@ -267,6 +279,8 @@ export default defineConfig(
 ---
 
 ## 9) Prettierとの関係（ケンカさせない）🎀🤝
+![Prettier and ESLint Handshake](./picture/refactoring_ts_study_010_prettier_eslint.png)
+
 
 Prettier公式では「Prettierを“Lintのルール”として動かす系（例：eslint-plugin-prettier）は、基本おすすめではないよ」という注意が書かれてるよ📌 ([Prettier][7])
 
