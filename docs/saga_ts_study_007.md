@@ -12,6 +12,10 @@
 
 **責務 = その部品が引き受ける仕事の範囲（担当範囲）**だよ😊✨
 
+![Responsibility Separation Kitchen](./picture/saga_ts_study_007_responsibility_separation_kitchen.png)
+
+
+
 たとえば「注文を作る」って一言でも、実は中身がいろいろあるの👇
 
 * HTTPリクエストを受け取る📩
@@ -30,6 +34,10 @@
 
 「薄い層」っていうのは、ざっくり言うと👇
 
+![Thin Layer Concept](./picture/saga_ts_study_007_thin_layer_cake.png)
+
+
+
 * **各層は“やることを少なく”**して、判断を分散しない
 * **上の層は下の層を使うだけ**（下の層の事情に踏み込まない）
 * それぞれが“自分の仕事だけ”をして、他人の仕事を奪わない🙅‍♀️
@@ -46,6 +54,10 @@
 # 3) まずは王道：Controller / Service / Repository 👑
 
 バックエンドで超よくある分け方がこの3つだよ👇
+
+![Controller Service Repository Roles](./picture/saga_ts_study_007_csr_roles_hotel.png)
+
+
 （NestJSみたいなTypeScript向けフレームワークでも、Controller と Service（Provider）中心で組み立てる考え方が基本にあるよ😊） ([NestJS Docs][1])
 
 ## Controller（入口）🚪📩
@@ -107,6 +119,10 @@ graph TD
 
 Sagaって「複数ステップの手順＋失敗時の戻し」だから、放っておくと全部が混ざりやすい😵‍💫💦
 
+![Saga Mixing Hazard](./picture/saga_ts_study_007_saga_mixing_hazard_tangle.png)
+
+
+
 だから、責務をこう割るとスッキリしやすいよ👇
 
 * **Controller**：Saga開始の入口（例：POST /orders）
@@ -134,6 +150,10 @@ graph LR
 
 「どこに書くべき？」ってなったら、この質問を順番にしてね😊
 
+![Placement Rule Sorting Machine](./picture/saga_ts_study_007_placement_rule_sorting_machine.png)
+
+
+
 ## Q1: これはHTTPの話？それともビジネスの話？🌍
 
 * HTTPの話（ステータスコード、req/res整形） → **Controller**
@@ -158,6 +178,10 @@ graph LR
 * `order.service.ts`（ユースケース）
 * `order.repository.ts`（DB）
 * `orderSaga.orchestrator.ts`（Saga司令塔：Serviceに含めてもOK）
+
+![Folder Structure Cabinet](./picture/saga_ts_study_007_folder_structure_cabinet.png)
+
+
 
 「層で分ける or 機能（feature）で分ける」は、近年のNode/TSでも定番の整理軸としてよく出るよ📦 ([DEV Community][4])
 
@@ -267,6 +291,10 @@ sequenceDiagram
 ## 事故①：Controllerが太る🍔💦
 
 * Controllerに「決済失敗なら返金して…在庫戻して…」みたいな手順が書かれてる
+
+![Fat Controller Accident](./picture/saga_ts_study_007_fat_controller_accident.png)
+
+
   ✅ 対策：**手順はService/Sagaへ移動！**
 
 ## 事故②：Repositoryにビジネス判断が入り込む🌀

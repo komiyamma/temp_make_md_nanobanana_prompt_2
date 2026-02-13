@@ -13,6 +13,8 @@
 ## Sagaを一言でいうと？🧩
 
 **Saga = 複数サービスにまたがる処理を「小さな取引（ローカルトランザクション）」の列に分けて、失敗したら「補償トランザクション」で帳尻を合わせる設計パターン**だよ🧵✨
+
+![Local Transactions Chain](./picture/saga_ts_study_001_local_tx_chain.png)
 分散環境で、いきなり全部を一気に巻き戻すのは難しいから、**「進め方」と「戻し方」をセットで設計する**感じ！🧠🧯
 
 Microsoftの説明でも、Sagaは「ローカルトランザクションの並び」で、失敗時に「補償トランザクション」で取り消す、と整理されてるよ📘✨ ([Microsoft Learn][1])
@@ -28,6 +30,8 @@ Microsoftの説明でも、Sagaは「ローカルトランザクションの並�
 * 成功したら **全部コミット**（確定）✅✨
 
 でも、現実のシステムはこうなりがち😵‍💫🌍
+
+![Distributed Services Isolation](./picture/saga_ts_study_001_distributed_islands.png)
 
 * 決済サービス💳
 * 在庫サービス📦
@@ -85,6 +89,8 @@ graph LR
 ## “補償（Compensation）”ってなに？🧯🔁
 
 Sagaのキモはここ！✨
+
+![Compensation Balance](./picture/saga_ts_study_001_compensation_balance.png)
 **補償 = 「起きたこと」を、別の操作で“取り消したのと同じ状態”に近づけること**だよ😊
 
 さっきの例なら👇
@@ -102,6 +108,8 @@ MicrosoftのSaga説明でも「失敗したら補償トランザクションで�
 ## ここが大事：補償は「完璧な巻き戻し」じゃない🙅‍♀️➡️🙆‍♀️
 
 超初心者さんが一番ハマる誤解がこれ！😵‍💫
+
+![Reality vs Magic Rollback](./picture/saga_ts_study_001_reality_vs_magic.png)
 
 **DBロールバック**は「時間を巻き戻す魔法」っぽいけど、
 **補償**は「現実の操作で帳尻を合わせる」感じ🧾✨
@@ -130,6 +138,8 @@ MicrosoftのSaga説明でも「失敗したら補償トランザクションで�
 3. **失敗したら、基本は“逆順”に補償する**↩️✨
 
 * 先にやったことほど後で戻す（スタックみたいなイメージ）📚
+
+![Stack Unwinding](./picture/saga_ts_study_001_stack_unwinding.png)
 
 ```mermaid
 flowchart TD
@@ -218,6 +228,8 @@ Microsoftや microservices.io でも「イベント/メッセージで次を進�
 ### Q2. Sagaって「オーケストレーション」と「コレオグラフィ」って聞いた！なにそれ？🎻🕺
 
 今は「へぇ〜」でOK！😆
+
+![Conductor vs Dancers](./picture/saga_ts_study_001_conductor_vs_dancers.png)
 
 * **コレオグラフィ🕺**：みんながイベントを見て自分で動く
 * **オーケストレーション🎻**：司令塔が「次これやって！」って指示する

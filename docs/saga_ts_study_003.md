@@ -9,6 +9,8 @@
 
 # 3-1. まず「DB1つだけ」の世界は、かなり平和🏝️🧘‍♀️
 
+![Single DB Harmony](./picture/saga_ts_study_003_single_db_harmony.png)
+
 DBのトランザクションって、ざっくり言うとこんな感じ👇
 
 * ✅ まとめて実行する（途中で失敗したら全部なかったことにできる）
@@ -29,6 +31,8 @@ DBのトランザクションって、ざっくり言うとこんな感じ👇
 
 たとえば注文フローで「決済API（外部サービス）」を呼ぶとするよね🛒💳
 この瞬間から、**DBのトランザクションだけでは守れない事故**が増える💥
+
+![Distributed Chaos](./picture/saga_ts_study_003_distributed_chaos_storm.png)
 
 なぜかというと、分散では「ネットワークが信頼できる」「遅延がゼロ」みたいな前提が崩れるから😵‍💫
 有名な“分散の落とし穴”として、ネットワークは壊れるし、遅延はあるし、環境は均一じゃない…みたいな前提崩壊がまとまって語られてるよ📌 ([ウィキペディア][1])
@@ -60,6 +64,8 @@ graph LR
 
 結果👇
 **注文は無いのに課金だけ発生**（最悪）😇🔥
+
+![Timeout Misunderstanding](./picture/saga_ts_study_003_pattern_a_timeout_misunderstanding.png)
 
 これ、ネットワーク遅延やタイムアウトが普通に起きる分散世界だと“あるある”なの🥲 ([ウィキペディア][1])
 
@@ -101,6 +107,8 @@ sequenceDiagram
 結果👇
 
 * ほかの注文処理がロック待ちで渋滞🚗🚗🚗
+
+![DB Lock Traffic Jam](./picture/saga_ts_study_003_pattern_c_db_lock_jam.png)
 * タイムアウト連鎖で障害っぽくなる💥
 
 つまり「安全そうに見えるからトランザクションで包む」は、**可用性を落とす方向に働きがち**なの😢
@@ -130,6 +138,8 @@ flowchart TD
 でも、リトライすると…
 
 * 決済が2回走る（二重課金）💳💳😱
+
+![Retry Ghost (Double Execution)](./picture/saga_ts_study_003_pattern_d_retry_ghost.png)
 * 発送が2回走る（二重配送）📦📦😱
 
 イベント駆動やメッセージングでも「重複配信は起きうる（少なくとも1回）」前提で作れ、っていうガイダンスが普通に出てるよ📌
@@ -153,6 +163,8 @@ flowchart TD
 
 だから、実務では「2PCで全体をガチガチに縛る」よりも、**Sagaみたいな“戻し方を用意して前に進む”**が選ばれることが多いんだよね🚀
 
+![2PC vs Saga Rigidity](./picture/saga_ts_study_003_2pc_vs_saga_handcuffs.png)
+
 ![2PC vs Saga Failure](./picture/saga_ts_study_003_2pc_issues.png)
 
 ---
@@ -167,6 +179,8 @@ flowchart TD
 * 長いトランザクションはロックを長引かせて、**全体の可用性を落としやすい** 🔒🧊
 
 この「ズレ」と「部分成功」を、ちゃんと現実として受け止めて設計するのがSagaの出番だよ🧯✨
+
+![Perception Gap](./picture/saga_ts_study_003_perception_gap_mirror.png)
 
 ---
 

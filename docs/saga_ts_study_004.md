@@ -11,10 +11,14 @@
 # 1) まず結論：2PCは「全員そろって一斉に確定」✅、Sagaは「進めてダメなら戻す」🔁🧯
 
 * **2PC（Two-Phase Commit）**
+
+![2PC Synchronized March](./picture/saga_ts_study_004_2pc_synchronized_march.png)
   「関係者みんなに“本当に確定していい？”って確認して、全員OKなら一斉に確定する」方式だよ✅
   *例：複数DB/メッセージキューなど、複数の“参加者”にまたがる更新を**原子的（全部成功か全部失敗）**にしたいとき*（XA/2PCの枠組み）([docs.redhat.com][1])
 
 * **Saga（補償トランザクション）**
+
+![Saga Forward Backward](./picture/saga_ts_study_004_saga_forward_backward.png)
   「まず順番に進める → 途中で失敗したら、**それまでにやった分を“打ち消す処理（補償）”**で戻す」方式だよ🔁🧯
   *“最終的に”うまく収束させる考え方*（Sagaの原典は“長い処理を小分け＋補償で扱う”）([コーネル大学コンピュータ科学部][2])
 
@@ -27,6 +31,8 @@
 ## フェーズ①：準備できる？（Prepare）📝
 
 * 司会（コーディネータ）が参加者に聞く：「コミットしていい？準備できた？」
+
+![2PC Prepare Voting](./picture/saga_ts_study_004_2pc_prepare_voting.png)
 * 参加者は「OK（Yes）」or「ムリ（No）」で返事する
 * **Yesを返した参加者は“確定待ち状態”になって、勝手にやめられない**（ここがキツい）😵‍💫
 
@@ -67,7 +73,11 @@ sequenceDiagram
 
 ## 弱点①：ブロッキング（待ち状態で固まる）🧊
 
-2PCは**原子性（全部成功か全部失敗）を守るために“ブロッキングになりやすい”**と言われるよ。失敗が起きると、参加者が**最終決定を待って“長時間ブロック”**することがあるの🫠([docs.redhat.com][4])
+2PCは**原子性（全部成功か全部失敗）を守るために“ブロッキングになりやすい”**と言われるよ。失敗が起きると、参加者が**最終決定を待って“長時間ブロック”**することがあるの🫠
+
+![2PC Blocking Ice](./picture/saga_ts_study_004_2pc_blocking_ice.png)
+
+([docs.redhat.com][4])
 
 ## 弱点②：“準備済み”が長く居座るとツラい😇
 
@@ -77,7 +87,11 @@ sequenceDiagram
 
 ## 弱点③：運用がむずい（ヒューリスティック問題）🧯⚠️
 
-障害時に「もう待てないから、各参加者が独自判断で確定/中止しちゃう」みたいな**緊急回避（ヒューリスティック）**が出てくると、**整合性リスク**が増えるの。2PCまわりの“ヒューリスティック結果”は、トランザクション系ドキュメントでも注意点として語られるよ([docs.redhat.com][4])
+障害時に「もう待てないから、各参加者が独自判断で確定/中止しちゃう」みたいな**緊急回避（ヒューリスティック）**が出てくると、**整合性リスク**が増えるの。
+
+![Heuristic Hazard](./picture/saga_ts_study_004_heuristic_hazard_button.png)
+
+2PCまわりの“ヒューリスティック結果”は、トランザクション系ドキュメントでも注意点として語られるよ([docs.redhat.com][4])
 
 ```mermaid
 graph TD
@@ -129,6 +143,8 @@ graph LR
 * **Choreography（連鎖）**：イベントで次々つながる📣🔗
 * **Orchestration（司令塔）**：オーケストレーターが順番と補償を管理する🎻🧠
 
+![Choreography vs Orchestration](./picture/saga_ts_study_004_choreography_vs_orchestration_split.png)
+
 この2分類はSagaパターンの説明として定番だよ([microservices.io][7])
 
 ---
@@ -175,6 +191,8 @@ graph LR
 
 * 「全部OKなら一斉に確定」したい気持ちは分かる🙆‍♀️
 * でも、発送みたいな外部・物理が絡むと、**2PCで“同時確定”をやるのが現実的か？**を考える🤔
+
+![Digital vs Physical World](./picture/saga_ts_study_004_digital_vs_physical_truck.png)
 
 2. **Sagaならどう書く？**（補償をセットで考える）🧯
 
