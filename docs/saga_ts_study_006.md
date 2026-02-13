@@ -11,6 +11,10 @@
 # 1) そもそも“境界”ってなに？🤔🧱
 
 境界はざっくり言うと、**「ここから先は別の責任（別のルール）」の線引き**だよ〜！🚧✨
+
+![Boundary Definition](./picture/saga_ts_study_006_boundary_definition_fences.png)
+
+
 同じアプリの中でも、マイクロサービスでも、境界は必要になるよ。
 
 * 注文の世界のルール（例：注文はキャンセルできる？）
@@ -54,6 +58,10 @@ Sagaは「進める」だけじゃなく「戻す」が主役だよね。
 「それ、注文がやる？決済がやる？」が決まってないと、実装が漂流する🌊
 境界を切る＝**責任の住所が決まる**🏠✨
 
+![Responsibility Assignment](./picture/saga_ts_study_006_responsibility_assignment_desks.png)
+
+
+
 ## ✅ 嬉しいこと③：変更に強くなる🛡️🔧
 
 たとえば「決済会社を変える」「在庫の仕組みを変える」みたいな変更でも、
@@ -90,6 +98,10 @@ flowchart LR
 
 ここで大事なのは、**箱ごとに「持っていいデータ」と「守るルール」が違う**こと👀✨
 
+![4 Boxes Standard Model](./picture/saga_ts_study_006_4_boxes_standard_model.png)
+
+
+
 * Order：注文状態（作成/確定/キャンセル…）
 * Payment：支払い状態（与信/確定/返金…）
 * Inventory：在庫状態（確保/解除/不足…）
@@ -116,6 +128,10 @@ flowchart LR
 「決済情報を注文DBに保存しちゃう」と、後で痛い…💥
 **PaymentのことはPaymentが持つ**、みたいに “所有者” を決めるとスッキリ✨
 
+![Data Ownership King](./picture/saga_ts_study_006_data_ownership_king.png)
+
+
+
 ## ヒント③：失敗した時に“誰が補償するか”で分ける🧯🧠
 
 補償はだいたい「その箱の責任」でやると綺麗になるよ。
@@ -127,6 +143,10 @@ flowchart LR
 
 「確保（reserve）」って、在庫の確保？配送枠の確保？決済の確保（与信）？
 同じ単語が別の意味を持ち始めたら、境界がズレてるサイン🚨
+
+![Ambiguous Terms Confusion](./picture/saga_ts_study_006_ambiguous_terms_confusion.png)
+
+
 （Bounded Contextは“言葉の意味の境界”でもあるよ） ([martinfowler.com][2])
 
 ## ヒント⑤：変更頻度が違うなら分ける🔁🧱
@@ -144,6 +164,10 @@ flowchart LR
 ## ✅ ルールA：他の箱のDBを直接読まない🙅‍♀️🗄️
 
 “近道”に見えて、依存が地雷原になる💣
+
+![No Direct DB Access](./picture/saga_ts_study_006_no_direct_db_access.png)
+
+
 連携は **API** か **イベント** でやるのが基本✉️✨
 
 ```mermaid
@@ -163,6 +187,10 @@ graph TD
 ## ✅ ルールB：連携は「契約（Contract）」として固定する📄🔒
 
 境界を跨ぐ情報は、**渡す項目を絞る**のがコツ。
+
+![Contract Handshake](./picture/saga_ts_study_006_contract_handshake.png)
+
+
 「注文の全部を投げる」じゃなくて、必要最小限🎯
 
 例：在庫確保に必要なのはこれくらい👇

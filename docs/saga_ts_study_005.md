@@ -18,6 +18,10 @@ Sagaは、ざっくり言うとこういう発想です👇
 * 途中で失敗したら、**完了済みの分だけ**「取り消し」を順番に実行する🔁
 * つまり、**成功ルート（順方向）**と**失敗ルート（補償）**がセット💞
 
+![Basic Pair Structure](./picture/saga_ts_study_005_basic_pair_puzzle.png)
+
+
+
 この考え方自体は、AzureやAWSの解説でも「ローカルトランザクションの連鎖＋失敗時は補償で戻す」って説明されています。([Microsoft Learn][1])
 
 ---
@@ -69,6 +73,10 @@ Step1 → Step2 → Step3 → 完了🎉
 
 ## ❌ 失敗パス（補償は逆向きが基本）
 
+![Success vs Failure Path](./picture/saga_ts_study_005_success_failure_path_uturn.png)
+
+
+
 ```
       Comp2 ← Comp1（逆順で戻す🔁）
 ```
@@ -99,6 +107,10 @@ graph TD
 
 そして、**Step と Compensation を必ずセット**で考えます💞
 
+![Step Compensation Cards](./picture/saga_ts_study_005_step_comp_cards_flip.png)
+
+
+
 ## Step/Compensation 対応表（超基本）📝✨
 
 | ステップ名            | Step（やること）✅ | Compensation（戻すこと）🧯 | “戻せる？”の注意点⚠️    |
@@ -117,6 +129,10 @@ graph TD
 ## ルール1：Stepは「小さく」「局所的」に✂️
 
 1つのStepで、あちこちを同時に変えない🙅‍♀️
+
+![Rule 1 Small Steps](./picture/saga_ts_study_005_rule_1_small_steps.png)
+
+
 （分けたほうが、失敗時に戻しやすいよ！）
 
 ## ルール2：Stepが成功したら「成功した証拠」を残す🧾
@@ -128,6 +144,10 @@ graph TD
 
 現実には“完全な巻き戻し”が無理なことがある😵‍💫
 そのときは「打ち消し」や「埋め合わせ」を設計する🎫✨
+
+![Rule 3 Compensation Not Undo](./picture/saga_ts_study_005_rule_3_comp_not_undo.png)
+
+
 （例：発送後→返金＋クーポン＋人手対応）
 
 ## ルール4：Compensationは「何度呼ばれても壊れない」が理想🔁🛡️
@@ -153,6 +173,10 @@ graph TD
 * Step B：メッセージカードを印刷する💌
 * Step C：配送日時を予約する⏰🚚
 
+![Gift Order Saga Steps](./picture/saga_ts_study_005_gift_order_saga_steps.png)
+
+
+
 ### ✅ やること（この表を埋めてみよう📝）
 
 | Step | Step（何をする？）✅ | Compensation（どう戻す？）🧯 | 戻せない場合の代替案🎫 |
@@ -172,6 +196,10 @@ graph TD
 
 ここでは「ペアで考える」をコードで表現します✨
 （まだ実運用じゃなくて、考え方を固定するためのミニ型だよ🧠）
+
+![TypeScript Interface Blueprint](./picture/saga_ts_study_005_typescript_interface_blueprint.png)
+
+
 
 ```ts
 // Saga全体で共有したい最低限の情報

@@ -21,6 +21,8 @@
 4. 送る準備をする（発送手配）🚚
 
 ここで大事なのは、Sagaでは「全部まとめて1回で確定！」じゃなくて、**小さな成功を積み上げていく**感じになること🌱
+
+![Small Success Stacking](./picture/saga_ts_study_002_small_success_stacking.png)
 そして途中で失敗したら、**すでに成功した分を“いい感じに戻す”**（補償する）必要が出てくるよ🧯✨
 （Sagaは失敗時に補償トランザクションで巻き戻す考え方として紹介されるよ）([Microsoft Learn][1])
 
@@ -36,6 +38,8 @@
 **このままだと…**
 
 * お客さん「え、買えないのにお金取られたんだけど！？😡💦」
+
+![Payment OK but No Stock](./picture/saga_ts_study_002_failure_case_a_payment_no_stock.png)
 * お店「返金しなきゃ…😵‍💫」
 
 👉 ここで必要なのが **返金（補償）** 💸🔁
@@ -52,6 +56,8 @@
 **このままだと…**
 
 * 在庫は確保されたままで他の人に売れない😱
+
+![Stock Locked but No Shipping](./picture/saga_ts_study_002_failure_case_b_stock_locked.png)
 * でも発送できないから売上にもならない😵
 
 👉 ここで必要なのが **在庫戻し（補償）** 🧯📦🔁（在庫の確保を取り消す）
@@ -73,6 +79,8 @@ flowchart TD
 * 4. 発送手配 ✅（もう出荷された…！）
 
 ここまで行くと、**「完全に元に戻す」ができない**こともあるよ😵
+
+![Impossible Rollback (Shipping)](./picture/saga_ts_study_002_impossible_rollback_truck.png)
 
 * 出荷済み → 取り消し不可の場合あり
 * そのときは「返金」「返品対応」「クーポン」「人手対応」みたいな“現実的な補償”が必要になる🙆‍♀️🎫🧑‍💼
@@ -105,6 +113,8 @@ mindmap
 
 ## 注文フローの「戻す候補」一覧📝✨
 
+![Compensation Candidates Map](./picture/saga_ts_study_002_compensation_candidates_map.png)
+
 * 注文作成の補償：**注文キャンセル** 🧾❌
 * 決済の補償：**返金** 💳➡️💸
 * 在庫確保の補償：**在庫戻し（引き当て解除）** 📦🔓
@@ -118,6 +128,8 @@ mindmap
 ✅ 注文作成 → ✅ 決済 → ✅ 在庫確保 → ❌ 発送失敗
 
 戻す（補償）の流れは、基本 **逆順** がわかりやすいよ🧯✨
+
+![Reverse Order Unwinding](./picture/saga_ts_study_002_reverse_order_film.png)
 
 ```
 成功：  注文作成 → 決済 → 在庫確保 → 発送(失敗)
@@ -191,6 +203,8 @@ const paymentStep: Step = {
 ポイントはこれだけ💡
 
 * **execute（進める）** と **compensate（戻す）** をセットで考える🧠✨
+
+![Execute and Compensate Pair](./picture/saga_ts_study_002_execute_compensate_coin.png)
 * 「失敗したら何を戻す？」が自然に見えるようになる👀
 
 ---
