@@ -42,9 +42,13 @@ flowchart LR
     style Stack fill:#ffccbc,stroke:#bf360c
 ```
 
+![Translation Layer](./picture/observer_ts_study_013_translation_layer.png)
+
 ---
 
 ## 2) Node側の“source map対応”の今どき事情🧠✨
+
+![Node Flag Switch](./picture/observer_ts_study_013_node_flag_switch.png)
 
 Nodeは **`--enable-source-maps`** を付けると、**スタックトレースを元ソース（TS）基準に寄せて表示**してくれるよ✅
 この機能は **Node v12.12.0 で追加**されて、今は普通に使えるやつだよ〜！([nodejs.org][1])
@@ -56,6 +60,8 @@ Nodeは **`--enable-source-maps`** を付けると、**スタックトレース�
 ---
 
 ## 3) TS側の設定：tsconfigでsource mapを出す🧩🗺️
+
+![TSConfig Blueprint](./picture/observer_ts_study_013_tsconfig_blueprint.png)
 
 まずはTypeScriptに「source mapも一緒に出してね！」ってお願いするよ！
 
@@ -88,6 +94,9 @@ Nodeは **`--enable-source-maps`** を付けると、**スタックトレース�
 ```
 
 > `inlineSources` は **「ソースをmapに埋め込む」**オプションで、`sourceMap` か `inlineSourceMap` が必要だよ([TypeScript][3])
+>
+> ![Inline Sources Backpack](./picture/observer_ts_study_013_inline_sources_backpack.png)
+>
 > （運用で“mapはあるけど元ソースが無い”みたいな事故が減る👍）
 
 ---
@@ -113,6 +122,8 @@ Node公式的にも、source mapの解析は **`--enable-source-maps` を付け�
 ---
 
 ## 5) ミニ実験：わざと落として“読める”か確認しよ💥👀
+
+![Stack Trace Glasses](./picture/observer_ts_study_013_stack_trace_glasses.png)
 
 ### サンプル（落ちるAPIっぽいやつ）
 
@@ -153,6 +164,8 @@ server.listen(3000, () => {
 ---
 
 ## 6) “リリース版の識別”もセットでやろう🏷️✨（超大事！）
+
+![Build Info Tag](./picture/observer_ts_study_013_build_info_tag.png)
 
 source mapでTS行に戻れるようになっても、運用で詰みがちなのがこれ👇
 
@@ -246,6 +259,8 @@ mapファイルがあっても、Nodeが使わなかったら意味ないよ〜�
 → `node --enable-source-maps ...`
 
 ### ✅ stackを取りすぎて遅くなる
+
+![Performance Cost Warning](./picture/observer_ts_study_013_perf_cost_warning.png)
 
 Node公式も「source map有効時、`Error.stack` 参照にレイテンシが出ることがあるよ」って注意してるよ⚠️([nodejs.org][2])
 → **本当に必要なとき（例：error時）だけstackを記録**が安心！

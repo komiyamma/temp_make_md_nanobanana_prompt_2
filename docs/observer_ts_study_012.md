@@ -10,6 +10,8 @@
 
 ## 1) そもそも「unhandled系」って何が起きてるの？😵‍💫
 
+![Rejection vs Exception](./picture/observer_ts_study_012_rejection_vs_exception.png)
+
 Nodeには、大きく2種類の“事故”があるよ💥
 
 * **unhandledRejection**：Promiseが失敗（reject）したのに、誰も `.catch()` も `try/catch` もしてない🙈
@@ -21,6 +23,8 @@ Nodeには、大きく2種類の“事故”があるよ💥
 ---
 
 ## 2) 2026年1月時点の「Nodeの最新前提」だけ押さえよう🧷✨
+
+![Node Modes](./picture/observer_ts_study_012_node_modes.png)
 
 * 2026年1月時点だと、**Node v24 が Active LTS**、v25 は Current（最新版系列）だよ📌([nodejs.org][2])
 * `--unhandled-rejections` の **デフォルトは `throw`**（v15でデフォルトが warning から変更された）だよ⚙️([nodejs.org][3])
@@ -36,6 +40,8 @@ Nodeには、大きく2種類の“事故”があるよ💥
 ## 3) まずは「事故を起こさない書き方の型」🧯✨（ここが本命！）
 
 ## 型A：async関数は「境界」で必ず握る🤝🧱
+
+![Async Handler Wrapper](./picture/observer_ts_study_012_async_handler_wrapper.png)
 
 HTTPハンドラ（ルート）みたいな**入口**で、`try/catch` を固定するのが最強だよ💪✨
 
@@ -56,6 +62,8 @@ export const asyncHandler =
 ---
 
 ## 型B：`await` を忘れない（忘れやすい場所あるある）🧠⚠️
+
+![Promise.all Net](./picture/observer_ts_study_012_promise_all_net.png)
 
 特にこれ事故りがち👇😇
 
@@ -79,6 +87,8 @@ const settled = await Promise.allSettled(items.map(doWork));
 
 ## 型C：Fire-and-forget（投げっぱなし）を“明示”する🎯💨
 
+![Fire and Forget Catch](./picture/observer_ts_study_012_fire_forget_catch.png)
+
 「待たない」こと自体はOKな場面もあるけど、**握らないのはNG**🙅‍♀️
 
 ```ts
@@ -94,6 +104,8 @@ fireAndForget(sendAnalytics(event), (e) => logger.error({ e }, "analytics failed
 ---
 
 ## 4) TS/リンターで「うっかり」を機械的に潰す🤖🔍✨
+
+![Linter Scanner](./picture/observer_ts_study_012_linter_scanner.png)
 
 ここめっちゃ効くよ〜！
 **“awaitし忘れ”をエラーにしてくれる**ルールがある👇
@@ -129,6 +141,8 @@ export default [
 ---
 
 ## 安全ネットの実装例（最小）✨
+
+![Graceful Shutdown Sequence](./picture/observer_ts_study_012_graceful_shutdown.png)
 
 * `unhandledRejection`：握り損ねたPromise失敗を捕まえる🧤
 * `uncaughtException`：捕まえ損ねた例外を捕まえる🧤
