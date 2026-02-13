@@ -10,6 +10,8 @@
 
 ### リファクタリングの定義🧠✨
 
+![definition_box](./picture/refactoring_ts_study_001_definition_box.png)
+
 ![Concept: Intro Tree](./picture/refactoring_ts_study_001_intro_tree.png)
 
 ```mermaid
@@ -39,6 +41,8 @@ graph LR
 
 ### なんで必要なの？💎（やると得すること）
 
+![benefits_chart](./picture/refactoring_ts_study_001_benefits_chart.png)
+
 リファクタリングの良さは、だいたいこのへんに集約されるよ🌸
 
 * **読みやすくなる**📖✨（理解が速い＝作業が速い）
@@ -51,6 +55,8 @@ graph LR
 ---
 
 ### 「リファクタ」vs「改修」vs「バグ修正」🔀🚧
+
+![change_types_icons](./picture/refactoring_ts_study_001_change_types_icons.png)
 
 ここ、最初に分けられるとめっちゃ強い💪✨
 
@@ -66,6 +72,8 @@ graph LR
 ---
 
 ### “動作を変えない”って、どこまで？🔍
+
+![observable_behavior](./picture/refactoring_ts_study_001_observable_behavior.png)
 
 「動作（observable behavior）」って、ざっくり言うと**外から観測できるもの全部**だよ👀
 
@@ -163,6 +171,8 @@ function buildAgePart(age: number | null | undefined): string {
 ---
 
 ### 手順（小さく刻む）👣🛟
+
+![small_steps](./picture/refactoring_ts_study_001_small_steps.png)
 
 第1章では“感覚”だけ押さえるよ💡
 安全にやる基本はこれ👇（第3章でガッツリやる✅）

@@ -169,6 +169,8 @@ public sealed class ConsoleLogger : ILogger { public void Log(string message) =>
 
 ## 進め方（この章のロードマップ）🗺️✨
 
+![roadmap_steps](./picture/refactoring_cs_study_040_roadmap_steps.png)
+
 この順番で、**安全に** 直します✅
 
 1. ① 観測（Characterization Test）📸
@@ -180,6 +182,8 @@ public sealed class ConsoleLogger : ILogger { public void Log(string message) =>
 ---
 
 ## ① 観測（Characterization Test）📸🕵️‍♀️
+
+![characterization_test](./picture/refactoring_cs_study_040_characterization_test.png)
 
 ### ねらい🎯
 
@@ -255,6 +259,8 @@ public sealed class LegacyCheckoutCharacterizationTests
 ```
 
 ### ここまでで「安心の根拠」完成✅🛡️
+
+![safety_net](./picture/refactoring_cs_study_040_safety_net.png)
 
 * テストが通る＝挙動が変わってない可能性が高い
 * これがあるから、次から **怖くない** 😌✨
@@ -384,6 +390,8 @@ Visual Studio の Code Cleanup は、設定したスタイル修正をまとめ�
 
 ## ⑤ 1リファクタ＝1コミット（おすすめの積み方）🌿📌
 
+![commit_stack](./picture/refactoring_cs_study_040_commit_stack.png)
+
 ### 例：このケーススタディのコミット列（モデル）🧱✨
 
 1. `test: add characterization tests for PlaceOrder (happy path)` 📸
@@ -434,6 +442,8 @@ Visual Studio の Code Cleanup は、設定したスタイル修正をまとめ�
 ---
 
 ## 最終形（After）のイメージ🌟
+
+![before_after_arch](./picture/refactoring_cs_study_040_before_after_arch.png)
 
 「中心が読める」状態はこんな感じになります💕
 

@@ -10,6 +10,8 @@
 
 ## 1. なんで「newしない」の？🤔💭（答え：テストがツラいから）
 
+![test_stability](./picture/refactoring_cs_study_036_test_stability.png)
+
 たとえば、こんなコード👇
 「今の時刻」「乱数」「外部サービス」を **メソッドの中で `new` してる**と…
 
@@ -20,6 +22,8 @@
 ---
 
 ## 2. DIってなに？超ざっくり🍰✨
+
+![manual_di_concept](./picture/refactoring_cs_study_036_manual_di_concept.png)
 
 ![](./picture/refactoring_cs_study_036_di.png)
 
@@ -121,6 +125,8 @@ public sealed class CouponService
 
 ### 4-3. 組み立て（ここだけ new してOK）🚪🏗️✨
 
+![composition_root](./picture/refactoring_cs_study_036_composition_root.png)
+
 本番の入口（例：Console の `Program.cs`）で組み立てるよ🙂
 
 ```csharp
@@ -135,6 +141,8 @@ Console.WriteLine(service.CanUse(coupon) ? "OK" : "NG");
 ---
 
 ## 5. テスト：FakeTimeProvider で「今」を固定する🧪⏰✨
+
+![fake_time_provider](./picture/refactoring_cs_study_036_fake_time_provider.png)
 
 テストでは **FakeTimeProvider** を使うと便利！
 公式にも「時間依存コードのテストのために FakeTimeProvider を使える」と書かれてるよ📚✨ ([Microsoft Learn][3])
@@ -197,6 +205,8 @@ public sealed class CouponServiceTests
 （次の章で Adapter/Wrapper をやるよ！）
 
 ### コツ③：まず1個だけやる🪄
+
+![seam_zipper](./picture/refactoring_cs_study_036_seam_zipper.png)
 
 最初から全部 DI にしないでOK🙂
 「壊れやすいところ」から1つずつで十分✨
