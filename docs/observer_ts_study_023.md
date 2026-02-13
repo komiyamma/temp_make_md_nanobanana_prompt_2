@@ -12,6 +12,8 @@
 
 ## 1) トレースって何？一言でいうと… 🧵💡
 
+![Trace as a Journey](./picture/observer_ts_study_023_trace_journey.png)
+
 **「1リクエストが、システムの中を旅した記録」**だよ〜🚶‍♀️🌐✨
 その旅を細かい区間（作業）に切ったのが **Span**！
 
@@ -20,6 +22,8 @@ OpenTelemetryの定義でも、**Spanは“作業の1単位”で、Traceの材�
 ---
 
 ## 2) Trace と Span の関係（親子の木🌳＋時間の線📏）
+
+![Span Tree Structure](./picture/observer_ts_study_023_trace_tree_structure.png)
 
 ![画像を挿入予定](./picture/observer_ts_study_023_gantt_chart.png)
 
@@ -79,6 +83,8 @@ Trace: GET /slow
 
 ## 4) 分散トレースが“分散”できる理由 🌐🧵
 
+![Passing the Baton](./picture/observer_ts_study_023_context_propagation_baton.png)
+
 サービスをまたいでもTraceがつながるのは、**Context Propagation（コンテキスト伝播）**があるからだよ〜🫶
 HTTPだと代表的に **`traceparent` / `tracestate`** ってヘッダーでバトンを渡すのが標準。([W3C][2])
 
@@ -87,6 +93,8 @@ HTTPだと代表的に **`traceparent` / `tracestate`** ってヘッダーでバ
 ---
 
 ## 5) まずは“見える化”して気持ちよくなる：Jaegerで見る 👀✨
+
+![Jaeger UI Representation](./picture/observer_ts_study_023_jaeger_ui_sketch.png)
 
 ### 5-1) Jaegerを起動（Docker）🐳✨
 
@@ -209,6 +217,8 @@ Jaeger UIで👇
 ---
 
 ## 8) 手動で1個だけSpanを足してみる（気持ちいい体験）🧵➕✨
+
+![Inserting Manual Span](./picture/observer_ts_study_023_manual_span_insertion.png)
 
 自動計装だけでも結構見えるけど、**「業務的に意味のある区切り」**は手動Spanが強い🔥
 

@@ -24,6 +24,8 @@
 
 ## 2) いきなり設計せず、先に“価値”を1行で決めよ✍️✨
 
+![Defining Value](./picture/observer_ts_study_020_value_definition.png)
+
 まずこれを1行で書くのが最強📝💕
 
 > このサービスの価値は「○○が□□できる」こと
@@ -76,6 +78,8 @@ stateDiagram-v2
 
 ## 4) “成功数”と“失敗理由別カウント”の設計テンプレ🧩✨
 
+![Success vs Failure Counters](./picture/observer_ts_study_020_success_failure_counters.png)
+
 ビジネスメトリクスは、まずこの2本でOK🥰
 
 ### ✅ メトリクス①：成功数（価値が出た回数）
@@ -98,6 +102,8 @@ stateDiagram-v2
 ---
 
 ## 5) 失敗理由（reason）は“上限がある辞書”にする📚🧠
+
+![Failure Reason Buckets](./picture/observer_ts_study_020_failure_reason_buckets.png)
 
 おすすめは、最初から**固定の候補**を決めちゃうやり方💡
 
@@ -210,6 +216,8 @@ Invoke-WebRequest http://localhost:3000/metrics | Select-Object -ExpandProperty 
 ---
 
 ## 7) “ビジネスメトリクス”の読み方（ダッシュボード脳）🧠📊✨
+
+![Business Dashboard View](./picture/observer_ts_study_020_business_dashboard.png)
 
 まずはこの3つを見るだけでOK🙆‍♀️
 
