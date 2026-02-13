@@ -39,6 +39,8 @@ I/Oとロジックが混ざると、こうなるよ👇
 
 ## 合言葉はこれ！🪄✨「外は薄く、中は濃く」
 
+![thin_outside_thick_inside](./picture/refactoring_cs_study_038_thin_outside_thick_inside.png)
+
 ![refactoring_cs_study_038_boundary](./picture/refactoring_cs_study_038_boundary.png)
 
 * 外側（I/O）：**薄くする**（入力を整えて渡す、結果を整えて出す）🧻
@@ -61,6 +63,8 @@ graph LR
 
 ## まず覚えるルール5つ🧷✅
 
+![io_flow](./picture/refactoring_cs_study_038_io_flow.png)
+
 ### ルール1：コアは I/O API を呼ばない🙅‍♀️
 
 コア内にこれが出てきたら黄色信号🚦
@@ -81,6 +85,8 @@ graph LR
 コアは「結果のデータ」だけ返すのがキレイ✨
 
 ### ルール5：境界で“データの形”を決める（Request/Result）🧩
+
+![boundary_check](./picture/refactoring_cs_study_038_boundary_check.png)
 
 * `Request`：コアに渡す入力
 * `Result`：コアから返る結果
@@ -140,6 +146,8 @@ public sealed class AppConfig
 ## 分離した版（After）✨🧁（中心を守る）
 
 ### ① コア：純粋ロジックだけ（テストしやすい）🧪
+
+![request_result_dto](./picture/refactoring_cs_study_038_request_result_dto.png)
 
 ```csharp
 public sealed record QuoteRequest(decimal Subtotal, string CouponCode, bool IsHappyHour, decimal TaxRate);
@@ -218,6 +226,8 @@ public sealed class AppConfig
 ---
 
 ## コアが一気にテストしやすくなる🧪🌸
+
+![pure_logic_test](./picture/refactoring_cs_study_038_pure_logic_test.png)
 
 ```csharp
 using Xunit;

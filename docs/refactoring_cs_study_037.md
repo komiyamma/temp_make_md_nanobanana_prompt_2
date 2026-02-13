@@ -24,6 +24,8 @@
 
 ## 2. なんで“包む”の？🧤✨（メリット4つ）
 
+![wrapper_glove](./picture/refactoring_cs_study_037_wrapper_glove.png)
+
 ### ✅(1) テストが一気にラクになる🧪💖
 
 外部APIやDBって、テストで毎回つないだら遅いし不安定💦
@@ -56,6 +58,8 @@
 
 ### 🪡 Seam（シーム）って？
 
+![seam_cut](./picture/refactoring_cs_study_037_seam_cut.png)
+
 **「その場所を直接いじらずに、動きを差し替えられるポイント」**だよ🧷✨
 依存を切ってテストしやすくしたり、観測（ログ/計測）を差し込んだりできるのが強い💪
 この考え方はレガシー改善でも超重要だよ🧟‍♀️➡️🧁 ([martinfowler.com][1])
@@ -85,6 +89,8 @@ graph LR
 ---
 
 ## 4. ダメになりやすい例🥲（中心が外部にベタ結合）
+
+![before_after_dependency](./picture/refactoring_cs_study_037_before_after_dependency.png)
 
 例：ロジックの中で `HttpClient` を new して、URL組んで、JSON解析して…
 これ、テストも変更もつらい😵‍💫💦
@@ -118,6 +124,8 @@ public sealed class OrderService
 ---
 
 ## 5. 正解の型🧁🎯：Port（interface） + Adapter（実装）
+
+![port_adapter_hex](./picture/refactoring_cs_study_037_port_adapter_hex.png)
 
 ### ステップはこれだけ🪜✨
 
@@ -207,6 +215,8 @@ public static class ServiceCollectionExtensions
 ---
 
 ## 7. テスト：Fakeに差し替えるだけ🧪💕
+
+![test_fake_connection](./picture/refactoring_cs_study_037_test_fake_connection.png)
 
 中心ロジック側は **IShippingFeeGateway だけ知ってればOK**。
 テストではFake実装に差し替えるだけで、外部通信ゼロ😆✨

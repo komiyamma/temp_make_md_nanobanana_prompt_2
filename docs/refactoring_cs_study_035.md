@@ -12,6 +12,8 @@
 
 ## 1. そもそも「エラー」って2種類あるよね？🧠🧩
 
+![exception_vs_result](./picture/refactoring_cs_study_035_exception_vs_result.png)
+
 まず大事なのは、失敗を “気分” で扱わないこと😇
 エラーには大きく2種類あります👇
 
@@ -81,6 +83,8 @@ graph TD
 
 ## 4. 失敗の分類ラベル（おすすめ4分類）🏷️📋
 
+![error_labels](./picture/refactoring_cs_study_035_error_labels.png)
+
 エラー設計で迷ったら、まずこれでラベル付けしてね👇✨
 
 1. **Validation**（入力不正）✍️❌
@@ -96,6 +100,8 @@ graph TD
 ---
 
 ## 5. 最小 Result 型を自作して感覚を掴もう🧪📦
+
+![result_structure](./picture/refactoring_cs_study_035_result_structure.png)
 
 ライブラリを入れる前に、まず “仕組み” を体験しよう😊
 （自作は学習用。実務は後半でライブラリ紹介もするよ✨）
@@ -133,6 +139,8 @@ Console.WriteLine(message);
 ---
 
 ## 6. 例外版 vs Result版（同じ処理を比べよう）⚖️✨
+
+![flow_comparison](./picture/refactoring_cs_study_035_flow_comparison.png)
 
 題材：「年齢を受け取って会員登録する」🧁
 
@@ -216,6 +224,8 @@ HTTP API では、エラー応答の標準として **RFC 7807 の Problem Detai
 ASP.NET Core でも ProblemDetails が組み込みで扱えます。 ([Microsoft Learn][5])
 
 ## 8-1) “中心” は Result、境界で ProblemDetails に変換する🧁➡️🌐
+
+![problem_details_map](./picture/refactoring_cs_study_035_problem_details_map.png)
 
 （例：Minimal API っぽいイメージ）
 

@@ -24,6 +24,8 @@
 
 # Part 0：リファクタの全体像（迷子にならない地図）🗺️✨
 
+![course_map](./picture/refactoring_ts_index_course_map.png)
+
 ## 第1章 リファクタリングとは？（10分で要点）⏱️🛠️
 
 * ねらい：定義と価値をサクッと理解する
@@ -88,6 +90,8 @@
 
 # Part 2：守りを固める（テスト・型・静的チェック）🛡️🧪🧷
 
+![safety_gear](./picture/refactoring_ts_index_safety_gear.png)
+
 ## 第9章 フォーマット統一（読みやすさの土台）🎀🧹
 
 * ねらい：見た目の揺れをゼロへ
@@ -140,6 +144,8 @@
 ---
 
 # Part 3：臭いコードの見つけ方（直す前に気づく力）👃✨
+
+![smell_nose](./picture/refactoring_ts_index_smell_nose.png)
 
 ## 第16章 コードの臭い入門（代表パターン）👃📌
 
@@ -247,6 +253,8 @@
 
 # Part 5：TypeScriptらしい改善（型でバグを封じる）🧷🛡️
 
+![ts_superhero](./picture/refactoring_ts_index_ts_superhero.png)
+
 ## 第30章 null/undefined整理①（発生パターン理解）🫧🧠
 
 * ねらい：なぜnullが出るのか分かる
@@ -324,6 +332,8 @@
 ---
 
 # Part 7：実戦で進める（レガシー・移行・運用）🚀🛟
+
+![cycle_loop](./picture/refactoring_ts_index_cycle_loop.png)
 
 ## 第40章 総合演習：段階リファクタで完成させる🎓✅🤖
 

@@ -15,6 +15,8 @@
 
 ### 1) 「待つ場所」が散らかる 🧵
 
+![async_flow_tangled](./picture/refactoring_cs_study_039_async_flow_tangled.png)
+
 ```mermaid
 graph TD
     T["Task"]
@@ -56,6 +58,8 @@ graph TD
 `async void` は **イベントハンドラ専用**（ボタン押下とか）にするのが安全🙆‍♀️
 
 ### ルール3：`CancellationToken` は「引数で受けて、渡し続ける」🧷➡️➡️➡️
+
+![cancellation_baton](./picture/refactoring_cs_study_039_cancellation_baton.png)
 
 「受ける」だけじゃなくて、**内部の待ち（I/OやDelay）に渡す**のが大事💡
 最近のAPIも `CancellationToken` や `TimeSpan timeout` を受け取る形が増えてるよ📈✨ ([Microsoft Learn][1])
@@ -124,6 +128,8 @@ private void CancelButton_Click(object sender, EventArgs e)
 
 ## タイムアウトの入れ方 2通り ⏳✨
 
+![timeout_stopwatch](./picture/refactoring_cs_study_039_timeout_stopwatch.png)
+
 ### 1) CancelAfter 方式：時間が来たらキャンセルする ⏰🛑
 
 Microsoftの定番はこれ🧷 ([Microsoft Learn][2])
@@ -147,6 +153,8 @@ public async Task<string> DownloadWithTimeoutAsync(
 ---
 
 ### 2) WaitAsync 方式：待ちにタイムアウトを付ける ⏳🧵
+
+![wait_async](./picture/refactoring_cs_study_039_wait_async.png)
 
 `Task.WaitAsync(TimeSpan, CancellationToken)` は .NET 10 のAPIにもある標準手段だよ📘 ([Microsoft Learn][3])
 
@@ -187,6 +195,8 @@ catch (Exception ex)
 ```
 
 ### まずはこの形にするのがおすすめ 🧼✅
+
+![exception_buckets](./picture/refactoring_cs_study_039_exception_buckets.png)
 
 ```csharp
 try
