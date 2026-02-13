@@ -123,6 +123,8 @@ doStuff(input).then((msg) => console.log(msg));
 ```
 
 ### このコードの“臭い”チェック👃📝
+![Smelly Kitchen Code](./picture/refactoring_ts_study_040_smelly_kitchen.png)
+
 
 * `any` で何でも通る（事故りやすい）🧨
 * 計算とファイル書き込みが一緒（テストしづらい）😵
@@ -133,6 +135,8 @@ doStuff(input).then((msg) => console.log(msg));
 ---
 
 ## 2) 段階リファクタの全手順（この順でやる）🗺️👣
+![Refactoring Treasure Map](./picture/refactoring_ts_study_040_treasure_map.png)
+
 
 ![Concept: Refactoring Map](./picture/refactoring_ts_study_040_refactoring_map.png)
 
@@ -161,6 +165,8 @@ graph TD
 ---
 
 ## 3) 守り①：ゴールデンマスター（現状出力を固定）👑🛟
+![Golden Master Camera](./picture/refactoring_ts_study_040_golden_master_camera.png)
+
 
 「動作を変えてない」を証明する最短ルート✨
 まずは `doStuff()` の戻り値（レシート文字列）を固定しよう🧾✅
@@ -247,6 +253,8 @@ export default defineConfig(
 ---
 
 ## 5) 改善①：名前を直す（読めるようにする）🏷️✨
+![Rename Signpost](./picture/refactoring_ts_study_040_rename_signpost.png)
+
 
 まずは“意味が伝わる名前”にするだけで、脳みそが楽になる🧠💕
 
@@ -271,6 +279,8 @@ export default defineConfig(
 ---
 
 ## 6) 改善②：計算を“純粋関数”に抜き出す🚪🧪
+![Pure Calculator](./picture/refactoring_ts_study_040_pure_calculator.png)
+
 
 ここが本章の山場⛰️✨
 「計算（ドメイン）」と「ファイル（I/O）」を分離すると、テストが一気に楽になるよ🧪🥳
@@ -323,6 +333,8 @@ export type Receipt = {
 ```
 
 ### 文字列クーポンを “安全にパース” する（unknown→narrowing）🔍🧷
+![Coupon Parser Machine](./picture/refactoring_ts_study_040_coupon_parser.png)
+
 
 ```ts
 // src/parse.ts
@@ -349,6 +361,8 @@ export function parseCoupon(raw: unknown): Coupon {
 ---
 
 ## 8) アフター例（完成形のイメージ）✨🧾
+![Final Bento Architecture](./picture/refactoring_ts_study_040_bento_box.png)
+
 
 「計算」と「I/O」が分かれてるのがポイントだよ👍
 

@@ -41,6 +41,8 @@ TypeScriptは、実行時（JavaScriptとして動く時）に“型”が消え
 ---
 
 ## よくある危険パターン（ビフォー）⚠️💥
+![Dangerous Casting](./picture/refactoring_ts_study_034_dangerous_cast.png)
+
 
 外から来たデータに対して、いきなり「as」で決めつけちゃうやつ…👇
 
@@ -74,7 +76,11 @@ type UserDto = {
   name: string;
   age?: number;
 };
+```
 
+![isRecord Check](./picture/refactoring_ts_study_034_is_record_check.png)
+
+```ts
 // まずは「オブジェクトっぽい？」の土台チェック🧱
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -132,6 +138,8 @@ console.log(raw.age?.toFixed(0));
 ---
 
 ## もっと便利ワザ①：filter で配列をキレイにする🧹🌀
+![Filter Magic](./picture/refactoring_ts_study_034_filter_magic.png)
+
 
 型ガードは「配列のfilter」と相性よすぎる〜！💖
 
@@ -152,6 +160,8 @@ console.log(users.map(u => u.name));
 ---
 
 ## もっと便利ワザ②：「asserts」で“通らなければ例外”にする🔥🧯
+![Assertion Bouncer](./picture/refactoring_ts_study_034_assertion_bouncer.png)
+
 
 「ifで分岐するより、通らなかったら即エラーにしたい」ならアサーション関数が便利だよ😊
 （例外を投げる代わりに、通った後は型が確定するやつ！） ([TypeScript][4])
@@ -201,6 +211,8 @@ main();
 ---
 
 ## テスト（型ガードは絶対テストして守る🧪🛡️）
+![Test Strategy](./picture/refactoring_ts_study_034_test_strategy.png)
+
 
 型ガードは「通す・落とす」が命！
 だからユニットテストで “OK/NG” の例を固定しちゃうのが超おすすめ💕

@@ -18,6 +18,8 @@
 ---
 
 ### まずは「あるある地獄」😇🔥（ビフォー）
+![String Hell](./picture/refactoring_ts_study_035_string_hell.png)
+
 
 status を `string` にすると…こうなる👇
 
@@ -44,6 +46,8 @@ const task: Task = {
 ---
 
 ### 解決！Union型で「許可リスト」を作る✅✨（アフター）
+![Union Type Slots](./picture/refactoring_ts_study_035_union_slots.png)
+
 
 ![Concept: Traffic Colors](./picture/refactoring_ts_study_035_traffic_colors.png)
 
@@ -129,6 +133,8 @@ type Task = {
 ---
 
 ### Step 4：外から来る値は「チェックしてから」入れる🛟✅
+![Input Filter](./picture/refactoring_ts_study_035_input_filter.png)
+
 
 Union型は **実行時に勝手に検証してくれるわけじゃない** からね！⚠️
 （型はコンパイル時の安全ネット🧷）
@@ -157,6 +163,8 @@ function parseStatus(value: unknown): Status {
 ---
 
 ## 実戦ミニ例：UI表示がスッキリする🌸✨
+![UI Switch Machine](./picture/refactoring_ts_study_035_ui_switch.png)
+
 
 status が固定されると、分岐が読みやすくなるよ〜👀
 
@@ -188,6 +196,8 @@ Union型にしておくと、型エラーで気づける範囲が増えるよ✨
 さらに強くするのが第36章の「判別可能Union」だよ〜🚦🧠
 
 ### ③ `enum` と迷う🤔
+![Enum vs Union](./picture/refactoring_ts_study_035_enum_vs_union.png)
+
 
 * **Union型**：ランタイム出力が増えない（型だけで守る）🧷✨
 * **enum**：実行時にも値がある（連携は楽だけど出力が増える）📦

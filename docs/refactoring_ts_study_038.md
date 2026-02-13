@@ -9,6 +9,8 @@
 ---
 
 ### I/Oってなに？（“外の世界”のことだよ🌍）📥📤
+![I/O Icons](./picture/refactoring_ts_study_038_io_icons.png)
+
 
 I/Oは、だいたいこういうやつ👇（覚えやすい！）
 
@@ -29,6 +31,8 @@ I/Oは、だいたいこういうやつ👇（覚えやすい！）
 ---
 
 ### 今日の合言葉🧙‍♀️✨：「コアは静かに、外側はうすく」
+![Sandwich Layers](./picture/refactoring_ts_study_038_sandwich_layers.png)
+
 
 ![Concept: DIP Plug](./picture/refactoring_ts_study_039_dip_plug.png)
 
@@ -82,6 +86,8 @@ graph LR
 ---
 
 ### Before：I/Oとロジックが混ざっててテストしづらい😵‍💫
+![Tangled Yarn Logic](./picture/refactoring_ts_study_038_tangled_yarn.png)
+
 
 ```ts
 type User = { id: string; name: string; plan: "free" | "pro" };
@@ -117,6 +123,8 @@ export async function getWelcomeMessage(userId: string): Promise<string> {
 ---
 
 ### After：I/Oを外へ！コアがテストしやすい😍🧪
+![Crystal Core](./picture/refactoring_ts_study_038_crystal_core.png)
+
 
 「メッセージを組み立てる」部分を**純粋関数っぽく**するよ🧠✨
 （“っぽく”でOK！最初は完璧じゃなくていい🙂🌸）
@@ -173,6 +181,8 @@ export async function getWelcomeMessage(userId: string): Promise<string> {
 ## 手順（小さく刻む）👣✨：I/O追い出し4ステップ
 
 ### ステップ1：I/Oに蛍光ペンを引く🖍️👀
+![Highlighting I/O](./picture/refactoring_ts_study_038_highlighter.png)
+
 
 対象関数の中で、これを探す👇
 
