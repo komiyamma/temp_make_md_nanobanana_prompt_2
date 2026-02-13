@@ -2,6 +2,9 @@
 
 ### ねらい🎯
 
+![Project Toolbox](./picture/refactoring_ts_study_004_project_toolbox.png)
+
+
 * 「まず動かす！」を最速で達成する🏁✨
 * npm scripts（`npm run ...`）に慣れる🧩
 * 変更 → 実行 → 戻す の“安全な手触り”を体に入れる🔁🛟
@@ -17,6 +20,9 @@ Vite はテンプレが用意されてて、`vanilla-ts`（生TypeScript）が�
 ---
 
 ## 1. ディレクトリ＝「引き出し」の整理術📂✨
+
+![Filing Cabinet](./picture/refactoring_ts_study_004_filing_cabinet.png)
+
 
 ![Concept: Folder Drawers](./picture/refactoring_ts_study_004_folder_drawers.png)
 
@@ -41,6 +47,9 @@ graph TD
 ```
 
 ターミナル（VS Code内でOK）で👇を打ってみてね💻✨
+
+![Node Version Check](./picture/refactoring_ts_study_004_node_version_check.png)
+
 
 ```bash
 node -v
@@ -83,6 +92,9 @@ npm create vite@latest
 
 ## 3) まず動かす！（成功体験✨）▶️🌈
 
+![Vite Launch](./picture/refactoring_ts_study_004_vite_launch.png)
+
+
 ```bash
 npm run dev
 ```
@@ -115,6 +127,9 @@ npm run dev
 
 ## 5) 「1行変更 → 実行 → 戻す」練習🔁✨（ミニ課題の本体）
 
+![Hmr Magic](./picture/refactoring_ts_study_004_hmr_magic.png)
+
+
 `src/main.ts` を開いて、`console.log` か表示テキストを **1行だけ** 変えてみてね✍️
 
 例：`main.ts` のどこかに👇を足す（または文字を変える）
@@ -134,6 +149,9 @@ console.log("refactor playground: hello! 🌷");
 ---
 
 ## 6) デバッグ入門（ブレークポイント置いてみよ）🔍🧷✨
+
+![Debug Trap](./picture/refactoring_ts_study_004_debug_trap.png)
+
 
 「デバッグできる」と、怖いコードでも触れるようになるよ〜😌🛟
 
@@ -169,6 +187,9 @@ console.log("refactor playground: hello! 🌷");
 ---
 
 ## 7) “型チェック専用”コマンドを追加（安心ボタン）🧷✅
+
+![Tsc Guard](./picture/refactoring_ts_study_004_tsc_guard.png)
+
 
 Vite は開発中の変換が速い反面、「型エラーを別プロセスで見たい」場面もあるよ📌
 公式も `tsc --noEmit --watch` を別で回す案を紹介してるよ🧷 ([vitejs][4])

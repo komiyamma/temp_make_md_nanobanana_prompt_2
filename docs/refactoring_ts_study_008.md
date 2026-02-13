@@ -2,6 +2,9 @@
 
 ### ねらい🎯
 
+![Name Badge](./picture/refactoring_ts_study_008_name_badge.png)
+
+
 「変更が大きすぎて怖い😱」を卒業して、**1コミット＝1つの説明**でスッキリ進められるようになるよ〜！✨
 
 ---
@@ -55,6 +58,9 @@ graph TD
 
 ## 2. 「1コミット1説明」の合格ライン✅📌
 
+![One Commit One Desc](./picture/refactoring_ts_study_008_one_commit_one_desc.png)
+
+
 次の3つが満たせたら合格だよ〜！🌟
 
 1. **目的が1つ**（例：命名だけ、抽出だけ）🎯
@@ -72,6 +78,9 @@ graph TD
 * **振る舞い変更**（仕様変更・バグ修正）は、リファクタと別コミット🚧
 
 ### ルールB：依存の順番を守る👣
+
+![Dependency Order](./picture/refactoring_ts_study_008_dependency_order.png)
+
 
 よくある安全順はこれ👇
 
@@ -260,6 +269,9 @@ export function calcTotal(items: Item[], coupon?: string) {
 
 ### 5.1 どんな時に必要？🤔
 
+![Hunk Stage](./picture/refactoring_ts_study_008_hunk_stage.png)
+
+
 同じファイルでこうなった時👇
 
 * 上の方でリネーム
@@ -282,6 +294,9 @@ export function calcTotal(items: Item[], coupon?: string) {
 
 ## 6. ターミナルで刻む（慣れると超便利）⌨️✨
 
+![Git Add Patch](./picture/refactoring_ts_study_008_git_add_patch.png)
+
+
 ### `git add -p`（変更を対話で選ぶ）🧩
 
 * hunkごとに「これ入れる？入れない？」って聞いてくれるやつ💡
@@ -296,6 +311,9 @@ git add -p
 ---
 
 ## 7. コミットメッセージのコツ（1コミット1説明の文章化）✍️💖
+
+![Commit Message Template](./picture/refactoring_ts_study_008_commit_message_template.png)
+
 
 ### 書き方テンプレ🧁
 

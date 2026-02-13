@@ -17,6 +17,9 @@
 ---
 
 ### なぜ混ぜると危ないの？😵‍💫💥
+
+![Mixed Confusion](./picture/refactoring_ts_study_002_mixed_confusion.png)
+
 ## 1. リファクタリングって「掃除」のこと🧹✨
 
 ![Concept: Refactoring vs Rewrite](./picture/refactoring_ts_study_002_refactoring_vs_rewrite.png)
@@ -43,6 +46,9 @@ graph TD
 
 ### 「混ざってるかも…」のサイン👃⚠️
 
+![Warning Signs](./picture/refactoring_ts_study_002_warning_signs.png)
+
+
 次のどれかが出たら、だいたい混ざってる🫣
 
 * diffがでっかい（変更行が多い）📏
@@ -62,7 +68,13 @@ graph TD
 
 ## 混ぜないための「分け方」3パターン🍱💡
 
+![Splitting Patterns](./picture/refactoring_ts_study_002_splitting_patterns.png)
+
+
 ### ① 目的で分ける（いちばん強い）🎯
+
+![Purpose Icons](./picture/refactoring_ts_study_002_purpose_icons.png)
+
 
 目的のラベルを、まず口に出して決める😆👇
 
@@ -96,6 +108,9 @@ graph TD
 ---
 
 ## コード例（ビフォー/アフター）🧩➡️✨
+
+![Spaghetti Clean](./picture/refactoring_ts_study_002_spaghetti_clean.png)
+
 
 ### お題：送料計算が読みづらい＆バグもありそう😵‍💫📦
 
@@ -219,6 +234,9 @@ export function calcShippingFee(user: User, total: number): number {
 
 ## 手順（小さく刻む）👣🛟
 
+![Small Steps Workflow](./picture/refactoring_ts_study_002_small_steps_workflow.png)
+
+
 ### 変更に入る前（30秒）⏱️
 
 1. 今日の変更を1行で言う📝
@@ -257,6 +275,9 @@ export function calcShippingFee(user: User, total: number): number {
 ---
 
 ## AI活用ポイント🤖✨（お願い方＋チェック観点✅）
+
+![Ai Diff Check](./picture/refactoring_ts_study_002_ai_diff_check.png)
+
 
 ### ① 変更を「混ざってない？」って監査してもらう👮‍♀️
 

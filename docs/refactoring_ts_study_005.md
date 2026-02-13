@@ -2,6 +2,9 @@
 
 ## ねらい🎯
 
+![Ops Trio](./picture/refactoring_ts_study_005_ops_trio.png)
+
+
 ![Concept: Linter Robot](./picture/refactoring_ts_study_005_linter_robot.png)
 
 ```mermaid
@@ -54,6 +57,9 @@ graph LR
 
 ## 超重要：置換より先に「参照」を見よう👀🛟
 
+![Safe Rename](./picture/refactoring_ts_study_005_safe_rename.png)
+
+
 「えいっ！置換！」は事故りやすいの…😵‍💫💥
 代わりにこうするのが安全だよ👇✨
 
@@ -96,12 +102,18 @@ export function printReceipt(price: number) {
 
 ### 3) 事故りポイント⚠️（ここだけ注意！）
 
+![Replace Bulldozer](./picture/refactoring_ts_study_005_replace_bulldozer.png)
+
+
 * ❌ `Ctrl + H` で `calcTotal` を置換すると、コメントや別の文字列まで巻き込む危険あり😱
 * ✅ `F2` は「シンボル（意味のある名前）」単位で変えやすい🛟 
 
 ---
 
 ## ハンズオン②：検索・置換を“安全運転”する🔎🧯✨
+
+![Search Lenses](./picture/refactoring_ts_study_005_search_lenses.png)
+
 
 ### 1) ファイル内（小さめ）から慣れる😊
 
@@ -127,6 +139,9 @@ export function printReceipt(price: number) {
 ---
 
 ## ハンズオン③：定義ジャンプ→戻る（迷子ゼロ）🧭🔁✨
+
+![Breadcrumbs](./picture/refactoring_ts_study_005_breadcrumbs.png)
+
 
 1. `calculateTotal`（さっきリネームした関数）にカーソルを置く
 2. `F12` で定義へジャンプ🏃‍♀️💨 
@@ -171,6 +186,9 @@ export function printReceipt(price: number) {
 ## AI活用ポイント🤖🃏（ショートカット暗記をラクにする）
 
 ### 1) “暗記カード”を作らせる🃏✨
+
+![Flashcards](./picture/refactoring_ts_study_005_flashcards.png)
+
 
 AIチャットにこう頼むよ👇😊
 

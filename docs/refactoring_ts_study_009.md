@@ -54,6 +54,9 @@ graph LR
 
 ### フォーマッターとLintは別もの👭
 
+![Formatter Vs Linter](./picture/refactoring_ts_study_009_formatter_vs_linter.png)
+
+
 * **フォーマッター**：見た目（空白、改行、カッコの並べ方）を揃える🎀
 * **Lint**：危ない書き方・バグりやすい書き方を注意する👮‍♀️⚠️
 * ここではまず **見た目の統一** に集中！次章でLintに進みやすくなるよ🚶‍♀️➡️
@@ -61,6 +64,9 @@ graph LR
 ---
 
 ## コード例（ビフォー/アフター）🧩➡️✨
+
+![Magic Wand](./picture/refactoring_ts_study_009_magic_wand.png)
+
 
 ### Before 😵‍💫（見た目がガタガタ）
 
@@ -114,6 +120,9 @@ npm i -D prettier
 ---
 
 ### 2) Prettier設定ファイルを作る📝🎀
+
+![Config Treaty](./picture/refactoring_ts_study_009_config_treaty.png)
+
 
 #### いちばんシンプル（`.prettierrc`）
 
@@ -174,6 +183,9 @@ trim_trailing_whitespace = false
 
 ### 5) VS Codeを「保存したら整形」にする💾🪄
 
+![Save Sparkle](./picture/refactoring_ts_study_009_save_sparkle.png)
+
+
 #### ワークスペース設定に入れる（おすすめ）📁✨
 
 `.vscode/settings.json`
@@ -206,6 +218,9 @@ trim_trailing_whitespace = false
 
 ### 6) コマンドで「整形」と「確認」を分ける🧪✅
 
+![Ci Robot](./picture/refactoring_ts_study_009_ci_robot.png)
+
+
 `package.json` の scripts に追加するとラク🎀
 
 ```json
@@ -222,6 +237,9 @@ trim_trailing_whitespace = false
 ---
 
 ### 7) “整形だけのコミット”を作る🧷💾
+
+![Soft Commit](./picture/refactoring_ts_study_009_soft_commit.png)
+
 
 **コツはこれだけ👇**
 
@@ -262,6 +280,9 @@ trim_trailing_whitespace = false
 ---
 
 ## ミニ課題✍️🎀
+
+![Funnel](./picture/refactoring_ts_study_009_funnel.png)
+
 
 ### 課題A：整形だけコミットを作ろう🧷💾
 
