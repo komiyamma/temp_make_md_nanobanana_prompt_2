@@ -27,6 +27,8 @@
 
 ## 2) Commit / Rollback をゲームで覚える🎮✨
 
+![Commit vs Rollback Game](./picture/outbox_cs_study_005_commit_rollback_game.png)
+
 * **Commit（コミット）** = セーブ完了💾✅
 * **Rollback（ロールバック）** = セーブせずに終了、なかったことにする🔙💥
 
@@ -39,6 +41,7 @@
 ## 3) 「同じトランザクションに入れる」ってどういうこと？🧠🔗
 
 ![Transaction Scope](./picture/outbox_cs_study_005_tx_scope.png)
+![Same Bento Box](./picture/outbox_cs_study_005_same_bento_box.png)
 
 これ、言い換えるとこう👇
 
@@ -57,6 +60,8 @@ Outboxでは特に👇が重要💡
 ---
 
 ## 4) 先に知っておくと安心：EF Core の “デフォルト安全” 🧯✨
+
+![EF Core Safety Net](./picture/outbox_cs_study_005_ef_core_safety.png)
 
 実は EF Core は、基本こう動くよ👇
 
@@ -125,6 +130,8 @@ public sealed class OutboxMessage
 
 ## 5-3) “同じトランザクション” で2つ書いて Commit 🔒🍙✅
 
+![Code Structure Visual](./picture/outbox_cs_study_005_code_structure_visual.png)
+
 ```csharp
 using Microsoft.EntityFrameworkCore;
 
@@ -188,6 +195,8 @@ catch (Exception ex)
 
 ## 6) Rollback を “体感” する実ufmer3 👀💥
 
+![Rollback Experience](./picture/outbox_cs_study_005_rollback_experience.png)
+
 「ほんとに戻るの？」を体験しよ✨
 わざと `SaveChangesAsync()` の後に例外を投げてみるよ👇
 
@@ -228,6 +237,8 @@ Console.WriteLine($"Orders: {ordersCount}, Outbox: {outboxCount} （両方0な�
 
 ## 7) TransactionScope っていつ使うの？🧠🔭
 
+![Async Flow Option](./picture/outbox_cs_study_005_tx_scope_option.png)
+
 EF Core の `BeginTransaction()` は **「そのDbContext/接続の範囲」**で分かりやすい👍
 でも、たとえば👇みたいに **複数の技術をまたぐ**ときに `TransactionScope` が出てくることがあるよ🧩
 
@@ -259,6 +270,8 @@ scope.Complete(); // ← Commit 相当
 ## 8) トランザクション “やらかし集” 😵‍💫🧨
 
 ## やらかし①：トランザクションが長すぎる 🐢💤
+
+![Long Transaction Turtle](./picture/outbox_cs_study_005_long_tx_turtle.png)
 
 * 例：トランザクション開始 → ユーザー入力待ち → commit
 * その間、DBのロックが長引いて、他の処理が詰まる😱

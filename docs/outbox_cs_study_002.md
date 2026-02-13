@@ -63,6 +63,8 @@ HTTPやキューは、ネットワークの向こう側にある「別のシス�
 
 ## (1) タイムアウトは「失敗」じゃなくて「不明」⏳❓
 
+![Timeout Mystery](./picture/outbox_cs_study_002_timeout_mystery.png)
+
 たとえばHTTP送信でタイムアウトしたとき：
 
 * 実は相手は受け取って処理してた（でも返事が届かなかった）📬✅
@@ -72,10 +74,14 @@ HTTPやキューは、ネットワークの向こう側にある「別のシス�
 
 ## (2) 200 OKは「受付」なだけのこともある👌➡️🤷‍♀️
 
+![200 OK as Receptionist](./picture/outbox_cs_study_002_receptionist_200.png)
+
 相手が「受け付けた（キューに積んだ）」だけで、
 本当の処理は後から…って構成、めっちゃあるよね📦➡️⏰
 
 ## (3) アプリが落ちる場所が悪いとズレる💥🧯
+
+![Crash Timing Impact](./picture/outbox_cs_study_002_crash_timing.png)
 
 * DB保存の直後にアプリが落ちたら？ → 通知が消える😱
 * 送信の直後にアプリが落ちたら？ → DB更新が消える👻
@@ -85,6 +91,8 @@ HTTPやキューは、ネットワークの向こう側にある「別のシス�
 ---
 
 ## 5) ミニ再現：いちばん素朴な実装が壊れる瞬間 🧪💣
+
+![Naive Code Failure](./picture/outbox_cs_study_002_naive_code_failure.png)
 
 ## よくある素朴コード（イメージ）😺
 
@@ -151,6 +159,8 @@ DBは強いけど、ネットワークは不確実。
 ---
 
 ## 7) 2026年の最新ベースライン（ちょいメモ）📝✨
+
+![.NET 10 Baseline](./picture/outbox_cs_study_002_dotnet10_baseline.png)
 
 この教材の時代感としては、.NETの最新LTSは **.NET 10（2025-11-11リリース）**で、サポートも長くて安心枠だよ🛡️（～2028年まで）([Microsoft for Developers][1])
 同じタイミングで **Visual Studio 2026** と **C# 14** も揃ってる感じ！🧰✨([Microsoft for Developers][2])

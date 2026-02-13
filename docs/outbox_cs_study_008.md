@@ -21,6 +21,8 @@ Outbox（Transactional Outbox）はざっくり言うと、
 
 ## 2) 「使うべき」サイン ✅🌩️（このどれかに当てはまったら候補！）
 
+![Decision Signs ABC](./picture/outbox_cs_study_008_decision_signs_abc.png)
+
 ## サインA：DB更新のたびに、外に“何か”をしたい 📤
 
 例：
@@ -75,6 +77,8 @@ Outbox（Transactional Outbox）はざっくり言うと、
 ---
 
 ## 3) 「使わない（or 後回しでOK）」サイン 🙅‍♀️🌿
+
+![Signs Not To Use](./picture/outbox_cs_study_008_signs_not_to_use.png)
 
 ## サイン1：単一アプリ内で完結してる 🏠
 
@@ -148,6 +152,8 @@ Outboxはだいたい “最低1回は送る（重複あり得る）” を前�
 
 ## 5) “小さく導入”の境界線 📏🧡（ここ超大事！）
 
+![Small Start Steps](./picture/outbox_cs_study_008_small_start_steps.png)
+
 Outboxは、いきなり全部に入れなくてOK🙌
 おすすめの“小さく始める”ラインはこれ👇
 
@@ -175,6 +181,8 @@ Outboxは、いきなり全部に入れなくてOK🙌
 ---
 
 ## 6) ケースで判断してみよう！📚🧠
+
+![Case Study Quiz](./picture/outbox_cs_study_008_case_study_quiz.png)
 
 ## ケース①：注文確定 → 確認メール📧
 
@@ -239,6 +247,8 @@ Outboxは、いきなり全部に入れなくてOK🙌
 ---
 
 ## 8) AI活用（Copilot/Codex）で判断を速くする 🤖🧠✨
+
+![AI Fail Pattern Analysis](./picture/outbox_cs_study_008_ai_fail_pattern.png)
 
 ## 使いどころ1：失敗パターン洗い出し⛈️
 

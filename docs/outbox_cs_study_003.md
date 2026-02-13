@@ -9,6 +9,8 @@
 
 ## 1) この章で作る“ミニ構成”🧩📦
 
+![Mini Architecture Components](./picture/outbox_cs_study_003_mini_architecture.png)
+
 最初はシンプルでOK！あとから育てます🌱
 
 * **Orders.Api**：注文を作るWeb API（あとで「業務テーブル＋Outbox」を同じトランザクションで書く）🛒🌐
@@ -27,6 +29,8 @@ EF Core も **EF Core 10（LTS）** があり、**.NET 10 が必要**です。([
 
 ## 3) Visual Studio で準備する（おすすめ）🧑‍💻💖
 
+![Visual Studio Setup](./picture/outbox_cs_study_003_visual_studio_setup.png)
+
 ## 3-1. Visual Studio を入れる🧰✨
 
 **Visual Studio 2026** が出ています（安定版のリリース履歴も公開されています）。([Microsoft Learn][3])
@@ -41,6 +45,8 @@ EF Core も **EF Core 10（LTS）** があり、**.NET 10 が必要**です。([
 ---
 
 ## 3-2. ソリューションを作る📁✨
+
+![Solution Structure](./picture/outbox_cs_study_003_solution_structure.png)
 
 1. Visual Studio → **新しいプロジェクトの作成**
 2. まずは **空のソリューション**（Blank Solution）を作成（例：`OutboxTutorial`）🧳
@@ -57,6 +63,8 @@ EF Core も **EF Core 10（LTS）** があり、**.NET 10 が必要**です。([
 ## 4) DB（SQL Server LocalDB）を用意する🗄️🪄
 
 ## 4-1. LocalDB ってなに？（超ざっくり）😺
+
+![SQL LocalDB Concept](./picture/outbox_cs_study_003_localdb_concept.png)
 
 “ローカルでだけ”軽く使える **SQL Server** だよ！
 本番DBの代わりに、まずは学習用で使うのにちょうどいい感じ✨
@@ -107,6 +115,8 @@ EF Core のリリースと対応関係（EF10が .NET 10 対応）も公式に�
 
 ## 5-2. `dotnet ef` を使えるようにする（おすすめ）🛠️✨
 
+![EF Core CLI Tools](./picture/outbox_cs_study_003_ef_core_cli_tools.png)
+
 EF Core のCLI（`dotnet ef`）は、公式が手順を案内しています。([Microsoft Learn][7])
 NuGet 側にも `dotnet-ef` パッケージがあります。([NuGet][8])
 
@@ -155,6 +165,8 @@ sqllocaldb info
 ---
 
 ## 7) Visual Studio Code でやる場合（軽量ルート）⌨️✨
+
+![VS Code Lightweight Dev](./picture/outbox_cs_study_003_vscode_lightweight.png)
 
 ## 7-1. C# 開発キット（C# Dev Kit）を入れる🧩
 

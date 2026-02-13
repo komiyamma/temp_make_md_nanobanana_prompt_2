@@ -10,6 +10,8 @@
 
 ## 6-1. まず「メッセージ」って何？✉️💌
 
+![Message Envelope Metaphor](./picture/outbox_cs_study_006_message_envelope_metaphor.png)
+
 **メッセージ**は、ざっくり言うと
 
 > 「別の場所（別プロセス/別サービス）に渡す “情報のかたまり”」
@@ -72,12 +74,16 @@
 
 ## ② キュー（Queue）📥
 
+![Queue One-to-One](./picture/outbox_cs_study_006_queue_one_to_one.png)
+
 * 「箱に入れておく→誰かが取りに来る」スタイル📦➡️📥
 * 重要ポイント：**1つのメッセージは基本“誰か1人”が処理**（負荷分散しやすい）🏃‍♀️🏃‍♂️
 * これはAzure Service Busの説明でも「queueはsingle consumer」って整理されてるよ。([Microsoft Learn][2])
 * 一般的な説明としても、キューはpoint-to-point（1対1）って語られることが多いよ。([IBM][3])
 
 ## ③ Pub/Sub（トピック＋購読）📣📰
+
+![Pub/Sub Megaphone](./picture/outbox_cs_study_006_pubsub_megaphone.png)
 
 * 「掲示板に貼る→見たい人が各自見る」スタイル📌👀
 * 重要ポイント：**同じメッセージが“購読者それぞれ”に配られる**（1対多）👂👂👂
@@ -86,6 +92,8 @@
 ---
 
 ## 6-5. メッセージは「封筒（メタデータ）＋中身（Payload）」が基本 ✉️📦
+
+![Envelope and Payload Structure](./picture/outbox_cs_study_006_envelope_payload_structure.png)
 
 ## 💡封筒（メタデータ）でよく使うもの
 
@@ -137,6 +145,8 @@ public sealed record LineItem(string ProductId, int Quantity);
 ---
 
 ## 6-7. ミニ演習：イベントをJSONにして「メッセージっぽさ」を体験しよ🧪💕
+
+![JSON Message Flying](./picture/outbox_cs_study_006_json_message_fly.png)
 
 ## やること ✅
 
@@ -211,6 +221,8 @@ Outboxではだいたいこうなるよ👇
 ---
 
 ## 6-10. 豆知識：今どきの“イベントの名札”📛✨
+
+![CloudEvents Badge](./picture/outbox_cs_study_006_cloudevents_badge.png)
 
 イベントって、システムごとに形がバラバラだとしんどい…😭
 そこで **CloudEvents** みたいに「イベントに共通のメタデータを持たせよう」っていう仕様もあるよ✉️✨
