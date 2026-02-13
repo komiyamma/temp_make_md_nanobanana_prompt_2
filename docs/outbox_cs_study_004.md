@@ -8,6 +8,8 @@ AIに「うまく頼るところ」と「絶対に人が守るところ」を分
 
 ## 4.1 AIは“爆速だけど、責任は取らない相棒”🏎️💨🧑‍🤝‍🧑
 
+![AI as a Partner](./picture/outbox_cs_study_004_ai_partner_handshake.png)
+
 AIは、雛形づくり・アイデア出し・テスト観点の洗い出しが得意だよ✨
 でも、**それっぽいウソ**や**危ない実装**も平気で混ぜてくることがあるのが注意ポイント⚠️（特にセキュリティや例外処理）
 
@@ -16,6 +18,8 @@ GitHubのガイドでも「コードはそれっぽく見えても安全とは�
 ---
 
 ## 4.2 まず“お願いの仕方”を固定する 🧩💬
+
+![Prompt Flow](./picture/outbox_cs_study_004_prompt_flow.png)
 
 AIに丸投げするとブレるので、毎回この順番で頼むと安定しやすいよ〜✅
 
@@ -28,6 +32,8 @@ AIに丸投げするとブレるので、毎回この順番で頼むと安定し
 ---
 
 ## 4.3 AIに頼んでOKなこと ✅🤖
+
+![AI Tasks OK vs NG](./picture/outbox_cs_study_004_ai_tasks_ok_ng.png)
 
 Outbox文脈だと、ここはAIがめちゃ頼れる✨
 
@@ -53,6 +59,8 @@ Outboxで事故が起きやすいのは、だいたいここ👇
 ---
 
 ## 4.5 この教材で毎回使う「AIレビュー用チェックリスト」📝✅
+
+![Review Checklist](./picture/outbox_cs_study_004_checklist_board.png)
 
 AIが出したコードを読むときは、毎回これを“指差し確認”しよう〜👆😺
 
@@ -84,6 +92,8 @@ AIが出したコードを読むときは、毎回これを“指差し確認”
 ## 4.6 “危ない実装”の典型パターン集 🚨🧯
 
 ### パターンA：トランザクション中に外へ送る（やりがち）😱
+
+![Dangerous Pattern A](./picture/outbox_cs_study_004_dangerous_pattern_a.png)
 
 「DB保存できたのに送信失敗」「送信できたのにDB失敗」みたいな地獄の入口…💀
 
@@ -131,6 +141,8 @@ GitHub Copilotは設定によって、入力したプロンプトや提案が「
 ---
 
 ## 4.8 “プロンプト注入”に気をつける 🧨🧠
+
+![Prompt Injection Shield](./picture/outbox_cs_study_004_prompt_injection.png)
 
 最近よくあるのがこれ👇
 **見た目はただのテキスト（READMEやIssueやログ）なのに、AIにだけ効く“悪い指示”が混ざってて、トークン漏えい・機密ファイル漏えい・意図しないコマンド実行につながる**やつ😱

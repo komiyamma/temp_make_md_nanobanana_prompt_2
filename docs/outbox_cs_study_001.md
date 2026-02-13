@@ -11,6 +11,8 @@
 
 ### 事故A：注文は保存されたのに、メールが飛ばない 🛒✅→📧❌
 
+![Accident A: Order Saved, Email Failed](./picture/outbox_cs_study_001_accident_a.png)
+
 たとえばネットショップで…
 
 1. 注文をDBに保存する（成功）✅
@@ -22,6 +24,8 @@
 * 運営「DB見たら注文ある！でもメール送れてない！どこまで処理したっけ？😵‍💫」
 
 ### 事故B：メールは飛んだのに、注文が保存されてない 📧✅→🛒❌
+
+![Accident B: Email Sent, Order Lost](./picture/outbox_cs_study_001_accident_b.png)
 
 逆もあります…（これ、もっと怖い😇）
 「注文確認メールが来たのに、注文が存在しない」みたいな世界線が爆誕します💥
@@ -44,6 +48,8 @@
 ---
 
 ## Outboxって何？ひとことで 🍙📦
+
+![Outbox Metaphor](./picture/outbox_cs_study_001_outbox_metaphor.png)
 
 **Outboxは「あとで送るための“発送待ち箱”」**です📮✨
 
@@ -86,6 +92,8 @@
 
 ## Outboxがくれる嬉しさ 3つ 🌟🌟🌟
 
+![Three Benefits of Outbox](./picture/outbox_cs_study_001_three_benefits.png)
+
 ### 1) 「DB更新は成功したのに通知失敗」の混乱が減る 🧹✨
 
 通知が失敗しても、**Outboxに“送るべき記録”が残る**ので、あとでリトライできる土台ができます🔁
@@ -117,6 +125,8 @@ Outboxが「発送待ちリスト」になるので、未送信が見える化�
 ---
 
 ## よくある勘違いを先につぶす 🙅‍♀️💥
+
+![Writer and Sender Split](./picture/outbox_cs_study_001_writer_sender_split.png)
 
 * **「Outboxって、送信を絶対成功させる魔法？」**
   → ちがうよ〜！Outboxは「ズレを減らして、失敗しても立て直せる形」にする仕組み📦🛠️
