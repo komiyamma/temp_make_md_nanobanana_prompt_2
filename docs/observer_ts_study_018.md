@@ -18,6 +18,8 @@
 
 ## 2) まず覚える：Nodeのメモリ5兄弟 👨‍👩‍👧‍👦🧠
 
+![Node.js Memory Structure](./picture/observer_ts_study_018_memory_types_diagram.png)
+
 Node には `process.memoryUsage()` っていう、メモリ内訳を取れる仕組みがあるよ✨
 返ってくる代表がこの5つ👇（単位は **bytes**） ([nodejs.org][1])
 
@@ -196,6 +198,8 @@ irm http://localhost:3000/metrics | Select-String "process_memory_|v8_heap_"
 
 ## 6) “危険ライン（目安）”を決める 🚨📏
 
+![Heap Used Ratio Gauge](./picture/observer_ts_study_018_heap_ratio_gauge.png)
+
 いきなり完璧は無理！なので**まずは目安でOK**にするよ😊✨
 
 ### 6-1) まず一番わかりやすい：比率で見る 📌
@@ -216,6 +220,8 @@ irm http://localhost:3000/metrics | Select-String "process_memory_|v8_heap_"
 ---
 
 ## 7) アラートが鳴ったら：3分トリアージ手順 ⏱️🧯
+
+![Memory Alert Triage](./picture/observer_ts_study_018_triage_flowchart.png)
 
 ### Step 1：まず `heapUsed` と `rss` を見る 👀
 
@@ -238,6 +244,8 @@ irm http://localhost:3000/metrics | Select-String "process_memory_|v8_heap_"
 ## 8) ミニ演習：わざとリークさせて見抜く 🧪🕵️‍♀️
 
 ### 8-1) “ダメな例”を作る（グローバル溜め込み）😱
+
+![Global Variable Leak](./picture/observer_ts_study_018_global_variable_leak.png)
 
 ```ts
 // server.ts のどこか上の方に…

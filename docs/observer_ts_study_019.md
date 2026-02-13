@@ -52,6 +52,8 @@ Node.jsのメインスレッド（イベントループ）は、ざっくり言�
 
 ## 3) まず見るべき指標セット 🧰📈
 
+![Delay vs Utilization](./picture/observer_ts_study_019_delay_vs_elu.png)
+
 ### A. イベントループ遅延（Delay / Lag）⏳
 
 * **min / mean / max**
@@ -59,6 +61,8 @@ Node.jsのメインスレッド（イベントループ）は、ざっくり言�
 * Nodeの `monitorEventLoopDelay()` は **`IntervalHistogram`** を返して、`min/max/mean/stddev` や `percentile(99)` みたいな値が取れます ([nodejs.org][1])
 
 ### B. イベントループ利用率（ELU）⚙️
+
+![ELU Gauge](./picture/observer_ts_study_019_elu_gauge.png)
 
 「どれくらい忙しいか」を見る相棒です🤝✨
 `eventLoopUtilization()` は、イベントループが **idle / active** だった累積時間と、計算済みの **utilization（ELU）** を返します ([nodejs.org][1])
@@ -190,6 +194,8 @@ export function startLoopHealthLogger() {
 
 ## 7) “メトリクスとして出す”なら：Prometheusが最短 🏁📈✨
 
+![Prometheus Metric Output](./picture/observer_ts_study_019_prometheus_metric.png)
+
 `prom-client` の `collectDefaultMetrics()` を使うと、**イベントループ遅延系のメトリクスが最初から揃います**🎁✨
 例：`nodejs_eventloop_lag_p99_seconds` など（秒単位） ([tessl.io][4])
 サンプリング精度は `eventLoopMonitoringPrecision`（ms）で調整できます ([tessl.io][4])
@@ -225,6 +231,8 @@ OpenTelemetry側でも、Nodeランタイム指標の“意味づけ”が進ん
 ---
 
 ## 9) ミニ演習：わざと詰まらせてグラフを動かす 🧪💥📈
+
+![Heavy Task Blocking](./picture/observer_ts_study_019_blocking_task.png)
 
 「体験」すると一気に腹落ちします😊✨
 **“わざとCPUを塞ぐ”**エンドポイントを作って、p99が跳ねるのを見るよ👀🔥

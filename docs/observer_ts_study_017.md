@@ -37,12 +37,16 @@ flowchart LR
 
 ## ✅ Rate（リクエスト量）🚰
 
+![RED Method Icons](./picture/observer_ts_study_017_red_method_icons.png)
+
 **「一定時間に何回リクエストが来た？」**
 例：RPS（requests per second）とか、RPM（per minute）とか。
 
 * まずは **HTTPリクエスト数**が基本だよ（traffic） ([sre.google][2])
 
 ## ✅ Errors（失敗）💥
+
+![Error Classification](./picture/observer_ts_study_017_error_classification.png)
 
 **「失敗って、どれ？」**を決めるのが超大事！
 
@@ -55,6 +59,8 @@ flowchart LR
 > **“数えるけど、アラートは別”**が扱いやすいよ😉✨
 
 ## ✅ Duration（遅さ）🐢
+
+![Average vs Tail Latency](./picture/observer_ts_study_017_duration_tail.png)
 
 **「1リクエストに何秒かかった？」** ⏱️
 ここで注意！⚠️
@@ -83,6 +89,8 @@ flowchart LR
 ---
 
 ## 3) ラベル（属性）は“少なめ”が勝ち🏷️✨
+
+![Simple Labels](./picture/observer_ts_study_017_label_simplicity.png)
 
 最初におすすめの属性（少数精鋭🌟）👇
 

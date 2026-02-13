@@ -15,6 +15,8 @@
 
 ## 16.2 ログ🪵とメトリクス📈とトレース🧵の「得意技」分担
 
+![Roles of Logs, Metrics, Traces](./picture/observer_ts_study_016_three_pillars_roles.png)
+
 イメージで覚えちゃお👇✨
 
 * **ログ🪵**：出来事のメモ（「何が起きた？」を詳しく）
@@ -28,6 +30,8 @@
 ---
 
 ## 16.3 メトリクスの基本パーツ🧱✨（Counter / Gauge / Histogram）
+
+![Counter vs Gauge vs Histogram](./picture/observer_ts_study_016_metric_types.png)
 
 ![画像を挿入予定](./picture/observer_ts_study_016_metrics_dashboard.png)
 
@@ -68,6 +72,8 @@ graph LR
 
 ## 16.4 まずは「3つだけ」選ぼう🥇🥈🥉（ミニ演習）
 
+![Selecting Top 3 Metrics](./picture/observer_ts_study_016_select_three_metrics.png)
+
 題材API（例：`/work` `/slow` `/fail` みたいなやつ）を想像して、**重要メトリクスを3つ**だけ選んでみよ🎯✨
 
 おすすめの選び方はこれ👇💡
@@ -81,6 +87,8 @@ graph LR
 ---
 
 ## 16.5 実装してみよう💻✨（OTelで“数字を出す”最短コース）
+
+![OpenTelemetry Metrics Pipeline](./picture/observer_ts_study_016_otel_pipeline.png)
 
 OTelでは、メトリクスはざっくりこう流れるよ👇
 
