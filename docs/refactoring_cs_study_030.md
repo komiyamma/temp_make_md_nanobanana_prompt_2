@@ -11,6 +11,8 @@
 
 ## 1. 不変条件（Invariant）ってなに？🧩💡
 
+![refactoring_cs_study_030_invariant_shield](./picture/refactoring_cs_study_030_invariant_shield.png)
+
 
 ![](./picture/refactoring_cs_study_030_invariants.png)
 **不変条件**は、「そのオブジェクトが生きてる間ずっと守られててほしいルール」です💎✨
@@ -41,6 +43,8 @@ graph TD
 ---
 
 ## 2. 入口はどこ？（守る場所ベスト3）🏰✨
+
+![refactoring_cs_study_030_three_guards](./picture/refactoring_cs_study_030_three_guards.png)
 
 不変条件を守る「入口」は基本この3つが強いよ👇
 
@@ -96,6 +100,8 @@ public sealed class CartItem
 
 ## 4. 例外、どれ投げる？（迷子にならないルール）🧭💥
 
+![refactoring_cs_study_030_exception_trio](./picture/refactoring_cs_study_030_exception_trio.png)
+
 「不正な引数が来た」系は、だいたいこの3兄弟でOK🙂✨
 
 * `ArgumentNullException`：**nullがダメ**なのに来た🫥🛑 ([Microsoft Learn][3])
@@ -107,6 +113,8 @@ public sealed class CartItem
 ---
 
 ## 5. “不変条件”と“入力チェック”は同じ？ちょい違う🙂🧠
+
+![refactoring_cs_study_030_check_difference](./picture/refactoring_cs_study_030_check_difference.png)
 
 似てるけど、気持ち違うよ👇
 
@@ -166,6 +174,8 @@ public sealed class BankAccount
 
 ## 7. async メソッドの入口チェックは “await前” が鉄則⚡🧵
 
+![refactoring_cs_study_030_async_validation](./picture/refactoring_cs_study_030_async_validation.png)
+
 非同期だと例外が「タスクの中」に入っちゃって、発生タイミングがズレることがあるよね💦
 だから、**async の本体に入る前（awaitする前）に引数検証を済ませる**のが推奨されてるよ✅ ([Microsoft Learn][8])
 
@@ -183,6 +193,8 @@ public async Task<string> DownloadAsync(string url, CancellationToken ct)
 ---
 
 ## 8. C# 14 の `field` で「検証付きプロパティ」をスッキリ✨🏷️
+
+![refactoring_cs_study_030_field_check](./picture/refactoring_cs_study_030_field_check.png)
 
 「setterで検証したいけど、裏フィールド書くのダルい〜😵」ってなることあるよね。
 C# 14 だと `field` キーワードで、**自動生成されるバッキングフィールド**に触れられるよ✨（プロパティの検証が書きやすくなる） ([Microsoft Learn][9])
