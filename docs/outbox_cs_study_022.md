@@ -103,6 +103,8 @@ ORDER BY UpdatedAt DESC;
 
 ## 4) ログ：最低限ここだけ押さえよう 🧾🧵✨
 
+![Log Structure](./picture/outbox_cs_study_022_log_structure.png)
+
 ログは「後から事件を再現するための証拠」🕵️‍♀️🔍
 Outbox では、最低でもこのキーをログに入れると強いです💪
 
@@ -224,6 +226,8 @@ finally
 
 ## 6) トレース：1つの注文が「どこで止まったか」を追う 🧵🕵️‍♀️
 
+![Trace Journey](./picture/outbox_cs_study_022_trace_journey.png)
+
 分散トレースは「この注文、どこで時間食ってる？」を一本の糸で追える仕組みです🧵
 .NET では ActivitySource / Activity を使って記録できます。([Microsoft Learn][1])
 
@@ -260,6 +264,8 @@ act?.SetTag("outbox.id", outboxId);
 ---
 
 ## 8) テスト戦略：Outboxは “3段階” で固める 🧪🧱✨
+
+![Outbox Test Pyramid](./picture/outbox_cs_study_022_test_pyramid.png)
 
 ### ① 単体テスト（Unit）🧪
 
@@ -323,6 +329,8 @@ public async Task CreateOrder_WhenFail_ShouldRollbackBoth()
 
 ### ③ 失敗注入テスト（Fault Injection）🎭🧯
 
+![Fault Injection Syringe](./picture/outbox_cs_study_022_fault_injection.png)
+
 狙い：**送信失敗 → リトライ → 成功** の一連を安全に再現！
 
 * publisher を「最初の2回だけ失敗する偽物」にする
@@ -332,6 +340,8 @@ public async Task CreateOrder_WhenFail_ShouldRollbackBoth()
 ---
 
 ## 9) 最終ミニ演習：全部つなげて “完成” させよう 🛒📦🚚📩✅
+
+![Mini Project Goal](./picture/outbox_cs_study_022_mini_project_goal.png)
 
 ここからは、**手順どおりにやれば必ず通る**流れにします🙆‍♀️💕
 

@@ -12,6 +12,8 @@
 
 ## 1. 失敗の2種類を見分けよう 👀💡（超重要）
 
+![Failure Types](./picture/outbox_cs_study_021_failure_types.png)
+
 ### ✅ 一時失敗（Transient）🌩️
 
 「しばらくしたら直るかも」系
@@ -37,6 +39,7 @@
 ## 2. リトライは「設計」しないと事故る 😱🧨
 
 ![Retry Backoff](./picture/outbox_cs_study_021_retry_backoff.png)
+![Thundering Herd](./picture/outbox_cs_study_021_thundering_herd.png)
 
 ### リトライで起きがちな事故 💥
 
@@ -79,12 +82,16 @@
 
 ### (5) ジッターの入れ方 🎲
 
+![Jitter Dice](./picture/outbox_cs_study_021_jitter_dice.png)
+
 例：±20% ぶんランダム、または 0〜X 秒を足す
 「群れ」を避けたいならジッター推奨だよ〜、というガイドもあるよ 🐑🛑 ([Microsoft Learn][2])
 
 ---
 
 ## 4. デッドレター（Dead Letter）ってなに？☠️📦
+
+![Dead Letter Box](./picture/outbox_cs_study_021_dlq_box.png)
 
 ### ざっくり言うと…
 
@@ -117,6 +124,8 @@
 ---
 
 ## 6. Relayの基本アルゴリズム 🚚💨（これが“正しい動き”）
+
+![Relay Logic Flow](./picture/outbox_cs_study_021_relay_logic_flow.png)
 
 ### ステップ0：対象を取る 🔍
 
@@ -267,6 +276,8 @@ public sealed class OutboxMessage
 ---
 
 ## 9. 運用のミニ手順：隔離したら何を見る？どう直す？🔍🧑‍🔧
+
+![Manual Fix Bench](./picture/outbox_cs_study_021_manual_fix_bench.png)
 
 ### 9.1 まず見るもの（上から順）👀
 

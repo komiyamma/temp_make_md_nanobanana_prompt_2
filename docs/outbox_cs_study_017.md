@@ -60,6 +60,8 @@ public interface IEventPublisher
 
 ## 3) 実装①：偽ブローカー（コンソール出力）🖥️🎭
 
+![Fake Broker Prop](./picture/outbox_cs_study_017_fake_broker_prop.png)
+
 まずは「送ったことにする」実装で、全体を通すのがいちばん早い🏃‍♀️💨
 
 ```csharp
@@ -92,6 +94,8 @@ public sealed class ConsoleEventPublisher : IEventPublisher
 ---
 
 ## 4) Relayを“抽象にだけ依存”する形にリファクタ🔧🚚
+
+![Relay Blindfolded](./picture/outbox_cs_study_017_relay_blindfolded.png)
 
 Relay（BackgroundService）は、未送信Outboxを取り出して Publish して、送信済みにする…という流れだったはず👀
 ここでは「Publishの詳細」を `IEventPublisher` に丸投げするよ🎁
@@ -160,6 +164,8 @@ public sealed class OutboxRelayWorker : BackgroundService
 
 ## 5) DIで差し込む（偽ブローカー版）🧃🔌
 
+![DI Injection Robot](./picture/outbox_cs_study_017_di_injection_robot.png)
+
 Program.cs で「IEventPublisher は ConsoleEventPublisher を使うよ」って登録するだけ✨
 
 ```csharp
@@ -191,6 +197,8 @@ await app.RunAsync();
 ## 6) 実装②：HTTP送信に差し替える🌐📨
 
 ## 6-1) “HttpClientを雑にnewしない”のが大事🙅‍♀️
+
+![HttpClient Factory](./picture/outbox_cs_study_017_http_client_factory.png)
 
 HTTPは `HttpClient` を毎回 new して捨てると、接続枯渇などの罠にハマりがち😱
 なので、.NET標準の `IHttpClientFactory` を使うのが定番✨ ([Microsoft Learn][2])
@@ -266,6 +274,8 @@ app.Run();
 
 ## 8) “差し替えがラク”ってこういうこと💃🔁
 
+![Program Switch](./picture/outbox_cs_study_017_program_switch.png)
+
 ## パターンA：開発中は偽ブローカー、本番はHTTP
 
 * 開発：ログで追える🕵️‍♀️
@@ -281,6 +291,8 @@ Program.cs のこの1行だけ変わるのが理想👇
 ---
 
 ## 9) ミニテスト：RelayがPublishを呼ぶことを確認🧪✅
+
+![Recording Spy](./picture/outbox_cs_study_017_recording_spy.png)
 
 モックが苦手でも大丈夫🙆‍♀️
 “記録するだけのPublisher”を作れば簡単！
