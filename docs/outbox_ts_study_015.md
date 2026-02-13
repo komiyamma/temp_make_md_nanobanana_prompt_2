@@ -10,6 +10,8 @@
 
 ## 15-1. そもそも“リトライ”って、何を守るため？🛡️
 
+![Retry Storm](./picture/outbox_ts_study_015_retry_storm.png)
+
 Outboxの世界では、Publisherがイベントを送る瞬間に **ネットワーク・相手サービス・一時的な混雑** などで失敗します 🌧️💥
 この「一時的な失敗」を **その場で諦めず**、もう一度試すのがリトライです 🔁✨
 
@@ -33,6 +35,8 @@ flowchart TD
 
 ## 15-2. リトライは“どこで”やる？➡️ Outboxではここが鉄板📦📤
 
+![Retry Location](./picture/outbox_ts_study_015_retry_location.png)
+
 Outboxパターンでは、基本こう考えるのがラクです🙂
 
 * ✅ **業務処理（書き込み側）ではリトライを極力しない**
@@ -43,6 +47,8 @@ Outboxパターンでは、基本こう考えるのがラクです🙂
 ---
 
 ## 15-3. “失敗”を3種類に分けると超ラク 🧠🧩
+
+![Failure Classification Bins](./picture/outbox_ts_study_015_failure_bins.png)
 
 リトライ設計のコツは、失敗を **分類** すること！🗂️✨
 この3つに分けると、判断が速くなります 💨
@@ -71,6 +77,8 @@ Outboxパターンでは、基本こう考えるのがラクです🙂
 
 ## 15-4. “何回まで？”は3つの上限で決める 🎛️🧠
 
+![Retry Limits Gauge](./picture/outbox_ts_study_015_retry_limits.png)
+
 回数だけで決めると事故りやすいので、次の3点セットで決めます ✅
 
 1. **最大試行回数**：例）3回、5回、10回…🔢
@@ -86,6 +94,8 @@ Outboxパターンでは、基本こう考えるのがラクです🙂
 ---
 
 ## 15-5. “いつ？”は2段階に分けると設計がキレイ 🪜✨
+
+![Retry Timing (Immediate vs Delayed)](./picture/outbox_ts_study_015_retry_timing.png)
 
 OutboxのPublisherでは、リトライを2種類に分けるのが王道です🙂
 
@@ -116,6 +126,8 @@ Publisherが賢くなるために、Outboxテーブル（または対応する�
 ---
 
 ## 15-7. 実装（TypeScript）：“分類→回数制限→記録”の骨組み 🛠️✨
+
+![Error Triage Tag](./picture/outbox_ts_study_015_error_triage.png)
 
 ### 1) 失敗の分類を型で表す 🧠🏷️
 

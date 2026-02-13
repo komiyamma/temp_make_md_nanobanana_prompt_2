@@ -46,6 +46,8 @@ CloudEvents は「イベントの封筒」の共通フォーマットで、`spec
 
 ## 10-2. eventType（イベント名）は「読みやすく・衝突しにくく」🏷️✨
 
+![Event Naming Rules](./picture/outbox_ts_study_010_naming_rules.png)
+
 ## ルール（おすすめ）📛
 
 * **過去形**っぽく（起きた事実）
@@ -69,6 +71,8 @@ CloudEvents は「イベントの封筒」の共通フォーマットで、`spec
 ---
 
 ## 10-3. フィールド設計の基本：「受け側が迷わない」🎁🙂
+
+![Currency and ID Design](./picture/outbox_ts_study_010_currency_id_design.png)
 
 ## 命名のコツ🧠
 
@@ -115,6 +119,8 @@ graph TD
 Outboxパターンでは、データを **2つの層** で考えると整理しやすいです整理しやすいです📚
 
 ## 10-4. 「null」「欠損」「空文字」問題を片付けよう🧹😇
+
+![Null Handling](./picture/outbox_ts_study_010_null_handling.png)
 
 ここ、受け側が一番困るやつです…！🥹
 
@@ -173,6 +179,8 @@ ULID は「文字列で扱いやすい」「時系列ソートしやすい」特
 
 ## 10-7. schemaVersion：payloadは将来変わる前提で守る🧬🛡️
 
+![Schema Versioning](./picture/outbox_ts_study_010_schema_versioning.png)
+
 payloadは、将来ほぼ確実に変わります🙂
 だからどこかに **バージョン情報**を入れておくのが大事！
 
@@ -185,6 +193,8 @@ payloadは、将来ほぼ確実に変わります🙂
 ---
 
 ## 10-8. 実行時バリデーション：JSON Schemaで「壊れたpayload」を止める🚧🧪
+
+![JSON Schema Validation](./picture/outbox_ts_study_010_json_schema_validation.png)
 
 TypeScriptの型だけだと、**受け取ったJSONが壊れてても通っちゃう**ことがあります😱
 そこで **JSON Schema** を使うと「実行時に検査」できます。
@@ -243,6 +253,8 @@ function assertValidOrderConfirmedPayload(input: unknown): asserts input is Orde
 ---
 
 ## 10-9. 追跡しやすさ：correlationId / traceparent を入れると最強🔍🧵
+
+![Trace Context](./picture/outbox_ts_study_010_trace_context.png)
 
 イベント駆動は「どの処理から来たイベント？」が迷子になりがち🥹
 そこで **相関ID**や **トレース情報**があると、ログ追跡がめちゃ楽になります✨
