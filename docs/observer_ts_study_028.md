@@ -17,6 +17,8 @@
 
 ## 1. まず大事な考え方：観測は「量」じゃなくて「導線」👀🧠✨
 
+![Three Pillars Bridge](./picture/observer_ts_study_028_three_pillars_bridge.png)
+
 ログを増やす📚！メトリクス増やす📊！トレース増やす🧵！
 …も大事なんだけど、初心者が一番つまずくのはここ👇
 
@@ -53,6 +55,8 @@ flowchart TD
 
 ## 2. “つなぐ”ための最重要アイテム：共通ID 🔑🔗
 
+![Trace ID Key](./picture/observer_ts_study_028_trace_id_key.png)
+
 結論から言うね👇
 
 ### ✅ 主役は traceId（トレースID）でOK！
@@ -70,6 +74,8 @@ Webの世界では、分散トレーシングの文脈をHTTPヘッダで運ぶ�
 ---
 
 ## 3. “同じ言葉”で揃える：共通フィールド辞書 📚🏷️✨
+
+![Common Dictionary](./picture/observer_ts_study_028_common_dictionary.png)
 
 つながらない原因の8割は「名前バラバラ」問題😵‍💫
 なので、**ログ・メトリクス・トレースで同じ意味を同じキー名**で揃えるよ！
@@ -97,6 +103,8 @@ OpenTelemetry は HTTP の属性・スパン命名などの **セマンティッ
 
 ## 4. 調査導線を「3ステップ」に固定する 🧭✨
 
+![Investigation Steps](./picture/observer_ts_study_028_investigation_steps.png)
+
 第28章のミニ演習にもあるやつ！ここが超コアだよ🔥
 
 ### ✅ 調査はこの3ステップで固定 👇
@@ -113,6 +121,8 @@ OpenTelemetry は HTTP の属性・スパン命名などの **セマンティッ
 ---
 
 ## 5. “飛べる”と最強：メトリクス↔トレースのリンク（Exemplars）📍🧵✨
+
+![Exemplars Jump](./picture/observer_ts_study_028_exemplars_jump.png)
 
 ここ、今どき感つよいよ〜！😆✨
 
@@ -143,6 +153,8 @@ Grafana では exemplars の仕組みが説明されてて、**メトリクス�
 ---
 
 ### 6.2 目標（実装でやること）🎯
+
+![Log Injection Mechanism](./picture/observer_ts_study_028_log_injection_mechanism.png)
 
 * リクエスト処理中の **現在のSpanコンテキスト**から
 

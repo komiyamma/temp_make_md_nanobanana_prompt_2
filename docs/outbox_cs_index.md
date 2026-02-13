@@ -2,6 +2,8 @@
 
 ## 第1章：まず「Outboxって何のため？」を超ざっくり掴む 😺📦
 
+![Outbox Concept](./picture/outbox_cs_index_concept.png)
+
 * 今日のゴール：**DB更新と通知送信のズレ**をなくすイメージを持つ✨
 * ありがちな事故（例：注文は保存されたのにメールは飛ばない）😱
 * 「Outbox＝あとで送るための“発送待ち箱”」という比喩📮
@@ -9,6 +11,8 @@
 ---
 
 ## 第2章：なぜズレるの？二重書き込み（Dual Write）の怖さ 😵‍💫🧨
+
+![Dual Write Problem](./picture/outbox_cs_index_dual_write.png)
 
 * DB保存と送信（HTTP/Queue）が“別世界”な理由🌍
 * 失敗パターン表（DB成功・送信失敗／逆／タイムアウト…）⛈️
@@ -35,6 +39,8 @@
 
 ## 第5章：トランザクション超入門（“全部成功 or 全部失敗”）🔒🍙
 
+![Transaction Scope](./picture/outbox_cs_index_transaction_scope.png)
+
 * コミット/ロールバックの感覚をつかむ🎮
 * 「同じトランザクションに入れる」ってどういうこと？🧠
 * やらかし例：トランザクションが短すぎ／長すぎ問題😅
@@ -50,6 +56,8 @@
 ---
 
 ## 第7章：Outboxパターンの全体像（登場人物紹介）🗺️👥
+
+![Outbox Architecture](./picture/outbox_cs_index_architecture_map.png)
 
 * 主役：業務テーブル、Outboxテーブル、配送係（Relay）🚚
 * 流れ：①業務更新＋Outbox記録（同じトランザクション）→②後で配送📦➡️📩
@@ -118,6 +126,8 @@
 
 ## 第15章：配送係（Relay）の設計：まずはポーリングでOK ⏱️🚚
 
+![Relay Worker](./picture/outbox_cs_index_relay_worker.png)
+
 * ポーリングとは？（一定間隔で未送信を取りに行く）⏰
 * 1回に何件？（バッチサイズ）📦📦📦
 * 送信の順序をどう扱う？（最初は気にしすぎない）🙂
@@ -150,6 +160,8 @@
 ---
 
 ## 第19章：冪等性（考え方編）🧷🧠
+
+![Idempotency Key](./picture/outbox_cs_index_idempotency_key.png)
 
 * 「2回届いても1回分として扱う」って何？🔁➡️1️⃣
 * Idempotency Keyの考え方（OutboxIdを使うのが定番）🪪
