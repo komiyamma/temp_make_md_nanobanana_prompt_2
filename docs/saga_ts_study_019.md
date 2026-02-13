@@ -16,9 +16,17 @@
 Sagaの状態機械で多い事故はだいたいこれ👇
 
 * 状態がただの `string` で、**タイポしても通る**（`"PAID"` vs `"PAYD"`）⌨️💥
+
+![saga_ts_study_019_string_vs_union](./picture/saga_ts_study_019_string_vs_union.png)
+
+
 * “必要な情報”が揃ってないのに次へ進む
 
   * 例：`paymentId` が無いのに「決済成功状態」扱いしちゃう😵
+
+![saga_ts_study_019_missing_data_accident](./picture/saga_ts_study_019_missing_data_accident.png)
+
+
 * “その状態では起きちゃダメなイベント”が来ても処理しちゃう
 
   * 例：在庫確保前に `ShipRequested` が来る🚚💨（早すぎ〜！）
@@ -83,6 +91,10 @@ export type OrderSagaState =
 
 ## これの何がうれしいの？🥰✨
 
+![saga_ts_study_019_discriminated_union_boxes](./picture/saga_ts_study_019_discriminated_union_boxes.png)
+
+
+
 例えば `"PAYMENT_RESERVED"` のとき、`paymentId` が **必須** になる💳✅
 つまり、`paymentId` なしでその状態を作れない＝事故の入口が閉じる🚪🔒
 
@@ -119,6 +131,10 @@ classDiagram
 ## ✅ 遷移表を `as const` ＋ `satisfies` で固定する
 
 `satisfies` は「形が合ってるか検査しつつ、推論はなるべく壊さない」ための便利オペレーターだよ🧠✨ ([TypeScript][3])
+
+![saga_ts_study_019_transition_table_mold](./picture/saga_ts_study_019_transition_table_mold.png)
+
+
 
 ```ts
 type Event =
@@ -180,6 +196,10 @@ function acceptEvent<S extends Status>(
 ```
 
 たとえば `INIT` に `StockReserved` を渡そうとすると、**型エラー**になるよ🚫✨
+
+![saga_ts_study_019_compile_time_guard](./picture/saga_ts_study_019_compile_time_guard.png)
+
+
 「実行してから気づく」じゃなくて「書いた瞬間に気づく」ってめちゃ強い🔥
 
 ---
@@ -239,6 +259,10 @@ export function reduce(state: OrderSagaState, event: Event): OrderSagaState {
 ポイント🌟
 
 * `default: return assertNever(state)` みたいにしておくと、状態を増やした時に「未対応」が見つかりやすい✅
+
+![saga_ts_study_019_switch_exhaustiveness](./picture/saga_ts_study_019_switch_exhaustiveness.png)
+
+
 * さらにイベント側も同じ仕組みにすると漏れに強い💪✨
 
 ```mermaid
@@ -277,6 +301,10 @@ function doSomething(state: OrderSagaState) {
 ```
 
 「ifの中で急に型が賢くなる」感じが気持ちいいよ😆✨
+
+![saga_ts_study_019_type_guard_glasses](./picture/saga_ts_study_019_type_guard_glasses.png)
+
+
 
 ```mermaid
 graph TD

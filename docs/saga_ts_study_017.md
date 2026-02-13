@@ -65,6 +65,10 @@ SagaのStepは「注文ID」「SagaID」があるので、だいたいこれでO
 
 こうすると、同じSagaの同じStepは、何回リトライしても同じキーになります🔁✨
 
+![saga_ts_study_017_deterministic_key_creation](./picture/saga_ts_study_017_deterministic_key_creation.png)
+
+
+
 ```mermaid
 graph TD
     SagaID["SagaID (order-123)"]
@@ -79,6 +83,10 @@ graph TD
 
 外部APIの世界だと「Idempotency-Keyヘッダー」で冪等化するやり方が広く使われます。
 たとえばStripeは **Idempotency-KeyヘッダーにUUIDを推奨**しています。([Stripe ドキュメント][3])
+
+![saga_ts_study_017_external_api_uuid](./picture/saga_ts_study_017_external_api_uuid.png)
+
+
 
 さらに最近は、HTTPの **Idempotency-Key** ヘッダー自体が標準化に向けたドラフトとして議論されています（POST/PATCHなど“本来は冪等じゃない”操作を安全にする狙い）。([IETF Datatracker][4])
 
@@ -99,6 +107,10 @@ graph TD
 
 AWSの考え方もまさにこれで、「トークンが新規なら処理→レスポンス保存、既存なら保存レスポンス返す」です。([AWS ドキュメント][2])
 
+![saga_ts_study_017_check_do_save_flow](./picture/saga_ts_study_017_check_do_save_flow.png)
+
+
+
 ---
 
 ## 6) 最小データ設計（これだけで強くなる）🧱✨
@@ -106,6 +118,10 @@ AWSの考え方もまさにこれで、「トークンが新規なら処理→�
 # テーブル案①：Idempotency Store（操作単位の重複排除）🔐
 
 * **idempotency_key** を UNIQUE にするのが命💓
+
+![saga_ts_study_017_table_design](./picture/saga_ts_study_017_table_design.png)
+
+
 
 保存したい項目の例👇
 
@@ -151,6 +167,10 @@ type IdempotencyRecord = {
 * 次のリトライで **もう一回外部API叩いちゃう** 😱💥
 
 だから、**“IN_PROGRESS” を先に保存して席取り**するのが強いです💪✨
+
+![saga_ts_study_017_seat_reservation](./picture/saga_ts_study_017_seat_reservation.png)
+
+
 （そして最後に SUCCEEDED/FAILED へ更新）
 
 ```mermaid
@@ -288,8 +308,16 @@ SagaのStep向けなら、まずはこのテンプレが安定です😊
 1. **リトライのたびにUUIDを作り直す**
    → 同じ操作なのに別操作扱いになって二重実行💥
 
+![saga_ts_study_017_pitfall_new_uuid](./picture/saga_ts_study_017_pitfall_new_uuid.png)
+
+
+
 2. **キーはあるけど、結果を保存しない**
    → 再送時に「どう返せばいいか」困って結局再実行😵‍💫
+
+![saga_ts_study_017_pitfall_missing_save](./picture/saga_ts_study_017_pitfall_missing_save.png)
+
+
 
 3. **UNIQUE制約なし（アプリだけで頑張る）**
    → 並列や複数プロセスで負けやすい⚔️
