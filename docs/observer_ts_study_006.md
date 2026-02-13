@@ -109,7 +109,9 @@ graph TD
 
 ---
 
-## 5) ミニ演習：計測ポイントを「5つだけ」選ぶ🖐️✨
+## 5) ミニ演習：計測ポイントを「5つだけ」選ぶ
+
+![measurement_points](./picture/observer_ts_study_006_measurement_points.png)🖐️✨
 
 **ルール：最初は欲張らない！**（5つがちょうどいい😌🌸）
 
@@ -127,8 +129,12 @@ graph TD
 
 ## 6) requestId（相関ID）を“境界で”作る🔗✨
 
+![context_propagation](./picture/observer_ts_study_006_context_propagation.png)
+
 ログを繋ぐには、**同じIDを同じリクエスト中ずっと持つ**のが基本だよ😊
 Nodeでは `AsyncLocalStorage` を使うパターンが定番として紹介されてるよ（request context を保つ）🔗🧵 ([GitHub][1])
+
+![async_local_storage](./picture/observer_ts_study_006_async_local_storage.png)
 
 ### 超ミニ例：AsyncLocalStorageで requestId を配る🪄✨
 
@@ -162,6 +168,8 @@ export function getRequestId(): string | undefined {
 ---
 
 ## 7) 「ログ/メトリクス/トレース」を境界に割り当てる🎒✨
+
+![ingress_egress](./picture/observer_ts_study_006_ingress_egress.png)
 
 ここは“設計の勝ちポイント”だよ😎✨
 （OpenTelemetryは Node.jsでトレース/メトリクスを始める公式手順があるよ🧵📈 ([OpenTelemetry][2])）

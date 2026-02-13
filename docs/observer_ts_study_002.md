@@ -14,18 +14,26 @@
 
 ### ① 本番だけ落ちる／再現できない💥
 
+![unknown_cause](./picture/observer_ts_study_002_unknown_cause.png)
+
 * ローカルではOK、本番でだけ500😵
 * 「どの入力で」「どの処理で」「どんな順で」壊れたか分からない
 
 ### ② どこが遅いか分からない🐢
 
+![bottleneck_search](./picture/observer_ts_study_002_bottleneck_search.png)
+
 * 体感「遅い」だけで、DB？外部API？自分の処理？不明🌀
 
 ### ③ 非同期でログが混ざって追えない🧵😵‍💫
 
+![async_maze](./picture/observer_ts_study_002_async_maze.png)
+
 * 同時アクセスでログが交互に出て、1リクエストの流れが見えない
 
 ### ④ エラーは出てるのに原因に辿り着けない🧯
+
+![error_trace](./picture/observer_ts_study_002_error_trace.png)
 
 * スタックトレースが弱い／情報が足りない／“どのユーザー操作か”不明
 
@@ -35,6 +43,8 @@
 * リトライが悪化させてるのかも？でも証拠がない
 
 ### ⑥ 外部サービス障害に巻き込まれる🌩️
+
+![external_fail](./picture/observer_ts_study_002_external_fail.png)
 
 * 外部APIが遅い/落ちる→自分のサービスも道連れ😵
 

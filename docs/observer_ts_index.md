@@ -2,7 +2,11 @@
 
 ## Ⅰ. TS/Nodeらしい土台づくり編（1〜7章）🌱🧠
 
+![learning_path](./picture/observer_ts_index_learning_path.png)
+
 ### 第1章：オブザーバビリティって何？👀✨
+
+![three_pillars](./picture/observer_ts_index_three_pillars.png)
 
 * ゴール：Logs/Metrics/Tracesを一言で説明できる
 * キーワード：「あとで原因に辿り着く」ための設計
@@ -11,12 +15,16 @@
 
 ### 第2章：TS開発で“困る瞬間”から逆算😵‍💫➡️😊
 
+![target_audience](./picture/observer_ts_index_target_audience.png)
+
 * ゴール：観測が必要な理由が腹落ち
 * キーワード：非同期で追えない／再現できない／遅い場所不明
 * ミニ演習：困りごと3つ→「何が見えたら助かる？」を対応づける📋
 * AI：対応表を作って整理してもらう🤖🧹
 
-### 第3章：題材を決める🧱💻（Node API中心＋必要ならフロント任意）
+### 第3章：題材を決める🧱💻
+
+![course_goal](./picture/observer_ts_index_course_goal.png)（Node API中心＋必要ならフロント任意）
 
 * ゴール：教材の対象を固定して迷子回避
 * キーワード：API（例：/work /slow /fail）＋外部I/O（fetch/DB風）
@@ -24,6 +32,8 @@
 * AI：API仕様のたたき台を作ってもらう🤖🧾
 
 ### 第4章：VS CodeとAIで“観測の下準備”🧰🤖✨
+
+![tech_stack](./picture/observer_ts_index_tech_stack.png)
 
 * ゴール：作業の型（ログ追加→確認→改善）を作る
 * キーワード：Copilotでテンプレ生成／コメントから雛形
