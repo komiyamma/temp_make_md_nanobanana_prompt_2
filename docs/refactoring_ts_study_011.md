@@ -1,6 +1,8 @@
 ﻿# 第11章：TypeScriptの型チェックを味方にする🧷✨
 
 ### ねらい🎯
+![Type Check Ally](./picture/refactoring_ts_study_011_type_check_ally.png)
+
 
 ![Concept: Safety Net](./picture/refactoring_ts_study_012_safety_net.png)
 
@@ -43,6 +45,8 @@ graph LR
 ## 1) まず「型チェック」をワンボタン化しよう🔘✅
 
 ### ✅ やること：`typecheck` コマンドを用意する
+![No Emit Command](./picture/refactoring_ts_study_011_no_emit.png)
+
 
 `tsc`（TypeScriptコンパイラ）が型チェックの本体だよ。VS Codeは型の支援をしてくれるけど、`tsc`自体は別で入れる必要があるよ〜🧑‍💻🧷 ([Visual Studio Code][1])
 
@@ -83,6 +87,8 @@ npm run typecheck
 ## 2) VS Codeで「型」を読む練習👀🧷
 
 ### ① Problems パネルは「型エラーの地図」🗺️
+![Problems Panel Map](./picture/refactoring_ts_study_011_problems_panel.png)
+
 
 * 赤い波線が出たら、まず **Problems** を開く🔎
 * エラー文は長くてもOK！大事なのはここ👇
@@ -105,6 +111,8 @@ VS Codeは「内蔵のTypeScript」と「プロジェクトに入ってるTypeSc
 ---
 
 ## 3) `strict` は「安全ネットのまとめスイッチ」🛟✨
+![Strict Mode Switch](./picture/refactoring_ts_study_011_strict_switch.png)
+
 
 `tsconfig.json` の `strict: true` は、型チェックを強くしてバグを早めに見つけやすくするスイッチだよ🔛
 しかも **strictは“strict系のオプション全部まとめてON”**って意味（後から個別にOFFもできる）🧷✅ ([TypeScript][4])
@@ -128,6 +136,8 @@ VS Codeは「内蔵のTypeScript」と「プロジェクトに入ってるTypeSc
 ## 4) コード例（ビフォー/アフター）🧩➡️✨
 
 ### 例1：型チェックが「壊れた接続」を教えてくれる🔌⚡
+![Broken Connection](./picture/refactoring_ts_study_011_broken_connection.png)
+
 
 #### ❌ Before：引数の型ミスが混ざる
 
@@ -165,6 +175,8 @@ function formatPrice(price: number | string) {
 ---
 
 ### 例2：`strictNullChecks` が「落ちる未来」を止めてくれる🧯🫧
+![Strict Null Checks](./picture/refactoring_ts_study_011_strict_null_checks.png)
+
 
 #### ❌ Before：`undefined`が混ざるかもなのにそのまま使う
 
@@ -211,6 +223,8 @@ function greet(user: User) {
 ## 6) よくあるつまずき & 安全な考え方🧠🛟
 
 ### 🌀 つまずきA：`any` で全部黙らせたくなる
+![Any vs Unknown](./picture/refactoring_ts_study_011_any_vs_unknown.png)
+
 
 気持ちは分かるけど、`any`は「安全ネットを自分で切る」感じ😱✂️
 困ったらまずは `unknown` にして、**チェックしてから使う**が安全✨

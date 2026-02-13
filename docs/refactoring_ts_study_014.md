@@ -27,6 +27,8 @@ graph TD
 ---
 
 ## 1) デバッグとログの違い🤔（ざっくりでOK！）
+![Debug vs Log](./picture/refactoring_ts_study_014_debug_vs_log.png)
+
 
 ### デバッグ🛑🔍（止めて見る）
 
@@ -63,8 +65,12 @@ TypeScriptは実行時にはJavaScriptになるので、**ソースマップ（s
 ---
 
 ## 3) 便利ブレークポイント3点セット🧠🧷
+![Breakpoint Types](./picture/refactoring_ts_study_014_breakpoint_types.png)
+
 
 ### ① 条件付きブレークポイント（特定の時だけ止める）🚦
+![Conditional Breakpoint](./picture/refactoring_ts_study_014_conditional_breakpoint.png)
+
 
 「この時だけ止めたい！」ができる✨
 例：`userId === "A001"` の時だけ止める、みたいな感じ🧩 ([Stack Overflow][4])
@@ -83,6 +89,8 @@ TypeScriptは実行時にはJavaScriptになるので、**ソースマップ（s
 ## 4) ログの置き方：最小で効く🪵🎯
 
 ### ログの“置きドコロ”はここ！
+![Log Placement Points](./picture/refactoring_ts_study_014_log_points.png)
+
 
 1. **入口**：入力（引数・リクエスト）📥
 2. **分岐**：どっちルートに入った？🔀
@@ -90,6 +98,8 @@ TypeScriptは実行時にはJavaScriptになるので、**ソースマップ（s
 4. **例外**：catchした時は「何が起きたか」⚠️
 
 ### “良いログ”の型🧩✨
+![Object Logging](./picture/refactoring_ts_study_014_object_logging.png)
+
 
 * 「何の処理？」＋「重要なID」＋「重要な値」
 * 文字列を並べるより、**オブジェクトで出す**と読みやすい（検索もしやすい）🧠🔍
@@ -137,6 +147,8 @@ export function calcTotal(price: number, coupon?: { percent: number }, shippingF
 ## 6) 「落ちた時の手がかり」を強くする🧷🗺️（スタックトレース編）
 
 ### Nodeのソースマップ対応で、エラーの行が読みやすくなる📍
+![Source Map Connection](./picture/refactoring_ts_study_014_source_map.png)
+
 
 Node には `--enable-source-maps` があって、トランスパイル後のJSじゃなく**元のソース位置に寄せた**スタックトレースを出せるよ🧭 ([Node.js][5])
 ※ただし `Error.stack` を頻繁に触るケースでは性能影響がありえる、という注意も公式にあるよ⚠️ ([Node.js][5])
@@ -150,6 +162,8 @@ Node には `--enable-source-maps` があって、トランスパイル後のJS�
 VS Codeは Run and Debug から `launch.json` を作って、デバッグ起動の設定をプロジェクトに置けるよ🧷📁 ([Visual Studio Code][6])
 
 ### 方法B：Auto Attach（ターミナル実行に自動でくっつく）🧲
+![Auto Attach Magnet](./picture/refactoring_ts_study_014_auto_attach.png)
+
 
 VS Code の Auto Attach を有効にすると、統合ターミナルから起動した Node プロセスにデバッガが自動で付いてくるよ🧑‍💻🧲 ([Visual Studio Code][7])
 
