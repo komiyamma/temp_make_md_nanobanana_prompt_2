@@ -4,6 +4,8 @@
 
 ## 1. 今日のゴール🎯✨
 
+![refactoring_cs_study_033_console_cartridge](./picture/refactoring_cs_study_033_console_cartridge.png)
+
 ![](./picture/refactoring_cs_study_033_strategy.png)
 
 「if / switch の分岐が増え続けてツラい…😵‍💫」を、**Strategy（ストラテジー）パターン**でスッキリさせます🌿
@@ -49,6 +51,8 @@ graph TD
 ---
 
 ## 3. まずは“やりすぎない判断”⚖️🙂
+
+![refactoring_cs_study_033_strategy_scale](./picture/refactoring_cs_study_033_strategy_scale.png)
 
 ### switch/if のままでOKなとき👌
 
@@ -160,6 +164,8 @@ public sealed class ShippingServiceTests
 
 ## 6. Strategy化：設計の形を作る🧩🏗️
 
+![refactoring_cs_study_033_shipping_trucks](./picture/refactoring_cs_study_033_shipping_trucks.png)
+
 ### Step 1：Strategyのインターフェースを作る🎀
 
 「送料の計算方法」を部品にします。
@@ -222,6 +228,8 @@ public sealed class OversizeShippingFeeStrategy : IShippingFeeStrategy
 
 ### A. いちばん簡単：Dictionaryで選ぶ🗂️✨（おすすめ入門）
 
+![refactoring_cs_study_033_vending_machine](./picture/refactoring_cs_study_033_vending_machine.png)
+
 ```csharp
 public sealed class ShippingService
 {
@@ -244,6 +252,8 @@ public sealed class ShippingService
 * 分岐追加は **Strategyを1個足すだけ**➕✨
 
 ### B. DI（依存性注入）で集める🧩🔁（Web/アプリでも超定番）
+
+![refactoring_cs_study_033_dependency_injection](./picture/refactoring_cs_study_033_dependency_injection.png)
 
 DIは「interfaceで抽象化して、必要な実装を注入する」考え方です💡
 .NETのDIの基本もこの形を推しています🧠✨ ([Microsoft Learn][3])

@@ -14,6 +14,8 @@
 特に「コードの説明（What/How）」系コメントが大量にあると、だんだんこうなる👇💦
 
 * コメントが古くなって嘘になる（コメントと実装がズレる）🧟‍♀️
+
+![refactoring_cs_study_027_comment_decay](./picture/refactoring_cs_study_027_comment_decay.png)
 * 読む順番が「コメント→コード」になって理解が遅くなる🐢
 * 直す人が「コメント直した気」になってバグる😵‍💫
 * “説明が必要な複雑さ”を温存しちゃう🧨
@@ -69,6 +71,8 @@ graph LR
 
 ## コメント→コード化する「7つの変換テク」🪄✨
 
+![refactoring_cs_study_027_refactoring_toolbox](./picture/refactoring_cs_study_027_refactoring_toolbox.png)
+
 ### ① コメント1行＝名前1つにする🏷️💖
 
 コメントを読んで「一言で言うと？」を **名前にする**✨
@@ -80,12 +84,16 @@ graph LR
 
 ### ② 章立てコメントは Extract Method の合図✂️📦
 
+![refactoring_cs_study_027_chapter_to_method](./picture/refactoring_cs_study_027_chapter_to_method.png)
+
 「// 1. 入力チェック」「// 2. 計算」「// 3. 保存」みたいなのは
 **そのままメソッドに分ける**と一気に読みやすい🌸
 
 ---
 
 ### ③ 条件コメントは Explain Condition（Is〜にする）🧩🙂
+
+![refactoring_cs_study_027_explain_condition](./picture/refactoring_cs_study_027_explain_condition.png)
 
 `// 未成年かつ深夜は購入不可`
 → `if (IsRestrictedPurchase(user, now)) ...`
@@ -94,12 +102,16 @@ graph LR
 
 ### ④ “意味のある数字/文字列”は定数・型にする🔢➡️🏷️
 
+![refactoring_cs_study_027_magic_to_constant](./picture/refactoring_cs_study_027_magic_to_constant.png)
+
 `// 送料は500円` → `const int StandardShippingFee = 500;`
 さらに進むと Value Object（第31章）で「金額」を型で守れる💰✨
 
 ---
 
 ### ⑤ 注意コメントが多いなら、ガード節で事故を止める🚪🛡️
+
+![refactoring_cs_study_027_guard_bouncer](./picture/refactoring_cs_study_027_guard_bouncer.png)
 
 `// nullなら落ちるので注意`
 → 入口で `ArgumentNullException.ThrowIfNull(x);` みたいに**先に止める**✅
@@ -114,6 +126,8 @@ graph LR
 ---
 
 ### ⑦ “使い方コメント”はテストで残す🧪📸
+
+![refactoring_cs_study_027_comment_to_test](./picture/refactoring_cs_study_027_comment_to_test.png)
 
 「この入力でこうなる」系は、コメントより **Characterization Test**（第8章）が強い💪✨
 

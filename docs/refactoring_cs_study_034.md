@@ -10,6 +10,8 @@
 
 ## 1. そもそも「例外の境界」って何？🧱🚪
 
+![refactoring_cs_study_034_layered_filtering](./picture/refactoring_cs_study_034_layered_filtering.png)
+
 
 ![](./picture/refactoring_cs_study_034_boundary.png)
 例外って、放っておくとこんな風に散らかりがち👇💦
@@ -45,6 +47,8 @@ graph LR
 
 ## 2. 例外を“3種類”に分けて考える🧠📦
 
+![refactoring_cs_study_034_exception_bins](./picture/refactoring_cs_study_034_exception_bins.png)
+
 分類すると、境界を決めるのが一気にラクになるよ😊✨
 
 ### A) バグ or 前提違反（＝直すべき）🪲🚨
@@ -77,6 +81,8 @@ graph LR
 ---
 
 ## 3. 例外の境界ルール（これだけ覚えればOK）✅💖
+
+![refactoring_cs_study_034_rethrow_mechanics](./picture/refactoring_cs_study_034_rethrow_mechanics.png)
 
 ### ルール1：回復できないなら、そこでcatchしない🙅‍♀️
 
@@ -147,6 +153,8 @@ graph LR
 ---
 
 ## 5. 実践①：外部APIの例外を「アプリ用の例外」に変換する🌐➡️📦
+
+![refactoring_cs_study_034_translator](./picture/refactoring_cs_study_034_translator.png)
 
 ### 例：支払いAPIがタイムアウトしたら…⏳💳
 
@@ -237,6 +245,8 @@ catch (Exception ex)
 
 ## 7. 実践③：Webなら“グローバル例外ハンドリング”が境界の主役🌍🛡️
 
+![refactoring_cs_study_034_global_safety](./picture/refactoring_cs_study_034_global_safety.png)
+
 ASP.NET Core では、例外をアプリ全体で扱う仕組みが用意されてるよ🧰✨
 たとえば例外処理ミドルウェア＋ハンドラーで、例外をHTTPレスポンスに整形できる📮
 
@@ -274,6 +284,8 @@ catch (SqlException ex)
 ---
 
 ## 9. リファクタの観点：try/catch が散ってたら、こう直す🧹🧩
+
+![refactoring_cs_study_034_scatter_vs_central](./picture/refactoring_cs_study_034_scatter_vs_central.png)
 
 ### 症状👃💦
 

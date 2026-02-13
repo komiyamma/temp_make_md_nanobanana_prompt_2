@@ -29,6 +29,8 @@ graph LR
 
 ## Encapsulate Fieldってなに？🔐
 
+![refactoring_cs_study_029_security_gate](./picture/refactoring_cs_study_029_security_gate.png)
+
 
 ![](./picture/refactoring_cs_study_029_encapsulate.png)
 ざっくり言うと👇
@@ -45,6 +47,8 @@ graph LR
 
 ### 事故①：ルールを足したくても、あちこち直す羽目になる🌀
 
+![refactoring_cs_study_029_input_scanner](./picture/refactoring_cs_study_029_input_scanner.png)
+
 たとえば「年齢は0〜120だけ」みたいなルールを追加したいのに、フィールド直書きだと**代入箇所が全滅**します😭
 
 ### 事故②：将来の変更がしんどい（内部表現を変えられない）🧱
@@ -59,6 +63,8 @@ graph LR
 ---
 
 ## 使い分けミニ早見表📌
+
+![refactoring_cs_study_029_access_doors](./picture/refactoring_cs_study_029_access_doors.png)
 
 * **「まず入口を作る（挙動は変えない）」** → `get; set;` で置き換え🙂
 * **「外からは変更させたくない」** → `get; private set;`（外は読めるだけ）🔒
@@ -89,6 +95,8 @@ graph LR
 
 ## IDEで一発：Encapsulate Field（自動置換）⚡🛠️
 
+![refactoring_cs_study_029_ide_menu](./picture/refactoring_cs_study_029_ide_menu.png)
+
 ### Visual Studio の場合💻
 
 * メニュー：`Edit > Refactor > Encapsulate Field`
@@ -114,6 +122,8 @@ public class Player
 ```
 
 ### After ✨（入口をプロパティに）
+
+![refactoring_cs_study_029_auto_builder](./picture/refactoring_cs_study_029_auto_builder.png)
 
 ```csharp
 public class Player
@@ -171,6 +181,8 @@ public class Coupon
 「入口で守る」ので、クラスの中が安全になります🛡️✨
 
 ### パターンB：C# 14 の `field` で、もっとスッキリ（最新）🪄✨
+
+![refactoring_cs_study_029_field_tunnel](./picture/refactoring_cs_study_029_field_tunnel.png)
 
 C# 14 では、**自動プロパティの裏側フィールド**に `field` で触れて、検証を最小コードで書けます🙂
 （`field` はプロパティのバッキングフィールドを指す新しい仕組みです📘） ([Microsoft Learn][7])

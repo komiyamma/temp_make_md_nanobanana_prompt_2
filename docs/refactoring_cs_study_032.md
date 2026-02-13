@@ -11,6 +11,8 @@
 
 ## まず結論：if連鎖がツラい理由😵‍💫💦
 
+![refactoring_cs_study_032_logic_flow](./picture/refactoring_cs_study_032_logic_flow.png)
+
 if/else が増えると…
 
 * 条件が上から下まで長くて **目が迷子**👀🌀
@@ -35,6 +37,8 @@ graph TD
 
 ## switch は2種類あるよ🧁🎀
 
+![refactoring_cs_study_032_switch_types](./picture/refactoring_cs_study_032_switch_types.png)
+
 
 ![](./picture/refactoring_cs_study_032_matching.png)
 ### 1) switchステートメント（昔ながら）🧱
@@ -54,6 +58,8 @@ switch式は「条件分岐で値を決める」場面で超つよいです💪�
 
 ## Visual Studio の時短ワザ⚡：if→switch 変換（Ctrl+.）⌨️✨
 
+![refactoring_cs_study_032_magic_convert](./picture/refactoring_cs_study_032_magic_convert.png)
+
 if の `if` キーワードにカーソルを置いて **Ctrl+.** を押すと、
 
 * **switchステートメントに変換**
@@ -66,6 +72,8 @@ if の `if` キーワードにカーソルを置いて **Ctrl+.** を押すと�
 ---
 
 ## パターンマッチの“語彙”を増やそう📚✨
+
+![refactoring_cs_study_032_pattern_toolbox](./picture/refactoring_cs_study_032_pattern_toolbox.png)
 
 C# のパターンには、ざっくりこういう種類があります👇
 （全部いっぺんに覚えなくてOK！よく使うのからで大丈夫😊）
@@ -120,6 +128,8 @@ static string GetRankMessage(int score) =>
 ---
 
 ## 実例②：when（ガード）で“追加条件”をきれいに書く🌿✨
+
+![refactoring_cs_study_032_tuple_grid](./picture/refactoring_cs_study_032_tuple_grid.png)
 
 「特定の形に当てはまるけど、さらに条件がある」ってときは `when` が便利🪄
 
@@ -214,6 +224,8 @@ static string ClassifyStatus(int statusCode) =>
 ---
 
 ## 実例⑥：リストパターン（配列・リストの“形”で分岐）📚🍡
+
+![refactoring_cs_study_032_list_scanner](./picture/refactoring_cs_study_032_list_scanner.png)
 
 「要素の並び」で分けたいときに使えるよ🧁
 （配列なら特に相性◎）

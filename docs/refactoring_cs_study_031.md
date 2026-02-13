@@ -38,6 +38,8 @@ C# で言うと、`record` / `record struct` は **値ベースの等価性を�
 
 ## 「ただのプリミティブ地獄」あるある😇💦
 
+![refactoring_cs_study_031_primitive_hell](./picture/refactoring_cs_study_031_primitive_hell.png)
+
 たとえば、こんなメソッド👇
 
 * `decimal amount, string currency`
@@ -60,6 +62,8 @@ C# で言うと、`record` / `record struct` は **値ベースの等価性を�
 
 ## Value Objectの“3点セット”🎁✨
 
+![refactoring_cs_study_031_vo_triad](./picture/refactoring_cs_study_031_vo_triad.png)
+
 Value Objectを作る時は、この3つを意識すると超強い💪
 
 1. **検証（validation）を型の中に置く**🧪
@@ -71,6 +75,8 @@ Value Objectを作る時は、この3つを意識すると超強い💪
 ---
 
 ## `record class` と `readonly record struct` どっち？🤔🧭
+
+![refactoring_cs_study_031_record_comparison](./picture/refactoring_cs_study_031_record_comparison.png)
 
 ### まず知っておきたい事実📌
 
@@ -88,6 +94,8 @@ Value Objectを作る時は、この3つを意識すると超強い💪
 ---
 
 ## 実装例①：Money（“金額”を型で守る）💰💎
+
+![refactoring_cs_study_031_money_vo](./picture/refactoring_cs_study_031_money_vo.png)
 
 ### ゴール🎯
 
@@ -138,6 +146,8 @@ public sealed record Money
 ---
 
 ## 実装例②：DateRange（“期間”を型で守る）📅🧷
+
+![refactoring_cs_study_031_daterange_vo](./picture/refactoring_cs_study_031_daterange_vo.png)
 
 ### ゴール🎯
 
@@ -235,6 +245,8 @@ Value ObjectをAPIで受け渡しするとき、JSON変換が出てくるよね�
 ---
 
 ## DB（EF Core）での扱い：Value Objectは「Complex Types」が相性◎🏗️✨
+
+![refactoring_cs_study_031_ef_core_mapping](./picture/refactoring_cs_study_031_ef_core_mapping.png)
 
 EF Core 10 では、Value Object的なものを **Complex Types（複合型）**として扱えるよ✨
 Complex Types は **値セマンティクス**（= 中身で扱う）なので、Value Objectと相性よし💎 ([Microsoft Learn][3])

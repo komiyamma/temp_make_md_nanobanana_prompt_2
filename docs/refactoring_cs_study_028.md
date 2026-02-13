@@ -2,6 +2,8 @@
 
 ## 1. Extract Classってなに？🤔✨
 
+![refactoring_cs_study_028_extract_metaphor](./picture/refactoring_cs_study_028_extract_metaphor.png)
+
 ![](./picture/refactoring_cs_study_028_extract_class.png)
 
 ![](./picture/refactoring_cs_study_028_extract_class.png)
@@ -41,6 +43,8 @@ graph TD
 
 ## 3. Extract Class するべきサイン👃💦（見つけ方）
 
+![refactoring_cs_study_028_signs_of_split](./picture/refactoring_cs_study_028_signs_of_split.png)
+
 次のどれかが出てきたら、分割チャンスだよ〜✨
 
 ### ✅ サインA：クラスの中に「話題」が2つ以上ある🗣️🗣️
@@ -66,6 +70,8 @@ graph TD
 ---
 
 ## 4. 境界の決め方（迷ったらコレ）🧭✨
+
+![refactoring_cs_study_028_splitting_compass](./picture/refactoring_cs_study_028_splitting_compass.png)
 
 分割ラインは、だいたい次のどれかで決められるよ😊
 
@@ -98,6 +104,8 @@ DB/HTTP/ファイル/時計/乱数みたいな外部要素は、中心ロジッ�
 ---
 
 ## 5. 事故らないExtract Class手順（これが超大事）🛡️🔁
+
+![refactoring_cs_study_028_safe_steps](./picture/refactoring_cs_study_028_safe_steps.png)
 
 Extract Classは、勢いでやると壊れがち😭
 おすすめの順番はこれ👇（安全第一✨）
@@ -261,6 +269,8 @@ public sealed class OrderPricing
 
 ### ✅ Step 3：元クラスは“委譲”する☎️✨
 
+![refactoring_cs_study_028_delegation_wiring](./picture/refactoring_cs_study_028_delegation_wiring.png)
+
 ```csharp
 public sealed class OrderService
 {
@@ -302,6 +312,8 @@ public sealed class OrderService
 
 ## 7. よくある失敗あるある😇💥（回避テクつき）
 
+![refactoring_cs_study_028_extraction_failures](./picture/refactoring_cs_study_028_extraction_failures.png)
+
 ### ❌ 失敗1：新クラスが「ただの引っ越し先」になってる🏚️
 
 フィールドだけ移して、結局メソッドは元のクラスに残った…
@@ -325,6 +337,8 @@ public sealed class OrderService
 ---
 
 ## 8. Visual Studioでの操作のコツ💻✨
+
+![refactoring_cs_study_028_vs_lightbulb](./picture/refactoring_cs_study_028_vs_lightbulb.png)
 
 ### 🔦 Quick Actions（Ctrl + .）を積極的に使う
 
