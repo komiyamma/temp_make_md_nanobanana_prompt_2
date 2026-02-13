@@ -8,6 +8,8 @@
 # Part 0：スタート準備（第1〜6章）🌱🧰
 
 ### 第1章：リファクタリングって何？（修正・改修との違い）🔧✨
+![refactoring_cs_index_types_comparison.png](./picture/refactoring_cs_index_types_comparison.png)
+
 
 * ねらい🎯：**動作を変えずに内部を良くする**を体に入れる
 * 学ぶこと📚：保守性／可読性／技術的負債のイメージ
@@ -15,6 +17,8 @@
 * VS/AI活用💡：差分（Diff）を読む練習📌
 
 ### 第2章：安全に進める“4つの基本”（小さく・頻繁に・確認・戻せる）🛡️🔁
+![refactoring_cs_index_four_basics.png](./picture/refactoring_cs_index_four_basics.png)
+
 
 * ねらい🎯：事故らない作法を最初に固定
 * 学ぶこと📚：小ステップ／常に動く／コミット粒度／レビュー習慣
@@ -54,6 +58,8 @@
 # Part 1：安全ネット（テスト＆自動チェック）（第7〜12章）🧪🛡️
 
 ### 第7章：テスト超入門（“壊してない”を機械で確認）✅🧪
+![refactoring_cs_index_safety_net.png](./picture/refactoring_cs_index_safety_net.png)
+
 
 * ねらい🎯：リファクタの保険を持つ
 * 学ぶこと📚：AAA（Arrange-Act-Assert）／テストの粒度
@@ -100,6 +106,8 @@
 # Part 2：IDEでできる基本リファクタ（第13〜20章）🛠️🌸
 
 ### 第13章：Rename（名前で8割決まる）🏷️✨
+![refactoring_cs_index_naming_magic.png](./picture/refactoring_cs_index_naming_magic.png)
+
 
 * ねらい🎯：意図が伝わるコードへ
 * 学ぶこと📚：命名のコツ（動詞/名詞/否定を避ける）
@@ -160,6 +168,8 @@
 # Part 3：コードスメル入門（第21〜27章）👃📚
 
 ### 第21章：コードスメルとは？（違和感を言葉にする）😮🔎
+![refactoring_cs_index_code_smell.png](./picture/refactoring_cs_index_code_smell.png)
+
 
 * ねらい🎯：直すべきサインが見えるように
 * 学ぶこと📚：長いメソッド／巨大クラス／重複／密結合／引数多すぎ
@@ -305,6 +315,8 @@
 # Part 6：総合演習（第40章）🏁✨
 
 ### 第40章：総合ケーススタディ（レガシー1本を安全に改善）🧗‍♀️💖
+![refactoring_cs_index_legacy_transformation.png](./picture/refactoring_cs_index_legacy_transformation.png)
+
 
 * ねらい🎯：実務の流れで“最後までやり切る”
 * 進め方📌：

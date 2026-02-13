@@ -8,6 +8,8 @@ Outboxは「非同期であとから送る」ぶん、**失敗や遅延が表に
 ---
 
 ## 21-1. Outboxで起きがちな“静かな事故”😱📦
+![outbox_ts_study_021_silent_disaster.png](./picture/outbox_ts_study_021_silent_disaster.png)
+
 
 次のどれか、経験したら観測の大切さが刺さるやつ👇
 
@@ -22,6 +24,8 @@ Outboxは「非同期であとから送る」ぶん、**失敗や遅延が表に
 ---
 
 ## 21-2. 観測の“三種の神器”🧰✨
+![outbox_ts_study_021_three_pillars.png](./picture/outbox_ts_study_021_three_pillars.png)
+
 
 ## ① ログ（Logs）📝
 
@@ -43,6 +47,8 @@ Outboxは「非同期であとから送る」ぶん、**失敗や遅延が表に
 ---
 
 ## 21-3. “追跡できる”ためのID設計🔗🆔✨
+![outbox_ts_study_021_id_chain.png](./picture/outbox_ts_study_021_id_chain.png)
+
 
 Outbox観測でよく使うIDはこれ👇
 
@@ -65,6 +71,8 @@ Outbox観測でよく使うIDはこれ👇
 PinoはOpenTelemetry連携（trace_id / span_id の注入）もしやすい流れがあるよ。([dash0.com][2])
 
 ## 21-4-2. ログに必ず入れたい項目✅
+![outbox_ts_study_021_log_anatomy.png](./picture/outbox_ts_study_021_log_anatomy.png)
+
 
 最低限このへん入ってると、調査が爆速になるよ⚡
 
@@ -134,6 +142,8 @@ export const logger = pino({
 ## 21-5. メトリクス設計📊✨（“詰まり”を数字で即発見！）
 
 ## 21-5-1. Outboxで“最重要”のメトリクスはこれ🥇
+![outbox_ts_study_021_vital_signs.png](./picture/outbox_ts_study_021_vital_signs.png)
+
 
 まずはこの4つが最強セット💪✨
 
@@ -260,6 +270,8 @@ export async function startOtel() {
 ---
 
 ## 21-6-3. Publisherの“自前Span”を入れる（ここが超効く🔥）
+![outbox_ts_study_021_span_scope.png](./picture/outbox_ts_study_021_span_scope.png)
+
 
 ```ts
 // src/publisher/publishOne.ts
@@ -366,6 +378,8 @@ mindmap
 ---
 
 ## 21-9. アラート設計（“気づけるOutbox”へ）🚨✨
+![outbox_ts_study_021_alert_trigger.png](./picture/outbox_ts_study_021_alert_trigger.png)
+
 
 最初はこの3つをアラートにすると安心度が跳ねるよ🫶
 

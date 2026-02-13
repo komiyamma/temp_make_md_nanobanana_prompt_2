@@ -56,6 +56,8 @@
 ---
 
 ## 2) 頻繁に（Frequently / Always working）🔁🏃‍♀️
+![refactoring_cs_study_002_always_green.png](./picture/refactoring_cs_study_002_always_green.png)
+
 
 ## 何をするの？🧠
 
@@ -83,6 +85,8 @@
 ---
 
 ## 3) 確認（Verify）✅🔍
+![refactoring_cs_study_002_verify_checklist.png](./picture/refactoring_cs_study_002_verify_checklist.png)
+
 
 ## 何を確認するの？🧠
 
@@ -104,6 +108,8 @@ Gitの差分を見ると、
 ---
 
 ## 4) 戻せる（Reversible）↩️🌿
+![refactoring_cs_study_002_safety_rope.png](./picture/refactoring_cs_study_002_safety_rope.png)
+
 
 ## 何をするの？🧠
 
@@ -119,6 +125,8 @@ Gitの差分を見ると、
 ---
 
 ## 安全に進める「1サイクル」テンプレ🧁✨
+![refactoring_cs_study_002_cycle_diagram.png](./picture/refactoring_cs_study_002_cycle_diagram.png)
+
 
 作業するときは、毎回これで回します🔁💕
 
@@ -148,6 +156,8 @@ graph TD
 ---
 
 ## Visual Studioでの実践ポイント💻✨
+![refactoring_cs_study_002_vs_diff.png](./picture/refactoring_cs_study_002_vs_diff.png)
+
 
 ## 差分（Diff）の見方👀📌
 
@@ -167,6 +177,8 @@ graph TD
 ---
 
 ## AI（Copilot / Codex系）を安全に使うコツ🤖🛡️
+![refactoring_cs_study_002_ai_rules.png](./picture/refactoring_cs_study_002_ai_rules.png)
+
 
 AIは便利だけど、**提案が大きくなりがち**です😵‍💫
 だからルールを先に決めておくと安全です✨
