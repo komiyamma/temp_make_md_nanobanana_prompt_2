@@ -2,6 +2,9 @@
 
 ### ねらい🎯
 
+![Trapeze Net](./picture/refactoring_ts_study_007_trapeze_net.png)
+
+
 ![Concept: Small Commits](./picture/refactoring_ts_study_008_small_commits.png)
 
 ```mermaid
@@ -41,6 +44,9 @@ graph TD
 
 ## 1) ブランチって何？🧠🌿
 
+![Branch Bookmark](./picture/refactoring_ts_study_007_branch_bookmark.png)
+
+
 ブランチはざっくり言うと、**「コミットを指してるしおり📌」**みたいなもの。
 main の“しおり”とは別の“しおり”を作れば、main を汚さずに実験できるよ😌🧪
 
@@ -60,6 +66,9 @@ git status
 ---
 
 ### 2-2. ブランチを作って、そのまま移動する🌱➡️🚶‍♀️
+
+![Switch Flow](./picture/refactoring_ts_study_007_switch_flow.png)
+
 
 いちばんよく使う形：**作る + 移動（checkout）を一発**✨
 `git switch -c <branch名>` が便利！
@@ -104,6 +113,9 @@ git switch -
 ---
 
 ### 2-5. うまくいったら取り込む（merge）🧩✨
+
+![Merge Puzzle](./picture/refactoring_ts_study_007_merge_puzzle.png)
+
 
 main に戻ってから merge するのが基本！
 
@@ -151,6 +163,9 @@ git log --oneline --graph --decorate --all
 
 ### 3-1. ブランチの場所はここ！⬇️🌿
 
+![Vscode Branch](./picture/refactoring_ts_study_007_vscode_branch.png)
+
+
 画面左下（ステータスバー）に **現在のブランチ名**が出るよ。
 そこをクリックすると、ブランチの作成・切り替えができる🙌 ([Visual Studio Code][4])
 
@@ -178,6 +193,9 @@ git log --oneline --graph --decorate --all
 
 ### 4-2. stash（いったんしまう）📦✨
 
+![Stash Box](./picture/refactoring_ts_study_007_stash_box.png)
+
+
 `git stash` は「作業中の変更をいったん退避」できる機能だよ🧳 ([Visual Studio Code][4])
 
 ```sh
@@ -191,6 +209,9 @@ git stash pop
 ---
 
 ### 4-3. mergeしたらコンフリクト（衝突）した😱💥
+
+![Conflict Resolution](./picture/refactoring_ts_study_007_conflict_resolution.png)
+
 
 これは「同じ場所を別々に変更してて、どっち採用？」って状態。
 merge の前に **コミット or stash 推奨**なのは、こういう混乱を減らすためだよ🛟 ([Git][2])

@@ -2,6 +2,9 @@
 
 ### ねらい🎯
 
+![Bread Slice](./picture/refactoring_ts_study_006_bread_slice.png)
+
+
 * **「戻れる安心感」**を手に入れる（コミット＝セーブポイント🎮みたいなもの）💾✨
 * まずは最低限の4つだけできるようにする👉 **add / commit / log / diff** 👣
 * 「壊さずに直す」ための、毎回の小さな手順が身につく🛟✅
@@ -56,6 +59,9 @@ Gitは「箱」が3つあると思うと分かりやすいよ〜！🧠✨
 
 ## VS Codeでやる場所🧑‍💻🧭
 
+![Vscode Source Control](./picture/refactoring_ts_study_006_vscode_source_control.png)
+
+
 * 左のメニューの **ソース管理（Source Control）** アイコン（枝分かれっぽいマーク）を開く🌿
 * そこに「変更」「ステージ済み変更」「コミット入力欄」がまとまってるよ✅
 * 最近のVS Codeでは、**コミットメッセージをエディタで書く時の操作ボタンが見つけやすく改善**されてるよ📝✨ ([Visual Studio Code][1])
@@ -63,6 +69,9 @@ Gitは「箱」が3つあると思うと分かりやすいよ〜！🧠✨
 ---
 
 ## 最小コマンドセット（これだけで戦える）💪💻
+
+![Commit Flow](./picture/refactoring_ts_study_006_commit_flow.png)
+
 
 VS Code操作がメインでも、**意味を理解するため**にコマンドも最小だけ覚えよ〜🙌
 
@@ -206,6 +215,9 @@ git commit -m "chore: add explicit return types in greet module"
 
 ## VS Codeでも「差分」と「履歴」を見る👀📚
 
+![Diff View](./picture/refactoring_ts_study_006_diff_view.png)
+
+
 
 * **差分(diff)**：ソース管理でファイルをクリック→左右に差分が出る✨
 * **履歴(log)**：コミット一覧（グラフ）で流れを見れる（最近の更新でもSource Controlまわりの改善が継続してるよ）🧭✨ ([Visual Studio Code][1])
@@ -216,6 +228,9 @@ git commit -m "chore: add explicit return types in greet module"
 
 ## あるある①：コミットしたつもりが、入ってない💦
 
+![Add Forgotten](./picture/refactoring_ts_study_006_add_forgotten.png)
+
+
 * 原因：**addし忘れ**🧺❌
 * 回避：コミット前にこれ👇
 
@@ -224,6 +239,9 @@ git diff --staged
 ```
 
 ## あるある②：関係ない変更まで混ざる🌀
+
+![Mixed Commit](./picture/refactoring_ts_study_006_mixed_commit.png)
+
 
 * 回避：**変更を小さく刻む👣**
 
@@ -239,6 +257,9 @@ git diff --staged
 ---
 
 # コミットメッセージのミニ型（これで困らない）📝✨
+
+![Commit Message Types](./picture/refactoring_ts_study_006_commit_message_types.png)
+
 
 迷ったらこの形でOKだよ〜🌷
 
