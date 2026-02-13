@@ -37,6 +37,8 @@ graph TD
 
 ## 2-1. まず知っておく：using には3種類あるよ🧩
 
+![using_types](./picture/refactoring_cs_study_020_using_types.png)
+
 1. **ファイル内 using**：そのファイルだけに効く
 2. **global using**：プロジェクト内の全ファイルに効く（最上部に書くルールあり）([Microsoft Learn][1])
 3. **Implicit Usings**：プロジェクト設定で、よく使う名前空間が自動で global using される（SDKが裏で追加）([Microsoft Learn][2])
@@ -52,6 +54,8 @@ graph TD
 * ファイル先頭の using は「本当にそのファイルで必要なものだけ」にする🌿
 
 ### 例：GlobalUsings.cs（プロジェクト直下に置くのが分かりやすい）📄✨
+
+![global_using_hub](./picture/refactoring_cs_study_020_global_using_hub.png)
 
 ```csharp
 // GlobalUsings.cs
@@ -69,6 +73,8 @@ global using MyApp.Common;
 
 ## 2-3. Visual Studioで “using整理” を自動化する🪄🧼
 
+![code_cleanup](./picture/refactoring_cs_study_020_code_cleanup.png)
+
 手でポチポチするより、IDEにやらせた方が安定します💯
 
 * **Sort Usings**（usingを並べ替え）
@@ -82,6 +88,8 @@ Sort Usings もメニューから実行できます🧷([Microsoft Learn][4])
 ## 3) 名前空間を整える（ズレを減らして迷子ゼロへ）🗺️✨
 
 ## 3-1. file-scoped namespace を使う（インデントが減る！）⬇️
+
+![file_scoped_namespace](./picture/refactoring_cs_study_020_file_scoped_namespace.png)
 
 1ファイルに1つの名前空間なら、これが読みやすいです🌸
 （波カッコが消えて、ネストが1段減る😊）
@@ -113,6 +121,8 @@ public class OrderService
 
 ## 4-1. 関連物は近くに置く🧲✨
 
+![feature_cohesion](./picture/refactoring_cs_study_020_feature_cohesion.png)
+
 たとえば「注文機能」に関係するものは、同じフォルダ（同じ名前空間）に寄せると強いです💪
 
 📁 Features
@@ -128,6 +138,8 @@ public class OrderService
 
 ## 4-2. “共通” は増やしすぎない（Common地獄注意）⚠️🕳️
 
+![common_trap](./picture/refactoring_cs_study_020_common_trap.png)
+
 Common / Utils / Helpers を作るのは簡単だけど、増えすぎると**何でも入るゴミ箱**になります🗑️💦
 共通化は「本当に複数機能で同じ理由で変わる」ものだけに絞るのがコツです🌿
 
@@ -136,6 +148,8 @@ Common / Utils / Helpers を作るのは簡単だけど、増えすぎると**�
 ## 5) Visual Studioでの実践手順（安全に移動する）🚚🛡️
 
 ## 手順A：ファイルをフォルダ移動 → 名前空間を同期📁🔁
+
+![sync_namespace](./picture/refactoring_cs_study_020_sync_namespace.png)
 
 1. ソリューション エクスプローラーで、ファイルをドラッグして目的フォルダへ移動
 2. 名前空間がズレたら、名前空間上で **Ctrl + .**

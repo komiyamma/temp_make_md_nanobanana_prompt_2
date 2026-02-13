@@ -36,6 +36,8 @@ graph LR
 
 ## 2. 「string」と「string?」の気持ちの違い🙂🪄
 
+![string_vs_nullable](./picture/refactoring_cs_study_019_string_vs_nullable.png)
+
 * 「string」：**null であってほしくない**（非 null）
 * 「string?」：**null の可能性がある**（nullable）
 
@@ -52,6 +54,8 @@ string? nickname = null; // OK（null でもいいよの宣言）
 ---
 
 ## 3. Nullable を有効にする（コンテキストの考え方）🧷⚙️
+
+![nullable_context_modes](./picture/refactoring_cs_study_019_nullable_context_modes.png)
 
 NRT は「有効／無効」だけじゃなく、**注釈（annotation）**と**警告（warning）**の2つのスイッチを持ってるのが特徴だよ🔀✨ ([Microsoft Learn][1])
 
@@ -77,6 +81,8 @@ NRT は「有効／無効」だけじゃなく、**注釈（annotation）**と**
 ---
 
 ## 4. よく会う警告トップ4（まずこれだけ覚える）👀⚡
+
+![common_warnings](./picture/refactoring_cs_study_019_common_warnings.png)
 
 Microsoft Learn でも、null 事故を減らすためにいろいろな警告が整理されてるよ📚 ([Microsoft Learn][3])
 ここでは「最初に慣れるべき4つ」をピックアップ✨
@@ -152,6 +158,8 @@ string text = input ?? "";
 
 ### パターンA：入口で弾く（ガード節）🚪🛡️
 
+![guard_clause](./picture/refactoring_cs_study_019_guard_clause.png)
+
 「このメソッドは null を受け付けない」なら、早めに弾くのが一番きれい🙂✨
 おすすめは **ArgumentNullException.ThrowIfNull** だよ🧷（.NET の公式API） ([Microsoft Learn][4])
 
@@ -166,6 +174,8 @@ public void Save(string path)
 ---
 
 ### パターンB：代替値を使う（null 合体）🪄🍬
+
+![null_coalescing](./picture/refactoring_cs_study_019_null_coalescing.png)
 
 「null ならこれにしよ」で読みやすい✨
 
@@ -192,6 +202,8 @@ if (memo is not null)
 ---
 
 ## 6. 便利だけど使いどころ注意：null 許容抑制（!）⚠️🧨
+
+![damnit_operator](./picture/refactoring_cs_study_019_damnit_operator.png)
 
 「ここは絶対 null じゃない！」と宣言して警告を消す演算子があるよ（抑制演算子）🧯
 でも、**間違ってたら実行時に爆発**するので、最後の手段くらいの気持ちで🙂💦 ([Microsoft Learn][2])
@@ -273,6 +285,8 @@ public sealed class User
 ---
 
 ## 9. AI活用🤖✨（安全な null 対応案を複数出させる🧠）
+
+![ai_three_options](./picture/refactoring_cs_study_019_ai_three_options.png)
 
 AIに頼むときは「**最小変更**」「**挙動は変えない**」「**差分で確認**」の3点セットが強いよ🛡️📌
 

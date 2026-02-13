@@ -37,6 +37,8 @@ graph LR
 
 ## 重複の3タイプを見分けよう👃✨（コードスメルの正体）
 
+![duplication_types](./picture/refactoring_cs_study_023_duplication_types.png)
+
 ### ① コピペ重複（同じ形・同じ意味）📄📄
 
 * 例：エラーメッセージ生成が全く同じ
@@ -59,6 +61,8 @@ graph LR
 
 ## 共通化していいか迷ったらコレ🧩✅（判断チェックリスト）
 
+![commonality_scale](./picture/refactoring_cs_study_023_commonality_scale.png)
+
 次の質問に「はい」が多いほど、共通化しやすいよ👇
 
 * ✅ **変更理由が同じ？**（同じ仕様変更で一緒に直す？）
@@ -76,6 +80,8 @@ graph LR
 ---
 
 ## 実践：重複を“安全に”まとめる基本手順🛡️🔁
+
+![refactoring_steps](./picture/refactoring_cs_study_023_refactoring_steps.png)
 
 ### Step 1：まず「同じ知識？」を言葉にする🗣️💭
 
@@ -134,6 +140,8 @@ public static class PriceText
 
 ### After（“税率ルール”を1か所に）✅🏷️
 
+![single_source](./picture/refactoring_cs_study_023_single_source.png)
+
 ```csharp
 public static class PriceText
 {
@@ -160,6 +168,8 @@ public static class PriceText
 
 ## 「共通化しすぎ」あるある事故😇💥（やらないで〜）
 
+![swiss_army_knife](./picture/refactoring_cs_study_023_swiss_army_knife.png)
+
 ### 事故パターン：何でも入るメソッドを作っちゃう
 
 ```csharp
@@ -181,6 +191,8 @@ public static string Format(decimal price, bool isCart, bool isReceipt, bool wit
 ---
 
 ## IDEでの見つけ方🔎✨（重複の発見ルート3つ）
+
+![duplication_detectives](./picture/refactoring_cs_study_023_duplication_detectives.png)
 
 ### ① “まずは目視で怪しい匂い”を拾う👃
 
@@ -204,6 +216,8 @@ Visual Studio には **Analyze Solution for Code Clones**（重複検出）機�
 ---
 
 ## AIの使い方🤖✨（重複は“判断”が大事だから、聞き方がコツ）
+
+![ai_consultation](./picture/refactoring_cs_study_023_ai_consultation.png)
 
 ### AIに投げると良い質問例💬
 

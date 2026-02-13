@@ -9,6 +9,8 @@ Long Parameter List / Data Clumps は「オブジェクト化しなよ〜」っ�
 
 ## まずは用語：この章の2大スメル👃👃
 
+![two_smells](./picture/refactoring_cs_study_025_two_smells.png)
+
 ### 1) Long Parameter List（引数が長い）📜
 
 メソッド呼び出しが読みにくく、**順番ミス・渡し忘れ・変更の波及**が起きやすい状態💦
@@ -36,6 +38,8 @@ graph LR
 
 ## 何が困るの？😵‍💫（つらみポイント）
 
+![pain_points](./picture/refactoring_cs_study_025_pain_points.png)
+
 * 呼び出し側が **「どの値が何？」** ってなる（読みづらい）📚💦
 * 順番を間違えると **コンパイルは通るのにバグる**（特に同じ型が並ぶと危険⚠️）
 * 仕様変更で **呼び出し箇所が大量に壊れる**（変更が波及🌊）
@@ -44,6 +48,8 @@ graph LR
 ---
 
 ## 見つけ方🔎✨（初心者でもできるチェック）
+
+![detection_checklist](./picture/refactoring_cs_study_025_detection_checklist.png)
 
 次のうち **2つ以上** 当てはまったら、かなり怪しいよ👀💡
 
@@ -56,6 +62,8 @@ graph LR
 ---
 
 ## 直し方の選択肢🧰✨（まずはコレだけ覚えよ！）
+
+![refactoring_toolbox](./picture/refactoring_cs_study_025_refactoring_toolbox.png)
 
 Long Parameter List を直す代表技はこのへん👇（状況で選ぶよ）
 
@@ -86,6 +94,8 @@ Long Parameter List を直す代表技はこのへん👇（状況で選ぶよ�
 ---
 
 ## 手順（安全にいこうね🛡️✅）
+
+![refactoring_steps](./picture/refactoring_cs_study_025_refactoring_steps.png)
 
 ### Step 0：安全ネット準備🧪
 
@@ -152,6 +162,8 @@ var cost = CalcShippingCost(2.5m, 30m, 20m, 10m, "JP", true);
 ---
 
 ### After（Parameter Objectでスッキリ😍✨）
+
+![before_after_encapsulation](./picture/refactoring_cs_study_025_before_after_encapsulation.png)
 
 ```csharp
 public sealed class ShippingRequest
@@ -232,6 +244,8 @@ Data Clumps の“面白いところ”はここから👇
 ---
 
 ## AI（Copilot / Codex系）活用プロンプト例🤖✨
+
+![ai_prompts](./picture/refactoring_cs_study_025_ai_prompts.png)
 
 そのままコピって使える形👇（1回の変更を小さくするのがコツ🧠📌）
 
