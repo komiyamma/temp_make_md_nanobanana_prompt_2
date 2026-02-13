@@ -42,6 +42,8 @@ Sagaは「複数サービスの処理を、失敗しても壊れないように�
 ### 🗺️ 流れ（成功パス）
 
 1. Orderサービス：注文を「作成」→ `OrderCreated` を発行📣
+
+![choreography_flow](./picture/saga_ts_study_010_choreography_flow.png)
 2. Paymentサービス：`OrderCreated` を購読→ 決済 → `PaymentCompleted` 発行💳
 3. Inventoryサービス：`PaymentCompleted` を購読→ 在庫確保 → `InventoryReserved` 発行📦
 4. Shippingサービス：`InventoryReserved` を購読→ 発送準備 → `ShippingArranged` 発行🚚
@@ -88,6 +90,8 @@ flowchart LR
 ### 🗺️ 流れ（成功パス）
 
 1. Orchestrator：Saga開始（注文IDを受け取る）🎬
+
+![orchestration_flow](./picture/saga_ts_study_010_orchestration_flow.png)
 2. Orchestrator → Paymentへ「決済してね」コマンド✉️
 3. Payment → Orchestratorへ「成功/失敗」を返信📩
 4. 成功なら Orchestrator → Inventoryへ「在庫確保してね」📦
@@ -125,6 +129,8 @@ graph TD
 ---
 
 ## 10.5 2つを比較！パッと見表🧁📊
+
+![comparison_icons](./picture/saga_ts_study_010_comparison_icons.png)
 
 | 観点      | Choreography 🕺    | Orchestration 🎻  |
 | ------- | ------------------ | ----------------- |
@@ -165,6 +171,8 @@ graph TD
 
 ### 🕺 Choreography：イベント購読で進む（超ミニ）
 
+![choreo_listener](./picture/saga_ts_study_010_choreo_listener.png)
+
 ```ts
 // 例：Paymentサービス側（イベントを受けたら自分の仕事をする）
 type OrderCreated = { orderId: string; amount: number };
@@ -179,6 +187,8 @@ async function onOrderCreated(evt: OrderCreated) {
 ```
 
 ### 🎻 Orchestration：司令塔が順番に指示（超ミニ）
+
+![orch_script](./picture/saga_ts_study_010_orch_script.png)
 
 ```ts
 type SagaState =
@@ -216,6 +226,8 @@ async function runOrderSaga(orderId: string) {
 
 ### 🕺 Choreographyで起きがち
 
+![event_hell](./picture/saga_ts_study_010_event_hell.png)
+
 * 「イベント名が適当」→ 後で全員が混乱🌀
 * 「誰がどの失敗を見て補償するか」曖昧 → 補償漏れ🧯💦
 * イベントが増えて **全体が読めない** 😵‍💫
@@ -223,6 +235,8 @@ async function runOrderSaga(orderId: string) {
 （イベント連鎖型の説明や注意点は、Saga解説で定番として触れられるよ） ([microservices.io][4])
 
 ### 🎻 Orchestrationで起きがち
+
+![god_service](./picture/saga_ts_study_010_god_service.png)
 
 * 司令塔に全部詰め込み → 神サービス化👑💥
 * 状態保存が雑 → 再開できずに泣く😭

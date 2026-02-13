@@ -53,6 +53,8 @@ flowchart TD
 
 ## 失敗の種類（3つ）🌪️
 
+![failure_types](./picture/saga_ts_study_015_failure_types.png)
+
 * **業務エラー**：決済NG、在庫不足など（想定内）🧾
 * **技術エラー**：タイムアウト、ネットワーク、DB落ち（ありがち）⏰⚡
 * **バグ**：想定外の例外（泣ける）😭
@@ -93,6 +95,8 @@ npm i -D typescript tsx
 ---
 
 ## 2) コピペで動く：`src/ch15_failure_demo.ts` 📝✨
+
+![failure_console](./picture/saga_ts_study_015_failure_console.png)
 
 ```ts
 /* =========================================
@@ -371,6 +375,8 @@ npx tsx src/ch15_failure_demo.ts
 
 ## ✅ 観察①：失敗したStepは補償されない🙅‍♀️
 
+![not_compensated](./picture/saga_ts_study_015_not_compensated.png)
+
 たとえば `reserveStock` の **action中に失敗**したら、`reserveStock` は「実行済み」扱いにならないよね？
 だから補償はこうなる👇
 
@@ -380,10 +386,14 @@ npx tsx src/ch15_failure_demo.ts
 
 ## ✅ 観察②：補償は逆順🔁
 
+![reverse_order](./picture/saga_ts_study_015_reverse_order.png)
+
 `createOrder -> pay -> reserveStock` まで進んで失敗したら、補償は
 `reserveStock（実行済みなら） -> pay -> createOrder` の順で戻るよ🔁📦💳📝
 
 ## ✅ 観察③：補償が失敗しても、止めずに続ける🧱
+
+![resilient_compensation](./picture/saga_ts_study_015_resilient_compensation.png)
 
 `case-3` では返金（補償）をわざと失敗させてるけど、そこで止めずに次の補償へ進むよ⚠️➡️🧯
 （現実でも「返金できなかった！でも注文キャンセルはする！」みたいな判断が必要になること多い😵‍💫）
@@ -399,6 +409,8 @@ graph TD
 ---
 
 # よくあるミス集（先に潰す）🪓😇
+
+![mistake_signs](./picture/saga_ts_study_015_mistake_signs.png)
 
 * **補償を順方向で走らせちゃう**（戻せない😭）➡️ 必ず逆順🔁
 * **未実行Stepも補償しちゃう**（何を戻してるの…？）➡️ 実行済みだけ🙆‍♀️
@@ -431,6 +443,8 @@ graph TD
 ---
 
 # 理解度チェック（ミニ）✅💡
+
+![qa_flashcards](./picture/saga_ts_study_015_qa_flashcards.png)
 
 * Q1：補償はなぜ逆順？🤔
   → **最後にやった操作ほど“前提”に依存してることが多いから**（最後から戻すと安全）🔁🧯

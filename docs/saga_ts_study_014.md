@@ -10,6 +10,8 @@
 
 ## 14.1 まずは“動く箱”を作る📦✨（プロジェクト作成）
 
+![project_box](./picture/saga_ts_study_014_project_box.png)
+
 TypeScriptは現在 **5.9系が安定版として広く使われている**流れなので、この章はそれ前提でいくよ🧸✨（6.0/7.0の話題はあるけど、まずは安定運用しやすい形で！） ([GitHub][1])
 
 ### ① フォルダ作成＆初期化📁
@@ -49,6 +51,8 @@ npm i -D typescript tsx @types/node
 ---
 
 ## 14.3 フォルダ構成を作る🗂️🌼
+
+![folder_tree](./picture/saga_ts_study_014_folder_tree.png)
 
 ```text
 saga-mini/
@@ -126,6 +130,8 @@ export interface SagaLogStore {
 
 ## 14.5 ログ保存（まずはメモリでOK）🧠📒
 
+![memory_store](./picture/saga_ts_study_014_memory_store.png)
+
 最初はシンプルに「メモリに保存」でいくよ🌷
 
 ### `src/saga/inMemoryLogStore.ts`
@@ -162,6 +168,8 @@ export class InMemorySagaLogStore implements SagaLogStore {
 ---
 
 ## 14.6 SagaRunner（順番に実行する司令塔）🎻🧠
+
+![runner_machine](./picture/saga_ts_study_014_runner_machine.png)
 
 この章は「成功パスを動かす」けど、**失敗したときに補償へ行ける道**も作っておくよ🧯✨（本格的に遊ぶのは次章😈）
 
@@ -249,6 +257,8 @@ export class SagaRunner<C> {
 
 ## 14.7 “外部サービスっぽさ”をローカルで再現する⏳🧪
 
+![sleep_timer](./picture/saga_ts_study_014_sleep_timer.png)
+
 ちょっと待つだけで「通信してる感」が出るよ📡✨
 
 ### `src/util/sleep.ts`
@@ -261,6 +271,8 @@ export const sleep = (ms: number) =>
 ---
 
 ## 14.8 注文Saga（ステップ3つ）を作る🛒💳📦
+
+![context_basket](./picture/saga_ts_study_014_context_basket.png)
 
 今回は「外部サービス無し」なので、**IDを作ってctxに入れるだけ**にするよ🧁✨
 
@@ -377,6 +389,8 @@ main().catch((e) => {
 ```
 
 ### 実行コマンド🧪
+
+![terminal_success](./picture/saga_ts_study_014_terminal_success.png)
 
 ```bash
 npm run dev

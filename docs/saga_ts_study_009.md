@@ -15,6 +15,8 @@ Sagaは「ローカルトランザクションの連鎖＋失敗時は補償ト�
 
 ## 9-1. “最小セット”の考え方：3つに分けると迷わない📦✨
 
+![three_log_categories](./picture/saga_ts_study_009_three_log_categories.png)
+
 Sagaログに入れる情報は、大きく3カテゴリに分けるとスッキリします😊🧹
 
 1. **識別とひも付け（ID系）** 🪪🔗
@@ -48,6 +50,8 @@ mindmap
 
 ### A. 識別とひも付け（ID系）🪪🔗
 
+![id_distinction](./picture/saga_ts_study_009_id_distinction.png)
+
 * **sagaId**：SagaインスタンスのID（例：UUID）
 * **businessId**：業務のID（例：orderId / reservationId）
 
@@ -75,6 +79,8 @@ mindmap
 
 ## 9-3. status（状態）おすすめセット🚦✨
 
+![status_indicators](./picture/saga_ts_study_009_status_indicators.png)
+
 初心者がまず扱いやすいのはこのへん👇（増やしすぎないのがコツ！）
 
 * `RUNNING`（進行中）🏃‍♀️
@@ -88,6 +94,8 @@ mindmap
 ---
 
 ## 9-4. steps（Stepの記録）をどう持つ？2つの型があるよ🧩📌
+
+![storage_patterns](./picture/saga_ts_study_009_storage_patterns.png)
 
 Sagaログで一番悩むのが「stepsをどう保存するか」です😵‍💫
 代表はこの2パターン👇
@@ -181,6 +189,8 @@ export type SagaLog = {
 
 ## 9-6. 例：Sagaログ1件のイメージ（JSON）👀📒
 
+![json_inspector](./picture/saga_ts_study_009_json_inspector.png)
+
 ```json
 {
   "sagaId": "8b8f6b0b-0d86-4c20-a2aa-6a8f2f0a5c2b",
@@ -244,6 +254,8 @@ sequenceDiagram
 ---
 
 ## 9-7. DBに落とす最小設計（例：2テーブル構成）🗄️✨
+
+![db_schema_link](./picture/saga_ts_study_009_db_schema_link.png)
 
 「実務寄り」な形も、軽く見ておこうね👀
 （Step単位の重複排除・検索がやりやすい！）
@@ -309,6 +321,8 @@ erDiagram
 ---
 
 ## 9-8. よくある事故💣（これを避けるだけで強くなる💪）
+
+![accident_missing_history](./picture/saga_ts_study_009_accident_missing_history.png)
 
 * **stepsを保存してなくて、補償できない** 😭🧯
 * statusだけ保存して、**どのStepが成功したか分からない** 😵
