@@ -9,6 +9,8 @@
 ---
 
 ## 18-1. 順序が崩れると何が困るの？😵‍💫💥
+![outbox_ts_study_018_order_vs_chaos.png](./picture/outbox_ts_study_018_order_vs_chaos.png)
+
 
 順序って、ざっくり言うと **「起きた順に届いてほしい」** ってことだよね📩✨
 でも、順序が崩れるとこうなる👇
@@ -43,6 +45,8 @@ graph LR
 順序って実は3段階くらいで考えるとラクだよ🍀
 
 ## A) 全体順序（全部ぜんぶ1列に並ぶ）🚂
+![outbox_ts_study_018_global_ordering.png](./picture/outbox_ts_study_018_global_ordering.png)
+
 
 * どのイベントも **1本の列** で順番通り
 * 強いけど、だいたい重い（スケールしづらい）🥲
@@ -80,6 +84,8 @@ graph LR
 Outboxは「送信漏れ」を強く防げる仕組みだけど📦🛡️、**順序**は別問題になることがあるよ🙂
 
 ## 崩れポイント①：複数Publisherで並列処理👯‍♀️
+![outbox_ts_study_018_race_condition.png](./picture/outbox_ts_study_018_race_condition.png)
+
 
 同時に拾って送ると、送信タイミングがズレる⏱️💨
 （第14章の“並行実行”の世界）
@@ -157,6 +163,8 @@ function shouldApply(current: StoredState, incoming: IncomingEvent): boolean {
 ---
 
 ## 18-8. Outboxテーブルに足すと強いカラム案🧾✨
+![outbox_ts_study_018_stream_columns.png](./picture/outbox_ts_study_018_stream_columns.png)
+
 
 最小（第9章）に、順序のためにこれを足すイメージ👇
 
@@ -169,6 +177,8 @@ function shouldApply(current: StoredState, incoming: IncomingEvent): boolean {
 ---
 
 ## 18-9. 「lane（車線）」で“順序×スケール”を両立する🚗💨
+![outbox_ts_study_018_lane_distribution.png](./picture/outbox_ts_study_018_lane_distribution.png)
+
 
 ## なぜlaneが効くの？🤔
 
@@ -305,6 +315,8 @@ function sleep(ms: number) {
 ---
 
 ## 18-12. それでも“受け側ガード”は入れよう🛡️🙂（保険✨）
+![outbox_ts_study_018_receiver_guard.png](./picture/outbox_ts_study_018_receiver_guard.png)
+
 
 順序を守る設計でも、現実は「再送」「障害」「再配送」などがあるからね🌧️🔁
 なので受け側でこれを入れると事故が減るよ👇

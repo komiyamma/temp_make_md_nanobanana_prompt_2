@@ -262,6 +262,8 @@ export async function runPublisherOnce(db: Db) {
 ---
 
 ## 22-A-8 動作デモ（手順）🎬✨
+![outbox_ts_study_022_demo_flow.png](./picture/outbox_ts_study_022_demo_flow.png)
+
 
 1. DB初期化（orders/outbox作成）🧱
 2. 注文を1件作成（PENDING）🛒
@@ -291,6 +293,8 @@ export async function runPublisherOnce(db: Db) {
 ---
 
 ## 22-B-1 まずロック（複数ワーカーでも二重送信しない）👯‍♀️🔒
+![outbox_ts_study_022_locking_mechanism.png](./picture/outbox_ts_study_022_locking_mechanism.png)
+
 
 ### ゴール🎯
 
@@ -347,6 +351,8 @@ RETURNING *;
 ---
 
 ## 22-B-3 バックオフ（賢い再送）⏳📈
+![outbox_ts_study_022_backoff_graph.png](./picture/outbox_ts_study_022_backoff_graph.png)
+
 
 **指数バックオフ**の超ざっくり例👇
 
@@ -387,6 +393,8 @@ function calcNextRetry(attempts: number): Date {
 ---
 
 ## 22-C-1 冪等性（同じのが2回来ても壊れない）🛡️🔁
+![outbox_ts_study_022_idempotency_shield.png](./picture/outbox_ts_study_022_idempotency_shield.png)
+
 
 ### ゴール🎯
 
@@ -418,6 +426,8 @@ export async function consumeOnce(db: Db, msg: { id: string; payloadJson: string
 ---
 
 ## 22-C-2 順序（Ordering）🍱➡️🍱
+![outbox_ts_study_022_order_checkpoint.png](./picture/outbox_ts_study_022_order_checkpoint.png)
+
 
 ### ゴール🎯
 
@@ -467,6 +477,8 @@ aggregate_checkpoint
 ---
 
 ## 22-D：AIレビュー会（“設計の見落とし”を潰す）🤖✅🎉
+![outbox_ts_study_022_ai_reviewer.png](./picture/outbox_ts_study_022_ai_reviewer.png)
+
 
 最後は AI を「レビュー役」にするよ👀✨
 ここは**プロンプト例**をそのまま投げればOK！

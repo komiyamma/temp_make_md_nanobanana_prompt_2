@@ -10,6 +10,8 @@
 ---
 
 ## 20.1 「イベントは未来にも届く」ってどういうこと？🕰️📨
+![outbox_ts_study_020_time_travel_letter.png](./picture/outbox_ts_study_020_time_travel_letter.png)
+
 
 Outbox のイベントって、**送った瞬間だけ存在する**わけじゃないよね。
 
@@ -23,6 +25,8 @@ Outbox のイベントって、**送った瞬間だけ存在する**わけじゃ
 ---
 
 ## 20.2 「契約（Contract）」って、何を約束するの？🤝📜
+![outbox_ts_study_020_contract_handshake.png](./picture/outbox_ts_study_020_contract_handshake.png)
+
 
 イベントの契約は、ただの「型」だけじゃないよ 🧠✨
 ざっくり言うと **“このイベントをこう解釈してね” の約束セット**。
@@ -44,6 +48,8 @@ Outbox のイベントって、**送った瞬間だけ存在する**わけじゃ
 ---
 
 ## 20.3 バージョンはどこに持たせる？3つの型 🧩🏗️
+![outbox_ts_study_020_versioning_styles.png](./picture/outbox_ts_study_020_versioning_styles.png)
+
 
 イベントのバージョン管理、よくあるのはこの3つ👇
 
@@ -67,6 +73,8 @@ Outbox のイベントって、**送った瞬間だけ存在する**わけじゃ
 ---
 
 ## 20.4 後方互換（Backward Compatible）って何？🔄🛡️
+![outbox_ts_study_020_backward_compat.png](./picture/outbox_ts_study_020_backward_compat.png)
+
 
 **古い受け手でも壊れない変更**のことだよ ✅
 
@@ -89,6 +97,8 @@ Outbox のイベントって、**送った瞬間だけ存在する**わけじゃ
 ---
 
 ## 20.5 “壊さずに変える”ための基本戦略 🪜🛠️
+![outbox_ts_study_020_evolution_steps.png](./picture/outbox_ts_study_020_evolution_steps.png)
+
 
 ## 戦略①：追加して、しばらく両対応（王道）👑
 
@@ -204,6 +214,8 @@ export function normalizeOrderConfirmed(e: AnyOrderConfirmed): OrderConfirmedV2 
 ---
 
 ## 20.7 JSON Schema を併用すると、契約がもっと強くなる 📜✅
+![outbox_ts_study_020_schema_validation.png](./picture/outbox_ts_study_020_schema_validation.png)
+
 
 「TypeScriptの型」は便利だけど、**実際に飛んでくるJSON** は `unknown` だよね 😇
 だから“機械で検証できる契約書”として **JSON Schema** を持つのはかなり強いよ 💪
