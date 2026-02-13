@@ -9,6 +9,8 @@
 
 ## 1) そもそも「契約」ってなに？📜🤝
 
+![Contract Break](./picture/outbox_cs_study_014_contract_break.png)
+
 Outbox のメッセージは、ざっくり言うと **送り手（Producer）と受け手（Consumer）の約束ごと**だよ📦➡️📩
 
 * 送り手：「この形（JSON）で送るね！」📤
@@ -20,6 +22,8 @@ Outbox のメッセージは、ざっくり言うと **送り手（Producer）�
 ---
 
 ## 2) 互換性の考え方（超重要）🧩🧡
+
+![Backward vs Forward Compatibility](./picture/outbox_cs_study_014_backward_vs_forward.png)
 
 メッセージの形が変わるとき、気にするのはこの2つ👇
 
@@ -43,6 +47,8 @@ Outbox のメッセージは、ざっくり言うと **送り手（Producer）�
 ここから先は “迷ったらこれ守っておけばだいたい平和” ルールだよ🕊️✨
 
 ## ルールA：フィールドは「追加」が最強 ➕💪
+
+![Add Field Safe](./picture/outbox_cs_study_014_add_field_safe.png)
 
 * v1 に `CustomerId` を **追加**して v2 にする、みたいな進化はやりやすい🎉
 * 受け手が新フィールドを知らなくても、無視できれば助かる（前方互換）😌
@@ -241,12 +247,16 @@ public static class Consumer
 
 ## ✅ Upcast（アップキャスト）が嬉しい理由 🎁
 
+![Upcast Pattern](./picture/outbox_cs_study_014_upcast_pattern.png)
+
 * 分岐は入口だけで済む → 中のロジックがスッキリ🍱✨
 * v3 が増えても、`Upcast(v3)` を足していけばいい🧩
 
 ---
 
 ## 8) “知らないフィールド”が来たらどうする？🧾🌀
+
+![Ignore Unknown](./picture/outbox_cs_study_014_ignore_unknown.png)
 
 ここ、前方互換に直結するよ⚡
 

@@ -9,6 +9,8 @@ Outboxパターンの「箱」になる **Outboxテーブル**を、まずは **
 
 ## 1) ミニマム設計：まずはこの4つだけ！✅📦
 
+![Minimum Outbox Table](./picture/outbox_cs_study_009_minimum_table.png)
+
 最初はこれでOKです👇✨
 
 * **Id**：Outboxレコードの一意ID 🪪
@@ -24,6 +26,8 @@ Outboxパターンの「箱」になる **Outboxテーブル**を、まずは **
 ## 2) カラム設計のコツ（初心者向け）🧠💡
 
 ## 2.1 Id（主キー）🪪✨
+
+![GUID Concept](./picture/outbox_cs_study_009_guid_concept.png)
 
 **おすすめ：GUID（uniqueidentifier）**
 
@@ -49,6 +53,8 @@ Outboxパターンの「箱」になる **Outboxテーブル**を、まずは **
 
 ## 2.3 Payload（中身）🧾📏
 
+![Payload JSON](./picture/outbox_cs_study_009_payload_json.png)
+
 最初は **JSON文字列をそのまま保存**でOKです😊
 SQL Serverなら、JSONは **nvarchar(max)** などの文字列に入れるのが一般的です([Microsoft Learn][2])
 
@@ -63,6 +69,8 @@ SQL Serverなら、JSONは **nvarchar(max)** などの文字列に入れるの�
 ---
 
 ## 2.4 OccurredAt（発生時刻）⏰🌍
+
+![UTC Time](./picture/outbox_cs_study_009_utc_time.png)
 
 **おすすめ：UTC（世界標準）**
 
@@ -97,6 +105,8 @@ ADD CONSTRAINT CK_OutboxMessages_Payload_IsJson CHECK (ISJSON(Payload) = 1);
 ---
 
 ## 4) EF Core用：C#モデル（最小）🧑‍💻✨
+
+![EF Core Mapping](./picture/outbox_cs_study_009_ef_core_mapping.png)
 
 ```csharp
 public sealed class OutboxMessage

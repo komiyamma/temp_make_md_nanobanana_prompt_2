@@ -10,6 +10,8 @@
 
 ## 1) Relayって何者？👀🚚
 
+![Relay Role](./picture/outbox_cs_study_015_relay_role.png)
+
 Relayは、ざっくり言うと…
 
 * Outboxテーブルを見に行く👀
@@ -23,6 +25,8 @@ Relayは、ざっくり言うと…
 ---
 
 ## 2) ポーリングって何？⏰🐾
+
+![Polling Clock](./picture/outbox_cs_study_015_polling_clock.png)
 
 ポーリングは「一定間隔で見回りする」方式です👮‍♀️✨
 
@@ -75,6 +79,8 @@ Relayの責務は、最低限これだけでOKです🙂✨
 
 ## 5-1) なぜClaimが必要？😱
 
+![Double Claim Accident](./picture/outbox_cs_study_015_double_claim_accident.png)
+
 Relayが2つ同時に動くと…
 
 * Relay A「このPendingいいね！」
@@ -87,6 +93,8 @@ Relayが2つ同時に動くと…
 ---
 
 ## 5-2) Claimの代表パターン（初心者向け）🧠✨
+
+![Claim Lock](./picture/outbox_cs_study_015_claim_lock_visual.png)
 
 おすすめはこの形👇
 
@@ -119,6 +127,8 @@ PostgreSQLは `FOR UPDATE SKIP LOCKED` がまさに「キューっぽいテー�
 ---
 
 ## 6) 1回に何件取る？（バッチサイズ）📦📦📦
+
+![Batch Processing](./picture/outbox_cs_study_015_batch_processing.png)
 
 ## 6-1) バッチサイズの目安（最初のおすすめ）🙂✨
 
@@ -162,6 +172,8 @@ PostgreSQLは `FOR UPDATE SKIP LOCKED` がまさに「キューっぽいテー�
 ---
 
 ## 8) 「送信中に落ちた」問題と LockedUntil 🧯⏳
+
+![LockedUntil Recovery](./picture/outbox_cs_study_015_locked_until_recovery.png)
 
 Relayは落ちます。ネットも落ちます。普通です😇🌩️
 

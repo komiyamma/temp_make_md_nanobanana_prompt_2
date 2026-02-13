@@ -18,6 +18,8 @@
 
 ## 2. Worker と BackgroundService ってなに？🤔💡
 
+![Worker Service Icon](./picture/outbox_cs_study_016_worker_service_icon.png)
+
 * **Worker Service**：
   「バックグラウンドで動くアプリ」を作るための“土台”です🧱✨（ログ・DI・設定なども揃ってて便利）([Microsoft Learn][1])
 
@@ -49,6 +51,8 @@ C# も C# 14 が最新として案内されていて、.NET 10 でサポート�
 ---
 
 ## 4. Relay に必要な“最小パーツ”🧩📦
+
+![Relay Components](./picture/outbox_cs_study_016_relay_components.png)
 
 この章の実装は、いったんこの3つに分けるとキレイです✨
 
@@ -94,6 +98,8 @@ await host.RunAsync();
 ---
 
 ## 5.2 RelayWorker 本体 🧑‍💻🔧
+
+![Cancellation Token](./picture/outbox_cs_study_016_cancellation_token.png)
 
 **ポイントは3つ**だよ👇
 
@@ -302,6 +308,8 @@ DB の Outbox を複数の Relay が見に行くと、こういう事故が起�
 
 ## 8.2 同一 PC 内だけでも止めたい！→ Global Mutex 🧷🪟
 
+![Mutex Guard](./picture/outbox_cs_study_016_mutex_guard.png)
+
 Program の最初にこれを入れると、**同じアプリを2回起動した瞬間に止められます**👍
 
 ```csharp
@@ -362,6 +370,8 @@ await host.RunAsync();
 ## 10. 動作確認（デバッグ超かんたん）🧪🎮
 
 ## 10.1 まずはコンソールで実行 ▶️
+
+![Console Log View](./picture/outbox_cs_study_016_console_log_view.png)
 
 * Visual Studio の実行（▶）
 * もしくは👇

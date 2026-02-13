@@ -15,6 +15,8 @@ Outboxを「ただの箱📦」から、「運用で死なない箱🛡️」へ
 
 ## あるある①：未送信が溜まって地獄😱📦📦📦
 
+![Accumulated Messages](./picture/outbox_cs_study_010_accumulated_messages.png)
+
 最初は動くけど、数日〜数週間で「未送信が増え続ける」問題が出ます。
 
 * 送信先が落ちる🌩️
@@ -37,6 +39,8 @@ Outboxを「ただの箱📦」から、「運用で死なない箱🛡️」へ
 ---
 
 ## 2) “運用を見据えた”Outboxテーブル：追加カラムの全体像 🧾✨
+
+![Status Columns](./picture/outbox_cs_study_010_status_columns.png)
 
 ミニマム（第9章）の基本カラムに加えて、運用ではだいたい次が欲しくなります👇
 
@@ -85,6 +89,8 @@ Outboxを「ただの箱📦」から、「運用で死なない箱🛡️」へ
 
 ## 4.1 なぜNextAttemptAtUtcが必要？⏳
 
+![Retry Backoff](./picture/outbox_cs_study_010_retry_backoff.png)
+
 「失敗したらすぐ再送！」をやると、
 
 * 送信先が落ちてる時に無限パンチ🥊🥊🥊
@@ -107,6 +113,8 @@ Outboxを「ただの箱📦」から、「運用で死なない箱🛡️」へ
 
 ## 5) 複数Relayでも安全にする：ロック戦略 🔒👯‍♀️
 
+![Lock Mechanism](./picture/outbox_cs_study_010_lock_mechanism.png)
+
 ## 5.1 “DBを真実のソース”にしてロックする 🏛️
 
 Outboxは「DBに書けたら勝ち」パターンなので、配送の取り合いもDB側で制御するのが定番です。
@@ -123,6 +131,8 @@ Outboxは「DBに書けたら勝ち」パターンなので、配送の取り合
 ---
 
 ## 6) インデックス設計：Outboxの性能はここで決まる🏃‍♀️💨
+
+![Index Strategy](./picture/outbox_cs_study_010_index_strategy.png)
 
 ## 6.1 Relayがよく打つクエリはだいたいこれ👀
 
@@ -162,6 +172,8 @@ ON dbo.OutboxMessages (Status, SentAtUtc);
 ---
 
 ## 7) 保持期間と掃除：Outboxは放置すると太ります🐷📦
+
+![Cleanup Job](./picture/outbox_cs_study_010_cleanup_job.png)
 
 ## 7.1 まず決める：どれくらい残す？🗓️
 
