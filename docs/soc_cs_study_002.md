@@ -9,6 +9,8 @@
 
 # 1) まず結論：混ざると“変更”が爆発する💣💥
 
+![soc cs study 002 explosion](./picture/soc_cs_study_002_explosion.png)
+
 「UI」「業務ロジック」「DBアクセス」が1か所に混ざると、こうなるよ👇
 
 * ちょっとUIを変えただけなのに、**計算やルールが壊れる**😇
@@ -21,6 +23,8 @@
 ---
 
 # 2) 今日の主人公：なんでも詰め込みフォーム（あるある）📦🫠
+
+![soc cs study 002 bloated form](./picture/soc_cs_study_002_bloated_form.png)
 
 たとえば、ありがちな「注文登録」ボタンのクリックイベント。
 **UI**も**ルール**も**DB**も全部ここ！みたいなやつね😇
@@ -98,6 +102,8 @@ flowchart TD
 
 ## 3) 修正地獄あるある①：UI変更で業務が壊れる🖥️➡️🧠💥
 
+![soc cs study 002 fragile ui](./picture/soc_cs_study_002_fragile_ui.png)
+
 ![soc_cs_study_002_tangle](./picture/soc_cs_study_002_tangle.png)
 
 ## 💥ある日、こう言われる
@@ -121,6 +127,8 @@ flowchart TD
 
 # 4) 修正地獄あるある②：DB変更で画面が崩れる🗄️➡️🖥️💥
 
+![soc cs study 002 db dependency](./picture/soc_cs_study_002_db_dependency.png)
+
 ## 💥ある日、こう言われる
 
 「Ordersテーブル、列名 `Price` じゃなくて `UnitPrice` に変えたよ〜😊」
@@ -138,6 +146,8 @@ flowchart TD
 ---
 
 # 5) 修正地獄あるある③：「影響範囲が読めない」が一番つらい😭📚🌀
+
+![soc cs study 002 copy paste hydra](./picture/soc_cs_study_002_copy_paste_hydra.png)
 
 これが一番メンタル削れるやつ…！
 
@@ -163,6 +173,8 @@ flowchart TD
 ---
 
 # 6) “混ざってるコード”を見分けるチェックリスト✅😇
+
+![soc cs study 002 check list](./picture/soc_cs_study_002_check_list.png)
 
 以下がイベントやメソッドに同居してたら、だいたい混ざってる〜！
 

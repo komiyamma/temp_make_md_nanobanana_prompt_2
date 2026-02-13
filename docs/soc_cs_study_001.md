@@ -27,6 +27,8 @@
 
 ## 2) 「関心（Concern）」って結局なに？🤔💭
 
+![soc cs study 001 change reasons](./picture/soc_cs_study_001_change_reasons.png)
+
 ![soc_cs_study_001_concerns_bubbles](./picture/soc_cs_study_001_concerns_bubbles.png)
 
 ```mermaid
@@ -64,6 +66,8 @@ graph TD
 ---
 
 ## 3) “混ぜると地獄”が起きる理由😇💥（超リアル編）
+
+![soc cs study 001 hell scenarios](./picture/soc_cs_study_001_hell_scenarios.png)
 
 混ざると何が起きるか、現場あるあるでいきます🤣
 
@@ -117,6 +121,8 @@ graph LR
 
 ## 5) ミニ体験：混ざったコードを見て「うわっ😇」を味わう💥
 
+![soc cs study 001 mixed code horror](./picture/soc_cs_study_001_mixed_code_horror.png)
+
 まずは、わざと混ぜた例を見ます👀
 （Consoleアプリにしてるのは、UIが軽くて本質が見やすいからだよ😊）
 
@@ -155,6 +161,8 @@ Console.WriteLine($"割引後: {discounted} 円だよ〜✨（保存した！）
 ---
 
 ## 6) “分離の第一歩”は、分けて書くことじゃなくて「線を引くこと」✍️✨
+
+![soc cs study 001 drawing lines](./picture/soc_cs_study_001_drawing_lines.png)
 
 いきなり綺麗に分けなくてOK🙆‍♀️
 最初はこれだけやってください👇
@@ -217,6 +225,8 @@ Console.WriteLine($"割引後: {discounted} 円だよ〜✨（保存した！）
 ---
 
 ## 8) AI（Copilot等）を使う“第1章らしい”安全な使い方🤖💡
+
+![soc cs study 001 ai assistant](./picture/soc_cs_study_001_ai_assistant.png)
 
 この章では、AIに「分離案を丸投げ」じゃなくて、**仕分けの補助**に使うのが◎です😊✨
 

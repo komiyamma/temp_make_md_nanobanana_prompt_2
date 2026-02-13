@@ -28,6 +28,8 @@ SoC（関心の分離）は難しく考えなくてOK🙆‍♀️
 
 ### 箱①：表示（UI）🖥️🎨
 
+![soc cs study 004 ui role](./picture/soc_cs_study_004_ui_role.png)
+
 **役割：ユーザーと会話する担当**
 
 * 画面に表示する（ラベル・一覧・色・フォント…）
@@ -45,6 +47,8 @@ SoC（関心の分離）は難しく考えなくてOK🙆‍♀️
 ---
 
 ### 箱②：ルール（業務）🧠⚖️
+
+![soc cs study 004 rule role](./picture/soc_cs_study_004_rule_role.png)
 
 **役割：正しさを決める担当（このアプリの“魂”）**
 
@@ -67,6 +71,8 @@ Microsoftのアーキテクチャ解説でも、**表示（UI）・業務ロジ�
 
 ### 箱③：外部（DB/ファイル/HTTP）🗄️🌐📁
 
+![soc cs study 004 external role](./picture/soc_cs_study_004_external_role.png)
+
 **役割：アプリの外の世界と話す担当**
 
 * DBアクセス（SQL、ORM、接続文字列…）
@@ -87,6 +93,8 @@ Microsoftのアーキテクチャ解説でも、**表示（UI）・業務ロジ�
 ---
 
 ## 2) 迷ったらこれ！「3つの質問」🧩✨
+
+![soc cs study 004 three questions](./picture/soc_cs_study_004_three_questions.png)
 
 コードを見て、次の質問を順番に当ててください👇
 
@@ -249,6 +257,8 @@ Microsoftのガイドでも「UIはUIに、データアクセスはインフラ�
 
 ## 6) どれに属する？ミニ仕分けクイズ🎮✨
 
+![soc cs study 004 sorting game](./picture/soc_cs_study_004_sorting_game.png)
+
 次のコード（/行動）は **UI / ルール / 外部** のどれ？😊
 （直感でOK！）
 
@@ -282,6 +292,8 @@ Microsoftのガイドでも「UIはUIに、データアクセスはインフラ�
 ---
 
 ## 7) 今日から使える「仕分けメモ」📝✨
+
+![soc cs study 004 tagging code](./picture/soc_cs_study_004_tagging_code.png)
 
 コードを見たら、コメントでこうメモしていくの超おすすめ👇
 
