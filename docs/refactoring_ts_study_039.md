@@ -17,6 +17,8 @@
 
 DIPの一言イメージはこれ👇
 「やりたいこと（上位）は、道具のメーカー型番（実装）じゃなくて、**“機能の約束（interface）”**に話しかけよう」💬✨
+![DIP Concept](./picture/refactoring_ts_study_039_dip_concept.png)
+
 （DIPの説明としてよくこう整理されます）([Strapi][1])
 
 ---
@@ -30,6 +32,8 @@ DIPの一言イメージはこれ👇
 ---
 
 ## ビフォー：実装にベタ依存コード🧱💦
+![Tight Coupling Car](./picture/refactoring_ts_study_039_tight_coupling.png)
+
 
 ```ts
 // ApiUserRepository.ts（低レイヤ：詳細）
@@ -91,6 +95,8 @@ graph TD
 
 
 ### 1) 「必要なことだけ」をinterfaceにする📜
+![Interface Contract](./picture/refactoring_ts_study_039_interface_contract.png)
+
 
 ポイント：**上位が欲しい機能**だけを書く（下位の都合は持ち込まない）🎈
 
@@ -104,6 +110,8 @@ export interface UserRepository {
 ```
 
 ### 2) 上位（UserService）はinterfaceだけを見る👀✨
+![Loose Coupling Socket](./picture/refactoring_ts_study_039_loose_coupling.png)
+
 
 ```ts
 // UserService.ts（高レイヤ：やりたいこと）
@@ -137,6 +145,8 @@ export class ApiUserRepository implements UserRepository {
 ```
 
 ### 4) “組み立てる場所”で本番の実装を選ぶ🧩
+![Composition Root Lego](./picture/refactoring_ts_study_039_composition_root.png)
+
 
 この「組み立て場所」をよく **Composition Root**（合成の根っこ）って呼びます🌳✨
 
@@ -162,6 +172,8 @@ console.log(await service.getDisplayName("123"));
 ---
 
 ## テスト：Fake（偽物）でサクッと検証🧪🌸
+![Fake Implementation Stunt](./picture/refactoring_ts_study_039_fake_stunt.png)
+
 
 ### Fake実装（インメモリ）
 

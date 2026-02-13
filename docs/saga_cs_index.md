@@ -18,6 +18,8 @@ graph TD
 * **AI活用**：似た事例を3つ出してもらう（旅行予約/ポイント付与/サブスク等）🤖✨
 
 ## 第2章：失敗パターン図鑑（何が壊れる？）💥📚
+![Failure Domino](./picture/saga_cs_index_domino_stop.png)
+
 
 * **ゴール**：部分成功が生む事故を知る
 * **内容**：二重課金／在庫だけ減る／配送だけ作られる…😱
@@ -25,6 +27,8 @@ graph TD
 * **AI活用**：事故の優先順位（対応すべき順）を提案させる🤖
 
 ## 第3章：トランザクションの限界と“分割”の考え方🧱🔪
+![Saga vs Transaction](./picture/saga_cs_index_chains_vs_block.png)
+
 
 * **ゴール**：「DBのトランザクション」だけで守れない範囲を理解
 * **内容**：同一DB内は強い／外部APIや別DBを跨ぐと難しい
@@ -39,6 +43,8 @@ graph TD
 * **AI活用**：補償案を複数出して比較（返金/無効化/クーポン等）🤖
 
 ## 第5章：Sagaの2方式を知る（Orchestration / Choreography）🧑‍✈️💃
+![Orchestration vs Choreography](./picture/saga_cs_index_orchestra_vs_dance.png)
+
 
 * **ゴール**：2方式の違いを“会話できるレベル”で説明できる
 * **内容**：司令塔方式 vs イベント自律方式（メリデメざっくり）
@@ -60,6 +66,8 @@ graph TD
 * **AI活用**：紛らわしい言い回しを列挙して注意点化🤖
 
 ## 第8章：補償の基本（“逆操作”ではなく“帳尻合わせ”）🙅‍♀️🧾
+![Compensation Rewind](./picture/saga_cs_index_rewind_button.png)
+
 
 * **ゴール**：補償＝“元に戻す”以外もあると理解
 * **内容**：返金／取消／無効化／差額調整／代替措置
@@ -78,6 +86,8 @@ graph TD
 * **AI活用**：冪等が必要な操作を例で増やしてもらう🤖
 
 ## 第10章：Sagaでの冪等性（冪等キーと二重補償防止）🔑🛡️
+![Idempotency Ticket](./picture/saga_cs_index_idempotency_ticket.png)
+
 
 * **ゴール**：Saga特有の「二重補償」「二重遷移」を防げる
 * **内容**：冪等キー設計／重複排除／“補償も冪等”にする
@@ -85,6 +95,8 @@ graph TD
 * **AI活用**：キー設計案のレビュー（衝突/漏れ/再試行時）を頼む🤖
 
 ## 第11章：状態機械（State Machine）入門（状態と遷移を見える化）⚙️🧠
+![Saga State Machine](./picture/saga_cs_index_state_machine.png)
+
 
 * **ゴール**：Sagaを“状態の変化”として整理できる
 * **内容**：状態（Pending/Completed/Compensating…）／遷移／ガード条件
@@ -138,6 +150,8 @@ graph TD
 # ここから“取りこぼさない”＆“追跡できる”ゾーン📦🔎
 
 ## 第18章：Outboxの考え方（DB更新と送信のズレ問題）📦😬
+![Outbox Mailbox](./picture/saga_cs_index_outbox_mailbox.png)
+
 
 * **ゴール**：Outboxが解く“ズレ”の問題を説明できる
 * **内容**：DB更新は成功したのにイベント送信が失敗…を防ぐ

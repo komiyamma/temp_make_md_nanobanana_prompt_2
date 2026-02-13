@@ -29,6 +29,8 @@
 `status` が文字列で、必要なプロパティが「なんとなく optional」になってるパターン。
 こうなると **ありえない状態**が作れちゃう…🥲
 
+![Optional Hell](./picture/refactoring_ts_study_036_optional_hell.png)
+
 ```typescript
 // ❌ ビフォー：状態とデータがふわっとしてる
 type ApiResponse = {
@@ -87,6 +89,8 @@ graph TD
 * タグごとに「必要なプロパティ」を固定する📌
 * `switch` の最後で `never` を使って **網羅性チェック**する✅ ([TypeScript][1])
 
+![Discriminated Boxes](./picture/refactoring_ts_study_036_discriminated_boxes.png)
+
 ```typescript
 // ✅ アフター：判別可能Union（Discriminated Union）
 type ApiResponse =
@@ -118,11 +122,17 @@ function render(res: ApiResponse): string {
 }
 ```
 
+![Exhaustiveness Trap](./picture/refactoring_ts_study_036_exhaustiveness_trap.png)
+
 この「switchでタグを見ると、中の型が自動で絞られる」動きが判別可能Unionの強みだよ🧷🔍 ([TypeScript][3])
+![Switch Sorter](./picture/refactoring_ts_study_036_switch_sorter.png)
+
 
 ---
 
 ## 取りこぼしがどう防げるの？👀✅（体験してみよう）
+![Missing Case Alarm](./picture/refactoring_ts_study_036_missing_case.png)
+
 
 たとえば `ApiResponse` に新しい状態を追加したとする👇
 
@@ -141,6 +151,8 @@ type ApiResponse =
 ---
 
 ## `satisfies` でスマートに網羅性チェックする方法✨🪄
+![Satisfies Check](./picture/refactoring_ts_study_036_satisfies_check.png)
+
 
 「関数を作りたくないな〜」って時の書き方。
 `default` で `satisfies never` を使って **型だけ**で止める感じ💡 ([Zenn][2])
