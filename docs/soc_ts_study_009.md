@@ -57,6 +57,10 @@ graph TD
 
 #### UI層🖥️
 
+![ui layer responsibility](./picture/soc_ts_study_009_ui_layer_responsibility.png)
+
+
+
 やること：
 
 * 入力を集める（フォーム、ボタン、CLIの引数）⌨️
@@ -71,6 +75,10 @@ graph TD
 
 #### Application層🧭
 
+![app layer responsibility](./picture/soc_ts_study_009_app_layer_responsibility.png)
+
+
+
 やること：
 
 * ユースケースの順番を管理（例：申込 → 料金計算 → 保存 → 通知）🧩
@@ -83,6 +91,10 @@ graph TD
   → それはDomainの仕事🛡️
 
 #### Domain層🛡️
+
+![domain layer responsibility](./picture/soc_ts_study_009_domain_layer_responsibility.png)
+
+
 
 やること：
 
@@ -109,6 +121,10 @@ graph TD
 
 ### 9-4. 例題：学園イベント申込🎓🌸（この章の主役）
 
+![event application scenario](./picture/soc_ts_study_009_event_application_scenario.png)
+
+
+
 #### 仕様（かわいめ＆リアル寄り）✨
 
 * イベント参加費：通常 **2,000円** 💰
@@ -119,6 +135,10 @@ graph TD
 ---
 
 ### 9-5. フォルダ構成（最小）📁✨
+
+![implementation file tree](./picture/soc_ts_study_009_implementation_file_tree.png)
+
+
 
 ```txt
 src/
@@ -302,6 +322,10 @@ UIがやってるのは「入力→呼ぶ→表示」だけ🎯
 ---
 
 ### 9-9. ミニ演習🎮✨（5〜10分）
+
+![early bird discount](./picture/soc_ts_study_009_early_bird_discount.png)
+
+
 
 #### お題🎓
 

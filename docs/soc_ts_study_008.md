@@ -21,6 +21,10 @@ TypeScriptは、**トップレベルに `import` / `export` があるファイ�
 
 ## 8-2. “1ファイル1責務”の感覚をつかもう🎯✨
 
+![responsibility label](./picture/soc_ts_study_008_responsibility_label.png)
+
+
+
 合言葉はこれ👇
 **「このファイル、何のためのファイル？」が1文で言える？🗣️**
 
@@ -91,6 +95,10 @@ featureの中に `ui / domain / infra` を小さく置くのもアリだよ🍩�
 
 ## 8-5. `index.ts` で“表の顔”を作る🙂✨（でも慎重に！）
 
+![barrel file gate](./picture/soc_ts_study_008_barrel_file_gate.png)
+
+
+
 フォルダに `index.ts` を置くと、そこが「入口」になるよ🚪✨
 いわゆる **barrel（バレル）**ってやつ！
 
@@ -128,6 +136,10 @@ import { UserId, makeUser } from "../domain/user";
 
 ## 8-6. 循環参照（circular dependency）を起こさないコツ🌀🙅‍♀️
 
+![circular dependency knot](./picture/soc_ts_study_008_circular_dependency_knot.png)
+
+
+
 「AがBをimport、BがAをimport」みたいな状態ね🌀
 これが増えると…
 
@@ -147,6 +159,10 @@ import { UserId, makeUser } from "../domain/user";
 ---
 
 ## 8-7. 「副作用があるモジュール」を入口に置かない🧼⚡🚫
+
+![import side effect bomb](./picture/soc_ts_study_008_import_side_effect_bomb.png)
+
+
 
 第7章でやった「純粋処理 vs 副作用」ね✨
 ここで超大事なのは👇
@@ -177,6 +193,10 @@ import { UserId, makeUser } from "../domain/user";
 ---
 
 ## 8-9. ミニ演習：ごちゃ混ぜ1ファイルを“3モジュール”に分ける✂️📦✨
+
+![refactoring sorting process](./picture/soc_ts_study_008_refactoring_sorting_process.png)
+
+
 
 ### 🎬 お題：文化祭の参加費を計算する（学割あり）🎓💰
 

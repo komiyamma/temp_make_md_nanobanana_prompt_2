@@ -9,6 +9,10 @@ SoCって「分ける」話なんだけど、実は **環境にもSoCがある**
 
 ## 5.1 まずは完成イメージ（この章のゴール）🎯✨
 
+![foundation pillars](./picture/soc_ts_study_005_foundation_pillars.png)
+
+
+
 この章が終わったら、最低限これができる状態にするよ！
 
 * VS Codeでプロジェクトを開ける📂
@@ -25,6 +29,10 @@ Node.jsは **Active LTS** を使うのが安心（本番向き）で、公式も
 ---
 
 ## 5.2 Node.js（Active LTS）を入れる🍀
+
+![node lts vs current](./picture/soc_ts_study_005_node_lts_vs_current.png)
+
+
 
 ### ✅ いまのおすすめ（2026/01時点）
 
@@ -53,6 +61,10 @@ npm -v
 ---
 
 ## 5.3 VS Codeに入れる拡張（最小セット）🧰✨
+
+![vscode extensions toolbox](./picture/soc_ts_study_005_vscode_extensions_toolbox.png)
+
+
 
 ここは「迷ったらこの4つ」だけでOK！💕
 
@@ -87,6 +99,10 @@ Copilotを入れると “Copilot本体＋Copilot Chat” の2つがセット、
 ---
 
 ## 5.4 新規プロジェクトを作って“動く場所”を確保しよう📁🏗️
+
+![npm init package](./picture/soc_ts_study_005_npm_init_package.png)
+
+
 
 ### 1) フォルダ作成＆VS Codeで開く📂
 
@@ -172,6 +188,10 @@ npm i -D vitest
 
 ## 5.7 “迷わない実行”を npm scripts で固定する🏃‍♀️💨
 
+![npm scripts dashboard](./picture/soc_ts_study_005_npm_scripts_dashboard.png)
+
+
+
 `package.json` の `"scripts"` にこれを入れると、**毎回コマンドに迷わない**よ✨
 （SoC的にも「実行の関心」をここに集める感じ！🧠🧩）
 
@@ -196,6 +216,10 @@ npm i -D vitest
 ---
 
 ## 5.8 VS Codeを“保存したら勝手に整う”状態にする💾✨
+
+![format on save magic](./picture/soc_ts_study_005_format_on_save_magic.png)
+
+
 
 プロジェクト直下に `.vscode/settings.json` を作って、こうするのが楽だよ〜！🎀
 
