@@ -99,6 +99,10 @@ Property 'age' does not exist on type 'unknown'.
 
 ## 4) “入口固定” のための境界関数の形🧰✨
 
+![invariants_ts_study_017_result_pattern_choice.png](./picture/invariants_ts_study_017_result_pattern_choice.png)
+
+
+
 この章では、初心者に優しい形として👇を採用します🙂
 
 * `parseXxx(input: unknown): Result<DTO, ValidationError[]>`
@@ -180,6 +184,10 @@ const getNumberOptional = (
 ```
 
 ### 5-4) いよいよ境界関数：parseSignUpRequest🚪🛡️
+
+![invariants_ts_study_017_parser_logic_flow.png](./picture/invariants_ts_study_017_parser_logic_flow.png)
+
+
 
 **ここだけ**が unknown を触っていい場所です🙂✨
 
@@ -269,6 +277,10 @@ const getNumberOptional = (
 
 ## 6) 入口を固定する：ハンドラ側は必ず parse を通す🚪🔒
 
+![invariants_ts_study_017_handler_delegation.png](./picture/invariants_ts_study_017_handler_delegation.png)
+
+
+
 「入口固定」っていうのはこういうこと👇🙂
 ハンドラは **パースを呼ぶだけ** にして、変な if を散らさない✨
 
@@ -305,6 +317,10 @@ export const signUpHandler = (rawBody: unknown) => {
 
 ### ❌ `as Xxx` で握りつぶす
 
+![invariants_ts_study_017_type_assertion_trap.png](./picture/invariants_ts_study_017_type_assertion_trap.png)
+
+
+
 ```ts
 const dto = rawBody as SignUpRequestDto; // 😇（検証してない）
 ```
@@ -313,6 +329,10 @@ const dto = rawBody as SignUpRequestDto; // 😇（検証してない）
 **「型で黙らせる」＝「バグを未来に送る」** です📦🚚💣
 
 ### ❌ 検証が散る
+
+![invariants_ts_study_017_scattered_checks_chaos.png](./picture/invariants_ts_study_017_scattered_checks_chaos.png)
+
+
 
 * 画面側でチェック
 * API側でもチェック

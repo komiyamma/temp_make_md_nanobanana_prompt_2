@@ -38,6 +38,10 @@
 
 ## 22.2 エラーは「2種類」あると思うと一気に楽になる🪄🗂️
 
+![invariants_ts_study_022_user_vs_log_view.png](./picture/invariants_ts_study_022_user_vs_log_view.png)
+
+
+
 ここ超重要〜！💡
 
 ### A. 表示用（ユーザー向け）🫶
@@ -69,6 +73,10 @@ flowchart TD
 
 ## 22.3 「言い方」の鉄板ルール🫶📌
 
+![invariants_ts_study_022_no_blame_finger.png](./picture/invariants_ts_study_022_no_blame_finger.png)
+
+
+
 ### ルール1：責めない・怖がらせない😖➡️🙂
 
 Windows系の文章ガイドでも「ユーザーのせいっぽく書かない」が大事って言われてるよ🫶 ([Microsoft Learn][4])
@@ -94,6 +102,10 @@ Googleの技術文書ガイドでも、読みやすいエラーメッセージ�
 
 ## 22.4 まず “エラーの分類” を決めると設計がラク😆🧩
 
+![invariants_ts_study_022_error_quadrants.png](./picture/invariants_ts_study_022_error_quadrants.png)
+
+
+
 おすすめはこの4分類👇（迷ったらこれでOK！）
 
 1. **入力エラー（Validation）** ✍️
@@ -114,6 +126,10 @@ Googleの技術文書ガイドでも、読みやすいエラーメッセージ�
 ---
 
 ## 22.5 UIでの出し方のコツ（いつ・どこに出す？）🧁🧭
+
+![invariants_ts_study_022_inline_feedback_interaction.png](./picture/invariants_ts_study_022_inline_feedback_interaction.png)
+
+
 
 フォーム周りの鉄板👇（Material Designでも近い考え方だよ） ([Material Design][6])
 
@@ -185,6 +201,10 @@ export type FormErrorSummary = {
 ---
 
 ## 22.8 APIなら：RFC 9457（Problem Details）で返すのが今どき📦🌐✨
+
+![invariants_ts_study_022_problem_details_box.png](./picture/invariants_ts_study_022_problem_details_box.png)
+
+
 
 HTTP APIのエラー形式を標準化する仕様が **RFC 9457**（RFC 7807を置き換え）だよ〜！ ([datatracker.ietf.org][2])
 Content-Type は `application/problem+json` を使うのが定番🧾✨ ([Qiita][7])
