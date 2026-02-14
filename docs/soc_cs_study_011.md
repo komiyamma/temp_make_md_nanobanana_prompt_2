@@ -104,6 +104,10 @@ flowchart TD
 
 ## 4) interface＝差し替え口🚪✨（“口”は中心側に作る）
 
+![soc_cs_study_011_interface_placement.png](./picture/soc_cs_study_011_interface_placement.png)
+
+
+
 ここが本章の核心です🧠🌟
 
 ### ✅ ルール：interfaceは「使う側（中心側）」に置く
@@ -114,6 +118,10 @@ flowchart TD
 ---
 
 ## 5) 実例で体験しよう📚🔥（Before → After）
+
+![soc_cs_study_011_before_after_dip.png](./picture/soc_cs_study_011_before_after_dip.png)
+
+
 
 題材：**注文を保存するUseCase** 🧾✨
 
@@ -189,6 +197,10 @@ public sealed class SqlOrderRepository : IOrderRepository
 
 #### ④ “組み立て”は一箇所でやる（Composition Root）🧩🌟
 
+![soc_cs_study_011_composition_root.png](./picture/soc_cs_study_011_composition_root.png)
+
+
+
 ここだけが「new祭り」OKな場所です🙆‍♀️
 （WinForms/WPFなら `Program.cs` など）
 
@@ -207,6 +219,10 @@ Application.Run(form);
 ---
 
 ## 6) ありがち事故あるある🚑😇
+
+![soc_cs_study_011_accident_wrong_layer.png](./picture/soc_cs_study_011_accident_wrong_layer.png)
+
+
 
 ### ❌ interfaceをInfrastructureに置いちゃう
 
@@ -261,6 +277,10 @@ public sealed class LoadConfigUseCase
 ---
 
 ## 8) “分ける理由”が腹落ちするチェックリスト✅🧡
+
+![soc_cs_study_011_dip_checklist.png](./picture/soc_cs_study_011_dip_checklist.png)
+
+
 
 実務で迷ったらこれ見てください👀✨
 

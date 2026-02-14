@@ -40,6 +40,10 @@ DI（Dependency Injection）は、
 
 ## 2. まず「new地獄」の何が困るの？😇💥
 
+![soc_cs_study_012_new_hell.png](./picture/soc_cs_study_012_new_hell.png)
+
+
+
 ### 2-1. 典型パターン（イベント内でnew）😵‍💫
 
 ```csharp
@@ -68,6 +72,10 @@ SoC観点だと、UIは「ボタン押した→ユースケース呼ぶ」くら
 ---
 
 ## 3. コンストラクタ注入：いちばん基本のDI💉🌸
+
+![soc_cs_study_012_constructor_dock.png](./picture/soc_cs_study_012_constructor_dock.png)
+
+
 
 ### 3-1. “作らないで、受け取る”に変える✨
 
@@ -136,6 +144,10 @@ Application.Run(form);
 
 ### 6-1. 最小構成：登録して、フォームを解決する✨
 
+![soc_cs_study_012_service_collection_robot.png](./picture/soc_cs_study_012_service_collection_robot.png)
+
+
+
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
 
@@ -184,6 +196,10 @@ graph TD
 
 ## 7. ライフタイム超入門（AddTransient / Scoped / Singleton）⏳✨
 
+![soc_cs_study_012_lifetime_visual.png](./picture/soc_cs_study_012_lifetime_visual.png)
+
+
+
 ### 7-1. ざっくり表🎀
 
 * **Transient**：呼ばれるたびに新しい（軽い部品向け）
@@ -212,6 +228,10 @@ MicrosoftのDIドキュメントでも、Scopedサービスは **暗黙のスコ
 
 ### 8-1. 「どこでも provider.GetService()」にしちゃう（サービスロケータ地獄）🚫
 
+![soc_cs_study_012_service_locator_trap.png](./picture/soc_cs_study_012_service_locator_trap.png)
+
+
+
 * 便利そうに見えるけど、依存が見えなくなるよ😭
 * ✅ **基本はコンストラクタ注入**で、`GetRequiredService` は入口だけ！
 
@@ -236,6 +256,10 @@ MicrosoftのDIドキュメントでも、Scopedサービスは **暗黙のスコ
 3. 組み立ては `Program.cs` に寄せる
 
 ### 演習B：差し替えテスト気分を味わう🎭
+
+![soc_cs_study_012_clock_swap.png](./picture/soc_cs_study_012_clock_swap.png)
+
+
 
 `IClock` を作って、テスト用時計に差し替える：
 

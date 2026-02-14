@@ -42,6 +42,10 @@ I/Oが入るとテストはこうなる👇😭
 
 ## 13.2 “純粋ロジック”って何？🍵✨
 
+![soc_cs_study_013_pure_vs_messy.png](./picture/soc_cs_study_013_pure_vs_messy.png)
+
+
+
 **純粋ロジック**は超ざっくりこれ👇
 
 > 同じ入力なら、いつでも同じ出力になる関数（処理）💡
@@ -59,6 +63,10 @@ I/Oが入るとテストはこうなる👇😭
 ---
 
 ## 13.3 SoC的に最強の形：「純粋コア + I/Oシェル」🥚🛡️
+
+![soc_cs_study_013_hexagonal_onion.png](./picture/soc_cs_study_013_hexagonal_onion.png)
+
+
 
 ![soc_cs_study_013_pure_logic](./picture/soc_cs_study_013_pure_logic.png)
 
@@ -111,6 +119,10 @@ public class CheckoutService
 ---
 
 ## 13.5 I/O境界の分離：最小の勝ちパターン🏆✨（After）
+
+![soc_cs_study_013_extracting_time.png](./picture/soc_cs_study_013_extracting_time.png)
+
+
 
 やることはシンプルだよ👇😊
 
@@ -209,6 +221,10 @@ public class DiscountRulesTests
 
 ## 13.7 でもさ…「毎回now渡すのダルい」問題😗💭
 
+![soc_cs_study_013_time_machine_test.png](./picture/soc_cs_study_013_time_machine_test.png)
+
+
+
 ![soc_cs_study_013_time_provider](./picture/soc_cs_study_013_time_provider.png)
 
 うん、分かる😂
@@ -255,6 +271,10 @@ public class DiscountRules2
 
 ## 13.8 スタブ？モック？怖くないよ🙆‍♀️🧸
 
+![soc_cs_study_013_test_double_types.png](./picture/soc_cs_study_013_test_double_types.png)
+
+
+
 初心者は、まずこれだけ覚えてOK👇✨
 
 * 🧸 **フェイク（Fake）**：簡易な偽物実装（メモリ上のRepositoryとか）
@@ -268,6 +288,10 @@ public class DiscountRules2
 ---
 
 ## 13.9 「ユニットテスト」と「統合テスト」も分けよう🧩✨
+
+![soc_cs_study_013_unit_vs_integration.png](./picture/soc_cs_study_013_unit_vs_integration.png)
+
+
 
 * 🧪 **ユニットテスト**：純粋ロジック中心（速い・大量に回す）⚡
 * 🧱 **統合テスト**：DB/HTTPなどI/O込み（数は少なめ・重要シナリオだけ）🔍

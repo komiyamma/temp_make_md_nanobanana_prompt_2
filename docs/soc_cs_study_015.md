@@ -35,6 +35,10 @@ WinFormsで、こんな入力がある画面を想像してね👇
 
 ## 15.3 Before：フォーム地獄（全部盛り）😇💥
 
+![soc_cs_study_015_form_hell.png](./picture/soc_cs_study_015_form_hell.png)
+
+
+
 まずは “ありがち” をわざとやります。
 ※読むだけでOK！「あるある〜」って思えたら勝ち😂
 
@@ -103,6 +107,10 @@ SELECT CAST(SCOPE_IDENTITY() AS INT);
 
 ## 15.4 何がつらいの？“変更理由”が多すぎる😭🌀
 
+![soc_cs_study_015_change_attack.png](./picture/soc_cs_study_015_change_attack.png)
+
+
+
 このフォームの `btnConfirm_Click` は、**変更理由が多すぎ**るのが問題だよ〜！
 
 * UIが変わる（テキストボックスが増える）🖥️
@@ -116,6 +124,10 @@ SELECT CAST(SCOPE_IDENTITY() AS INT);
 ---
 
 ## 15.5 After：3分離の完成形（UI / UseCase / Repository）🧩✨
+
+![soc_cs_study_015_team_roles.png](./picture/soc_cs_study_015_team_roles.png)
+
+
 
 ![soc_cs_study_015_transformation](./picture/soc_cs_study_015_transformation.png)
 
@@ -164,6 +176,10 @@ flowchart TD
 ---
 
 ## 15.6 フォルダ構成（迷子防止マップ🗺️💕）
+
+![soc_cs_study_015_folder_districts.png](./picture/soc_cs_study_015_folder_districts.png)
+
+
 
 最小でこう分けると分かりやすいよ👇
 
@@ -222,6 +238,10 @@ public sealed record OrderRecord(
 ```
 
 ### ④ UseCase（中心！）🧠✨
+
+![soc_cs_study_015_clean_usecase.png](./picture/soc_cs_study_015_clean_usecase.png)
+
+
 
 ```csharp
 public sealed class PlaceOrderUseCase
@@ -315,6 +335,10 @@ public partial class OrderForm : Form
 ---
 
 ## 15.8 Repository実装例：まずはInMemoryでOK🧪✨
+
+![soc_cs_study_015_inmemory_box.png](./picture/soc_cs_study_015_inmemory_box.png)
+
+
 
 「保存」を本物のDBにしないで、まずは動く形にするの大事！🌱
 
