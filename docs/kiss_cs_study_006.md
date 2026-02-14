@@ -7,6 +7,9 @@
 
 ## 6-0. まず大事：KISSは「ルール」じゃなくて「習慣」だよ🪴✨
 
+![](./picture/kiss_cs_study_006_habit_vs_rule.png)
+
+
 KISSって、覚えた瞬間がピークになりがちなのね🥲
 だから、**迷ったときに戻れる“判断の軸”**と、**勝手に続く“運用”**を作るのがゴールだよ✅
 
@@ -58,6 +61,9 @@ KISSって、覚えた瞬間がピークになりがちなのね🥲
 
 ## 6-2. 迷ったときの“判断の軸”テンプレ🧭💗
 
+![](./picture/kiss_cs_study_006_decision_scales.png)
+
+
 迷いって、だいたいこの3パターンに落ちるよ😊
 
 ### A) 「短くしたい」vs「読みやすくしたい」📏📖
@@ -79,6 +85,9 @@ KISSって、覚えた瞬間がピークになりがちなのね🥲
 ---
 
 ## 6-3. “KISSのやりすぎ”防止🚧🧯（ここ超大事！）
+
+![](./picture/kiss_cs_study_006_over_kiss_warning.png)
+
 
 KISSを頑張りすぎると、別の地獄に行くことある🤣
 
@@ -138,6 +147,9 @@ Microsoftのガイドでも、ADRは“重要な意思決定と却下した代�
 
 ## 6-5. KISSを“勝手に続く”形にする運用セット🗓️💗
 
+![](./picture/kiss_cs_study_006_weekly_routine.png)
+
+
 ### ✅ルーティン①：週1「ここ1つだけKISS改善」🧼✨
 
 * 毎週1回だけでOK（多いと死ぬ）😇
@@ -176,6 +188,9 @@ GitHubでPR使うなら、テンプレにこれを貼ると強いよ〜！
 ---
 
 ## 6-6. AIを“KISS番犬”にする🐶🤖✨（暴走させないコツ）
+
+![](./picture/kiss_cs_study_006_ai_watchdog.png)
+
 
 最近の Visual Studio 2026 は Copilot が深く統合されてて、IDEの中で会話しながら直しやすい方向に進んでるよ ([Microsoft Learn][4])
 GitHubの案内でも、Visual Studio 上で Copilot を使う前提や対応バージョンがまとまってるよ ([GitHub Docs][5])

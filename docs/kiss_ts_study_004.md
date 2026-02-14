@@ -14,6 +14,9 @@
 
 ## まず大事な感覚🍀📌：「型は“説明書”」
 
+![](./picture/kiss_ts_study_004_manual_vs_puzzle.png)
+
+
 型ってね、目的はこれ👇
 
 * ✅ **読む人（未来の自分含む）の理解を助ける**
@@ -89,15 +92,24 @@ function label(p: Payment) {
 
 ### 原則4：ジェネリクスは「必要な場所だけ」🎯
 
+![](./picture/kiss_ts_study_004_generics_tool.png)
+
+
 * “再利用したい気持ち”は分かるけど、まずは **1個の具体型**で書いてOK😊
 * 本当に困ってから一般化で大丈夫🌱
 
 ### 原則5：`as` は最後の手段、まず「嘘をつかない」🙅‍♀️
 
+![](./picture/kiss_ts_study_004_as_mask.png)
+
+
 * `as SomeType` は、型チェックをごまかせちゃう
 * 入口で検証（type guard）してから中に入れるのがKISS✨
 
 ### 原則6：`satisfies` を使うと「強制しすぎ」になりにくい🪄
+
+![](./picture/kiss_ts_study_004_satisfies_sorter.png)
+
 
 `satisfies` は「この形を満たしてるか検査するけど、推論結果は潰さない」っていう便利アイテムだよ✨ ([typescriptlang.org][3])
 
@@ -146,6 +158,9 @@ type UserMap = Map<UserId, User>;
 
 ## `map/filter/reduce` を“賢くしすぎ”問題🧠⚡ → 途中変数でKISS🫶
 
+![](./picture/kiss_ts_study_004_map_filter_chain.png)
+
+
 ### ❌ あるある（読めない）
 
 ```ts
@@ -193,6 +208,9 @@ flowchart LR
 ---
 
 ## `null/undefined` を散らさないコツ🌧️➡️☀️
+
+![](./picture/kiss_ts_study_004_null_umbrella.png)
+
 
 ### KISSルール：**入口で整形して、内部では前提をシンプルにする**
 
