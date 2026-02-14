@@ -44,6 +44,10 @@ graph TD
 
 ## なんで条件式って読めなくなるの？🤯
 
+![refactoring_cs_study_018_scissors_cut](./picture/refactoring_cs_study_018_scissors_cut.png)
+
+
+
 あるある原因はこのへん👇
 
 * `&&` と `||` が長い行に詰め込まれてる📛
@@ -59,6 +63,10 @@ graph TD
 ## Before → After で体感しよう👀✨
 
 ### Before：条件が“暗号”になってる例🧩💦
+
+![refactoring_cs_study_018_complex_formula](./picture/refactoring_cs_study_018_complex_formula.png)
+
+
 
 「送料無料かどうか」を決めたいだけなのに、条件がつらい…！
 
@@ -94,6 +102,10 @@ public sealed class Customer
 ---
 
 ## Step 1：まずは「説明変数」で分解しよう🏷️✨
+
+![refactoring_cs_study_018_explain_variable](./picture/refactoring_cs_study_018_explain_variable.png)
+
+
 
 いきなりメソッド化せず、まずは **bool 変数**で「意味」を付けます📝
 
@@ -131,6 +143,10 @@ public static decimal CalculateShippingFee(Order order, Customer? customer)
 ---
 
 ## Step 2：「Is〜」判定メソッドにして“文章化”する🗣️✨
+
+![refactoring_cs_study_018_is_method](./picture/refactoring_cs_study_018_is_method.png)
+
+
 
 条件が複数箇所で使われそう、またはルールとして名前を固定したいなら **判定メソッド化**が強いです💪
 
@@ -170,6 +186,10 @@ private static bool IsEmptyGiftOrderFreeShipping(Order order, Customer? customer
 
 ## Step 3：否定（!）を減らすコツ🙅‍♀️➡️🙂
 
+![refactoring_cs_study_018_double_negative](./picture/refactoring_cs_study_018_double_negative.png)
+
+
+
 否定が増えると、読み間違いが増えます💦
 できるだけ **肯定形**に寄せるのがおすすめ🌸
 
@@ -192,6 +212,10 @@ private static bool IsEmptyGiftOrderFreeShipping(Order order, Customer? customer
 * 変更されにくい単発条件
 
 ### ✅ メソッドにしたいケース
+
+![refactoring_cs_study_018_method_book](./picture/refactoring_cs_study_018_method_book.png)
+
+
 
 * 同じ条件が複数箇所で登場してる🔁
 * ビジネスルールとして名前を固定したい📜
@@ -316,6 +340,10 @@ public sealed class Cart
 
   * その関数が重い / 副作用ありだと、分解でタイミングが変わることがある💦
 * `&&` / `||` の **短絡評価**（途中で評価が止まる）を壊さないように注意⚡
+
+![refactoring_cs_study_018_short_circuit_bridge](./picture/refactoring_cs_study_018_short_circuit_bridge.png)
+
+
 * `null` を含む条件は、`?.` やパターン（`is { ... }`）で安全に🧷
 
 ---

@@ -57,6 +57,10 @@ public bool CanRegister(string password)
 
 ### After：意図が名前で伝わる😍
 
+![refactoring_cs_study_016_named_constant](./picture/refactoring_cs_study_016_named_constant.png)
+
+
+
 ```csharp
 public class PasswordPolicy
 {
@@ -77,6 +81,10 @@ public class PasswordPolicy
 
 ## 3. IDEでやる：Introduce Constant の基本操作🖱️✨
 
+![refactoring_cs_study_016_ide_lightbulb](./picture/refactoring_cs_study_016_ide_lightbulb.png)
+
+
+
 流れはシンプルです👇
 
 1. 定数化したいリテラル（例：`8`）を選択 or カーソルを置く👆
@@ -92,6 +100,10 @@ public class PasswordPolicy
 ---
 
 ## 4. C#の「定数」には種類があるよ🧰✨（超重要）
+
+![refactoring_cs_study_016_const_vs_readonly](./picture/refactoring_cs_study_016_const_vs_readonly.png)
+
+
 
 ### 4.1 `const`：コンパイル時に決まる定数📌
 
@@ -124,6 +136,10 @@ private static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(30);
 
 ### 4.3 `enum`：選択肢（種類）があるなら enum が強い🎛️✨
 
+![refactoring_cs_study_016_enum_switch](./picture/refactoring_cs_study_016_enum_switch.png)
+
+
+
 「0,1,2 が状態」みたいなとき、定数化より **enum** のほうが読みやすいことが多いです🌸
 
 ```csharp
@@ -138,6 +154,10 @@ public enum OrderStatus
 ---
 
 ## 5. どこに置く？スコープの決め方🗺️✨
+
+![refactoring_cs_study_016_scope_map](./picture/refactoring_cs_study_016_scope_map.png)
+
+
 
 ### 5.1 まずは最小スコープが基本🌱
 
@@ -193,6 +213,10 @@ public class RetryPolicy
 
 ### 7.1 よくあるマジック文字列も退治🧯
 
+![refactoring_cs_study_016_magic_string](./picture/refactoring_cs_study_016_magic_string.png)
+
+
+
 ```csharp
 if (role == "Admin") { /* ... */ }
 ```
@@ -206,6 +230,10 @@ if (role == AdminRole) { /* ... */ }
 ```
 
 ### 7.2 時間は `TimeSpan` を使うと読みやすい⏳💖
+
+![refactoring_cs_study_016_timespan_clock](./picture/refactoring_cs_study_016_timespan_clock.png)
+
+
 
 ```csharp
 var timeoutMs = 30000; // これ、30秒？

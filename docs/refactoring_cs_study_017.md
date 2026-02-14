@@ -12,6 +12,10 @@
 
 ## 1. ガード節ってなに？🤔🛡️
 
+![refactoring_cs_study_017_arrow_code](./picture/refactoring_cs_study_017_arrow_code.png)
+
+
+
 ![](./picture/refactoring_cs_study_017_guard.png)
 
 **ガード節（guard clause）** は、メソッドの最初のほうで
@@ -35,6 +39,10 @@ graph TD
 
 ## 2. なぜ読みやすくなるの？👀✨
 
+![refactoring_cs_study_017_nesting_stairs](./picture/refactoring_cs_study_017_nesting_stairs.png)
+
+
+
 ネストが深いと、読む人の脳内でこうなる…😵‍💫
 
 * 「今どの `if` の中だっけ？」
@@ -46,6 +54,10 @@ graph TD
 ---
 
 ## 3. まずはBefore/Afterで体感しよう✋🧩
+
+![refactoring_cs_study_017_bouncer](./picture/refactoring_cs_study_017_bouncer.png)
+
+
 
 ### Before：ネストが深い😵‍💫
 
@@ -125,6 +137,10 @@ if (!isValid) return Result.Fail("入力が不正です");
 
 ## 5. 「return」と「throw」どっち？🧠⚖️
 
+![refactoring_cs_study_017_return_vs_throw](./picture/refactoring_cs_study_017_return_vs_throw.png)
+
+
+
 ざっくりルール（迷ったらこれ）💡
 
 * **return**：よく起きる・仕様として自然な分岐（例：検索して見つからない、入力が空なら何もしない）🙂
@@ -134,6 +150,10 @@ if (!isValid) return Result.Fail("入力が不正です");
 
 ## 6. Visual Studio での進め方（安全にやる）🛟💻
 
+![refactoring_cs_study_017_step_peeling](./picture/refactoring_cs_study_017_step_peeling.png)
+
+
+
 ガード節は「動作を変えずに形を整える」作業だから、**小さく・頻繁に確認** が相性抜群だよ🔁✅
 
 おすすめ手順🌷
@@ -141,6 +161,10 @@ if (!isValid) return Result.Fail("入力が不正です");
 1. 変更したいメソッドを開く👀
 2. いちばん外側の `if` を見つける🔎
 3. 「条件を反転できない？」を考える（例：`if (x != null)` → `if (x is null) return ...;`）🔁
+
+![refactoring_cs_study_017_invert_condition](./picture/refactoring_cs_study_017_invert_condition.png)
+
+
 4. まず1個だけガード節にする✂️
 5. ビルド＆テスト実行✅
 6. 次の `if` へ…を繰り返す🔁
@@ -152,6 +176,10 @@ if (!isValid) return Result.Fail("入力が不正です");
 ## 7. ミニ演習📝：ネスト2段 → 1段へ⬇️✨
 
 ### お題：送料計算（Before）📦🚚
+
+![refactoring_cs_study_017_shipping_scanner](./picture/refactoring_cs_study_017_shipping_scanner.png)
+
+
 
 次のコードを、ガード節で読みやすくしてね🙂💕
 
