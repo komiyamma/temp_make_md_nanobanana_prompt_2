@@ -64,6 +64,10 @@ graph TD
 
 ### (A) 関数名：**動詞＋目的語** が最強💪📝
 
+![Verb + Object Naming](./picture/refactoring_ts_study_020_verb_object.png)
+
+
+
 * ✅ `fetchUserProfile`（プロフィールを取得する）
 * ✅ `calculateTotalPrice`（合計金額を計算する）
 * ✅ `parseOrderCsv`（注文CSVを解析する）
@@ -88,6 +92,10 @@ graph TD
 
 ### (B) ファイル名：**何が入ってるか一目で分かる名札**📛📁
 
+![File Naming Styles](./picture/refactoring_ts_study_020_file_naming.png)
+
+
+
 よくある統一例（どれかに寄せよう）👇
 
 * `kebab-case`：`user-profile.ts`（Web系で多い🧁）
@@ -101,6 +109,10 @@ graph TD
 
 ### (C) 型名：**PascalCase** が基本👑✨
 
+![Type Scopes](./picture/refactoring_ts_study_020_type_scopes.png)
+
+
+
 * ✅ `UserId`, `Order`, `OrderStatus`
 * ✅ `ApiUserDto`, `DbUserRow`, `UserViewModel`（用途が見える👀✨）
 * ❌ `user_type`, `order_status`（型名としては統一しづらいことが多い）
@@ -112,6 +124,10 @@ graph TD
 ## 4) VS Codeで安全にリネームする（超重要）🛟🧑‍💻
 
 ### 4-1) シンボルを一括リネーム（関数・型・変数など）🏷️✨
+
+![Batch Rename](./picture/refactoring_ts_study_020_batch_rename.png)
+
+
 
 1. 変えたい名前にカーソルを置く👆
 2. `F2`（Rename Symbol）🔁
@@ -125,6 +141,10 @@ graph TD
 ---
 
 ### 4-2) ファイル移動・リネーム時に import を自動更新する📦🔁
+
+![Auto Import Update](./picture/refactoring_ts_study_020_auto_import.png)
+
+
 
 TypeScriptのプロジェクトでは、ファイル名を変えると import パスが壊れがち😵‍💫
 VS Codeは **移動/リネーム時に import パスを更新**できるよ🛠️✨ ([Visual Studio Code][3])
@@ -157,6 +177,10 @@ VS Codeは **移動/リネーム時に import パスを更新**できるよ🛠�
 
 ## 5) 事故りやすいリネームTOP5🚧⚠️（ここ超大事）
 
+![Rename Danger Zones](./picture/refactoring_ts_study_020_rename_risks.png)
+
+
+
 1. **JSONのキー名**（例：`{ user_id: ... }`）を変えちゃう🫠
 
    * これは挙動変わる！API互換が崩れる！
@@ -171,6 +195,10 @@ VS Codeは **移動/リネーム時に import パスを更新**できるよ🛠�
 ---
 
 ## 6) ビフォー/アフター：関数名を“責務が伝わる形”へ🧩➡️✨
+
+![Function Name Clarity](./picture/refactoring_ts_study_020_clarity_transform.png)
+
+
 
 ### Before（何してるか薄い😵‍💫）
 

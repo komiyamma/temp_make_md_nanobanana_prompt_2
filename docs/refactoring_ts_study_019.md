@@ -48,6 +48,10 @@ graph LR
 
 ## 2. まずは“臭い名前”を知ろう👃⚠️
 
+![Vague Variable Names](./picture/refactoring_ts_study_019_smelly_names.png)
+
+
+
 次の名前が出たら、だいたい「リネームどき」だよ🧯✨
 
 ### 2.1 意味が薄い・何でも入る系🫥
@@ -92,6 +96,10 @@ graph LR
 
 ## 3. 命名の基本ルール（変数編）🧷✨
 
+![Naming Conventions](./picture/refactoring_ts_study_019_casing_rules.png)
+
+
+
 TypeScript界隈の一般的な命名はだいたいこれ👇
 
 * 変数・ローカル・プロパティ：**camelCase**
@@ -105,10 +113,18 @@ TypeScript界隈の一般的な命名はだいたいこれ👇
 
 ### 4.1 変数は「名詞」📦
 
+![Variables as Nouns](./picture/refactoring_ts_study_019_noun_variable.png)
+
+
+
 * 中身がモノなら名詞でいこう！
 * `userName`, `orderTotal`, `discountRate`
 
 ### 4.2 boolean は “質問形” にする❓✅
+
+![Boolean Questions](./picture/refactoring_ts_study_019_boolean_question.png)
+
+
 
 true/false を読むときに気持ちいい形にするよ😊
 
@@ -118,6 +134,10 @@ true/false を読むときに気持ちいい形にするよ😊
 ✅ `isActive`
 
 ### 4.3 コレクションは複数形・中身がわかる🍱
+
+![Plural Collections](./picture/refactoring_ts_study_019_plural_collection.png)
+
+
 
 * `users`, `orderItems`, `errorMessages`
 
@@ -138,6 +158,10 @@ true/false を読むときに気持ちいい形にするよ😊
 
 ## 5. “安全にリネームする手順”👣🛟
 
+![Rename Tool Safety](./picture/refactoring_ts_study_019_rename_tool.png)
+
+
+
 リネームは簡単そうで、手作業だと事故りがち😱
 だから **ツールにやらせる**のが鉄則だよ🧰✨
 
@@ -154,6 +178,10 @@ true/false を読むときに気持ちいい形にするよ😊
 ## 6. ビフォー/アフター（超あるある）🧩➡️✨
 
 ### 6.1 “何の数字？”をやめる🔢🛑
+
+![Meaningful Variables in Math](./picture/refactoring_ts_study_019_meaningful_math.png)
+
+
 
 ```ts
 // Before 😵
