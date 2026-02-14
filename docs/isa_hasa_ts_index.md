@@ -2,6 +2,10 @@
 
 ## 第1章✨「合成優先」って何を目指すの？🤔🧩
 
+![Is-a vs Has-a](./picture/isa_hasa_ts_index_is_a_vs_has_a.png)
+
+
+
 * この講座でできるようになること🎯
 
   * 継承で書いたコードを「部品の組み合わせ」に直せる🔧✨
@@ -22,6 +26,10 @@
 
 ## 第2章：まずは敵を知る😇 継承で起きがちな事故あるある💥
 
+![Inheritance Explosion](./picture/isa_hasa_ts_index_inheritance_explosion.png)
+
+
+
 * “ちょい違い派生”が増えてツリーが爆発🌳💣
 * 親の変更が子に伝染して壊れる😱
 * 「Aの機能もBの機能も…」で詰む（組み合わせ問題）🧩🧩
@@ -31,6 +39,10 @@
 ---
 
 ## 第3章🧩✨ 合成優先の超基本「部品を持って委譲する」🚚💨
+
+![Car Engine](./picture/isa_hasa_ts_index_car_engine.png)
+
+
 
 * has-a で考える練習🚗🔧（車はエンジンを“持つ”）
 * **委譲（delegate）**ってなに？🪄
@@ -82,6 +94,10 @@
 
 ## 第7章：合成の型① Strategy（戦略）で差し替える🧠🔁🚚✨
 
+![Strategy Truck Flags](./picture/isa_hasa_ts_index_strategy_flags.png)
+
+
+
 * どんな時に使う？
 
   * 「やり方だけ変えたい」例：送料、割引、並び替え💡
@@ -123,6 +139,10 @@
 
 ## 第10章：合成の型② Decorator入門🎀➕（まずはログだけ！）📝✨
 
+![Decorator Gift Wrap](./picture/isa_hasa_ts_index_decorator_wrap.png)
+
+
+
 * 目的：**元の処理は変えずに、機能を外付けする**✨
 * まずは1個だけ：ログ追加📝
 * ラップ構造を図で理解🧠（呼び出しの流れ）
@@ -160,6 +180,10 @@
 ---
 
 ## 第13章：合成の型③ Adapter入門🎁🔌（型を合わせるだけ）
+
+![Adapter Plug](./picture/isa_hasa_ts_index_adapter_plug.png)
+
+
 
 * 目的：**外部の形をそのまま中に入れない**🚧
 * 超シンプル例：
@@ -215,6 +239,10 @@
 ---
 
 ## 第17章：総合課題🎓✨「継承地獄を合成に救出しよう！」🚑🧩
+
+![Rescue Mission](./picture/isa_hasa_ts_index_rescue_mission.png)
+
+
 
 * 課題ストーリー📖
 

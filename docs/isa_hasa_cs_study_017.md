@@ -10,6 +10,10 @@
 
 ## 0. まず超ざっくり整理（1分）🧠
 
+![Refresher](./picture/isa_hasa_cs_study_017_refresher.png)
+
+
+
 * 継承：**ベースの機能を引き継いで**、必要なら上書きして増やす（派生）👨‍👩‍👧‍👦
   ※ C# の継承の基本（ベース/派生、単一継承など）としてこう説明されるよ📘 ([Microsoft Learn][1])
 * 合成：**部品を持って組み立てる**（差し替え・積み重ねが得意）🧩🧱
@@ -21,6 +25,10 @@
 ## 1. 事故りやすいのはどっち？😱➡️🙂
 
 ### 継承の“ありがち事故”3点セット💥
+
+![Inheritance Accidents](./picture/isa_hasa_cs_study_017_inheritance_accidents.png)
+
+
 
 1. **親をちょい修正しただけ**なのに、子が壊れる（いわゆる “Fragile Base Class”）🫠
    　→ ベースクラスは「安全そうな変更」でも派生を壊し得る、って問題として説明されるよ🧨 ([ウィキペディア][3])
@@ -57,6 +65,10 @@
 
 ### 🚨 赤信号（これ出たら継承は一回やめとこ）🛑
 
+![Red Signals](./picture/isa_hasa_cs_study_017_red_signals.png)
+
+
+
 * □ ベースクラスが「便利そうだから」になってる（意味が薄い）🫥
 * □ override 前提のメソッドが増えてきた（virtual だらけ）🌀 ([Microsoft Learn][4])
 * □ ベースの内部状態に子が依存してるっぽい（Fragile の香り）😇➡️😱 ([ウィキペディア][3])
@@ -65,6 +77,10 @@
 ---
 
 ## 3. 決め打ち用🎯：ミニ決定ツリー（これだけ覚えてOK）🗺️
+
+![Decision Tree](./picture/isa_hasa_cs_study_017_decision_tree.png)
+
+
 
 1. **機能を重ねる？**（ログ/計測/リトライ/キャッシュ…）
    → YES：合成（Decorator系）🎂✨
@@ -92,6 +108,10 @@
   → 派生が増えて、組み合わせ爆発🎇
 
 #### 😊 合成だと…（重ねるだけ🎂）
+
+![Notifier Cake](./picture/isa_hasa_cs_study_017_notifier_cake.png)
+
+
 
 * “本体”と“追加機能”を分ける✨
 
@@ -190,6 +210,10 @@ await notifier.NotifyAsync("Hello!");
 ---
 
 ## 7. 迷いを消す“最終兵器”👜✨：ミニADRテンプレ（1分で書ける）📝
+
+![Mini ADR](./picture/isa_hasa_cs_study_017_mini_adr.png)
+
+
 
 設計判断って、未来の自分が忘れるのが一番こわいの🥺
 だから「なぜ合成/継承にしたか」を1枚残すと最強💪✨

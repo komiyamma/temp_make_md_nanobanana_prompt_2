@@ -18,6 +18,10 @@
 
 ## 1. まず大事：安全に移行する“3つの約束”🧯✅✅✅
 
+![Safety Locks](./picture/isa_hasa_cs_study_016_safety_locks.png)
+
+
+
 ### 約束①：動作を固定してから触る🔒
 
 * 「本番で起きる挙動」を先にテストで固定するよ🧪
@@ -36,6 +40,10 @@
 
 ## 2. 全体像：安全階段（おすすめ順）🪜🙂
 
+![Migration Staircase](./picture/isa_hasa_cs_study_016_migration_staircase.png)
+
+
+
 合成への移行は、だいたいこの順が事故りにくいよ👇
 
 1. テストを足す🧪
@@ -52,6 +60,10 @@
 「例外的な子」が増えてきて、継承がつらくなるパターンを作るよ😇
 
 ### 3-1. まずは“継承版”の現状コード（Before）🧟‍♀️🌳
+
+![Inheritance Mutation](./picture/isa_hasa_cs_study_016_inheritance_mutation.png)
+
+
 
 ```csharp
 public sealed record Order(
@@ -98,6 +110,10 @@ public sealed class RemoteIslandExpressShipping : ShippingFeeCalculator
 ---
 
 ## 4. Step1：現状を固定するテスト🧪🔒（最重要！）
+
+![Pinning Tests](./picture/isa_hasa_cs_study_016_pinning_tests.png)
+
+
 
 まずは「今の挙動はこうです」をテストにするよ🙂✨
 
@@ -174,6 +190,10 @@ public interface IExtraFeeRule
 ```
 
 ### 6-2. 合成で組み立てる本体🧩🧺
+
+![Composed Box](./picture/isa_hasa_cs_study_016_composed_box.png)
+
+
 
 ```csharp
 public sealed class ComposedShippingFeeCalculator : IShippingFeeCalculator

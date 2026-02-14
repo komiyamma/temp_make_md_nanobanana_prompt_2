@@ -34,6 +34,10 @@
 
 ## 2. Fake / Stub / Mock ざっくり使い分け🧸🎭🧪
 
+![Test Double Trio](./picture/isa_hasa_cs_study_015_test_double_trio.png)
+
+
+
 ふわっとでOK！使ううちに体に染みるやつ🙂✨
 
 * **Fake**🧸：それっぽく動く「簡易の実装」
@@ -61,6 +65,10 @@
 
 ## 4. まずは “テストしにくい” 例😱（new と Now が直書き）
 
+![Hard Code Concrete](./picture/isa_hasa_cs_study_015_hard_code_concrete.png)
+
+
+
 ```csharp
 public class OrderService
 {
@@ -85,6 +93,10 @@ public class OrderService
 ---
 
 ## 5. 合成で “差し替え可能” にする🧩🎁（テストが勝つ形）
+
+![Testable Slots](./picture/isa_hasa_cs_study_015_testable_slots.png)
+
+
 
 ### 5-1. 依存を「契約（interface）」にする🔌
 
@@ -139,6 +151,10 @@ public record Order(decimal Subtotal, string CustomerEmail);
 ## 6. Fake を作って “爆速テスト” する⚡🧸
 
 ### 6-1. メール送信 Fake📧🧸（送った内容を保存するだけ）
+
+![Fake Mailer Bag](./picture/isa_hasa_cs_study_015_fake_mailer_bag.png)
+
+
 
 ```csharp
 public class FakeMailer : IMailer
@@ -220,6 +236,10 @@ public void Confirm_Not15th_NoDiscount()
 ---
 
 ## 8. 「何をモックし、何をモックしない？」の目安🧭✨
+
+![Mocking Strategy Scale](./picture/isa_hasa_cs_study_015_mocking_strategy_scale.png)
+
+
 
 モックしがちだけど、しない方がラクなこと多いよ🙂
 
