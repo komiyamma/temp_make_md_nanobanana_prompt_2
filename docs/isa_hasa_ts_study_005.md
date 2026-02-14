@@ -10,6 +10,8 @@
 
 ## 1) そもそも「依存」ってなに？🤔🧩
 
+![isa_hasa_ts_study_005_dependency_types](./picture/isa_hasa_ts_study_005_dependency_types.png)
+
 **依存**は、ざっくり言うと「そのクラスが仕事をするために頼ってる部品」のことだよ〜😊🧩
 
 たとえば👇
@@ -25,6 +27,8 @@
 ---
 
 ## 2) 「中で new」すると何が困るの？😇💥
+
+![isa_hasa_ts_study_005_new_problem](./picture/isa_hasa_ts_study_005_new_problem.png)
 
 ### ダメな例：クラスが自分で部品を作っちゃう🧨
 
@@ -97,6 +101,8 @@ export class CouponService {
 
 🌟ポイント🌟
 
+![isa_hasa_ts_study_005_clock_diagram](./picture/isa_hasa_ts_study_005_clock_diagram.png)
+
 * `CouponService` は **「時間の取り方」を知らない**
 * ただ `clock.now()` を呼ぶだけ
 * だから、時計を差し替えできる🔁✨
@@ -120,6 +126,8 @@ classDiagram
 ---
 
 ## 5) テストが一気にラクになる🧪🥳（固定の時計を渡す）
+
+![isa_hasa_ts_study_005_test_flow](./picture/isa_hasa_ts_study_005_test_flow.png)
 
 ### テスト用の時計（FixedClock）⌚🧊
 
@@ -179,6 +187,8 @@ sequenceDiagram
 
 ## 6) 依存の渡し方いろいろ（でも迷ったらコレ！）🧭😊
 
+![isa_hasa_ts_study_005_injection_types](./picture/isa_hasa_ts_study_005_injection_types.png)
+
 ### 🥇(1) コンストラクタ注入（基本の王道）👑
 
 * 依存が必須ならこれ！
@@ -206,6 +216,8 @@ function doSomething(logger: Logger) {
 ---
 
 ## 7) 「じゃあ `new` はどこでやるの？」🏠🧩
+
+![isa_hasa_ts_study_005_assembly_point](./picture/isa_hasa_ts_study_005_assembly_point.png)
 
 **答え：組み立て担当の場所でやる！**（入口・起動コード）🚪✨
 

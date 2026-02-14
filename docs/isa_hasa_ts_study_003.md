@@ -25,6 +25,8 @@
 
 ## 2) has-a で考える練習🚗🔧（超イメージ！）
 
+![isa_hasa_ts_study_003_car_composition](./picture/isa_hasa_ts_study_003_car_composition.png)
+
 継承（is-a）は「〜は〜である」
 合成（has-a）は「〜を持っている」
 
@@ -52,6 +54,8 @@
 ---
 
 ## 4) まずは “悪いけどありがち” な例😇💥
+
+![isa_hasa_ts_study_003_bloated_service](./picture/isa_hasa_ts_study_003_bloated_service.png)
 
 「とりあえず動く」から、1クラスに全部詰めがち…あるある🥲
 
@@ -151,6 +155,8 @@ OrderServiceは「手順の司令塔」っぽくなって、**細かい仕事は
 
 ## 6) “図”で見ると一瞬でわかる🧠✨
 
+![isa_hasa_ts_study_003_service_structure](./picture/isa_hasa_ts_study_003_service_structure.png)
+
 ```text
 [OrderService] 
    | has-a
@@ -181,6 +187,8 @@ classDiagram
 ---
 
 ## 7) チェックポイント✅「このクラス、全部やってない？」🕵️‍♀️
+
+![isa_hasa_ts_study_003_responsibility_check](./picture/isa_hasa_ts_study_003_responsibility_check.png)
 
 次のサインが出たら、合成の出番かも👀✨
 
@@ -224,6 +232,8 @@ class Car {
 ---
 
 ## 9) “合成するとテストがラク”をチラ見せ🧪✨
+
+![isa_hasa_ts_study_003_testing_mock](./picture/isa_hasa_ts_study_003_testing_mock.png)
 
 合成の最高のご褒美のひとつがこれ😍
 **テスト用の部品（Fake/Mock）を差し替えられる**こと！

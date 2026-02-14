@@ -10,6 +10,8 @@
 
 ## まずは“あるある地獄”を見よう😇💥
 
+![isa_hasa_ts_study_007_problem_if](./picture/isa_hasa_ts_study_007_problem_if.png)
+
 送料って、だんだん増えがちだよね…🚚✈️🌍
 「通常」「速達」「海外」「クール便」「会員無料」…みたいに。
 
@@ -57,6 +59,8 @@ export function calcShippingFee(order: Order): number {
 
 ## Strategyってなに？🧠✨（超ざっくり）
 
+![isa_hasa_ts_study_007_strategy_intro](./picture/isa_hasa_ts_study_007_strategy_intro.png)
+
 ![](./picture/isa_hasa_ts_study_007_strategy_cartridge.png)
 **Strategyパターン＝「カートリッジ式」🎮✨**
 
@@ -76,6 +80,8 @@ export function calcShippingFee(order: Order): number {
 
 ## 例題：ShippingStrategy を作って差し替える🚚✈️🌍
 
+![isa_hasa_ts_study_007_shipping_example](./picture/isa_hasa_ts_study_007_shipping_example.png)
+
 ### Step 1) “戦略が受け取る情報”を整える📦✨
 
 戦略に `Order` を丸ごと渡すと、戦略が注文全体に依存しがちで後で重くなることあるよ🙃
@@ -90,6 +96,8 @@ export type ShippingContext = {
 ```
 
 ### Step 2) Strategy の interface を作る📜✨
+
+![isa_hasa_ts_study_007_strategy_interface](./picture/isa_hasa_ts_study_007_strategy_interface.png)
 
 「送料を計算できるならOK」という約束！
 
@@ -132,6 +140,8 @@ export class InternationalShipping implements ShippingStrategy {
 ```
 
 ### Step 4) “使う側”は委譲するだけ🙏✨
+
+![isa_hasa_ts_study_007_context_diagram](./picture/isa_hasa_ts_study_007_context_diagram.png)
 
 `OrderService` は「送料の計算の中身」を知らなくてOKになる👍
 
@@ -205,6 +215,8 @@ export function createShippingStrategy(type: ShippingType): ShippingStrategy {
 ---
 
 ## ここで “継承でやると” 何が起きる？😇💣
+
+![isa_hasa_ts_study_007_open_closed](./picture/isa_hasa_ts_study_007_open_closed.png)
 
 例えば `Order` を継承で分け始めると…
 

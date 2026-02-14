@@ -7,6 +7,8 @@
 
 ## 1) 今日のゴール🎯✨
 
+![isa_hasa_ts_study_008_design_points](./picture/isa_hasa_ts_study_008_design_points.png)
+
 * 「どこを差し替え点（Strategy）にするべきか」を決められる🧠🔁
 * Strategyの`interface`（または関数型）を**ちょうどいい粒度**で作れる🧩
 * 追加のStrategyが増えても、呼び出し側（本体）がグチャらないようにできる🧼✨
@@ -105,6 +107,8 @@ interface ShippingStrategy {
 
 ### ✅ コツA：引数が増えだしたら「Contextオブジェクト」にまとめる
 
+![isa_hasa_ts_study_008_context_object](./picture/isa_hasa_ts_study_008_context_object.png)
+
 `calc(total, destination, weight, isMember, ...)` みたいに引数が増えるのはあるある😅
 そんなときは **1つの箱（Context）**にまとめると安定するよ📦✨
 
@@ -128,6 +132,8 @@ interface ShippingStrategy {
 
 ### ✅ コツB：Strategyが“戻すもの”も揃える（戻り値の形を安定させる）
 
+![isa_hasa_ts_study_008_return_value](./picture/isa_hasa_ts_study_008_return_value.png)
+
 もし将来「料金だけじゃなく理由も返したい」ってなったら、戻り値をオブジェクトにすると強いよ🧾✨
 
 ```ts
@@ -145,12 +151,16 @@ interface ShippingStrategy {
 
 ### ✅ コツC：Strategyを“状態あり”にするか決める（classか関数か）🤔
 
+![isa_hasa_ts_study_008_stateful_strategy](./picture/isa_hasa_ts_study_008_stateful_strategy.png)
+
 * **状態いらない** → 関数Strategyが軽い🪶（第9章の伏線✨）
 * **設定値（例：地域別レート）を持ちたい** → classが楽📘
 
 ---
 
 ## 7) 呼び出し側（本体）を美しく保つルール💎✨
+
+![isa_hasa_ts_study_008_calling_rule](./picture/isa_hasa_ts_study_008_calling_rule.png)
 
 Strategyを導入したのに、本体がこうなったら危険信号🚨
 
@@ -164,6 +174,8 @@ Strategyを導入したのに、本体がこうなったら危険信号🚨
 ---
 
 ## 8) ミニ実装：差し替え点の決め方（答えが見える例）👀✨
+
+![isa_hasa_ts_study_008_discount_diagram](./picture/isa_hasa_ts_study_008_discount_diagram.png)
 
 ### お題🛒：割引（Discount）をStrategyにしたい
 
