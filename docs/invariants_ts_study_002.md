@@ -12,6 +12,10 @@
 
 ## 2-1. 不変条件＝「絶対に壊れちゃダメなルール」🛡️💥
 
+![Broken Promise](./picture/invariants_ts_study_002_broken_promise.png)
+
+
+
 不変条件って、めっちゃシンプルに言うと…
 
 **「アプリの中で、いつ・どこで・誰が触っても、絶対に守られててほしい約束」**だよ🙂✨
@@ -27,6 +31,10 @@
 ---
 
 ## 2-2. 例でつかむ！不変条件ってこういうやつ💡😆
+
+![Real World Examples](./picture/invariants_ts_study_002_real_world_examples.png)
+
+
 
 ここからは、超あるある例で感覚をつかもう〜！🙌✨
 
@@ -54,6 +62,10 @@
 
 ## 2-3. 「不変条件が壊れる」と、どんなバグになる？😱🌀
 
+![Bug Characteristics](./picture/invariants_ts_study_002_bug_characteristics.png)
+
+
+
 不変条件が壊れると、バグの特徴がちょっと独特👇
 
 * **バグが“あとから”出る**（入力時は通ったのに、別の場所で爆発💥）
@@ -65,6 +77,10 @@
 ---
 
 ## 2-4. 「不変条件」と「ただのチェック」のちがい🧠✨
+
+![Invariant vs Check](./picture/invariants_ts_study_002_invariant_vs_check.png)
+
+
 
 ここ、超大事ポイント〜！📌💕
 
@@ -105,6 +121,10 @@ flowchart LR
 
 ## 2-5. 予告：この教材での守り方は「型＋境界」だよ🚪🔒
 
+![Type and Boundary](./picture/invariants_ts_study_002_type_and_boundary.png)
+
+
+
 今は“概念の章”だから、ふわっとだけ予告ね🙂✨
 
 * **型（Type）**：プログラムの中で「混ぜない・壊れない」方向に寄せる🧷
@@ -119,6 +139,10 @@ TypeScriptの型注釈は、最終的にJavaScriptへ変換されると **消え
 ---
 
 ## 2-6. ミニ課題：不変条件を3〜10個、書き出そう📝✨
+
+![Finding Invariants](./picture/invariants_ts_study_002_finding_invariants.png)
+
+
 
 やることはシンプル！でも効果バツグン💪😊
 
@@ -152,6 +176,10 @@ TypeScriptの型注釈は、最終的にJavaScriptへ変換されると **消え
 ---
 
 ## 2-7. AI活用（この章バージョン）🤖💡
+
+![AI Brainstorming](./picture/invariants_ts_study_002_ai_brainstorming.png)
+
+
 
 AIはこの章だと **「不変条件の候補出し」** がめっちゃ強いよ〜！💪😍
 （採用するかはあなたが決めるのがコツ👌）
