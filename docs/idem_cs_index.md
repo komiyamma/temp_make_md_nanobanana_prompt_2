@@ -6,6 +6,10 @@
 
 ## 第1章：冪等性ってなに？まずは超ざっくり掴む🔁
 
+![Retry Storm & Double Execution](./picture/idem_cs_index_retry_storm.png)
+
+
+
 * ねらい：**「同じ要求が何回きても壊れない」**を直感で理解する😊
 * 学ぶこと：
 
@@ -19,6 +23,10 @@
 ---
 
 ## 第2章：なぜ現代は冪等性が必須？（ネットは信用しない）🌧️
+
+![Timeout Misunderstanding](./picture/idem_cs_index_timeout_confusion.png)
+
+
 
 * ねらい：**再送が“普通”**である現実を受け入れる😇
 * 学ぶこと：
@@ -34,6 +42,10 @@
 
 ## 第3章：「冪等」っぽい言葉の整理（混ざると事故る）🧠
 
+![Three Concepts Distinction](./picture/idem_cs_index_three_terms.png)
+
+
+
 * ねらい：用語の違いをスッキリ🌱
 * 学ぶこと：
 
@@ -48,6 +60,10 @@
 ---
 
 ## 第4章：副作用ってなに？（冪等性の敵）💣
+
+![Side Effects vs Safe State](./picture/idem_cs_index_side_effects.png)
+
+
 
 * ねらい：副作用が見えるようになる👀
 * 学ぶこと：
@@ -105,6 +121,10 @@
 
 ## 第8章：冪等化の全体マップ（5つの王道）🗺️✨
 
+![The 5 Strategies of Idempotency](./picture/idem_cs_index_strategy_map.png)
+
+
+
 * ねらい：迷ったときの地図を持つ
 * 学ぶこと：
 
@@ -135,6 +155,10 @@
 ---
 
 ## 第10章：戦略② 冪等キーとは？（仕組みのコア）🔑✨
+
+![Idempotency Key Mechanism](./picture/idem_cs_index_idempotency_key.png)
+
+
 
 * ねらい：冪等キー方式の核を理解
 * 学ぶこと：
@@ -234,6 +258,10 @@
 ---
 
 ## 第17章：並行実行の地獄①（レースを理解する）🏎️💥
+
+![Race Condition Crash](./picture/idem_cs_index_race_condition.png)
+
+
 
 * ねらい：“同時に来たら壊れる”を体験する
 * 学ぶこと：

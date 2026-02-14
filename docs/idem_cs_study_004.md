@@ -14,6 +14,10 @@
 
 ## 4.1 副作用ってなに？（1行で）🧠
 
+![Side Effect Ripples](./picture/idem_cs_study_004_ripple_effect.png)
+
+
+
 **副作用（side effect）**は、ざっくり言うと👇
 
 > **処理の結果が「戻り値」だけじゃなくて、外の世界（状態）まで変えちゃうこと**🌍🔧
@@ -32,6 +36,10 @@
 ---
 
 ## 4.2 なんで副作用が「冪等性の敵」なの？😵‍💫
+
+![Accumulating Charges](./picture/idem_cs_study_004_charge_tower.png)
+
+
 
 冪等性って「同じ操作を何回やっても、結果が同じ」でしたよね🔁✨
 でも副作用があると、同じ操作を繰り返したときに…
@@ -81,6 +89,10 @@ flowchart LR
 
 ## 4.4 C#で「副作用あり/なし」を体感しよう🧪✨
 
+![Three Types of Side Effects](./picture/idem_cs_study_004_function_types.png)
+
+
+
 ### 例1：副作用なしに近い（計算だけ）➕
 
 ```csharp
@@ -129,6 +141,10 @@ async Task SetPointsAsync(Guid userId, int target)
 
 ## 4.5 Web APIだと、HTTPメソッドの性格と副作用が関係する🌐🔁
 
+![HTTP Methods & State](./picture/idem_cs_study_004_http_methods.png)
+
+
+
 HTTPには「安全（safe）」と「冪等（idempotent）」の考え方があります📚✨
 
 * **安全（safe）**：サーバー状態を変えることを“意図してない”メソッド
@@ -146,6 +162,10 @@ HTTPには「安全（safe）」と「冪等（idempotent）」の考え方が�
 ---
 
 ## 4.6 「副作用センサー」チェックリスト✅👀
+
+![Side Effect Scanner](./picture/idem_cs_study_004_danger_scanner.png)
+
+
 
 コードやAPIを見たら、ここを見ます🔍✨
 YESが多いほど「冪等性の敵」になりやすいです💣

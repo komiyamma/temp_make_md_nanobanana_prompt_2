@@ -49,6 +49,10 @@ flowchart LR
 
 ## 3) 「壊れる」って具体的に何が起きるの？💥😵‍💫
 
+![Common Idempotency Failures](./picture/idem_cs_study_001_common_accidents.png)
+
+
+
 冪等性がないと、こういう事故が起きます👇（現場あるある🥹）
 
 * **多重課金**💳💳💳（同じ決済が2回通る）
@@ -60,6 +64,10 @@ flowchart LR
 ---
 
 ## 4) 「同じリクエストが2回くる」って、なんで起きるの？📶⌛
+
+![The Ghost of Timeout](./picture/idem_cs_study_001_timeout_ghost.png)
+
+
 
 ポイントはこれ👇
 **ネットワークやアプリは、成功しても“成功って伝わらない”ことがある**んです🌧️
@@ -99,6 +107,10 @@ sequenceDiagram
 
 ## 5) “冪等”の判定はここを見る👀🔍
 
+![Safe vs Dangerous Verbs](./picture/idem_cs_study_001_verb_scale.png)
+
+
+
 初心者がまず見るポイントはこれだけでOKです😊
 
 ### ✅ 冪等っぽい（安全寄り）✨
@@ -119,6 +131,10 @@ sequenceDiagram
 ---
 
 ## 6) ミニ体験：冪等じゃない処理ってこう壊れる🔁💥（C#イメージ）
+
+![Non-Idempotent Addition](./picture/idem_cs_study_001_state_explosion.png)
+
+
 
 「連打で増える」タイプは、冪等じゃない代表です😵‍💫
 （ここでは“わざと危ない例”です⚠️）
@@ -179,6 +195,10 @@ graph TD
 ---
 
 ## 8) 小テスト🎓🌸（答えは下にあるよ👇）
+
+![Quiz Time!](./picture/idem_cs_study_001_quiz_time.png)
+
+
 
 **Q1.** 「同じリクエストが2回くる」原因としてありがちなのは？📶
 A. サーバーが絶対に速いから
