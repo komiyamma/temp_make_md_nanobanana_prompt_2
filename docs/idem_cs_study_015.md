@@ -14,6 +14,9 @@
 
 ## 2. なぜ「同じ成功レスポンスを返す」の？🤔📮
 
+![idem cs study 015 user anxiety](./picture/idem_cs_study_015_user_anxiety.png)
+
+
 二重送信が起きると、クライアント側ではこんな気持ちになります😵‍💫
 
 * 「注文できたの？できてないの？（タイムアウトしたし…）」⌛
@@ -59,6 +62,9 @@ sequenceDiagram
 ---
 
 ## 4. 実装方針（教材の型）🧱✨
+
+![idem cs study 015 table schema response](./picture/idem_cs_study_015_table_schema_response.png)
+
 
 この章では、いちばん分かりやすい「保存して返す」型にします👇
 
@@ -155,6 +161,8 @@ public sealed record CreateOrderResponse(
 * `Idempotency-Key` を読む
 * `RequestHash` を作って照合する
 * 初回成功時のレスポンスを保存して、次回はそれを返す
+
+![idem cs study 015 hash fingerprint](./picture/idem_cs_study_015_hash_fingerprint.png)
 
 ```csharp
 using System.Security.Cryptography;
@@ -340,6 +348,9 @@ curl -i -X POST "http://localhost:5000/orders" ^
 
 ## 7. レスポンス保存の注意点（超大事）🔐📦
 
+![idem cs study 015 response slimming](./picture/idem_cs_study_015_response_slimming.png)
+
+
 ### 7.1 個人情報・機密情報は保存しない/減らす🙅‍♀️🔒
 
 * 住所・氏名・メール・トークン・カード情報…は危険⚠️
@@ -360,6 +371,9 @@ curl -i -X POST "http://localhost:5000/orders" ^
 ---
 
 ## 8. よくある落とし穴あるある😵‍💫🪤
+
+![idem cs study 015 pitfalls collision](./picture/idem_cs_study_015_pitfalls_collision.png)
+
 
 * ✅ **キーは毎回ユニーク**（注文1回につき1キー）
 * ✅ **同じキーは同じ内容でのみ再送**
