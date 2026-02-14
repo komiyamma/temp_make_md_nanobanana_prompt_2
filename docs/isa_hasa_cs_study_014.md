@@ -41,6 +41,10 @@ Facadeは、複雑なサブシステムに対して **「使う側がラクに�
 
 ## 3) いつFacadeが効く？✅🌈
 
+![Facade Signs](./picture/isa_hasa_cs_study_014_facade_signs.png)
+
+
+
 次のサインが出たら、Facadeの出番！🚨✨
 
 * 利用側が「A→B→Cの順に呼べ」みたいな**儀式**を覚えてる🧙‍♀️
@@ -54,6 +58,10 @@ Facadeは、複雑なサブシステムに対して **「使う側がラクに�
 題材：注文確定（在庫→決済→配送→メール）🛒📦💳🚚📧
 
 ### 4-1) ぐちゃぐちゃ版（利用側が全部知ってる）😵‍💫
+
+![Juggling Client](./picture/isa_hasa_cs_study_014_juggling_client.png)
+
+
 
 ```csharp
 using System;
@@ -277,10 +285,18 @@ Facadeは **新しいドメインロジックを盛る場所**じゃなくて、
 
 ### コツB：“全部入りFacade”は避ける⚠️🐘
 
+![God Facade Trap](./picture/isa_hasa_cs_study_014_god_facade.png)
+
+
+
 * `SystemFacade.DoEverything()` みたいになると、逆に巨大化して死ぬ😇
 * おすすめは **ユースケース単位**（例：注文確定Facade、返品Facade）で分ける🎯
 
 ### コツC：サブシステムは interface にして差し替えやすく🔌
+
+![Facade Constructor Injection](./picture/isa_hasa_cs_study_014_constructor_injection.png)
+
+
 
 合成の気持ちよさが出るポイント！🧩✨
 テストもラクになるよ（第15章のご褒美回につながる🍬）
@@ -288,6 +304,10 @@ Facadeは **新しいドメインロジックを盛る場所**じゃなくて、
 ---
 
 ## 6) Adapter / Facade / Decorator の違い（超ざっくり）🧠✨
+
+![Pattern Trio](./picture/isa_hasa_cs_study_014_pattern_trio.png)
+
+
 
 * Adapter：外部のクセを**翻訳**する🔧（第13章）
 * Decorator：機能を**重ねる**🎂（第12章）

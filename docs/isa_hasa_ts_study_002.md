@@ -123,6 +123,10 @@ export class PartnerAuth extends BaseAuth {
 
 ## 2-3. 事故あるある③：「Aの機能もBの機能も…」で詰む🧩🧩😵‍💫
 
+![Combination Puzzle Fail](./picture/isa_hasa_ts_study_002_combination_fail.png)
+
+
+
 継承で「役割」と「機能」を混ぜると、だいたい破綻します💥
 
 たとえば👇
@@ -140,6 +144,10 @@ export class PartnerAuth extends BaseAuth {
 ---
 
 ## 2-4. 事故あるある④：「is-a」じゃないのに継承しちゃう問題🙅‍♀️
+
+![Penguin Crash](./picture/isa_hasa_ts_study_002_penguin_crash.png)
+
+
 
 継承は本来「**置き換え可能**」が超大事です。
 つまり「子は親として扱っても同じように動くべき」ってこと。
@@ -161,6 +169,10 @@ export class PartnerAuth extends BaseAuth {
 
 ## 2-5. 事故あるある⑤：protected で内臓むき出し🍖😱
 
+![Protected Organs](./picture/isa_hasa_ts_study_002_protected_organs.png)
+
+
+
 親が `protected` フィールドや内部メソッドをいっぱい公開すると、子がそこに依存してしまう…🫠
 すると親の内部変更ができなくなる＝保守性が死ぬ💀
 
@@ -170,6 +182,10 @@ export class PartnerAuth extends BaseAuth {
 ---
 
 ## 2-6. 事故あるある⑥：テストしづらい🧪😵
+
+![Heavy Parent](./picture/isa_hasa_ts_study_002_heavy_parent.png)
+
+
 
 継承が深くなると…
 
@@ -183,6 +199,10 @@ export class PartnerAuth extends BaseAuth {
 ---
 
 ## 2-7. ミニ演習✍️✨「継承地獄の芽」を自分で見つける🕵️‍♀️
+
+![Class Name Horror](./picture/isa_hasa_ts_study_002_class_name_horror.png)
+
+
 
 ## 演習A：組み合わせ要求を3つ足してみる🧩🧩🧩
 
@@ -213,6 +233,10 @@ BaseAuth の `login()` の中を、次のどれかに変えたら「子が壊れ
 ---
 
 ## 2-8. AI拡張（Copilot/Codex等）での学びブースト🤖✨
+
+![AI Tree Scanner](./picture/isa_hasa_ts_study_002_ai_scanner.png)
+
+
 
 この章は「レビュー係」として AI が超便利💕
 
