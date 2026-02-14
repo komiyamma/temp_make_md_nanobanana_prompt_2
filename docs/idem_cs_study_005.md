@@ -12,6 +12,10 @@
 
 # 5-1. まず「最新版」の基準をそろえる📌✨
 
+![Environment Versions](./picture/idem_cs_study_005_version_badges.png)
+
+
+
 ## .NET（SDK）はどれ使う？🤔
 
 * **.NET 10（LTS）** が安定枠でおすすめ🌿（SDK 10.0.102 / 2026-01-13 リリース）([Microsoft][1])
@@ -40,6 +44,10 @@ Visual Studio Installer で、だいたいこれを入れるとOK👇
 
 # 5-3. 新規プロジェクト作成（最短ルート）🚀
 
+![Project Creation Steps](./picture/idem_cs_study_005_project_creation.png)
+
+
+
 ## ① VS起動 → 新規作成
 
 * 「新しいプロジェクトの作成」→ **ASP.NET Core Web API** を選ぶ🌟
@@ -55,6 +63,10 @@ Visual Studio Installer で、だいたいこれを入れるとOK👇
 ---
 
 # 5-4. 動かしてみる（F5でOK）▶️🟢
+
+![The Development Cycle](./picture/idem_cs_study_005_dev_cycle.png)
+
+
 
 ## ① 起動
 
@@ -93,6 +105,10 @@ flowchart TD
 
 # 5-5. 最低限のエンドポイントを1個足す（動く手応え💓）
 
+![Minimal API Ping-Pong](./picture/idem_cs_study_005_ping_pong.png)
+
+
+
 `Program.cs` に「疎通用のGET」を足すと、あとが楽〜🌟
 
 ```csharp
@@ -108,6 +124,10 @@ app.MapGet("/ping", () => Results.Ok(new { ok = true, at = DateTimeOffset.Now })
 ---
 
 # 5-6. デバッグ入門（ブレークポイントが正義）🧠🔍
+
+![Debugging Insight](./picture/idem_cs_study_005_debugger_eye.png)
+
+
 
 ## ① ブレークポイントを置く
 
@@ -144,6 +164,10 @@ sequenceDiagram
 
 # 5-7. VS Code + dotnet CLI 版（軽くやりたい人向け）🪶✨
 
+![CLI Command Steps](./picture/idem_cs_study_005_terminal_trio.png)
+
+
+
 ## ① プロジェクト作成
 
 ```powershell
@@ -169,6 +193,10 @@ curl -k https://localhost:5001/ping
 ---
 
 # 5-8. よくある詰まりポイント集（ここだけ見れば助かる🧯）😵‍💫
+
+![Common Troubles](./picture/idem_cs_study_005_trouble_signs.png)
+
+
 
 ## HTTPS証明書でコケる🔒💥
 

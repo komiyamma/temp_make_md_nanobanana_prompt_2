@@ -17,6 +17,10 @@
 
 ## 6.2 今回のミニドメイン：注文→支払い→メール📦💳📧
 
+![E-Commerce Flow Icons](./picture/idem_cs_study_006_ecommerce_trio.png)
+
+
+
 この教材では、**注文API**を題材にするよ🛒
 理由はシンプルで、冪等性の敵（副作用）が全部入りだから！💣✨
 
@@ -43,6 +47,10 @@ flowchart LR
 
 ## 6.3 「壊れやすい操作」をわざと選ぶ（＝学びが濃くなる）💥
 
+![Fragile Operations Types](./picture/idem_cs_study_006_fragile_ops.png)
+
+
+
 冪等性の学習では、あえてこういう“事故りやすい”操作を含めるのがコツだよ🧪✨
 
 * **増える系**：注文が増える、在庫が減る、ポイントが増える 📈📉
@@ -54,6 +62,10 @@ flowchart LR
 ---
 
 ## 6.4 登場キャラ（データ）を決めよう👤📦
+
+![Domain Entities](./picture/idem_cs_study_006_entity_cards.png)
+
+
 
 ミニドメインは、最小でOK！むしろ小さい方が勝ち🏆✨
 今回はこれだけで進めるよ👇
@@ -103,6 +115,10 @@ erDiagram
 
 ## 6.5 今回のAPI境界（どこまでを“APIの責任”にする？）🧱
 
+![Mock Services Stage](./picture/idem_cs_study_006_mock_stage.png)
+
+
+
 教材では、いきなり「本物の決済」や「本物のメール」まではやらず、**外部っぽい処理を“それっぽく”疑似実装**して進めるよ🧪✨
 （でも“壊れ方”は本物と同じにするのがミソ💥）
 
@@ -112,6 +128,10 @@ erDiagram
 ---
 
 ## 6.6 エンドポイントを決める（この教材の主役たち）🎬✨
+
+![API Endpoints Signs](./picture/idem_cs_study_006_api_signposts.png)
+
+
 
 ここで「教材で扱うAPI」を固定しちゃうよ🧷
 
@@ -158,6 +178,10 @@ erDiagram
 ---
 
 ## 6.8 “事故”を先に想像しておく（第7章が楽になる）😵‍💫➡️😎
+
+![Predicting Disaster](./picture/idem_cs_study_006_disaster_crystal.png)
+
+
 
 この教材でわざと起こす事故はこれ👇💥
 

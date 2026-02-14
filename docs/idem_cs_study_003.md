@@ -12,6 +12,10 @@
 
 ## まず結論：3つは“似てるけど役割が違う”🧩🔁
 
+![The Three Pillars of Reliability](./picture/idem_cs_study_003_three_pillars.png)
+
+
+
 **同じリクエストが2回以上きたとき**をイメージしてね🧠✨
 
 * **冪等性（Idempotency）**：何回やっても、最終結果が同じになる🔁✅
@@ -37,6 +41,10 @@ mindmap
 ---
 
 ## 用語① 冪等性（Idempotency）ってなに？🔁✅
+
+![Idempotency Stamp Analogy](./picture/idem_cs_study_003_stamp_analogy.png)
+
+
 
 ### 定義（やさしめ）📘
 
@@ -64,6 +72,10 @@ HTTPの世界でも「同じリクエストを何回送っても、意図した�
 
 ## 用語② 重複排除（Deduplication）ってなに？🚫🔁
 
+![The ID Bouncer (Deduplication)](./picture/idem_cs_study_003_id_bouncer.png)
+
+
+
 ### 定義（やさしめ）📘
 
 **同じ要求（同じIDのリクエスト）を、2回目以降は処理しない**ことだよ🧾✨
@@ -85,6 +97,10 @@ HTTPの世界でも「同じリクエストを何回送っても、意図した�
 ---
 
 ## 用語③ 二重適用防止（Double-apply prevention）ってなに？🚦🛡️
+
+![State Traffic Light (Prevention)](./picture/idem_cs_study_003_state_traffic_light.png)
+
+
 
 ### 定義（やさしめ）📘
 
@@ -129,6 +145,10 @@ flowchart TD
 
 ## ここが混ざると事故る！よくある勘違い7選😵‍💫💥
 
+![Navigating Misconceptions](./picture/idem_cs_study_003_misconception_maze.png)
+
+
+
 1. **「POSTは冪等じゃない」＝絶対ムリ、ではない**
    → POSTでも冪等キーなどで“冪等っぽく”できる（でもHTTP仕様上“保証されない”のは事実）📌 ([MDN Web Docs][3])
 2. **冪等＝「1回しか処理しない」ではない**
@@ -147,6 +167,10 @@ flowchart TD
 ---
 
 ## C#ミニ実験：3つの違いを“動き”で見る👀✨
+
+![Three Logic Flows](./picture/idem_cs_study_003_logic_flow_trio.png)
+
+
 
 ### 1) まず「冪等じゃない」例：加算は増え続ける➕💥
 
