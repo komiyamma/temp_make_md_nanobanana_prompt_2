@@ -42,6 +42,9 @@
 
 ## 2. まずは “継承地獄” のスターター（悪い例）👻🌳
 
+![inheritance_hell_tree](./picture/isa_hasa_ts_study_017_inheritance_hell_tree.png)
+
+
 （※わざとツラい構造にするよ！）
 
 ```ts
@@ -150,6 +153,9 @@ Vitestは v4系が進んでるよ〜✅ ([Vitest][2])
 
 ### Step A：ドメインの “差し替え点” を3つに分離🧩✂️
 
+![strategy_separation](./picture/isa_hasa_ts_study_017_strategy_separation.png)
+
+
 「割引」「送料」「ギフト手数料」をそれぞれ部品化する！
 
 ```ts
@@ -255,6 +261,9 @@ legacyテストと同じ値になるならOK！
 
 ## 6. Decoratorで「横断機能」を外付け🎀⏱️📝
 
+![decorator_layers](./picture/isa_hasa_ts_study_017_decorator_layers.png)
+
+
 次は「支払い」を例に、ログ・計測・リトライを外付けするよ✨
 
 ```ts
@@ -314,6 +323,9 @@ export class RetryPaymentGateway implements PaymentGateway {
 
 ## 7. Adapterで外部APIを包む🎁🔌（snake_case対策🐍➡️🐫）
 
+![adapter_conversion](./picture/isa_hasa_ts_study_017_adapter_conversion.png)
+
+
 外部がこんな形式を返すとするね👇
 
 ```ts
@@ -353,6 +365,9 @@ export class AcmePayAdapter implements PaymentGateway {
 ---
 
 ## 8. 組み立て（Composition Root）🧩🏗️「部品の配置場所」
+
+![composition_root_assembly](./picture/isa_hasa_ts_study_017_composition_root_assembly.png)
+
 
 “組み立てる場所” を最後に1箇所へ✨
 

@@ -17,6 +17,9 @@
 
 ## 2-1. まず結論：複雑さには2種類ある😈👼
 
+![essential_vs_accidental](./picture/kiss_cs_study_002_essential_vs_accidental.png)
+
+
 ### ① 本当に必要な複雑さ（本質）👼✨
 
 * 業務ルールが多い、法律・税・割引が複雑、例外パターンが多い…みたいなやつ
@@ -45,6 +48,9 @@
 
 ### パターンA：if/switchが増殖する🌿🌿🌿
 
+![pattern_if_nesting](./picture/kiss_cs_study_002_pattern_if_nesting.png)
+
+
 #### どうしてツラいの？😵
 
 * 条件の組み合わせが増えると、頭の中で分岐図が必要になる🧠🌀
@@ -66,6 +72,9 @@ Visual Studioのコードメトリクスで **Cyclomatic Complexity（循環的�
 
 ### パターンB：例外・null・境界条件が散らばる🧨🌧️
 
+![pattern_exception_scatter](./picture/kiss_cs_study_002_pattern_exception_scatter.png)
+
+
 #### どうしてツラいの？😵
 
 * “普通の流れ”がどれなのか分からなくなる
@@ -83,6 +92,9 @@ Visual Studioのコードメトリクスで **Cyclomatic Complexity（循環的�
 ---
 
 ### パターンC：1つの関数が全部やる🍱（判断・計算・保存・表示まで）
+
+![pattern_god_function](./picture/kiss_cs_study_002_pattern_god_function.png)
+
 
 #### どうしてツラいの？😵
 
@@ -147,6 +159,9 @@ Visual Studioのコードメトリクスで **Cyclomatic Complexity（循環的�
 ---
 
 ## 2-4. 実例：if地獄を“つらさの言葉”にする😵‍💫🌿
+
+![shipping_message_mess](./picture/kiss_cs_study_002_shipping_message_mess.png)
+
 
 以下のコード、直すのはまだ！
 まず「どこがつらいか」を言語化してみよ〜🫶
@@ -267,6 +282,9 @@ Cyclomatic Complexity などを確認できるよ〜！
 ---
 
 ## 2-7. AI（Copilot/Codex系）で“複雑さの言語化”を爆速にする🤖💗
+
+![ai_diagnosis_tool](./picture/kiss_cs_study_002_ai_diagnosis_tool.png)
+
 
 ここ、AIがめっちゃ得意！✨
 ただし「直して」じゃなくて、まずは **診断** を頼むのがコツだよ🩺💡

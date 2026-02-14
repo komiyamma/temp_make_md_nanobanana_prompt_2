@@ -25,6 +25,9 @@ AIにリファクタ頼むと、たまにこうなる👇
 
 ## 5-1. AIの使い分け3段階（ここが超大事）🥳🎚️
 
+![ai_usage_levels](./picture/kiss_cs_study_005_ai_usage_levels.png)
+
+
 AIって、実は「強さ」が3種類あるよ！
 
 ### ① その場の補完（軽い）✍️✨
@@ -53,6 +56,9 @@ AIって、実は「強さ」が3種類あるよ！
 
 ## 5-2. AIに「KISSで頼む」ときの型（テンプレ）🍱✨
 
+![kiss_prompt_structure](./picture/kiss_cs_study_005_kiss_prompt_structure.png)
+
+
 AIにお願いするとき、**型**があると暴走しにくいよ〜！🥰
 
 ### ✅ KISSプロンプト：最強の5点セット
@@ -74,6 +80,9 @@ flowchart LR
 ---
 
 ## 5-3. コピペで使える！KISSプロンプト集 🧁🤖
+
+![prompt_recipe_cards](./picture/kiss_cs_study_005_prompt_recipe_cards.png)
+
 
 ### A) “挙動は変えずに”読みやすくして（基本）
 
@@ -140,6 +149,9 @@ VS 2026 には **Cloud Agent を有効化してタスク委任**できる案内�
 ---
 
 ## 5-5. VS Code での “KISSエージェント運用” 🧑‍💻🌸
+
+![vscode_agent_types](./picture/kiss_cs_study_005_vscode_agent_types.png)
+
 
 VS Code はエージェントを **種類分けして管理**できるよ（ローカル/バックグラウンド/クラウド/サードパーティ） ([Visual Studio Code][4])
 セッションも一覧で見れて、変更ファイルや状態が追える設計になってるのがポイント！ ([Visual Studio Code][4])
@@ -219,6 +231,9 @@ AIの答えは毎回違うけど、**こういう方向**なら当たり🎯
 ---
 
 ## 5-7. AIの出力チェックリスト（KISS監査官モード👮‍♀️✅）
+
+![ai_output_audit](./picture/kiss_cs_study_005_ai_output_audit.png)
+
 
 AIの提案を入れる前に、ここだけ見て！👀✨
 

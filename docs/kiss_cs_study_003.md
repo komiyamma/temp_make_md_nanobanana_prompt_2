@@ -175,6 +175,9 @@ static PlaceOrderResult PlaceOrder(string? userId, decimal total, string? coupon
 
 # 3) 1関数1仕事（やることを減らす）🎯✨
 
+![one_function_one_job](./picture/kiss_cs_study_003_one_function_one_job.png)
+
+
 ## いつ使う？👀
 
 * 1メソッドで「判断・計算・整形・保存」全部やってる🍱
@@ -236,6 +239,9 @@ graph TD
 
 # 4) 条件の“言語化”（bool変数に名前を付ける）🗣️✨
 
+![naming_boolean_logic](./picture/kiss_cs_study_003_naming_boolean_logic.png)
+
+
 ## いつ使う？👀
 
 * `if (a && b && (c || d))` が出てきた😵‍💫
@@ -259,6 +265,9 @@ if (hasCoupon && isVipCoupon)
 ---
 
 # 5) ネストを浅くする（入れ子をほどく）🪢✨
+
+![flattening_nesting](./picture/kiss_cs_study_003_flattening_nesting.png)
+
 
 ## いつ使う？👀
 
@@ -339,6 +348,9 @@ static PlaceOrderResult PlaceOrderSafe(...)
 
 # 8) データ構造を整える（辞書/リスト等で表現）🧺✨
 
+![dictionary_lookup_structure](./picture/kiss_cs_study_003_dictionary_lookup_structure.png)
+
+
 ## いつ使う？👀
 
 * `if (code=="A") ... else if (code=="B") ...` が伸び続ける📏
@@ -379,6 +391,9 @@ graph LR
 
 # 9) 「まず動く」を壊さない小さな変更（差分小さく）🐾✨
 
+![small_steps_refactoring](./picture/kiss_cs_study_003_small_steps_refactoring.png)
+
+
 ## 目的🎯
 
 KISSって「正しさ」より先に **安全に直せる手順**が超大事！🥺💗
@@ -398,6 +413,9 @@ IDE統合AIは便利だけど、研究で「情報漏えい・RCEにつながる
 ---
 
 # 10) 迷ったら“読む人テスト”（声に出して読める？）🎤✨
+
+![read_aloud_test_microphone](./picture/kiss_cs_study_003_read_aloud_test_microphone.png)
+
 
 ## やり方😊
 
