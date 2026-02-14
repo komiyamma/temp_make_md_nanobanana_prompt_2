@@ -49,13 +49,25 @@ mindmap
 
 ## 0.5秒でわかる！5つのキャラ紹介😺✨
 
+![冪等化の5つの戦略マップ](./picture/idem_cs_study_008_pentagon_map.png)
+
+
+
 ### ① 自然冪等：**“こうしてね”型**✍️
+
+![自然な冪等の道具たち](./picture/idem_cs_study_008_natural_tools.png)
+
+
 
 * 「増やす」じゃなく「**この状態にする**」
 * 例：`SetStatus(Paid)`、`UpdateAddress(...)`
 * **同じ入力なら何回やっても同じ結果**になりやすい🎯
 
 ### ② 冪等キー：**“同じチケットなら同じ結果”型**🔑
+
+![冪等キーの改札](./picture/idem_cs_study_008_ticket_gate.png)
+
+
 
 * `Idempotency-Key`（または独自ヘッダ/ボディ）で「この操作のチケット🎫」を渡す
 * サーバーは「同じキーなら**二重実行しない**」を保証する
@@ -64,16 +76,28 @@ mindmap
 
 ### ③ DB一意制約：**“DBが門番”型**🗃️🧷
 
+![DB一意制約の椅子取りゲーム](./picture/idem_cs_study_008_musical_chairs.png)
+
+
+
 * 「同じものは1件しか入れさせない」
 * レース（同時2回）にめちゃ強い💥
 * 例：`Orders(ClientRequestId)` を UNIQUE にする
 
 ### ④ 状態遷移ガード：**“信号機”型**🚦
 
+![状態遷移ガード](./picture/idem_cs_study_008_guard_check.png)
+
+
+
 * 状態が `Created -> Paid -> Shipped` みたいに進むとき
 * 「もう `Paid` なら、再度 `Paid` はOK（変化なし）／二重課金はNG」みたいに止める🛑
 
 ### ⑤ 非同期・イベント：**“あとで安全にやる”型**📬
+
+![非同期キューのバッファ](./picture/idem_cs_study_008_async_buffer.png)
+
+
 
 * メール送信✉️、外部API呼び出し🤝、重い処理🐘
 * 「Outbox」「処理済み記録」などで重複を潰す
@@ -113,6 +137,10 @@ HTTPの仕様では、ざっくりこう覚えると便利です👇
 ---
 
 ## 「3分診断」どれを選ぶ？🕒🧠（超ざっくりフロー）
+
+![選択フローチャート](./picture/idem_cs_study_008_flowchart_selection.png)
+
+
 
 以下を上から順に答えるだけで、だいたい決まります👇😊
 

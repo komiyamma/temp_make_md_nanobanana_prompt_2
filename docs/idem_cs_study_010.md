@@ -4,6 +4,10 @@
 
 ## 10.1 まず1分でイメージしよう😊🎫
 
+![チケットシステムの概念](./picture/idem_cs_study_010_ticket_system.png)
+
+
+
 冪等キー（Idempotency Key）は、ひとことで言うと **「この操作は1回だけってことにしてね！」のチケット🎫** です。
 
 たとえば注文作成（POST）を送ったあとに…
@@ -54,13 +58,25 @@ sequenceDiagram
 
 ## 10.3 仕組みの全体像（ざっくりフロー）🗺️🔁
 
+![処理フロー図](./picture/idem_cs_study_010_flow_diagram.png)
+
+
+
 ### クライアント側（アプリ/フロント）📱🧑‍💻
+
+![UUID生成](./picture/idem_cs_study_010_uuid_generator.png)
+
+
 
 1. 操作を1回ぶん開始する瞬間に **冪等キーを生成**（例：UUID）🔑
 2. APIに **`Idempotency-Key` ヘッダー**で送る📮
 3. もしタイムアウト等で再送するなら、**同じキーで再送**する🔁
 
 ### サーバー側（API）🖥️🧠
+
+![保存先の選択肢](./picture/idem_cs_study_010_storage_options.png)
+
+
 
 受け取った `Idempotency-Key` を見て、だいたいこう👇
 
@@ -310,6 +326,10 @@ Invoke-RestMethod -Method Post -Uri "http://localhost:5000/orders" -Headers $hea
 ---
 
 ## 10.8 よくある落とし穴（先に潰しておく）🕳️💥
+
+![TTLの時計](./picture/idem_cs_study_010_ttl_clock.png)
+
+
 
 1. **リトライごとに新しいキーを作っちゃう** 👉 冪等にならない😵‍💫
 2. **別payloadに同じキーを使い回す** 👉 サーバーは422で止めたい🚫([IETF Datatracker][1])
