@@ -10,6 +10,10 @@
 
 ## 1) まず結論：冪等キーは「この1回の操作」を表す“整理券”🎫🔑
 
+![Idempotency Key Ticket Concept](./picture/idem_ts_study_010_ticket_concept.png)
+
+
+
 冪等キー（`Idempotency-Key`）は、クライアントがリクエストに付ける **一意な文字列**です。
 
 * 1回目：サーバーが「この整理券の結果」を保存📦
@@ -23,6 +27,10 @@
 
 ## 2) どんな時に効くの？（いちばんよくある事故）😵‍💫📱
 
+![Smartphone Retry Accident Prevention](./picture/idem_ts_study_010_smart_phone_retry.png)
+
+
+
 例：スマホで注文ボタンを押す → 通信が不安定 → 画面が固まる → もう一回押す😇
 
 * 冪等キーなし：注文が **2件作られる** 😱
@@ -34,15 +42,27 @@
 
 ### ✅キーは「UUIDみたいなランダム」が王道
 
+![UUID Key Recommendation](./picture/idem_ts_study_010_uuid_recommendation.png)
+
+
+
 IETFドラフトでは「UUIDなどのランダム識別子を推奨」と書かれています。([IETF Datatracker][1])
 Stripeも「UUID v4 など十分なエントロピーを推奨」と明記しています。([Stripeドキュメント][2])
 
 ### ✅同じキーを“別の内容”に使い回しちゃダメ🙅‍♀️
 
+![Key Reuse Error 422](./picture/idem_ts_study_010_reuse_error.png)
+
+
+
 * IETFドラフト：**別 payload に再利用しちゃダメ**、もしやったら `422` を返す例まで載っています([IETF Datatracker][3])
 * Stripe：1回目と**エンドポイントやパラメータが違う**のに同じキーを使うと `idempotency_error` になる、と説明しています([Stripeドキュメント][4])
 
 ### ✅同じキーが「処理中」に同時に来たら？（並行）⚔️
+
+![Concurrent Conflict 409](./picture/idem_ts_study_010_concurrent_conflict.png)
+
+
 
 IETFドラフトは「処理中の同キー再送なら `409 Conflict` を返す」例を示しています。([IETF Datatracker][3])
 Stripeでも同様に、同時実行で同キーが使われると `idempotency_key_in_use` というエラーコードが案内されています。([Stripeドキュメント][5])
@@ -56,6 +76,10 @@ Stripeでも同様に、同時実行で同キーが使われると `idempotency_
 * `POST /orders` で注文を作る（本来は“増える”から危険😵）
 
 ### ✅クライアント → サーバー：ヘッダーに付ける
+
+![HTTP Header Visualization](./picture/idem_ts_study_010_header_example.png)
+
+
 
 リクエストの雰囲気👇
 
@@ -105,6 +129,10 @@ Invoke-RestMethod -Method Post -Uri "http://localhost:3000/orders" -Headers $hea
 ---
 
 ## 6) サーバー側の「超ざっくりアルゴリズム」🔁📦
+
+![Server Logic Flowchart](./picture/idem_ts_study_010_server_logic_flow.png)
+
+
 
 サーバーはざっくりこう動きます👇
 

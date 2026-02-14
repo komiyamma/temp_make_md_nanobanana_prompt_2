@@ -12,6 +12,10 @@
 
 ## 0. まず結論：アプリで「先にSELECTして確認」は負けやすい😵‍💫
 
+![Select First Fail Strategy](./picture/idem_ts_study_016_select_first_fail.png)
+
+
+
 よくある発想👇
 
 1. `SELECT` で「まだ無いよね？」を確認
@@ -40,6 +44,10 @@ flowchart TD
 
 ## 1. ユニーク制約ってなに？🧷
 
+![Unique Constraint Shield](./picture/idem_ts_study_016_unique_constraint_shield.png)
+
+
+
 ユニーク制約（UNIQUE）は、DBにこう言わせる仕組みです👇
 
 > 「同じキーの組み合わせは、2回入れちゃダメ🙅‍♀️」
@@ -52,6 +60,10 @@ PostgreSQLはユニーク制約を「ユニークインデックス」で実現�
 ---
 
 ## 2. どこをユニークにする？（スコープ設計）👤🔑
+
+![Scope Definition Puzzle](./picture/idem_ts_study_016_scope_definition.png)
+
+
 
 この教材の「冪等キー方式」では、基本はこれ👇
 
@@ -85,6 +97,10 @@ PostgreSQLはユニーク制約を「ユニークインデックス」で実現�
 ---
 
 ## 4. テーブル設計（例）🧱✨
+
+![Idempotency Table Structure](./picture/idem_ts_study_016_table_structure.png)
+
+
 
 ```sql
 CREATE TABLE idempotency_requests (
@@ -120,6 +136,10 @@ CREATE TABLE idempotency_requests (
 ---
 
 ## 6. PostgreSQL例：ON CONFLICT を使う🐘✨
+
+![Insert On Conflict Flow](./picture/idem_ts_study_016_insert_on_conflict.png)
+
+
 
 PostgreSQLは `INSERT ... ON CONFLICT` が使えます💪
 `ON CONFLICT` は「ユニーク違反が起きたときの代替動作」を指定できて、`DO NOTHING`（何もしない）や `DO UPDATE`（更新する）があります。([PostgreSQL][3])
@@ -255,6 +275,10 @@ VALUES (?, ?, ?, 'processing', datetime('now'), datetime('now'));
 ✅ **前回と同じ成功レスポンスを返す**（いちばん親切）💖
 
 ### 9-2. 「同じキーなのに内容が違う」なら…
+
+![409 Conflict Response](./picture/idem_ts_study_016_response_409.png)
+
+
 
 ✅ **409 Conflict** がわかりやすいです🧯
 409は「リソースの現在状態と競合して完了できない」系の意味として定義されています。([rfc-editor.org][6])

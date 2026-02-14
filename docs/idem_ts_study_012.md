@@ -15,6 +15,10 @@
 
 ### ① スコープ：キーは「誰の」「どの操作の」キー？👤➡️🧾
 
+![Scope Layers Visualization](./picture/idem_ts_study_012_scope_layers.png)
+
+
+
 同じ冪等キーでも、**誰が**使ったかで意味が変わるよね？
 だから「冪等キーだけ」をユニークにするのは危険⚠️
 
@@ -31,6 +35,10 @@
 
 ### ② TTL：いつまで“同じ結果を返す”の？🕒🔁
 
+![TTL Timeline](./picture/idem_ts_study_012_ttl_timeline.png)
+
+
+
 冪等キーはずーっと保存しない🙅‍♀️
 保存しっぱなしだと、コストも増えるし、運用も重くなる📦💸
 
@@ -43,6 +51,10 @@ Adyenはキーが最低7日間有効（company account単位でユニーク）�
 ---
 
 ### ③ 再利用禁止：同じキーは「同じ内容」にしか使っちゃダメ🚫🧾
+
+![Reuse Prohibition Logic](./picture/idem_ts_study_012_reuse_prohibition.png)
+
+
 
 ここが一番事故るポイント💥
 同じキーで、内容が違うリクエストを送っちゃうと…
@@ -61,6 +73,10 @@ Adyenはキーが最低7日間有効（company account単位でユニーク）�
 ---
 
 ## 12.1 スコープ設計：何を「同じ操作」とみなす？🧩🔍
+
+![Scope Candidates Comparison](./picture/idem_ts_study_012_scope_candidates.png)
+
+
 
 ### スコープ候補（強さ順）💪✨
 
@@ -102,6 +118,10 @@ Adyenはキーが最低7日間有効（company account単位でユニーク）�
 ## 12.2 TTL設計：どれくらい覚えておく？🕒📦
 
 ### TTLを決める“考え方”🧠✨
+
+![TTL Decision Factors](./picture/idem_ts_study_012_ttl_factors.png)
+
+
 
 TTLは「適当に1日！」じゃなくて、だいたいこの材料で決めると安全✅
 
@@ -167,6 +187,10 @@ sequenceDiagram
 ---
 
 ## 12.4 DBテーブル案（たたき台）🗃️✍️
+
+![DB Schema Visualization](./picture/idem_ts_study_012_db_schema_visual.png)
+
+
 
 ここでは「後で第13章の“結果保存”につながる形」で作るよ📦📤
 
