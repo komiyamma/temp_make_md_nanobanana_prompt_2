@@ -1,6 +1,6 @@
 # 第18章：失敗はどう扱う？（リトライOK/NGの分類）✅❌
 
-![第18章失敗はどう扱うリトライokngの分類](./picture/idem_ts_study_018_第18章失敗はどう扱うリトライokngの分類.png)
+![第18章失敗はどう扱うリトライokngの分類](./picture/idem_ts_study_018_ch18_handling_failures_retry_ok_ng_classification.png)
 
 ## この章でできるようになること 🎯✨
 
@@ -36,7 +36,7 @@ flowchart TD
 
 ### ② 恒久的な失敗（リトライNG）🚫❌
 
-![②_恒久的な失敗リトライng](./picture/idem_ts_study_018_②_恒久的な失敗リトライng.png)
+![②_恒久的な失敗リトライng](./picture/idem_ts_study_018_2_permanent_failure_retry_ng.png)
 
 「原因が“入力や権限”にある」系。何回やっても同じ結果😇
 例：入力ミス📝、認証エラー🔐、残高不足💸、存在しないID🔎
@@ -66,7 +66,7 @@ flowchart TD
 
 ### ルール3：回数上限は必須（無限リトライしない）🔁🔚
 
-![ルール3回数上限は必須無限リトライしない](./picture/idem_ts_study_018_ルール3回数上限は必須無限リトライしない.png)
+![ルール3回数上限は必須無限リトライしない](./picture/idem_ts_study_018_rule3_retry_limit_essential_no_infinite_retry.png)
 
 「最大3回まで」みたいに必ず止める🛑
 （止めないと、障害時にアプリが永遠にリトライして地獄👹）
@@ -90,7 +90,7 @@ POSTは「作成＝増える」ので、無対策で再送すると二重作成�
 
 ## 18.3 まずは “分類表” を持とう 📋✨
 
-![183_まずは_分類表_を持とう](./picture/idem_ts_study_018_183_まずは_分類表_を持とう.png)
+![183_まずは_分類表_を持とう](./picture/idem_ts_study_018_183_first_have_classification_table.png)
 
 ### A) HTTPステータス別：リトライ判定（超よく使う版）🌐
 
@@ -143,7 +143,7 @@ POSTは「作成＝増える」ので、無対策で再送すると二重作成�
 
 ## 18.5 TypeScriptミニ実装：安全寄りリトライ `retryFetch` 🧪💻🔁
 
-![185_typescriptミニ実装安全寄りリトライ_retryfetch](./picture/idem_ts_study_018_185_typescriptミニ実装安全寄りリトライ_retryfetch.png)
+![185_typescriptミニ実装安全寄りリトライ_retryfetch](./picture/idem_ts_study_018_185_typescript_mini_implementation_safe_retry_fetch.png)
 
 ### 目標 🎯
 
@@ -301,7 +301,7 @@ if (res.ok) {
 
 ### 演習1：エラー分類表を作ろう📋✍️
 
-![演習1エラー分類表を作ろう](./picture/idem_ts_study_018_演習1エラー分類表を作ろう.png)
+![演習1エラー分類表を作ろう](./picture/idem_ts_study_018_exercise1_create_error_classification_table.png)
 
 次の失敗を「リトライOK/NG/条件付き」に分類してね🎀
 
@@ -328,7 +328,7 @@ if (res.ok) {
 
 ### プロンプト2：自分のAPI仕様に当てはめ🧾
 
-![プロンプト2自分のapi仕様に当てはめ](./picture/idem_ts_study_018_プロンプト2自分のapi仕様に当てはめ.png)
+![プロンプト2自分のapi仕様に当てはめ](./picture/idem_ts_study_018_prompt2_apply_to_own_api_spec.png)
 
 「私のAPI（注文作成/支払い確定）で起こりうる失敗を10個挙げて、リトライOK/NG/条件付きに分類して。条件付きの場合は“何を確認してから”かも書いて。」
 

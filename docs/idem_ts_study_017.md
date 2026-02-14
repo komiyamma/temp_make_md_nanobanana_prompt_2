@@ -1,6 +1,6 @@
 # 第17章：止め方② ロック/原子的操作（Atomic）で“同時を捌く”🔒⚡
 
-![第17章止め方②_ロック原子的操作atomicで同時を捌く](./picture/idem_ts_study_017_第17章止め方②_ロック原子的操作atomicで同時を捌く.png)
+![第17章止め方②_ロック原子的操作atomicで同時を捌く](./picture/idem_ts_study_017_ch17_stopping_2_handling_concurrency_with_atomic_lock.png)
 
 ## 17.1 この章のゴール🎯✨
 
@@ -45,7 +45,7 @@
 
 ## 17.4 ロック🔒とAtomic⚡のざっくり定義
 
-![174_ロックとatomicのざっくり定義](./picture/idem_ts_study_017_174_ロックとatomicのざっくり定義.png)
+![174_ロックとatomicのざっくり定義](./picture/idem_ts_study_017_174_lock_and_atomic_rough_definition.png)
 
 ### ロック🔒
 
@@ -86,7 +86,7 @@
 
 ### 状態遷移（王道パターン）🧠✨
 
-![状態遷移王道パターン](./picture/idem_ts_study_017_状態遷移王道パターン.png)
+![状態遷移王道パターン](./picture/idem_ts_study_017_state_transition_golden_pattern.png)
 
 | いまの状態      | 同じキーが来たら               | 返すもの                 |
 | ---------- | ---------------------- | -------------------- |
@@ -196,7 +196,7 @@ export async function withOrderLock<T>(orderId: string, fn: () => Promise<T>): P
 
 ### ③ 複数台でも守りたい：DBのAtomic更新 or Redisロック🌍🔒⚡
 
-![③_複数台でも守りたいdbのatomic更新_or_redisロック](./picture/idem_ts_study_017_③_複数台でも守りたいdbのatomic更新_or_redisロック.png)
+![③_複数台でも守りたいdbのatomic更新_or_redisロック](./picture/idem_ts_study_017_3_atomic_db_update_or_redis_lock_for_multiple_servers.png)
 
 ここからが“実務感”✨
 **同時に来た2つのリクエストのうち、先着1名だけが通る**仕組みを、DB/Redisの力で作るよ💪
@@ -259,7 +259,7 @@ SET lockKey token NX PX 10000
 
 ### ざっくり処理フロー（擬似）🧠✨
 
-![ざっくり処理フロー擬似](./picture/idem_ts_study_017_ざっくり処理フロー擬似.png)
+![ざっくり処理フロー擬似](./picture/idem_ts_study_017_rough_process_flow_pseudo.png)
 
 1. 受け取ったキーでレコードを見る👀
 2. なければ **processing を取りに行く**（Atomicで！）⚡
@@ -342,7 +342,7 @@ export async function confirmPaymentLike(key: string): Promise<OrderResult> {
 
 ### 方式B：行ロック（SELECT … FOR UPDATE）で“読んだ瞬間にロック”🔒
 
-![方式b行ロックselect__for_updateで読んだ瞬間にロック](./picture/idem_ts_study_017_方式b行ロックselect__for_updateで読んだ瞬間にロック.png)
+![方式b行ロックselect__for_updateで読んだ瞬間にロック](./picture/idem_ts_study_017_method_b_row_lock_select_for_update.png)
 
 * トランザクション内で行をロックしてから判断できる
 * PostgreSQLでは `SELECT ... FOR UPDATE` が行レベルロックとして説明されてるよ([PostgreSQL][6])
@@ -395,7 +395,7 @@ describe("idempotency concurrency", () => {
 
 ## 17.12 AI活用🤖✨（この章で効く使い方）
 
-![1712_ai活用この章で効く使い方](./picture/idem_ts_study_017_1712_ai活用この章で効く使い方.png)
+![1712_ai活用この章で効く使い方](./picture/idem_ts_study_017_1712_ai_usage_tips_for_this_chapter.png)
 
 ### ① 状態遷移表を作らせる📋
 

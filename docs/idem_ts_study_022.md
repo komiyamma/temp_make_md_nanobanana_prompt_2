@@ -1,6 +1,6 @@
 # 第22章：Outboxと冪等性（取りこぼし/二重送信を減らす）🤝🗃️
 
-![第22章outboxと冪等性取りこぼし二重送信を減らす](./picture/idem_ts_study_022_第22章outboxと冪等性取りこぼし二重送信を減らす.png)
+![第22章outboxと冪等性取りこぼし二重送信を減らす](./picture/idem_ts_study_022_ch22_outbox_and_idempotency_reducing_missed_double_sends.png)
 
 ## 🎯この章のゴール
 
@@ -29,7 +29,7 @@
 
 ### 😱事故パターンB：イベント送信は成功、DBがロールバック（ウソ通知）
 
-![事故パターンbイベント送信は成功dbがロールバックウソ通知](./picture/idem_ts_study_022_事故パターンbイベント送信は成功dbがロールバックウソ通知.png)
+![事故パターンbイベント送信は成功dbがロールバックウソ通知](./picture/idem_ts_study_022_accident_pattern_b_event_sent_db_rollback_false_notification.png)
 
 1. イベント送信しちゃった📣
 2. DBのトランザクションが失敗してロールバック💥
@@ -84,7 +84,7 @@ flowchart TD
 
 ### 🗺️図にするとこんな感じ
 
-![図にするとこんな感じ](./picture/idem_ts_study_022_図にするとこんな感じ.png)
+![図にするとこんな感じ](./picture/idem_ts_study_022_diagram_looks_like_this.png)
 
 * API：
 
@@ -136,7 +136,7 @@ Outboxを入れると…
 
 ### 6.1 SQL（orders と outbox）
 
-![61_sqlorders_と_outbox](./picture/idem_ts_study_022_61_sqlorders_と_outbox.png)
+![61_sqlorders_と_outbox](./picture/idem_ts_study_022_61_sql_orders_and_outbox.png)
 
 ```sql
 CREATE TABLE orders (
@@ -327,7 +327,7 @@ at-least-once配送の世界では普通だからね😇 ([event-driven.io][3])
 
 ### ✅受け取り側でやること（最小）
 
-![受け取り側でやること最小](./picture/idem_ts_study_022_受け取り側でやること最小.png)
+![受け取り側でやること最小](./picture/idem_ts_study_022_receiver_side_minimal_tasks.png)
 
 * イベントID（`outbox.id`）を **processedテーブルに保存**
 * `eventId` が **すでに処理済みならスキップ**する
@@ -354,7 +354,7 @@ DBトランザクション中に外部送信し始めると、
 
 ### 落とし穴③：payloadが巨大・個人情報モリモリ
 
-![落とし穴③payloadが巨大個人情報モリモリ](./picture/idem_ts_study_022_落とし穴③payloadが巨大個人情報モリモリ.png)
+![落とし穴③payloadが巨大個人情報モリモリ](./picture/idem_ts_study_022_pitfall3_huge_payload_personal_info.png)
 
 Outboxはログっぽく残るので、
 
@@ -386,7 +386,7 @@ Debeziumには Outbox Event Router の仕組みが用意されてる📮 ([Debez
 
 ### 演習2：Outboxレコードの型定義を作ろう🧱
 
-![演習2outboxレコードの型定義を作ろう](./picture/idem_ts_study_022_演習2outboxレコードの型定義を作ろう.png)
+![演習2outboxレコードの型定義を作ろう](./picture/idem_ts_study_022_exercise2_create_outbox_record_type_definition.png)
 
 ```ts
 export type OutboxStatus = "PENDING" | "PROCESSING" | "PUBLISHED" | "FAILED";
