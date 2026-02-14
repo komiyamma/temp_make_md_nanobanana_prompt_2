@@ -42,6 +42,10 @@
 
 ### ✅(B) 状態ごとに守る不変条件（ここが今回の主役！）
 
+![invariants_cs_study_023_state_switch.png](./picture/invariants_cs_study_023_state_switch.png)
+
+
+
 * 💳 Paidなら「支払い情報が必ずある」
 * 📦 Shippedなら「追跡番号が必ずある」
 * ❌ Cancelledなら「これ以上、支払いも発送もできない」
@@ -52,6 +56,10 @@
 ---
 
 ## 3) ありがち事故：boolフラグ地獄😵‍💫💥
+
+![invariants_cs_study_023_boolean_hell.png](./picture/invariants_cs_study_023_boolean_hell.png)
+
+
 
 状態をちゃんと作らないと、よくこうなる👇
 
@@ -65,6 +73,10 @@
 ---
 
 ## 4) 状態で一番大事な考え方：「許可される操作」📌✨
+
+![invariants_cs_study_023_allowed_ops_filter.png](./picture/invariants_cs_study_023_allowed_ops_filter.png)
+
+
 
 ![State Allowed Operations](./picture/invariants_cs_study_023_central_sphere.png)
 
@@ -110,6 +122,10 @@
 
 ## 5) “状態の不変条件”を言語化するコツ🗣️🛡️
 
+![invariants_cs_study_023_state_invariant_template.png](./picture/invariants_cs_study_023_state_invariant_template.png)
+
+
+
 状態ごと不変条件は、次のテンプレで言語化すると超ラク👇
 
 * 「状態が **X** のとき、**必ずAが成り立つ**」
@@ -138,6 +154,10 @@ stateDiagram-v2
 ---
 
 ## 6) C#での最小実装イメージ（“雰囲気”だけ掴む）🧩✨
+
+![invariants_cs_study_023_one_state_field.png](./picture/invariants_cs_study_023_one_state_field.png)
+
+
 
 この章はまだ「状態遷移表」や「遷移メソッド本格実装」は次（第24〜25章）なので、**最小の形**だけ見せるね🙂
 

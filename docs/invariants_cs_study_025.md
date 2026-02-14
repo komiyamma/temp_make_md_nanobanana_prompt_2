@@ -42,6 +42,10 @@ Cancelled -> (なし)
 
 ## 25.3 遷移時チェックの“3点セット”🛡️✅✅✅
 
+![invariants_cs_study_025_three_step_check.png](./picture/invariants_cs_study_025_three_step_check.png)
+
+
+
 ![Guard Flow](./picture/invariants_cs_study_025_flow_diagram.png)
 
 ![Transition Guard](./picture/invariants_cs_study_025_border_control.png)
@@ -74,6 +78,10 @@ public readonly record struct Result(bool IsSuccess, string? Error)
 ---
 
 ## 25.5 実装：Order と遷移メソッドを作ろう📦🛡️
+
+![invariants_cs_study_025_order_state_impl.png](./picture/invariants_cs_study_025_order_state_impl.png)
+
+
 
 ### ルール（不変条件）を決めるよ✅✨
 
@@ -206,6 +214,10 @@ flowchart TD
 
 ## 25.6 遷移表→コード：禁止遷移を“表現”する✍️📋
 
+![invariants_cs_study_025_transition_logic_code.png](./picture/invariants_cs_study_025_transition_logic_code.png)
+
+
+
 上の実装でも十分だけど、状態が増えてくると
 「そもそも遷移として許される？」をまとめたくなるよね😊
 
@@ -230,6 +242,10 @@ public static class OrderTransitions
 ---
 
 ## 25.7 テスト：禁止遷移を守り切る🧪🛡️
+
+![invariants_cs_study_025_test_assurance.png](./picture/invariants_cs_study_025_test_assurance.png)
+
+
 
 状態遷移は、**テストがあると安心感が爆上がり**するよ💖
 
@@ -290,6 +306,10 @@ public class OrderTests
 
 ## 25.8 AI活用（Copilot / Codex）で爆速にする🤖⚡
 
+![invariants_cs_study_025_ai_error_check.png](./picture/invariants_cs_study_025_ai_error_check.png)
+
+
+
 AIはこの章だと **「漏れ発見」と「テスト大量生成」**が強いよ〜🧠✨
 
 ### ① ガード条件の漏れチェック🤖🔍
@@ -345,6 +365,10 @@ Visual Studio 2026 は UI/体験も更新が入ってるし、AI系の流れも�
 ---
 
 ## 25.11 おまけ：C# 14 の「拡張メンバー」でガードを読みやすく（任意）✨🧙‍♀️
+
+![invariants_cs_study_025_extension_guard.png](./picture/invariants_cs_study_025_extension_guard.png)
+
+
 
 C# 14 では **extension members** が追加されて、拡張プロパティとかが書けるよ〜！ ([Microsoft Learn][5])
 （「読みやすくする小技」なので、まずは普通の実装ができればOK🥰）

@@ -19,11 +19,19 @@
 
 ### 事故パターンA：Totalを手で持つ（そして忘れる）😱
 
+![invariants_cs_study_020_manual_vs_auto.png](./picture/invariants_cs_study_020_manual_vs_auto.png)
+
+
+
 * `Items` から1行削除したのに `Total` を更新し忘れる
 * 10%割引を2回適用してしまう
 * 税の丸めの順がバラバラで、画面とDBとレシートが合わない🌀
 
 ### 事故パターンB：「どこでもItemsがいじれる」🤯
+
+![invariants_cs_study_020_open_access_danger.png](./picture/invariants_cs_study_020_open_access_danger.png)
+
+
 
 * `public List<CartItem> Items { get; set; }` とかで、外から自由に改変できる
 * すると…**Totalを守る入口が消える**😇💣
@@ -38,6 +46,10 @@
 ここが超重要👇🥰
 
 ### ✅ 合計は「結果」
+
+![invariants_cs_study_020_cause_effect_flow.png](./picture/invariants_cs_study_020_cause_effect_flow.png)
+
+
 
 ### ✅ 明細は「原因」
 
@@ -60,6 +72,10 @@ flowchart TD
 
 ### パターン①：合計は“派生”として毎回計算（おすすめ）🌟
 
+![invariants_cs_study_020_derived_calculation.png](./picture/invariants_cs_study_020_derived_calculation.png)
+
+
+
 * `Total` は `get` で計算して返すだけ
 * **保存しない**（＝ズレる余地がない）👏
 
@@ -78,6 +94,10 @@ flowchart TD
 金融系や通貨に `decimal` が適してるのは .NET の公式ドキュメントでも明言されてるよ📚✨ ([Microsoft Learn][1])
 
 ### この章のルール（例：JPY）🇯🇵
+
+![invariants_cs_study_020_rounding_order.png](./picture/invariants_cs_study_020_rounding_order.png)
+
+
 
 * 小計 = 明細合計
 * 割引 = 小計×率 → **円単位で丸め**
@@ -205,6 +225,10 @@ public sealed class TaxPolicy
 }
 
 public sealed class Cart
+
+![invariants_cs_study_020_cart_fortress.png](./picture/invariants_cs_study_020_cart_fortress.png)
+
+
 {
     private readonly List<CartItem> _items = new();
     private readonly List<IDiscountPolicy> _discounts = new();
@@ -334,6 +358,10 @@ public class CartTests
 ## 8. 演習（ここが本番💪🎀）
 
 ### 演習A：ズレる実装をわざと作って、直す😈➡️😇
+
+![invariants_cs_study_020_snapshot_sync_error.png](./picture/invariants_cs_study_020_snapshot_sync_error.png)
+
+
 
 1. `Cart` に `public Money TotalSnapshot { get; set; }` を足す
 2. 更新のどこかで **Snapshot更新をわざと忘れる**

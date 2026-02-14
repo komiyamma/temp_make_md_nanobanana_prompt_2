@@ -15,6 +15,10 @@
 
 ## 1) 状態遷移表ってなに？なんで嬉しいの？🧠💡
 
+![invariants_cs_study_024_state_transition_table_concept.png](./picture/invariants_cs_study_024_state_transition_table_concept.png)
+
+
+
 状態遷移表はね、
 
 > 「いまの状態」×「起きたイベント」＝「次の状態（or 禁止）」
@@ -29,6 +33,10 @@
 ---
 
 ## 2) 作る前に決めるのはこの4つだけ✍️✨
+
+![invariants_cs_study_024_four_elements.png](./picture/invariants_cs_study_024_four_elements.png)
+
+
 
 状態遷移表は、基本この4点を埋めるだけで作れるよ😊
 
@@ -68,6 +76,10 @@
 
 ## 4) 状態ごとの“不変条件”を1行で書こう🛡️✨
 
+![invariants_cs_study_024_state_invariant_oneliner.png](./picture/invariants_cs_study_024_state_invariant_oneliner.png)
+
+
+
 表を作る前に、各状態の「絶対守る約束（不変条件）」をサッとメモするのがコツだよ💖
 
 * `Draft`：明細いじってOK、支払い情報はまだ不要🙂
@@ -90,6 +102,10 @@
   を書いていくよ！
 
 ### 状態遷移表（例：注文）📋✨
+
+![invariants_cs_study_024_refund_vs_cancel.png](./picture/invariants_cs_study_024_refund_vs_cancel.png)
+
+
 
 | 現在の状態 \ イベント | PlaceOrder | Pay           | Ship         | Deliver     | Cancel            |
 | ------------ | ---------- | ------------- | ------------ | ----------- | ----------------- |
@@ -126,6 +142,10 @@ graph TD
 
 ### パターンA：イベントを分ける（いちばん安全）🛡️
 
+![invariants_cs_study_024_admin_force_cancel.png](./picture/invariants_cs_study_024_admin_force_cancel.png)
+
+
+
 * `Cancel`（通常）
 * `ForceCancelByAdmin`（管理者専用）
 
@@ -140,6 +160,10 @@ graph TD
 ---
 
 ## 7) 表ができたら、この5つで“抜け”チェック✅🔍
+
+![invariants_cs_study_024_missing_link_check.png](./picture/invariants_cs_study_024_missing_link_check.png)
+
+
 
 表って作った瞬間は気持ちいいんだけど、抜けが残りやすいの…！なのでチェック✨
 
