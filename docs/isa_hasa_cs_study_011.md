@@ -29,6 +29,10 @@ State パターンは「**オブジェクトの状態によって振る舞いが
 
 ## まずは “if/switch 地獄” の例😇🔥（わざとツラくする）
 
+![Switch Hell Maze](./picture/isa_hasa_cs_study_011_switch_hell_maze.png)
+
+
+
 「enum + switch」で始めると、最初はラク。…でも状態が増えると急にキツい😵‍💫
 
 ```csharp
@@ -156,6 +160,10 @@ public interface IOrderState
 
 ### 2) Order（本体）は “委譲するだけ” に寄せる🧩✨
 
+![Order Delegation Manager](./picture/isa_hasa_cs_study_011_order_delegation.png)
+
+
+
 ```csharp
 public sealed class Order
 {
@@ -211,6 +219,10 @@ classDiagram
 ---
 
 ## 3) 状態クラスを作る🚦✨（禁止遷移もここ！）
+
+![State Guard Clause](./picture/isa_hasa_cs_study_011_guard_clause.png)
+
+
 
 ### Draft 📝
 
@@ -328,6 +340,10 @@ Console.WriteLine(order.StatusName); // Delivered
 
 ## ちょい実践：状態で “副作用” が起きる例📣💳（超ミニ）
 
+![State with Side Effects](./picture/isa_hasa_cs_study_011_state_side_effects.png)
+
+
+
 「Confirmed になったら通知したい」みたいなやつね🙂
 これは **状態が依存する部品**（通知）を注入して使う形がキレイ🧩🎁
 （第8〜10章のDI/Strategyの流れがここで効くよ〜！）
@@ -356,6 +372,10 @@ public sealed class ConfirmedState : IOrderState
 ---
 
 ## テストがラクになるご褒美🍬✅（ミニ体験）
+
+![State Testing Checklist](./picture/isa_hasa_cs_study_011_state_testing.png)
+
+
 
 Stateパターンだと「この状態でこの操作したらこうなる」が **素直にテストできる**よ🙂✨
 
@@ -417,6 +437,10 @@ public class OrderStateTests
 ---
 
 ## おまけ：C# 14 で “読みやすさ” をちょい足し🍬✨
+
+![Extension Sticky Note](./picture/isa_hasa_cs_study_011_extension_sticky.png)
+
+
 
 C# 14 は .NET 10 と一緒に来ていて、**extension members（拡張メンバー）**みたいな新機能も入ってるよ（拡張プロパティも書ける！） ([Microsoft Learn][2])
 これを使うと、状態チェックを自然な名前で書けたりする🙂

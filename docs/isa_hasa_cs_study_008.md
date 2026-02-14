@@ -28,6 +28,10 @@ DIにもいろいろあるけど、最初はこれだけでOK🙆‍♀️
 
 ### ✅ コンストラクタ注入（Constructor Injection）って？
 
+![Constructor Slots](./picture/isa_hasa_cs_study_008_constructor_slots.png)
+
+
+
 **「必要な部品を、コンストラクタ引数で受け取る」** 方式だよ〜😊
 
 * “このクラスはこれがないと動けない！”が一目で分かる👀
@@ -37,6 +41,10 @@ DIにもいろいろあるけど、最初はこれだけでOK🙆‍♀️
 ---
 
 ## 3) 何を注入するの？判断のコツ🌪️
+
+![Inject vs Static Separation](./picture/isa_hasa_cs_study_008_inject_vs_static.png)
+
+
 
 注入すると効果が出やすいのは、だいたいこのへん👇
 
@@ -65,6 +73,10 @@ DIにもいろいろあるけど、最初はこれだけでOK🙆‍♀️
 ---
 
 ### 4-1) まずは“DIなし”のダメ例（つらい例）😇
+
+![Glued Dependencies](./picture/isa_hasa_cs_study_008_glued_dependencies.png)
+
+
 
 ```csharp
 using System;
@@ -97,6 +109,10 @@ public class LuckyMessageService
 ### 4-2) 依存を“外から渡せる形”にする（DI化）🎁✨
 
 #### (A) 依存のインターフェースを作る🧩
+
+![Interface Blueprints](./picture/isa_hasa_cs_study_008_interface_blueprints.png)
+
+
 
 ```csharp
 using System;
@@ -141,6 +157,10 @@ public sealed class RealTextFile : ITextFile
 ```
 
 #### (C) サービスは **コンストラクタ注入** で受け取る🎁
+
+![Injection Funnel](./picture/isa_hasa_cs_study_008_injection_funnel.png)
+
+
 
 ```csharp
 using System;
@@ -214,6 +234,10 @@ public static class Program
 
 ## 5) テストが一気にラクになる✅⚡（ミニ体験）
 
+![Test Set Control](./picture/isa_hasa_cs_study_008_test_set.png)
+
+
+
 ### (A) テスト用のFakeを作る🧸
 
 ```csharp
@@ -286,6 +310,10 @@ public static class MiniTest
 ---
 
 ## 6) .NETの“最新寄り”小ネタ：TimeProvider って選択肢もあるよ⌚✨
+
+![TimeProvider Gadget](./picture/isa_hasa_cs_study_008_time_provider.png)
+
+
 
 最近の.NETでは、時間を抽象化する標準クラスとして **`TimeProvider`** が用意されてるよ🕰️
 テスト可能＆予測可能にするための仕組みとして説明されてる📚 ([Microsoft Learn][3])

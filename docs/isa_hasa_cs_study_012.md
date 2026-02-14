@@ -26,6 +26,10 @@
 
 ### Step0：まずは素のサービス（本体）🧱
 
+![Core Service Envelope](./picture/isa_hasa_cs_study_012_core_envelope.png)
+
+
+
 ```csharp
 public interface INotifier
 {
@@ -51,6 +55,10 @@ public sealed class EmailNotifier : INotifier
 ---
 
 ## 3) Decoratorの基本形：同じIFを実装して“中身”を持つ🧩
+
+![Decorator Structure](./picture/isa_hasa_cs_study_012_decorator_structure.png)
+
+
 
 Decoratorはだいたいこの形👇
 
@@ -78,6 +86,10 @@ classDiagram
 ---
 
 ## 4) ログDecorator：触らずにログだけ足す📝✨
+
+![Logging Layer](./picture/isa_hasa_cs_study_012_logging_layer.png)
+
+
 
 ```csharp
 public sealed class LoggingNotifierDecorator : INotifier
@@ -112,6 +124,10 @@ public sealed class LoggingNotifierDecorator : INotifier
 ---
 
 ## 5) リトライDecorator：失敗したらもう一回！🔁🔥
+
+![Retry Loop Robot](./picture/isa_hasa_cs_study_012_retry_loop.png)
+
+
 
 ここは超大事⚠️
 **何でもリトライして良いわけじゃない**よ（後でまとめるね）🙂
@@ -162,6 +178,10 @@ public sealed class RetryNotifierDecorator : INotifier
 
 ## 6) 2段重ね：ログ → リトライ（または逆）🧁🧁
 
+![Layering Order Camera](./picture/isa_hasa_cs_study_012_ordering_camera.png)
+
+
+
 「順番」めっちゃ大事！🎯
 どっちが正しいかは目的によるよ🙂
 
@@ -193,6 +213,10 @@ await notifier.NotifyAsync("user-1", "Hello!", CancellationToken.None);
 ---
 
 ## 7) よくある使いどころ（現場っぽいやつ）🏢✨
+
+![Cross-Cutting Cake](./picture/isa_hasa_cs_study_012_cross_cutting_cake.png)
+
+
 
 Decoratorが刺さるのは、こういう**横断関心**（どこでも欲しいやつ）！
 
@@ -232,6 +256,10 @@ Decoratorは「newの順番」が命なので、**組み立て場所を1か所**
 （さっきの `new` 連結）
 
 ### B) Scrutorを使う（定番）🧩
+
+![Scrutor Wrapping Machine](./picture/isa_hasa_cs_study_012_scrutor_machine.png)
+
+
 
 Scrutorは `IServiceCollection` に `Decorate` を足してくれるよ🧁 ([GitHub][2])
 
