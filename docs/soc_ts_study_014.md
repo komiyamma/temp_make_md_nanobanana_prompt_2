@@ -172,6 +172,10 @@ describe("RegisterUser", () => {
 
 ## 4. 実践②：依存が増えてきた時の “束ね方” 🧺✨（引数地獄を防ぐ）
 
+![soc_ts_study_014_deps_toolbox](./picture/soc_ts_study_014_deps_toolbox.png)
+
+
+
 ユースケースが成長するとこうなる😇👇
 
 * Mailer
@@ -212,6 +216,10 @@ export class RegisterUser {
 
 ### 5-1. ユースケース専用の Factory を作る🧁
 
+![soc_ts_study_014_factory_arm](./picture/soc_ts_study_014_factory_arm.png)
+
+
+
 ```ts
 // src/composition/registerUserFactory.ts
 import { RegisterUser } from "../app/usecases/RegisterUser";
@@ -239,6 +247,10 @@ await registerUser.execute({ email: "test@example.com" });
 ---
 
 ## 6. 実践④：Composition Rootを1箇所に集める（迷子対策の最終兵器）🧭🏗️
+
+![soc_ts_study_014_control_room](./picture/soc_ts_study_014_control_room.png)
+
+
 
 規模が上がると「Factoryが増えすぎる」問題が出るよね😵‍💫
 そこで **Composition Root（配線専用フォルダ）** を作る！
@@ -286,6 +298,10 @@ export function createApp(deps: AppDeps) {
 ---
 
 ## 8. DIやりすぎのサイン😵‍💫🚨（これ出たら減量タイム）
+
+![soc_ts_study_014_blast_radius_containment](./picture/soc_ts_study_014_blast_radius_containment.png)
+
+
 
 次のどれかが増えてきたら要注意だよ〜💦
 

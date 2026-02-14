@@ -17,6 +17,10 @@
 
 ## 2) 「依存」ってなに？どの向きがヤバいの？🧠💥
 
+![soc_ts_study_012_bad_dependency](./picture/soc_ts_study_012_bad_dependency.png)
+
+
+
 たとえばドメインの中でこんなのを書いちゃうと…👇
 
 ```ts
@@ -111,6 +115,10 @@ graph TD
 
 ### Step 1：ドメインは“純粋なルール”だけ🧼✨
 
+![soc_ts_study_012_domain_purity_shield](./picture/soc_ts_study_012_domain_purity_shield.png)
+
+
+
 ```ts
 // src/domain/registration.ts
 export type Registration = Readonly<{
@@ -137,6 +145,10 @@ export function validateUserName(userName: string): string[] {
 ---
 
 ### Step 2：ドメイン側に「欲しい機能の口（Port）」を置く🔌✨
+
+![soc_ts_study_012_port_adapter_plug](./picture/soc_ts_study_012_port_adapter_plug.png)
+
+
 
 ```ts
 // src/domain/ports.ts
@@ -239,6 +251,10 @@ export function createHttpRegistrationRepo(baseUrl: string): RegistrationReposit
 
 ## 8) 最後に“組み立てる場所”（Composition）で配線する🔌🧩
 
+![soc_ts_study_012_adapter_switch](./picture/soc_ts_study_012_adapter_switch.png)
+
+
+
 ```ts
 // src/ui/main.ts
 import { registerForEvent } from "../application/registerForEvent";
@@ -266,6 +282,10 @@ console.log(result.ok ? "申込完了🎉" : result.errors.join("\n"));
 ---
 
 ## 9) “SoC×DIP”が効いてるチェックリスト✅💖
+
+![soc_ts_study_012_dependency_checklist](./picture/soc_ts_study_012_dependency_checklist.png)
+
+
 
 ### 内側（ドメイン/アプリ層）に入ってたらアウトな単語😇💥
 
