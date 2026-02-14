@@ -29,6 +29,8 @@ POSTはよく「新規作成」に使われます🆕
 
 ## 8.2 二重注文が起きる“王道タイムライン”⏱️😇
 
+![idem_ts_study_008_timeline_film.png](./picture/idem_ts_study_008_timeline_film.png)
+
 ここ、めちゃ大事です📌
 事故の本体はだいたいこの流れ👇
 
@@ -63,6 +65,8 @@ HTTPクライアント、SDK、プロキシ、リバースプロキシ等が「�
 ---
 
 ## 8.4 ミニ実験：POSTを2回送ると2つ増える🧪🧾🧾
+
+![idem_ts_study_008_photocopier.png](./picture/idem_ts_study_008_photocopier.png)
 
 「ほんとに増えるの？」を、超ミニで体感します🙂✨
 （メモリ保存なので、再起動すると消えるタイプです😇）
@@ -169,6 +173,8 @@ sequenceDiagram
 
 ## 8.5 「じゃあPOSTは使っちゃダメなの？」→ ダメじゃない🙆‍♀️✨
 
+![idem_ts_study_008_fork_road.png](./picture/idem_ts_study_008_fork_road.png)
+
 POSTは便利なので普通に使います🙂
 ただし、**“増える系のPOST”は、壊れない工夫が必要**ってだけです🛡️✨
 
@@ -196,6 +202,8 @@ POSTは便利なので普通に使います🙂
 ---
 
 ## 8.6 事故を防ぐためのミニ判断チェック✅🧠
+
+![idem_ts_study_008_safety_checklist.png](./picture/idem_ts_study_008_safety_checklist.png)
 
 次の質問に「はい」が多いほど、POST増殖対策が必須です⚠️
 
