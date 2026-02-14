@@ -25,6 +25,10 @@
 
 # 23.2 最初に確認：相手が冪等化をサポートしてない？🤝🔍
 
+![Idempotency Headers Examples](./picture/idem_cs_study_023_idempotency_headers.png)
+
+
+
 ここが超重要ポイント💡
 **相手が冪等キー（Idempotency Key）をサポートしてるなら、まずそれを使う**のが最短ルートです🔑✨
 
@@ -65,6 +69,10 @@
 
 # 23.4 「リトライしていい？」の判断はHTTPの性質から🌐🧠
 
+![Method Safety Scale](./picture/idem_cs_study_023_method_safety_scale.png)
+
+
+
 HTTPには「冪等なメソッド」の考え方があります👇
 **PUT/DELETE と “安全なメソッド（GETなど）” は冪等**とされています。 ([IETF Datatracker][6])
 
@@ -77,12 +85,20 @@ HTTPには「冪等なメソッド」の考え方があります👇
 
 # 23.5 3つの守り方セット（実務の鉄板）🥋✨
 
+![Three Defenses](./picture/idem_cs_study_023_three_defenses.png)
+
+
+
 ## 守り①：外部呼び出し前に「一意なキーで台帳を作る」🧾🔒
 
 * キー例：`OrderId` / `PaymentAttemptId`（ビジネス的に“一度きり”の単位）
 * DBの一意制約：`(Provider, AttemptId)` で **重複INSERTを不可能にする**
 
 ## 守り②：タイムアウト時は「失敗」じゃなく「不明」にする😇⏳
+
+![Unknown State Flow](./picture/idem_cs_study_023_unknown_state_flow.png)
+
+
 
 * `Failed` と `Unknown` を分けるの超大事🔥
 * `Unknown` のときは👇
@@ -91,6 +107,10 @@ HTTPには「冪等なメソッド」の考え方があります👇
   * 照会できないなら「保留」にして、後で照合（リコンシリエーション）🧾
 
 ## 守り③：補償（キャンセル/返金）へ“逃げ道”を用意する🧯💸
+
+![Compensation Exit](./picture/idem_cs_study_023_compensation_exit.png)
+
+
 
 相手が冪等じゃない世界では、100%事故ゼロは難しいこともあるので
 **「もし二重になったら戻す」導線**があると強いです✨

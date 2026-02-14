@@ -22,6 +22,10 @@
 
 ## 2) 「壊れる」ってどういうこと？😵‍💫💥
 
+![Broken Results Disaster](./picture/idem_ts_study_001_broken_results.png)
+
+
+
 「壊れる」＝**やった回数ぶんだけ結果が増えたり、ズレたりする**ことだよ〜😇
 
 よくある事故👇（全部あるある…！）
@@ -40,6 +44,10 @@
 ## 3) いちばん速い理解：ミニ例で体感しよ🔁🧠
 
 ### ❌ 連打すると壊れる例（非冪等）
+
+![Add vs Set Logic](./picture/idem_ts_study_001_add_vs_set.png)
+
+
 
 「カウントを1増やす」は、やるたび結果が変わるよね😵‍💫
 
@@ -103,6 +111,10 @@ graph TD
 
 ## 4) ここ超大事：「結果」って“画面の返事”じゃないよ👀🧩
 
+![Server State Focus](./picture/idem_ts_study_001_server_state.png)
+
+
+
 冪等性でいう「結果」は、だいたい **サーバー側の状態（データ）** のことが多いよ📦🗄️
 
 * ✅ 注文テーブルに **注文が1つだけ** できている
@@ -117,6 +129,10 @@ graph TD
 ---
 
 ## 5) 現実のAPIでも超重要：Idempotency-Key🔑✨
+
+![Stripe Idempotency Key](./picture/idem_ts_study_001_stripe_key.png)
+
+
 
 世の中の決済系APIとかは、冪等性が命…💳😇
 たとえばStripeは、**Idempotency-Key** を使って「同じ操作のリトライ」を安全にします🔁🔑
@@ -139,6 +155,10 @@ graph TD
 ---
 
 ## 🤖 AI活用：冪等性が必要な場面を5つ出してもらおう💬✨
+
+![AI Prompt Chat](./picture/idem_ts_study_001_ai_prompt.png)
+
+
 
 AIにこう聞くとサクサク出るよ（コピペOK）👇
 
