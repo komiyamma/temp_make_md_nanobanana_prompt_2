@@ -41,6 +41,10 @@ graph TD
 
 ## 「長いメソッド」がしんどい理由😵‍💫💦
 
+![Long Method to TOC](./picture/refactoring_cs_study_014_toc.png)
+
+
+
 長いと、こうなりがちです👇
 
 * 何をしてるか一度で読めない（スクロール地獄）📜🌀
@@ -53,6 +57,10 @@ graph TD
 ---
 
 ## どこで切る？✂️「ここが境界だよ」サイン7つ👀🚦
+
+![Extract Method Cut Points](./picture/refactoring_cs_study_014_scissors.png)
+
+
 
 ### ① コメントを書きたくなった所💬
 
@@ -90,6 +98,10 @@ graph TD
 
 ### ルール1：切り出したメソッドは「1つの目的」にする🎯
 
+![Single Purpose](./picture/refactoring_cs_study_014_single_purpose.png)
+
+
+
 * **検証だけ**
 * **計算だけ**
 * **文字列作成だけ**
@@ -103,6 +115,10 @@ graph TD
   みたいに、読んだ瞬間イメージできる名前にします✨
 
 ### ルール3：引数が増えすぎたら要注意🧳💦
+
+![Too Many Parameters](./picture/refactoring_cs_study_014_params.png)
+
+
 
 Extract Methodの副作用として、引数がモリモリ増えることがあります😵‍💫
 それは「そもそも責務が混ざってる」サインかも。
@@ -268,6 +284,10 @@ private static void AddValidItemsTotal(List<OrderItem> items, ref decimal subtot
 `ref` が出てくると、読む側が「どこで値が変わるの？」って迷いやすいです🌀💦
 
 ### こっちの方が読みやすい（戻り値で返す）✨
+
+![Return Value Flow](./picture/refactoring_cs_study_014_return_flow.png)
+
+
 
 ```csharp
 var subtotal = CalculateSubtotal(order.Items);

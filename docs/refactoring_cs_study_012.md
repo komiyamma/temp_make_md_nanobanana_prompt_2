@@ -59,6 +59,10 @@ graph BT
 
 ### ルールB：前提条件（引数チェック）は“入り口”で投げる🚪✨
 
+![Argument Guard](./picture/refactoring_cs_study_012_guard.png)
+
+
+
 「おかしい値を中に入れない」ために、メソッドの最初でガードします🛡️
 
 ```csharp
@@ -77,6 +81,10 @@ public void RegisterUser(string email, int age)
 ---
 
 ### ルールC：例外型は“できるだけ具体的に”🎯
+
+![Exception Types](./picture/refactoring_cs_study_012_types.png)
+
+
 
 「何がダメだったか」を型で伝えると、呼び出し側が正しく扱えます😊
 
@@ -117,6 +125,10 @@ Microsoft Learn の例外ベストプラクティスでも、**回復できな�
 ---
 
 ## 4) “握りつぶし”が一番ダメ🙅‍♀️💣
+
+![Swallowing Exceptions](./picture/refactoring_cs_study_012_swallow.png)
+
+
 
 次の2つは事故の香りがプンプンします👃💥
 
@@ -159,6 +171,10 @@ catch (Exception)
 
 ### ルールE：そのまま投げ直すなら `throw;` ✅
 
+![Rethrowing Exceptions](./picture/refactoring_cs_study_012_rethrow.png)
+
+
+
 `throw;` は **元のスタックトレースを保ったまま** 上に投げ直します🗺️✨
 Microsoft Learn でも「適切に再スローする」ことが重要とされています📌 ([Microsoft Learn][6])
 
@@ -176,6 +192,10 @@ catch (IOException)
 
 ### ルールF：情報を足したいなら “ラップ” + InnerException 🥟
 
+![Inner Exception](./picture/refactoring_cs_study_012_inner.png)
+
+
+
 ```csharp
 try
 {
@@ -192,6 +212,10 @@ catch (IOException ex)
 ---
 
 ## 6) finally と using：後片付けの王道👑🧼
+
+![Using Statement](./picture/refactoring_cs_study_012_using.png)
+
+
 
 ### 基本は `using` が最強✨
 
