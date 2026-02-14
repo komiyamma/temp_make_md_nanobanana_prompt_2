@@ -17,6 +17,10 @@
 
 ## 1) まず結論：`string` は「全部入りカゴ」🧺😇
 
+![primitive_basket](./picture/invariants_ts_study_007_primitive_basket.png)
+
+
+
 `string` って便利だけど、こういう “別物” を全部受け入れちゃうんだよね👇
 
 * ユーザーID（例：`u_123`）🪪
@@ -68,6 +72,10 @@ npx tsc --init
 
 ## 4) 事故①：UserId と Email が混ざる💥🪪📧
 
+![email_user_swap](./picture/invariants_ts_study_007_email_user_swap.png)
+
+
+
 ![4) 事故①：UserId と Email が混ざる💥🪪📧](./picture/invariants_ts_study_007_string_mix.png)
 
 `index.ts` を作って貼ってね👇
@@ -91,6 +99,10 @@ sendWelcomeEmail(userId);
 
 ### ✅ 起きること
 
+![type_alias_illusion](./picture/invariants_ts_study_007_type_alias_illusion.png)
+
+
+
 * **コンパイルが通る**（えっ…通るの！？😱）
 * 実行すると、**ユーザーIDにメール送ったことになる**（ログ上だけでも十分ヤバい💥）
 
@@ -99,6 +111,10 @@ sendWelcomeEmail(userId);
 ---
 
 ## 5) 事故②：お金の単位が混ざる💴🪙💥
+
+![tax_calculation_error](./picture/invariants_ts_study_007_tax_calculation_error.png)
+
+
 
 ![5) 事故②：お金の単位が混ざる💴🪙💥](./picture/invariants_ts_study_007_number_units.png)
 
@@ -127,6 +143,10 @@ console.log(pay(1200, 5000)); // ありえない結果になっても型は止�
 ---
 
 ## 6) 事故③：秒とミリ秒が混ざる⏱️💥
+
+![time_unit_mix](./picture/invariants_ts_study_007_time_unit_mix.png)
+
+
 
 地味だけど、実務でめちゃ多い😵‍💫
 

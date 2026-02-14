@@ -90,6 +90,10 @@ function importFromCsv(row: { email: string; age: string; displayName: string })
 
 ### 「直すとき」が地獄😵‍💫🧹
 
+![bug_hunt_loop](./picture/invariants_ts_study_003_bug_hunt_loop.png)
+
+
+
 * 仕様変更：「年齢は 13歳以上」になった！
   → どこに age チェックがあるか探す
   → 直し忘れが出る
@@ -98,6 +102,10 @@ function importFromCsv(row: { email: string; age: string; displayName: string })
 ---
 
 ## 5) さらに重要：TypeScriptの型だけでは、入口は守れない🛡️❓
+
+![vanishing_types](./picture/invariants_ts_study_003_vanishing_types.png)
+
+
 
 ここ、超だいじ🙂✨
 TypeScriptは **開発中（コンパイル時）** に助けてくれるけど、
@@ -118,6 +126,10 @@ TypeScriptは **開発中（コンパイル時）** に助けてくれるけど�
 
 ### ✅ 「境界で検証して変換」→「中は信じる」🙂🏰
 
+![trust_zone](./picture/invariants_ts_study_003_trust_zone.png)
+
+
+
 * 境界（入口）で
   unknown / string みたいな “信用できない値” を受け取る🕵️‍♀️
 * そこでまとめて検証する🧪
@@ -129,6 +141,10 @@ TypeScriptは **開発中（コンパイル時）** に助けてくれるけど�
 ---
 
 ## 7) 改善例：入口に “検問所” を作る🚓🚪✨
+
+![checkpoint_pass](./picture/invariants_ts_study_003_checkpoint_pass.png)
+
+
 
 ポイントは **「ドメインの関数は、検証済みだけ受け取る」** だよ🙂
 
@@ -227,6 +243,10 @@ flowchart TD
 ---
 
 ## 10) AI活用テンプレ（この章ver）🤖💡✨
+
+![ai_helper](./picture/invariants_ts_study_003_ai_helper.png)
+
+
 
 そのままコピペで使えるよ〜😆💕
 
