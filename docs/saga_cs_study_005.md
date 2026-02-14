@@ -16,6 +16,9 @@ Sagaパターンには、主にこの2つの進め方があるよ〜ってこと
 
 ## 🧑‍✈️ Orchestration：レストランの店長方式
 
+![Restaurant Analogy.](./picture/saga_cs_study_005_restaurant_analogy.png)
+
+
 * 店長（オーケストレーター）が「注文入ったよ！調理お願い！」→「会計お願い！」→「配達お願い！」って順番に指示📣
 * 失敗したら「じゃあ返金ね」「在庫戻してね」って補償も店長が決める🔁
 
@@ -72,6 +75,9 @@ Temporalの解説でも、**Choreographyは疎結合だけど追いにくく、O
 ---
 
 # 4) ここが超重要：Command と Event の違いを混ぜない🎯📨
+
+![Command Vs Event.](./picture/saga_cs_study_005_command_vs_event.png)
+
 
 * **Command（コマンド）**：お願い・指示（未来）
   例：`ReserveInventory`（在庫確保して！）
@@ -258,10 +264,16 @@ NServiceBusでも「イベントにデータ載せすぎ注意」って方向性
 
 ## 落とし穴②：Choreographyが“イベントスパゲッティ”になる🍝
 
+![Spaghetti Choreo.](./picture/saga_cs_study_005_spaghetti_choreo.png)
+
+
 イベントが増えるほど「どれがどれに繋がってるの…？」ってなりやすい😵‍💫
 → ルール：**イベント名は“過去形の事実”**に寄せる、図で管理する🗺️
 
 ## 落とし穴③：Orchestrationの司令塔が“神クラス”化する👑💥
+
+![God Class.](./picture/saga_cs_study_005_god_class.png)
+
 
 司令塔が何でも知ってて巨大になると、変更が怖くなる😇
 → ルール：**長いSagaは分割**（サブSaga化・境界を切る）🧩
@@ -269,6 +281,9 @@ NServiceBusでも「イベントにデータ載せすぎ注意」って方向性
 ---
 
 # 10) どっちを選ぶ？初心者向けの“迷わない判断軸”🧭💡
+
+![Decision Balance.](./picture/saga_cs_study_005_decision_balance.png)
+
 
 ## まず結論（初心者が事故りにくい順）🥇
 

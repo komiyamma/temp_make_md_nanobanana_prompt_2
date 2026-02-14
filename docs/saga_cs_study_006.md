@@ -52,6 +52,9 @@
 
 ## A. フローの複雑さ（ステップ数・分岐）🧩🔀
 
+![Complexity Scale.](./picture/saga_cs_study_006_complexity_scale.png)
+
+
 * ✅ **ステップが少ない（2〜3サービス）**／分岐ほぼ無し → **Choreography 寄り**💃
 * ✅ **ステップが多い（4サービス以上）**／分岐・条件が増えそう → **Orchestration 寄り**🧑‍✈️
 
@@ -70,6 +73,9 @@
 
 ## C. 見える化・追跡のしやすさ（運用・障害対応）🔎🧾
 
+![Traceability Viz.](./picture/saga_cs_study_006_traceability_viz.png)
+
+
 * ✅ 「とにかく運用で追えることが最優先！」 → **Orchestration** が楽になりがち😊
 
   * 司令塔が状態を握るので「今どこ？」が作りやすい
@@ -81,6 +87,9 @@
 
 ## D. テストのやりやすさ🧪😇
 
+![Testing Pain.](./picture/saga_cs_study_006_testing_pain.png)
+
+
 * ✅ **統合テストを早く回したい**（初心者ほど大事！） → **Orchestration 寄り**
 * ✅ 「全サービス立ち上げ前提でもOK」 → Choreography でも可
 
@@ -89,6 +98,9 @@
 ---
 
 ## E. 循環依存（ループ）を避けたい？🔁⚠️
+
+![Circular Risk.](./picture/saga_cs_study_006_circular_risk.png)
+
 
 * ✅ 「イベントが回り始めて止まらないの怖い…」 → **Orchestration**
 * ✅ 「ルールを強く決めて循環を避ける運用ができる」 → Choreography でもOK
@@ -107,6 +119,9 @@
 ---
 
 ### 方式選択の意思決定フロー 🧭✅
+
+![Decision Tree.](./picture/saga_cs_study_006_decision_tree.png)
+
 ```mermaid
 flowchart TD
     Start([開始]) --> Q1{分岐が多い /<br/>ステップが増えそう?}
