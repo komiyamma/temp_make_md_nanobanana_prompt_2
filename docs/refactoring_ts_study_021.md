@@ -37,6 +37,10 @@ graph TD
 
 ### まず最初に覚える合言葉🧠✨
 
+![Single Responsibility](./picture/refactoring_ts_study_021_single_responsibility.png)
+
+
+
 * **1関数 = 1つの仕事**が理想💼🍀
 * 「この塊、コメント付けたくなる…」は **切り出しチャンス**📝➡️✂️
 * 「ここだけ再利用したい」「ここだけテストしたい」も **切り出しチャンス**🧪💞
@@ -46,6 +50,10 @@ graph TD
 ## 1) 「切り出す場所」の見つけ方🔍👀
 
 ### ✅ よくある“切り出しサイン”👃✨
+
+![Long Method Scroll](./picture/refactoring_ts_study_021_long_scroll.png)
+
+
 
 * 同じ関数の中に、**やってることが3種類以上**ある（検証/計算/整形/保存…みたいに）🍱
 * 途中から **話題が変わる**（例：金額計算してたのに、急に表示用文字列を作り始める）🌀
@@ -57,6 +65,10 @@ graph TD
 
 ## 2) 安全に進める“最短ループ”🛟✅
 
+![Safe Extraction Loop](./picture/refactoring_ts_study_021_extract_loop.png)
+
+
+
 分割は「動作を変えない」改善だから、毎回これで守るよ🧷✨
 
 1. 変更前に **型チェック & テスト & 実行** ✅🧷🧪
@@ -67,6 +79,10 @@ graph TD
 ---
 
 ## 3) VS Codeで Extract Function を使う💡✂️
+
+![VS Code Extract Action](./picture/refactoring_ts_study_021_vscode_extract.png)
+
+
 
 やり方はシンプル🎀
 
@@ -164,11 +180,19 @@ export function checkout(input: CheckoutInput): CheckoutResult {
 ```
 
 この関数、やってることが **7種類** もあるよね…🍱💦
+
+![Commander Pattern](./picture/refactoring_ts_study_021_commander_pattern.png)
+
+
 だから「目的ごと」に切り出して、`checkout()` を“司令塔”にしよう👑✨
 
 ---
 
 ### After（Extract Functionで分割✨）
+
+![Separation of Concerns](./picture/refactoring_ts_study_021_separation_bins.png)
+
+
 
 ポイントは「①検証」「②計算」「③表示」を分けること🎯🌸
 
@@ -272,6 +296,10 @@ function buildSummaryText(values: Omit<CheckoutResult, "summaryText">): string {
 ---
 
 ## 5) “いい切り出し”のコツ🏷️✨
+
+![Function Prefixes](./picture/refactoring_ts_study_021_naming_prefixes.png)
+
+
 
 ### ✅ 関数名は「やってること」をそのまま書く✍️💕
 
