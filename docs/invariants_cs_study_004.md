@@ -13,6 +13,10 @@
 
 ## 1) ガード節ってなに？🤔🛡️
 
+![invariants_cs_study_004_guard_at_gate](./picture/invariants_cs_study_004_guard_at_gate.png)
+
+
+
 **ガード節 =「条件がダメなら、最初に弾いて終わる」書き方**だよ🙂
 やることは超シンプル👇
 
@@ -25,6 +29,10 @@
 ---
 
 ## 2) なぜ“入口”で守るの？🚪🧱
+
+![invariants_cs_study_004_clean_room](./picture/invariants_cs_study_004_clean_room.png)
+
+
 
 入口で守ると、良いことがいっぱいあるよ😊💕
 
@@ -104,6 +112,10 @@ public async Task RegisterAsync(string email, string userName, int planId)
 
 ## 4) 良い例：ガード節で“入口で弾く”🌟🛡️
 
+![invariants_cs_study_004_vertical_flow](./picture/invariants_cs_study_004_vertical_flow.png)
+
+
+
 同じ処理を、ガード節で整理するとこう👇
 
 ```csharp
@@ -143,6 +155,10 @@ flowchart TD
 
 ## 5) ガード節の“よくある型”3つ🧩✨
 
+![invariants_cs_study_004_guard_types](./picture/invariants_cs_study_004_guard_types.png)
+
+
+
 ## ① null/空文字チェック🧼
 
 * `ArgumentNullException.ThrowIfNull(obj)`：nullだけ弾く🚫
@@ -166,6 +182,10 @@ flowchart TD
 
 ## 6) チェックの並べ方のコツ🍰✨（読みやすさ最優先！）
 
+![invariants_cs_study_004_check_funnel](./picture/invariants_cs_study_004_check_funnel.png)
+
+
+
 おすすめはこの順番だよ🙂👇
 
 1. **null / 空**（一番ありがち＆先に落とすと安全）🚫
@@ -187,6 +207,10 @@ graph TD
 ---
 
 ## 7) “入口を1か所に寄せる”リファクタ🧹🛠️
+
+![invariants_cs_study_004_gathering_checks](./picture/invariants_cs_study_004_gathering_checks.png)
+
+
 
 ## よくある散らばりパターン😇
 
@@ -263,6 +287,10 @@ public async Task ChangePlanAsync(int userId, int newPlanId, string reason)
 ---
 
 ## 9) 演習②：メッセージを「人に優しく」する💬🎀
+
+![invariants_cs_study_004_friendly_error](./picture/invariants_cs_study_004_friendly_error.png)
+
+
 
 ガード節は「弾く」だけじゃなくて、**メッセージ**が大事🙂
 

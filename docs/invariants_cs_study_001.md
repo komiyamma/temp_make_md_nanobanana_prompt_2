@@ -10,6 +10,10 @@
 
 ## 1) 不変条件ってなに？🌼
 
+![invariants_cs_study_001_mindmap](./picture/invariants_cs_study_001_mindmap.png)
+
+
+
 ![Intro Invariants](./picture/invariants_cs_study_001_invariants.png)
 
 
@@ -47,6 +51,10 @@ mindmap
 
 ## 2) 不変条件が壊れると何が起きる？💥😵‍💫
 
+![invariants_cs_study_001_broken_state](./picture/invariants_cs_study_001_broken_state.png)
+
+
+
 不変条件が壊れると、バグってだいたいこうなるよ👇
 
 ### 事故パターンA：値が変（ゴミ値）🗑️
@@ -77,6 +85,10 @@ graph TD
 ---
 
 ## 3) “チェックする”と“守る”は別物だよ🛡️🚪
+
+![invariants_cs_study_001_boundary_flow](./picture/invariants_cs_study_001_boundary_flow.png)
+
+
 
 ![Check vs Protect](./picture/invariants_cs_study_001_comparative_left.png)
 
@@ -115,6 +127,10 @@ flowchart LR
 
 ### よくある「壊れる」例😇
 
+![invariants_cs_study_001_email_crash](./picture/invariants_cs_study_001_email_crash.png)
+
+
+
 メールアドレスが空でも通ってしまうと…
 
 * 登録は成功したように見える✅
@@ -122,6 +138,10 @@ flowchart LR
 * さらに「誰のアカウントか追えない」みたいな二次被害も…🌀😵‍💫
 
 ### “境界”で守る（入口で弾く）🚪🛡️
+
+![invariants_cs_study_001_guard_logic](./picture/invariants_cs_study_001_guard_logic.png)
+
+
 
 「フォーム入力」みたいな外部入力は、まず入口でチェックするのが基本✨
 
@@ -151,6 +171,10 @@ public readonly record struct Result(bool Success, string? Error)
 ---
 
 ## 5) 演習：過去バグを「不変条件の破れ」に言い換えよう📝💗
+
+![invariants_cs_study_001_rephrasing_exercise](./picture/invariants_cs_study_001_rephrasing_exercise.png)
+
+
 
 ### ステップ1：過去バグを1個思い出す🧠💭
 
@@ -186,6 +210,10 @@ public readonly record struct Result(bool Success, string? Error)
 ---
 
 ## 6) AI活用：バグ文面を「不変条件で言い換え」させよう🤖✨
+
+![invariants_cs_study_001_ai_translation](./picture/invariants_cs_study_001_ai_translation.png)
+
+
 
 AIには、**“翻訳係”**をやらせるのがめちゃ便利だよ😊💕
 

@@ -12,6 +12,10 @@
 
 ## 1) そもそも「壊れた状態」って？🤔🧨
 
+![invariants_cs_study_002_impossible_state](./picture/invariants_cs_study_002_impossible_state.png)
+
+
+
 ざっくり言うと…
 
 * **本来ありえないのに、データとして存在できちゃう状態**😱
@@ -28,6 +32,10 @@
 ---
 
 ## 2) 壊れ方の“よくある型”カタログ📚✨（まずはここから！）
+
+![invariants_cs_study_002_pattern_icons](./picture/invariants_cs_study_002_pattern_icons.png)
+
+
 
 「壊れた状態」を探すときは、まずこのカテゴリを順番に当てはめると強いよ💪🛡️
 
@@ -63,6 +71,10 @@ mindmap
 
 ## 3) 壊れた状態を見つける手順（テンプレ）🧩🖊️
 
+![invariants_cs_study_002_detective_steps](./picture/invariants_cs_study_002_detective_steps.png)
+
+
+
 やり方はシンプルでOK！👇
 
 ## ステップ①：対象を決める🎯
@@ -97,6 +109,10 @@ flowchart TD
 
 ## 4) まずはウォーミングアップ🔥（見つけゲーム👀）
 
+![invariants_cs_study_002_spot_error](./picture/invariants_cs_study_002_spot_error.png)
+
+
+
 次のデータ、どこが壊れてる？（複数あり）👇
 
 * 会員：`Name=""`, `Email="  A@B.com "`, `Age=-1`
@@ -114,6 +130,10 @@ flowchart TD
 ---
 
 ## 5) 演習①：会員登録で“壊れた状態”を5個🧑‍💻🎀
+
+![invariants_cs_study_002_user_glitch](./picture/invariants_cs_study_002_user_glitch.png)
+
+
 
 想定項目（例）👇
 
@@ -135,6 +155,10 @@ flowchart TD
 
 ## 6) 演習②：注文で“壊れた状態”を5個🛒📦
 
+![invariants_cs_study_002_order_glitch](./picture/invariants_cs_study_002_order_glitch.png)
+
+
+
 想定項目（例）👇
 
 * `OrderId`, `Items`, `ShippingAddress`, `Status(Draft/Paid/Shipped)`, `Total`
@@ -150,6 +174,10 @@ flowchart TD
 ---
 
 ## 7) 演習③：課金で“壊れた状態”を5個💳💥
+
+![invariants_cs_study_002_payment_glitch](./picture/invariants_cs_study_002_payment_glitch.png)
+
+
 
 想定項目（例）👇
 
