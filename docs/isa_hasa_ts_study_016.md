@@ -8,6 +8,10 @@
 
 ## 16-1. AIに頼むと爆速になる作業ベスト5🚀💡
 
+![ai workflow](./picture/isa_hasa_ts_study_016_ai_workflow.png)
+
+
+
 1. **状況把握（読解）**📖👀
    「このクラス何してる？責務いくつ？どこが危ない？」を一瞬で整理してもらう✨
 
@@ -87,6 +91,10 @@ AIへのお願いは、だいたいこれで勝つ🏆✨
 
 ### B) “段取り”だけ作らせる🪜✅（いきなり実装させない！）
 
+![refactoring steps](./picture/isa_hasa_ts_study_016_refactoring_steps.png)
+
+
+
 ```text
 継承→合成への移行手順を、コミット単位で5ステップに分けて提案して。
 各ステップで「安全確認（テスト/動作確認）」も書いて。
@@ -121,6 +129,10 @@ Adapter(またはMapper)を作って、外部DTO→内部の型に変換する�
 ---
 
 ## 16-5. AIの出力を“人間が勝たせる”レビュー観点👑🔍✨
+
+![ai reviewer](./picture/isa_hasa_ts_study_016_ai_reviewer.png)
+
+
 
 AIが書いたコードは、ここだけ見れば事故が減るよ〜！🚑💕
 

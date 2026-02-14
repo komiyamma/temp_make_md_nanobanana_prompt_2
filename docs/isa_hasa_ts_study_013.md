@@ -14,6 +14,10 @@
 
 ## 1) Adapterってなに？🧠🔌（めっちゃ短く）
 
+![adapter plug metaphor](./picture/isa_hasa_ts_study_013_adapter_plug_metaphor.png)
+
+
+
 Adapter（アダプター）は一言でいうと…
 
 **「外から来たデータ（外部の形）を、アプリの中で使いやすい形に変換する“変換係”」**だよ💡✨
@@ -44,6 +48,10 @@ Adapter（アダプター）は一言でいうと…
 ---
 
 ## 3) “境界”ってどこ？🏠🚪
+
+![boundary guard](./picture/isa_hasa_ts_study_013_boundary_guard.png)
+
+
 
 雑に言うとここ👇
 
@@ -111,6 +119,10 @@ type User = {
 
 ## 6) Adapter本体：DTO → 内部型へ変換する🛠️✨
 
+![data transform](./picture/isa_hasa_ts_study_013_data_transform.png)
+
+
+
 ```ts
 export function adaptUser(dto: ExternalUserDto): User {
   // 最低限の“安全チェック”🛡️（必要に応じて増やしてOK）
@@ -165,6 +177,10 @@ flowchart LR
 ---
 
 ## 8) よくある命名・置き場所のコツ🗂️📝
+
+![folder structure](./picture/isa_hasa_ts_study_013_folder_structure.png)
+
+
 
 * `ExternalUserDto`：外部レスポンス用（DTO）📦
 * `adaptUser` / `UserAdapter`：変換役🔌
