@@ -15,6 +15,9 @@ KISSは、いきなり“すごい設計テク”を覚える話じゃないよ�
 
 ## 1. KISSの超ざっくり定義🍰
 
+![kiss_three_pillars](./picture/kiss_cs_study_001_kiss_three_pillars.png)
+
+
 KISSは **「できるだけシンプルにしよう」** っていう設計の合言葉だよ〜📣
 元ネタの言い回し（Keep It Simple, Stupid / Silly など）や背景も含めて、広く知られてる原則です📖 ([ウィキペディア][1])
 
@@ -27,6 +30,9 @@ KISSは **「できるだけシンプルにしよう」** っていう設計の�
 ---
 
 ## 2. よくある誤解ベスト3🥺💥（まずこれを外す！）
+
+![misunderstanding_short_vs_simple](./picture/kiss_cs_study_001_misunderstanding_short_vs_simple.png)
+
 
 ### 誤解①：「短い＝シンプル」📏❌
 
@@ -73,6 +79,9 @@ C#は最新（C# 14 / .NET 10）で便利機能も増えてるけど、**便利�
 ---
 
 ## 4. “短いけど読みにくい” vs “少し長いけど分かる”💡（C#例）
+
+![code_flow_comparison](./picture/kiss_cs_study_001_code_flow_comparison.png)
+
 
 ### 例：短いけど、つらい😂
 
@@ -125,6 +134,9 @@ return total;
 
 ## 5. “シンプルじゃないコード”の特徴チェックリスト🔍😵
 
+![spaghetti_vs_clean](./picture/kiss_cs_study_001_spaghetti_vs_clean.png)
+
+
 Next, let's confirm the difference between messy code and KISS code visually. 👇
 
 ```mermaid
@@ -170,6 +182,9 @@ flowchart TD
 ---
 
 ## 7. AIを“KISSの相棒”にするミニ技🤖💗（盛りすぎ防止！）
+
+![ai_prompt_card](./picture/kiss_cs_study_001_ai_prompt_card.png)
+
 
 Visual Studio 2026 まわりはCopilot連携も進化してるので、普段から使える前提でOKだよ〜🖱️✨ ([The GitHub Blog][3])
 
