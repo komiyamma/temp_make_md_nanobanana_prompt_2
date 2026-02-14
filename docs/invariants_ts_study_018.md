@@ -29,6 +29,10 @@
 
 ## なぜ分けるの？分けないと何が起きるの？😱🌀
 
+![invariants_ts_study_018_external_change_wave.png](./picture/invariants_ts_study_018_external_change_wave.png)
+
+
+
 ### 事故1：外部仕様の変更が、ドメイン全体に波及🌊💥
 
 * APIが `snake_case` に変わった
@@ -43,12 +47,20 @@
 
 ### 事故3：外に出しちゃいけない情報が漏れる🔓😱
 
+![invariants_ts_study_018_information_leak.png](./picture/invariants_ts_study_018_information_leak.png)
+
+
+
 * ドメイン内部の都合（フラグや内部ID、状態など）をそのままレスポンスに返してしまう
 * 外部とのやり取りは **公開契約** だから、内部変更で壊れやすい…という話がよく出るよ🧾🧱 ([CodeOpinion][2])
 
 ---
 
 ## 重要な考え方：DTOは「外の契約」、ドメインは「内の法」📜🏰✨
+
+![invariants_ts_study_018_conversion_bridge.png](./picture/invariants_ts_study_018_conversion_bridge.png)
+
+
 
 DTO（リクエスト/レスポンス）は **外部向けの契約**。
 ドメインは **内部のルール**。
@@ -109,6 +121,10 @@ flowchart LR
 ---
 
 ## ドメイン設計のコツ🏰💎（中は中らしく！）
+
+![invariants_ts_study_018_blindfolded_domain.png](./picture/invariants_ts_study_018_blindfolded_domain.png)
+
+
 
 ✅ ドメインは「検証済み・意味付きの型」で持つ
 
@@ -261,6 +277,10 @@ export function toResponse(user: User): RegisterUserResponseDto {
 ---
 
 ## ミニ構成（フォルダの分け方）📁✨
+
+![invariants_ts_study_018_folder_structure_defense.png](./picture/invariants_ts_study_018_folder_structure_defense.png)
+
+
 
 * `src/domain/**`：城の中🏰（不変条件）
 * `src/app/**`：ユースケース（登録する、更新する等）🎮

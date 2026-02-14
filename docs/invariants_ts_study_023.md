@@ -15,6 +15,10 @@
 
 ## 1) そもそも「例外だけ」だと何が困るの？😵‍💫💥
 
+![invariants_ts_study_023_exception_vs_result_flow.png](./picture/invariants_ts_study_023_exception_vs_result_flow.png)
+
+
+
 ### 例外（throw）のつらいところ
 
 * **関数の型だけ見ても失敗が分からない**（戻り値に出てこない）😶‍🌫️
@@ -70,12 +74,20 @@ export const match = <T, E, R>(
 
 ### ここが気持ちいいポイント😍✨
 
+![invariants_ts_study_023_result_container.png](./picture/invariants_ts_study_023_result_container.png)
+
+
+
 * `r.ok` で分岐すると、**成功/失敗の中身が型的に確定**する
 * 「失敗ケースを書き忘れる」事故が減る🎯
 
 ---
 
 ## 4) エラーも「型」で固定しよう🧠🔒
+
+![invariants_ts_study_023_error_tag_collection.png](./picture/invariants_ts_study_023_error_tag_collection.png)
+
+
 
 Result を使うなら、エラーも「なんでもError」じゃなくて、**ドメインに沿った型**にしよ🙂✨
 （第22章で “分かりやすいメッセージ” を作ったけど、この章は “失敗の種類を型にする” だよ🫶）
@@ -143,6 +155,10 @@ if (r.ok) {
 
 ## 6) Result を「つなげる」ための道具（map / andThen）🧰🔗
 
+![invariants_ts_study_023_railway_track.png](./picture/invariants_ts_study_023_railway_track.png)
+
+
+
 Result が便利になるのは、**連結できる**からだよ🙂✨
 （neverthrow でも `map` / `andThen` が重要って書かれてるよ）([GitHub][2])
 
@@ -192,6 +208,10 @@ Result の基本は「失敗したらそこで止まる」だけど、フォー�
 ---
 
 ## 8) 非同期（Promise）で Result を使うときの型🕒⚡
+
+![invariants_ts_study_023_promise_bubble_result.png](./picture/invariants_ts_study_023_promise_bubble_result.png)
+
+
 
 非同期は「例外が混ざりやすい」から、Result がさらに効くよ🙂✨
 `neverthrow` だと `ResultAsync` が用意されてるよ〜([GitHub][2])

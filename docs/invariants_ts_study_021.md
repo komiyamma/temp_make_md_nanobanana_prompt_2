@@ -47,6 +47,10 @@
 
 ## 3) ゴールの完成形（一本線🧵✨）
 
+![invariants_ts_study_021_validation_pipeline_detail.png](./picture/invariants_ts_study_021_validation_pipeline_detail.png)
+
+
+
 やりたいのはこの“パイプ”👇
 
 ```text
@@ -140,6 +144,10 @@ Zodは「検証したら型が付く」体験が得意だよね〜🎉 ([Zod][5]
 ---
 
 ## 7) VO（値オブジェクト）で「意味」を守る💎🛡️
+
+![invariants_ts_study_021_shape_vs_meaning_check.png](./picture/invariants_ts_study_021_shape_vs_meaning_check.png)
+
+
 
 ### 7-1) Email VO（正規化＋不変条件）
 
@@ -239,6 +247,10 @@ export class DisplayName {
 
 ## 8) つなぐ関数：DTO → ドメインコマンド🏗️✨
 
+![invariants_ts_study_021_error_collector_basket.png](./picture/invariants_ts_study_021_error_collector_basket.png)
+
+
+
 「VO作成の失敗を集める」ための小道具を作るよ🧰
 
 ```ts
@@ -327,6 +339,10 @@ export function toRegisterUserCommand(dto: RegisterDto): Result<RegisterUserComm
 
 ## 9) 境界の入口：unknown → スキーマ → VO（完成！🎉）
 
+![invariants_ts_study_021_double_gate_system.png](./picture/invariants_ts_study_021_double_gate_system.png)
+
+
+
 Zod の `safeParse` で「例外を投げずに」扱うのが超おすすめだよ🫶
 （Zod自体の基本は公式にも載ってるよ） ([Zod][5])
 
@@ -367,6 +383,10 @@ export function handleRegister(input: unknown) {
 ## 10) よくある事故と対策😱🧯
 
 ### 事故①：スキーマで全部やろうとして、境界がゴチャゴチャ🌀
+
+![invariants_ts_study_021_overloaded_schema_robot.png](./picture/invariants_ts_study_021_overloaded_schema_robot.png)
+
+
 
 ✅ 対策：**スキーマは最低限にして、VOに寄せる**
 「業務ルールの中心はVO」って決めると迷子になりにくいよ🙂💎

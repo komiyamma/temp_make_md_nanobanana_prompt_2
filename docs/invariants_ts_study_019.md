@@ -20,6 +20,10 @@ TypeScriptはコンパイル時の型チェックが得意だけど、**実行�
 
 ## 2) スキーマってなに？超ざっくり言うと📐
 
+![invariants_ts_study_019_schema_gatekeeper.png](./picture/invariants_ts_study_019_schema_gatekeeper.png)
+
+
+
 **スキーマ = データの「入場条件」を書いたルールブック**📘✨
 「この形じゃないと入れません🙅‍♀️」を入口で判定する感じ！
 
@@ -35,6 +39,10 @@ TypeScriptはコンパイル時の型チェックが得意だけど、**実行�
 ---
 
 ## 3) スキーマが守るのは「最低限の安全」🛡️✨（超大事）
+
+![invariants_ts_study_019_schema_capability_map.png](./picture/invariants_ts_study_019_schema_capability_map.png)
+
+
 
 スキーマが得意なのは主にこれ👇
 
@@ -72,6 +80,10 @@ flowchart TD
 ---
 
 ## 4) 2026時点の定番：どのバリデータ使う？🤔✨
+
+![invariants_ts_study_019_validator_trio.png](./picture/invariants_ts_study_019_validator_trio.png)
+
+
 
 代表的なのはこんな感じ👇（用途で選べばOK！）
 
@@ -150,6 +162,10 @@ export function validateSignup(input: unknown) {
 
 ## 6) エラーを「まとめて返す」🫶🧯✨（ここが優しさ！）
 
+![invariants_ts_study_019_error_bundler.png](./picture/invariants_ts_study_019_error_bundler.png)
+
+
+
 ユーザーに返すとき、エラーを1個ずつチマチマ返すより、**まとめて返す**ほうが親切だよね🙂✨
 
 Zodには「エラー整形」も用意されてるよ👇
@@ -189,6 +205,10 @@ export function validateSignupForApi(input: unknown) {
 ---
 
 ## 7) スキーマは「入口の契約書」📜✨（チームでも未来の自分でも助かる）
+
+![invariants_ts_study_019_single_contract_scroll.png](./picture/invariants_ts_study_019_single_contract_scroll.png)
+
+
 
 スキーマをちゃんと持つと、メリットがめちゃ多い👇
 

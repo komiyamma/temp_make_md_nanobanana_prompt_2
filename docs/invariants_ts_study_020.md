@@ -17,6 +17,10 @@
 
 ## 2) まず結論：スキーマが「型の親」になると何が嬉しいの？😍
 
+![invariants_ts_study_020_type_sync_hell_vs_heaven.png](./picture/invariants_ts_study_020_type_sync_hell_vs_heaven.png)
+
+
+
 ### ✅ ありがちな地獄（よくある😇）
 
 * `type Signup = ...` を別に書く
@@ -47,6 +51,10 @@ Zod の基本はこれ👇
 * `.safeParse()`：成功/失敗を **判別できる結果**で返す（try/catch不要） ([Zod][2])
 
 ### 3.1 サンプル：unknown → safeParse → 型がつく🎉
+
+![invariants_ts_study_020_safeparse_result_box.png](./picture/invariants_ts_study_020_safeparse_result_box.png)
+
+
 
 ```ts
 import * as z from "zod";
@@ -89,6 +97,10 @@ Zod公式でも、`safeParse` の結果は分岐しやすい形（discriminated 
 
 ## 4) 「型が付いた」ことを、わざと確かめる遊び😆🧪
 
+![invariants_ts_study_020_angry_editor.png](./picture/invariants_ts_study_020_angry_editor.png)
+
+
+
 VS Codeで次を試してみてね👇（エディタが怒ってくれるのが快感⚡）
 
 ```ts
@@ -106,6 +118,10 @@ if (ok) {
 ---
 
 ## 5) もう1個の例：Valibot だと “InferOutput” が主役😌✨
+
+![invariants_ts_study_020_transform_pipeline.png](./picture/invariants_ts_study_020_transform_pipeline.png)
+
+
 
 Valibot は「スキーマから型推論して、unknown を parse して返す」って思想を **公式がハッキリ書いてる**よ🧠✨ ([valibot.dev][3])
 
@@ -131,6 +147,10 @@ Valibot には `InferInput` と `InferOutput` があって、**変換（transfor
 ---
 
 ## 6) “parse と safeParse” 使い分けのコツ🔁✨
+
+![invariants_ts_study_020_bomb_vs_shield.png](./picture/invariants_ts_study_020_bomb_vs_shield.png)
+
+
 
 ### ✅ 境界（API/フォーム入力など）では…
 
