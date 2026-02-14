@@ -7,6 +7,10 @@
 
 ## 6-0. まず“骨格”ってなに？🦴✨
 
+![skeleton blueprint](./picture/soc_ts_study_006_skeleton_blueprint.png)
+
+
+
 骨格＝「この関心はここに置く」って決めた**最小の住所**だよ📮💖
 SoCの最初の勝ち筋はこれ👇
 
@@ -18,6 +22,10 @@ SoCの最初の勝ち筋はこれ👇
 ---
 
 ## 6-1. まずは3〜4フォルダでOK🍰📁
+
+![four brothers icons](./picture/soc_ts_study_006_four_brothers_icons.png)
+
+
 
 いきなり大規模構成にしないよ〜！初心者の最適解はこれ👇
 
@@ -68,6 +76,10 @@ my-app/
 
 ## 6-3. それぞれの役割を“1行で”言えるようにしよ📝✨
 
+![role flashcards](./picture/soc_ts_study_006_role_flashcards.png)
+
+
+
 迷ったら、この1行に戻ればOKだよ〜！🥰
 
 * `ui`：**見せる・入力を受ける**（表示の都合で変わる）🖥️
@@ -80,6 +92,10 @@ my-app/
 ---
 
 ## 6-4. “公開API（exportのルール）”を決める🚪✨
+
+![public api gate](./picture/soc_ts_study_006_public_api_gate.png)
+
+
 
 ここが超重要〜！🥹💖
 **フォルダの中身を全部見せると、依存がぐちゃぐちゃになりやすい**の。
@@ -130,6 +146,10 @@ graph LR
 
 ## 6-5. 依存の向きを固定する（事故が減る）➡️🛡️
 
+![dependency traffic signs](./picture/soc_ts_study_006_dependency_traffic_signs.png)
+
+
+
 これを守ると一気に楽になるよ〜！🥳
 
 ✅ **依存OKの向き（おすすめ）**
@@ -172,6 +192,10 @@ rules: {
 ---
 
 ## 6-7. ミニ実習①：「置き場」を決めるワーク🧺📝✨
+
+![sorting game board](./picture/soc_ts_study_006_sorting_game_board.png)
+
+
 
 題材はカンタンでOK！たとえば「カフェ注文」☕🍰
 

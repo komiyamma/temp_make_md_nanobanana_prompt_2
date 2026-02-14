@@ -17,6 +17,10 @@
 
 ## 7-2. まず「副作用」ってなに？🌪️🧨
 
+![side effect chaos](./picture/soc_ts_study_007_side_effect_chaos.png)
+
+
+
 ざっくり言うと…
 
 > **返り値以外に、外の世界に影響を与えること** or **外の世界に依存すること** 🌍⚡
@@ -38,6 +42,10 @@
 
 ## 7-3. 「純粋な処理（純粋関数）」ってなに？🫧✨
 
+![pure function crystal](./picture/soc_ts_study_007_pure_function_crystal.png)
+
+
+
 純粋関数は、超シンプルに言うと👇
 
 * **同じ入力 → 必ず同じ出力**（ブレない）🎯
@@ -49,6 +57,10 @@
 ---
 
 ## 7-4. “混ぜると事故る”あるあるコード😇💥
+
+![mixed code tangle](./picture/soc_ts_study_007_mixed_code_tangle.png)
+
+
 
 例えば「学園イベントの参加費を計算して、保存して、ついでに通知する」みたいな処理。
 
@@ -122,6 +134,10 @@ flowchart TD
 ## 7-6. ミニ演習：1つの関数を「計算」と「I/O」に分割しよう✂️🧪✨
 
 ### Step 1：計算だけを抜き出す🧼
+
+![extraction surgery](./picture/soc_ts_study_007_extraction_surgery.png)
+
+
 
 ```ts
 // ✅ 純粋：計算だけ
@@ -238,6 +254,10 @@ describe("calcEntryTotal", () => {
 
 ### I/O側（submitEntry）は“差し替え”でテストできる🧸✨
 
+![mock stunt double](./picture/soc_ts_study_007_mock_stunt_double.png)
+
+
+
 ```ts
 import { describe, it, expect, vi } from "vitest";
 import { submitEntry } from "./app.js";
@@ -273,6 +293,10 @@ describe("submitEntry", () => {
 ## 7-8. 純粋っぽいのに純粋じゃない罠集😈⚠️
 
 ### 罠1：入力をこっそり変更しちゃう（ミューテーション）🧟‍♀️
+
+![mutation trap](./picture/soc_ts_study_007_mutation_trap.png)
+
+
 
 ```ts
 // ❌ 入力をいじるのは純粋じゃないことが多い

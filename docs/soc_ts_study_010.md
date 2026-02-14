@@ -11,6 +11,10 @@
 
 ## 1. まず「string乱用」って何がヤバいの？😇💥
 
+![string abuse accident](./picture/soc_ts_study_010_string_abuse_accident.png)
+
+
+
 ### ありがちな事故（全部コンパイル通っちゃうやつ）🫠
 
 * `userId: string` と `eventId: string` を取り違える
@@ -115,6 +119,10 @@ const eid = "e_98fe76dc";   // 外側
 
 ## 4. 作り方その②：Value Object（小さなクラスで“ルールごと”包む）📦💖
 
+![value object yen](./picture/soc_ts_study_010_value_object_yen.png)
+
+
+
 ブランド型は軽い！最高！✨
 でも「値に振る舞い（計算・表示・比較）が欲しい」ときは Value Object が便利🍰
 
@@ -147,6 +155,10 @@ export class Yen {
 
 ## 5. 作り方その③：Union（状態を “ありえる形” だけに絞る）🧩✨
 
+![union type switch](./picture/soc_ts_study_010_union_type_switch.png)
+
+
+
 「状態」は Union がすごく強い💪
 たとえば申込み結果：
 
@@ -178,6 +190,10 @@ export type IsoDateString = `${number}-${number}-${number}`;
 
 ### 7-1. Result型（超よく使う！）📦
 
+![result type boxes](./picture/soc_ts_study_010_result_type_boxes.png)
+
+
+
 ```ts
 export type Result<T, E> =
   | { ok: true; value: T }
@@ -206,6 +222,10 @@ export function parseEmail(input: string): Result<Email, "invalid_email"> {
 ---
 
 ## 8. `satisfies` で “境界の設定” を壊れにくくする🧷✨
+
+![satisfies check](./picture/soc_ts_study_010_satisfies_check.png)
+
+
 
 `satisfies` は **「この形を満たしてる？」をチェックしつつ、推論結果は潰さない**のが強み💖 ([typescriptlang.org][2])
 
@@ -299,6 +319,10 @@ test("parseEmail: NG", () => {
 ---
 
 ## 12. よくある落とし穴（ここだけ避けて！）🚧😵‍💫
+
+![as cast trap](./picture/soc_ts_study_010_as_cast_trap.png)
+
+
 
 * **ドメイン型を作ったのに、結局 `as` でねじ込む**（最悪の抜け道🥲）
   → `as` は “境界の中だけ” に閉じ込めよう🔒
