@@ -7,6 +7,9 @@
 
 ## 17-1. 開発環境まとめ🪟🛠️
 
+![soc_cs_study_017_tech_stack_icons](./picture/soc_cs_study_017_tech_stack_icons.png)
+
+
 ### まずは“いまの最新版”だけ押さえる🎯
 
 * **.NET（最新LTS）**：**.NET 10.0（最新リリース 10.0.1 / 2025-12-09）** ([Microsoft][1])
@@ -101,6 +104,9 @@ graph TD
 
 ### 17-3-3. Repository 最小形（“保存係”を外に出す）🗄️🚪
 
+![soc_cs_study_017_repository_window](./picture/soc_cs_study_017_repository_window.png)
+
+
 ```csharp
 // Domain/Application 側（＝中心側）
 public interface ICustomerRepository
@@ -130,6 +136,9 @@ public sealed class SqlCustomerRepository : ICustomerRepository
 ---
 
 ### 17-3-4. UseCase 雛形（UIは“これを呼ぶだけ”にする）📨✨
+
+![soc_cs_study_017_usecase_recipe](./picture/soc_cs_study_017_usecase_recipe.png)
+
 
 ```csharp
 public sealed class RegisterCustomerUseCase
@@ -162,6 +171,9 @@ public sealed record RegisterCustomerRequest(string Name);
 
 ### 17-3-5. DTO / Entity / ViewModel の詰め替えテンプレ🔄📦
 
+![soc_cs_study_017_mapping_shapes](./picture/soc_cs_study_017_mapping_shapes.png)
+
+
 「めんどいけど保険」＝混ざらない未来を買う感じ😊
 
 ```csharp
@@ -180,6 +192,9 @@ public static class CustomerMappingExtensions
 ---
 
 ### 17-3-6. テスト雛形（AAA：Arrange-Act-Assert）🧪✅
+
+![soc_cs_study_017_aaa_steps](./picture/soc_cs_study_017_aaa_steps.png)
+
 
 ```csharp
 using Xunit;
@@ -212,6 +227,9 @@ public sealed class DiscountCalculator
 ---
 
 ## 17-4. AIプロンプト集🤖✨（章をまたいで使える“共通呪文”）
+
+![soc_cs_study_017_ai_spellbook](./picture/soc_cs_study_017_ai_spellbook.png)
+
 
 ### 17-4-1. “分離ポイント発見”プロンプト🔍🧠
 

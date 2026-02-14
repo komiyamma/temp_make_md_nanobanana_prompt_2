@@ -11,6 +11,9 @@
 
 ## 1) まず“混ぜる”って何が起きてるの？🍲💦
 
+![soc_ts_study_002_mixed_pot](./picture/soc_ts_study_002_mixed_pot.png)
+
+
 **混ぜる＝1つの場所（ファイル/関数/クラス）に、性格の違う仕事が同居してる状態**だよ〜😇
 
 たとえば👇
@@ -28,6 +31,9 @@
 ---
 
 ## 2) “修正が怖い”の正体：変更が連鎖する3パターン🌊💥
+
+![soc_ts_study_002_chain_reaction](./picture/soc_ts_study_002_chain_reaction.png)
+
 
 ここが超重要！よくある変更はこの3つ👇
 
@@ -135,6 +141,9 @@ export async function onClickOrder(form: HTMLFormElement) {
 
 ## 4) 「バグの居場所が分からない」問題🔍😇
 
+![soc_ts_study_002_bug_maze](./picture/soc_ts_study_002_bug_maze.png)
+
+
 混ぜると、バグがこうなる👇
 
 * **症状はUIに出る**（表示が変、エラーが出る）🖥️
@@ -170,6 +179,9 @@ export async function onClickOrder(form: HTMLFormElement) {
 
 ## 6) “修正が怖いコード”あるあるサイン10🚨😵‍💫
 
+![soc_ts_study_002_warning_signs](./picture/soc_ts_study_002_warning_signs.png)
+
+
 チェックしてみて〜✅（3つ当てはまったら黄色信号🟡、5つで赤信号🔴）
 
 1. 1つの関数が長い（40行〜）📜
@@ -186,6 +198,9 @@ export async function onClickOrder(form: HTMLFormElement) {
 ---
 
 ## 7) ミニ演習：関心を“色分け”して分けてみよう🖍️🌈✨（20分）
+
+![soc_ts_study_002_code_highlighting](./picture/soc_ts_study_002_code_highlighting.png)
+
 
 ### ステップ1️⃣：さっきのコードを4色でマーキングしよう
 
