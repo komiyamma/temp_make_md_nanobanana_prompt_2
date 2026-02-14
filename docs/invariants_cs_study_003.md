@@ -13,6 +13,10 @@
 
 ## 1) まず“境界”ってなに？🚪
 
+![invariants_cs_study_003_world_gate](./picture/invariants_cs_study_003_world_gate.png)
+
+
+
 ひとことでいうと…
 
 > **境界＝“外の世界”と“中の世界”の接点**👭🌍🏛️
@@ -46,6 +50,10 @@ flowchart TD
 
 ## 2) なんで“境界”で守るの？🧠🛡️
 
+![invariants_cs_study_003_scattered_checks](./picture/invariants_cs_study_003_scattered_checks.png)
+
+
+
 不変条件（絶対守る約束）を守る場所がバラバラだと、こうなるよ👇😭
 
 * あっちでチェック、こっちでチェック… **抜け漏れ**が出る🕳️
@@ -64,6 +72,10 @@ flowchart TD
 ---
 
 ## 3) 境界になりやすい“4大入口” remind🧱
+
+![invariants_cs_study_003_four_entrances](./picture/invariants_cs_study_003_four_entrances.png)
+
+
 
 この章のキーワードにもなってるやつ👇
 （ぜんぶ不変条件が壊れやすい入口！）💣
@@ -92,6 +104,10 @@ flowchart TD
 
 ## 4) 境界を見つける“超かんたん質問”4つ👀✨
 
+![invariants_cs_study_003_boundary_questions](./picture/invariants_cs_study_003_boundary_questions.png)
+
+
+
 自分のアプリを思い浮かべて、これを順番に聞いてみてね🙂
 
 1. **どこからデータが入ってくる？**（入力経路）🚪
@@ -114,6 +130,10 @@ graph LR
 ---
 
 ## 5) 境界でやる仕事は“3つ＋おまけ”🧰💖
+
+![invariants_cs_study_003_boundary_machine](./picture/invariants_cs_study_003_boundary_machine.png)
+
+
 
 ### A. 検証（Validation）🛡️
 
@@ -156,6 +176,10 @@ flowchart TD
 
 ## 6) ミニ題材で境界マップを作ってみよ🗺️🎀
 
+![invariants_cs_study_003_registration_map](./picture/invariants_cs_study_003_registration_map.png)
+
+
+
 題材：**会員登録＋サブスク課金**💳✨
 
 ### ざっくりデータの流れ（イメージ）🌊
@@ -185,6 +209,10 @@ flowchart TD
 ---
 
 ## 7) 境界の“外向けエラー”を整える（API例）🌐🧱✨
+
+![invariants_cs_study_003_problem_details](./picture/invariants_cs_study_003_problem_details.png)
+
+
 
 API境界って「失敗の見せ方」も超大事なのね🙂
 ASP.NET Core では **Problem Details（RFC 7807）** でエラーを返す設計が一般的になってるよ📣

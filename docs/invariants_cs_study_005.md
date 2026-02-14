@@ -20,6 +20,10 @@
 
 ## 1) ガード節とValidationの違い（ここ大事）🛡️✨
 
+![invariants_cs_study_005_guard_vs_valid](./picture/invariants_cs_study_005_guard_vs_valid.png)
+
+
+
 ## ガード節🛡️
 
 * 目的：**その場で即死を防ぐ**（null/空/範囲外など）
@@ -36,6 +40,10 @@
 ---
 
 ## 2) まずは「仕様」を箇条書きで書く📝🎀
+
+![invariants_cs_study_005_spec_scroll](./picture/invariants_cs_study_005_spec_scroll.png)
+
+
 
 ![Validation Spec](./picture/invariants_cs_study_005_validation.png)
 
@@ -72,6 +80,10 @@
 
 ## 3) “仕様っぽさ”を出す3点セット🧰✨
 
+![invariants_cs_study_005_three_keys](./picture/invariants_cs_study_005_three_keys.png)
+
+
+
 Validationを仕様に見せるには、これが効くよ👇
 
 ## ✅(1) ルールに名前を付ける🏷️
@@ -95,6 +107,10 @@ Validationを仕様に見せるには、これが効くよ👇
 ## 4) 実装してみよう（最小で気持ちいいやつ）💻✨
 
 ## 4-1) エラー表現（仕様の器）📦
+
+![invariants_cs_study_005_error_container](./picture/invariants_cs_study_005_error_container.png)
+
+
 
 ```csharp
 public sealed record ValidationError(string Code, string Message, string? Target = null);
@@ -129,6 +145,10 @@ public sealed record SignUpRequest(
 ---
 
 ## 4-3) Validator（仕様をコード化する本体）📜➡️💻
+
+![invariants_cs_study_005_validation_pipeline](./picture/invariants_cs_study_005_validation_pipeline.png)
+
+
 
 ```csharp
 public static class SignUpValidator
@@ -231,6 +251,10 @@ if (!vr.IsValid)
 
 ## 6) テストで「仕様」を固定する🧪🛡️
 
+![invariants_cs_study_005_test_nail](./picture/invariants_cs_study_005_test_nail.png)
+
+
+
 Validationは仕様そのものだから、**テストが超相性いい**よ🙂✨
 xUnit例👇
 
@@ -305,6 +329,10 @@ graph LR
 ---
 
 ## 8) AIの使いどころ（この章はめちゃ相性いい）🤖🧪✨
+
+![invariants_cs_study_005_ai_generator](./picture/invariants_cs_study_005_ai_generator.png)
+
+
 
 ## 8-1) “仕様→テストケース” を増殖させる🧫
 
