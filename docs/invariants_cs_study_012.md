@@ -10,6 +10,10 @@
 
 ## 1. なんでEmailをVOにするの？😵‍💫➡️🙂
 
+![dirty_email_cleanup](./picture/invariants_cs_study_012_dirty_email_cleanup.png)
+
+
+
 `string email`のままだと、こういう事故が起きがち💥
 
 * `" a@b.com "`（前後スペース）で同一判定が崩れる😇
@@ -49,6 +53,10 @@ flowchart LR
 
 ## 3. まず「仕様」を決めよう📜✨（この章の採用ルール）
 
+![email_rules_scroll](./picture/invariants_cs_study_012_email_rules_scroll.png)
+
+
+
 ここが超だいじ！Emailは世界が広いので、**あなたのサービスの都合**で決めてOK🙆‍♀️🎀
 
 この章では、会員登録のEmailを想定して、こう決めます👇
@@ -81,6 +89,14 @@ flowchart LR
 ---
 
 ## 5. 実装：Email 値オブジェクトを作る💎📧
+
+![punycode_translator](./picture/invariants_cs_study_012_punycode_translator.png)
+
+
+
+![email_filter_funnel](./picture/invariants_cs_study_012_email_filter_funnel.png)
+
+
 
 ポイントはこれ👇
 
@@ -174,6 +190,10 @@ public sealed record Email
 
 ## 6. 使い方：境界（DTO）でVOへ変換する🚪➡️💎
 
+![dto_to_vo_door](./picture/invariants_cs_study_012_dto_to_vo_door.png)
+
+
+
 入力（UI/API）はゆるくてOK。中に入れる前にVOへ変換するよ🙂🛡️
 
 ```csharp
@@ -209,6 +229,10 @@ ifチェックが消えて、設計がスッキリする✨✨
 
 ## 7. DataAnnotationsは“入口の補助”として使うのはアリ🙂📌
 
+![doormat_validation](./picture/invariants_cs_study_012_doormat_validation.png)
+
+
+
 `[EmailAddress]` で入口チェックするのも便利！
 ただしこれは **「入口のバリデーション」**であって、**ドメイン内部の安全はVOで担保**するのがキレイ✨
 （`EmailAddressAttribute` 自体も用意されてるよ） ([Microsoft Learn][5])
@@ -216,6 +240,10 @@ ifチェックが消えて、設計がスッキリする✨✨
 ---
 
 ## 8. テストして“仕様”を固めよう🧪✨
+
+![target_practice_email](./picture/invariants_cs_study_012_target_practice_email.png)
+
+
 
 おすすめテストケース（まずはこれで十分！）👇
 

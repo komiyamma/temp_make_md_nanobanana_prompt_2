@@ -14,6 +14,10 @@
 
 ## 1. なんで「new」が危ないの？😱🧨
 
+![exploding_box_state](./picture/invariants_cs_study_010_exploding_box_state.png)
+
+
+
 「文字列のメールアドレス」を例にすると…
 
 * 空文字の Email
@@ -31,6 +35,10 @@
 ---
 
 ## 2. Factoryの基本形：private コンストラクタ + Create🏗️🛡️
+
+![factory_line_check](./picture/invariants_cs_study_010_factory_line_check.png)
+
+
 
 ![Factory Line](./picture/invariants_cs_study_010_factory.png)
 
@@ -83,6 +91,10 @@ flowchart TD
 
 ### 5-1. DomainError と Result<T> を作る🧱✨
 
+![building_blocks_result](./picture/invariants_cs_study_010_building_blocks_result.png)
+
+
+
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -124,6 +136,10 @@ public sealed class Result<T>
 ---
 
 ### 5-2. Email を「new禁止」にする🔒🚫
+
+![padlock_constructor](./picture/invariants_cs_study_010_padlock_constructor.png)
+
+
 
 ```csharp
 using System;
@@ -177,6 +193,10 @@ public sealed class Email
 
 ## 6. 使う側（境界側）はこうなる🚪🔁
 
+![gatekeeper_check](./picture/invariants_cs_study_010_gatekeeper_check.png)
+
+
+
 たとえば「会員登録フォーム」から来た raw string を内部へ入れるとき👇
 
 ```csharp
@@ -213,6 +233,10 @@ flowchart LR
 
 ## 7. 命名どうする？Create / TryCreate / From 🏷️🤔
 
+![name_tag_choice](./picture/invariants_cs_study_010_name_tag_choice.png)
+
+
+
 結論：迷ったらこれでOK🙆‍♀️✨
 
 * **Create**：失敗理由が欲しい（Resultで返す）📦
@@ -225,6 +249,10 @@ flowchart LR
 ---
 
 ## 8. よくある落とし穴🕳️🐾
+
+![pitfall_trap_default](./picture/invariants_cs_study_010_pitfall_trap_default.png)
+
+
 
 ### 落とし穴①：record struct にすると default が怖い😱
 

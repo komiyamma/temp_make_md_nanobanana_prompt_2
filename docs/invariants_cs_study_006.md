@@ -12,6 +12,10 @@
 
 ## 6.1 例外ってなに？（ざっくり一言）🧠⚡
 
+![exception_vs_return](./picture/invariants_cs_study_006_exception_vs_return.png)
+
+
+
 例外は **「処理を続けられない失敗が起きた！」っていう、ランタイムの非常ベル** だよ🚨
 ふつうの if 分岐と違って、例外が投げられると **その場で処理が中断**されて、呼び出し元へ一気に伝播するのが特徴💨 ([Microsoft Learn][2])
 
@@ -33,6 +37,10 @@ flowchart TD
 
 ## ✅ 例外が向いてる（使ってOK寄り）⚡
 
+![good_exception_use](./picture/invariants_cs_study_006_good_exception_use.png)
+
+
+
 * **想定外**（プログラムの前提が崩れた）
 * **回復が難しい**（この場で直しようがない）
 * **バグ・不整合・外部障害**（ネットワーク断、DB接続不能など）
@@ -40,6 +48,10 @@ flowchart TD
 .NET のガイドも「例外を避けられる一般条件は例外にしないでね」って言ってる＝逆に言えば **避けられない/回復困難な失敗**が例外向きだね🧯 ([Microsoft Learn][3])
 
 ## ❌ 例外が向いてない（やりがち注意）😵
+
+![bad_exception_use](./picture/invariants_cs_study_006_bad_exception_use.png)
+
+
 
 * **ユーザー入力ミス**（空欄、形式違い、範囲外…）
 * **業務ルール的に起こり得る失敗**（在庫切れ、ポイント不足、支払い拒否…）
@@ -50,6 +62,10 @@ flowchart TD
 ---
 
 ## 6.3 例外は「どこで投げて」「どこで捕まえる」？🚪🧱
+
+![exception_boundary](./picture/invariants_cs_study_006_exception_boundary.png)
+
+
 
 ## 基本の型：境界（UI/API）で捕まえるのが気持ちいい🎀
 
@@ -74,6 +90,10 @@ flowchart LR
 ---
 
 ## 6.4 C# の例外：超基本セット（これだけ覚えればOK）🧰✨
+
+![standard_exceptions](./picture/invariants_cs_study_006_standard_exceptions.png)
+
+
 
 ## よく使う標準例外たち（まずこれで十分）🙂
 
@@ -201,6 +221,10 @@ public record RegisterRequest(string? Email);
 
 ## 6.7 例外を “再スロー” するときの超重要ポイント🔥
 
+![throw_vs_throw_ex](./picture/invariants_cs_study_006_throw_vs_throw_ex.png)
+
+
+
 ## ✅ 正しい：throw;（スタックトレース維持）🧵
 
 ## ❌ ダメ：throw ex;（スタックトレースがリセット）😱
@@ -234,6 +258,10 @@ Microsoft のガイドだと、自作するなら **“〜Exception” で終わ
 ---
 
 ## 6.9 AI活用コーナー🤖✨「この例外、本当に例外？」
+
+![ai_exception_review](./picture/invariants_cs_study_006_ai_exception_review.png)
+
+
 
 ## 使い方1：例外レビュー（超おすすめ）🧑‍⚖️⚡
 

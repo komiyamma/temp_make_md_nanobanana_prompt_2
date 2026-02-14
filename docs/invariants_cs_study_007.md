@@ -6,6 +6,10 @@
 
 ## 1 まず結論 例外と Result のざっくり使い分け⚖️🙂
 
+![exception_vs_result_scale](./picture/invariants_cs_study_007_exception_vs_result_scale.png)
+
+
+
 ### ✅ Result が向いてる失敗
 
 * ユーザー入力ミス（メール形式NG、必須が空、桁数不足など）✍️
@@ -27,6 +31,10 @@
 ---
 
 ## 2 今日作る Result はこれ 失敗を型で表す📦✨
+
+![result_box_structure](./picture/invariants_cs_study_007_result_box_structure.png)
+
+
 
 ![Result Pattern](./picture/invariants_cs_study_007_result.png)
 
@@ -57,6 +65,10 @@ classDiagram
 ---
 
 ## 3 最小 Result 実装 自作で OK🏗️✨
+
+![result_blueprint](./picture/invariants_cs_study_007_result_blueprint.png)
+
+
 
 まずはシンプルで十分！「成功は値あり」「失敗はエラーあり」を守る作りにするよ🛡️
 
@@ -160,6 +172,10 @@ public static Guid Register(string email, string password)
 
 ### 4-2 Result で返す版🧾🙂
 
+![handing_result_card](./picture/invariants_cs_study_007_handing_result_card.png)
+
+
+
 ```csharp
 public static Result<Guid> Register(string email, string password)
 {
@@ -201,6 +217,10 @@ Console.WriteLine(message);
 
 ## 5 Result で「失敗理由」を育てるコツ🌱🧾
 
+![error_id_card](./picture/invariants_cs_study_007_error_id_card.png)
+
+
+
 ### ✅ Error の持ち方おすすめ
 
 * `Code`：機械向け（ログ・翻訳・分岐）🤖
@@ -213,6 +233,10 @@ Console.WriteLine(message);
 ---
 
 ## 6 ちょい応用 つなげたいときのミニ道具🔗✨
+
+![railway_binding](./picture/invariants_cs_study_007_railway_binding.png)
+
+
 
 Result が増えてくると「成功なら次へ、失敗ならそこで止めたい」ってなるよね🙂
 そのときは `Bind`（別名 `FlatMap`）を1個だけ足すと超便利！
@@ -308,6 +332,10 @@ public class RegisterTests
 ---
 
 ## 8 AI活用コーナー ここはAIに任せてOK🤖✨
+
+![ai_refactoring_result](./picture/invariants_cs_study_007_ai_refactoring_result.png)
+
+
 
 ### 🪄 便利プロンプト例
 
