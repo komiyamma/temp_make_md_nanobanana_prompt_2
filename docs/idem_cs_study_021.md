@@ -12,6 +12,10 @@
 
 ## まず前提：非同期は“重複が普通”📬🌧️
 
+![Duplicate Delivery Mechanism](./picture/idem_cs_study_021_duplicate_mechanism.png)
+
+
+
 非同期メッセージは、ネットワークや実行環境の都合で「同じものがもう一回届く」が起きます😇
 たとえば Azure Service Bus だと、処理中にロック期限が切れたり、Abandon（放棄）されたりすると **同じメッセージが再び受信可能** になります🔁 ([Microsoft Learn][1])
 RabbitMQ でも ACK の仕組み上「少なくとも1回（at-least-once）」になりやすいので、**コンシューマは冪等に作るのが推奨** されています🐰✅ ([RabbitMQ][2])
@@ -32,6 +36,10 @@ RabbitMQ でも ACK の仕組み上「少なくとも1回（at-least-once）」�
 
 ## いちばん大事な“鉄の3ルール”🧱🔒
 
+![Three Iron Rules](./picture/idem_cs_study_021_three_iron_rules.png)
+
+
+
 ### ルール①：メッセージに一意な MessageId を持たせる🔑
 
 * 「このメッセージは同じものだよ」を識別できないと、重複判定できません😵‍💫
@@ -43,6 +51,10 @@ RabbitMQ でも ACK の仕組み上「少なくとも1回（at-least-once）」�
 * ここで弾かれたら **重複なので即終了**（でもメッセージは “完了扱い” にする）🎉
 
 ### ルール③：業務処理と「処理済み記録」は同じトランザクションでまとめる🧠🧷
+
+![Transaction Boundary](./picture/idem_cs_study_021_transaction_scope.png)
+
+
 
 * 途中で落ちても整合性が崩れないようにするためです⚡
 
@@ -268,6 +280,10 @@ Console.WriteLine($"1回目={first}, 2回目={second}"); // 期待: true, false 
 
 ## 実運用っぽく：Azure Service Bus（エミュレータ）で重複を体験🚌💨
 
+![Service Bus Emulator Setup](./picture/idem_cs_study_021_emulator_setup.png)
+
+
+
 Azure Service Bus はローカル用エミュレータがあり、Docker で動かせます🐳✨
 2026-01-16 にエミュレータ v2.0.0 がリリースされています📌 ([Microsoft Learn][4])
 
@@ -306,6 +322,10 @@ Azure Service Bus の古い SDK（`WindowsAzure.ServiceBus` / `Microsoft.Azure.S
 ## よくある落とし穴集😵‍💫🧯（ここ超大事）
 
 ### 落とし穴①：処理済みテーブルに永遠に溜まる🗄️💥
+
+![Bloated Table Pitfall](./picture/idem_cs_study_021_bloated_table.png)
+
+
 
 * 対策：TTL（何日保持するか）を決めて掃除🧹⏳
   （第14章の話と合流するやつ！）

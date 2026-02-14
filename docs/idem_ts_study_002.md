@@ -27,6 +27,10 @@
 
 ## 2) “最悪”はこれ：成功したのに返事が届かない🙃📨
 
+![Response Lost](./picture/idem_ts_study_002_response_lost.png)
+
+
+
 一番こわいのは、これ👇
 
 * サーバー側では **処理が成功している** ✅
@@ -56,15 +60,27 @@
 
 ### パターンC：プラットフォーム/ライブラリ側のリトライ（勝手に起きる）🤖🔁
 
+![Retry Triggers](./picture/idem_ts_study_002_retry_triggers.png)
+
+
+
 * Google Cloud Storage のように、クライアントライブラリが**自動リトライ**することがあります（エラーや接続不安定への対策）([Google Cloud][4])
 * Firebase のバックグラウンド処理は、設定次第で失敗時に**リトライが続く**（最悪、長期間）ので、重複実行に耐える設計が必須です。([Firebase][5])
 
 つまり結論👇
+
+![Platform Auto Retries](./picture/idem_ts_study_002_platform_retries.png)
+
+
 **リトライは「書いた覚えがなくても」起きる** 😇🌧️
 
 ---
 
 ## 4) 事故のイメージ図：二重注文が生まれるまで🖼️💥
+
+![Accident Timeline](./picture/idem_ts_study_002_accident_timeline.png)
+
+
 
 たとえば「注文作成（POST /orders）」が冪等じゃない世界で…👇
 
@@ -106,6 +122,10 @@ sequenceDiagram
 ---
 
 ## 5) 「じゃあ、どうするの？」の方向性（超ざっくり）🧭✨
+
+![Solution Compass](./picture/idem_ts_study_002_solution_compass.png)
+
+
 
 この章では“理由”が主役なので、解決は軽く触れるだけにします🙂
 

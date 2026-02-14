@@ -41,10 +41,18 @@ ASP.NET Core の統合テストは、**アプリをテスト用に起動して H
 
 #### ✅ (A) 同じキー + 同じ本文 → 同じ結果
 
+![Integration Test Flow](./picture/idem_cs_study_024_integration_test_flow.png)
+
+
+
 * 1回目：注文作成（orderId が返る）
 * 2回目：同じ `Idempotency-Key` で再送 → **同じ orderId が返る**（再実行しない）
 
 #### ✅ (B) 同じキー + 違う本文 → 衝突として止める（例：409）
+
+![Conflict Test](./picture/idem_cs_study_024_conflict_test.png)
+
+
 
 * “同じチケットで別の内容”は危険⚠️（攻撃・バグ・誤実装の温床）
 
@@ -146,6 +154,10 @@ public class IdempotencyTests : IClassFixture<WebApplicationFactory<Program>>
 
 ## 24.3 並列テスト（“同時に来たら1件に収束”を確認）🏎️💥✅
 
+![Parallel Convergence](./picture/idem_cs_study_024_parallel_convergence.png)
+
+
+
 冪等性の本番ポイントはここ！
 **同じキーがほぼ同時に2〜10本来ても、結果が1件に収束する**のが合格ライン🎯
 
@@ -217,6 +229,10 @@ public class ConcurrencyIdempotencyTests : IClassFixture<WebApplicationFactory<P
 
 ### 24.4.1 ログに必ず出したい3点セット🧾✨
 
+![Log Essentials](./picture/idem_cs_study_024_log_essentials.png)
+
+
+
 * **相関ID（Correlation ID）**：1リクエストを追跡するためのID🧵
 * **冪等キー（Idempotency-Key）**：今回の冪等の主役🔑
 * **結果の状態**：`Created / Replayed / Conflict / InProgress` みたいな分類🏷️
@@ -272,6 +288,10 @@ OTLP で吐いたテレメトリを、ダッシュボードで眺める例が紹
 ---
 
 ## 24.6 実務チェックリスト（これを守れば事故が激減する）🧾✅✨
+
+![Checklist Clipboard](./picture/idem_cs_study_024_checklist_clipboard.png)
+
+
 
 ### 24.6.1 API設計チェック🔑📮
 

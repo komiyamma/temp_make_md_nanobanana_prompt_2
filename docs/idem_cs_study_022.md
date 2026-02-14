@@ -13,6 +13,10 @@
 
 # 1. 外部APIが絡むと、なぜ事故が増えるの？😱📡
 
+![Transient Errors](./picture/idem_cs_study_022_transient_errors.png)
+
+
+
 外部APIは、こっちのアプリの外にある世界です🌍
 つまり…
 
@@ -62,6 +66,10 @@
 
 # 4. そもそも「リトライしていい？」はHTTPの性質で変わる📚🌐
 
+![HTTP Method Safety](./picture/idem_cs_study_022_http_safety.png)
+
+
+
 HTTPには「安全（safe）」「冪等（idempotent）」という考え方があります🧩
 ざっくり言うと…
 
@@ -92,12 +100,20 @@ HTTPには「安全（safe）」「冪等（idempotent）」という考え方�
 
 ## 自問③：リトライ回数は「少なめ」？🧯
 
+![Retry Storm](./picture/idem_cs_study_022_retry_storm.png)
+
+
+
 リトライは多いほど安全…ではなく、**過負荷を増やして炎上🔥**することがあります。
 基本は **2〜3回**くらいを上限にして、指数バックオフ＋ジッター（揺らぎ）を入れるのが定番です。([Microsoft Learn][1])
 
 ---
 
 # 6. “今どきC#”の回復性：Standard Resilience Handler を使う🛠️✨
+
+![Resilience Shield](./picture/idem_cs_study_022_resilience_shield.png)
+
+
 
 .NETのHTTP回復性は、`Microsoft.Extensions.Http.Resilience` を使うのが素直です。([Microsoft Learn][1])
 （※昔よく見た `Microsoft.Extensions.Http.Polly` は非推奨扱いです。）([Microsoft Learn][3])
@@ -250,6 +266,10 @@ public sealed record ChargeResult(string ChargeId, string Status);
 ---
 
 # 8. 「Idempotency-Key」って実在するの？あるよ！✨🔑
+
+![Idempotency Header](./picture/idem_cs_study_022_idempotency_header.png)
+
+
 
 実務の外部APIは、**同じ要求の再送を“1回扱い”にするためのキー**をヘッダーで受け付けることが多いです。
 例：Stripe は `Idempotency-Key` を使って「最初の結果（ステータスコード＋ボディ）を保存し、同じキーなら同じ結果を返す」方式を説明しています。([Stripe Docs][4])
