@@ -19,6 +19,10 @@
 
 ## まず結論：状態不変条件ってなに？🧠💡
 
+![state_invariant_definition](./picture/invariants_ts_study_025_state_invariant_definition.png)
+
+
+
 **状態不変条件**＝「いまの状態だと、この操作は絶対しちゃダメ！」っていうルールだよ🚫🙂
 
 たとえば注文（Order）なら…
@@ -32,6 +36,10 @@
 ---
 
 ## よくある事故：ifチェックが散ってバグる😱🌀
+
+![scattered_checks](./picture/invariants_ts_study_025_scattered_checks.png)
+
+
 
 「発送は支払い後だけね！」ってルールがあるのに…
 
@@ -76,6 +84,10 @@ flowchart LR
 * 代わりに **状態ごとに型を分ける**💎
 
 ### 1) 状態ごとの型を作る（ここが核心！）✨
+
+![tagged_union_states](./picture/invariants_ts_study_025_tagged_union_states.png)
+
+
 
 ```ts
 // ざっくり（本当は第10章のBranded型を使うともっと強い💎）
@@ -125,6 +137,10 @@ type Order = DraftOrder | PaidOrder | ShippedOrder;
 
 ## 2) 遷移関数を書く：Draftだけがpayできる💳✨
 
+![transition_function](./picture/invariants_ts_study_025_transition_function.png)
+
+
+
 ```ts
 type DomainError =
   | { type: "InvalidTransition"; from: Order["kind"]; to: Order["kind"]; message: string };
@@ -173,6 +189,8 @@ function ship(order: PaidOrder, trackingNo: TrackingNo, shippedAt: Date): Shippe
 
 ## 3) でも現実は `Order` を受け取るよね？（分岐で安全に）🔀🛡️
 
+![switch_safety](./picture/invariants_ts_study_025_switch_safety.png)
+
 たとえば API や DB から取った注文は `Order`（どれか分からん）になりがち🙂
 そのときは **switchで状態を絞ってから** 遷移させるよ！
 
@@ -200,6 +218,10 @@ function shipIfPossible(order: Order, trackingNo: TrackingNo, shippedAt: Date): 
 
 ## 4) “漏れ防止”の小技：assertNeverでswitchを完璧にする🧯✨
 
+![assert_never_guard](./picture/invariants_ts_study_025_assert_never_guard.png)
+
+
+
 状態が増えたとき（例：`Cancelled` 追加！）に、switchの更新漏れを防げるよ😍
 
 ```ts
@@ -223,6 +245,10 @@ function canEdit(order: Order): boolean {
 ---
 
 ## 状態による不変条件の“設計コツ”まとめ🧩✨
+
+![design_tips_summary](./picture/invariants_ts_study_025_design_tips_summary.png)
+
+
 
 ### コツ1：状態ごとに「持てるデータ」を変える🎁
 

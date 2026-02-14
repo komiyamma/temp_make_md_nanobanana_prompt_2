@@ -35,6 +35,10 @@
 
 ## 29-3. 不変条件テストがラクになる理由🧠✨
 
+![testing_benefits](./picture/invariants_ts_study_029_testing_benefits.png)
+
+
+
 不変条件を「型＋境界」で守ってる世界では、こうなる👇
 
 ### 💎 VO（値オブジェクト）
@@ -69,6 +73,10 @@ flowchart TD
 ---
 
 ## 29-4. テストの設計図（まずこれだけ覚えて！）🗺️✨
+
+![test_design_blueprint](./picture/invariants_ts_study_029_test_design_blueprint.png)
+
+
 
 ### ① VOは “成功/失敗/境界値/正規化” の4点セット🎁
 
@@ -138,6 +146,10 @@ export class Email {
 
 ## 29-6. VOテスト：短いのに強い😍🧪
 
+![vo_test_suite](./picture/invariants_ts_study_029_vo_test_suite.png)
+
+
+
 ```ts
 // test/email.test.ts
 import { describe, it, expect } from "vitest";
@@ -175,6 +187,10 @@ describe("Email.parse 💌", () => {
 ---
 
 ## 29-7. 境界テスト：unknown→スキーマ→VO（ここが“最強の防波堤”🌊🏰）
+
+![boundary_test_defense](./picture/invariants_ts_study_029_boundary_test_defense.png)
+
+
 
 Zod 4 は安定化してるし、`safeParse()` がほんとに便利✨ ([Zod][3])
 （例外投げない＝テストも書きやすい！）
@@ -253,6 +269,10 @@ describe("parseRegisterRequest 🚪", () => {
 
 ## 29-8. カバレッジ（Coverage）は“使い方”が大事📊✨
 
+![coverage_usage](./picture/invariants_ts_study_029_coverage_usage.png)
+
+
+
 Vitest 4 のカバレッジは設定がけっこう明確になってて、
 `--coverage.enabled` みたいな指定がポイントになるよ〜🧠 ([vitest.dev][6])
 
@@ -277,6 +297,10 @@ Vitest 4 のカバレッジは設定がけっこう明確になってて、
 
 ## 29-9. よくある失敗パターン集😵‍💫（回避しよ！）
 
+![common_test_failures](./picture/invariants_ts_study_029_common_test_failures.png)
+
+
+
 * ❌ 実装の内部をテストしすぎ（private変数とか）
   → ✅ **公開API（parse / create / boundary関数）だけ見る**
 * ❌ モックだらけで現実とズレる
@@ -287,6 +311,10 @@ Vitest 4 のカバレッジは設定がけっこう明確になってて、
 ---
 
 ## 29-10. AI活用コーナー🤖✨（テスト観点のブースター🚀）
+
+![ai_test_generation](./picture/invariants_ts_study_029_ai_test_generation.png)
+
+
 
 AIは「コード生成」より、ここが強いよ👇😍
 

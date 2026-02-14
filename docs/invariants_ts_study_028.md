@@ -2,6 +2,10 @@
 
 ![第28章　外部API境界（ACLの入門）：外の歪みを中に入れない📡🧼](./picture/invariants_ts_study_028_external_api.png)
 
+![external_api_quirks](./picture/invariants_ts_study_028_external_api_quirks.png)
+
+
+
 外部APIって、便利なんだけど……だいたい“クセ”が強いです😵‍💫
 
 * 命名が `snake_case` だったり🐍
@@ -24,6 +28,10 @@
 ---
 
 ## ACLってどこに置くの？（超ざっくり地図）🗺️✨
+
+![acl_map](./picture/invariants_ts_study_028_acl_map.png)
+
+
 
 イメージはこんな感じ👇
 
@@ -66,6 +74,10 @@ flowchart TD
 ---
 
 ## ACLの基本レシピ（まずこれだけ覚えよ🍳✨）
+
+![acl_recipe](./picture/invariants_ts_study_028_acl_recipe.png)
+
+
 
 外部APIの取り込みは、毎回この順番にすると安定します👇
 
@@ -229,6 +241,10 @@ export type PayfriendPaymentDTO = z.infer<typeof PayfriendPaymentSchema>;
 
 ## 3) ACL側：正規化（汚れを落とす🧼✨）
 
+![normalization_scrub](./picture/invariants_ts_study_028_normalization_scrub.png)
+
+
+
 ```ts
 // src/acl/payfriend/normalize.ts
 import type { PayfriendPaymentDTO } from "./schema";
@@ -262,6 +278,10 @@ export function normalizePayfriend(dto: PayfriendPaymentDTO): NormalizedPayfrien
 ---
 
 ## 4) ACL側：翻訳（外→中のマッピング）🧑‍💼📘➡️🏰
+
+![translation_layer](./picture/invariants_ts_study_028_translation_layer.png)
+
+
 
 ```ts
 // src/acl/payfriend/mapper.ts
@@ -317,6 +337,10 @@ export function toDomainPayment(n: NormalizedPayfriendPayment): Payment {
 
 ## 5) ACL側：HTTPクライアント（fetch + タイムアウト）📡⏱️
 
+![http_client_shield](./picture/invariants_ts_study_028_http_client_shield.png)
+
+
+
 外部APIは **遅い/落ちる/たまに壊れる** が前提😇
 最低限、タイムアウトは付けよ〜！って感じです🙂
 
@@ -370,6 +394,10 @@ export async function fetchPayment(paymentId: string): Promise<Payment> {
 ---
 
 ## 6) ACL側：エラー型（“どこで壊れたか”が一瞬で分かる🧯✨）
+
+![acl_error_types](./picture/invariants_ts_study_028_acl_error_types.png)
+
+
 
 ```ts
 // src/acl/payfriend/errors.ts
