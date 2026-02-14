@@ -140,10 +140,18 @@ src/
 
 ## 5. 段階リファクタ手順（止めずに直す）🔧🌱
 
+![soc_ts_study_016_step_by_step_stones](./picture/soc_ts_study_016_step_by_step_stones.png)
+
+
+
 ここからが本番！✨
 いきなり全部移動しないで、**小さく安全に**いくよ🫶
 
 ### Step 1：まず“計算だけ”を抜き出す（最強の第一歩）🧼⚡
+
+![soc_ts_study_016_extraction_surgery](./picture/soc_ts_study_016_extraction_surgery.png)
+
+
 
 最初にやるのはコレ。
 **副作用がない純粋関数**にすれば、テストが一気に簡単になるよ🧪🌸
@@ -335,10 +343,18 @@ export function createOrderApiClient(baseUrl: string): OrderApi {
 
 ## 6. “分離できた！”のチェックポイント✅✨
 
+![soc_ts_study_016_spaghetti_vs_layers](./picture/soc_ts_study_016_spaghetti_vs_layers.png)
+
+
+
 ![Before After Separation](./picture/soc_ts_study_016_before_after.png)
 
 
 ### ✅ 変更が来た時、どこが壊れる？
+
+![soc_ts_study_016_blast_radius](./picture/soc_ts_study_016_blast_radius.png)
+
+
 
 * 税率が 10%→8%：`domain/pricing.ts`（または呼び出し側の taxRate）だけ🎯
 * UIをCLI→Webに変更：`ui/` だけ🖥️➡️🌐
@@ -437,6 +453,10 @@ Vitestのテストケースを追加で10個提案して。境界値（qty=1、�
   どこを直す？（正解：`app/placeOrder.ts` か `infra/` のDTO生成まわり）
 
 ### 演習C：UIをWebにしたい🖥️➡️🌐
+
+![soc_ts_study_016_cli_to_web_costume](./picture/soc_ts_study_016_cli_to_web_costume.png)
+
+
 
 * 入力フォームにしたい
   どこを触る？（正解：`ui/` だけで済むのが理想👏）

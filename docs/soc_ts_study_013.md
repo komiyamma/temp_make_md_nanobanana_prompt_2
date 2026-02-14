@@ -11,6 +11,10 @@
 
 ## 13.1 DIってなに？30秒でつかむ💡💉
 
+![soc_ts_study_013_chef_tools](./picture/soc_ts_study_013_chef_tools.png)
+
+
+
 ![Dependency Injection Concept](./picture/soc_ts_study_013_di_tool.png)
 
 
@@ -80,6 +84,10 @@ export async function loadStudentName(studentId: string): Promise<string> {
 ---
 
 ### ✅ DIあり：必要な道具を引数でもらう（差し替え自由）🔁✨
+
+![soc_ts_study_013_injector_hand](./picture/soc_ts_study_013_injector_hand.png)
+
+
 
 ポイントはこれだけ👇
 
@@ -165,6 +173,10 @@ console.log(name); // "ミカ"
 ---
 
 ## 13.5 コンストラクタDI（クラス版）🏫💉
+
+![soc_ts_study_013_constructor_assembly](./picture/soc_ts_study_013_constructor_assembly.png)
+
+
 
 関数DIで十分なことも多いけど、
 「複数のメソッドで同じ依存を使う」ならクラスDIも便利だよ😊
@@ -297,6 +309,10 @@ console.log(await loadEventTitle("E-999", fakeFetcher));
 
 ## 13.8 “隠れ依存”もDIできるよ（時刻の例）🕒💉
 
+![soc_ts_study_013_fake_clock](./picture/soc_ts_study_013_fake_clock.png)
+
+
+
 `Date.now()` を直接呼ぶと、テストで時間がブレる😵‍💫
 だから「時計」も渡しちゃう✨
 
@@ -317,6 +333,10 @@ const fixedClock: Clock = () => 1700000000000;
 ---
 
 ## 13.9 DIを“やりすぎない”コツ😵‍💫➡️😊
+
+![soc_ts_study_013_di_overdose](./picture/soc_ts_study_013_di_overdose.png)
+
+
 
 DIは便利だけど、やりすぎると逆に読みにくいこともあるよ〜💦
 

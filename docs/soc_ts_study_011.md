@@ -30,6 +30,10 @@ DTOの定義として、Martin Fowlerは「プロセス間でデータを運ぶ�
 
 #### あるある①：APIの都合がドメインに侵入する🌀
 
+![soc_ts_study_011_snake_case_invasion](./picture/soc_ts_study_011_snake_case_invasion.png)
+
+
+
 * APIの `snake_case` がドメインにも広がる🐍
 * `null` が混ざって、あちこちで `?.` 地獄になる😇
 * 数値が文字列で来て、計算がどこかで壊れる💥
@@ -46,6 +50,10 @@ APIがちょっと変わっただけで
 ---
 
 ### 4. 正しい置き場所：変換（mapping）は“境界”🚪🔁✨
+
+![soc_ts_study_011_dto_domain_mapping](./picture/soc_ts_study_011_dto_domain_mapping.png)
+
+
 
 ![DTO to Domain Mapper](./picture/soc_ts_study_011_mapper.png)
 
@@ -88,6 +96,10 @@ flowchart LR
 ---
 
 ### 5. 実践の型：unknown → 検証 → 変換 → Domain 🛡️🔁
+
+![soc_ts_study_011_safe_traffic_light](./picture/soc_ts_study_011_safe_traffic_light.png)
+
+
 
 外部から来るデータって、TypeScript的にはほんとは **信用できない**んだよね🥺
 だから流れを固定しちゃうのがオススメ✨
@@ -158,6 +170,10 @@ type Order = Readonly<{
 ---
 
 ### 6-3. Zodで「DTOの形」を検証する✅✨
+
+![soc_ts_study_011_zod_gate](./picture/soc_ts_study_011_zod_gate.png)
+
+
 
 ここでの主役は **DTOスキーマ**！📦✅
 “外から来たもの”を一回ここで確定させるよ〜🛡️
@@ -273,6 +289,10 @@ Mapperに置くと気持ちよく吸収できる差👇😍
 ---
 
 ## 9. テストの最短セット🧪🌸（Mapperは超テストしやすい！）
+
+![soc_ts_study_011_mapper_test_bench](./picture/soc_ts_study_011_mapper_test_bench.png)
+
+
 
 Mapperは純粋関数っぽくできるからテスト向き💖
 

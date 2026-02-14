@@ -31,6 +31,10 @@
 
 ## 15.2 3種類だけ覚えよ！テストの基本セット🍱✨
 
+![soc_ts_study_015_test_speedometer](./picture/soc_ts_study_015_test_speedometer.png)
+
+
+
 ### ① ユニットテスト（最優先🔥）✅
 
 * 対象：**Domainの純粋ロジック**（計算・判定・ルール）🧠
@@ -106,6 +110,14 @@ graph BT
 「カフェの注文で割引計算」☕🍰（Domainが主役）
 
 ### ✅ Domain：純粋ロジック（副作用なし）
+
+![soc_ts_study_015_pricing_logic_gears](./picture/soc_ts_study_015_pricing_logic_gears.png)
+
+
+
+![soc_ts_study_015_domain_fortress](./picture/soc_ts_study_015_domain_fortress.png)
+
+
 
 例：合計金額・割引・端数処理みたいなやつ✨
 
@@ -215,6 +227,10 @@ describe("placeOrder", () => {
 
 ## 15.7 I/O（通信）をテストするなら：MSWで“現実に近いモック”🕸️✨
 
+![soc_ts_study_015_mock_interceptor](./picture/soc_ts_study_015_mock_interceptor.png)
+
+
+
 「fetchをモックしたい…」ってとき、**MSW**はかなり便利寄り🧡
 NodeテストでHTTPリクエストを横取りする導線が公式にあるよ ([mswjs.io][6])
 
@@ -226,6 +242,10 @@ NodeテストでHTTPリクエストを横取りする導線が公式にあるよ
 ---
 
 ## 15.8 E2Eは「最重要ルートだけ」Playwrightで守る🎭🏆
+
+![soc_ts_study_015_e2e_spotlight](./picture/soc_ts_study_015_e2e_spotlight.png)
+
+
 
 E2Eは増やしすぎると地獄になりやすい😇
 だから方針はこれ👇
