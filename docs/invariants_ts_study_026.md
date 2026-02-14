@@ -12,6 +12,10 @@
 
 ## 1) なんでDBも信用しないの？😅🌀
 
+![db_unsafe](./picture/invariants_ts_study_026_db_unsafe.png)
+
+
+
 「DBって自分で管理してるんだから安全でしょ？」って思いがちだけど…**意外と壊れる**のがDBなんだよね🥹🗄️
 
 よくある事故👇
@@ -28,6 +32,10 @@
 ---
 
 ## 2) 「DBの形」と「ドメインの形」は別物だよ📦↔️🏰
+
+![db_vs_domain_model](./picture/invariants_ts_study_026_db_vs_domain_model.png)
+
+
 
 ここがコツ！🪄
 
@@ -96,6 +104,10 @@ export type Plan = "Free" | "Pro";
 
 ### 3-2) DB Row 側（まず「形」を検証する）📐✅
 
+![row_schema_check](./picture/invariants_ts_study_026_row_schema_check.png)
+
+
+
 Rowは **DBの都合**（null/文字列/数値/日付文字列…）が混ざりやすいよね🗄️
 
 ```ts
@@ -115,6 +127,10 @@ export type UserRow = z.infer<typeof userRowSchema>;
 ---
 
 ### 3-3) 「Row → Domain」変換（この章の主役）🧵✨
+
+![conversion_logic_flow](./picture/invariants_ts_study_026_conversion_logic_flow.png)
+
+
 
 ここで **検証 → 正規化 → VO生成 → Entity生成** をやるよ🙂💕
 
@@ -189,6 +205,10 @@ export function mapUserRowToDomain(rowUnknown: unknown): Result<User, DataCorrup
 
 ## 4) Repositoryでは「境界っぽさ」を隠して、呼び出し側を楽にする😌✨
 
+![repository_facade](./picture/invariants_ts_study_026_repository_facade.png)
+
+
+
 アプリ側は「Userください」で呼びたいよね🙂
 でも内部ではちゃんと守る🛡️
 
@@ -231,6 +251,10 @@ if (!r.ok) {
 
 ## 5) ありがちなNG集（ここ踏む人めっちゃ多い🥹）🚫
 
+![common_pitfalls](./picture/invariants_ts_study_026_common_pitfalls.png)
+
+
+
 * DBの型が付いてるからって **変換せずにそのまま使う**
   → “壊れデータ” が入った瞬間に地獄😇🔥
 * 変換はするけど **例外throwで雑に落とす**
@@ -271,6 +295,10 @@ if (!r.ok) {
 ---
 
 ## 8) 今日のまとめ🌸
+
+![chapter_summary](./picture/invariants_ts_study_026_chapter_summary.png)
+
+
 
 * **DBは外部入力**！読み込み時も “境界” で守る🛡️
 * まず **スキーマで形**、次に **VOで意味** を保証する📐➡️💎

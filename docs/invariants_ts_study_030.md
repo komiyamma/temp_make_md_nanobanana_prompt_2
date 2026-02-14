@@ -40,6 +40,10 @@ flowchart LR
 
 ## 2) 仕様（＝守る不変条件リスト）🛡️💎
 
+![order_specs](./picture/invariants_ts_study_030_order_specs.png)
+
+
+
 ### 入力（外から来るもの）
 
 * customerId は文字列（でも中では “CustomerId” として扱いたい）🪪
@@ -59,6 +63,10 @@ flowchart LR
 ---
 
 ## 3) プロジェクト構成（迷子防止マップ）🗺️✨
+
+![project_structure_map](./picture/invariants_ts_study_030_project_structure_map.png)
+
+
 
 こんなフォルダにすると、境界がスッキリするよ〜😊
 
@@ -92,6 +100,10 @@ test/
 
 ### Step A) Result 型を用意する📦🎯（例外を乱発しない）
 
+![result_type_box](./picture/invariants_ts_study_030_result_type_box.png)
+
+
+
 **“失敗も仕様”** にするための基本セットだよ😊
 
 ```ts
@@ -107,6 +119,10 @@ export const Err = <E>(error: E): Result<never, E> => ({ ok: false, error });
 ---
 
 ### Step B) ドメインエラーを「型」で固定する🧯🏷️
+
+![domain_error_types](./picture/invariants_ts_study_030_domain_error_types.png)
+
+
 
 ```ts
 // src/domain/errors.ts
@@ -126,6 +142,10 @@ export type DomainError =
 ---
 
 ### Step C) 値オブジェクト（VO）を作る🎁💎
+
+![vo_implementation](./picture/invariants_ts_study_030_vo_implementation.png)
+
+
 
 #### Quantity（1〜99）
 
@@ -177,6 +197,10 @@ export const Money = {
 ---
 
 ### Step D) Entity：Order を作る🏰📦
+
+![entity_order](./picture/invariants_ts_study_030_entity_order.png)
+
+
 
 ```ts
 // src/domain/Order.ts
@@ -248,6 +272,10 @@ export const Order = {
 
 ### Step E) 境界：unknown を Zod で “形” にする🚪📐✅
 
+![boundary_zod_check](./picture/invariants_ts_study_030_boundary_zod_check.png)
+
+
+
 Zod v4 は stable で、現時点の最新版も npm にあるよ〜📐✨ ([Zod][2])
 
 ```ts
@@ -276,6 +304,10 @@ export const parseCreateOrder = (input: unknown) => {
 ---
 
 ### Step F) DTO → ドメイン変換（ここが“山場”🏔️🔗）
+
+![usecase_flow](./picture/invariants_ts_study_030_usecase_flow.png)
+
+
 
 ```ts
 // src/app/usecases.ts

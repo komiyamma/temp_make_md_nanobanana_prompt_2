@@ -43,6 +43,10 @@ flowchart LR
 
 ## 3) ありがちな事故😱💥（だから変換が必要）
 
+![internal_info_leak](./picture/invariants_ts_study_024_internal_info_leak.png)
+
+
+
 * ドメインエラーをそのまま `throw new Error("DB constraint fail: users_email_key")` で返す
   → **内部情報だだ漏れ**で危ない🔓😵
 * 画面/フロントが、エラーの形がバラバラで処理できない
@@ -58,6 +62,10 @@ RFC 9457でも「Problem Detailsはデバッグ用のダンプじゃないよ」
 
 ### Problem Details（JSON）の基本形🧩
 
+![problem_details_box](./picture/invariants_ts_study_024_problem_details_box.png)
+
+
+
 * `type`: エラー種類のURI（ドキュメントのURLにするのが定番）
 * `title`: 短いタイトル
 * `status`: HTTPステータス
@@ -69,6 +77,10 @@ IANAの `application/problem+json` も RFC 9457 が参照になるよう更新�
 ---
 
 ## 5) ステータスコードの“最小ルール”🧠✨
+
+![status_code_rules](./picture/invariants_ts_study_024_status_code_rules.png)
+
+
 
 迷ったら、まずこのルールで十分だよ🙂
 
@@ -83,6 +95,10 @@ IANAの `application/problem+json` も RFC 9457 が参照になるよう更新�
 ---
 
 ## 6) 実装パターン：3種類の失敗を分ける🚦🙂
+
+![error_separation](./picture/invariants_ts_study_024_error_separation.png)
+
+
 
 境界では、失敗を大きく3つに分けるとスッキリします✨
 
@@ -181,6 +197,10 @@ export type ProblemDetails = {
 
 ### 7-6. 変換：Zodエラー → Problem Details（400）🧱❌
 
+![zod_to_problem](./picture/invariants_ts_study_024_zod_to_problem.png)
+
+
+
 ```ts
 import { ZodError } from "zod";
 
@@ -200,6 +220,10 @@ function zodToProblem(e: ZodError, instance: string): ProblemDetails {
 ```
 
 ### 7-7. 変換：ドメインエラー → Problem Details（422/409）💎❌
+
+![domain_to_problem](./picture/invariants_ts_study_024_domain_to_problem.png)
+
+
 
 ```ts
 function domainToProblem(e: DomainError, instance: string): ProblemDetails {
@@ -318,6 +342,10 @@ export async function POST(req: Request): Promise<Response> {
 ---
 
 ## 8) 境界で変換すると、何がうれしい？😍✨
+
+![conversion_benefits](./picture/invariants_ts_study_024_conversion_benefits.png)
+
+
 
 * **フロントが楽**：`status` と `type` で機械的に分岐できる🎮
 * **UXが良い**：`errors` を出せばフォームにピンポイント表示できる📝
