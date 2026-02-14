@@ -85,6 +85,8 @@ type Discount = (price: number, ctx: DiscountContext) => number;
 
 ## 3. 割引Strategyを“部品として”並べる🎛️🧁
 
+![isa_hasa_ts_study_009_discount_scissors](./picture/isa_hasa_ts_study_009_discount_scissors.png)
+
 次に、割引の中身（戦略）を関数で用意するよ✨
 
 ```ts
@@ -190,6 +192,8 @@ graph LR
 
 ## 7. 「関数版」と「class版」どっちがいいの？🤔✨
 
+![isa_hasa_ts_study_009_lightweight_swap](./picture/isa_hasa_ts_study_009_lightweight_swap.png)
+
 ### ✅ 関数版が向くとき🪶
 
 * 状態を持たない（または閉包で十分）
@@ -197,6 +201,8 @@ graph LR
 * 合成（重ねがけ）を多用したい🧁
 
 ### ✅ class版が向くとき🏛️
+
+![isa_hasa_ts_study_009_class_vs_function](./picture/isa_hasa_ts_study_009_class_vs_function.png)
 
 * 割引に設定値があり、**インスタンスとして持ちたい**（例：会員ランクごとの料率）
 * 初期化・後片付け・ログ設定など、ライフサイクルが欲しい
@@ -208,6 +214,8 @@ graph LR
 ---
 
 ## 8. テストして「差し替えできてる感」を確かめよう🧪✨（Vitest例）
+
+![isa_hasa_ts_study_009_pure_testing](./picture/isa_hasa_ts_study_009_pure_testing.png)
 
 割引は**純粋関数に近い**ほどテストが楽😍
 

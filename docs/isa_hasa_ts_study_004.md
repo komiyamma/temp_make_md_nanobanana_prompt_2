@@ -106,6 +106,8 @@ export interface Logger {
 
 ### 5-2) 本番用：`ConsoleLogger`（普通に出す）🖥️✨
 
+![isa_hasa_ts_study_004_console_logger](./picture/isa_hasa_ts_study_004_console_logger.png)
+
 ```ts
 import { Logger } from "./Logger";
 
@@ -125,6 +127,8 @@ export class ConsoleLogger implements Logger {
 ---
 
 ### 5-3) テスト用：`MemoryLogger`（メモリにためる）🧪🫙
+
+![isa_hasa_ts_study_004_memory_logger](./picture/isa_hasa_ts_study_004_memory_logger.png)
 
 ```ts
 import { Logger } from "./Logger";
@@ -185,6 +189,8 @@ export class UserService {
 ```
 
 ### ここが合成の気持ちよさ😍✨
+
+![isa_hasa_ts_study_004_user_service_structure](./picture/isa_hasa_ts_study_004_user_service_structure.png)
 
 * `UserService` は `ConsoleLogger` を知らない
 * `Logger` という“約束”だけ見てる
@@ -250,6 +256,8 @@ console.log(logger.getEntries());
 
 ## 8) `type` が輝く場面：合体（&）と “どれか”（|）🧠✨
 
+![isa_hasa_ts_study_004_type_union](./picture/isa_hasa_ts_study_004_type_union.png)
+
 ### 8-1) 「基本ログ + 追跡ID」みたいに合体したい🧩➕
 
 ```ts
@@ -272,6 +280,8 @@ type Result<T> = Ok<T> | Ng;
 ---
 
 ## 9) “約束”設計のコツ：interface は小さく、鋭く🔪✨
+
+![isa_hasa_ts_study_004_golden_rules](./picture/isa_hasa_ts_study_004_golden_rules.png)
 
 合成をしやすくするための、超ありがちな黄金ルール🌟
 

@@ -7,6 +7,8 @@
 
 ## 6.0 この章でできるようになること🎯✨
 
+![isa_hasa_ts_study_006_prep_exercise](./picture/isa_hasa_ts_study_006_prep_exercise.png)
+
 * 「この関数、でかすぎ…😇」を **分ける判断**ができるようになる
 * 「検証✅」「計算🧮」「保存💾」みたいに、**役割ごと**に切り分けられる
 * 分けた部品を **あとで合成しやすい形**にできる（＝継承より強い🔥）
@@ -14,6 +16,8 @@
 ---
 
 ## 6.1 「責務」ってなに？🤔🧠
+
+![isa_hasa_ts_study_006_responsibility_split](./picture/isa_hasa_ts_study_006_responsibility_split.png)
 
 ![](./picture/isa_hasa_ts_study_006_cutting_responsibilities.png)
 
@@ -44,6 +48,8 @@
 ## 6.2 分割のコツ3つ🍀（この3つだけ覚えてOK！）
 
 ### コツ①：名前に **and**（〜と〜）が入ってたら分割候補✂️🧩
+
+![isa_hasa_ts_study_006_single_responsibility](./picture/isa_hasa_ts_study_006_single_responsibility.png)
 
 例：
 
@@ -90,6 +96,8 @@
 ---
 
 ### 6.3.1 まずは “分ける前” のコード（でかい関数）💥
+
+![isa_hasa_ts_study_006_god_class](./picture/isa_hasa_ts_study_006_god_class.png)
 
 ```ts
 // order.ts
@@ -159,6 +167,8 @@ export async function createOrder(input: CreateOrderInput): Promise<Order> {
 ---
 
 ## 6.4 ステップ1：まず「検証✅」を外に出す✂️✨
+
+![isa_hasa_ts_study_006_split_strategy](./picture/isa_hasa_ts_study_006_split_strategy.png)
 
 「検証」は変更理由が独立してることが多いよね。
 だから最初に抜くと効果がデカい！💪
@@ -247,6 +257,8 @@ export class InMemoryOrderRepository implements OrderRepository {
 ---
 
 ## 6.7 最後に「合成」する🧩✨（部品を組み立ててサービスにする）
+
+![isa_hasa_ts_study_006_composition_power](./picture/isa_hasa_ts_study_006_composition_power.png)
 
 ![](./picture/isa_hasa_ts_study_006_assembly_puzzle.png)
 
