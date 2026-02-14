@@ -34,6 +34,9 @@
 
 ## 2. なぜ setter が危ないの？😱💥（あるある事故）
 
+
+![Setter Accident](./picture/invariants_ts_study_016_setter_accident.png)
+
 たとえば注文（Order）があって、状態があるとするね📦
 
 * Draft（下書き）
@@ -74,6 +77,9 @@ const o2 = setStatus(o1, "Paid");
 
 ## 3. 更新は「意図のある操作」で表現しよう🧠✨
 
+
+![Intent Stamp](./picture/invariants_ts_study_016_intent_stamp.png)
+
 ### ✅ `setStatus("Paid")` より ✅ `markPaid()` 💖
 
 * `markPaid()` の中で **paidAt を必ず入れられる**
@@ -94,6 +100,9 @@ flowchart LR
 
 ## 4. 設計のコツ：更新を “コマンド化” する🎮📩
 
+
+![Command Menu](./picture/invariants_ts_study_016_command_menu.png)
+
 更新を “自由に書き換える” から、
 更新を “許可された操作だけにする” へ✨
 
@@ -108,6 +117,9 @@ flowchart LR
 ---
 
 ## 5. パターンA：不変条件を守る「関数更新」スタイル 🧼✨
+
+
+![Functional Machine](./picture/invariants_ts_study_016_functional_machine.png)
 
 「Orderを受け取って、新しいOrderを返す」やつ！
 イミュータブルで気持ちいいやつだよ〜🧊💕
@@ -173,6 +185,9 @@ function markPaid(order: Order): Result<Order, OrderError> {
 
 ## 6. パターンB：状態（Status）を “タグ付きユニオン” にして更新を強くする🏷️💪
 
+
+![State Shapes](./picture/invariants_ts_study_016_state_shapes.png)
+
 「状態ごとに持ってていいデータが違う」なら、これ最強✨
 
 ```ts
@@ -217,6 +232,9 @@ function markPaid(order: Order): Result<Order, OrderError> {
 ---
 
 ## 7. 「更新API」をどう切る？🧭✨（超実務の話）
+
+
+![API Gates](./picture/invariants_ts_study_016_api_gates.png)
 
 更新の入口を設計するとき、よくある選択肢はこの2つ👇
 
