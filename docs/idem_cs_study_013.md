@@ -13,6 +13,10 @@
 
 ## 13.2 Redis / 分散キャッシュって何？🧊🏎️
 
+![Redisのスピード](./picture/idem_cs_study_013_speed_runner.png)
+
+
+
 分散キャッシュは、複数台のWebサーバーで **同じキャッシュを共有** できる仕組みだよ📦
 「1台のメモリに貯める」のと違って、サーバーを増やしてもキャッシュが共有できるのが強み✨ ([Microsoft Learn][1])
 
@@ -66,6 +70,10 @@ Redisは速いけど、運用次第でこうなる可能性があるよ👇
 
 ## 13.6 設計パターン3つ（おすすめ順）🥇🥈🥉
 
+![Redisパターン3つ](./picture/idem_cs_study_013_patterns.png)
+
+
+
 ### 🥇 パターンA：DB本命 + Redis高速化（二層）🍰
 
 1. Redisに結果があれば即返す⚡
@@ -101,6 +109,10 @@ flowchart TD
 ---
 
 ## 13.7 実装ハンズオン：ASP.NET Core + Redisで冪等キーを保存する🛠️✨
+
+![SET NXロック](./picture/idem_cs_study_013_set_nx_lock.png)
+
+
 
 ### 13.7.1 使うライブラリ（本日時点の代表例）📦
 
@@ -143,6 +155,10 @@ dotnet add package StackExchange.Redis
 ---
 
 ### 13.7.5 実装の考え方（超重要）🧠🔑
+
+![Redis処理フロー](./picture/idem_cs_study_013_redis_flow.png)
+
+
 
 今回はキーを2種類に分けるよ👇
 
@@ -408,6 +424,10 @@ Invoke-RestMethod -Method Post "http://localhost:5000/orders" `
 ---
 
 ## 13.8 Redis方式の落とし穴10個🕳️😵‍💫
+
+![TTL切れの危険](./picture/idem_cs_study_013_ttl_danger.png)
+
+
 
 1. **TTL短すぎ**：再送が来た頃に消えてる⏳
 2. **TTL長すぎ**：メモリを食い続ける🍔
