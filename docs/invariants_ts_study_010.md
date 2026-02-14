@@ -17,6 +17,9 @@
 
 ## 1. まず“事故”を体験しよ😱💥（string地獄）
 
+
+![String Hell](./picture/invariants_ts_study_010_string_hell.png)
+
 例えば、IDをぜんぶ `string` にしてると…こうなる👇
 
 ```ts
@@ -40,6 +43,9 @@ loadUser(orderId);
 ---
 
 ## 2. Branded / Opaque 型ってなに？🏷️🧠
+
+
+![Invisible Tag](./picture/invariants_ts_study_010_invisible_tag.png)
 
 **Branded Type（ブランド型）**は、ざっくり言うと👇
 
@@ -111,6 +117,9 @@ export type OrderId = Brand<string, "OrderId">;
 
 ## 5. でも結局どこかで“ブランド付け”が必要だよね？🏭🙂
 
+
+![Factory Gate](./picture/invariants_ts_study_010_factory_gate.png)
+
 そう！
 外から来た `string` を `UserId` にするには、**どこかで変換**が必要。
 
@@ -155,6 +164,9 @@ export const OrderId = {
 
 ## 6. “混ぜたら怒られる”を確認しよ⚡😆
 
+
+![Compile Shield](./picture/invariants_ts_study_010_compile_shield.png)
+
 ```ts
 import { UserId, OrderId } from "./ids";
 
@@ -187,6 +199,9 @@ const id = "user_1" as UserId; // 😇 これを各所でやると崩壊
 
 ### 落とし穴②：ブランド型＝実行時の安全、だと勘違いする
 
+
+![Runtime Reality](./picture/invariants_ts_study_010_runtime_reality.png)
+
 ブランド型は **コンパイル時の安全**だよ🙂
 実行時の値はただの `string`（だから境界で検証が必要）🧪
 
@@ -202,6 +217,9 @@ const id = "user_1" as UserId; // 😇 これを各所でやると崩壊
 ---
 
 ## 8. ちょい応用：Emailも「ただのstringじゃない！」📩💎
+
+
+![Email Brand](./picture/invariants_ts_study_010_email_brand.png)
 
 ```ts
 import type { Brand } from "./brand";

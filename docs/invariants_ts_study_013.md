@@ -10,6 +10,9 @@
 
 ## まずは“事故る設計”を1回だけ見ておこう😱💥（わざと）
 
+
+![Unsafe Chaos](./picture/invariants_ts_study_013_unsafe_chaos.png)
+
 例えば Email をただの `string` にして、どこでも入れられると…
 
 * `"abc"` みたいなメールじゃない文字が入る📩❌
@@ -22,6 +25,9 @@
 
 ## 解決の中心アイデア💡✨
 
+
+![Hidden Constructor](./picture/invariants_ts_study_013_hidden_constructor.png)
+
 ### ✅ ルール：VOは「作る瞬間」にしか検証させない
 
 そのためにやることはシンプル👇
@@ -33,6 +39,9 @@
 ---
 
 ## create と parse の使い分け🧭✨（ここ超大事！）
+
+
+![Washing Station](./picture/invariants_ts_study_013_washing_station.png)
 
 ![create と parse の使い分け🧭✨（ここ超大事！）](./picture/invariants_ts_study_013_parse_create.png)
 
@@ -51,6 +60,9 @@
 ---
 
 ## 実装例①：Email VO（class＋private constructor）📩💎
+
+
+![Result Box](./picture/invariants_ts_study_013_result_box.png)
 
 ### 1) Result型（失敗を返せる箱）🎁
 
@@ -111,6 +123,9 @@ export class Email {
 
 ### ✅ これで何が嬉しいの？😍
 
+
+![Single Entrance](./picture/invariants_ts_study_013_single_entrance.png)
+
 * `new Email("abc")` が **できない**（コンパイルで止まる）⚡
 * Email を作るには **必ず `parse` を通る** → 入口が1つになる🚪✨
 * `Email` 型になったら **“メールとして正しい” が保証される**💎
@@ -164,6 +179,9 @@ function toMessage(err: EmailError): string {
 ---
 
 ## 実装例②：classを使わない版（factory関数＋Brand）🏷️✨
+
+
+![Brand vs Class](./picture/invariants_ts_study_013_brand_vs_class.png)
 
 「VOは関数で作る派」もいるので、選べるように置いとくね🙂
 
