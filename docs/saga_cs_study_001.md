@@ -31,6 +31,8 @@ graph LR
 
 ## 3. 分散処理って、なんで失敗が普通なの？🌪️📡
 
+![Distributed System Failures](./picture/saga_cs_study_001_distributed_failure.png)
+
 単体アプリ＋単一DBなら、DBトランザクションで「全部成功 or 全部ロールバック」がやりやすいです🧘‍♀️✨
 
 でも、サービスが分かれてる（＝分散してる）と、世界が変わる😵
@@ -53,6 +55,8 @@ graph LR
 
 ## 4. “部分成功”って何がヤバいの？😱📚
 
+![Partial Success Risk](./picture/saga_cs_study_001_partial_success.png)
+
 途中まで成功して、途中で失敗する＝**部分成功**。
 
 EC例だと、こんな事故が起きます👇
@@ -68,6 +72,8 @@ EC例だと、こんな事故が起きます👇
 
 ## 5. 「じゃあ全部まとめてトランザクションにすれば？」が難しい理由🧩🚧
 
+![Monolith vs Distributed Transaction](./picture/saga_cs_study_001_monolith_vs_micro.png)
+
 よくある素朴な発想👇
 「注文→決済→在庫→配送を、**1つの巨大トランザクション**にできないの？」
 
@@ -81,6 +87,8 @@ EC例だと、こんな事故が起きます👇
 ---
 
 ### Sagaの基本的な仕組み 🔁
+
+![Saga Flow](./picture/saga_cs_study_001_basic_flow.png)
 ```mermaid
 sequenceDiagram
     participant S1 as サービスA
@@ -102,6 +110,8 @@ sequenceDiagram
 Microsoftの説明でも、Sagaは「複数サービスにまたがる取引を調整し、失敗時は補償で巻き戻す」考え方、とされています。([Microsoft Learn][1])
 
 > ポイント🍀：Sagaは「ぜんぶ一瞬で元通り」じゃなくて、**ビジネス的に整合する状態に戻す**感じになりやすいよ🧾
+
+![Compensation Logic](./picture/saga_cs_study_001_compensation_concept.png)
 > （“元に戻す以外”は後の章でしっかり✨）
 
 ---
@@ -132,6 +142,8 @@ Microsoftの説明でも、Sagaは「複数サービスにまたがる取引を�
 ---
 
 ## 8. “雰囲気だけ”体験ミニコード（ConsoleでOK）🎮💻
+
+![Saga Code Structure](./picture/saga_cs_study_001_code_structure.png)
 
 ここではSagaの実装じゃなく、**「途中失敗→補償が必要」**を体感する用です😊
 （本格実装は後半のハンズオンでやるよ🛠️✨）
