@@ -21,6 +21,10 @@
 
 ## 2) まず3つの箱をイメージしよ〜📦✨
 
+![soc_cs_study_010_box_types](./picture/soc_cs_study_010_box_types.png)
+
+
+
 ### 🖥️ ViewModel（画面の箱）
 
 * 画面表示に便利な形（例：`string`で表示、ボタン状態、エラー文言）
@@ -50,6 +54,10 @@
 ---
 
 ## 3) じゃあ「詰め替え」はどこでやるの？🧭✨
+
+![soc_cs_study_010_mapping_location](./picture/soc_cs_study_010_mapping_location.png)
+
+
 
 おすすめはだいたいココ👇
 
@@ -146,6 +154,10 @@ public sealed class ProductDto
 
 ## 5) 手動マッピング：まずは“王道の型”から👑✍️
 
+![soc_cs_study_010_manual_mapping](./picture/soc_cs_study_010_manual_mapping.png)
+
+
+
 ### 5-1) ViewModel → Entity（入力を業務の形にする）🔄🧠
 
 コツは **「変換で失敗したら、Entityを作らない」** だよ✅✨
@@ -220,6 +232,10 @@ public static class ProductDtoMapping
 
 ### 5-3) リストの詰め替え（地味に超よく使う）📚✨
 
+![soc_cs_study_010_list_mapping](./picture/soc_cs_study_010_list_mapping.png)
+
+
+
 ```csharp
 var dtos = products.Select(p => p.ToDto()).ToList();
 ```
@@ -227,6 +243,10 @@ var dtos = products.Select(p => p.ToDto()).ToList();
 ---
 
 ## 6) 「詰め替えが面倒😵‍💫」が“保険”になる理由🛡️✨
+
+![soc_cs_study_010_mapping_shield](./picture/soc_cs_study_010_mapping_shield.png)
+
+
 
 詰め替えがあると、こうなる👇
 
@@ -260,6 +280,10 @@ var dtos = products.Select(p => p.ToDto()).ToList();
 ---
 
 ## 8) AutoMapperはいつ使う？（“魔法”の扱い方）🪄🤔
+
+![soc_cs_study_010_automapper_magic](./picture/soc_cs_study_010_automapper_magic.png)
+
+
 
 AutoMapperは **手書きの量を減らせる**便利ツールだけど、最近の状況として：
 

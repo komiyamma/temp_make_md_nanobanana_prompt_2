@@ -12,6 +12,10 @@
 
 ## 1) そもそも「データの箱」って何？📦📝
 
+![soc_cs_study_009_god_class_monster](./picture/soc_cs_study_009_god_class_monster.png)
+
+
+
 ここでいう「データの箱」は、ざっくり言うと👇
 
 * **プロパティを持ってデータを運ぶクラス**（または record）
@@ -24,6 +28,10 @@
 ---
 
 ## 2) 万能クラス（God Class）が起こす悲劇あるある😇💣
+
+![soc_cs_study_009_god_class_growth](./picture/soc_cs_study_009_god_class_growth.png)
+
+
 
 ![soc_cs_study_009_god_class](./picture/soc_cs_study_009_god_class.png)
 
@@ -68,6 +76,10 @@ Microsoftの設計ガイドでも、永続化の関心をドメインの外に�
 ---
 
 ## 3) 「分ける」って、つまり何？🧱✨
+
+![soc_cs_study_009_cutting_god_class](./picture/soc_cs_study_009_cutting_god_class.png)
+
+
 
 結論：
 **“関心（変更理由）”が違うデータは、箱を分ける** です🙆‍♀️🌸
@@ -167,6 +179,10 @@ public class Customer
 
 ## 6) 「分ける」判断のコツ：この3問だけでOK🙆‍♀️✨
 
+![soc_cs_study_009_three_boxes](./picture/soc_cs_study_009_three_boxes.png)
+
+
+
 ![soc_cs_study_009_decision_tree](./picture/soc_cs_study_009_decision_tree.png)
 
 迷ったら、次の質問を自分にします👇
@@ -191,6 +207,10 @@ public class Customer
 
 ## 7) ミニ仕分けクイズ🎮💡（SoCの筋トレ）
 
+![soc_cs_study_009_quiz_show](./picture/soc_cs_study_009_quiz_show.png)
+
+
+
 次の要素、どの箱に置きたい？📦✨
 （A:画面用 / B:DB用 / C:業務用）
 
@@ -208,6 +228,10 @@ public class Customer
 ---
 
 ## 8) AI（Copilot/Codex）で一気に上達する使い方🤖💖
+
+![soc_cs_study_009_ai_analysis](./picture/soc_cs_study_009_ai_analysis.png)
+
+
 
 AIには「分け方そのもの」より、まず **混ざりポイント発見🔍** をやらせると強いです✨
 
