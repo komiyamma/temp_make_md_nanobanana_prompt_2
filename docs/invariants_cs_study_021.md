@@ -23,6 +23,10 @@ C# 14（.NET 10 / Visual Studio 2026）で触れると便利な小ワザも混�
 
 ### 1-1. “壊れた状態”を作れる入口が多すぎる🚪🚪🚪
 
+![invariants_cs_study_021_open_door_vulnerability.png](./picture/invariants_cs_study_021_open_door_vulnerability.png)
+
+
+
 例えばこんなクラスがあったとするね👇
 
 ```csharp
@@ -58,6 +62,10 @@ flowchart TD
 ## 2. 解決方針はこれだけ！📌✨
 
 ### 2-1. 更新の入口を “メソッド” に寄せる🛡️🚪
+
+![invariants_cs_study_021_method_gateway.png](./picture/invariants_cs_study_021_method_gateway.png)
+
+
 
 * プロパティは **基本 “読めるだけ”**（setter を弱める）
 * 更新は **意図が分かる名前のメソッド**だけにする
@@ -110,6 +118,10 @@ public class Member
 
 ### パターンB：作るときだけ入れてOK（init を使う）🧊✨
 
+![invariants_cs_study_021_init_only.png](./picture/invariants_cs_study_021_init_only.png)
+
+
+
 「生成後に変えたくない」プロパティは「init」も超便利だよ〜！
 init は **生成時だけセットできて、その後は変更できない**仕組みだよ🧷 ([Microsoft Learn][2])
 
@@ -128,6 +140,10 @@ public class Profile
 ---
 
 ### パターンC：C# 14 の field で “楽して安全”🧼✨
+
+![invariants_cs_study_021_csharp14_field.png](./picture/invariants_cs_study_021_csharp14_field.png)
+
+
 
 C# 14 には「field」っていう **プロパティの裏側フィールドを触れる新機能**があるよ〜！
 「トリムしたい」とか「nullは入れたくない」みたいな軽い整形に便利✨ ([Microsoft Learn][4])
@@ -163,6 +179,10 @@ flowchart LR
 ---
 
 ## 4. “集合”があると setter 地獄が加速する🧺💥
+
+![invariants_cs_study_021_collection_trap.png](./picture/invariants_cs_study_021_collection_trap.png)
+
+
 
 こういうの最悪パターン👇
 
@@ -216,6 +236,10 @@ public class Cart
 ここは安心してOK！ちゃんと逃げ道あるよ🎀
 
 ### 5-1. JSON：private setter でもいけることがある🧩✨
+
+![invariants_cs_study_021_json_backdoor.png](./picture/invariants_cs_study_021_json_backdoor.png)
+
+
 
 System.Text.Json は **JsonInclude を使うと private/internal setter を使える**説明があるよ📌 ([Microsoft Learn][5])
 

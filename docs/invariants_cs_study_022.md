@@ -16,6 +16,10 @@
 
 ## 1. なんで「代入で更新」が危ないの？😱💥
 
+![invariants_cs_study_022_direct_assignment_danger.png](./picture/invariants_cs_study_022_direct_assignment_danger.png)
+
+
+
 たとえばこんなの👇
 
 ```csharp
@@ -54,6 +58,10 @@ member.Email = "a@b.com";      // 正しそうに見えるけど正規化され�
 ---
 
 ## 3. これだけ覚えればOK！3つのルール📌✨
+
+![invariants_cs_study_022_three_update_rules.png](./picture/invariants_cs_study_022_three_update_rules.png)
+
+
 
 ### ルール①：外からは読めるだけ👀（勝手に書けない）
 
@@ -182,12 +190,20 @@ public sealed class Member
 
 ### ✅ここが超重要ポイント💎
 
+![invariants_cs_study_022_atomic_update.png](./picture/invariants_cs_study_022_atomic_update.png)
+
+
+
 * **失敗したら `Email` は絶対に変わらない**
 * だからオブジェクトが「壊れた状態」で残らない🧯✨
 
 ---
 
 ## 5. “複数項目更新”はどうする？👥🧺
+
+![invariants_cs_study_022_multi_field_update.png](./picture/invariants_cs_study_022_multi_field_update.png)
+
+
 
 プロフィール更新みたいに「名前・誕生日・住所…」って複数あると、途中更新が怖いよね😱
 コツはこれ👇
@@ -219,6 +235,10 @@ public Result ChangeProfile(string rawEmail, string rawDisplayName)
 ## 6. ありがちな落とし穴あるある⚠️😵‍💫
 
 ### ❌落とし穴①：検証より先に代入しちゃう
+
+![invariants_cs_study_022_pitfall_assignment.png](./picture/invariants_cs_study_022_pitfall_assignment.png)
+
+
 
 ```csharp
 Email = new Email(rawEmail); // ← 先に壊れる可能性😱

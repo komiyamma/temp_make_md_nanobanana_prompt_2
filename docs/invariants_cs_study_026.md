@@ -24,12 +24,20 @@ UIの入力って、こんなのが日常です👇
 
 ### ✅ 方針：境界で「ゆるい箱 → 堅い箱」へ変換する📦➡️🏛️
 
+![invariants_cs_study_026_dirty_vs_clean.png](./picture/invariants_cs_study_026_dirty_vs_clean.png)
+
+
+
 * **DTO（入力モデル）**：ゆるい（`string?` いっぱい、`set;` OK）
 * **内部モデル（VO / コマンド）**：堅い（不変・nullなし・生成ルールあり）
 
 ---
 
 ## 3) 変換パイプライン（これが“型と境界で守る”の形）🛡️🚪
+
+![invariants_cs_study_026_conversion_pipeline.png](./picture/invariants_cs_study_026_conversion_pipeline.png)
+
+
 
 ![UI Pipeline](./picture/invariants_cs_study_026_funnel_diagram.png)
 
@@ -72,6 +80,10 @@ flowchart LR
 
 ## 5) まずは“失敗を返す型”を用意🧾🙂
 
+![invariants_cs_study_026_field_error_collection.png](./picture/invariants_cs_study_026_field_error_collection.png)
+
+
+
 UIに「どこがダメ」を返したいので、**フィールド名付きエラー**を持てるようにするよ📌
 
 ```csharp
@@ -95,6 +107,10 @@ public sealed class Result<T>
 ---
 
 ## 6) VO側：**作れない値は“作らせない”】【第10〜第13の復習】🏭🔒
+
+![invariants_cs_study_026_vo_creation_gate.png](./picture/invariants_cs_study_026_vo_creation_gate.png)
+
+
 
 ### Email VO（正規化つき）📧🧼
 
@@ -210,6 +226,10 @@ public sealed class SignUpFormInput
 
 ## 8) 本丸：境界でDTO→堅いコマンドへ変換する🏛️🛡️
 
+![invariants_cs_study_026_command_factory_assembly.png](./picture/invariants_cs_study_026_command_factory_assembly.png)
+
+
+
 ここがこの章の主役だよ〜！✨
 「失敗を集めて返す」が超大事🙂
 
@@ -246,6 +266,10 @@ public static class SignUpCommandFactory
 
 ## 9) UI側：使い方（WinForms/WPF/Blazor…どれでも同じ思想）🎀🖥️
 
+![invariants_cs_study_026_ui_error_feedback.png](./picture/invariants_cs_study_026_ui_error_feedback.png)
+
+
+
 UIは「入力集める」→「Factoryに渡す」→「エラー表示」だけに寄せる🙂
 
 ```csharp
@@ -281,6 +305,10 @@ ShowToast("登録できたよ〜！🎉");
 さらに、統一バリデーションAPIは **`Microsoft.Extensions.Validation`** パッケージへ移動して、HTTP以外でも使いやすくなってるよ🧩 ([Microsoft Learn][3])
 
 ### 10-1) Minimal API の入口で “自動Validation” を効かせる（おまけ）🌐🚪
+
+![invariants_cs_study_026_minimal_api_validation.png](./picture/invariants_cs_study_026_minimal_api_validation.png)
+
+
 
 ```csharp
 builder.Services.AddValidation(); // .NET 10 のMinimal API検証をON✨
