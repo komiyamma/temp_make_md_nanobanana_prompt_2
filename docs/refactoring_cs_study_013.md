@@ -50,6 +50,10 @@ graph LR
 
 ### よく使う命名規則📌
 
+![C# Naming Conventions](./picture/refactoring_cs_study_013_casing.png)
+
+
+
 * **クラス名・メソッド名**：PascalCase（例：`OrderService` / `CalculateTotal`）
 * **引数・ローカル変数・privateフィールド**：camelCase（例：`orderId` / `totalPrice`）
 * **privateフィールド**：`_` で始める（例：`_items`）
@@ -57,6 +61,10 @@ graph LR
   これらは Microsoft のガイドとして整理されています。([Microsoft Learn][1])
 
 ### bool（真偽値）の命名は超重要✅❌
+
+![Boolean Naming](./picture/refactoring_cs_study_013_bool.png)
+
+
 
 * ✅ 良い例：`isValid`, `hasPermission`, `canRetry`, `shouldNotify`
 * ⚠️ 迷いがちな例：`flag`, `check`, `ok`
@@ -67,6 +75,10 @@ graph LR
 ## 3) “悪い名前”あるある図鑑📚👀（よく出るやつ）
 
 ### ① 意味が広すぎる🫥
+
+![Naming Clarity](./picture/refactoring_cs_study_013_clarity.png)
+
+
 
 * `data`, `info`, `item`, `value`, `result`
   → **何の？** が不明😵‍💫
@@ -191,6 +203,10 @@ Copilotを使った「名前の改善」手順でも、F2が案内されてい�
 
 ## 7) Renameの“地雷ポイント”🚧💣（ここだけ注意！）
 
+![Rename Traps](./picture/refactoring_cs_study_013_traps.png)
+
+
+
 Renameは強いけど、万能ではありません🙂
 
 ### ① 文字列（string）の中身は基本別物🧵
@@ -233,6 +249,10 @@ Renameは強いけど、万能ではありません🙂
 ---
 
 ## 8) AIで命名を加速する🤖⚡（でも最後は人間が決める🧠✨）
+
+![AI Naming Suggestions](./picture/refactoring_cs_study_013_ai_names.png)
+
+
 
 ### AIでできること🎁
 

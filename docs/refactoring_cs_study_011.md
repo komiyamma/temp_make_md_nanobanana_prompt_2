@@ -26,6 +26,10 @@
 
 ## 2. ログレベル（重要度）を使い分けよう🚦✨
 
+![Log Levels Hierarchy](./picture/refactoring_cs_study_011_levels.png)
+
+
+
 ログは「重要度」で分類します。これを **ログレベル** と呼びます🙂
 
 * **Trace**：いちばん細かい（情報量が多すぎ注意）🧠💥
@@ -56,12 +60,20 @@ logger.LogInformation("Payment started. UserId={UserId} Amount={Amount}", userId
 
 ### 文字列補間（$"..."）はなるべく避けよう🙅‍♀️⚡
 
+![Structured Logging vs String Interpolation](./picture/refactoring_cs_study_011_structured.png)
+
+
+
 ログで `$"UserId={userId}"` みたいな文字列補間を多用すると、性能面で不利になることがあります⚠️
 Microsoft のドキュメントでも「多くの場合テンプレート形式を推奨」とされています✨ ([Microsoft Learn][1])
 
 ---
 
 ## 4. “1行の情報量”の作り方📏🧾✨
+
+![Log Anatomy](./picture/refactoring_cs_study_011_anatomy.png)
+
+
 
 読みやすいログは、**1行で状況が分かる**のが理想です🌟
 
@@ -76,6 +88,10 @@ Microsoft のドキュメントでも「多くの場合テンプレート形式�
 ---
 
 ## 5. どこにログが出るの？（代表）🪟🔍
+
+![Log Providers](./picture/refactoring_cs_study_011_providers.png)
+
+
 
 .NET のログは「プロバイダー」を追加して、出力先を決めます📮✨
 標準で使える代表例はこんな感じ👇
@@ -168,6 +184,10 @@ EventId は「同じ種類の出来事」をまとめる考え方です🧩✨ (
 
 ## 8. Scope（スコープ）で “共通情報” を自動で付ける🧵✨
 
+![Log Scope](./picture/refactoring_cs_study_011_scope.png)
+
+
+
 リファクタや不具合調査で「この一連の処理のログだけ追いたい！」ってなりがちです🙂
 そこで **Scope** を使うと、同じ処理中のログに共通情報を付けられます📌
 
@@ -203,6 +223,10 @@ graph TD
 ---
 
 ## 9. 例外は “exを渡して” 記録する💥🧯
+
+![Exception Logging](./picture/refactoring_cs_study_011_exception_log.png)
+
+
 
 エラーのログは、**例外オブジェクトも一緒に渡す**のが基本です🙂
 スタックトレースなどが出力先に残せます📌（出力のされ方はプロバイダー依存） ([Microsoft Learn][1])
