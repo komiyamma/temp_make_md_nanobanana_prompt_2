@@ -12,6 +12,10 @@
 
 ## 1) この章のゴール🎯（終わる頃にできるようになること）
 
+![goal_signpost](./picture/isa_hasa_cs_study_001_goal_signpost.png)
+
+
+
 この章が終わったら、次の3つができればOKだよ〜！🙆‍♀️✨
 
 1. 「合成」ってなに？を **説明できる（ふわっとでOK）**🧩
@@ -21,6 +25,10 @@
 ---
 
 ## 2) 合成優先って、ひとことで言うと？🧠🧩
+
+![concept_scale](./picture/isa_hasa_cs_study_001_concept_scale.png)
+
+
 
 **「クラスを“血筋”で増やす前に、機能を“部品”として組み合わせよう」**って考え方だよ〜😊🧱
 
@@ -34,6 +42,10 @@
 ---
 
 ## 3) 超わかる例え：継承＝血縁、合成＝LEGO🧱👨‍👩‍👧‍👦
+
+![lego_vs_tree](./picture/isa_hasa_cs_study_001_lego_vs_tree.png)
+
+
 
 ここめっちゃ大事だから、最初に“感覚”を作っちゃおう😄✨
 
@@ -67,6 +79,10 @@
 
 ## 4) “壊れにくい設計”って、結局なに？🛡️✨
 
+![robust_shield](./picture/isa_hasa_cs_study_001_robust_shield.png)
+
+
+
 超シンプルに言うとこれ👇
 
 ✅ **変更が来ても、直す場所が少ない**
@@ -94,6 +110,10 @@ ECっぽい処理を想像してね🛒✨
 ---
 
 ## 6) ハンズオン🧪（合計20〜25分）
+
+![design_sketch](./picture/isa_hasa_cs_study_001_design_sketch.png)
+
+
 
 ![](./picture/isa_hasa_cs_study_001_lego_sketch.png)
 
@@ -158,6 +178,10 @@ ECっぽい処理を想像してね🛒✨
 ---
 
 ## 7) “合成ってこういうコード”の最小サンプル👀🧩
+
+![code_diagram](./picture/isa_hasa_cs_study_001_code_diagram.png)
+
+
 
 まだ深掘りしないけど、「合成っぽさ」をチラ見せするね😊✨
 （次の章以降でちゃんと作り込むよ〜🔧）
@@ -251,6 +275,10 @@ classDiagram
 ---
 
 ## 9) 3分ミニチェック✅✨（超かんたん）
+
+![quiz_board](./picture/isa_hasa_cs_study_001_quiz_board.png)
+
+
 
 次のうち「合成の考え方っぽい」のはどれ？（複数OK）🙂
 

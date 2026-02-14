@@ -30,6 +30,10 @@
 
 ## 2) 「継承」じゃだめなの？😳➡️🙂
 
+![inheritance_vs_delegation](./picture/isa_hasa_cs_study_006_inheritance_vs_delegation.png)
+
+
+
 継承で機能追加しようとすると、だいたいこうなることが多いです👇
 
 * そもそも override できない（virtual じゃない等）😇
@@ -80,6 +84,10 @@ public sealed class EmailNotifier : INotifier
 
 ### Step B：ログ付きにしたい…でも EmailNotifier は触りたくない😵‍💫
 
+![wrapper_doll](./picture/isa_hasa_cs_study_006_wrapper_doll.png)
+
+
+
 そこで「包むクラス」を作ります📦✨
 ポイントはこれ👇
 
@@ -109,6 +117,10 @@ public sealed class LoggingNotifier : INotifier
 ---
 
 ### Step C：組み立てて使う（合成）🧩
+
+![sequence_flow](./picture/isa_hasa_cs_study_006_sequence_flow.png)
+
+
 
 ```csharp
 var notifier = new LoggingNotifier(new EmailNotifier());
@@ -159,6 +171,10 @@ sequenceDiagram
 
 ### ⚠️ 落とし穴1：ラッパーが“何でも屋”になる
 
+![god_wrapper](./picture/isa_hasa_cs_study_006_god_wrapper.png)
+
+
+
 ログだけのつもりが、例外処理・変換・保存…って増えると太る😵‍💫
 👉 **目的は1つ**（ログならログだけ）に寄せよう🎯
 
@@ -195,6 +211,10 @@ sequenceDiagram
 ## 8) ミニ練習問題🧩📝（5〜8分）
 
 ### 問題1✅
+
+![stopwatch_wrapper](./picture/isa_hasa_cs_study_006_stopwatch_wrapper.png)
+
+
 
 `LoggingNotifier` に「処理時間（ミリ秒）」も出す機能を追加してみて⌛✨
 ヒント：開始時刻を取って、最後に差分出すだけ🙂

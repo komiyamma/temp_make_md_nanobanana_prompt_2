@@ -36,6 +36,10 @@
 
 ## 2. 合成とinterfaceの関係🧩🔌
 
+![composition_plug](./picture/isa_hasa_cs_study_005_composition_plug.png)
+
+
+
 合成優先で嬉しいことの1つがこれ👇
 **“部品を差し替えられる”＝変更に強い🛡️**
 
@@ -53,6 +57,10 @@
 通知方法を後から増やしたい（Console通知→メール通知…みたいな）って、めちゃ現場あるある😇
 
 ## 3-1. まずは “差し替え不可” な例（つらさ体験😱）
+
+![hardcoded_glue](./picture/isa_hasa_cs_study_005_hardcoded_glue.png)
+
+
 
 ```csharp
 public class OrderService
@@ -79,6 +87,10 @@ public class ConsoleNotifier
 ---
 
 ## 3-2. interfaceで“差し替え口”を作る🔌✨
+
+![switchable_slot](./picture/isa_hasa_cs_study_005_switchable_slot.png)
+
+
 
 まず契約を作るよ📜
 
@@ -109,6 +121,10 @@ public class EmailNotifier : INotifier
 ---
 
 ## 3-3. 利用側は「契約だけ」知る🙂📜（ここが本題！）
+
+![uml_diagram](./picture/isa_hasa_cs_study_005_uml_diagram.png)
+
+
 
 `OrderService` は `INotifier` にだけ依存するよ🧩
 
@@ -171,6 +187,10 @@ orderService.PlaceOrder();
 
 ## 4. 命名のコツ（ここ超大事📝✨）
 
+![naming_badges](./picture/isa_hasa_cs_study_005_naming_badges.png)
+
+
+
 ## interface名は「できること」にする🙂
 
 * ✅ `INotifier`, `IClock`, `IFileStorage`
@@ -217,6 +237,10 @@ interfaceは「振る舞いの契約」向き🙂
 ---
 
 ## 7. ミニ課題（10分）🎒✨
+
+![null_object_ghost](./picture/isa_hasa_cs_study_005_null_object_ghost.png)
+
+
 
 できそうなやつからでOKだよ〜🧸💕
 
