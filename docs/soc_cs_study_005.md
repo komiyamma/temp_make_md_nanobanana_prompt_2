@@ -25,12 +25,20 @@ SoCで一番やりたいのは、
 
 ### 入口（入力）にありがちなもの🎮
 
+![soc_cs_study_005_input_funnel](./picture/soc_cs_study_005_input_funnel.png)
+
+
+
 * TextBox / ComboBox / CheckBox の値を読む
 * ボタン押下イベント、画面イベント（SelectionChanged とか）
 * `args` や `Request` から値を読む（Web系）
 * ファイルから読み込む（`File.ReadAllText` とか）
 
 ### 出口（出力）にありがちなもの📤
+
+![soc_cs_study_005_output_sprinkler](./picture/soc_cs_study_005_output_sprinkler.png)
+
+
 
 * DBへ保存・検索（SQL/ORM/Repository呼び出し）
 * 画面に表示（Label.Text更新、MessageBox、Dialog表示）
@@ -44,6 +52,10 @@ SoCで一番やりたいのは、
 ---
 
 ## 2) “混ざってる場所”を発見するコツ🔍💣
+
+![soc_cs_study_005_mixed_code_blender](./picture/soc_cs_study_005_mixed_code_blender.png)
+
+
 
 ### コツA：1つのメソッドに「UI単語」と「DB単語」が同居してたら赤信号🚨
 
@@ -276,6 +288,10 @@ A: IN（入口） / B: CORE（業務） / C: OUT（出口）
 
 ## 8) AI（Copilot/Codex）に“線引き”を手伝わせるプロンプト例🤖✨
 
+![soc_cs_study_005_drawing_line](./picture/soc_cs_study_005_drawing_line.png)
+
+
+
 最近のIDEはAI連携が強くて、Visual Studio 2026でもCopilot系がかなり統合されてるよ〜（エージェント系機能も増えてる）📈✨ ([Microsoft Learn][1])
 だから「線引き」はAIにめっちゃ向いてる！
 
@@ -296,6 +312,10 @@ A: IN（入口） / B: CORE（業務） / C: OUT（出口）
 ---
 
 ## 9) 今日のまとめチェックリスト✅✨（ここまでできたら合格！）
+
+![soc_cs_study_005_entry_exit_scanner](./picture/soc_cs_study_005_entry_exit_scanner.png)
+
+
 
 * [ ] 「入口（入力）」っぽい行を見つけられる
 * [ ] 「出口（出力）」っぽい行を見つけられる

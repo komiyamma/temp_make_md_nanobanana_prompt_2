@@ -14,6 +14,10 @@
 
 ## 1) まず結論：DB直呼びが「なにを壊す」の？😇💥
 
+![soc_cs_study_008_db_direct_hell](./picture/soc_cs_study_008_db_direct_hell.png)
+
+
+
 ### ありがちな地獄パターン🔥
 
 業務ロジックの中にこういうのが混ざると……👇
@@ -49,6 +53,10 @@ UI 🖥️ → UseCase/Service 🧠 → `IOrderRepository` 🚪 → EF Core / SQ
 
 ## 3) “Repositoryっぽい最小形（ライト版）”って何？🧩✨
 
+![soc_cs_study_008_light_repository](./picture/soc_cs_study_008_light_repository.png)
+
+
+
 Repositoryって聞くと「難しそう😨」ってなりがちなんだけど、ここではライト版でOK🙆‍♀️
 
 ### ライト版のルール🌱
@@ -68,6 +76,10 @@ Repositoryって聞くと「難しそう😨」ってなりがちなんだけど
 ---
 
 ## 4) 例で体験しよ！「注文確定」ボタンの分離🍔🧾✨
+
+![soc_cs_study_008_button_separation](./picture/soc_cs_study_008_button_separation.png)
+
+
 
 ### Before：業務の中にDBがいる😇（やりがち）
 
@@ -135,6 +147,10 @@ public interface IOrderRepository
 ---
 
 ### 5-3. DB側（EF Coreで保存する人）🗄️🔧
+
+![soc_cs_study_008_implementation_diagram](./picture/soc_cs_study_008_implementation_diagram.png)
+
+
 
 EF Coreは .NETのリリースに合わせて進み、.NET 10世代では **EF Core 10** が軸になります（次のメジャーとしてEF Core 11は2026年11月予定、という案内もあります）。 ([Microsoft Learn][2])
 
@@ -237,6 +253,10 @@ UIがスッキリ〜！🌿✨
 
 ## 6) よくある落とし穴（ここ踏むと分離が崩れる）⚠️😵‍💫
 
+![soc_cs_study_008_iqueryable_trap](./picture/soc_cs_study_008_iqueryable_trap.png)
+
+
+
 ### ❌ Repositoryから `IQueryable` を返す
 
 * EF Coreの都合が業務側に漏れます💦
@@ -258,6 +278,10 @@ UIがスッキリ〜！🌿✨
 ---
 
 ## 7) ミニ仕分けクイズ🎮✨（SoC脳を鍛える！）
+
+![soc_cs_study_008_concern_quiz](./picture/soc_cs_study_008_concern_quiz.png)
+
+
 
 次のうち「DBの関心」どれ？🗄️（複数OK）
 
