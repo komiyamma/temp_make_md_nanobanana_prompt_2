@@ -10,6 +10,10 @@
 
 ## 1. なんで「フォーマット」がそんなに大事？🧠💡
 
+![refactoring_cs_study_010_readability.png](./picture/refactoring_cs_study_010_readability.png)
+
+
+
 ![](./picture/refactoring_cs_study_010_formatting.png)
 
 フォーマット（整形）は、見た目の好みじゃなくて **実務の安全装置** です🛡️✨
@@ -37,6 +41,10 @@ graph TD
 
 ### 2.1 Format Document / Format Selection（基本の基本）🧽📝
 
+![refactoring_cs_study_010_format_document.png](./picture/refactoring_cs_study_010_format_document.png)
+
+
+
 * **Format Document**：ファイル全体を整形🧼
 * **Format Selection**：選んだ範囲だけ整形✂️
 
@@ -58,6 +66,10 @@ Visual Studioでは **Format Document** が `Ctrl+K, Ctrl+D`。さらに、Edito
 
 ### 3.1 Code Cleanupってなに？🧼🧠
 
+![refactoring_cs_study_010_code_cleanup.png](./picture/refactoring_cs_study_010_code_cleanup.png)
+
+
+
 Code Cleanupは、フォーマットだけじゃなく **コードスタイルの改善（並べ替え、不要using削除など）** をまとめて適用できる“おそうじ”です🧹✨
 
 * 実行ショートカット：`Ctrl+K, Ctrl+E`
@@ -74,13 +86,21 @@ Code Cleanupは、フォーマットだけじゃなく **コードスタイル�
 
 ## 4. EditorConfig（.editorconfig）って何？📄✨
 
+![refactoring_cs_study_010_editorconfig_concept.png](./picture/refactoring_cs_study_010_editorconfig_concept.png)
+
+
+
 EditorConfigは、プロジェクトに置く **“見た目とスタイルのルールブック”** です📚✨
 Visual Studioを含む多くのエディタが対応していて、**コードベースと一緒にルールが持ち運べる** のが強みです🚚💨([Microsoft Learn][1])
 
 ### 4.1 重要ポイント3つ🌟
 
 * **プロジェクトのルールが個人設定に勝つ**（チームでブレない）([Microsoft Learn][1])
-* **階層で効く**：フォルダに置くと、その配下に適用📁⬇️([Microsoft Learn][1])
+* **階層で効く**：フォルダに置くと、その配下に適用📁⬇️
+
+![refactoring_cs_study_010_config_hierarchy.png](./picture/refactoring_cs_study_010_config_hierarchy.png)
+
+([Microsoft Learn][1])
 * **複数置ける**：一部フォルダだけ別ルールにもできる🧩([Microsoft Learn][1])
 
 ---
@@ -158,6 +178,10 @@ csharp_new_line_before_finally = true
 
 ### 7.1 ブレース（{）は「全員が見慣れてる形」にする🧱👀
 
+![refactoring_cs_study_010_brace_styles.png](./picture/refactoring_cs_study_010_brace_styles.png)
+
+
+
 C#では **Allmanスタイル（{ を次行）** が多いです。`csharp_new_line_before_open_brace` で `all` / `none` を選べます。([Microsoft Learn][6])
 
 * **all**：C#っぽい、縦に揃って見やすい📖
@@ -174,6 +198,10 @@ C#では **Allmanスタイル（{ を次行）** が多いです。`csharp_new_l
 ---
 
 ## 8. 仕上げ：dotnet format で全員の最終一致を取る✅🧰
+
+![refactoring_cs_study_010_dotnet_format.png](./picture/refactoring_cs_study_010_dotnet_format.png)
+
+
 
 IDEで整形しても、環境差で微妙にズレることがあります💦
 そこで **最終チェック役** になるのが `dotnet format` です✨

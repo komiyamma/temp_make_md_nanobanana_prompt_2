@@ -10,6 +10,10 @@
 
 ## 1) 静的解析ってなに？🕵️‍♀️📌
 
+![refactoring_cs_study_009_static_analysis_xray.png](./picture/refactoring_cs_study_009_static_analysis_xray.png)
+
+
+
 **静的解析（Static Analysis）**は、プログラムを実行しなくても「怪しいところ」を見つけてくれる仕組みだよ🔎✨
 C#だと、コンパイラやアナライザーが「バグになりそう」「読みづらい」「危ない書き方」を教えてくれる！
 
@@ -18,6 +22,10 @@ C#だと、コンパイラやアナライザーが「バグになりそう」「
 ---
 
 ## 2) メッセージの種類を“3つ”に分けよう🧩✨
+
+![refactoring_cs_study_009_warning_types.png](./picture/refactoring_cs_study_009_warning_types.png)
+
+
 
 ### A. コンパイラ エラー（止まる）🛑
 
@@ -40,6 +48,10 @@ C#だと、コンパイラやアナライザーが「バグになりそう」「
 ## 3) Visual Studioで“読む場所”はここだけ押さえればOK👀🗺️
 
 ### ① エラー一覧（Error List）📋
+
+![refactoring_cs_study_009_error_list.png](./picture/refactoring_cs_study_009_error_list.png)
+
+
 
 * **Error / Warning / Message** でフィルタできる
 * **説明文 + ID（CS/CA/IDE）** が出る
@@ -69,6 +81,10 @@ Quick Actions は「その場で」コード修正・リファクタ・抑制・
 
 ### 電球アイコンの意味もザックリ覚えよう💡🪛
 
+![refactoring_cs_study_009_lightbulb_icons.png](./picture/refactoring_cs_study_009_lightbulb_icons.png)
+
+
+
 * 🪛：改善の提案（やると読みやすい/良くなる）
 * 💡：非クリティカルな問題の修正候補
 * 🚨💡：重大（エラーや重要な修正）
@@ -83,6 +99,10 @@ Quick Actions は「その場で」コード修正・リファクタ・抑制・
 ---
 
 ## 5) “直す優先度”の決め方🧭✨（迷わないルール）
+
+![refactoring_cs_study_009_fix_priority.png](./picture/refactoring_cs_study_009_fix_priority.png)
+
+
 
 ### 最優先：バグになりやすい系🧨
 
@@ -191,6 +211,10 @@ Console.WriteLine(name.Length);
 
 ## 7) “抑制（Suppress）”は最後の手段🙈🧯
 
+![refactoring_cs_study_009_suppress_warning.png](./picture/refactoring_cs_study_009_suppress_warning.png)
+
+
+
 Quick Actions には「抑制」もあるけど、基本は
 
 * 直せるなら直す✅
@@ -220,6 +244,10 @@ AIに投げるときは、**“最小差分”**と**“理由”**をセット�
 ---
 
 ## 9) 発展：警告を“エラー扱い”にする話（チーム運用向け）🚦➡️🛑
+
+![refactoring_cs_study_009_warnings_as_errors.png](./picture/refactoring_cs_study_009_warnings_as_errors.png)
+
+
 
 慣れてきたら「警告が出たらビルド失敗」にすると、品質がめちゃ安定する✨
 C# には **TreatWarningsAsErrors**（全部エラー扱い）や、特定だけエラー扱いにする設定があるよ。 ([Microsoft Learn][4])
