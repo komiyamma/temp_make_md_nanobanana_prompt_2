@@ -12,6 +12,9 @@
 
 ## 1. KISSってなに？🐣💡（ひとことで）
 
+![](./picture/kiss_ts_study_001_mechanic_analogy.png)
+
+
 KISSは「**シンプルにしよう**」っていう設計の合言葉だよ〜✨
 元の言い回しは “Keep it simple, stupid” で、**「複雑にしないで、単純に保とう」** っていう考え方だよ😊 ([ウィキペディア][1])
 
@@ -40,12 +43,18 @@ KISSは「**シンプルにしよう**」っていう設計の合言葉だよ〜
 
 ### 誤解B：「賢いコード＝良いコード」🧙‍♂️❌
 
+![](./picture/kiss_ts_study_001_clever_vs_clear.png)
+
+
 TypeScriptって、型も書けるし表現力も高いから、つい“賢く”したくなるのね🧩✨
 でもKISS的には、**賢さよりも「読めること」が勝ち🏆**（未来の自分が泣かない…！😭）
 
 ---
 
 ## 3. KISSが強い理由（未来の自分が助かる📖✨）
+
+![](./picture/kiss_ts_study_001_future_self_highfive.png)
+
 
 KISSは「今の気持ちよさ」より、**未来の変更コスト**を下げてくれるのが強いよ〜🫶
 
@@ -83,6 +92,9 @@ KISSは「今の気持ちよさ」より、**未来の変更コスト**を下げ
 ---
 
 ## 5. TypeScriptで「賢いけど読みにくい」あるある例😵‍💫🧩
+
+![](./picture/kiss_ts_study_001_complexity_monsters_intro.png)
+
 
 （第2章で本格的にやるけど、ここでちょい体験しよ〜💕）
 
@@ -132,6 +144,9 @@ type Result<T> = T extends Promise<infer U>
 ---
 
 ## 6. 今日のミニ課題📝💕（10〜20分）
+
+![](./picture/kiss_ts_study_001_detective_code_review.png)
+
 
 やることはカンタン✨
 
