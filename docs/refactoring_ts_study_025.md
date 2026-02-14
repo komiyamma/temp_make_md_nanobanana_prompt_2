@@ -34,6 +34,9 @@ graph LR
 
 ### なんで困るの？😣
 
+![Problem: Magic Numbers](./picture/refactoring_ts_study_025_magic_confusion.png)
+
+
 * **読む人が迷子**になる🧭💦
 * **修正漏れ**が起きやすい（同じ数字が複数箇所に散らばる）🔁😱
 * **タイポで壊れる**（`"paied"` とか…）⌨️💥
@@ -44,6 +47,9 @@ graph LR
 ## まずはビフォー→アフターで体感🧩➡️✨
 
 ### ビフォー（マジックだらけ😵）
+
+![Risk: Typo](./picture/refactoring_ts_study_025_typo_risk.png)
+
 
 ```ts
 type Order = {
@@ -76,6 +82,9 @@ export function calcTotal(order: Order, now: Date) {
 ---
 
 ### アフター（意味が読める✨＋型で守る🧷）
+
+![Before/After: Typed Constants](./picture/refactoring_ts_study_025_before_after.png)
+
 
 ```ts
 type OrderStatus = (typeof OrderStatus)[keyof typeof OrderStatus];
@@ -167,12 +176,16 @@ export function calcTotal(order: Order, now: Date) {
 
 ### B. `as const` オブジェクト（マジック文字列退治に強い🧷）
 
+![Concept: const vs as const](./picture/refactoring_ts_study_025_const_vs_as_const.png)
+
 * ステータス・種別・イベント名など
 * `type` とセットにすると、**補完が効く＆タイポが死ぬ**💀➡️✅ ([TypeScript][1])
 
 ---
 
 ### C. `enum`（使ってもOKだけど特徴を知ろう）🧩
+
+![Concept: Enum Types](./picture/refactoring_ts_study_025_enum_types.png)
 
 TypeScriptの `enum` は「名前付き定数セット」を作れる機能だよ🧷 ([TypeScript][2])
 ただし **JS出力にオブジェクトが出る**ので、プロジェクトの方針で好みが分かれることもあるよ🤔
@@ -189,6 +202,9 @@ TypeScriptの `enum` は「名前付き定数セット」を作れる機能だ�
 ## よくある落とし穴まとめ🕳️😵
 
 ### ❌ 定数名がふわふわ
+
+![Best Practice: Naming](./picture/refactoring_ts_study_025_naming_rules.png)
+
 
 * `VALUE1`, `TMP`, `NUM` とかはダメ〜🙅‍♀️
   ✅ **意味＋単位＋条件**を入れる
