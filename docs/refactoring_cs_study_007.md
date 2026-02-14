@@ -8,6 +8,10 @@
 
 ## 7-0 この章でできるようになること 🎯✨
 
+![refactoring_cs_study_007_manual_vs_auto.png](./picture/refactoring_cs_study_007_manual_vs_auto.png)
+
+
+
 この章が終わると、こんなことができるようになります💪💕
 
 * ユニットテストの役割がわかる👀
@@ -30,9 +34,17 @@
 
 ## 7-2 最初に覚える用語だけ💡（これだけでOK）🧠✨
 
+![refactoring_cs_study_007_unit_test_concept.png](./picture/refactoring_cs_study_007_unit_test_concept.png)
+
+
+
 * **ユニットテスト**：小さな単位（関数/メソッド）をテストする🧪
 * **テストケース**：入力と期待結果のセット📦
 * **テストが通る（Green）**：期待どおり✅
+
+![refactoring_cs_study_007_red_green.png](./picture/refactoring_cs_study_007_red_green.png)
+
+
 * **テストが落ちる（Red）**：期待と違う❌（バグ or テストの期待値が違う）
 * **回帰（Regression）**：前は動いたのに、変更で壊れたやつ😭
 
@@ -66,6 +78,10 @@ graph TD
 
 ## 7-4 まず“テストしやすい形”を知っておく🍰✨
 
+![refactoring_cs_study_007_testable_vs_untestable.png](./picture/refactoring_cs_study_007_testable_vs_untestable.png)
+
+
+
 テスト初心者が最初にハマるのはここです😵‍💫
 
 ### ✅ テストしやすい（最高）
@@ -90,6 +106,10 @@ graph TD
 題材は「割引つき合計金額」を計算する関数💰🧾
 
 ### ① プロジェクトを作る📁✨
+
+![refactoring_cs_study_007_project_structure.png](./picture/refactoring_cs_study_007_project_structure.png)
+
+
 
 Visual Studio で新規作成：
 
@@ -201,6 +221,10 @@ Visual Studio の **Test Explorer** で
 
 ## 7-6 テストの“粒度”ってなに？（小さく攻める🧁✨）
 
+![refactoring_cs_study_007_test_granularity.png](./picture/refactoring_cs_study_007_test_granularity.png)
+
+
+
 粒度は「どれくらいの範囲を確認するか」だよ📏
 
 ### 🧪 ユニットテスト（この章の主役）
@@ -231,6 +255,10 @@ Visual Studio の **Test Explorer** で
    例：`CalcTotal_UnitPriceIsNegative_Throws` みたいに読むだけで分かるのが◎
 
 4. **テストは“未来の自分”への説明書** 📖💕
+
+![refactoring_cs_study_007_future_self.png](./picture/refactoring_cs_study_007_future_self.png)
+
+
    テストが読みやすい＝保守がラク！
 
 5. **テストが通ってからリファクタ** 🔁✅

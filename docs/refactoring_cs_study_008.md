@@ -13,6 +13,10 @@
 
 ## 1. Characterization Testってなに？🤔📸
 
+![refactoring_cs_study_008_spec_vs_actual.png](./picture/refactoring_cs_study_008_spec_vs_actual.png)
+
+
+
 ![](./picture/refactoring_cs_study_008_snapshot.png)
 
 ![](./picture/refactoring_cs_study_008_snapshot.png)
@@ -45,6 +49,10 @@ graph LR
 
 ## 2. どうして“最初に写す”の？🛡️✨
 
+![refactoring_cs_study_008_safety_net.png](./picture/refactoring_cs_study_008_safety_net.png)
+
+
+
 テストが無いコードをそのまま触ると、こうなりがち💥
 
 * 「動いてたはずなのに壊れた😱」
@@ -74,6 +82,10 @@ Characterization Test は、だいたいこの順番で作るとスムーズ👇
 
 ### Step 1：“観測できる結果”を探す👀
 
+![refactoring_cs_study_008_observation_points.png](./picture/refactoring_cs_study_008_observation_points.png)
+
+
+
 観測ポイント例👇
 
 * 戻り値（いちばん楽✨）
@@ -96,6 +108,10 @@ Characterization Test は、だいたいこの順番で作るとスムーズ👇
 
 * 毎回結果が変わる（時間・乱数など）とテストがフラつく😵
 * そういう時は **観測方法を変える**か、**最小の“縫い目（Seam）”**を入れる🪡✨
+
+![refactoring_cs_study_008_seams.png](./picture/refactoring_cs_study_008_seams.png)
+
+
 
 ---
 
@@ -223,6 +239,10 @@ public class LegacyBillingConsoleCharacterizationTests
 
 ## 5. “毎回結果が変わる”ときの対処法（時間・乱数など）⏰🎲
 
+![refactoring_cs_study_008_flaky_tests.png](./picture/refactoring_cs_study_008_flaky_tests.png)
+
+
+
 Characterization Test の敵は **不安定さ（flaky）**😵‍💫
 代表例👇
 
@@ -265,6 +285,10 @@ public sealed class BillingWithTime
 
 テストでは FakeTimeProvider で“金曜”を作れるよ👇
 
+![refactoring_cs_study_008_fake_time.png](./picture/refactoring_cs_study_008_fake_time.png)
+
+
+
 ```csharp
 using Microsoft.Extensions.Time.Testing;
 using Xunit;
@@ -287,6 +311,10 @@ public class BillingWithTimeTests
 ---
 
 ## 6. dotnet test の“最近の流れ”も軽く押さえる🧪🖥️
+
+![refactoring_cs_study_008_mtp_flow.png](./picture/refactoring_cs_study_008_mtp_flow.png)
+
+
 
 .NET 10 世代では、`dotnet test` は **Microsoft Testing Platform（MTP）** という仕組みも扱うようになってきてるよ🧰✨([Microsoft Learn][6])
 MTP では TRX レポート出力が `--report-trx` になったり、`dotnet test -- --report-trx` のように追加の `--` が必要だったりするよ📌([Microsoft Learn][7])
