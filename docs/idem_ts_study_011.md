@@ -35,6 +35,10 @@ graph TD
 
 ## 11.2 方式A：クライアント生成🙋‍♀️（王道✨）
 
+![Client Key Generation](./picture/idem_ts_study_011_client_generation.png)
+
+
+
 ### どう動く？🧠
 
 1. クライアントが操作開始時にキーを1回だけ作る🔑
@@ -61,6 +65,10 @@ Stripe みたいな実運用でも「クライアントがキーを生成」し�
 
 ## 11.3 方式B：サーバー生成🖥️（2ステップになりがち）
 
+![Server Key Generation Two-Step](./picture/idem_ts_study_011_server_generation.png)
+
+
+
 ### どう動く？🧠
 
 「キーを先にもらう」流れになることが多いよ👇
@@ -84,6 +92,10 @@ Stripe みたいな実運用でも「クライアントがキーを生成」し�
 ---
 
 ## 11.4 どっちを選ぶ？決め方のコツ🧭✨
+
+![Selection Balance Scale](./picture/idem_ts_study_011_selection_balance.png)
+
+
 
 ### まずはこの結論でOK🙆‍♀️
 
@@ -188,15 +200,27 @@ IETFのドラフトでは、必須なのに `Idempotency-Key` が無いなら 40
 
 ### 事故1：再送のたびにキーを作り直してる🔁💥
 
+![Retry Bad Pattern](./picture/idem_ts_study_011_retry_bad_pattern.png)
+
+
+
 * 原因：リトライ関数の中で `crypto.randomUUID()` を呼んじゃう
 * 対策：**操作開始時に1回だけ作って、再送では使い回す**（この章の例Aみたいに！）🔑❤️
 
 ### 事故2：同じキーを別注文に使い回した😇
 
+![Scope Misunderstanding](./picture/idem_ts_study_011_scope_misunderstanding.png)
+
+
+
 * 原因：「キー＝ユーザーの固定ID」みたいな誤解
 * 対策：キーは **“操作単位”でユニーク**。同じキーは同じ操作だけ！🚫
 
 ### 事故3：ブラウザで `crypto.randomUUID()` が動かない🥲
+
+![HTTPS Context Requirement](./picture/idem_ts_study_011_https_context.png)
+
+
 
 * 原因：安全なコンテキスト（HTTPS等）じゃないと使えない場合があるよ🔐
 * 対策：HTTPS（または開発時はlocalhost）で動かす／代替でUUIDライブラリを使う🧰 ([MDNウェブドキュメント][3])
