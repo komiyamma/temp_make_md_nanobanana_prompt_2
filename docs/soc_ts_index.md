@@ -1,6 +1,12 @@
 # SoC（関心の分離）教育コンテンツ：TypeScript版アウトライン（全17章）🧠🧩✨
 
+![soc_ts_index_course_map](./picture/soc_ts_index_course_map.png)
+
+
 ## 第1章：SoCってなに？30秒でつかむ超入門🎀
+
+![soc_ts_index_cupcake_vs_bento](./picture/soc_ts_index_cupcake_vs_bento.png)
+
 
 * SoC＝「変更理由が違うものは混ぜない」🧁
 * “混ぜると事故る”の直感例（UI・ルール・通信がごちゃ混ぜ😇）
@@ -26,6 +32,9 @@
 
 ## 第5章：Windows＋VS Codeの最小セットを整える🪟🛠️
 
+![soc_ts_index_ts_tools](./picture/soc_ts_index_ts_tools.png)
+
+
 * VS Code拡張（TS、Lint、Test、AI補助）🧰
 * npmスクリプトで「迷わない実行」🏃‍♀️
 * “詰まりポイント”回避メモ（PATH・権限・改行など）😇
@@ -50,6 +59,9 @@
 
 ## 第9章：ライトな3層設計（UI / Application / Domain）🍰✨
 
+![soc_ts_index_layered_cake](./picture/soc_ts_index_layered_cake.png)
+
+
 * UI：表示と入力だけ🖥️
 * Application：流れ（ユースケース）🧭
 * Domain：ルール（変更に強い中心）🛡️
@@ -69,11 +81,17 @@
 
 ## 第12章：依存の向き（DIPの入口）をSoCで体験🧲🌟
 
+![soc_ts_index_dependency_arrows](./picture/soc_ts_index_dependency_arrows.png)
+
+
 * 業務がライブラリ都合に引きずられないようにする
 * “内側（ルール）”を守る構造🛡️
 * Ports & Adaptersの超ミニ版🔌
 
 ## 第13章：DIの基本（まずは「渡すだけDI」でOK）💉😊
+
+![soc_ts_index_di_syringe](./picture/soc_ts_index_di_syringe.png)
+
 
 * newしないで外から渡すだけでも立派なDI✨
 * 関数引数DI／コンストラクタDIの超基本

@@ -16,6 +16,9 @@
 
 ## 3-1. まずSOLIDってなに？ざっくりでOK🙆‍♀️✨
 
+![soc_ts_study_003_solid_pillars](./picture/soc_ts_study_003_solid_pillars.png)
+
+
 SOLIDは「**壊れにくくて、直しやすい設計**」のための有名な考え方セットだよ🧱✨
 （名前がゴツいけど、やることはシンプル寄り😇）
 
@@ -52,6 +55,9 @@ SRPはよく「1つのクラスは1つのことだけやれ」って説明され
 ---
 
 ## 3-3. SoCとSRPの関係🧩✨（ここが核心だよ〜！）
+
+![soc_ts_study_003_scissors_and_ruler](./picture/soc_ts_study_003_scissors_and_ruler.png)
+
 
 ### SoC（関心の分離）🧠
 
@@ -100,6 +106,9 @@ SoCは昔からある設計原則で、**“問題の側面ごとに分けて扱
 ---
 
 ## 3-5. ✅ After：SRPで“変更理由”ごとに分ける✨
+
+![soc_ts_study_003_separated_layers](./picture/soc_ts_study_003_separated_layers.png)
+
 
 「変更理由」で分けると、だいたいこうなるよ👇😊
 
@@ -190,6 +199,9 @@ export async function submitOrderFlow(input: {
 
 ## 3-7. ミニ練習②：SRPチェックの“魔法の質問”🪄💬
 
+![soc_ts_study_003_detective_question](./picture/soc_ts_study_003_detective_question.png)
+
+
 コードを見たら、これを自分に聞いてね👇😊
 
 ### ✅ 魔法の質問
@@ -215,6 +227,9 @@ export async function submitOrderFlow(input: {
 ---
 
 ## 3-8. AI（Copilot/Codex系）に手伝ってもらうコツ🤖✨
+
+![soc_ts_study_003_ai_partner_cutting](./picture/soc_ts_study_003_ai_partner_cutting.png)
+
 
 AIは、SoC/SRPの練習相手としてかなり優秀だよ🎮✨
 ポイントは「**変更理由で分解して**」って頼むこと！

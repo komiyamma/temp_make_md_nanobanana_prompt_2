@@ -30,6 +30,9 @@ SoC（Separation of Concerns / 関心の分離）は、超ざっくり言うと�
 
 ### 関心＝「気にする理由」「やりたいことの種類」📌
 
+![soc_ts_study_001_concern_icons](./picture/soc_ts_study_001_concern_icons.png)
+
+
 たとえばアプリで言うと…
 
 * **見た目・画面**（ボタン、表示、入力）🖥️🎀
@@ -57,6 +60,9 @@ SoC（Separation of Concerns / 関心の分離）は、超ざっくり言うと�
 ---
 
 ## 4. まずは「ごちゃ混ぜ例」を見てみよ〜😇🍝
+
+![soc_ts_study_001_spaghetti_code](./picture/soc_ts_study_001_spaghetti_code.png)
+
 
 「こういうの、見たことある！」ってなるはず😂
 
@@ -141,6 +147,9 @@ graph TD
 
 ### 5.1 いちばん分けやすいのは「純粋な処理」🧼✨
 
+![soc_ts_study_001_pure_function_box](./picture/soc_ts_study_001_pure_function_box.png)
+
+
 **純粋な処理**＝入力が同じなら出力が同じ（外の世界に触らない）💎
 例：割引計算、合計計算、判定、変換…など
 
@@ -175,6 +184,9 @@ export async function postOrder(data: { name: string; total: number }) {
 ---
 
 ### 5.3 最後に「つなぐ役」を作る🧩（ここが気持ちいい✨）
+
+![soc_ts_study_001_orchestrator_conductor](./picture/soc_ts_study_001_orchestrator_conductor.png)
+
 
 UIはUI、ルールはルール、通信は通信。
 **最後に“組み立てる役”** が「じゃあ順番に呼ぶね😊」を担当します。
@@ -225,6 +237,9 @@ UI変えるならUIだけ、割引変えるなら計算だけ。
 ---
 
 ## 7. ミニ練習：この処理、どの関心？仕分けゲーム🎮✨
+
+![soc_ts_study_001_sorting_game_bins](./picture/soc_ts_study_001_sorting_game_bins.png)
+
 
 次の項目を、（A）UI /（B）ルール /（C）通信 /（D）保存 /（E）ログ に分けてみてね😊💕
 

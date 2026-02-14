@@ -38,6 +38,9 @@ TypeScriptの世界で頻出の関心を、**棚卸し用のリスト**として
 
 #### B. 状態（State）🧠🔁
 
+![soc_ts_study_004_state_types](./picture/soc_ts_study_004_state_types.png)
+
+
 状態はさらに分けると超スッキリ！
 
 * **UI状態（Client state）**：モーダル開いてる？タブどれ？入力途中？🪄
@@ -92,6 +95,9 @@ TypeScriptの世界で頻出の関心を、**棚卸し用のリスト**として
 
 #### K. 日時・乱数・外部依存（副作用）🕒🎲🌪️
 
+![soc_ts_study_004_time_dice_isolation](./picture/soc_ts_study_004_time_dice_isolation.png)
+
+
 * 現在時刻、UUID、OS情報など
 * テストしにくくなる元凶なので、後で分離しやすいように“関心”として意識しとくのが大事！
 
@@ -106,6 +112,9 @@ TypeScriptの世界で頻出の関心を、**棚卸し用のリスト**として
 
 ### 4-3. “フロントでもバックでも共通”の分け方🙆‍♀️🧩
 
+![soc_ts_study_004_frontend_backend_mirror](./picture/soc_ts_study_004_frontend_backend_mirror.png)
+
+
 同じTypeScriptでも、場所が違うだけで関心はほぼ同じだよ😊
 
 * フロント：UI🖥️ / UI状態🧠 / 通信🌐 / 保存🗄️ / ルール📏
@@ -116,6 +125,9 @@ TypeScriptの世界で頻出の関心を、**棚卸し用のリスト**として
 ---
 
 ### 4-4. ミニケース：学園イベント申込🎓📝（関心をラベル付けしてみよ！）
+
+![soc_ts_study_004_function_xray](./picture/soc_ts_study_004_function_xray.png)
+
 
 たとえば、こんな処理があるとするね👇
 
@@ -176,6 +188,9 @@ mindmap
 ---
 
 ### 4-5. ワーク📝：「関心リスト」を作ろう（テンプレ付き）🎁✨
+
+![soc_ts_study_004_concern_checklist](./picture/soc_ts_study_004_concern_checklist.png)
+
 
 自分の機能（小さめでOK）を1つ選んで、これを埋めてみてね😊🩷
 （メモ帳でもVS CodeでもOK！）
