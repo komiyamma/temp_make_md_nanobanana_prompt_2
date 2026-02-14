@@ -33,6 +33,8 @@ DBのトランザクションは、ざっくり言うと…
 
 # 3-2. DBトランザクションが“めちゃ強い”範囲💪🔥
 
+![ACID Transaction](./picture/saga_cs_study_003_acid_power.png)
+
 ### DBトランザクションが責任を持つ範囲 🛡️
 ```mermaid
 graph TD
@@ -47,6 +49,8 @@ graph TD
  ---
 
 # 3-3. でも…“外”に出た瞬間、急に弱くなる😵‍💫🌪️
+
+![External Scope](./picture/saga_cs_study_003_external_weakness.png)
 
 DBの外（別DB、外部API、別サービス、メール送信、決済、配送…）に出ると、DBはこう言います👇
 
@@ -69,6 +73,8 @@ DBの外（別DB、外部API、別サービス、メール送信、決済、配�
 
 ## ✅ DBトランザクションで戻せるのは「DBの中の変更」だけ
 
+![DB vs External](./picture/saga_cs_study_003_split_visualization.png)
+
 ## ❌ 外部に起きた副作用（課金・発送・通知）は戻せないことが多い
 
 ---
@@ -85,6 +91,8 @@ ADO.NET / System.Transactions には `TransactionScope` があり、条件が揃
 でも現実には、ここがキツい…😭
 
 ## 分散トランザクションがつらい理由😵‍💫
+
+![2PC Problems](./picture/saga_cs_study_003_2pc_pain.png)
 
 * 🧷 参加できるリソースが限られる（HTTP APIは基本ムリ）
 * 🧨 構成・運用が重い（環境依存・権限・ネットワーク設定が絡みやすい）
@@ -103,6 +111,8 @@ ADO.NET / System.Transactions には `TransactionScope` があり、条件が揃
 ## 発想の切り替え🔄
 
 ### トランザクションを分割してつなぐ 🔪➡️
+
+![Transaction Partitioning](./picture/saga_cs_study_003_partitioning.png)
 ```mermaid
 flowchart TD
     subgraph S1 [サービスA]
@@ -137,6 +147,8 @@ flowchart TD
 
 ## ルール①：DBの中で完結するものは、トランザクションで守る🛡️
 
+![Service Boundaries](./picture/saga_cs_study_003_boundaries.png)
+
 * 注文作成（注文＋明細＋初期状態）✅
 * 支払い状態の更新✅
 * Outboxにイベントを書く✅（※あとで出るやつ📦）
@@ -150,6 +162,8 @@ flowchart TD
   → ここは **失敗も遅延も重複も起きる前提**で設計する😇
 
 ## ルール③：長時間トランザクションは避ける⏳🙅‍♀️
+
+![Long Transaction Risk](./picture/saga_cs_study_003_long_txn.png)
 
 外部待ち（決済の応答待ち等）をトランザクションで抱えると、ロックが長引いて詰まりがち😵‍💫🔒
 

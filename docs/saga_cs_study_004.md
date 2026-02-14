@@ -15,6 +15,8 @@
 
 ## 4.2 Sagaの定義（超ざっくり）📌
 
+![Saga Definition](./picture/saga_cs_study_004_definition.png)
+
 Saga（サーガ）は、分散システム（複数サービス・複数DB・外部APIなど）で、
 **「サービスごとのローカルトランザクション」を順番に進めていく**パターンです🚶‍♀️🚶‍♂️
 
@@ -25,6 +27,8 @@ Saga（サーガ）は、分散システム（複数サービス・複数DB・�
 ---
 
 ## 4.3 「進む」フローと「戻す」フロー（図でイメージ）🗺️🧠
+
+![Forward vs Backward](./picture/saga_cs_study_004_forward_backward.png)
 
 例：ECの「注文→決済→在庫→配送」🛒💳📦🚚
 
@@ -53,6 +57,8 @@ graph TD
 
 ## 4.4 ここ超重要：「ロールバック」と「補償」は別モノ🙅‍♀️🧾
 
+![Rollback vs Compensation](./picture/saga_cs_study_004_rollback_vs_comp.png)
+
 **DBトランザクションのロールバック**
 
 * 同じDBの中で「やっぱナシ！」って戻す感じ💾↩️
@@ -68,12 +74,16 @@ graph TD
 
 ## 4.5 「逆操作ができない」こと、普通にある😵‍💫
 
+![Impossible Reversal](./picture/saga_cs_study_004_impossible_reversal.png)
+
 補償は、数学みたいに「完全に元に戻す」とは限りません🙅‍♀️
 現実にはこういうのがあるあるです👇
 
 * ✅ **返金**はできるけど、手数料が戻らない
 * ✅ **メール送信**は取り消せない（代わりに謝罪メール…📩🙏）
 * ✅ **配送開始後**は止められない（代替：返品受付・返金・クーポン🎁）
+
+![Compensation Strategy](./picture/saga_cs_study_004_comp_strategy.png)
 
 だから補償は「逆操作」よりも、**帳尻合わせ（ユーザーと会社の被害を最小化）**って感覚が近いです🧠✨
 
@@ -96,6 +106,8 @@ graph TD
 ---
 
 ## 4.7 ミニ演習②：C#で“超ミニSaga”を書いて動きを掴む💻🔁
+
+![Code Flow Visualization](./picture/saga_cs_study_004_code_flow.png)
 
 ここでは「本物の決済や在庫」じゃなくて、**コンソールで流れだけ再現**します🎮
 （動きの理解がゴールなので、まずはミニでOK🙆‍♀️）
@@ -225,7 +237,9 @@ class Program
 ## 4.8 よくある勘違い・事故ポイント集🚧😇
 
 * 「補償＝完全に元通り」ではない🙅‍♀️（帳尻合わせ）
-* 「補償は必ず成功」ではない😱（だから後で**冪等性**が超重要になる）([Microsoft Learn][2])
+* 「補償は必ず成功」ではない😱（だから後で**冪等性**が超重要になる）
+
+![Idempotency Importance](./picture/saga_cs_study_004_idempotency_need.png)([Microsoft Learn][2])
 * 「補償を2回やる」事故が起きやすい⚠️（リトライ・重複メッセージで発生）
 * 「キャンセルできない操作」を前に置くと地獄になりやすい🔥（順番設計が大事）
 
