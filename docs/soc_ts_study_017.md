@@ -26,6 +26,8 @@ AIが強いほど、コードは速く進むよね🚀
 
 ### ✅ AIに渡すべき“3つのガードレール”
 
+![soc_ts_study_017_three_guardrails](./picture/soc_ts_study_017_three_guardrails.png)
+
 1. **責務（何を担当するか）**：どこまでやってOK？🙆‍♀️
 2. **境界（どこで変換するか）**：DTO↔Domain、UI↔UseCase…混ぜない🚪
 3. **依存（どっち向き？）**：内側（ルール）を外側（I/O）から守る🛡️
@@ -61,6 +63,8 @@ graph LR
 ---
 
 ## 17.3 まずはAIに「うちのルール」を覚えさせよう📚🤖
+
+![soc_ts_study_017_teaching_ai](./picture/soc_ts_study_017_teaching_ai.png)
 
 ### ① `.github/copilot-instructions.md`（全体ルール）🧾✨
 
@@ -122,6 +126,8 @@ GitHub Copilotはリポジトリ全体の指示として `.github/copilot-instru
 
 ## 17.4 AIに「分離案を3案」出させる最強プロンプト🎁🤖✨
 
+![soc_ts_study_017_ai_three_options](./picture/soc_ts_study_017_ai_three_options.png)
+
 ポイントは、**“3案＋比較＋移行手順”をセットで要求**すること！
 （AIは放っておくと「1案だけドーン！」になりがち😂）
 
@@ -174,6 +180,8 @@ OpenAIのCodexは「読める・編集できる・実行できる」タイプの
 
 ## 17.6 “責務・境界・依存”レビュー観点チェックリスト🔍✅
 
+![soc_ts_study_017_review_checklist](./picture/soc_ts_study_017_review_checklist.png)
+
 AIが書いたコードほど、レビューで守るポイントがハッキリしてると強いよ🛡️✨
 
 ### ✅ 責務（Responsibility）
@@ -220,6 +228,8 @@ AIが書いたコードほど、レビューで守るポイントがハッキリ
 
 ## 17.8 “崩さない”ための運用ルール（個人でもチームでも）📌✨
 
+![soc_ts_study_017_operational_rules](./picture/soc_ts_study_017_operational_rules.png)
+
 ### ルール1：1PR=1関心 🧁
 
 * UI変更とルール変更を同じPRにしない
@@ -244,6 +254,8 @@ VS Code側も、どのinstructionsが使われたか参照で追える仕組み�
 ---
 
 ## 17.9 VS Codeの「Prompt files」で“定型プロンプト”を資産化💎📌
+
+![soc_ts_study_017_prompt_files_asset](./picture/soc_ts_study_017_prompt_files_asset.png)
 
 VS Codeは **prompt files** を作って、エディタ上の▶ボタンで実行したり、オススメ表示させたりできるよ([Visual Studio Code][6])
 SoC運用は“毎回同じ質問”が多いから、ここを資産化すると超ラク🥹✨
