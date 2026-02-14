@@ -101,6 +101,8 @@ Tracepointは「ブレークせずにログを出す」機能だよ。 ([Microso
 
 ## 2. ステップ実行（少しずつ進める）👣✨
 
+![refactoring_cs_study_005_step_execution.png](./picture/refactoring_cs_study_005_step_execution.png)
+
 止まったら、次は「1歩ずつ」進めるよ〜😊
 よく使うキーはこの4つ！
 
@@ -150,6 +152,8 @@ graph TD
 
 ### 3-2. Locals / Autos / Watch（定番3兄弟）🧑‍🤝‍🧑✨
 
+![refactoring_cs_study_005_variable_windows.png](./picture/refactoring_cs_study_005_variable_windows.png)
+
 * **Locals**：今のスコープの変数が一覧で見える📋
 * **Autos**：今の行の前後で使ってる変数が自動で出る🪄
 * **Watch**：自分で“監視したい式”を登録する👁️‍🗨️
@@ -176,6 +180,8 @@ Visual Studioでは **Debug > Windows > Exception Settings** から設定でき�
 ---
 
 ### 4-2. “Thrown” と “User-unhandled” の違い🧠
+
+![refactoring_cs_study_005_exception_types.png](./picture/refactoring_cs_study_005_exception_types.png)
 
 例外には「止まるタイミング」があります（ここが超重要！）✨
 
@@ -329,6 +335,8 @@ rank = rank?.Trim();
 ---
 
 ## 7. AI（Copilotなど）の安全な使い方：仮説づくり専用🤖🧠✅
+
+![refactoring_cs_study_005_ai_vs_debugger.png](./picture/refactoring_cs_study_005_ai_vs_debugger.png)
 
 Visual StudioではCopilot体験が統合されてきて、IDE内で使いやすくなっています。 ([Microsoft Learn][10])
 

@@ -62,6 +62,8 @@ dotnet --info
 
 ### 3-1. 形はこれが楽ちん✨
 
+![refactoring_cs_study_003_structure.png](./picture/refactoring_cs_study_003_structure.png)
+
 ソリューション構成は、最初はシンプルが正義👑💕
 
 * `src/` ……アプリ本体
@@ -79,6 +81,8 @@ dotnet --info
 ---
 
 ## 4) デバッグできる状態にする🐞🔍✨
+
+![refactoring_cs_study_003_debug_flow.png](./picture/refactoring_cs_study_003_debug_flow.png)
 
 ### 4-1. ブレークポイントを置く🎯
 
@@ -101,6 +105,8 @@ Visual Studio で👇
 * `xUnit Test Project`（または MSTest/NUnit）を作成🧁
 
 ### 5-2. “本体プロジェクト” を参照する🔗
+
+![refactoring_cs_study_003_test_ref.png](./picture/refactoring_cs_study_003_test_ref.png)
 
 テスト側プロジェクト右クリック → **参照の追加** → 本体プロジェクトにチェック✅
 
@@ -157,6 +163,8 @@ Visual Studio の **Test Explorer** から、テストを実行できます✅
 
 ### 6-1. `.editorconfig` を置く📄✨
 
+![refactoring_cs_study_003_editorconfig.png](./picture/refactoring_cs_study_003_editorconfig.png)
+
 ソリューション直下に `.editorconfig` を追加すると、スタイルをコードベースに持ち運べます🧳
 Visual Studio は EditorConfig をサポートしていて、チームでも揃えやすいです🤝💖 ([Microsoft Learn][7])
 
@@ -195,6 +203,8 @@ Visual Studio は GitHub アカウント連携もできます🐙💕
 
 ### 7-1. GitHubアカウントを Visual Studio に追加🔑
 
+![refactoring_cs_study_003_github_connect.png](./picture/refactoring_cs_study_003_github_connect.png)
+
 Visual Studio に GitHub アカウントを追加しておくと、Copilot や GitHub リポジトリ操作がスムーズになります🤖🌿 ([Microsoft Learn][9])
 
 ---
@@ -214,6 +224,8 @@ Visual Studio のメニューから👇
 チャットで「このファイル何してる？」みたいな質問もできます📚✨ ([GitHub Docs][11])
 
 ### 8-3. AIの使い方（リファクタ向け・安全運転）🛡️🤖
+
+![refactoring_cs_study_003_copilot_safety.png](./picture/refactoring_cs_study_003_copilot_safety.png)
 
 Copilot にお願いするときは、**1コミットに収まる小ささ**がコツです🎀
 
