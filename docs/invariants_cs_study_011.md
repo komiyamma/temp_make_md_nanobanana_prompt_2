@@ -22,6 +22,10 @@
 
 ## 2) まず「Moneyの仕様」を決めよっか📝💡
 
+![money_blueprint](./picture/invariants_cs_study_011_money_blueprint.png)
+
+
+
 `Money` を作る前に、最低限これを決めると迷子にならないよ🥰
 
 ### ✅ 仕様その1：通貨はISO 4217の3文字コードにする💱
@@ -57,6 +61,10 @@
 
 ## 3) 設計の狙い：decimal直渡しの何が怖いの？😱💥
 
+![currency_chaos](./picture/invariants_cs_study_011_currency_chaos.png)
+
+
+
 たとえばこんなの👇が起きるのが嫌なの：
 
 ![Currency Mismatch](./picture/invariants_cs_study_011_currency.png)
@@ -86,6 +94,14 @@ public readonly record struct Result<T>(bool IsSuccess, T? Value, string? Error)
 ```
 
 ### 4-2) Money本体（不変＋Factoryで生成集中）💰🔒
+
+![banker_scale_rounding](./picture/invariants_cs_study_011_banker_scale_rounding.png)
+
+
+
+![money_vault_safe](./picture/invariants_cs_study_011_money_vault_safe.png)
+
+
 
 ポイントはこれ👇
 
@@ -170,6 +186,10 @@ public sealed record Money
 
 ## 5) 使ってみよ〜🥰🎀（サブスク課金の例）
 
+![shopping_cart_money](./picture/invariants_cs_study_011_shopping_cart_money.png)
+
+
+
 ```csharp
 const int JpyDigits = 0;
 
@@ -186,6 +206,10 @@ if (fee.IsSuccess && discount.IsSuccess)
 ---
 
 ## 6) テストを書こう🧪✨（xUnit例）
+
+![scientist_money_test](./picture/invariants_cs_study_011_scientist_money_test.png)
+
+
 
 「Money の不変条件が“壊れない”」って、テストで守るのが超大事だよ🫶
 
@@ -245,6 +269,10 @@ AIにこう聞くと便利だよ〜✨（コピペOK）
 ---
 
 ## 8) ちょい発展🎀（通貨コードはどう取る？）
+
+![currency_globe](./picture/invariants_cs_study_011_currency_globe.png)
+
+
 
 「国/地域 → ISO通貨コード」を取りたい時は `RegionInfo.ISOCurrencySymbol` が使えるよ💱✨ ([Microsoft Learn][9])
 

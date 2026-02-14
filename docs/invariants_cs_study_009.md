@@ -22,6 +22,10 @@
 
 ## 2) まず「ifチェック地獄」って何？😇💥
 
+![tangled_wires_if](./picture/invariants_cs_study_009_tangled_wires_if.png)
+
+
+
 たとえばこんな感じ👇
 「メール形式チェック」「空白チェック」「金額が負数じゃないか」…が、**あちこちに散らばる**やつ😵‍💫
 
@@ -46,10 +50,18 @@ flowchart TD
 
 ### 3-1. “意味”が型に乗ってない🫥
 
+![unlabeled_box_string](./picture/invariants_cs_study_009_unlabeled_box_string.png)
+
+
+
 `string email` と書いても、コンパイラ的にはただの `string`。
 **Emailっぽい文字列**も、**UserNameっぽい文字列**も、全部 `string` で区別不能🥲
 
 ### 3-2. “取り違え”がコンパイルで止まらない🙈
+
+![square_peg_round_hole](./picture/invariants_cs_study_009_square_peg_round_hole.png)
+
+
 
 たとえば👇
 
@@ -66,6 +78,10 @@ flowchart TD
 ---
 
 ## 4) 解決の考え方：「型＝安全な箱」📦🛡️
+
+![armored_box_type](./picture/invariants_cs_study_009_armored_box_type.png)
+
+
 
 ### 4-1. “外”はゆるく、“中”はかたく🏰✨
 
@@ -117,6 +133,10 @@ Register(email, userName, monthlyFeeYen); // 入れ替えてもコンパイル�
 
 ### 6-2. “薄いラッパ型” にして取り違えを止める🛡️✨
 
+![candy_wrapper_type](./picture/invariants_cs_study_009_candy_wrapper_type.png)
+
+
+
 まずは「意味の違うものは、型を分ける」だけでOK🙆‍♀️
 
 ```csharp
@@ -160,6 +180,10 @@ flowchart LR
 
 ### 6-3. 「じゃあ入力は結局 string で来るんだけど？」問題🤔🧩
 
+![funnel_conversion](./picture/invariants_cs_study_009_funnel_conversion.png)
+
+
+
 うん！来る！
 だから **境界で変換**する（第8章の復習っぽいところ）🚪🔁
 
@@ -194,6 +218,10 @@ public static void RegisterFromRequest(RegisterRequest req)
 ---
 
 ## 7) “型で守る” リファクタ手順（迷子防止マップ🗺️✨）
+
+![refactoring_map](./picture/invariants_cs_study_009_refactoring_map.png)
+
+
 
 ### Step A：ドメイン用語を3つ拾う🔍
 

@@ -19,6 +19,10 @@
 
 ## 8.2 そもそも「変換」ってなに？🤔🔁
 
+![translator_geek_to_human](./picture/invariants_cs_study_008_translator_geek_to_human.png)
+
+
+
 ### ✅ “内部”の失敗（ドメイン）
 
 * 例）`EmailAlreadyUsed` / `InvalidEmailFormat` / `PasswordTooWeak`
@@ -40,6 +44,10 @@
 
 ## 8.3 境界ってどこ？ここに置くよ🚪🧱
 
+![boundary_guard](./picture/invariants_cs_study_008_boundary_guard.png)
+
+
+
 * 画面アプリなら：クリックイベント／ViewModel／Presenter みたいな入口🎮🖱️
 * Web APIなら：Controller／Minimal API の endpoint（`MapPost` など）🌐🧩
 * 外部I/Oなら：外部API呼び出しの手前・直後（Adapter）🧼🔌
@@ -59,6 +67,10 @@ flowchart LR
 ---
 
 ## 8.4 まずは“エラーの辞書”を作ろう📚✨（超大事！）
+
+![error_code_dictionary](./picture/invariants_cs_study_008_error_code_dictionary.png)
+
+
 
 変換がラクになる最強アイテムはこれ👇
 
@@ -102,6 +114,10 @@ public readonly record struct UserId(Guid Value);
 ---
 
 ## 8.6 境界側：HTTP向けに変換する🌐🧾
+
+![problemdetails_json](./picture/invariants_cs_study_008_problemdetails_json.png)
+
+
 
 ### ProblemDetailsを使う理由📦
 
@@ -227,6 +243,10 @@ app.MapPost("/users", (string email, string password) =>
 
 ## 8.8 UI向けに変換する例（画面アプリ）🖥️🎀
 
+![ui_error_display](./picture/invariants_cs_study_008_ui_error_display.png)
+
+
+
 UIだと、だいたいこういう形が便利👇
 
 * **画面表示用のエラー**（Message + FieldErrors）
@@ -277,6 +297,10 @@ UIはこの `UiError` だけ見て、赤文字を出したり、ダイアログ�
 
 ## 8.9 よくある事故ポイント🚧😵‍💫
 
+![leaking_secrets](./picture/invariants_cs_study_008_leaking_secrets.png)
+
+
+
 1. **ドメインエラーのMessageをそのまま返す**
    → 後で文言変更できなくなる＆漏洩リスク🫣
 
@@ -314,6 +338,10 @@ UIはこの `UiError` だけ見て、赤文字を出したり、ダイアログ�
 ---
 
 ## 8.11 AIの使いどころ🤖💡（この章めっちゃ相性いい！）
+
+![ai_generating_table](./picture/invariants_cs_study_008_ai_generating_table.png)
+
+
 
 そのままコピペで使えるプロンプト例だよ〜🎀✨
 
