@@ -29,6 +29,9 @@
 
 ## 16.2 状態を3つに分けると一気に分かりやすい🧠✨
 
+![idem cs study 016 traffic light states](./picture/idem_cs_study_016_traffic_light_states.png)
+
+
 冪等キーの保存テーブル（第12章）に、最低でもこの状態を持たせます👇
 
 1. **InProgress（処理中）** 🌀
@@ -57,6 +60,9 @@ stateDiagram-v2
 ## 16.3 「処理中（InProgress）」をどう返す？3つの定番パターン🌀📮
 
 ### パターンA：2回目以降は“待って”同じ成功を返す（同期で吸収）⏳
+
+![idem cs study 016 blocking wait](./picture/idem_cs_study_016_blocking_wait.png)
+
 
 **考え方**：
 同じキーの2回目が来たら、1回目の処理が終わるまで待って、終わったら同じレスポンスを返す。
@@ -154,6 +160,9 @@ sequenceDiagram
 
 ### 方針②：成功だけ再利用。失敗は“状況によりやり直しOK”🔁
 
+![idem cs study 016 failed policy](./picture/idem_cs_study_016_failed_policy.png)
+
+
 **よくある中間ルール**はこれ👇
 
 * **4xx（入力ミス/バリデーション）**：失敗を保存して再利用（同じミスを繰り返しても同じエラーを返す）📝
@@ -168,6 +177,9 @@ sequenceDiagram
 ---
 
 ## 16.5 タイムアウトの“3種類”を切り分けよう⏳🧠
+
+![idem cs study 016 timeout trio](./picture/idem_cs_study_016_timeout_trio.png)
+
 
 ### (1) クライアントが先に待てなくなった（クライアント側タイムアウト）📱⌛
 
@@ -203,6 +215,9 @@ sequenceDiagram
 ---
 
 ### 16.6.2 「同じキーなのに内容が違う」を 409 で止める🚫
+
+![idem cs study 016 conflict puzzle](./picture/idem_cs_study_016_conflict_puzzle.png)
+
 
 `409 Conflict` は“状態の衝突”の表現として使いやすいです。 ([MDNウェブドキュメント][4])
 

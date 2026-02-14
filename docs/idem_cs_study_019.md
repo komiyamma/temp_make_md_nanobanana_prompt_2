@@ -29,6 +29,9 @@ Redisの分散ロック（Redlockなど）も公式に紹介されています�
 
 # 19-2. ロックは2種類あるよ🔒（プロセス内 / 分散）
 
+![idem cs study 019 process vs distributed](./picture/idem_cs_study_019_process_vs_distributed.png)
+
+
 ## A) プロセス内ロック（アプリ1台の中だけ）🧩
 
 * `lock` / `SemaphoreSlim` / `.NET 9+ の System.Threading.Lock` など
@@ -68,6 +71,9 @@ Redisの分散ロック（Redlockなど）も公式に紹介されています�
 
 ## 19-4. まずは「プロセス内ロック」から（1台なら最強）🧩🔒
 
+![idem cs study 019 key lockers](./picture/idem_cs_study_019_key_lockers.png)
+
+
 ### 19-4-1. “キー単位ロック”が一番使う💡
 
 「注文IDごと」「ユーザーIDごと」「冪等キーごと」にロックを分けると、全体が詰まりません😊
@@ -80,6 +86,9 @@ Redisの分散ロック（Redlockなど）も公式に紹介されています�
 ---
 
 ## 19-5. ハンズオン①：C#で “IdempotencyKeyごと” にロックする🔑🔒🧪
+
+![idem cs study 019 turnstile](./picture/idem_cs_study_019_turnstile.png)
+
 
 ### 例：`IdempotencyKey` ごとに `SemaphoreSlim` を使う（定番）✨
 
@@ -208,6 +217,9 @@ PostgreSQLには “アプリ側で使うロック” があり、セッショ�
 
 ## 19-8. 分散ロックの代表：Redis系（便利だけど注意点多め）⚡🧠
 
+![idem cs study 019 redis timer](./picture/idem_cs_study_019_redis_timer.png)
+
+
 Redis公式は分散ロック（Redlock含む）を紹介しています。([Redis][1])
 一方で、分散ロックの安全性・失敗時の振る舞いは難しく、注意喚起も有名です。([マーチン・クレップマンのウェブサイト][4])
 
@@ -265,6 +277,9 @@ flowchart TD
 ---
 
 ## 19-10. よくある事故パターン集（ここ試験出る📛）😇
+
+![idem cs study 019 deadlock cars](./picture/idem_cs_study_019_deadlock_cars.png)
+
 
 * ロック粒度がデカすぎて、全部が順番待ち🐌（例：全注文で1ロック）
 * ロック順序がバラバラでデッドロック🔁💥

@@ -12,6 +12,9 @@
 
 # 1) TTLってなに？🕰️
 
+![idem cs study 014 ttl balance](./picture/idem_cs_study_014_ttl_balance.png)
+
+
 TTL（Time To Live）は、ざっくり言うと
 
 * 「この冪等キーは、**この期限までは同じ結果として扱う**」
@@ -39,6 +42,9 @@ TTLは「なんとなく」で決めると、だいたい事故る😵‍💫
 
 ## 2-1. まずは “リトライが起きうる時間” を想像する📶
 
+![idem cs study 014 retry window](./picture/idem_cs_study_014_retry_window.png)
+
+
 * ユーザーの連打（秒〜数十秒）👆👆👆
 * ネットワーク不安定（数十秒〜数分）🌧️
 * クライアントの自動リトライ（数分〜数時間）🔁
@@ -59,6 +65,9 @@ TTLは「なんとなく」で決めると、だいたい事故る😵‍💫
 
 # 3) よくあるTTLの目安（業界の例つき）🧠✨
 
+![idem cs study 014 standard ttl](./picture/idem_cs_study_014_standard_ttl.png)
+
+
 「絶対こう！」はないけど、実例を“物差し”にすると決めやすいよ😊
 
 * **24時間**：決済系でよく見る“短め基準”
@@ -73,6 +82,9 @@ TTLは「なんとなく」で決めると、だいたい事故る😵‍💫
 ---
 
 # 4) TTLを短くしすぎる vs 長くしすぎる😇💥
+
+![idem cs study 014 ttl accidents](./picture/idem_cs_study_014_ttl_accidents.png)
+
 
 ## 短すぎ事故（例：TTL 10分）⏱️💣
 
@@ -199,6 +211,9 @@ public sealed class AppDbContext : DbContext
 ```
 
 ## 7-3. お掃除サービス（BackgroundService）🧹✨
+
+![idem cs study 014 vacuum cleaner](./picture/idem_cs_study_014_vacuum_cleaner.png)
+
 
 ポイントは **ExecuteDeleteAsync** を使って、1件ずつ読み込まずに“まとめて削除”すること！（速い＆軽い）
 EF Core では ExecuteDelete/ExecuteDeleteAsync が公式に案内されてるよ。([Microsoft Learn][4])

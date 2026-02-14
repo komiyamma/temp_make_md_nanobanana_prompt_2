@@ -28,6 +28,9 @@
 
 # 18.2 解決の基本方針🧠✨「アプリで頑張らない、DBに判定させる」
 
+![idem cs study 018 two weapons](./picture/idem_cs_study_018_two_weapons.png)
+
+
 ## ✅ 一意制約（Unique）ってなに？🔒
 
 「この列（または列の組み合わせ）は、**同じ値を2個入れちゃダメ**」というDBのルールだよ🎓
@@ -52,6 +55,9 @@ EF Core は `BeginTransaction()` で使えるし、SaveChanges の中での挙�
 ---
 
 # 18.4 テーブル設計（最低限）🧾🛠️
+
+![idem cs study 018 composite key](./picture/idem_cs_study_018_composite_key.png)
+
 
 ## IdempotencyRequests（冪等キーの台帳）📒
 
@@ -234,6 +240,9 @@ public sealed class OrderService
 
 # 18.7 ここが超大事ポイント3つ🧠🧡
 
+![idem cs study 018 critical order](./picture/idem_cs_study_018_critical_order.png)
+
+
 ## ① 「先に台帳INSERT」→「本処理」→「結果保存」 の順番🪄
 
 この順番にすると、並行の勝敗が最初の INSERT で確定するのが強い💪
@@ -259,6 +268,9 @@ EF Core は、トランザクション中に `SaveChanges` が呼ばれると、
 ---
 
 # 18.9 “並行でも1件”を確認するミニ演習🧪🔁
+
+![idem cs study 018 verification arrows](./picture/idem_cs_study_018_verification_arrows.png)
+
 
 ## ✅ やること
 
@@ -290,6 +302,9 @@ Get-Job | Wait-Job | Receive-Job
 ---
 
 # 18.10 よくある失敗あるある😇💥（回避策つき）
+
+![idem cs study 018 shield holes](./picture/idem_cs_study_018_shield_holes.png)
+
 
 * **ユニーク制約が無い**
   → “同時に2回”で普通に2件入る。まず貼ろう🔒
