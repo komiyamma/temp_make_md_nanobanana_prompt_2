@@ -13,6 +13,9 @@
 
 # 7-1. まず怖い話：言葉がブレるとSagaが壊れる😱💥
 
+![Communication Gap.](./picture/saga_cs_study_007_communication_gap.png)
+
+
 たとえば、こんな会話が起きがち👇
 
 * Aさん「“注文確定”したよ！」📣
@@ -30,6 +33,9 @@
 ---
 
 # 7-2. ミニDDD①：ユビキタス言語（みんなで同じ言葉を使う）🗣️📘
+
+![Dictionary Concept.](./picture/saga_cs_study_007_dictionary_concept.png)
+
 
 DDDって聞くと難しそうだけど、この章では超ミニでOK🙆‍♀️✨
 ここでやるのはシンプルにこれ👇
@@ -55,6 +61,9 @@ DDDって聞くと難しそうだけど、この章では超ミニでOK🙆‍�
 * Sagaのステップが整理できる（ステップ＝境界をまたぐ動き、になりやすい）🔁
 
 ## ✅ 境界の決め方（初心者向け3点セット）🧭
+
+![Boundary Check.](./picture/saga_cs_study_007_boundary_check.png)
+
 
 境界にしたい候補が出たら、これでチェックしてね👇
 
@@ -96,6 +105,9 @@ DDDって聞くと難しそうだけど、この章では超ミニでOK🙆‍�
 
 # 7-6. “境界マップ”を作ろう（超ミニ版）🗺️🧩
 
+![Four Boundaries.](./picture/saga_cs_study_007_four_boundaries.png)
+
+
 次に、用語を「どの境界が責任を持つか」で配置するよ😊
 
 ## ✅ 例：境界を4つに分ける（初心者向け）📦
@@ -133,6 +145,9 @@ graph TD
 ---
 
 # 7-7. C#で“言葉のブレ”を減らす小ワザ🧑‍💻✨
+
+![Type Safety.](./picture/saga_cs_study_007_type_safety.png)
+
 
 コードでもブレを防げるよ😊
 ポイントは **「文字列で状態や種類を持たない」** こと！

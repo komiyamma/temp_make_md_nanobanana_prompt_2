@@ -13,6 +13,9 @@
 
 ## 1) まず大事：補償は“Ctrl+Z”じゃない🙅‍♀️🧾
 
+![Not Ctrl Z.](./picture/saga_cs_study_008_not_ctrl_z.png)
+
+
 Sagaでは、途中まで成功した処理が「途中で失敗」したときに、すでに確定したステップを“あとから別の処理で”整合するよね🔁
 このときの補償（Compensating Transaction）は **ロールバックじゃなくて「新しい処理」** なんだよ〜✨
 だから、**完全に元通りにならない**ことも普通にあるよ（むしろそれが現実）😌
@@ -59,12 +62,18 @@ mindmap
 
 ### F. 通知＆人間介入（Manual）👩‍💼📞
 
+![Manual Fallback.](./picture/saga_cs_study_008_manual_fallback.png)
+
+
 * 例：発送が止まらないなら「謝罪メール＋返金＋サポート連携」
 * 外に出たもの（メール送信など）は“取り消せない”ことがあるから、ここが超現実的💦 ([ウィキペディア][3])
 
 ---
 
 ## 4) 「戻せる操作」と「戻せない操作」を分けよう✂️🧠
+
+![Irreversible Action.](./picture/saga_cs_study_008_irreversible_action.png)
+
 
 補償設計のコツは、まずここ！
 
@@ -94,6 +103,9 @@ mindmap
 ---
 
 ## 6) C#でのイメージ：補償は“スタック”で覚えると簡単🔁🧠
+
+![Stack Logic.](./picture/saga_cs_study_008_stack_logic.png)
+
 
 Sagaの各ステップが成功したら、「成功した順に補償（戻し方）」を積んでいくイメージだよ📚✨
 失敗したら、**逆順で補償を実行**する！
@@ -139,6 +151,9 @@ public sealed class SagaRunner
 ---
 
 ## 7) ミニ演習✍️💡：「在庫を戻す」以外の補償を3案出してみよう
+
+![Alternative Comp.](./picture/saga_cs_study_008_alternative_comp.png)
+
 
 シーン：注文は通ったけど、在庫確保のあとに配送が失敗しました😵‍💫
 
