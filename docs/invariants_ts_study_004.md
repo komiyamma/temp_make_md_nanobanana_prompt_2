@@ -60,6 +60,10 @@ flowchart LR
 
 ## 2) 境界が見つかると何が嬉しいの？🥹💖
 
+![domain_core](./picture/invariants_ts_study_004_domain_core.png)
+
+
+
 境界が曖昧だと、コードのあちこちにこういうのが散る👇
 
 * `if (!x) return ...`
@@ -80,6 +84,10 @@ flowchart LR
 ---
 
 ## 3) 境界はどこにある？代表パターン集📌✨
+
+![io_ports](./picture/invariants_ts_study_004_io_ports.png)
+
+
 
 ### A. 「入ってくる境界」🚪⬅️
 
@@ -137,6 +145,10 @@ flowchart LR
 * DB：過去データが壊れてる可能性
 
 ### Step5: 境界ごとに「検証→変換」の責任を置く📦➡️💎
+
+![dirty_clean_filter](./picture/invariants_ts_study_004_dirty_clean_filter.png)
+
+
 
 境界ごとにこう決める👇
 
@@ -239,6 +251,10 @@ export function parseRegisterCommand(raw: unknown): Result<RegisterCommand> {
 
 ## 7) よくある「境界ミス」あるある😵‍💫💥
 
+![three_mistakes](./picture/invariants_ts_study_004_three_mistakes.png)
+
+
+
 ### あるある1：ドメイン内で毎回チェックしてる🌀
 
 **症状**：あちこちに `if` が散っていく
@@ -257,6 +273,10 @@ export function parseRegisterCommand(raw: unknown): Result<RegisterCommand> {
 ---
 
 ## 8) 1分チェックリスト✅⏱️✨
+
+![checklist_board](./picture/invariants_ts_study_004_checklist_board.png)
+
+
 
 * [ ] その機能の「外から入る値」を全部言える？📝
 * [ ] I/Oしてる場所を境界として意識できた？🚪

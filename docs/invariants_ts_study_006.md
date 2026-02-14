@@ -26,6 +26,10 @@
 
 ## 2. まず結論：二段構えモデルが最強 🛡️💎
 
+![two_layer_defense](./picture/invariants_ts_study_006_two_layer_defense.png)
+
+
+
 不変条件を守る基本はこれ👇✨
 
 **① 境界（入口）で実行時検証する** 🧪
@@ -63,6 +67,10 @@ flowchart TD
 
 ## 3. TypeScriptの「型」で守れること（コンパイル時）🧠✅
 
+![compile_vs_runtime](./picture/invariants_ts_study_006_compile_vs_runtime.png)
+
+
+
 TypeScript が得意なのは **“プログラムの書き方” のミス防止** だよ✨
 
 たとえば👇
@@ -97,10 +105,18 @@ TypeScript が得意なのは **“プログラムの書き方” のミス防�
 
 ## 5. 入口は unknown で受けるのが基本 🕵️‍♀️❓
 
+![unknown_box](./picture/invariants_ts_study_006_unknown_box.png)
+
+
+
 「外から来た値」は、まず **unknown** 扱いにするのが王道だよ✨
 （any は “何でもOK” になって、守りが崩壊しやすい😵‍💫）
 
 ### ✅ ありがちな事故：JSON.parse
+
+![json_bomb](./picture/invariants_ts_study_006_json_bomb.png)
+
+
 
 ```ts
 // ⚠️ JSON.parse の戻りは「なんでもあり」になりがち
@@ -170,6 +186,10 @@ function parseUserDTO(x: unknown): UserDTO {
 ---
 
 ### 武器C：スキーマ（Zod など）📐✅（この教材の“定番ルート”）
+
+![zod_blueprint](./picture/invariants_ts_study_006_zod_blueprint.png)
+
+
 
 スキーマの良いところは👇
 

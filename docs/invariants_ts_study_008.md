@@ -47,6 +47,10 @@ TypeScriptには「文字列そのもの」を型にできる仕組みがある�
 
 ## 2) ユニオン型で「選択肢の集合」を作る🎫✨
 
+![vending_choices](./picture/invariants_ts_study_008_vending_choices.png)
+
+
+
 じゃあ「プランは Free か Pro」って型にしちゃおう！
 
 ```ts
@@ -89,6 +93,10 @@ flowchart TD
 ---
 
 ## 4) “定義した配列”から型を作る（Single Source of Truth）📌✨
+
+![as_const_freeze](./picture/invariants_ts_study_008_as_const_freeze.png)
+
+
 
 ここからが超大事！
 **値の一覧（配列）**と**型定義**を別々に書くと、更新漏れが起きがち🥲
@@ -154,6 +162,10 @@ if (plan === null) {
 
 ## 6) `switch` の分岐漏れを “型で” 潰す🚦⚡
 
+![switch_railway](./picture/invariants_ts_study_008_switch_railway.png)
+
+
+
 Planが増えたときに、分岐を書き忘れるのも事故ポイント😱
 ここも型でガードできるよ！
 
@@ -184,6 +196,10 @@ function planLabel(plan: Plan): string {
 
 ## 7) `satisfies` で「辞書のキー」を安全にする🗂️✨
 
+![satisfies_checklist](./picture/invariants_ts_study_008_satisfies_checklist.png)
+
+
+
 「プランごとの価格表」みたいな辞書、スペルミスしがちじゃない？🥺
 
 `satisfies` は **型を満たしてるか検証しつつ、推論はなるべく保つ** 便利オペレータだよ✨（TypeScript 4.9で入ったよ） ([typescriptlang.org][2])
@@ -204,6 +220,10 @@ const PRICE_BY_PLAN = {
 ---
 
 ## 8) enum とユニオン、どっち使う？🤔💡
+
+![enum_vs_union](./picture/invariants_ts_study_008_enum_vs_union.png)
+
+
 
 サクッと結論だけ言うね🙂
 
