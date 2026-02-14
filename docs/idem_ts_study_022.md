@@ -1,5 +1,7 @@
 # 第22章：Outboxと冪等性（取りこぼし/二重送信を減らす）🤝🗃️
 
+![第22章outboxと冪等性取りこぼし二重送信を減らす](./picture/idem_ts_study_022_第22章outboxと冪等性取りこぼし二重送信を減らす.png)
+
 ## 🎯この章のゴール
 
 * 「DB更新」と「イベント送信」を**ズラさず**に、事故（取りこぼし・二重送信）を減らす考え方がわかる🧠✨
@@ -26,6 +28,8 @@
    → **DBにはあるのに通知されない**（他サービスが気づけない）😵
 
 ### 😱事故パターンB：イベント送信は成功、DBがロールバック（ウソ通知）
+
+![事故パターンbイベント送信は成功dbがロールバックウソ通知](./picture/idem_ts_study_022_事故パターンbイベント送信は成功dbがロールバックウソ通知.png)
 
 1. イベント送信しちゃった📣
 2. DBのトランザクションが失敗してロールバック💥
@@ -80,6 +84,8 @@ flowchart TD
 
 ### 🗺️図にするとこんな感じ
 
+![図にするとこんな感じ](./picture/idem_ts_study_022_図にするとこんな感じ.png)
+
 * API：
 
   * ordersにINSERT 🧾
@@ -129,6 +135,8 @@ Outboxを入れると…
 ## 6. 実装イメージ（PostgreSQL + TypeScript）🧑‍💻🪟
 
 ### 6.1 SQL（orders と outbox）
+
+![61_sqlorders_と_outbox](./picture/idem_ts_study_022_61_sqlorders_と_outbox.png)
 
 ```sql
 CREATE TABLE orders (
@@ -319,6 +327,8 @@ at-least-once配送の世界では普通だからね😇 ([event-driven.io][3])
 
 ### ✅受け取り側でやること（最小）
 
+![受け取り側でやること最小](./picture/idem_ts_study_022_受け取り側でやること最小.png)
+
 * イベントID（`outbox.id`）を **processedテーブルに保存**
 * `eventId` が **すでに処理済みならスキップ**する
 
@@ -343,6 +353,8 @@ DBトランザクション中に外部送信し始めると、
 最初から `SKIP LOCKED` とか、競合前提で作るのが安全🛡️ ([milanjovanovic.tech][4])
 
 ### 落とし穴③：payloadが巨大・個人情報モリモリ
+
+![落とし穴③payloadが巨大個人情報モリモリ](./picture/idem_ts_study_022_落とし穴③payloadが巨大個人情報モリモリ.png)
 
 Outboxはログっぽく残るので、
 
@@ -373,6 +385,8 @@ Debeziumには Outbox Event Router の仕組みが用意されてる📮 ([Debez
 * `status` の状態は何種類にする？🚦
 
 ### 演習2：Outboxレコードの型定義を作ろう🧱
+
+![演習2outboxレコードの型定義を作ろう](./picture/idem_ts_study_022_演習2outboxレコードの型定義を作ろう.png)
 
 ```ts
 export type OutboxStatus = "PENDING" | "PROCESSING" | "PUBLISHED" | "FAILED";

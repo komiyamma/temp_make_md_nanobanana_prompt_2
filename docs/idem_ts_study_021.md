@@ -1,5 +1,7 @@
 # 第21章：非同期の世界は重複配送が普通（キュー入門）😇📨📨
 
+![第21章非同期の世界は重複配送が普通キュー入門](./picture/idem_ts_study_021_第21章非同期の世界は重複配送が普通キュー入門.png)
+
 ## 21.1 この章のゴール🎯✨
 
 この章を読み終わったら、こんなことができるようになります💪🌸
@@ -37,6 +39,8 @@ flowchart LR
 
 ## 21.3 “少なくとも1回配送（At-least-once）”って？🔁📦
 
+![213_少なくとも1回配送atleastonceって](./picture/idem_ts_study_021_213_少なくとも1回配送atleastonceって.png)
+
 多くのメッセージングは **At-least-once** が基本です。
 意味はシンプルで、
 
@@ -68,6 +72,8 @@ flowchart LR
 ---
 
 ### パターンB：可視性タイムアウト（Visibility Timeout）切れ⏳👀
+
+![パターンb可視性タイムアウトvisibility_timeout切れ](./picture/idem_ts_study_021_パターンb可視性タイムアウトvisibility_timeout切れ.png)
 
 SQS みたいに「受け取ったら一旦見えなくする」仕組みがあります。
 でも、**時間内に削除できない**と、メッセージがまた見えるようになって再取得されます😇
@@ -122,6 +128,8 @@ Kafka は「イベントを exactly-once で処理できる」系の保証に触
 
 ## 21.7 重複配送でも壊れない処理の条件✅🔁
 
+![217_重複配送でも壊れない処理の条件](./picture/idem_ts_study_021_217_重複配送でも壊れない処理の条件.png)
+
 ここがこの章の核心です💖
 
 ### 条件1：メッセージに “一意なID” がある🆔✨
@@ -145,6 +153,8 @@ Kafka は「イベントを exactly-once で処理できる」系の保証に触
 ---
 
 ### 条件3：“記録”と“副作用”の順番をミスらない🧠🧯
+
+![条件3記録と副作用の順番をミスらない](./picture/idem_ts_study_021_条件3記録と副作用の順番をミスらない.png)
 
 ありがちな事故👇
 
@@ -217,6 +227,8 @@ class ProcessedStore {
 
 ### ③ Consumer本体：重複なら即return🔁🚫
 
+![③_consumer本体重複なら即return](./picture/idem_ts_study_021_③_consumer本体重複なら即return.png)
+
 ```ts
 async function handleOrderPaid(
   msg: Message<OrderPaidPayload>,
@@ -279,6 +291,8 @@ COMMIT;
 ## 21.10 ミニ演習📝💞（重複配送でも壊れない条件を書いてみよう！）
 
 ### 演習1：次の処理、重複したら何が起きる？😱
+
+![演習1次の処理重複したら何が起きる](./picture/idem_ts_study_021_演習1次の処理重複したら何が起きる.png)
 
 ミニ注文アプリを想像して、重複すると困るものに「⚠️」つけてね👇
 
