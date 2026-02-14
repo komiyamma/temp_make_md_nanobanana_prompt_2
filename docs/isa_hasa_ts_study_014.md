@@ -25,6 +25,10 @@
 
 ## 2) Adapterを「3点セット」に分けると強い🧩🔌🗺️
 
+![three components](./picture/isa_hasa_ts_study_014_three_components.png)
+
+
+
 Adapterって雑に作るとすぐ肥大化するのよ…🥺
 そこで **役割分担**しよっ👇
 
@@ -111,6 +115,10 @@ export interface ProductSearchPort {
 ---
 
 ## 5) 外部データは「unknownで受けて、境界で検査」🧪🧼
+
+![zod validation](./picture/isa_hasa_ts_study_014_zod_validation.png)
+
+
 
 外部から来るJSONって、**信用しちゃダメ**🙅‍♀️💦
 そこで runtime validation（実行時バリデーション）を使うと事故が減るよ✨
@@ -331,6 +339,10 @@ export class MultiShopProductSearch implements ProductSearchPort {
 ---
 
 ## 11) テストは「Mapperから」やると気持ちいい🧪🥰
+
+![mapper test](./picture/isa_hasa_ts_study_014_mapper_test.png)
+
+
 
 Mapperが純粋関数なら、テスト超ラク！
 最近は Vitest もメジャーで、v4系では Browser Mode 安定化なども進んでるよ🧪✨ ([Vitest][4])

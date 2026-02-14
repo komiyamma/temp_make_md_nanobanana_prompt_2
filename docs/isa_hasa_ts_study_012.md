@@ -44,6 +44,10 @@ Decoratorはひとことで言うと…
 
 ### 3-1. ビジネスルールをDecoratorに入れちゃう🍛🎀❌
 
+![pitfall logic](./picture/isa_hasa_ts_study_012_pitfall_logic.png)
+
+
+
 **ダメな匂い**：Decoratorの中に「割引」「判定」「ルール」が入ってくる😇
 
 * Decoratorは本来、ログや計測みたいな“外側”担当
@@ -61,6 +65,10 @@ Decoratorはひとことで言うと…
 → そのうち **読めないミルフィーユ**になる🍰😇
 
 ### 3-4. Decoratorが例外を握りつぶす🫥❌
+
+![swallow error](./picture/isa_hasa_ts_study_012_swallow_error.png)
+
+
 
 * 本体の例外をキャッチしてログだけ出して終了…とか
 * 呼び出し側が期待するエラーが消えて、バグが潜む🐛
@@ -244,6 +252,10 @@ classDiagram
 ---
 
 ## 6. 「Decoratorの順番問題」も潰しておこう🧁🛑
+
+![order importance](./picture/isa_hasa_ts_study_012_order_importance.png)
+
+
 
 重ねるときのコツはこれ👇
 

@@ -39,6 +39,10 @@
 
 ## 3. 迷ったらコレ！判断フロー🧭🧩
 
+![decision flow](./picture/isa_hasa_ts_study_015_decision_flow.png)
+
+
+
 ### ステップ1：変えたいのは “何”？🔍
 
 * **振る舞い（アルゴリズム）**が変わる → 合成（Strategy）に寄りがち🔁
@@ -98,6 +102,10 @@
 
 ### 😇 継承でやるとこうなる（地獄の入口）
 
+![class explosion 3axes](./picture/isa_hasa_ts_study_015_class_explosion_3axes.png)
+
+
+
 「全部入りの派生」を作り始めると…
 
 * `Order_NormalShipping_NoDiscount_Email`
@@ -111,6 +119,10 @@
 ---
 
 ### 😎 合成でやる（勝ち筋✨）
+
+![composition solution](./picture/isa_hasa_ts_study_015_composition_solution.png)
+
+
 
 **それぞれを部品にして組み立てる**！
 
@@ -229,6 +241,10 @@ class Rect extends Shape {
 ## 8. TypeScriptならでは：継承以外の選択肢も強い🧠✨
 
 ### ① 「データの種類」は Union が気持ちいいことが多い🧩
+
+![union vs inheritance](./picture/isa_hasa_ts_study_015_union_vs_inheritance.png)
+
+
 
 （オブジェクト指向の継承より “型の分岐” が安全に書ける時がある）
 

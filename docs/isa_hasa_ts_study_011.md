@@ -23,6 +23,10 @@ TypeScriptの `@something` みたいな **構文のdecorator**の話じゃない
 
 ## 2) 計測Decorator⏱️：なにを測る？どこで測る？
 
+![timing stopwatch](./picture/isa_hasa_ts_study_011_timing_stopwatch.png)
+
+
+
 ### よく測るもの📌
 
 * ⏱️ **処理時間**（API呼び出し、DBアクセス、重い計算…）
@@ -137,6 +141,8 @@ export class TimingDecorator<Req, Res> implements Service<Req, Res> {
 
 ## 5) 実装してみよ：RetryDecorator（指数バックオフ＋ジッター）🔁✨
 
+![retry backoff](./picture/isa_hasa_ts_study_011_retry_backoff.png)
+
 ### ユーティリティ（sleep + backoff）🛌💤
 
 ```ts
@@ -248,6 +254,10 @@ export class RetryDecorator<Req, Res> implements Service<Req, Res> {
 ---
 
 ## 6) “重ねがけ”してみる🧁🎀（ログ＋計測＋リトライ）
+
+![stacking order](./picture/isa_hasa_ts_study_011_stacking_order.png)
+
+
 
 Decoratorのいいところは **組み合わせ**ができること！✨
 ただし **順番で意味が変わる**から、そこだけ注意してね😉

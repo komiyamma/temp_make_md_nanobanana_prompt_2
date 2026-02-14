@@ -15,6 +15,10 @@
 
 ## 10.1 Decoratorってなに？🎀🤔
 
+![cake decorator](./picture/isa_hasa_ts_study_010_cake_decorator.png)
+
+
+
 Decorator（デコレーター）パターンは、ひとことで言うと…
 
 * 🎁 **同じ形（interface）を持つ“ラッパー”で、本体を包む**
@@ -29,6 +33,10 @@ Decorator（デコレーター）パターンは、ひとことで言うと…
 ---
 
 ## 10.2 今日のお題：ログを“外付け”したい📝🔧
+
+![bad logging](./picture/isa_hasa_ts_study_010_bad_logging.png)
+
+
 
 ありがちな事故あるある👇😇
 
@@ -79,6 +87,10 @@ export class SlackSender implements NotificationSender {
 
 ## 10.5 ログDecoratorを作る🎀📝（本体を包む！）
 
+![wrapping structure](./picture/isa_hasa_ts_study_010_wrapping_structure.png)
+
+
+
 「同じ interface を実装して」「中に本体を持って」「前後にログ」だよ〜✨
 
 ```ts
@@ -105,6 +117,10 @@ export class LoggingSender implements NotificationSender {
 ---
 
 ## 10.6 組み立てて使う（合成！）🧩✨
+
+![delegation flow](./picture/isa_hasa_ts_study_010_delegation_flow.png)
+
+
 
 「本体をDecoratorで包む」だけで完成🎉
 
