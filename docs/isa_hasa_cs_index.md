@@ -6,6 +6,10 @@
 
 ## 第1章　この講座のゴールと“合成”のイメージ作り🧠🧩
 
+![inheritance_vs_composition](./picture/isa_hasa_cs_index_inheritance_vs_composition.png)
+
+
+
 * ねらい🎯：まず「合成ってなに？」をふわっと掴む
 * 学ぶこと📌
 
@@ -38,6 +42,10 @@
 
 ## 第3章　継承でハマる典型：派生クラス増殖🌱➡️🌳➡️🌲
 
+![derived_explosion](./picture/isa_hasa_cs_index_derived_explosion.png)
+
+
+
 * ねらい🎯：「つらくなるサイン」を早めに見抜けるようにする👀
 * 学ぶこと📌
 
@@ -53,6 +61,10 @@
 ---
 
 ## 第4章　合成の第一歩：has-a（部品を持つ）🧳✨
+
+![has_a_robot](./picture/isa_hasa_cs_index_has_a_robot.png)
+
+
 
 * ねらい🎯：「継承しないで再利用する」感覚を作る🧩
 * 学ぶこと📌
@@ -102,6 +114,10 @@
 
 ## 第7章　合成の“組み立て場所”：Composition Root🌳🧩
 
+![assembly_factory](./picture/isa_hasa_cs_index_assembly_factory.png)
+
+
+
 * ねらい🎯：「どこでnewするの？」問題を解決する✨
 * 学ぶこと📌
 
@@ -150,6 +166,10 @@
 
 ## 第10章　Strategy：ふるまいを部品化して差し替え🎭🔁
 
+![strategy_masks](./picture/isa_hasa_cs_index_strategy_masks.png)
+
+
+
 * ねらい🎯：合成の王道「ロジック差し替え」を体験✨
 * 学ぶこと📌
 
@@ -181,6 +201,10 @@
 ---
 
 ## 第12章　Decorator：機能を“重ねる”合成テク🎂✨
+
+![decorator_cake](./picture/isa_hasa_cs_index_decorator_cake.png)
+
+
 
 * ねらい🎯：継承なしで機能追加（ログ、リトライ等）🍰
 * 学ぶこと📌
@@ -261,6 +285,10 @@
 ---
 
 ## 第17章　判断力まとめ：いつ合成？いつ継承？チェックリスト🎯🌈
+
+![judgment_scale](./picture/isa_hasa_cs_index_judgment_scale.png)
+
+
 
 * ねらい🎯：現場で迷ったときの“判断メモ”を持ち帰る👜✨
 * 学ぶこと📌（軽めに！）
