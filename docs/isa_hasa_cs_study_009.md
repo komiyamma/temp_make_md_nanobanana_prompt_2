@@ -49,6 +49,10 @@ flowchart LR
 
 ## 2. “2つだけ”覚えればOK✌️😺
 
+![Register vs Resolve](./picture/isa_hasa_cs_study_009_register_resolve.png)
+
+
+
 ### 2-1. 登録（Register）📝
 
 「サービス（使われる側）」をコンテナに追加すること。
@@ -82,6 +86,10 @@ flowchart LR
 ---
 
 ## 4. コードを書こう✍️😊（“自動組み立て”を体験）
+
+![Automatic Wiring](./picture/isa_hasa_cs_study_009_auto_wiring.png)
+
+
 
 ### 4-1. 部品（サービス）を用意する🧩
 
@@ -156,6 +164,10 @@ greeter.Greet();
 
 ## 6. “やりすぎ注意”ポイントだけ先に知っとこ⚠️🪄❌
 
+![Magic Code Warning](./picture/isa_hasa_cs_study_009_magic_warning.png)
+
+
+
 DIコンテナは便利なんだけど、**魔法にすると事故る**😂
 
 Microsoftのガイドラインで特に大事なやつを、初心者向けに翻訳するとこんな感じ👇
@@ -167,12 +179,20 @@ Microsoftのガイドラインで特に大事なやつを、初心者向けに�
 
 ### じゃあ GetRequiredService はダメなの？😳
 
+![Service Locator Trap](./picture/isa_hasa_cs_study_009_service_locator_trap.png)
+
+
+
 **アプリの入口（Program / Composition Root）で “最初の1個” を起動するために使うのはOK**、って理解で大丈夫🙆‍♀️✨
 （中のクラスがそれをやり始めると、依存が見えなくなって辛い…ってやつ！）
 
 ---
 
 ## 7. ありがちな“良くないDIコンテナ化”あるある😇💥
+
+![Bloated Container](./picture/isa_hasa_cs_study_009_bloated_container.png)
+
+
 
 * 「何でもかんでも登録」して、どこで何が使われてるか不明👻
 * DIのためだけのクラスが増えすぎる📈
@@ -186,6 +206,10 @@ Microsoftのガイドラインで特に大事なやつを、初心者向けに�
 ---
 
 ## 8. AI活用🤖💬（コピペ用プロンプト）
+
+![AI DI Inspector](./picture/isa_hasa_cs_study_009_ai_inspector.png)
+
+
 
 * 「このProgram.csのDI登録、やりすぎポイントある？1〜3個で指摘して✅」
 * 「このクラスの依存（コンストラクタ引数）を見て、責務が混ざってないかチェックして🔍」

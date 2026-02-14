@@ -6,6 +6,10 @@
 
 ## 1) まず悩みあるある😵‍💫「new が散らばってカオス…」
 
+![Scattered New Chaos](./picture/isa_hasa_cs_study_007_scattered_new_chaos.png)
+
+
+
 こういうコード、よく見ます👇
 
 * クラスの中で `new` しまくり
@@ -70,6 +74,10 @@ Composition Root を作ると、こうなる👇
 
 ## 4-1) まず “散らばり new” の悪い例😇（つらくなるやつ）
 
+![Welded Robot (Bad Design)](./picture/isa_hasa_cs_study_007_welded_robot.png)
+
+
+
 ```
 csharp
 public class OrderService
@@ -92,6 +100,10 @@ public class OrderService
 ---
 
 ## 4-2) 合成できる形に整える🧩（受け取って使うだけにする）
+
+![Interface Sockets](./picture/isa_hasa_cs_study_007_interface_sockets.png)
+
+
 
 まずは “契約（interface）” を用意するよ🔌🙂
 
@@ -146,6 +158,8 @@ public sealed class EmailNotifier : INotifier
 そして主役（ユースケース側）は **コンストラクタで受け取る**💝
 （ここが「合成」！✨）
 
+![Constructor Injection Action](./picture/isa_hasa_cs_study_007_constructor_injection.png)
+
 ```
 csharp
 public sealed class OrderService
@@ -155,6 +169,9 @@ public sealed class OrderService
     private readonly INotifier _notifier;
 
     public OrderService(
+
+
+
         IDiscountPolicy discount,
         IPayment payment,
         INotifier notifier)
@@ -179,6 +196,10 @@ public sealed class OrderService
 ---
 
 ## 5) いよいよ Composition Root🌳🧩（組み立ては入口で！）
+
+![Program.cs Assembly Factory](./picture/isa_hasa_cs_study_007_assembly_factory.png)
+
+
 
 では「どこで new するの？」の答え👇
 👉 **Program.cs（アプリの入口）**でやる！🚀
@@ -208,6 +229,10 @@ InfoQでも「コンテナでも手動でもOK、ただし Composition Root を�
 ---
 
 ## 5-1) 変更に強いのを一発で体験しよ🔁✨（差し替え）
+
+![Easy Component Swap](./picture/isa_hasa_cs_study_007_easy_swap.png)
+
+
 
 例えば「通知を SMS に変えたい！」📱ってなったら…
 
@@ -246,6 +271,10 @@ OrderService は一切いじらない！🎉
 （コンテナは Composition Root の中に封じるのが王道） ([InfoQ][2])
 
 ## ✅ ルール3：依存の順番は「葉っぱ→幹→根っこ」🌿➡️🌳
+
+![Dependency Assembly Order](./picture/isa_hasa_cs_study_007_dependency_order.png)
+
+
 
 * “末端の部品” を先に作って
 * “それを使う部品” を後から作る

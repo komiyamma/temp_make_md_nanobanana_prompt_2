@@ -29,6 +29,10 @@
 
 ## 2. なぜ必要？（直接外部APIを呼ぶと起きる地獄😱）
 
+![External Leakage](./picture/isa_hasa_cs_study_013_leakage_slime.png)
+
+
+
 ### ありがちなダメ例💥（外部が漏れてる）
 
 * いろんなクラスで外部SDKの型（DTO）を直接使う📦📦📦
@@ -42,6 +46,10 @@
 ---
 
 ## 3. Adapterの登場人物（これだけ覚えればOK）🎭
+
+![Adapter Bridge Structure](./picture/isa_hasa_cs_study_013_adapter_bridge.png)
+
+
 
 * **Target（ターゲット）**：アプリが欲しい形（自分の interface）🎯
 * **Adaptee（アダプティ）**：外部の実体（SDKやAPIクライアント）📦
@@ -80,6 +88,10 @@ classDiagram
 
 ### 4-1. まず「自分の世界（Target）」を作る🎯🧩
 
+![Target World Clean Desk](./picture/isa_hasa_cs_study_013_target_desk.png)
+
+
+
 * アプリ側が欲しいのはこれ👇（**外部の名前を一切出さない**のがポイント🧼）
 
 ```csharp
@@ -114,6 +126,10 @@ public sealed record PaymentResult(
 
 ### 4-2. 「外部SDK（Adaptee）」を想定する📦（※触れない前提）
 
+![Adaptee Warehouse Chaos](./picture/isa_hasa_cs_study_013_adaptee_chaos.png)
+
+
+
 （本当はNuGetなどで入ってくる想定ね🙂）
 
 ```csharp
@@ -144,6 +160,10 @@ public sealed class PaymoClient
 ---
 
 ### 4-3. Adapter（翻訳係）を作る🌉🔧✨
+
+![Translation Machine](./picture/isa_hasa_cs_study_013_translation_machine.png)
+
+
 
 ここが今日の主役だよ〜！🧁
 
@@ -185,6 +205,7 @@ public sealed class PaymoPaymentGatewayAdapter : IPaymentGateway
         catch (PaymoException ex)
         {
             // ✅ 翻訳：外部例外 → 自分の結果/理由へ（外部のErrorCodeは外に出さない）
+
             var reason = ex.ErrorCode switch
             {
                 "InvalidToken" => "支払いトークンが無効でした🙅‍♀️",
@@ -196,6 +217,8 @@ public sealed class PaymoPaymentGatewayAdapter : IPaymentGateway
     }
 }
 ```
+
+![Exception Filter](./picture/isa_hasa_cs_study_013_exception_filter.png)
 
 ここで超大事なのは👇💡
 **“外部語”はこのクラスで止める**🧼🧱
@@ -252,6 +275,10 @@ Adapterを作ったら、これを見てセルフチェック✨
 ## 7. よくある落とし穴⚠️（初心者がハマりやすい…！）
 
 ### 落とし穴1：Adapterの外に外部DTOを返しちゃう😇
+
+![Smuggler Leak (Anti-Pattern)](./picture/isa_hasa_cs_study_013_smuggler_leak.png)
+
+
 
 「便利だから `PaymoResponse` を返すね！」
 → それ、**隔離が崩壊**する合図🧟‍♀️

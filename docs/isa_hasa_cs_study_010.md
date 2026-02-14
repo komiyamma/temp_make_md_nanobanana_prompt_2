@@ -30,6 +30,10 @@ C# 14 をVSで使うなら、だいたい VS 2022 17.13 以降が目安です。
 
 ## 2. まずは「つらいコード」を体験😱（Before）
 
+![Tangled Tracks (Bad Code)](./picture/isa_hasa_cs_study_010_tangled_tracks.png)
+
+
+
 題材：**割引ルール**（例：会員・クーポン・まとめ買い…）🛒💸
 こういうの、最初はこう書きがち👇
 
@@ -78,6 +82,10 @@ public sealed class CheckoutService
 
 ## 3. Strategy化の基本形🧩🔌（構造をイメージ）
 
+![Strategy Socket Wrench](./picture/isa_hasa_cs_study_010_socket_wrench.png)
+
+
+
 登場人物はこれだけ👇
 
 * **Strategy（戦略）**：やり方の部品（例：割引計算のやり方）
@@ -111,6 +119,10 @@ public sealed record DiscountContext(
 ---
 
 ### 4-2. “やり方”を部品として実装する🧩🎭
+
+![Discount Strategy Cards](./picture/isa_hasa_cs_study_010_strategy_cards.png)
+
+
 
 #### ① 割引なし😊
 
@@ -154,6 +166,10 @@ public sealed class BulkDiscountStrategy : IDiscountStrategy
 ---
 
 ### 4-3. 使う側（Context）を “差し替え可能” にする🔁✨
+
+![Context Machine Slot](./picture/isa_hasa_cs_study_010_machine_slot.png)
+
+
 
 ここが Strategy の気持ちいいところ😍
 CheckoutService は **割引の中身を知らない**！
@@ -222,6 +238,10 @@ public interface IDiscountStrategyResolver
 ```
 
 ### 5-2. まずは素朴に if で選ぶ（※ここに隔離する！）🧺
+
+![Logic Containment Box](./picture/isa_hasa_cs_study_010_logic_containment.png)
+
+
 
 ```csharp
 public sealed class DiscountStrategyResolver : IDiscountStrategyResolver
@@ -327,6 +347,10 @@ Console.WriteLine(total);
 ---
 
 ## 7. よくある失敗あるある⚠️😵‍💫（先に潰す！）
+
+![Fat Context Failure](./picture/isa_hasa_cs_study_010_fat_context_failure.png)
+
+
 
 ### 失敗①：Strategy を「何でも屋」にする🧙‍♂️💥
 
