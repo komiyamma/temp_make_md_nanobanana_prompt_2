@@ -10,6 +10,10 @@
 
 ## 0. まず大前提：日付/時刻は「4種類」あるよ🧠💡
 
+![time_types_icons](./picture/invariants_cs_study_018_time_types_icons.png)
+
+
+
 ここを混ぜると事故りがち…！なので最初に分ける🙂✨
 
 1. **瞬間（ある一点の時刻）**
@@ -46,6 +50,10 @@ flowchart LR
 
 ## 1. 日付/時刻の地雷あるある💣😭（チェックリスト化しよ✅）
 
+![date_accidents_collage](./picture/invariants_cs_study_018_date_accidents_collage.png)
+
+
+
 ![Deadline Timeline](./picture/invariants_cs_study_018_deadline.png)
 
 
@@ -62,6 +70,10 @@ flowchart LR
 ---
 
 ## 2. 期限（Deadline）って何？を“仕様”で固定する📜✨
+
+![deadline_definition_scroll](./picture/invariants_cs_study_018_deadline_definition_scroll.png)
+
+
 
 期限はアプリによって意味が違うから、まず **言葉を決める** のが大事🙂🫶
 
@@ -87,6 +99,10 @@ C) **営業日ルール付き期限**（さらに事故りやすいけど実務�
 ---
 
 ## 3. パターン①：Deadline（瞬間）VOを作る⏰🛡️（過去期限禁止つき）
+
+![deadline_vo_structure](./picture/invariants_cs_study_018_deadline_vo_structure.png)
+
+
 
 ### 不変条件（Invariants）例🧷
 
@@ -134,6 +150,10 @@ public readonly record struct Deadline
 
 ## 4. パターン②：タイムゾーン変換は「境界」でやる🌐🚪（中に持ち込まない🧼）
 
+![boundary_tz_conversion](./picture/invariants_cs_study_018_boundary_tz_conversion.png)
+
+
+
 内部（ドメイン）では「UTCの瞬間」で持つのがラク✨
 でも現実は「JSTの18:00」みたいに **ローカルで入力**されるよね🙂
 
@@ -180,6 +200,10 @@ public static class TimeZoneBoundary
 ---
 
 ## 5. パターン③：営業日カレンダー（まずは週末だけ版）📅🏢✨
+
+![business_calendar_logic](./picture/invariants_cs_study_018_business_calendar_logic.png)
+
+
 
 営業日ルールを **“散らさない”** のが勝ち🏆
 「営業日計算」はカレンダーに閉じ込めちゃおう🧺
@@ -278,6 +302,10 @@ public static class BillingDeadlinePolicy
 ---
 
 ## 7. テストが安定する！TimeProviderで「今」を固定🧪🧊✨
+
+![time_provider_test](./picture/invariants_cs_study_018_time_provider_test.png)
+
+
 
 `DateTime.Now` 直呼びだとテストが不安定になりがち🥲
 `TimeProvider` を使うと “今” を差し替えできるよ👍 ([Microsoft Learn][1])

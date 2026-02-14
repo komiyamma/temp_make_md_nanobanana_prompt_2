@@ -14,6 +14,10 @@
 
 ## 1. DateRangeで起きがちな事故あるある😇💥
 
+![timeline_accident](./picture/invariants_cs_study_013_timeline_accident.png)
+
+
+
 * 予約やサブスクで **開始日と終了日を逆に保存** → 料金計算がマイナス🌀
 * “日付だけ”のはずが `DateTime` で扱われて、**タイムゾーンや時刻でズレる**⏰🌍
 * 「チェック書き忘れ」で、どこかの画面から **壊れた期間が混入**🚪💣
@@ -25,6 +29,10 @@
 
 ## 2. まずは「日付」か「日時」かを分ける🧠✨
 
+![dateonly_vs_datetime](./picture/invariants_cs_study_013_dateonly_vs_datetime.png)
+
+
+
 今回は「◯月◯日〜◯月◯日」みたいな **“日付だけ”** の期間を想定して、`.NET` の **`DateOnly`** を使うよ〜📅
 `DateOnly` は「時間を持たない日付」を表す型だよ（まさにこれが欲しいやつ！）([Microsoft Learn][3])
 
@@ -33,6 +41,10 @@
 ---
 
 ## 3. この章の“仕様”を決めよう📜🎀
+
+![specification_scroll](./picture/invariants_cs_study_013_specification_scroll.png)
+
+
 
 **DateRange（期間）VO** の仕様はシンプルにいくね🙂✨
 
@@ -43,6 +55,10 @@
 ---
 
 ## 4. 実装：DateRange 値オブジェクトを作る💎📅
+
+![implementation_blueprint](./picture/invariants_cs_study_013_implementation_blueprint.png)
+
+
 
 前章と同じ **Resultパターン** でいくよ〜🧾✨（そのまま流用できる👍）
 
@@ -85,6 +101,10 @@ public sealed record DateRange
 ---
 
 ## 5. 境界（UI/API）で “文字列→DateOnly→DateRange” に変換する🚪➡️💎
+
+![boundary_conversion](./picture/invariants_cs_study_013_boundary_conversion.png)
+
+
 
 ここが **「境界で守る」** の見せ場だよ〜🎀✨
 入力はだいたい文字列で来るから、境界で `DateOnly.TryParseExact` を使って整えてから VOへ！🧼
@@ -138,6 +158,10 @@ public static class Subscription
 ---
 
 ## 6. テストで“仕様”を固めよう🧪✨（超だいじ！）
+
+![test_cases](./picture/invariants_cs_study_013_test_cases.png)
+
+
 
 最低ラインはこれだけでOK🙆‍♀️
 
@@ -213,6 +237,10 @@ public class DateRangeTests
 ---
 
 ## 9. 演習（ここまでやれば勝ち🏁🎉）
+
+![overlap_exercise](./picture/invariants_cs_study_013_overlap_exercise.png)
+
+
 
 * 演習①：`DaysExclusive`（両端含まない版）を追加して、テストも書く🧪
 * 演習②：`Overlaps(DateRange other)` を追加して、重なり判定をテスト🧩

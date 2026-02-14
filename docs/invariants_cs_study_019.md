@@ -17,6 +17,10 @@
 
 ## 1. “集合が壊れる”と何が起きる？😱💥
 
+![collection_chaos](./picture/invariants_cs_study_019_collection_chaos.png)
+
+
+
 たとえばショッピングカート🛒で…
 
 * 同じ商品が **2行に分裂**（重複）
@@ -31,6 +35,10 @@
 ---
 
 ## 2. 集合の不変条件テンプレ3点セット🧺📌
+
+![invariants_trio](./picture/invariants_cs_study_019_invariants_trio.png)
+
+
 
 ![Collection Limit](./picture/invariants_cs_study_019_brick_wall.png)
 
@@ -51,6 +59,10 @@
 上限って「入力で守る」だけじゃ足りなくて、**内部でも必ず守る**のが大事だよ🛡️✨
 
 ### C) 順序（Order）📚
+
+![order_preservation_queue](./picture/invariants_cs_study_019_order_preservation_queue.png)
+
+
 
 順序には3種類あるよ👇
 
@@ -73,6 +85,10 @@ flowchart TD
 
 ## 3. 守り方の結論：Listを“公開しない”🙅‍♀️🔒
 
+![encapsulation_shield](./picture/invariants_cs_study_019_encapsulation_shield.png)
+
+
+
 集合の不変条件は、だいたいこれで勝てる🏆✨
 
 * `private List<T>` を内部に持つ
@@ -94,6 +110,10 @@ flowchart TD
 ---
 
 ## 5. 実装してみよっ🧑‍💻🎀（C#）
+
+![limit_block_wall](./picture/invariants_cs_study_019_limit_block_wall.png)
+
+
 
 ポイントは「**Listを直接触らせない**」「**Addで必ず正規化**」だよ✅
 
@@ -199,6 +219,10 @@ public sealed class CartItems
 ---
 
 ## 7. テスト観点（ここ超だいじ）🧪✨
+
+![test_case_checklist](./picture/invariants_cs_study_019_test_case_checklist.png)
+
+
 
 最低これだけは欲しい👇
 

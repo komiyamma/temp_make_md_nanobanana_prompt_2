@@ -18,6 +18,10 @@
 
 ## 2) null事故って、何がつらいの？😵‍💫💥
 
+![delayed_explosion](./picture/invariants_cs_study_015_delayed_explosion.png)
+
+
+
 null事故の怖さは、**「壊れたのが“実行してから”分かる」**こと…！
 たとえば、
 
@@ -34,6 +38,10 @@ Nullable参照型（NRT）は、ここに対して
 ---
 
 ## 3) Nullable参照型（NRT）の基本🎀
+
+![nullable_gate](./picture/invariants_cs_study_015_nullable_gate.png)
+
+
 
 ![Nullable Gate](./picture/invariants_cs_study_015_nullable_nrt.png)
 
@@ -70,6 +78,10 @@ Nullable参照型（NRT）は、ここに対して
 
 ## 4) よく見る警告の“読み方”👀📣
 
+![warning_patterns](./picture/invariants_cs_study_015_warning_patterns.png)
+
+
+
 ここ、最初つまずきやすいから「ありがち」だけ先にまとめるね😊✨
 
 ### ⚠️ パターンA：`null` が入りうる値を、non-null に突っ込んでる
@@ -95,6 +107,10 @@ Nullable参照型（NRT）は、ここに対して
 ---
 
 ## 5) 「最小コストで直す」定番パターン5つ🧰✨
+
+![fix_toolbox](./picture/invariants_cs_study_015_fix_toolbox.png)
+
+
 
 ### ✅ パターン1：入口で null を弾く（ガード）🚪🛡️
 
@@ -137,6 +153,10 @@ if (email is null) return Result.Fail("Emailが必要です🥺");
 
 ### ✅ パターン4：`!`（null許容の打ち消し）は“最後の最後”😇🧨
 
+![bang_danger](./picture/invariants_cs_study_015_bang_danger.png)
+
+
+
 `!` は「ここは絶対nullじゃないから黙って！」っていう宣言。
 
 ```csharp
@@ -149,6 +169,10 @@ var name = user.Name!; // ← 乱用すると事故る💥
 ---
 
 ### ✅ パターン5：Try系 + Nullable属性で、コンパイラに“保証”を教える📚✨
+
+![try_pattern_flow](./picture/invariants_cs_study_015_try_pattern_flow.png)
+
+
 
 `TryParse` 的な「成功したら non-null」を綺麗に表現できるやつ🎀
 
@@ -175,6 +199,10 @@ public static bool TryGetEmail(string? input, [NotNullWhen(true)] out string? va
 ---
 
 ## 6) 本題🔥「null を境界に閉じ込める」設計パターン🚪➡️🏛️
+
+![boundary_filtering](./picture/invariants_cs_study_015_boundary_filtering.png)
+
+
 
 ここが第15章のいちばん大事なところだよ😊💕
 
