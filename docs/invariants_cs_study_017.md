@@ -18,6 +18,10 @@
 
 ## 2) 文字列が事故りやすい理由💥😇
 
+![string_accidents](./picture/invariants_cs_study_017_string_accidents.png)
+
+
+
 文字列って、見た目は同じでも中身が違ったり、余計な空白が混じったり、変な文字が紛れたりしがち…！🌀
 
 よくある事故あるある👇
@@ -35,6 +39,10 @@
 
 ## A. 3タイプに分けるとラクだよ🙂
 
+![string_types_bins](./picture/invariants_cs_study_017_string_types_bins.png)
+
+
+
 1. **ID系（識別子）**：UserName / Code / Key
 
    * 比較はだいたい **Ordinal / OrdinalIgnoreCase** が向いてる（文化依存しない）🧊 ([Microsoft Learn][3])
@@ -46,6 +54,10 @@
    * ログに出さない、取り扱い注意⚠️（`SecureString` は制限もあるよ）([Microsoft Learn][4])
 
 ## B. ルールはこの順で決めると迷いにくい🗺️
+
+![validation_pipeline](./picture/invariants_cs_study_017_validation_pipeline.png)
+
+
 
 1. **必須？任意？**（null/空/空白だけOK？）
 2. **正規化**（Trimする？Unicode正規化する？大小文字は？）🧼
@@ -67,6 +79,10 @@ flowchart TD
 ---
 
 ## 4) 「長さ」の落とし穴：`Length` は“文字数”じゃない😵‍💫📏
+
+![length_trap](./picture/invariants_cs_study_017_length_trap.png)
+
+
 
 `string.Length` は **UTF-16のコード単位数**なので、絵文字や結合文字でズレやすいよ〜！
 UIの「◯文字以内」みたいな仕様は、**“見た目の1文字（テキスト要素）”**で数えるのが安全🙂✨
@@ -92,6 +108,10 @@ Console.WriteLine(TextLength(emoji));           // 1（“見た目”に寄せ�
 
 ## 5) 正規化：Trim + Unicode Normalize 🧼✨
 
+![normalization_wash](./picture/invariants_cs_study_017_normalization_wash.png)
+
+
+
 ## ✅ まずは「Trimする？」を仕様にしよう
 
 * **ID系**：基本は `Trim()` して“正規形”として保存しちゃうのがラク🙂
@@ -114,6 +134,10 @@ static string NormalizeForId(string s)
 ---
 
 ## 6) 禁止文字の定番セット🚫🧯
+
+![forbidden_chars_filter](./picture/invariants_cs_study_017_forbidden_chars_filter.png)
+
+
 
 まず “これは禁止！” を決めると守りが固くなるよ🛡️✨
 
@@ -163,6 +187,10 @@ public readonly record struct Result<T>(T? Value, string? Error)
 ```
 
 ## 8-2) `UserName` VO 本体💎🛡️
+
+![username_vo_block](./picture/invariants_cs_study_017_username_vo_block.png)
+
+
 
 ```csharp
 using System.Globalization;

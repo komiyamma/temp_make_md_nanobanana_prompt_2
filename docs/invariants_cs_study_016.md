@@ -21,6 +21,10 @@
 
 ## 1) 数値事故はだいたいこの3種🧨
 
+![numeric_accidents_trio](./picture/invariants_cs_study_016_numeric_accidents_trio.png)
+
+
+
 ### A. 範囲外（Range）😇➡️😱
 
 * 年齢が -3 とか 999 とか
@@ -58,6 +62,10 @@ mindmap
 ---
 
 ## 2) パターン①：範囲つき数値を “型” にする（最重要）🛡️🔢
+
+![range_gate_keeper](./picture/invariants_cs_study_016_range_gate_keeper_v2.png)
+
+
 
 まずはテンプレ👇
 「作る入口（Create）」でしか生成できないようにして、範囲を固定しちゃう！
@@ -97,6 +105,10 @@ public readonly record struct Age
 ---
 
 ## 3) パターン②：丸めルールは “明示して固定” 🎯🧾
+
+![rounding_comparison](./picture/invariants_cs_study_016_rounding_comparison_v2.png)
+
+
 
 丸めは「言葉のズレ」がめちゃ起きる…！💦
 しかも Math.Round は既定で MidpointRounding.ToEven（偶数丸め）なんだよね。 ([Microsoft Learn][2])
@@ -155,6 +167,10 @@ public readonly record struct Percent
 
 ### 4-1) 距離の例：Meters と Kilometers を分ける🧭✨
 
+![unit_conversion_factory](./picture/invariants_cs_study_016_unit_conversion_factory.png)
+
+
+
 ```csharp
 public readonly record struct Meters
 {
@@ -194,6 +210,10 @@ public readonly record struct Kilometers
 
 ## 5) 境界（UI/API）では “文字列→型” の変換をまとめる🚪🔁
 
+![parsing_funnel](./picture/invariants_cs_study_016_parsing_funnel.png)
+
+
+
 フォームやAPI入力って、だいたい文字列だよね🙂
 そこで「変換係」を作るとスッキリするよ〜🎀
 
@@ -225,6 +245,10 @@ public static class NumericParsers
 ---
 
 ## 6) テストは “境界値セット” で一気に固める🧪🔥
+
+![boundary_test_targets](./picture/invariants_cs_study_016_boundary_test_targets.png)
+
+
 
 範囲チェックは、だいたいこの並びで勝てるよ✌️✨
 
@@ -282,6 +306,10 @@ public class AgeTests
 題材は「ポイント」「在庫」「年齢」あたりがやりやすいよ😊✨
 
 ### 演習A：在庫数 StockCount を作ろう📦
+
+![inventory_exercise](./picture/invariants_cs_study_016_inventory_exercise.png)
+
+
 
 * 範囲：0〜10,000
 * マイナス禁止

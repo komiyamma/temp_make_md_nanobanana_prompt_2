@@ -21,6 +21,10 @@
 
 ## 1. なんで immutable が“不変条件”に効くの？🧠💡
 
+![immutable_iceblock](./picture/invariants_cs_study_014_immutable_iceblock.png)
+
+
+
 不変条件って「守りたい約束」だよね🙂🛡️
 でも、オブジェクトが**後からいくらでも書き換え可能**だと…
 
@@ -38,6 +42,10 @@
 
 ## 2. record って何がうれしいの？📦💎
 
+![record_types](./picture/invariants_cs_study_014_record_types.png)
+
+
+
 ### 2.1 record の性格（ざっくり）🙂
 
 record は「データ中心の型」を書きやすくして、**値ベースの等価**などが最初から整ってるタイプだよ✨
@@ -54,6 +62,10 @@ VO（小さくて軽い値）だけ `record struct` を検討、くらいで十�
 ---
 
 ## 3. immutable の基本武器①：`init` 🧷✨
+
+![init_lock](./picture/invariants_cs_study_014_init_lock.png)
+
+
 
 `init` は「**初期化のときだけ代入OK**」にできる仕組みだよ❄️
 公式にも「init-only setter はオブジェクト構築中だけ代入できて、その後は変更できない＝不変性を強制」って書いてあるよ🧊 ([Microsoft Learn][3])
@@ -74,6 +86,10 @@ public sealed record MemberProfile
 ---
 
 ## 4. immutable の基本武器②：`with`（非破壊的変更）🔁✨
+
+![with_cloning](./picture/invariants_cs_study_014_with_cloning.png)
+
+
 
 record には「変更したいけど壊したくない」時に便利な `with` があるよ😊
 `with` は **コピーを作って、指定部分だけ差し替える**やつ！ ([Microsoft Learn][4])
@@ -101,6 +117,10 @@ flowchart TD
 ---
 
 ## 5. “浅いコピー事故”を体験してみよ👀💣（超だいじ）
+
+![shared_reference_danger](./picture/invariants_cs_study_014_shared_reference_danger.png)
+
+
 
 ![Shared Reference Danger](./picture/invariants_cs_study_014_two_stick.png)
 
@@ -154,6 +174,10 @@ var items = builder.ToImmutable(); // 最後に固める❄️
 
 ## 6. “入れ忘れ”を殺す：`required` 🧷🔒
 
+![required_check](./picture/invariants_cs_study_014_required_check.png)
+
+
+
 `required` は「そのプロパティは **初期化時に必ず入れてね**」をコンパイルで強制できるよ✅
 公式の提案仕様でも「初期化時に必須セットを強制する仕組み」って説明されてるよ🧾 ([Microsoft Learn][8])
 
@@ -171,6 +195,10 @@ public sealed record RegisterCommand
 ---
 
 ## 7. 章のメイン演習：mutable DTO → immutable ドメイン変換🚪➡️🏛️
+
+![dto_to_domain](./picture/invariants_cs_study_014_dto_to_domain.png)
+
+
 
 ここが本題だよ〜！🎀
 外から来るデータ（DTO）はどうしても **文字列だらけ・nullあり・ゆるい**。
