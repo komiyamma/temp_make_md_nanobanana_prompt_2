@@ -57,6 +57,8 @@ HTTPの標準仕様では、GET/HEAD/OPTIONS/TRACE は安全、PUT/DELETE と安
 
 ### パターンB：POST/PATCHに “Idempotency-Key” ヘッダーを入れる🔑📩（王道✨）
 
+![idem_ts_study_009_envelope_seal.png](./picture/idem_ts_study_009_envelope_seal.png)
+
 IETF（HTTP APIの標準化をしてるところ）が、**Idempotency-Key というリクエストヘッダー**の仕様をInternet-Draftとしてまとめてるよ🧠✨ ([IETF Datatracker][2])
 このヘッダーを使うと、POSTやPATCHみたいな「本来冪等じゃない操作」を **“リトライに強い”** 形にできるよ🔁🛡️ ([IETF Datatracker][2])
 
@@ -97,6 +99,8 @@ IETF（HTTP APIの標準化をしてるところ）が、**Idempotency-Key と�
 
 ### ③ キーのルール（超重要⚠️）
 
+![idem_ts_study_009_key_lock.png](./picture/idem_ts_study_009_key_lock.png)
+
 IETFのdraftでは特にここが強調されてるよ👇
 
 * **キーはユニークであること**
@@ -107,6 +111,8 @@ IETFのdraftでは特にここが強調されてるよ👇
 
 ### ④ “同じキー” だったら何が返る？（最強の安心）🧠📤
 
+![idem_ts_study_009_replay_button.png](./picture/idem_ts_study_009_replay_button.png)
+
 ここは **できれば強く約束** したい✨
 
 * 同じキーの **リトライ（処理完了後）** → **初回と同じ結果（成功でも失敗でも）を返す** 🔁 ([IETF Datatracker][2])
@@ -115,6 +121,8 @@ IETFのdraftでは特にここが強調されてるよ👇
 ---
 
 ### ⑤ “同時に来た”ときどうする？（競合の約束）⚔️🧵
+
+![idem_ts_study_009_traffic_guard.png](./picture/idem_ts_study_009_traffic_guard.png)
 
 IETFのdraftでは「まだ初回が終わってないのに同じキーが来たら競合エラーを返す」が推奨されてるよ📌 ([IETF Datatracker][2])
 よくある約束：**409 Conflict** を返す🧯
@@ -241,6 +249,8 @@ async function createOrderWithRetry(payload: CreateOrderRequest) {
 ---
 
 ## 9-8. OpenAPIに書くときの“最低ライン”🧾✨
+
+![idem_ts_study_009_contract_scroll.png](./picture/idem_ts_study_009_contract_scroll.png)
 
 ```yaml
 paths:

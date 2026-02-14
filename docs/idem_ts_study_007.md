@@ -58,6 +58,8 @@ GET は「そのリソースの表現（データ）をください」ってい�
 
 ## 2) PUT は「置き換え」だから冪等にしやすい🔁🧱
 
+![idem_ts_study_007_put_box.png](./picture/idem_ts_study_007_put_box.png)
+
 ### PUT の意味（超大事！）
 
 PUT は **「対象リソースを、この内容で丸ごと置き換える」** が基本✨ ([MDNウェブドキュメント][2])
@@ -71,6 +73,8 @@ PUT は **「対象リソースを、この内容で丸ごと置き換える」*
 これを2回送っても、サーバーの注文は「その形」になるだけ🔁✨
 
 ### ⚠️ PUT を壊す典型パターン（実は“足し算”）🚫➕
+
+![idem_ts_study_007_evil_add_button.png](./picture/idem_ts_study_007_evil_add_button.png)
 
 PUT なのに中身がこうなってると危険👇
 
@@ -92,6 +96,8 @@ A：仕様上は「作る」使い方もありえるよ（サーバー設計次�
 ---
 
 ## 3) DELETE は「消す」だから冪等にしやすい🗑️🔁
+
+![idem_ts_study_007_eraser.png](./picture/idem_ts_study_007_eraser.png)
 
 ### DELETE の意味
 
@@ -115,6 +121,8 @@ DELETE は「そのリソースを削除する」💥 ([MDNウェブドキュメ
 どちらでも「最終状態が同じ（存在しない）」なら、冪等の考え方と相性はいいよ🫶
 
 ### ⚠️ DELETE を壊す典型パターン（“二重取り消し”）😱
+
+![idem_ts_study_007_trash_coin.png](./picture/idem_ts_study_007_trash_coin.png)
 
 * DELETE のたびに「返金を実行」💳💥
 * DELETE のたびに「在庫を戻す」📦↩️

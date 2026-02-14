@@ -25,6 +25,8 @@
 
 ## 2つの軸で点数をつけるだけ！
 
+![idem_ts_study_004_quadrant_chart.png](./picture/idem_ts_study_004_quadrant_chart.png)
+
 * **被害の大きさ（Impact）**：1〜5
 * **再送・重複の起きやすさ（Retry likelihood）**：1〜5
 
@@ -65,6 +67,8 @@ quadrantChart
 ---
 
 ## 🥇1位：決済・課金・送金（チャージする系）💳🔥
+
+![idem_ts_study_004_podium.png](./picture/idem_ts_study_004_podium.png)
 
 * **二重実行の事故**：二重課金😱（一撃で炎上しがち）
 * **なぜ起きる？**：決済APIは通信失敗・タイムアウトが起きうる→再送されやすい🔁
@@ -196,6 +200,8 @@ quadrantChart
 
 ## 「SDKがリトライしてくれるからOK」→ だからこそ冪等が必要🔁
 
+![idem_ts_study_004_sdk_robot.png](./picture/idem_ts_study_004_sdk_robot.png)
+
 AWSはEC2 APIなどで**client token による冪等性**を推していて、「同じトークンは再利用しないでね」も明記されています ([AWS ドキュメント][6])
 （＝“同じ操作の再送は起きる”前提ってことだよね🧠）
 
@@ -239,6 +245,8 @@ AWSはEC2 APIなどで**client token による冪等性**を推していて、�
 ---
 
 ## ミニクイズ🎮🌸（理解チェック）
+
+![idem_ts_study_004_quiz_scene.png](./picture/idem_ts_study_004_quiz_scene.png)
 
 ## Q1：二重実行が一番ヤバいのはどれ？🔥
 
