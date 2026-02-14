@@ -24,6 +24,10 @@
 
 ### Inline（変数→式）📦➡️✂️
 
+![refactoring_cs_study_015_inline_concept](./picture/refactoring_cs_study_015_inline_concept.png)
+
+
+
 * 意味が薄い一時変数を消して、**ノイズを減らす**✨
 * “名付ける価値がない”なら消した方が読みやすいこともある🧼
 
@@ -55,6 +59,10 @@ graph LR
 
 ### どうやる？（Visual Studio）⌨️✨
 
+![refactoring_cs_study_015_vs_menu](./picture/refactoring_cs_study_015_vs_menu.png)
+
+
+
 1. 変数にしたい **式（expression）を選択**する🖱️
 2. **Ctrl + .**（Quick Actions / Refactorings）を開く🎛️([Microsoft Learn][1])
 3. **Introduce local variable** を選ぶ✅([Microsoft Learn][2])
@@ -69,6 +77,10 @@ graph LR
 ---
 
 ### 例①：計算式が“読める”になる💎
+
+![refactoring_cs_study_015_before_after](./picture/refactoring_cs_study_015_before_after.png)
+
+
 
 **Before（読みづらい…）😵‍💫**
 
@@ -117,6 +129,10 @@ if (isActiveUser && isPremiumPlan)
 ここ超大事⚠️✨
 
 * `&&` は**短絡評価**（左が false なら右を見ない）だよね🧠
+
+![refactoring_cs_study_015_short_circuit](./picture/refactoring_cs_study_015_short_circuit.png)
+
+
 * でも、うっかりこうすると危険💥👇
 
 ```csharp
@@ -128,12 +144,20 @@ if (user != null && user.IsActive && isPremiumPlan) { ... }
 
 ✅安全に Extract したいなら
 
+![refactoring_cs_study_015_null_safety](./picture/refactoring_cs_study_015_null_safety.png)
+
+
+
 * `?.` や `== true` を使って **null を吸収**する
 * もしくは先に null を除外する（ガード節は次章で詳しくやるよ🚪✨）
 
 ---
 
 ## 2) Inline（Inline temporary variable）🧹✨
+
+![refactoring_cs_study_015_temp_variable](./picture/refactoring_cs_study_015_temp_variable.png)
+
+
 
 ### いつ使う？🕒
 
@@ -175,6 +199,10 @@ decimal total = price + (price * 0.1m);
 ## 3) Extract と Inline の判断基準🧭✨
 
 ### Extract Variable を選ぶとき✅
+
+![refactoring_cs_study_015_naming_labels](./picture/refactoring_cs_study_015_naming_labels.png)
+
+
 
 * その式に **“名前を付ける価値”** がある🏷️
 * その値が **ドメイン的に意味を持つ**（例：`isEligibleForDiscount`）💎
