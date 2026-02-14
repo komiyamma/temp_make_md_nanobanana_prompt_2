@@ -10,6 +10,10 @@
 
 ## 1) そもそも“汚れ”って何？😵‍💫🫧
 
+![External Dirt](./picture/invariants_cs_study_028_external_dirt.png)
+
+
+
 外部API/DBって、だいたいこういう“汚れ”を持ってきます👇
 
 * **型が弱い**：数値が `"1000"`（文字列）で来る、true/false が `"0"/"1"` で来る😇
@@ -25,6 +29,10 @@
 ---
 
 ## 2) 今日の最重要ルール（覚えたら勝ち）🛡️💖
+
+![Rules of Defense](./picture/invariants_cs_study_028_defense_rules.png)
+
+
 
 ![Adapter Plug](./picture/invariants_cs_study_028_electrical_adapter.png)
 
@@ -48,6 +56,10 @@
 
 ## 3) ミニ題材：サブスク課金の外部決済API💳✨
 
+![External vs Internal Model](./picture/invariants_cs_study_028_external_vs_internal.png)
+
+
+
 * 外部：Payment Provider API
 
   * `amount` が **文字列** `"1200"` で返る
@@ -58,6 +70,10 @@
 ---
 
 ## 4) こう分けると強い💪✨（おすすめ構成）
+
+![Architecture Flow](./picture/invariants_cs_study_028_architecture_flow.png)
+
+
 
 * **External（外部）**：HTTPクライアント + 外部DTO
 * **Adapter（翻訳層）**：外部DTO → ドメイン型（VO/Entity）へ変換
@@ -126,6 +142,10 @@ public sealed record PaymentReceipt(string PaymentId, Money Money, PaymentStatus
 
 ### 5-3. Adapter（ここが主役🧼🧱）
 
+![Adapter Pattern](./picture/invariants_cs_study_028_adapter_pattern.png)
+
+
+
 外部DTOの“汚れ”を吸収して、ドメインに渡します✨
 
 ポイントは👇
@@ -189,6 +209,10 @@ public sealed class PaymentApiAdapter
 
 ## 6) 外部APIは落ちる前提：HTTPの回復性（Resilience）も境界で🛟🌩️
 
+![Resilience Handler](./picture/invariants_cs_study_028_resilience_handler.png)
+
+
+
 外部APIは「一時的に落ちる」「遅い」「たまに失敗」が普通です😇
 .NET では **Microsoft.Extensions.Http.Resilience** を使った “標準レジリエンス” の組み込みが案内されています。([Microsoft Learn][1])
 
@@ -208,6 +232,10 @@ services.AddHttpClient<PaymentApiClient>()
 ---
 
 ## 7) DBの“汚れ”も同じ：Entityをドメインに直で入れない🗄️🧼
+
+![DB Entity vs Domain](./picture/invariants_cs_study_028_db_vs_domain.png)
+
+
 
 DB側も、実は同じ問題が出ます💥
 

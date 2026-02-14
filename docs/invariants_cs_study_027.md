@@ -13,6 +13,10 @@
 
 ## 1. まず結論：Controller は“郵便受け”📮でいい✉️
 
+![Thin Controller Concept](./picture/invariants_cs_study_027_thin_controller.png)
+
+
+
 Controller（または Minimal API の handler）は、基本これだけでOK👇😊
 
 1. 受け取る（Model binding）📥
@@ -26,6 +30,10 @@ Controller（または Minimal API の handler）は、基本これだけでOK�
 ---
 
 ## 2. なぜ“薄い入口”が不変条件に効くの？🧠💡
+
+![Fat vs Thin Controller](./picture/invariants_cs_study_027_fat_vs_thin.png)
+
+
 
 ## 入口が太ると起きがちな事故💥
 
@@ -42,6 +50,10 @@ Controller（または Minimal API の handler）は、基本これだけでOK�
 ---
 
 ## 3. API入口の“王道分割”🧱✨（おすすめ構造）
+
+![Architecture Layers](./picture/invariants_cs_study_027_architecture_layers.png)
+
+
 
 たとえばフォルダをこう分けるイメージ👇
 
@@ -63,6 +75,10 @@ Controller（または Minimal API の handler）は、基本これだけでOK�
 ---
 
 ## 4. 入口の検証：Controller と Minimal API の最新おすすめ✅✨
+
+![Controller vs Minimal API](./picture/invariants_cs_study_027_controller_vs_minimal.png)
+
+
 
 ## 4.1 Controller の場合（[ApiController] が強い）💪
 
@@ -95,6 +111,10 @@ public sealed record RegisterMemberRequest(
 ---
 
 ## 5.2 Domain の VO（ここが不変条件の本丸🏰🛡️）
+
+![Two-Stage Defense](./picture/invariants_cs_study_027_two_stage_defense.png)
+
+
 
 例：Email を「作れた時点で正しい」状態にする✨
 
@@ -134,6 +154,10 @@ public sealed record RegisterMemberCommand(Email Email, string UserName);
 ---
 
 ## 5.4 Mapper（DTO → Command の変換専用）🔁
+
+![Mapper Function](./picture/invariants_cs_study_027_mapper_function.png)
+
+
 
 「変換に失敗したら ValidationProblem にできる形」で返すのがコツ🙂✨
 
@@ -229,6 +253,10 @@ app.MapPost("/api/members", async (RegisterMemberRequest req, RegisterMemberUseC
 ---
 
 ## 7. エラー応答を“ProblemDetailsで統一”する🧯📦✨
+
+![ProblemDetails Response](./picture/invariants_cs_study_027_problemdetails.png)
+
+
 
 API は、エラーを「機械が読める形」で返すと運用が超ラクです🙂
 ASP.NET Core には **ProblemDetails サービス**があって、`AddProblemDetails()` と `UseExceptionHandler()` / `UseStatusCodePages()` を組み合わせる構成が紹介されています📦✨([Microsoft Learn][3])

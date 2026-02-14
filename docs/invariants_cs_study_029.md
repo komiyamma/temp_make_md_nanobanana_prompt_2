@@ -20,6 +20,10 @@
 
 ## 2) まず感覚：DB制約は“最後の砦”🏰✨
 
+![Defense in Depth](./picture/invariants_cs_study_029_defense_in_depth.png)
+
+
+
 アプリで型やガードで守ってても、現実はこういうことが起きます😇💦
 
 * バグで「本来通らない値」が保存されちゃう🐛💥
@@ -49,6 +53,10 @@ flowchart TD
 ---
 
 ## 4) DB制約って何があるの？🧱🔰
+
+![DB Constraint Types](./picture/invariants_cs_study_029_constraint_types.png)
+
+
 
 ざっくり「守れる系」を並べるとこんな感じ😊
 
@@ -81,6 +89,10 @@ flowchart TD
 ---
 
 ## 5) どの不変条件をDBで守る？判断ルール🧠✨
+
+![Decision Rules](./picture/invariants_cs_study_029_decision_rules.png)
+
+
 
 迷ったら、まずこの3つでOK！😊💡
 
@@ -124,6 +136,10 @@ flowchart TD
 ---
 
 ## 7) SQL Server でのDB制約サンプル🧱🗄️
+
+![SQL Server Constraints](./picture/invariants_cs_study_029_sql_constraints.png)
+
+
 
 （雰囲気が伝わればOK！細かい列名は好きに変えてね😊）
 
@@ -171,6 +187,10 @@ WHERE Status = N'Active';
 ---
 
 ## 8) EF Core で “DB制約”をコード側に持ってくる🧩✨
+
+![EF Core Mapping](./picture/invariants_cs_study_029_ef_core_mapping.png)
+
+
 
 EF Core だと「Fluent API」で **UNIQUE / Filter / CHECK** を書けるよ🙂
 （公式ドキュメントでも、`HasIndex().IsUnique()` や `HasFilter()`、`HasCheckConstraint()` が紹介されてる）([Microsoft へようこそ][7])
@@ -221,6 +241,10 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 ## 9) “DBが止めたエラー”を、境界でいい感じに変換する🙂📣
 
+![Error Translation](./picture/invariants_cs_study_029_error_translation.png)
+
+
+
 DB制約を入れると、違反時に例外が飛ぶよね⚡
 ここで雑に「500！」にすると悲しいので😢、境界でこうするのがおすすめ👇
 
@@ -247,6 +271,10 @@ catch (DbUpdateException ex)
 ---
 
 ## 10) よくある落とし穴集💣（ここ超大事）
+
+![Pitfalls](./picture/invariants_cs_study_029_pitfalls.png)
+
+
 
 ### 落とし穴①：CHECK と NULL 😵‍💫
 

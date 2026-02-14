@@ -13,6 +13,10 @@ flowchart TD
 
 ## 第1章　この教材でできるようになること🎯✨
 
+![Journey Map](./picture/invariants_ts_index_journey_map.png)
+
+
+
 * 不変条件って何？どこで守る？を言葉にできる🙂
 * 「無効な状態を作れない」設計の感覚をつかむ💎
 * ざっくり完成イメージ（入口→検証→ドメイン型→更新）を見せる👀✨
@@ -31,6 +35,10 @@ flowchart TD
 * “途中で検証”を減らすメリット（DRYにもなる）🧼✨
 
 ## 第4章　境界（Boundary）を見つけよう🚧📍
+
+![Basic & Boundary](./picture/invariants_ts_index_basic_boundary.png)
+
+
 
 * 境界＝外部入力が入ってくる場所（UI/API/DB/外部API）🌍➡️🏰
 * 「境界で検証して変換」→「中は信じる」方針🙂
@@ -64,6 +72,10 @@ flowchart TD
 
 ## 第8章　型の武器①：リテラル型・ユニオン型で選択肢を固定🎫✨
 
+![Type Weapons](./picture/invariants_ts_index_type_weapons.png)
+
+
+
 * `type Plan = "Free" | "Pro"` みたいに縛る🙂
 * 状態（Status）・種類（Kind）・区分（Category）に強い💪
 * ミニ課題：題材から「固定できる選択肢」を3つ探す🔍✨
@@ -89,6 +101,10 @@ flowchart TD
 ---
 
 ## 第12章　値オブジェクト入門：ルール込みの値を作る🎁💎
+
+![Value Objects](./picture/invariants_ts_index_value_objects.png)
+
+
 
 * Value Object＝「検証済みの値」＋「意味」✨
 * 例：Money / Email / Quantity / DateRange📦💰📧📆
@@ -122,6 +138,10 @@ flowchart TD
 
 ## 第17章　境界の設計①：外部入力はまず unknown で受ける🕵️‍♀️❓
 
+![Boundary Design](./picture/invariants_ts_index_boundary_design.png)
+
+
+
 * 「信用しない」が基本方針😤
 * unknown → 検証 → ドメイン型へ変換🔄💎
 * ミニ課題：境界関数を1つ作って入口を固定する🚪✨
@@ -154,6 +174,10 @@ flowchart TD
 
 ## 第22章　エラー設計①：分かりやすいメッセージにする🫶🧯
 
+![Error & State](./picture/invariants_ts_index_error_state.png)
+
+
+
 * 「どこが」「なぜ」ダメかを丁寧に🙂
 * UI向け文言と内部ログ向け情報を分ける🗂️
 * ミニ課題：初心者が理解できるエラー文言に改善する✍️✨
@@ -179,6 +203,10 @@ flowchart TD
 ---
 
 ## 第26章　永続化境界①：DB→ドメイン（読み込み時に守る）🗄️🔄
+
+![Persistence & Test](./picture/invariants_ts_index_persistence_test.png)
+
+
 
 * DBの値も信用しない（古いデータ/壊れたデータ）😅
 * 読み込み時にDTO→ドメインへ変換し直す🧼

@@ -14,6 +14,10 @@ Visual Studio 2026 のリリースノートも最新をベースにするね🧰
 
 ## 0) 今日つくるミニアプリの仕様（小さくても“本物”）🧁✨
 
+![Final Architecture](./picture/invariants_cs_study_030_final_architecture.png)
+
+
+
 ### 画面（やること）
 
 * 課金実行（請求日になったら課金）📅💸
@@ -44,6 +48,10 @@ graph TD
 
 ## 1) 成果物（この章の“提出物”）📦🎀
 
+![Deliverables](./picture/invariants_cs_study_030_deliverables.png)
+
+
+
 この章のゴールは「動くもの」＋「守れるもの」✨
 最終的に、最低これが揃えば合格だよ〜💮😊
 
@@ -57,6 +65,10 @@ graph TD
 ---
 
 ## 2) プロジェクト構成（“分ける”けど分けすぎない）🧩🙂
+
+![Project Structure](./picture/invariants_cs_study_030_project_structure.png)
+
+
 
 おすすめの最小セット👇（これで「境界」が自然にできるよ🚪✨）
 
@@ -73,6 +85,10 @@ graph TD
 ## 3) まずは不変条件一覧を作る（ここが最強の設計）📝🔥
 
 ### 3-1. 不変条件を “カテゴリ” に分けよう🧺✨
+
+![Invariant Categories](./picture/invariants_cs_study_030_invariant_categories.png)
+
+
 
 * 値（単体）: Email / Money / DisplayName 📧💰🧑
 * 組み合わせ: nextBillingAt は Active のときだけ必須 ⏰✅
@@ -95,6 +111,10 @@ Copilot / Codex にこう投げると強いよ👇
 ここでは **Resultで失敗を返す** 形にするよ🙂（入力不正は“想定内”だからね）
 
 ### 4-1. Result（最小）🧾✨
+
+![VO Result Pattern](./picture/invariants_cs_study_030_result_pattern.png)
+
+
 
 ```csharp
 namespace MyApp.Domain;
@@ -184,6 +204,10 @@ public sealed record Money
 ---
 
 ## 5) 状態つきSubscription（遷移で壊れない）🎭🔁🛡️
+
+![Subscription States](./picture/invariants_cs_study_030_subscription_states.png)
+
+
 
 ### 5-1. 状態を定義する🎀
 
@@ -450,6 +474,10 @@ public class SubscriptionTests
 ---
 
 ## 10) 最終チェックリスト（ここまでできたら完成🏁🎉）✅💖
+
+![Final Checklist](./picture/invariants_cs_study_030_final_checklist.png)
+
+
 
 * 不変条件が箇条書きで20個前後ある📝
 * Domainで「不正な値が生成できない」💎🛡️
