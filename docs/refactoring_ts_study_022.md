@@ -12,6 +12,9 @@
 
 ### ✅ Extract Variable（変数を取り出す）
 
+![Concept: Extract Variable](./picture/refactoring_ts_study_022_extract_concept.png)
+
+
 ![Concept: Bouncer](./picture/refactoring_ts_study_023_bouncer.png)
 
 ```mermaid
@@ -46,12 +49,18 @@ graph LR
 
 ### ✅ Inline Variable（変数をインライン化）
 
+![Concept: Inline Variable](./picture/refactoring_ts_study_022_inline_concept.png)
+
+
 「それ、変数にする意味ある？」ってやつを、**式に戻して消す**やつだよ🫧🗑️
 → 目的：**余計な行とノイズを減らす**📉✨
 
 ---
 
 ## ビフォー/アフター①：Extract Variable（読みにくい式に名前をつける）✍️🧩
+
+![Before/After: Checkout Calculation](./picture/refactoring_ts_study_022_checkout_before_after.png)
+
 
 ### Before（読むのがつらい式😵‍💫）
 
@@ -118,10 +127,16 @@ function calcCheckoutTotal(items: CartItem[], couponRate: number, isMember: bool
 
 ### 2) 取り出しすぎ注意⚠️
 
+![Warning: Over Extraction](./picture/refactoring_ts_study_022_extract_too_much.png)
+
+
 * 1行の単純な式まで全部変数化すると、逆に読みにくくなることも😵
 * 目安：**読んだ瞬間に意味が浮かばない式**を優先して抽出しよ🫶
 
 ### 3) Inlineするときは「副作用」と「重い処理」に注意🔥
+
+![Warning: Side Effects](./picture/refactoring_ts_study_022_side_effects.png)
+
 
 たとえばこういうの👇
 
@@ -181,6 +196,9 @@ function formatUserName(first: string, last: string) {
 ---
 
 ## VS Codeで秒速でやる⚡🧑‍💻
+
+![Tool: VS Code Extract](./picture/refactoring_ts_study_022_vscode_menu.png)
+
 
 * 式を選択 → 💡（電球）やクイックフィックスから **Extract to constant / variable** を選ぶ✨
 * 逆に、変数の上で 💡 から **Inline variable** を選べることもあるよ🪄

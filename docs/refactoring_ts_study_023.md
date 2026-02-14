@@ -50,6 +50,9 @@ graph TD
 
 ### なんでGuard Clausesが効くの？👀✨
 
+![Concept: Nesting vs Guard](./picture/refactoring_ts_study_023_nesting_vs_guard.png)
+
+
 ネストが深いと…
 
 * 右に右にずれて、目が迷子になる😵‍💫
@@ -116,6 +119,9 @@ export function checkout(user: User | null, items: Item[], coupon: Coupon | null
 ---
 
 #### アフター：ガード節で“ダメ条件”を先に終わらせる🚦✨
+
+![Concept: Happy Path](./picture/refactoring_ts_study_023_happy_path.png)
+
 
 ```ts
 type User = { id: string; isBanned: boolean };
@@ -212,6 +218,9 @@ describe("checkout", () => {
 
 ### 2) 1個ずつ上に移して、毎回テスト🧪✅
 
+![Process: Step by Step](./picture/refactoring_ts_study_023_step_by_step.png)
+
+
 コツ：
 
 * いきなり全部やらない🙅‍♀️
@@ -227,6 +236,9 @@ describe("checkout", () => {
 ---
 
 ## もう1本：ループのガード節（continue）🌀🚦
+
+![Pattern: Loop Continue](./picture/refactoring_ts_study_023_loop_continue.png)
+
 
 「配列を処理する系」は return じゃなくて continue が気持ちいいことが多いよ🍃
 
@@ -275,6 +287,9 @@ export function collectEmails(users: User[]): string[] {
 
 ### ✅ ガード節に向いてる条件
 
+![List: Guard Conditions](./picture/refactoring_ts_study_023_guard_conditions.png)
+
+
 * 入力が足りない（null/undefined/空）🫧
 * 権限がない、状態がダメ（BAN、期限切れ、在庫なし）🚫
 * 例外的なケース（超レア）🦄
@@ -293,6 +308,9 @@ export function collectEmails(users: User[]): string[] {
 ---
 
 ## Lintで「else地獄」を予防する👮‍♀️✅
+
+![Tool: ESLint Rule](./picture/refactoring_ts_study_023_eslint_shield.png)
+
 
 * ESLintは v9 で新しい設定方式（flat config）がデフォルトになっていて、これが今の標準だよ📌 ([ESLint][2])
 * さらに v10 はリリースが近く、RC（リリース候補）も出てるので、設定ファイルの形は flat config に寄せておくと安心感があるよ✨ ([ESLint][3])

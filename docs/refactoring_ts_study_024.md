@@ -34,6 +34,8 @@ graph LR
 
 ### 今日の主役🌟：このタイプの `if` あるある😵‍💫
 
+![Problem: Complex If](./picture/refactoring_ts_study_024_complex_if.png)
+
 * `!`（否定）が多くて脳がバグる🌀
 * `&&` と `||` が混ざって、優先順位が分からない😇
 * 同じ条件があちこちに出てくる（コピペ臭）👃💦
@@ -223,6 +225,9 @@ function discountPercentByRule(rule: DiscountRule, coupon: Coupon | null): numbe
 
 ### Step 1: 条件を “部品” に分ける🧩
 
+![Solution: Decomposition](./picture/refactoring_ts_study_024_decomposition.png)
+
+
 いきなり関数化しないで、まずは **変数（boolean）に分ける**のが超安全✨
 
 例：
@@ -240,10 +245,15 @@ function discountPercentByRule(rule: DiscountRule, coupon: Coupon | null): numbe
 
 ### Step 3: 否定を減らす（超重要）❗️
 
+![Pattern: Positive Logic](./picture/refactoring_ts_study_024_positive_logic.png)
+
+
 * `!isNotBanned` みたいな二重否定は避ける🙅‍♀️
 * `isBannedUser` / `canCheckout` みたいに **ポジティブ or ストレート**にする✨
 
 ### Step 4: `||` の塊は “ルール” にする🎛️
+
+![Pattern: Rule Selector](./picture/refactoring_ts_study_024_rule_pattern.png)
 
 `(A) || (B) || (C)` は「どれか満たしたらOK」のルール集合だよね？
 → `decideDiscountRule(...)` みたいに“ルール判定”へ引っ越し🚚💨
@@ -259,6 +269,9 @@ function discountPercentByRule(rule: DiscountRule, coupon: Coupon | null): numbe
 
 ## ミニ講座💡：De Morgan（ド・モルガン）で否定を整理🧹✨
 
+![Concept: De Morgan's Law](./picture/refactoring_ts_study_024_de_morgan.png)
+
+
 否定が絡んでグチャるときは、これで整うこと多いよ〜🧠✨
 
 * `!(A || B)` → `!A && !B`
@@ -273,6 +286,9 @@ function discountPercentByRule(rule: DiscountRule, coupon: Coupon | null): numbe
 ## “やっちゃダメ”注意ポイント⚠️🧨
 
 ### 1) 条件の中に副作用を入れない🙅‍♀️
+
+![Warning: Side Effects](./picture/refactoring_ts_study_024_side_effect_trap.png)
+
 
 ```ts
 if (user && saveLog(user)) { ... } // こういうのは地雷💣
