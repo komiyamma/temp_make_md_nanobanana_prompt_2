@@ -32,6 +32,9 @@
 
 ## 2) DIPが解決したい“怖い変更”ってなに？😱🔥
 
+![scary_change](./picture/dip_cs_study_001_scary_change.png)
+
+
 DIPが本気で守りたいのは、ここです👇
 
 ### 「本当に大事なコード」が、外側の都合で壊れるのが怖い😵
@@ -72,6 +75,9 @@ DIP（Dependency Inversion Principle / 依存性逆転の原則）は、SOLIDの
 ---
 
 ## 4) 「逆転」って、何が逆になるの？🙃🔁
+
+![dependency_inversion_flow](./picture/dip_cs_study_001_dependency_inversion_flow.png)
+
 
 普通に書くと、依存はこうなりがち👇
 
@@ -181,6 +187,9 @@ DIPの“雰囲気”はこれでOKです👍✨
 
 ## 6) DIPで得すること（この章では3つだけ覚えよう）🎁✨
 
+![dip_benefits](./picture/dip_cs_study_001_dip_benefits.png)
+
+
 ### ① 変更が怖くなくなる😱➡️😄
 
 「DB変えるよ！」と言われても、業務ロジックが巻き込まれにくい🛡️
@@ -197,6 +206,9 @@ DBなしでも、Fakeを差し込んで動かせるようになります（後�
 
 ## 7) よくある誤解を先に1個だけ潰す🧯😆
 
+![dip_vs_di](./picture/dip_cs_study_001_dip_vs_di.png)
+
+
 ### ❓「DIPって、DI（Dependency Injection）と同じ？」
 
 **似てるけど別モノ**です🙂
@@ -209,6 +221,9 @@ DBなしでも、Fakeを差し込んで動かせるようになります（後�
 ---
 
 ## 8) 1分ミニ演習📝😄（依存を見つけるゲーム）
+
+![spot_dependency](./picture/dip_cs_study_001_spot_dependency.png)
+
 
 次のコード、`UserService` は何に依存してる？🔍✨
 （ヒント：**型**と**new**に注目👀）

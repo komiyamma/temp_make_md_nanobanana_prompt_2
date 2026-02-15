@@ -25,6 +25,9 @@
 
 # 3.2 嫌なコード例（new が散らばる）🧨🧨🧨
 
+![welded_code](./picture/dip_cs_study_003_welded_code.png)
+
+
 下のコード、動くっちゃ動く。
 でも「変更」に弱い…！それを体験しよう😈
 
@@ -113,11 +116,17 @@ public sealed record User(int Id, string Name);
 ```
 
 > ここまでで「うん、ありがち〜」って思ったら大正解😂✨
+
+![lego_floor](./picture/dip_cs_study_003_lego_floor.png)
+
 > でも、この “ありがち” が後で爆発する💥💥💥
 
 ---
 
 # 3.3 「修正ポイント探しゲーム」開始〜！👀🎮🔍
+
+![whac_a_mole](./picture/dip_cs_study_003_whac_a_mole.png)
+
 
 ## ルール：仕様変更が来たよ📩😱
 
@@ -167,6 +176,9 @@ public sealed record User(int Id, string Name);
 
 ## つらさ①：変更が “点” じゃなく “面” になる🧱📌
 
+![square_peg_round_hole](./picture/dip_cs_study_003_square_peg_round_hole.png)
+
+
 `new SqlUserRepository()` が散らばってると、変更が
 
 * 1箇所修正 ✅
@@ -206,6 +218,9 @@ public sealed record User(int Id, string Name);
 ---
 
 # 3.5 この章のミニ演習（超たいせつ）📝✨
+
+![counting_new](./picture/dip_cs_study_003_counting_new.png)
+
 
 ## 演習A：new を数えよう🔢👀
 

@@ -17,6 +17,9 @@
 
 ## 6.2 まずは“逆転前”を1枚で見よう😵➡️🗄️
 
+![leaning_crutch](./picture/dip_cs_study_006_leaning_crutch.png)
+
+
 ありがちな形👇（業務ロジックがDB都合に引っ張られがち😢）
 
 ```csharp
@@ -122,6 +125,9 @@ UserService  ─────▶  IUserRepository  ◀─────  SqlUserRep
 
 ## 6.5 コードで体験：逆転前 → 逆転後🔧✨
 
+![bridge_building](./picture/dip_cs_study_006_bridge_building.png)
+
+
 ### Step 1：上位側に“約束（interface）”を作る🤝💡
 
 ```csharp
@@ -181,6 +187,9 @@ public class SqlUserRepository : IUserRepository
 
 ## 6.6 「逆転できてる？」チェックリスト✅🧭
 
+![checklist](./picture/dip_cs_study_006_checklist.png)
+
+
 やってみて、ここをチェックすると迷子になりにくいよ😊✨
 
 * 上位（業務）のプロジェクトが、下位（DB/HTTP/ファイル）を参照してない？📦🚫
@@ -192,6 +201,9 @@ public class SqlUserRepository : IUserRepository
 ---
 
 ## 6.7 よくある罠💣（ここ踏みがち！）
+
+![trap_door](./picture/dip_cs_study_006_trap_door.png)
+
 
 ### 罠①：interfaceを“下位プロジェクト側”に置いちゃう😇➡️😵
 
@@ -216,6 +228,9 @@ public class SqlUserRepository : IUserRepository
 ---
 
 ## 6.8 章末ミニ演習📝🎮（30分でOK）
+
+![battery_swap](./picture/dip_cs_study_006_battery_swap.png)
+
 
 ### 演習A：言葉にする練習🗣️✨
 

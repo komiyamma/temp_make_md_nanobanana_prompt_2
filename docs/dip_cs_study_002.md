@@ -32,6 +32,9 @@ DBのカラム名変わる📦、外部APIの仕様変わる🌐、ログの出�
 
 ## 2-2. DBやAPIが変わったらどうなる？🗄️➡️🌐
 
+![domino_effect](./picture/dip_cs_study_002_domino_effect.png)
+
+
 ここからは、ありがちな「ある日突然くるやつ」シリーズ📩😇
 
 ```mermaid
@@ -70,6 +73,9 @@ flowchart TD
 ---
 
 ## 2-3. “影響範囲が読めない”状態とは？🌀👀
+
+![foggy_map](./picture/dip_cs_study_002_foggy_map.png)
+
 
 ![](./picture/dip_cs_study_002_impact_unknown.png)
 
@@ -149,6 +155,9 @@ public class UserRegistrationService
 
 ## 2-5. 変更依頼が来た！どこが燃える？🔥🧯（ミニ演習）
 
+![fire_map](./picture/dip_cs_study_002_fire_map.png)
+
+
 次の“変更依頼”が来たとします📩😇
 
 1. DBのカラム `Name` が `DisplayName` に変わりました🗄️
@@ -170,6 +179,9 @@ public class UserRegistrationService
 ---
 
 ## 2-6. “変更地獄予備軍”チェックリスト✅😵‍💫
+
+![warning_signs](./picture/dip_cs_study_002_warning_signs.png)
+
 
 このどれかに当てはまったら、黄色信号だよ〜🚥💛
 
