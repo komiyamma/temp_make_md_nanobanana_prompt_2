@@ -33,6 +33,9 @@ DRYは、ざっくり言うと…
 
 ### ✅「同じ知識ならまとめる。見た目が似てても“知識が別”なら無理にまとめない」
 
+![knowledge_vs_code](./picture/dry_cs_study_001_knowledge_vs_code.png)
+
+
 * 見た目同じでも **意味が違う** → 一緒にすると未来に壊れやすい 😵‍💫
 * 意味が同じで **一緒に変わる** → 一箇所に寄せると安全 💪✨
 
@@ -62,6 +65,9 @@ DRYは、ざっくり言うと…
 ---
 
 ## ミニ演習：コピペだらけ小アプリで「どこ直す？」を言語化しよ 📝✨
+
+![refactor_cycle](./picture/dry_cs_study_001_refactor_cycle.png)
+
 
 ### やること（ゴール）🎯
 
@@ -154,6 +160,9 @@ Console.WriteLine("送料が変わったら、どこ直す？🤔");
 ---
 
 ## AI活用：Copilotに「重複っぽい箇所を列挙して」って頼もう 🤖🧺
+
+![ai_finding_duplicates](./picture/dry_cs_study_001_ai_finding_duplicates.png)
+
 
 Copilotはリファクタの相談にも使えるよ（例：リファクタの考え方・アイデア出し） ([GitHub Docs][3])
 あと「重複ロジックをまとめる」系の学習モジュールもあります 📚🤖 ([Microsoft Learn][4])

@@ -38,6 +38,9 @@ DRYって、**「同じコードを消す」**だけじゃなくて、もっと�
 
 ## 3. 見分けるコツ：重複センサーON 👀⚡
 
+![search_workflow](./picture/dry_cs_study_002_search_workflow.png)
+
+
 ![dry_cs_study_002_classification_flowchart](./picture/dry_cs_study_002_classification_flowchart.png)
 
 
@@ -140,6 +143,9 @@ DRYって、**「同じコードを消す」**だけじゃなくて、もっと�
 
 ## 5. ミニ演習：重複ラベルを付けよう🏷️✨（付箋を貼る気持ちで！）
 
+![labeling_exercise](./picture/dry_cs_study_002_labeling_exercise.png)
+
+
 次のコードを見て、コメントの `// TODO:` にラベルを付けてみてね😊
 ラベルはこんな感じでOK👇
 
@@ -240,6 +246,9 @@ public static class Checkout
 ---
 
 ## 6. AI活用（Copilot/Codex）🤖✨：この章では“棚卸し係”にする
+
+![ai_shelf_check](./picture/dry_cs_study_002_ai_shelf_check.png)
+
 
 AIはめっちゃ便利だけど、**判断はあなた**がやるのが大事だよ〜😊🌸
 

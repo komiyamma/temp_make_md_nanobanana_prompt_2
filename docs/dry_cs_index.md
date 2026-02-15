@@ -3,12 +3,18 @@
 
 ## 1章：DRYってなに？「コピペがダメ」だけじゃないよ 😺🧻
 
+![dry_concept_map](./picture/dry_cs_index_dry_concept_map.png)
+
+
 * ゴール：DRY＝「同じ知識（ルール）を複数に持たない」を体感する✨
 * よくある例：税率・送料・割引・入力チェックがあちこちに散る問題💦
 * ミニ演習：コピペだらけの小アプリを触って「どこ直す？」を言語化📝
 * AI活用：Copilotに「重複っぽい箇所を列挙して」って頼む（鵜呑みにしない）🤖
 
 ## 2章：重複の種類を見分けよう 👀🔍（コピペ／条件分岐／データ／例外処理）
+
+![duplication_quadrants](./picture/dry_cs_index_duplication_quadrants.png)
+
 
 * ゴール：「何が重複か」を分類できるようになる😊
 * 4分類：
@@ -21,6 +27,9 @@
 
 ## 3章：いちばん効く！「メソッド抽出」でDRYは8割いける ✂️🧩
 
+![refactoring_scissors](./picture/dry_cs_index_refactoring_scissors.png)
+
+
 * ゴール：小さく安全に“まとめる”基本技を覚える💪
 * 扱うこと：
 
@@ -32,6 +41,9 @@
 
 ## 4章：値を散らさない！定数・設定・ルールの「置き場所」問題 🗃️📌
 
+![organizing_values](./picture/dry_cs_index_organizing_values.png)
+
+
 * ゴール：「同じ文字列・数値・ID」を一箇所に集められるようにする✨
 * 扱うこと：
 
@@ -41,6 +53,9 @@
 * 演習：エラーメッセージ、ステータス文字列、上限値を一箇所化📦
 
 ## 5章：条件分岐のDRY（同じifが増える地獄を止める）🌪️➡️🌿
+
+![cleaning_conditionals](./picture/dry_cs_index_cleaning_conditionals.png)
+
 
 * ゴール：「同じ条件チェック」が増える前に整理できるようにする😊
 * 扱うこと（超入門寄り）：
