@@ -18,6 +18,8 @@
 
 ## 2) まず結論：必須の依存はコンストラクタで受け取ろう🏗️💉
 
+![](./picture/di_ts_study_010_foundation_beams.png)
+
 **コンストラクタ注入**はこれだけ👇
 
 * 依存を `constructor(...)` で受け取る
@@ -27,6 +29,8 @@
 ---
 
 ## 3) ありがちな「つらい形」😵‍💫（DIなし）
+
+![](./picture/di_ts_study_010_glued_dependencies.png)
 
 たとえば「学習記録を保存するサービス」を作るとして…
 この形、最初は楽だけど後で泣きがち😭
@@ -51,6 +55,8 @@ export class StudyLogService {
 ---
 
 ## 4) 依存を“契約（型）”にして、コンストラクタで注入する🌸
+
+![](./picture/di_ts_study_010_contract_handshake.png)
 
 ```mermaid
 classDiagram
@@ -152,6 +158,8 @@ service.save("DIわかった！🎉");
 
 ## 6) テストで“Fake差し替え”してみよう🧪💕
 
+![](./picture/di_ts_study_010_battery_swap_toy.png)
+
 ここがDIのご褒美タイム😍
 
 ```ts
@@ -194,6 +202,8 @@ console.log(logger.infos.length); // 1
 
 ## 7) 依存が増えてきたら「depsオブジェクト注入」もアリ👜✨
 
+![](./picture/di_ts_study_010_many_args_vs_one_box.png)
+
 コンストラクタ引数が増えすぎてつらくなったら、まとめてもOK👌
 
 ```ts
@@ -227,6 +237,8 @@ export class StudyLogService2 {
 
 ![](./picture/di_ts_study_010_constructor_injection.png)
 ### ✅ コンストラクタで副作用しない🙅‍♀️💥
+
+![](./picture/di_ts_study_010_constructor_explosion.png)
 
 「生成した瞬間にAPI呼ぶ」「勝手に保存する」みたいなのは避けよ〜
 コンストラクタは **受け取って保持するだけ** が安全🧸

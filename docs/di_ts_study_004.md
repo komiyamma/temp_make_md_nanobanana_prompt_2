@@ -15,6 +15,8 @@
 
 ## 2) まず結論：new が悪いんじゃない、“場所”が悪い🧱⚠️
 
+![](./picture/di_ts_study_004_cementing_new.png)
+
 `new` 自体は普通の道具だよ🛠️
 でも、**使う側（ビジネスロジック側）**に `new` が散らばると、
 
@@ -29,6 +31,8 @@ DI の世界では、**“作る場所”と“使う場所”を分ける**の�
 ---
 
 ## 3) 失敗例：new 直書きが散らばったコード😣📦
+
+![](./picture/di_ts_study_004_welded_service.png)
 
 「通知を送る」超ありがち例でいくね💌✨
 
@@ -60,6 +64,8 @@ export class NotificationService {
 
 ### つらみ①：差し替え不能（実装が固定）🔒
 
+![](./picture/di_ts_study_004_swap_fail_lock.png)
+
 例えば「SMSやめてLINEにしたい📱」「メールは SendGrid にしたい📧」
 → 変更箇所が NotificationService の中に入り込む😇
 
@@ -83,6 +89,8 @@ Composition Root は「**アプリの組み立て方（構成）を変える時�
 
 ## 5) どこからが“危険な new”なの？🕳️⚠️（見分け方）
 
+![](./picture/di_ts_study_004_new_sorting.png)
+
 全部の `new` を禁止！…じゃないよ🙅‍♀️
 
 ### ✅ 比較的OKな new（ローカルで完結）
@@ -105,6 +113,8 @@ Composition Root は「**アプリの組み立て方（構成）を変える時�
 ---
 
 ## 6) ミニ図解：new散らばりが“設計の自由”を奪う😵‍💫🧱
+
+![](./picture/di_ts_study_004_worker_vs_manager.png)
 
 ### ❌ 使う側が作る（固定化）
 
@@ -143,6 +153,8 @@ graph TD
 
 ## 7) ハンズオン：自分のコードで “newの散らばり” を発見しよう🔎✨
 
+![](./picture/di_ts_study_004_search_highlight.png)
+
 ### 手順①：VS Codeで `new ` を検索🕵️‍♀️
 
 1. `Ctrl + Shift + F`
@@ -165,6 +177,8 @@ graph TD
 ---
 
 ## 8) ミニ課題：newの場所を1か所に集める案を考える📍🧠
+
+![](./picture/di_ts_study_004_composition_root_idea.png)
 
 さっきの通知例なら、アイデアはこんな感じ👇
 

@@ -66,6 +66,7 @@ classDiagram
 
 ## 1) まず結論：TSの型は“設計図”で、完成品（実行時）には残らない👻📄➡️📦
 
+![](./picture/di_ts_study_006_blueprint_vs_house.png)
 ![](./picture/di_ts_study_006_type_erasure.png)
 
 TypeScriptは **JavaScriptに変換して実行**されるよね。
@@ -117,6 +118,8 @@ flowchart LR
 
 ## 2) 「interfaceが実行時にいない」がDIで致命的になる理由💥💉
 
+![](./picture/di_ts_study_006_ghost_key_fail.png)
+
 ## ❌ やりがちな罠：interfaceをDIコンテナのキーにしたくなる
 
 C#だと「`ILogger` を登録して…」みたいに、**インターフェイスそのもの**を登録キーにできるよね。
@@ -162,6 +165,8 @@ flowchart TD
 
 TypeScriptでDIするときのキーはだいたいこのへん👇
 
+![](./picture/di_ts_study_006_valid_keys_collection.png)
+
 ## ✅ A. `class`（クラス）は実行時にいる🏛️
 
 ```ts
@@ -193,6 +198,8 @@ container.register(LOGGER, () => new ConsoleLogger());
 
 ## ✅ C. `Symbol`（おすすめ！衝突しない）💎
 
+![](./picture/di_ts_study_006_symbol_token_gem.png)
+
 ```ts
 export const LOGGER = Symbol("Logger");
 export type Logger = { log(msg: string): void };
@@ -209,6 +216,8 @@ logger.log("hi!");
 ---
 
 ## 4) 「import」も実行時に関係あるよ⚠️（型だけのつもりが地雷になるやつ）
+
+![](./picture/di_ts_study_006_import_weight.png)
 
 ここ、DIと相性悪い事故ポイント🔥
 
