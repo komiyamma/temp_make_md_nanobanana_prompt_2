@@ -7,9 +7,15 @@ DIPって「DBやHTTPだけの話じゃない」のがポイント☺️
 
 ## 1) まず結論：ここが“境界”だよ🚪✨
 
+![volatile_env](./picture/dip_ts_study_016_volatile_env.png)
+
+
 * **環境変数**：`process.env`（実行環境の都合がモロに出る）🌪️
 * **設定ファイル**：JSON/YAML/ini…（形式、置き場所、文字コードが変わる）🗂️
 * **ファイルパス**：Windows特有の癖（区切り、ドライブ、バックスラッシュ）🪟🌀
+
+![path_pain](./picture/dip_ts_study_016_path_pain.png)
+
 
 なので **上位のコードが直接触ると壊れやすい** → 境界で吸収するのがDIP的に強い💪✨
 
@@ -119,6 +125,9 @@ graph TD
 
 ## 7) 実装例：Node向けの境界クラスを作る👩‍🔧🧰
 
+![node_impl](./picture/dip_ts_study_016_node_impl.png)
+
+
 ```ts
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
@@ -205,6 +214,9 @@ PowerShellの解説でも「Windowsとそれ以外で違う」って注意があ
 ---
 
 ## 10) “設定の型安全”をちょい足し（Zodで検証）🧪✅
+
+![zod_guard](./picture/dip_ts_study_016_zod_guard.png)
+
 
 `process.env` は全部文字列なので、**数値・真偽値・必須チェック**が必要になりがち。
 Zodで「起動時にまとめて検証」すると気持ちいいよ〜！✨ ([Zod][7])

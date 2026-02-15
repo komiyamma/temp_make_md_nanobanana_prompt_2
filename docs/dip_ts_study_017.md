@@ -10,6 +10,9 @@
 
 ## 1) まず結論：DIPは「テストしやすさ」を爆上げする💪🧪
 
+![dip_shield](./picture/dip_ts_study_017_dip_shield.png)
+
+
 DIPが効くと、上位（業務ロジック）が **DB / HTTP / 時間 / ファイル**みたいな“下位の事情”に振り回されなくなるよね🌪️
 するとテストで…
 
@@ -22,6 +25,9 @@ DIPが効くと、上位（業務ロジック）が **DB / HTTP / 時間 / フ�
 ---
 
 ## 2) Fake / Stub / Mock をゆるく理解しよう🧸🧪
+
+![doubles_comparison](./picture/dip_ts_study_017_doubles_comparison.png)
+
 
 ここ、最初はざっくりでOK〜！😊
 
@@ -40,6 +46,9 @@ DIPが効くと、上位（業務ロジック）が **DB / HTTP / 時間 / フ�
 ---
 
 ## 3) 例題：注文確定ユースケースを“本物なし”でテストする📦✅
+
+![placeorder_flow](./picture/dip_ts_study_017_placeorder_flow.png)
+
 
 ## やりたい仕様（これがテストで守る対象）📌
 
@@ -254,6 +263,9 @@ npm i -D vitest
 
 ## 8) テスト本体：本物ゼロでユースケースを検証する🎉🧸
 
+![test_joy](./picture/dip_ts_study_017_test_joy.png)
+
+
 ```ts
 // tests/PlaceOrder.test.ts
 import { describe, it, expect } from "vitest";
@@ -309,6 +321,9 @@ describe("PlaceOrder", () => {
 ## 9) ありがちなミスとコツ🧠🪄
 
 * **テストで本物を使い始める**（DB/HTTP直叩き）→ 遅い・不安定になりがち😵
+
+  ![real_db_mistake](./picture/dip_ts_study_017_real_db_mistake.png)
+
 * **時間を固定しない** → 日付またぎで落ちる、環境でズレる⏰💥
 * **テストが“実装”に寄りすぎる** → 仕様（期待する振る舞い）に寄せよう📌✨
 

@@ -18,6 +18,9 @@
 
 ## 1) まず「外部API直叩き」が生むツラさ😵‍💫💣
 
+![pain_points](./picture/dip_ts_study_014_pain_points.png)
+
+
 外部APIを上位ロジックの中で `fetch()` 直書きすると…
 
 * **通信失敗**（ネットワーク切れ📶💥）が上位ロジックに侵入
@@ -31,6 +34,9 @@
 ---
 
 ## 2) 目標の形（依存の向き）🔄🏹
+
+![dependency_flow](./picture/dip_ts_study_014_dependency_flow.png)
+
 
 上位は **“外部APIそのもの”** を知らない。
 知っていいのは **「支払いができる」という約束（抽象）」** だけです🧩💕
@@ -174,6 +180,11 @@ export class HttpPaymentClient implements PaymentClient {
         return { ok: true, value: receipt };
       }
 
+```
+
+![error_mapping](./picture/dip_ts_study_014_error_mapping.png)
+
+```ts
       // ❌ ここからは「失敗の翻訳」タイム🈶✨
       return { ok: false, error: await mapHttpError(res) };
 
@@ -286,10 +297,16 @@ console.log(await service.checkout());
 
 ## ❌ 上位がHTTPステータスを知ってる
 
+![mistake_status_leak](./picture/dip_ts_study_014_mistake_status_leak.png)
+
+
 上位が `if (res.status === 429)` とか書き始めたら黄色信号🚥😵
 → **HTTPは下位の事情**。境界の実装側で“翻訳”しよう🧑‍🏫✨
 
 ## ❌ 外部APIのレスポンス形を上位にそのまま返す
+
+![mistake_shape_leak](./picture/dip_ts_study_014_mistake_shape_leak.png)
+
 
 外部APIが `receipt_id` → `receiptId` に変えた瞬間、上位が爆発💥
 → **上位が必要な形に整形して返す**（Adapterの仕事）🧼✨
