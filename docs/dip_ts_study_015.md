@@ -11,6 +11,9 @@
 
 ## 1) なぜ「時間」が敵になるの？😵🧪⏰
 
+![time_enemy](./picture/dip_ts_study_015_time_enemy.png)
+
+
 時間って、コード的にはめちゃくちゃ“外の世界”なんだよね🌍💦
 だから、業務ロジック（上位）が **システム時間（下位）に直接つながる** と…
 
@@ -72,6 +75,9 @@ export interface Clock {
 ---
 
 ## 4) 実装：SystemClock と FakeClock 🛠️🧸
+
+![clock_comparison](./picture/dip_ts_study_015_clock_comparison.png)
+
 
 ### SystemClock（本番で使うやつ）🖥️⏰
 
@@ -176,6 +182,9 @@ const service = new CouponService(clock);
 
 ## 6) テストが一気に楽になる！🎉🧪✨
 
+![god_hand_clock](./picture/dip_ts_study_015_god_hand_clock.png)
+
+
 FakeClockがあると、**時間が固定できる**からテストが安定するよ💖
 
 ```ts
@@ -230,6 +239,9 @@ describe("CouponService", () => {
 ただ初心者さんには `Date` の方が直感的だから、この章では `Date` にしたよ😊
 
 ### Q2. タイムゾーンどうするの？🌏🌀
+
+![timezone_trap](./picture/dip_ts_study_015_timezone_trap.png)
+
 
 まずは基本：
 

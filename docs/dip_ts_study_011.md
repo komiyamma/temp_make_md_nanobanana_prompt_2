@@ -7,6 +7,9 @@
 
 ## 0) まずイメージ🍩（依存の矢印はこう！）🏹
 
+![dependency_direction](./picture/dip_ts_study_011_dependency_direction.png)
+
+
 - ✅ **上位（方針）**：`OrderService`（注文を確定する、合計金額を出す、ルールを守る）
 - ✅ **抽象（契約）**：`PaymentGateway`（支払う、という「やりたいこと」だけ決める）
 - ✅ **下位（詳細）**：`StripePaymentGateway` / `PayPayPaymentGateway`（実際の支払い方法の都合）
@@ -25,6 +28,9 @@
 （第19章のミニPJにもそのまま使える形！）
 
 ### フォルダ構成（わかりやすさ優先）📁
+
+![file_structure](./picture/dip_ts_study_011_file_structure.png)
+
 - `src/domain/...`：上位（業務）と抽象（契約）
 - `src/adapters/...`：下位（実装）
 - `src/main.ts`：組み立て（どの実装を使うか選ぶ場所）
@@ -63,6 +69,9 @@ export interface PaymentGateway {
 ---
 
 ## 3) Step2：上位（業務）を “interfaceだけ” 見るようにする👀✨
+
+![interface_first](./picture/dip_ts_study_011_interface_first.png)
+
 
 ### `src/domain/OrderService.ts`
 
@@ -179,6 +188,9 @@ graph TD
 
 ## 5) Step4：組み立て場所で “どの実装を使うか” を決める🧩🚪
 
+![composition_root](./picture/dip_ts_study_011_composition_root.png)
+
+
 
 ### `src/main.ts`
 
@@ -226,6 +238,9 @@ main().catch((e) => console.error("エラー😵", e));
 
 ### ❌ ミス1：interfaceを adapters 側に置いちゃう
 
+![mistake_interface_location](./picture/dip_ts_study_011_mistake_interface_location.png)
+
+
 * そうすると上位が「adaptersにある型」を参照しがち → 依存が逆戻りしやすい💥
 * ✅ **抽象は上位側に置く**のが安全だよ〜🛡️
 
@@ -236,6 +251,8 @@ main().catch((e) => console.error("エラー😵", e));
 * ✅ “支払う” という **業務の言葉**で契約を作るのがコツ💬✨
 
 ### ❌ ミス3：上位でこっそり `new` しちゃう
+
+![mistake_hidden_new](./picture/dip_ts_study_011_mistake_hidden_new.png)
 
 * `OrderService` の中で `new StripePaymentGateway()` した瞬間、差し替え不可🙅‍♀️
 * ✅ `main`（組み立て）に追い出す！

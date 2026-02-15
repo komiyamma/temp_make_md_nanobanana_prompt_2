@@ -56,6 +56,9 @@ class OrderService {
 
 ### 🎀 たとえ：スマホ充電器
 
+![charger_metaphor](./picture/dip_ts_study_012_charger_metaphor.png)
+
+
 * **DIP**：スマホ本体が「特定メーカーの充電器」に依存しないようにする
   → 「USB-Cという“規格（抽象）”に依存しようね」🔌✨
 * **DI**：充電器（具体物）を“外から”挿して使う
@@ -96,6 +99,9 @@ DIPの基本はこうだったよね👇
 ---
 
 ## 12-6. 具体例：DIP（抽象）とDI（注入）を分けて見る👀✨
+
+![di_wiring](./picture/dip_ts_study_012_di_wiring.png)
+
 
 ### ① 抽象（DIPの土台）🧩
 
@@ -156,6 +162,9 @@ await orderService.placeOrder(1200);
 
 ## 12-7. 「DIコンテナ」って必要？🧺🤖（結論：最初は不要でOK🙆‍♀️）
 
+![container_magic](./picture/dip_ts_study_012_container_magic.png)
+
+
 DIにはさらに「DIコンテナ（IoCコンテナ）」という道具があるよ🧺
 これは **依存関係の組み立てを自動化**してくれるやつ✨
 
@@ -189,6 +198,9 @@ DIは“外から渡す”こと全般✨
 **手動DIも立派なDI**だよ😊
 
 ### ⚠️ 地雷：Service Locator（探しに行く）🕵️‍♀️
+
+![service_locator_maze](./picture/dip_ts_study_012_service_locator_maze.png)
+
 
 「必要になったら自分でコンテナに取りに行く」方式は、依存が隠れて読みにくくなりがち😵
 FowlerもDIとService Locatorを対比して説明してるよ📚 ([martinfowler.com][1])
