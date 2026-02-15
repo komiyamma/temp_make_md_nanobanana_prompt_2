@@ -70,6 +70,8 @@ graph TD
 
 ## 4. 実装してみよう：手動DIの王道テンプレ 🏗️✨
 
+![Construction Site](./picture/dpn_rule_ts_study_009_manual_di_construction.png)
+
 ### 4-1. 契約（Contract）を中心側に置く 📜🧡
 
 ```ts
@@ -147,6 +149,8 @@ export function makeUseCases(deps: AppDeps) {
 
 ### 4-4. Composition Root（組み立て場所）で“実装”を選ぶ 🏗️🔁
 
+![The Director](./picture/dpn_rule_ts_study_009_composition_root_director.png)
+
 ここだけが「外側の実装」を知っててOKな場所だよ😊
 
 ```ts
@@ -174,6 +178,8 @@ useCases.registerUser({ name: "mika" }).then(console.log);
 
 ### ✅ パターンB：Factory（環境ごとに deps を作る）🏭🔁
 
+![Factory Switch](./picture/dpn_rule_ts_study_009_factory_switch.png)
+
 「本番」と「テスト」と「開発」で実装を切り替えたい時に便利😊
 
 ```ts
@@ -193,6 +199,8 @@ export function makeDepsForDev() {
 ---
 
 ### ✅ パターンC：Provider（遅延で deps を作る）⏳🧩
+
+![Lazy Provider](./picture/dpn_rule_ts_study_009_provider_delay.png)
 
 「起動時に全部作りたくない」「リクエスト単位で作りたい」みたいな時に使うよ😊
 （TS 5.9 の `import defer` の話題みたいに、“副作用を遅らせる”方向とも仲良し🌀） ([TypeScript][4])
@@ -244,6 +252,8 @@ export function now(clock = { now: () => new Date() }) {
 ---
 
 ## 7. テストで“差し替え”してみよう 🧪✨（Vitest 4系）
+
+![Test Mock Swap](./picture/dpn_rule_ts_study_009_test_mock_swap.png)
 
 Vitest は 4.0 系が出ててガイドもあるよ🧪 ([Vitest][3])
 

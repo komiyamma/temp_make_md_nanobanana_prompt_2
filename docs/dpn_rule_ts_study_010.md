@@ -32,6 +32,8 @@ DTOは、めっちゃ一言でいうと…
 
 ## 2. 今日の主役：Domain型 vs DTO型 🧅⚔️
 
+![DTO vs Domain](./picture/dpn_rule_ts_study_010_dto_vs_domain.png)
+
 イメージはこう👇✨
 
 * **Domain型**：アプリの“意味”と“ルール”が乗る👑
@@ -160,6 +162,8 @@ export type UserDto = {
 
 ### 6-3. 変換（境界の仕事）🔁🚪✨
 
+![Mapper Bridge](./picture/dpn_rule_ts_study_010_mapper_bridge.png)
+
 ```ts
 // src/adapters/mappers/userMapper.ts
 import type { User } from "../../domain/user";
@@ -194,6 +198,8 @@ export function toDto(user: User): UserDto {
 
 ## 7. “境界でバリデーション”すると安定するよ🛡️✨（おすすめ）
 
+![Zod Guard](./picture/dpn_rule_ts_study_010_zod_guard.png)
+
 外から来たデータは **型が合ってる保証がない**ので、境界で `unknown` → 検証 → DTO化 すると強いです💪😊
 
 最近だと **Zod v4 が安定版**になってて、TSと相性よしです📐✨ ([Zod][1])
@@ -222,6 +228,8 @@ export function parseUserDto(input: unknown): UserDto {
 
 ### 事故①：DomainがDTOをimportしちゃう😇
 
+![Pollution Accident](./picture/dpn_rule_ts_study_010_pollution_accident.png)
+
 * “いったん楽”だけど、あとで変更が全部中心へ波及して地獄🔥
   ✅ 対策：DomainはDTOを見ない。変換はadaptersへ。
 
@@ -231,6 +239,8 @@ export function parseUserDto(input: unknown): UserDto {
   ✅ 対策：DTOはDTO、DomainはDomain。橋渡しはMapper。
 
 ### 事故③：null/undefined問題でバグる🫠
+
+![Null Handling](./picture/dpn_rule_ts_study_010_null_handling.png)
 
 * APIはnull、TSはundefined、DBはNULL…😵‍💫
   ✅ 対策：境界で統一ルールを作る（例：Domainは `undefined` だけに寄せる）

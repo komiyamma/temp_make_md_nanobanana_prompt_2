@@ -9,6 +9,8 @@
 
 ## 1) shared/utils沼ってなに？😵‍💫🗑️
 
+![Dumpster Fire](./picture/dpn_rule_ts_study_014_dumpster_fire.png)
+
 最初はこう始まるの👇
 
 * 「ちょっと便利だから `shared/utils.ts` に置こ〜」🐣
@@ -45,6 +47,8 @@ sharedに入れていいか迷ったら、これを順番にチェックして�
 
 ## フィルター①：純粋（Pure）？🧼
 
+![Pure Water Filter](./picture/dpn_rule_ts_study_014_pure_water_filter.png)
+
 * ✅ 入力 → 出力が決まる（同じ入力なら同じ結果）
 * ✅ 外部と通信しない（DB/HTTP/FS/環境変数/現在時刻に依存しない）
 * ✅ 副作用なし（グローバルを書き換えない）
@@ -73,6 +77,8 @@ sharedに入れていいか迷ったら、これを順番にチェックして�
 ---
 
 ## フィルター④：依存方向を壊さない？➡️🚫
+
+![Anchor Drag](./picture/dpn_rule_ts_study_014_anchor_drag.png)
 
 sharedを使うせいで…
 
@@ -170,6 +176,8 @@ export async function getJson<T>(url: string): Promise<T> {
 
 ## NG例C：名前が“何でも屋”👻（増殖のサイン）
 
+![Frankenstein Utils](./picture/dpn_rule_ts_study_014_frankenstein_utils.png)
+
 * `shared/utils.ts`
 * `shared/helpers.ts`
 * `shared/common.ts`
@@ -205,6 +213,8 @@ export async function getJson<T>(url: string): Promise<T> {
 ---
 
 ## 6) “sharedをゴミ箱化させない”置き場所ルール🏠✨
+
+![Local Shared Pods](./picture/dpn_rule_ts_study_014_local_shared_pods.png)
 
 ![](./picture/dpn_rule_ts_study_014_local_shared.png)
 

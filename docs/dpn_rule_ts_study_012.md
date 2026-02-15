@@ -42,6 +42,8 @@ graph LR
 
 ### よくある事故例💣
 
+![Undefined Box](./picture/dpn_rule_ts_study_012_undefined_box.png)
+
 * **undefined を import しちゃう**（初期化が終わってない）😇
 * **初期化順が環境で変わる**（開発/本番/テストで差が出る）🎭
 * **副作用（side effect）が暴れる**（import しただけで何かが動く）🧨
@@ -66,6 +68,8 @@ ESLintの `import/no-cycle` の説明でも、循環は `undefined` を取り込
 ## 4) ミニ実験🔬：わざと循環を作って症状を見る🌀👩‍💻
 
 ### 4-1) まずは「即死パターン」💥（初期化順で死ぬ）
+
+![Top Level Domino](./picture/dpn_rule_ts_study_012_top_level_domino.png)
 
 以下の3ファイルを作ってね👇
 
@@ -146,6 +150,8 @@ console.log(getA());
 
 ### パターンA：相互参照サービス（“お互い助け合い”が地獄に）🤝🕳️
 
+![Mutual Dependency](./picture/dpn_rule_ts_study_012_mutual_dependency.png)
+
 * `UserService` が `AuthService` を使う
 * `AuthService` が `UserService` を使う
   → だいたいこうなる😵‍💫
@@ -163,6 +169,8 @@ graph LR
 ---
 
 ### パターンB：ドメインと外側が握手しちゃう（層が混ざる）🧅🤝💥
+
+![Layer Loop](./picture/dpn_rule_ts_study_012_layer_loop.png)
 
 たとえば👇
 
@@ -235,6 +243,8 @@ TypeScriptって、**型（type）**は実行時には消えるよね🫶
 ## 7) ツールで「循環してる場所」をあぶり出す📈🛠️✨
 
 ### 7-1) Madge（循環検出＆グラフ化）🕸️📊
+
+![Madge Radar](./picture/dpn_rule_ts_study_012_madge_radar.png)
 
 Madge は「依存グラフ作って、循環も見つける」系の定番ツールだよ〜✨([GitHub][2])
 
