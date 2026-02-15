@@ -14,6 +14,8 @@
 
 ## 1. なんで「エラー翻訳」が必要なの？😵‍💫🌀
 
+![Raw vs Domain Error](./picture/dpn_rule_ts_study_011_raw_vs_domain_error.png)
+
 ### ありがちな事故💥
 
 中心のコード（ユースケース）が、うっかりこうなる👇
@@ -74,6 +76,8 @@
 題材：**ToDoを追加する**（ありがちで練習しやすい！）📝
 
 ### 4.1 Result型（中心の標準返し方）🧩
+
+![Result Track](./picture/dpn_rule_ts_study_011_result_track.png)
 
 ```ts
 // src/shared/result.ts
@@ -193,6 +197,8 @@ graph TD
 
 ### 5.1 Adapterで例外を捕まえて DomainError にする🧰
 
+![Error Recycling](./picture/dpn_rule_ts_study_011_adapter_recycling.png)
+
 例：DBアクセス実装が失敗したとき、中心に例外を漏らさない！
 
 ```ts
@@ -255,7 +261,11 @@ export class SqlTodoRepository implements TodoRepository {
     }
   }
 }
+```
 
+![Error Cause Chain](./picture/dpn_rule_ts_study_011_error_cause_chain.png)
+
+```ts
 function toDomainTranslatedError(original: unknown, asDomain: DomainError): Error {
   // ✅ cause で「根っこ」を保持すると、ログで追いやすいよ🕵️‍♀️
   // Error.cause は標準で広く使える✨ :contentReference[oaicite:4]{index=4}
@@ -272,6 +282,8 @@ function toDomainTranslatedError(original: unknown, asDomain: DomainError): Erro
 ---
 
 ## 6. 次の翻訳：`DomainError → HTTP` にする🌐🔁
+
+![Problem Details Form](./picture/dpn_rule_ts_study_011_problem_details_form.png)
 
 HTTP APIなら、「失敗をどう返すか」も外側の仕事だよね😊
 今は **Problem Details（RFC 9457）** っていう標準があって、これを使うとエラー応答がキレイに揃うよ✨

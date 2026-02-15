@@ -22,6 +22,8 @@ shared や utils が沼ると、だいたいこんな症状が出るよ👇
 
 ## 2) “契約（Contract）” ってなに？🤝✨
 
+![Contract Scroll](./picture/dpn_rule_ts_study_015_contract_scroll.png)
+
 ここでいう **契約** は、
 
 * **境界をまたぐときの “約束ごと”**（＝共通言語）
@@ -105,6 +107,8 @@ src/
 
 ### パターンB：monorepo / packages（大きくなったら）📦✨
 
+![Island Bridges](./picture/dpn_rule_ts_study_015_island_bridges.png)
+
 ```
 packages/
   contracts/
@@ -135,6 +139,8 @@ packages/
 
 ### コツ②：`import type` / `export type` をクセにする🧡
 
+![Safety Gloves](./picture/dpn_rule_ts_study_015_safety_gloves.png)
+
 contracts は「型だけ」で成立することが多いから、
 
 * **実行時依存を増やさない**
@@ -146,6 +152,8 @@ contracts は「型だけ」で成立することが多いから、
 ---
 
 ### コツ③：契約の破壊変更を避ける（地味に超重要）🧨
+
+![Breaking Bridge](./picture/dpn_rule_ts_study_015_breaking_bridge.png)
 
 契約は “みんなが触る” から、破壊変更が地獄になりやすい…😱
 
@@ -345,6 +353,8 @@ export function createMemoryTodoRepo(): TodoRepository {
 ---
 
 ## 11) 最後に：この章のチェックリスト✅💖
+
+![Checklist Guard](./picture/dpn_rule_ts_study_015_checklist_guard.png)
 
 PR前にこれ見てね😊
 

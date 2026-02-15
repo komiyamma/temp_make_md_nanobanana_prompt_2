@@ -32,6 +32,8 @@ dependency-cruiser のドキュメントでも、循環の“結び目”とし�
 
 ## 2) barrel が循環を呼ぶ “いちばん多い形” 🌀📦
 
+![Roundabout Trap](./picture/dpn_rule_ts_study_013_roundabout_trap.png)
+
 ## 🍓事故パターン：同じフォルダ内で「index.ts 経由 import」してしまう
 
 イメージはこれ👇
@@ -63,6 +65,8 @@ graph TD
 ## 3) よくある “barrel地雷” 4選💣📦😇
 
 ## 地雷①：フォルダ内コードが自分の barrel を使う（自己参照）🪞
+
+![Internal Door](./picture/dpn_rule_ts_study_013_internal_door.png)
 
 * 「同じ層・同じフォルダ内は “直 import”」にすると一気に減るよ✅
 
@@ -188,6 +192,8 @@ export function Dialog(title: string) {
 
 ## 壊し方②：型だけ依存なら import type にする🧡✂️
 
+![Ghost Type](./picture/dpn_rule_ts_study_013_ghost_type.png)
+
 たとえば「Dialog が Button の “型だけ” 欲しい」みたいな場面。
 
 * 型だけの import はコンパイル時に消えるから、実行時循環を減らせるよ💡 ([Angular 日本語版][6])
@@ -203,6 +209,8 @@ import type { ButtonProps } from "./Button.types";
 ---
 
 ## 壊し方③：“契約” を切り出して依存方向を揃える📜➡️
+
+![Untying Knot](./picture/dpn_rule_ts_study_013_contract_knot.png)
 
 循環って、だいたい
 「A が B を知りたい」「B も A を知りたい」
@@ -249,6 +257,8 @@ barrel を安全にするコツは、結局ここ👇
 * 内側の実装どうしは直 import（路地）
 
 ## ✅「入口」と「路地」を混ぜない
+
+![Entry vs Alley](./picture/dpn_rule_ts_study_013_entry_vs_alley.png)
 
 * 入口（barrel）を路地の中で使うと、迷路になって循環しやすい🌀
 
