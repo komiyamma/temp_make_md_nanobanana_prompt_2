@@ -10,6 +10,8 @@
 
 ## 今日のゴール🎯✨
 
+![](./picture/di_cs_study_030_goal_checklist.png)
+
 * `new` だらけの中心ロジックを卒業して、**外から注入**できるようにする💉
 * **Composition Root（組み立て場所）** を `Program.cs` に作る📍
 * テストで **Fake差し替え** を体験して「DIって気持ちいい…！」を味わう🧪💖
@@ -76,6 +78,8 @@ classDiagram
 ---
 
 ## 手順1：プロジェクトを作る📦✨
+
+![](./picture/di_cs_study_030_project_tree.png)
 
 ### dotnet CLI で作る（手早い派）⚡
 
@@ -279,6 +283,8 @@ public sealed class TodoService
 
 ### `App.cs`（UI：Consoleと対話するだけ）🖥️🌸
 
+![](./picture/di_cs_study_030_console_ui.png)
+
 ```csharp
 namespace TodoApp;
 
@@ -381,6 +387,8 @@ public sealed class App
 
 ### `Program.cs`（Composition Root：ここで組み立てる📍）🧩✨
 
+![](./picture/di_cs_study_030_wiring_switchboard.png)
+
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -426,6 +434,8 @@ dotnet run --project .\TodoApp\TodoApp.csproj
 ## 手順4：テストで“差し替え”を体験する🧪💖（ここが一番おいしい）
 
 ### `FakeClock.cs`（テスト用の時計）⏰🧪
+
+![](./picture/di_cs_study_030_fake_stopwatch.png)
 
 `TodoApp.Tests` 側に追加してね！
 
@@ -520,6 +530,8 @@ dotnet test
 
 ## ここまでの“勝ちポイント”🎉💡
 
+![](./picture/di_cs_study_030_achievement_trophy.png)
+
 * `TodoService` は Console を知らない（I/Oから分離）🌿
 * テストで `SystemClock` を `FakeClock` に差し替えできた（DIのごほうび）🍬
 * `Program.cs` に組み立てが集まってる（Composition Root）📍
@@ -528,6 +540,8 @@ dotnet test
 ---
 
 ## レベルアップ課題（おまけ）🍓✨：保存先を差し替える📦🔁
+
+![](./picture/di_cs_study_030_cartridge_swap.png)
 
 今は `InMemoryTodoRepository` だけど、**差し替え口（ITodoRepository）がある**から…
 

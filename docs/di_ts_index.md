@@ -7,12 +7,16 @@ TypeScript版は「型が実行時に消える」「関数DIが強い」「impor
 
 ## 第1章　はじめに：DIで得することを先に知ろう🎁✨
 
+![](./picture/di_ts_index_benefits_triangle.png)
+
 * 目標：DIのメリットを3つ言える😊
 * 中身：変更に強い／テストしやすい／差し替えできる🔄
 * ミニ課題：DIが役立ちそうな場面を3つメモ📝
 * AI🤖：説明文を「友達に話す口調」にしてもらう
 
 ## 第2章　“依存”ってなに？TSの依存あるあるで理解🔗
+
+![](./picture/di_ts_index_dependency_balloon.png)
 
 * 目標：依存＝「それがないと困る相手」と言える
 * 例：`Date.now` `Math.random` `fetch` `localStorage` `process.env` `console`⏰🎲🌐
@@ -38,12 +42,16 @@ TypeScript版は「型が実行時に消える」「関数DIが強い」「impor
 
 ## 第6章　超重要：TSは型が実行時に消える👻（ここがC#と違う！）
 
+![](./picture/di_ts_index_ghost_types.png)
+
 * 目標：なぜTSで「型だけの自動解決」が難しいか分かる
 * 中身：`interface`は実行時に存在しない⚠️
 * ミニ課題：「型は消える」ことを一文で説明📝
 * AI🤖：例え話を3案出してもらう
 
 ## 第7章　関数DI①：依存をまとめて渡す（deps注入）👜
+
+![](./picture/di_ts_index_deps_bag.png)
 
 * 目標：`deps`オブジェクト注入ができる
 * 中身：引数地獄を回避する基本形
@@ -87,6 +95,8 @@ TypeScript版は「型が実行時に消える」「関数DIが強い」「impor
 
 ## 第14章　Composition Root：newとimportの集中管理📍🧹
 
+![](./picture/di_ts_index_assembly_line.png)
+
 * 目標：newを1か所に集められる
 * 中身：`bootstrap()`／`main()`が起点
 * ミニ課題：起動フロー図（箱と矢印）📦➡️📦
@@ -110,6 +120,8 @@ TypeScript版は「型が実行時に消える」「関数DIが強い」「impor
 * ミニ課題：fetch直叩きを `HttpClient` 風に包む🌐
 
 ## 第18章　環境依存①：ブラウザ/Nodeの差をDIで吸収🪟🌐
+
+![](./picture/di_ts_index_adapter_plug.png)
 
 * 目標：環境が変わっても壊れにくい構造が分かる
 * 中身：`localStorage` と Node側の保存先を差し替え
@@ -182,6 +194,8 @@ TypeScript版は「型が実行時に消える」「関数DIが強い」「impor
 * ミニ課題：採用するならルール3つを書く📜
 
 ## 第30章　アンチパターン総まとめ＆総合演習🎀🏁
+
+![](./picture/di_ts_index_minefield.png)
 
 * 目標：地雷を避けつつ、ミニアプリを完成させる
 * 地雷3つ：Service Locator化🕳️／グローバルSingleton乱用👑／循環import🌀

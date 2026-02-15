@@ -6,6 +6,8 @@
 
 ## この章のゴール🎯💖
 
+![](./picture/di_ts_study_002_goal_checklist.png)
+
 読み終わったら、これができるようになろう✨
 
 * 「依存＝それがないと困る相手」って説明できる🗣️🔗
@@ -37,6 +39,8 @@
 
 ## 2) TSの「依存あるある」6選（超よく出るやつ）📌✨
 
+![](./picture/di_ts_study_002_dependency_star.png)
+
 ```mermaid
 graph TD
   App[あなたのコード] -->|依存| Time[Date.now ⏰]
@@ -51,6 +55,8 @@ graph TD
 
 ### 依存① `Date.now()`：時間依存⏰
 
+![](./picture/di_ts_study_002_spinning_clock.png)
+
 * **何が起きる？** 「今この瞬間」が毎回変わる
 * **困りがち** テストの結果が日によって変わる
   `Date.now()` は epoch（1970-01-01）からのミリ秒を返す仕様だよ📏 ([MDNウェブドキュメント][1])
@@ -62,6 +68,8 @@ graph TD
   `Math.random()` は 0以上1未満の擬似乱数を返すよ🎲 ([MDNウェブドキュメント][2])
 
 ### 依存③ `fetch()`：ネットワーク依存🌐
+
+![](./picture/di_ts_study_002_precarious_bridge.png)
 
 * **何が起きる？** 通信先・ネット状態・応答速度で結果が変わる
 * **困りがち** テストが遅い／不安定／オフラインで死ぬ🫠
@@ -90,6 +98,8 @@ graph TD
 
 ## 3) 依存があると何がイヤなの？（まだ怖がらなくてOK😌💗）
 
+![](./picture/di_ts_study_002_heavy_backpack.png)
+
 ここでは“ふわっと”でOKだよ〜！
 
 依存が増えるほど👇みたいになりがち：
@@ -104,6 +114,8 @@ DIは、この“イヤ”を減らすための技だよ💉✨
 ---
 
 ## 4) まずは体感！依存てんこ盛りサンプル🍱✨
+
+![](./picture/di_ts_study_002_buffet_chef.png)
 
 「これ、依存だらけだね！」って言えるようになれば勝ち😊
 
@@ -129,6 +141,8 @@ export async function drawFortune() {
 ---
 
 ## 5) 依存を見つける“におい”チェックリスト🐶🔎✨
+
+![](./picture/di_ts_study_002_detective_dog.png)
 
 VS Codeでコードを見るとき、ここを見てみて〜！
 
