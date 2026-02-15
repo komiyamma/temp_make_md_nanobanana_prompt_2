@@ -18,6 +18,9 @@
 
 ## まず作る題材：リマインダーアプリ🔔💌
 
+![reminder_app_concept](./picture/di_cs_study_009_reminder_app_concept.png)
+
+
 やることはシンプル！
 
 > 「いま何時か（時計）を見て、メッセージを作って、通知（コンソール出力）する」
@@ -25,6 +28,9 @@
 ここで、わざと **差し替えしたくなる依存** を3つ用意するよ👇
 
 * ⏰ 時計（いまの時刻）
+
+![three_dependencies_characters](./picture/di_cs_study_009_three_dependencies_characters.png)
+
 * 🧾 ログ（動いた記録）
 * 🔔 通知（出力先）
 
@@ -95,6 +101,9 @@ class Program
 ```
 
 ## ここで “困るポイント” を体感しよ🧠💥
+
+![stuck_gears_rusty](./picture/di_cs_study_009_stuck_gears_rusty.png)
+
 
 たとえば、こんな要求が来たら…👇
 
@@ -203,6 +212,9 @@ public sealed class ReminderService
 
 ## Step D：組み立ては Program（入口）でやる📍✨
 
+![control_tower_directing](./picture/di_cs_study_009_control_tower_directing.png)
+
+
 ここが **Composition Root の超ミニ版** だよ！
 
 **Program.cs**
@@ -232,10 +244,16 @@ class Program
 
 # 3) “差し替えが気持ちいい” をやろう🔁💖
 
+![smooth_pit_stop_swap](./picture/di_cs_study_009_smooth_pit_stop_swap.png)
+
+
 ここがこの章のクライマックス😆✨
 **時計を固定**して、**通知をメモリに溜める**「ダミー実装」を作るよ！
 
 ## ダミー実装（テスト用っぽい子たち）🧪
+
+![stunt_double_filming](./picture/di_cs_study_009_stunt_double_filming.png)
+
 
 ```csharp
 using System;

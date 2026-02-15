@@ -1,4 +1,4 @@
-﻿# 第13章：Composition Root：組み立て場所を1か所に集める📍
+# 第13章：Composition Root：組み立て場所を1か所に集める📍
 
 ## この章のゴール🎯
 
@@ -24,6 +24,9 @@
 
 ### たとえ話🍱
 
+![bento_assembly_kitchen](./picture/di_cs_study_013_bento_assembly_kitchen.png)
+
+
 * **アプリ本体（ロジック）**＝お弁当の中身
 * **Composition Root**＝キッチンでお弁当を詰める場所🍳✨
   お弁当の中で「フライパン出して揚げ物始める」みたいなこと（＝ロジックの中で `new` しまくる）をやると、ぐちゃぐちゃになっちゃうの🥲
@@ -31,6 +34,9 @@
 ---
 
 ## 2) どこがComposition Rootになるの？🗺️
+
+![map_pin_root](./picture/di_cs_study_013_map_pin_root.png)
+
 
 アプリの種類で「入口」がちょっと違うよ〜👇
 
@@ -52,6 +58,9 @@
 ## 3) Composition Rootがないと起きる「あるある事故」😵‍💫
 
 ### 事故①：`new` があちこちに散らばる🌀
+
+![littering_park_new](./picture/di_cs_study_013_littering_park_new.png)
+
 
 * 「ログをファイル出力に変えたい」だけなのに、10ファイル修正…みたいなやつ🥲
 
@@ -173,6 +182,9 @@ graph TD
 
 ## 5) 「散らばったnew」をComposition Rootへ引っ越す手順🚚📦
 
+![movers_packing_boxes](./picture/di_cs_study_013_movers_packing_boxes.png)
+
+
 既存コードを直すときのおすすめ手順はこれ👇✨
 
 1. **中心ロジック（重要なクラス）**を決める🎯
@@ -186,6 +198,9 @@ graph TD
 ## 6) よくある落とし穴⚠️（ここ超大事〜！）
 
 ### 落とし穴①：`IServiceProvider` を注入して `GetService()` しまくる🎣💥
+
+![mystery_box_locator](./picture/di_cs_study_013_mystery_box_locator.png)
+
 
 一見「DIしてるっぽい」けど、実態は **Service Locator** になりがち😵
 公式ガイドでも避けようねって書いてあるよ🚫 ([Microsoft Learn][1])

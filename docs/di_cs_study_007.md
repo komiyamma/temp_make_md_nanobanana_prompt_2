@@ -22,6 +22,9 @@ IoCはフレームワークの特徴として語られることが多く、DIは
 
 ### ✅ IoC（Inversion of Control）＝「呼び出しの主導権が、アプリから“外側”へ移る」こと
 
+![control_reversal_metaphor](./picture/di_cs_study_007_control_reversal_metaphor.png)
+
+
 イメージはこれ👇
 
 * **ふつうのプログラム**：自分のコードが、必要なものを呼び出して進める
@@ -41,6 +44,9 @@ IoCって、実はDIより前にもう体験してる人が多いよ😊
 たとえばボタン押下（イベント）ってこう👇
 
 * あなた：`button.Click += ...` って登録する
+
+![event_registration_postit](./picture/di_cs_study_007_event_registration_postit.png)
+
 * その後：**あなたはClickを呼ばない**
 * 代わりに：UIフレームワークが「押されたよ！」ってあなたの処理を呼ぶ
 
@@ -75,6 +81,9 @@ Martin Fowlerの解説では、軽量コンテナがやってる“配線（wiri
 ---
 
 ## 5) “主導権が逆”をコードで体感しよう👀✨（ミニ比較）
+
+![fetch_vs_receive_comparison](./picture/di_cs_study_007_fetch_vs_receive_comparison.png)
+
 
 題材：時刻を使う処理（ありがち！）⏰
 
@@ -154,10 +163,16 @@ flowchart LR
 
 ## 6) “外側で組み立てる”ってどこ？📍（Composition Rootの予告）
 
+![composition_root_factory_floor](./picture/di_cs_study_007_composition_root_factory_floor.png)
+
+
 今はまだ第13章で本格的にやるけど、先に雰囲気だけ！
 
 ```csharp
 // Program.cs（外側：起動する側）
+
+![program_rocket_launch](./picture/di_cs_study_007_program_rocket_launch.png)
+
 IClock clock = new SystemClock();
 var service = new GreetingService(clock);
 
