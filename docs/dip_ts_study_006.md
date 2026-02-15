@@ -26,6 +26,8 @@ DIP（依存性逆転の原則）は、ざっくり言うと **「大事なル�
 
 ## 2. まず言葉を“かわいく翻訳”しよう🐣💬
 
+![](./picture/dip_ts_study_006_upper_lower_concept.png)
+
 ### ✅ 上位モジュールってなに？🪜
 
 「やりたいこと（方針）」を持ってる側だよ✨
@@ -53,6 +55,8 @@ DIP（依存性逆転の原則）は、ざっくり言うと **「大事なル�
 
 ## 3. ルール①：上位は下位に依存しない🙅‍♀️
 
+![](./picture/dip_ts_study_006_rule_one_dependency.png)
+
 ### ❌ ありがちなダメ例（気持ちの話）
 
 上位（注文確定ロジック）が、下位（DBや決済サービス）をベタに呼ぶと…
@@ -73,9 +77,13 @@ DIP（依存性逆転の原則）は、ざっくり言うと **「大事なル�
 
 ## 4. ルール②：抽象は詳細に依存しない🙅‍♀️
 
+![](./picture/dip_ts_study_006_rule_two_abstraction.png)
+
 ここ、最初つまずきポイント〜！でも超大事！🔥
 
 ### ✅ 抽象ってなに？🧩
+
+![](./picture/dip_ts_study_006_abstraction_contract.png)
 
 “約束（契約）”だよ✍️✨
 たとえば「保存する人は、saveができること！」みたいな感じ。
@@ -135,6 +143,7 @@ graph TD
 
 ### ✅ DIPあり（上位→抽象、下位→抽象）
 
+![](./picture/dip_ts_study_006_dependency_arrow_flow.png)
 
 * OrderService（上位） → PaymentPort（抽象）
 * StripePayment（詳細） → PaymentPort（抽象）

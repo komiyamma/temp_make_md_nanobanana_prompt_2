@@ -9,6 +9,8 @@
 
 ## 1) そもそも「外の世界」ってなに？🌍⚡
 
+![](./picture/dip_ts_study_009_inner_outer_world.png)
+
 アプリの中には、だいたい2種類あるよ😊
 
 * **内側（中心）**：やりたいこと（ルール・手順・判断）🧠✨
@@ -115,6 +117,8 @@ export interface UserRepository {
 
 ## 6) 外側の実装：まずは InMemory（仮）を作る🧸💾
 
+![](./picture/dip_ts_study_009_in_memory_impl.png)
+
 いきなりDB実装に行くと話が重くなるから、まずは **メモリ保存（Map）** にするよ〜😊
 （これが後でテストにも強い！💪🧪）
 
@@ -195,6 +199,8 @@ export class RegisterUserService {
 
 ## 8) “組み立て場所”で合体させる🔧🎀（main.ts）
 
+![](./picture/dip_ts_study_009_assembly_main.png)
+
 最後に「本物はどれ使う？」を決めて注入するよ💉✨
 
 ## `src/main.ts`
@@ -224,6 +230,8 @@ run();
 
 ## 9) これが「ポート（境界）に押し出す」ってこと🚧✨
 
+![](./picture/dip_ts_study_009_environment_shield.png)
+
 ## ✅やったこと（超まとめ）
 
 * 中心は「保存・取得の窓口（UserRepository）」だけ知ってる🚪
@@ -237,6 +245,8 @@ run();
 ---
 
 ## 10) Repositoryの責務（ここだけ守ると綺麗✨）🧼🗄️
+
+![](./picture/dip_ts_study_009_repo_responsibility.png)
 
 Repositoryは基本これだけ👇😊
 

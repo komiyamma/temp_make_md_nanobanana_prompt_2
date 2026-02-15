@@ -86,6 +86,8 @@ export class OrderService {
 
 ## 地獄②：外部API仕様変更でアプリ全体が巻き添え🌐💥
 
+![](./picture/dip_ts_study_004_api_change_impact.png)
+
 ### ありがちなストーリー📦➡️🚚
 
 外部の配送API、決済API、認証API…便利だけど **相手が変わる** 😇
@@ -136,6 +138,7 @@ flowchart TD
 
 ## 地獄③：テストが無理ゲーになって諦める🙈🧪
 
+![](./picture/dip_ts_study_004_test_impossible.png)
 
 ### “テスト無理”の原因、だいたいコレ😇
 
@@ -173,6 +176,8 @@ Jestも **v30がStable** として案内されてるよ📌 ([Jest][2])
 
 ## ここまでの“地獄”を1つにまとめると…🧠🌀
 
+![](./picture/dip_ts_study_004_hell_summary.png)
+
 **変更が起きるたびに、業務コードが巻き込まれる**
 **テストができなくて、安心して直せない**
 → だから “怖くて触れないコード” になっていく…😢🧨
@@ -180,6 +185,8 @@ Jestも **v30がStable** として案内されてるよ📌 ([Jest][2])
 ---
 
 ## DIPが必要になる「危険信号チェックリスト」🚨✅
+
+![](./picture/dip_ts_study_004_checklist_alert.png)
 
 1つでも「うっ…」ってなったら、DIPの出番が近いよ👀⚠️
 
@@ -216,6 +223,8 @@ Jestも **v30がStable** として案内されてるよ📌 ([Jest][2])
 ---
 
 ## AIに聞く用プロンプト例🤖💬（丸投げじゃなく“診断”させる）
+
+![](./picture/dip_ts_study_004_ai_diagnosis.png)
 
 そのままコピペで使ってOKだよ〜！✨
 
