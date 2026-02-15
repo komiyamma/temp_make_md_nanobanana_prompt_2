@@ -30,6 +30,9 @@ import { sendEmail } from "./emailSender";
 
 ## 1-2. `new` が作る依存🆕🏗️
 
+![new_dependency](./picture/dip_ts_study_002_new_dependency.png)
+
+
 `new` すると、**「この具体クラスで決め打ち！」**になるのがポイント⚠️
 
 ```ts
@@ -44,6 +47,9 @@ class OrderService {
 ---
 
 ## 1-3. “直接呼び出し” が作る依存📞⚡
+
+![direct_call_dependency](./picture/dip_ts_study_002_direct_call_dependency.png)
+
 
 `import` や `new` 以外にも、**直接呼んでる時点で依存**が生まれるよ〜！
 
@@ -75,6 +81,9 @@ export function isCampaignActive(): boolean {
 
 ## 2-1. 修正が怖い😱💥（変更の波及）
 
+![fear_domino](./picture/dip_ts_study_002_fear_domino.png)
+
+
 1ヶ所変えただけで、**あちこちが壊れる**やつ…😭
 
 ```mermaid
@@ -95,6 +104,9 @@ flowchart TD
 ---
 
 ## 2-2. テストがつらい😵‍💫🧪（本物が必要になる）
+
+![hard_test_bolted](./picture/dip_ts_study_002_hard_test_bolted.png)
+
 
 依存が強いと、テストのたびに本物が必要になりがち👇
 
@@ -117,6 +129,9 @@ DIPは“依存の向き”の話だけど、その前にまず **依存を発�
 
 ## 3-1. コード上で一撃で見つかるやつ🧷
 
+![finding_deps_magnifier](./picture/dip_ts_study_002_finding_deps_magnifier.png)
+
+
 * `import ... from ...` 📦
 * `new Something()` 🆕
 * `Something.staticMethod()`（静的呼び出し）🧱
@@ -128,6 +143,9 @@ DIPは“依存の向き”の話だけど、その前にまず **依存を発�
 ---
 
 ## 3-2. VS Codeでの探し方（超実戦）🪟⌨️🔍
+
+![vscode_search](./picture/dip_ts_study_002_vscode_search.png)
+
 
 **Ctrl+Shift+F**（全体検索）で、まずこれ打つのが強いよ💪✨
 
