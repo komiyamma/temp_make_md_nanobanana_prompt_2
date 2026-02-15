@@ -30,6 +30,9 @@
 
 ## 13-2. なぜSharedは “依存のハブ” になって壊すの？🧲💥
 
+![Dependency Hub](./picture/dpn_rule_cs_study_013_dependency_hub.png)
+
+
 Dependency Ruleの感覚でいうと…
 
 * Domain（中心）➡️ 外側（UI/Infra）に依存しない
@@ -63,6 +66,9 @@ flowchart TD
 ---
 
 ## 13-3. Sharedに入れてOKなもの✅（ただし条件つき！）
+
+![Gold Nuggets](./picture/dpn_rule_cs_study_013_gold_nuggets.png)
+
 
 Sharedに入れていいのは、基本この3カテゴリだけに絞るのがおすすめです✂️✨
 （そして **“薄く・小さく・依存なし”** が大前提💪）
@@ -113,6 +119,9 @@ Sharedに入れるなら、こういう条件を満たすやつだけ！
 ---
 
 ## 13-4. Sharedに入れたらだいたい事故るもの❌🚨
+
+![Landmines](./picture/dpn_rule_cs_study_013_landmines.png)
+
 
 ここからが本番😂
 Sharedに入れがちな “地雷” をまとめます💣
@@ -227,6 +236,9 @@ Shared候補が出たら、これを順に聞いてください🙋‍♀️💡
 ## 13-7. Sharedを作りたくなったときの “代替案” 3つ🧭✨
 
 ## 代替案A：小さいものは複製する✂️😊
+
+![Copy Paste Scissors](./picture/dpn_rule_cs_study_013_copy_paste_scissors.png)
+
 
 えっ！？ってなるけど、**マジで強い**です💪
 共有のコスト（影響範囲・調整・破壊）より、複製の方が安いことが多いです。

@@ -37,6 +37,9 @@ TypeScriptだと、一番よくある依存の発生源はコレ👇
 
 ## 2) TSの依存は「ファイル＝モジュール」から始まる📄📦
 
+![Module Blocks](./picture/dpn_rule_ts_study_001_module_blocks.png)
+
+
 TS/JSの基本はこれ！
 
 * **1ファイル = 1モジュール（部品）** 📦
@@ -152,6 +155,9 @@ graph LR
 ---
 
 ## 5) `import/export` の最低限セット（この章で使うぶんだけ）📌✨
+
+![Export Door](./picture/dpn_rule_ts_study_001_export_door.png)
+
 
 ## 5-1. 名前つきexport（いちばん使う）🧡
 
@@ -275,6 +281,9 @@ npm run build
 
 ## 7) VS Codeで「依存の把握コスト」を減らす🧭✨
 
+![Search Light](./picture/dpn_rule_ts_study_001_search_light.png)
+
+
 分割したら、**探す力**が超大事！👀💨
 
 よく使うやつだけ覚えよ〜👇
@@ -290,6 +299,9 @@ npm run build
 ## 8) ミニ演習👩‍💻：分割 → import増加 → 影響範囲をメモ📝✨
 
 ## 演習A：依存マップを作る🗺️
+
+![Map Sketch](./picture/dpn_rule_ts_study_001_map_sketch.png)
+
 
 今の状態で、これを書いてみて👇
 
