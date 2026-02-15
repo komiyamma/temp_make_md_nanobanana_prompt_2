@@ -17,6 +17,8 @@
 
 ### ① Service Locator化🕳️（DIっぽい顔してる最大の罠）
 
+![](./picture/di_ts_study_030_service_locator_bad.png)
+
 **症状**：クラスの中で `container.resolve(...)` し始める😇
 **何がダメ？**
 
@@ -60,6 +62,8 @@ graph TD
 
 ### ② グローバルSingleton乱用👑（“便利”が後で爆発💥）
 
+![](./picture/di_ts_study_030_global_singleton.png)
+
 **症状**：どこからでも `Logger.instance` とかで呼べるやつ
 **何がダメ？**
 
@@ -73,6 +77,8 @@ graph TD
 ---
 
 ### ③ 循環import🌀（TS/ESMでハマりやすい定番）
+
+![](./picture/di_ts_study_030_circular_import.png)
 
 **症状**：AがBをimport、BがAをimport、ぐるぐる🌀
 **困ること**：
@@ -144,6 +150,8 @@ graph LR
 ---
 
 ### フォルダ例🗂️✨
+
+![](./picture/di_ts_study_030_app_structure.png)
 
 ```txt
 src/
@@ -362,6 +370,8 @@ main().catch((e) => {
 ---
 
 ## 30-5. テスト🧪💖（Fake/Spyで「DIの旨み」を味わう！）
+
+![](./picture/di_ts_study_030_test_joy.png)
 
 ### VitestでOK（最近の定番枠）🧪✨
 

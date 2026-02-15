@@ -60,6 +60,8 @@ TSは `interface` が実行時に存在しないよね👻
 
 ### A. 文字列 token（例: `"Logger"`）📝
 
+![](./picture/di_ts_study_027_string_collision.png)
+
 **メリット**
 
 * ぱっと見で分かりやすい👀✨
@@ -74,6 +76,8 @@ TSは `interface` が実行時に存在しないよね👻
 ---
 
 ### B. Symbol token（例: `Symbol("Logger")`）🔱
+
+![](./picture/di_ts_study_027_symbol_uniqueness.png)
 
 **メリット**
 
@@ -90,6 +94,8 @@ InversifyJS みたいに **service identifier として Symbol を推奨**して
 ---
 
 ### C. クラス（constructor）token（例: `UserService`）🏛️
+
+![](./picture/di_ts_study_027_class_token.png)
 
 **メリット**
 
@@ -129,6 +135,8 @@ InversifyJS みたいに **service identifier として Symbol を推奨**して
 
 ### 対策✅：tokenは “必ず1箇所に集約” する📦✨
 
+![](./picture/di_ts_study_027_token_storage.png)
+
 **token置き場（tokens.ts）を作って、そこからimportする**
 これだけで事故が激減するよ🙌
 
@@ -158,6 +166,8 @@ export type TokenKey = typeof TOKENS[keyof typeof TOKENS];
 ---
 
 ## 8) さらに型安全にしたい人へ：unique symbol 🔒✨
+
+![](./picture/di_ts_study_027_unique_symbol.png)
 
 TypeScriptには **`unique symbol`** っていう“唯一性のあるSymbol型”があるよ🔒
 `const` にしか使えない等の制約はあるけど、**tokenをより厳密に扱える**ようになる😊 ([TypeScript][4])
