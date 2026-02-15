@@ -36,6 +36,9 @@ Microsoftの標準DIは、`Microsoft.Extensions.DependencyInjection` が中心�
 
 ## 3) 今日の主役たち👑✨（用語ミニ辞典）
 
+![cast_characters](./picture/di_cs_study_016_cast_characters.png)
+
+
 * `IServiceCollection`（だいたい `ServiceCollection` でOK）
   → **サービスの登録帳**📒✨（「何が欲しい時、何を作るか」）
 * `IServiceProvider`（`BuildServiceProvider()` の成果物）
@@ -67,6 +70,9 @@ Visual Studioで👇
 ---
 
 ### Step B：コードを書く✍️💖（Program.cs 1枚でOK）
+
+![coding_program](./picture/di_cs_study_016_coding_program.png)
+
 
 ```csharp
 using System;
@@ -146,6 +152,8 @@ flowchart LR
 
 ## 5) `GetService` と `GetRequiredService` の違い🥺➡️😤
 
+![get_vs_required_service](./picture/di_cs_study_016_get_vs_required_service.png)
+
 * `GetService<T>()`：無かったら **null**（気づきにくい事故が起きがち）😇
 * `GetRequiredService<T>()`：無かったら **例外**（早めに気づける！）🚨✨ ([Microsoft Learn][1])
 
@@ -154,6 +162,9 @@ flowchart LR
 ---
 
 ## 6) ハンズオン②：いまどきの“Host”版もチラ見せ👀✨（雰囲気だけ）
+
+![generic_host_box](./picture/di_cs_study_016_generic_host_box.png)
+
 
 最近の.NETは、コンソールでも **Generic Host** を使う流れが一般的になってるよ〜🚀
 （DI・ログ・設定…をまとめて面倒見てくれる箱）📦✨ ([Microsoft Learn][3])
@@ -178,6 +189,9 @@ greeter.Hello("こみやんま");
 ---
 
 ## 7) 今日の“落とし穴”だけ先に回避しとこ🕳️⚠️
+
+![registration_pitfall](./picture/di_cs_study_016_registration_pitfall.png)
+
 
 ### 落とし穴①：登録し忘れ😵
 

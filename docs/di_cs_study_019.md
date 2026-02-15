@@ -70,6 +70,9 @@ public sealed class StampService
 
 ## 4) 「要求されるたび」って、どのタイミング？🎣
 
+![request_timing](./picture/di_cs_study_019_request_timing.png)
+
+
 Transient が作られるのは、だいたいこの2パターン👇
 
 ### パターンA：自分で GetRequiredService したとき
@@ -83,6 +86,9 @@ Transient が作られるのは、だいたいこの2パターン👇
 ---
 
 ## 5) もう一段だけ理解：同じクラスを作り直すとどうなる？🔁
+
+![recursive_creation](./picture/di_cs_study_019_recursive_creation.png)
+
 
 「親」も「子」も Transient にすると、親を作るたびに子も新品！になるよ😊
 
@@ -141,6 +147,9 @@ sequenceDiagram
 
 ## 6) Transient が得意なもの🧁✨（使いどころ）
 
+![transient_use_cases](./picture/di_cs_study_019_transient_use_cases.png)
+
+
 Transientが似合うのは、だいたいこういう子たち👇
 
 * **状態を持たない**（Stateless）計算・判定・変換系
@@ -185,6 +194,9 @@ Microsoftのガイドラインでは、ざっくりこう言ってるよ👇
 ---
 
 ## 9) 3秒で決める！Transient 判定ミニフロー🧠⚡
+
+![decision_flow](./picture/di_cs_study_019_decision_flow.png)
+
 
 次の質問に「うん！」が多いほど Transient 向きだよ😊
 

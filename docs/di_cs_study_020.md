@@ -95,6 +95,9 @@ sequenceDiagram
 
 ## 3) Singletonが“めちゃ便利”な典型パターン🌟
 
+![useful_patterns](./picture/di_cs_study_020_useful_patterns.png)
+
+
 Singletonは **「状態を持たない」or「状態を持っても安全」** なものに向くよ👍✨
 
 ### 向いてる例🍀
@@ -113,6 +116,9 @@ Singletonは **「状態を持たない」or「状態を持っても安全」** 
 Singletonは便利だけど、事故の代表格がこの3つ👇
 
 ### 事故①：状態（mutable）を持たせてぐちゃぐちゃ😵‍💫
+
+![mutable_state_mess](./picture/di_cs_study_020_mutable_state_mess.png)
+
 
 Singletonはみんなで共有するから、**誰かが値を変えると全員に影響**するよ🌀
 
@@ -144,6 +150,9 @@ public class CounterSingleton
 ---
 
 ### 事故②：SingletonにScopedを入れてしまう（スコープ違反）🚫
+
+![scope_violation](./picture/di_cs_study_020_scope_violation.png)
+
 
 これ、DI初心者が一番踏む地雷かも💣
 
@@ -180,6 +189,9 @@ graph TD
 
 ### 事故③：Singletonの中で “new” しまくってDIの意味が消える🫥
 
+![hidden_new_wall](./picture/di_cs_study_020_hidden_new_wall.png)
+
+
 Singletonにすると「一回だけnewだしOK」って気持ちになりやすいんだけど…
 そこで **new を抱え込む**と、差し替えができなくなるよ😢
 
@@ -191,6 +203,9 @@ Singletonにすると「一回だけnewだしOK」って気持ちになりやす
 ---
 
 ## 5) HttpClientとSingleton、どう考える？🌐🧠
+
+![http_client_best_practice](./picture/di_cs_study_020_http_client_best_practice.png)
+
 
 結論：**“毎回 new HttpClient()” は避けたい**。
 で、推奨ルートは大きく2つあるよ👇
