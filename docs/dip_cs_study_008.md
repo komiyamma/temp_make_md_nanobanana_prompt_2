@@ -32,10 +32,12 @@ DIPでよく言うやつ👇
 超ざっくり言うと👇
 
 * **依存（Dependency）**：このクラスは「あの型を知ってる」「あのメソッド名を知ってる」🧠🔗
+![dependency_is_knowing](./picture/dip_cs_study_008_dependency_is_knowing.png)
 
   * 例：`new SqlUserRepository()` と書いた瞬間、**SqlUserRepository を知っちゃう**
   * 例：引数やフィールドの型に `SqlUserRepository` が出たら、もう知ってる
 * **実行の流れ（Call Flow）**：プログラムが動いたときに「どの順で呼ばれたか」🏃‍♀️💨
+![execution_is_calling](./picture/dip_cs_study_008_execution_is_calling.png)
 
   * 例：`A()` の中で `B()` を呼んだら、実行は A→B
 
@@ -132,6 +134,8 @@ public static class Program
 ---
 
 ## じゃあ「逆転」って何が逆転してるの？🙃🔁
+
+![ioc_meaning](./picture/dip_cs_study_008_ioc_meaning.png)
 
 「呼ぶ順番」が逆転じゃないなら何？ってなるよね😆
 
@@ -237,10 +241,14 @@ flowchart TD
 
 ### 実行の流れ（Call Flow）を見る🧵
 
+![debug_call_stack](./picture/dip_cs_study_008_debug_call_stack.png)
+
 * ブレークポイント置く👉実行👉**呼び出し履歴（コールスタック）**を見る
 * 「今どこから呼ばれた？」が分かるよ📞🧠
 
 ### 依存（Dependency）を見る🧷
+
+![debug_dependency_ref](./picture/dip_cs_study_008_debug_dependency_ref.png)
 
 * 「このクラスが知ってる型は何？」を見る
 
@@ -271,6 +279,8 @@ flowchart TD
 ---
 
 ## 章末演習🎮✨（手を動かすと一発で腹落ちするよ！）
+
+![exercise_swap](./picture/dip_cs_study_008_exercise_swap.png)
 
 1. `IEmailSender` に `FakeEmailSender` を追加してみてね🧪
 2. `Program` で `SmtpEmailSender` ↔ `FakeEmailSender` を差し替える🔁

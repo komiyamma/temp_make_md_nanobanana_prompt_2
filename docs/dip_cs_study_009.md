@@ -17,6 +17,8 @@
 
 ## 9.1 interfaceってなに？（超シンプルに言うと…）🤝✨
 
+![capability_list](./picture/dip_cs_study_009_capability_list.png)
+
 interface は **「これができるよ！」っていう “できることリスト”** だよ📋😊
 使う側（上位）のコードは **“中身” を知らなくてOK**。**約束（interface）だけ** 見て使えるのが強み💪
 
@@ -41,6 +43,8 @@ Microsoft の公式ドキュメントでも、interface は **契約（contract�
 
 ## 9.3 DIP目線でのinterface：決めるのは「使う側」👑➡️📄
 
+![caller_defines](./picture/dip_cs_study_009_caller_defines.png)
+
 DIPの世界で大事なのはここ👇✨
 
 > interface は **「実装したい側（DB担当）」が決めるものじゃなくて、
@@ -55,6 +59,8 @@ DIPの世界で大事なのはここ👇✨
 ---
 
 ## 9.4 例：`IUserRepository` の責務を決める📦✨（最小でいこう！）
+
+![minimum_responsibility](./picture/dip_cs_study_009_minimum_responsibility.png)
 
 ここでは「ユーザー登録」を例にするよ〜！🧁
 要件はこんな感じ👇
@@ -90,6 +96,8 @@ public sealed record User(string Email, string DisplayName);
 ---
 
 ## 9.5 実装は何個あってもOK（差し替えの土台）🔁✨
+
+![pluggable_impls](./picture/dip_cs_study_009_pluggable_impls.png)
 
 interface があると、実装は好きに増やせるよ😄
 例えばメモリ版（テスト用）👇
@@ -236,6 +244,8 @@ public sealed class InMemoryUserRepository : IUserReader, IUserWriter
 
 ## 9.8 interfaceの命名ルール（迷ったらこれ）🧾✨
 
+![naming_convention](./picture/dip_cs_study_009_naming_convention.png)
+
 C#の世界では **interfaceは `I` プレフィックス** が基本だよ〜！😊
 Microsoft の設計ガイドラインでも推奨されてる✨([Microsoft Learn][4])
 
@@ -262,6 +272,8 @@ interface には **デフォルト実装** を入れられる（＝後からメ�
 ---
 
 ## 9.10 Visual Studioの“楽する機能”🪄✨（覚えると超気持ちいい）
+
+![vs_extract](./picture/dip_cs_study_009_vs_extract.png)
 
 ### ✅ クラスからinterfaceを切り出す（Extract Interface）
 

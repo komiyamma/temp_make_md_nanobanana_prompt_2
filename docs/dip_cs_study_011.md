@@ -6,6 +6,8 @@
 
 ## 0. この章のゴール🎯✨
 
+![blindfolded_service](./picture/dip_cs_study_011_blindfolded_service.png)
+
 * Serviceが `SqlUserRepository` を **知らない**（= 依存しない）🙅‍♀️
 * Serviceは `IUserRepository` だけ知ってればOK👌
 * `Sql` を `Fake` に **差し替え**できる（デモするよ！）🔁😄
@@ -28,6 +30,8 @@ Repositoryを切り出して `IUserRepository` を作ったのに…
 ---
 
 ## 2. 依存の矢印を「こう」する🧭✨
+
+![dependency_arrow](./picture/dip_cs_study_011_dependency_arrow.png)
 
 ### ❌ 逆転前（つらい）
 
@@ -80,6 +84,8 @@ public interface IUserRepository
 ---
 
 ### 3-3. Serviceは “interfaceだけ” を見る🧱✨（ここが本章の主役！）
+
+![constructor_slot](./picture/dip_cs_study_011_constructor_slot.png)
 
 ✅ **コンストラクタで `IUserRepository` を受け取る**
 ✅ Service内で `new` しない
@@ -180,6 +186,8 @@ public sealed class FakeUserRepository : IUserRepository
 
 ### 4-3. どっちを使うか決めるのは「外側」🚪✨（Program.cs）
 
+![assembler_decision](./picture/dip_cs_study_011_assembler_decision.png)
+
 ここが超重要！
 **Serviceの外で組み立てる場所**を（仮に）“組み立て係”と呼ぶね🧩
 
@@ -261,6 +269,8 @@ DIPって聞くと、つい…
 
 ### ミス①：Serviceに `SqlConnection` とか渡しちゃう🚫🗄️
 
+![leakage_pitfall](./picture/dip_cs_study_011_leakage_pitfall.png)
+
 それ、結局 **下位都合が上位に侵入**してるよ〜💦
 Serviceは **「保存できる」** が欲しいだけ！
 
@@ -271,6 +281,8 @@ Serviceは **「保存できる」** が欲しいだけ！
 まずは **Serviceが本当に必要な操作だけ**に絞ろう✂️✨
 
 ### ミス③：Fakeが本物と違いすぎる😇
+
+![fake_mismatch](./picture/dip_cs_study_011_fake_mismatch.png)
 
 Fakeは便利だけど、
 **「振る舞いがズレる」**と事故るので、最低限だけ寄せるのがコツ👌

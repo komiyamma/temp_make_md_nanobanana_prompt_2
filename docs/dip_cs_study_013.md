@@ -7,6 +7,8 @@
 
 ## 1. まずは一言でスッキリ！🧼✨
 
+![traffic_metaphor](./picture/dip_cs_study_013_traffic_metaphor.png)
+
 ### DIP（依存性逆転）って？🙃🔁
 
 「**大事なロジック（上位）が、変わりやすい詳細（下位）に振り回されない**」ための設計ルールだよ🛡️
@@ -56,6 +58,8 @@
 
 ### 混同②「interfaceを作った＝DIPできてる」🧩❌
 
+![interface_trap](./picture/dip_cs_study_013_interface_trap.png)
+
 interfaceを作っても、上位がこうだったらアウト👇
 
 ```csharp
@@ -84,6 +88,8 @@ DIPとDIは親戚だけど同一人物じゃないよ🤣
 ---
 
 ## 4. “DIはしてるけどDIPじゃない”例（地味に多い）😇💥
+
+![concrete_injection](./picture/dip_cs_study_013_concrete_injection.png)
 
 「外から渡してるからOKでしょ？」って思いがちだけど…👇
 
@@ -123,6 +129,8 @@ public sealed class UserService
 ---
 
 ## 5. “DIPはできてるけどDIしてない”ってあり得る？🙂
+
+![service_locator_dip](./picture/dip_cs_study_013_service_locator_dip.png)
 
 あり得るよ！ただし、たとえば👇みたいに**自分で探しに行く（Service Locator / 反射でロード）**方式は、DI（注入）とは別物になりやすいのね。
 
@@ -170,6 +178,8 @@ DIは、IoCを実現する代表的なやり方だよ〜、って.NETの説明�
 ---
 
 ## 7. 実務で迷わないための“判定法”✅👀
+
+![ideal_couple](./picture/dip_cs_study_013_ideal_couple.png)
 
 ### DIPできてる？チェック🧠
 

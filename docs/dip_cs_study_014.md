@@ -54,6 +54,8 @@ sequenceDiagram
 
 ## “newはどこでするの？”問題の答え📍😆
 
+![composition_root_workshop](./picture/dip_cs_study_014_composition_root_workshop.png)
+
 答え：**アプリの入口（組み立てる場所）でやる！** 🏗️✨
 この「組み立て場所」をよく **Composition Root（合成ルート）** と呼ぶよ〜🧩🌳
 
@@ -63,6 +65,8 @@ sequenceDiagram
 ---
 
 ## 例題：悪いコード（Serviceの中が `new` だらけ）😈🧱
+
+![self_sufficient_service](./picture/dip_cs_study_014_self_sufficient_service.png)
 
 「業務ロジック」が「DB都合」にベッタリくっつく典型だよ〜😵‍💫
 
@@ -87,6 +91,8 @@ public class UserService
 ---
 
 ## 正解：コンストラクタ注入で「外から渡す」💉✨
+
+![hand_of_god_injection](./picture/dip_cs_study_014_hand_of_god_injection.png)
 
 ### ① 抽象（interface）を用意する🧩☁️
 
@@ -188,6 +194,8 @@ public static class Program
 
 ## うれしさ：Fake差し替えが秒でできる🧪💖
 
+![fast_swap_testing](./picture/dip_cs_study_014_fast_swap_testing.png)
+
 ```csharp
 public class FakeUserRepository : IUserRepository
 {
@@ -220,6 +228,8 @@ public static class DemoTest
 ## ありがちな落とし穴コーナー🕳️😵‍💫
 
 ### 落とし穴1：Service Locator（`IServiceProvider` を渡すやつ）📦😇
+
+![service_locator_mystery](./picture/dip_cs_study_014_service_locator_mystery.png)
 
 * “何でも取れる箱”を渡すと、依存が見えなくなる🙈💦
 * テストもしんどくなる（結局何が必要なの？ってなる）😵
