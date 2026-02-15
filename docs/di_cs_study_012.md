@@ -29,6 +29,9 @@
 
 DIPの有名な言い方はこれ👇
 
+![inverted_pyramid_dip](./picture/di_cs_study_012_inverted_pyramid_dip.png)
+
+
 * **高レベルは低レベルに依存しない。両者は抽象に依存する**
 * **抽象は詳細に依存しない。詳細が抽象に依存する** ([Stackify][3])
 
@@ -52,6 +55,9 @@ DI で “渡してる” だけで、**渡してる相手が具体クラス**�
 ## ミニ例：通知アプリで理解しよう 📣✨
 
 ### ❌ ダメな例：DIPもDIも弱い（方針が詳細にべったり）💦
+
+![tangled_roots_tree](./picture/di_cs_study_012_tangled_roots_tree.png)
+
 
 * 「通知する」という方針クラスが
   「メール送信（詳細）」に直結してる…😵
@@ -85,6 +91,9 @@ public sealed class NotifyUserUseCase
 ---
 
 ### ✅ 良い例：DIP（方針）＋DI（渡し方）で気持ちよくする 💖
+
+![clean_socket_plug_play](./picture/di_cs_study_012_clean_socket_plug_play.png)
+
 
 ポイントはこれ👇
 
@@ -151,6 +160,9 @@ classDiagram
 
 ## ここが超大事：DIPとDIの“関係”を一言で 🎀
 
+![blueprint_vs_screwdriver](./picture/di_cs_study_012_blueprint_vs_screwdriver.png)
+
+
 * **DIP**：依存の方向を「抽象」に向けよう（設計のルール）📏 ([Stackify][3])
 * **DI**：その依存（実装）は「外から渡そう」（実装のテク）💉
 * .NET は DI を標準機能として支えてるよ 🧩 ([Microsoft Learn][1])
@@ -158,6 +170,9 @@ classDiagram
 ---
 
 ## 「どっちの話？」ミニクイズ5問 🎯✨
+
+![sorting_hat_concepts](./picture/di_cs_study_012_sorting_hat_concepts.png)
+
 
 1. 「ユースケースが `EmailSender` に直接依存してるのが怖い」
    👉 **DIP**（依存の向きの話）📏

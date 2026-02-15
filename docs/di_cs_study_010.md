@@ -32,6 +32,9 @@
 
 ## 2) 使い分けルール（ここ超大事）📌✨
 
+![temporary_pass_badge](./picture/di_cs_study_010_temporary_pass_badge.png)
+
+
 ### ✅ メソッド注入が向いてるとき🧤
 
 * **毎回違うもの**を渡したい（CSV/JSON、戦略の差し替え）🔁
@@ -51,6 +54,9 @@
 ここでは「レポート本文は作れるけど、**出力形式（CSV/JSON）はその場で選びたい**」ってケースにするよ😊
 
 ### 3-1) フォーマッタを“差し替え口”にする🧷
+
+![format_switch_machine](./picture/di_cs_study_010_format_switch_machine.png)
+
 
 ```csharp
 public interface IReportFormatter
@@ -147,6 +153,9 @@ sequenceDiagram
 
 ### 4-1) Controllerのアクション引数にDI注入できる（Action injection）🧤
 
+![drone_delivery_window](./picture/di_cs_study_010_drone_delivery_window.png)
+
+
 ASP.NET Core では、アクションメソッドの引数に `[FromServices]` を付けて、**そのメソッドだけ**サービスを受け取れるよ〜！ ([Microsoft Learn][1])
 
 ```csharp
@@ -196,6 +205,9 @@ public sealed class GreetingService
 
 ## 5) （ちょい上級）Key付きサービスを“メソッド引数で”選ぶ🗝️
 
+![keychain_selection](./picture/di_cs_study_010_keychain_selection.png)
+
+
 「CSV/JSON」みたいに複数実装がある時、Keyで選べる仕組みもあるよ〜（ASP.NET Core側の例） ([Microsoft Learn][1])
 
 * `[FromKeyedServices]` で「このKeyのやつちょうだい」ってできる✨
@@ -211,6 +223,9 @@ public sealed class GreetingService
 * **コンストラクタ注入に戻す**のが正解✨
 
 ### 失敗②：引数が増えすぎて読めない📣
+
+![too_many_bags_juggling](./picture/di_cs_study_010_too_many_bags_juggling.png)
+
 
 * `Do(x, y, z, a, b, c...)` みたいになったら
   だいたい **責務が大きすぎ**か、設計の分割チャンス✂️

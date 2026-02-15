@@ -11,6 +11,9 @@
 
 ## 1) プロパティ注入ってなに？🧩
 
+![robot_empty_slot](./picture/di_cs_study_011_robot_empty_slot.png)
+
+
 ざっくり言うと👇
 **「コンストラクタでは渡さず、あとから set できるプロパティに依存を入れる」**やり方だよ〜🧷
 
@@ -64,6 +67,9 @@ public class ReportService
 ## 3) 実験：わざと null 事故を起こして学ぼう🙈⚡
 
 ### ❌ Before：プロパティ注入で事故る例
+
+![missing_bridge_crash](./picture/di_cs_study_011_missing_bridge_crash.png)
+
 
 ```csharp
 public class ConsoleLogger : ILogger
@@ -136,12 +142,18 @@ public static class Program
 
 ### 例外的に出てきがちな場面👇
 
+![blazor_zone_sign](./picture/di_cs_study_011_blazor_zone_sign.png)
+
+
 * **Blazor コンポーネント**は、コンポーネント内で **プロパティ注入もサポート**してる（`@inject` や `[Inject]`）✨ ([Microsoft Learn][1])
 * それ以外の一般的なクラスでは、基本は **コンストラクタ注入が主役**になりやすいよ😊
 
 ---
 
 ## 5) 超重要：標準DIコンテナは「プロパティ注入」を標準サポートしない🧰🚫
+
+![square_peg_round_hole](./picture/di_cs_study_011_square_peg_round_hole.png)
+
 
 いま主流の **.NET 10 / C# 14** 環境でも、.NET のガイドライン上、標準のDIコンテナがサポートしない機能の例として **Property injection** が挙げられてるよ📌 ([Microsoft for Developers][2])
 
@@ -156,6 +168,9 @@ public static class Program
 ---
 
 ## 6) 「プロパティ注入っぽいことしたい」時の代替案💡✨
+
+![fork_in_road_choices](./picture/di_cs_study_011_fork_in_road_choices.png)
+
 
 ### ✅ 代替①：必須ならコンストラクタ注入（最強🥇）
 
