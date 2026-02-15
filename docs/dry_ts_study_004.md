@@ -38,6 +38,9 @@
 
 ## 4-3. まずは定数で「散らばり」を止血しよう🩹📌
 
+![gathering_strings](./picture/dry_ts_study_004_gathering_strings.png)
+
+
 ### パターンA：とにかく一旦まとめる（超現実的）😌
 
 1か所に集めるだけでも、事故率が激減するよ✨
@@ -55,6 +58,9 @@ export const STATUS_CANCELED = "canceled";
 ---
 
 ## 4-4. as const で「リテラル型」に固定しよう🧷✨
+
+![as_const_pin](./picture/dry_ts_study_004_as_const_pin.png)
+
 
 ### パターンB：定数の“集合”を作る（おすすめ💖）
 
@@ -114,6 +120,9 @@ setStatus("A001", "paied");             // コンパイルで止まる😇✨
 
 ## 4-6. 辞書（Record）で「対応表」を1か所にまとめる🗂️✨
 
+![record_rack](./picture/dry_ts_study_004_record_rack.png)
+
+
 次は「ステータス→表示名」みたいな対応表あるあるね！💡
 
 ### 例：表示ラベルを辞書化する📛✨
@@ -148,6 +157,9 @@ graph LR
 
 ## 4-7. satisfies で「辞書の型チェック」と「推論の美味しさ」を両取り🍰✨
 
+![satisfies_inspector](./picture/dry_ts_study_004_satisfies_inspector.png)
+
+
 TypeScriptには satisfies って演算子があって、
 「型に合ってるか検証するけど、値そのものの型推論は崩さない」っていう良いとこ取りができるよ〜！😳✨ ([TypeScript][5])
 
@@ -177,6 +189,9 @@ export const StatusLabel = {
 * 状態・キー・URL・イベント名？ → だいたい「知識」なので1か所へ🏷️✨
 
 ### ✅ コツ2：同じ理由で変わるもの同士をまとめる📦
+
+![drawer_organizer](./picture/dry_ts_study_004_drawer_organizer.png)
+
 
 * OrderStatus（注文の状態）
 * UserRole（権限）

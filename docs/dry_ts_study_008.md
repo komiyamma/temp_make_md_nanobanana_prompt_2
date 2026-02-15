@@ -43,6 +43,9 @@ DRYって「同じコードを1行たりとも書くな！」じゃなくて、*
 
 ### あるある③：共通化のための引数が増えすぎる🎛️😵
 
+![argument_explosion](./picture/dry_ts_study_008_argument_explosion.png)
+
+
 * `options` が10個
 * `isFoo`, `shouldBar` みたいなフラグ地獄
 * 呼び出し側が「結局これ何してるの？」ってなる
@@ -56,6 +59,9 @@ DRYって「同じコードを1行たりとも書くな！」じゃなくて、*
 ---
 
 ## 8-3. “やりすぎDRY” を見抜く7つのサイン🚨👀
+
+![warning_dashboard](./picture/dry_ts_study_008_warning_dashboard.png)
+
 
 共通化した関数（or モジュール）が、こうなってきたら黄色信号だよ〜⚠️
 
@@ -73,6 +79,9 @@ DRYって「同じコードを1行たりとも書くな！」じゃなくて、*
 ---
 
 ## 8-4. 判断のコアはこれだけ💎（3つの質問）
+
+![abstraction_filter](./picture/dry_ts_study_008_abstraction_filter.png)
+
 
 共通化する前に、まずこの3問だけは自分に聞いてね☺️🫶
 
@@ -110,6 +119,9 @@ flowchart TD
 
 ## 8-5. 迷ったら「Rule of Three」＋「AHA」でOK🙆‍♀️✨
 
+![aha_moment](./picture/dry_ts_study_008_aha_moment.png)
+
+
 ### ✅ Rule of Three（3回出たら考える）
 
 「2回は様子見、3回目で抽象化を検討」みたいな目安だよ〜🧠 ([ウィキペディア][4])
@@ -123,6 +135,9 @@ flowchart TD
 ## 8-6. 例で体感しよ！「悪いDRY」「良いDRY」🧪✨
 
 ### 例1：「似てるから統一」→ 分岐地獄 😇
+
+![entangled_rules](./picture/dry_ts_study_008_entangled_rules.png)
+
 
 #### ❌ “悪いDRY” 例（統一しすぎ）
 

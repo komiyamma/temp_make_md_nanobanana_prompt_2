@@ -15,6 +15,9 @@
 
 ## 1. あるある：try/catchが増殖して“直す場所が地獄”😱🌀
 
+![try_catch_hydra](./picture/dry_ts_study_007_try_catch_hydra.png)
+
+
 たとえば、画面のあちこちでAPIを叩くたびに…
 
 * 毎回 `try/catch`
@@ -39,6 +42,9 @@
 
 ## 3. 準備①：catchは unknown で受けて“ちゃんと絞り込む”🛡️🔍
 
+![unknown_detective](./picture/dry_ts_study_007_unknown_detective.png)
+
+
 TypeScriptには `useUnknownInCatchVariables` というオプションがあって、catchの変数を unknown にできます（この方が安全）🧠✨ ([TypeScript][3])
 
 ### ✅ 絞り込みの基本パターン（これ超よく使う！）
@@ -52,6 +58,9 @@ function isError(e: unknown): e is Error {
 ---
 
 ## 4. 準備②：アプリで使う“エラーの形”を決める（AppError）🏷️✨
+
+![error_sorting](./picture/dry_ts_study_007_error_sorting.png)
+
 
 ポイントは **「エラーを“分類”できるようにする」** こと😊
 コピペ地獄は、分類が毎回バラバラだから起きるの💦
@@ -141,6 +150,9 @@ export function toAppError(e: unknown): AppError {
 ---
 
 ## 6. 本丸②：ユーザー向け文言とログ向け情報を“分けて”DRYにする📝✨
+
+![user_vs_log](./picture/dry_ts_study_007_user_vs_log.png)
+
 
 「画面に出す文章」と「調査用ログ」は役割が違うよね😊
 これを毎回その場で書くと、必ずブレる💦
@@ -265,6 +277,9 @@ export async function loadUsers(signal?: AbortSignal) {
 ---
 
 ## 9. キャンセル（中断）もDRYに含める💨🧷
+
+![abort_signal](./picture/dry_ts_study_007_abort_signal.png)
+
 
 キャンセルを入れると「配信中にボタン連打」みたいな場面で超助かるよ😊
 

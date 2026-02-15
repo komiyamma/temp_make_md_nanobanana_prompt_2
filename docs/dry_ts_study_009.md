@@ -43,6 +43,9 @@
 
 ## 3) プロジェクトの形（完成イメージ）🏗️✨
 
+![project_districts](./picture/dry_ts_study_009_project_districts.png)
+
+
 最終的にファイルはこんな雰囲気にするよ👇
 
 * `src/constants.ts` … 文字列・数値の定義を1か所へ🏷️
@@ -148,6 +151,9 @@ export function checkoutWet(input: CheckoutInput) {
 
 ## 5) 手順①：まず“テスト”で安全網を張る🧪🛡️
 
+![safety_net](./picture/dry_ts_study_009_safety_net.png)
+
+
 DRY改善はコードを動かしながら直すのが勝ち！✨
 最初に「今の挙動」をテストで固定しちゃおう📌
 
@@ -168,6 +174,9 @@ DRY改善はコードを動かしながら直すのが勝ち！✨
 
 ## 6) 手順②：重複に“ラベル”を貼る🏷️👀
 
+![sticky_notes](./picture/dry_ts_study_009_sticky_notes.png)
+
+
 WETコードを見ながら、付箋を貼る気持ちでやるよ〜！💖
 
 ### ラベル例（第2章の復習）
@@ -184,6 +193,9 @@ WETコードを見ながら、付箋を貼る気持ちでやるよ〜！💖
 ---
 
 ## 7) 手順③：関数抽出＆引数化（第3章）✂️🧩
+
+![breaking_rock](./picture/dry_ts_study_009_breaking_rock.png)
+
 
 最初の勝ち筋はこれ！
 「小計」「割引」「送料」を関数に分けるだけで一気に読みやすくなるよ📚✨
@@ -203,6 +215,9 @@ WETコードを見ながら、付箋を貼る気持ちでやるよ〜！💖
 ---
 
 ## 8) 手順④：定数・対応表・ユニオン型（第4章）🏷️🗂️
+
+![wizard_constants](./picture/dry_ts_study_009_wizard_constants.png)
+
 
 ここで “魔法の数字/文字列” を卒業するよ🎓✨
 
@@ -283,6 +298,9 @@ Copilotの agent mode を使うなら、
 * “似てるけどルールが違う” もの（将来別々に変わりそう）
 
 ### ミニ提出物（自分用でOK）📄✨
+
+![captains_log](./picture/dry_ts_study_009_captains_log.png)
+
 
 `DRY_DECISIONS.md` を作って、こう書く👇
 
