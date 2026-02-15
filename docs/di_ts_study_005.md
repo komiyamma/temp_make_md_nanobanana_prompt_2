@@ -10,6 +10,8 @@
 
 ## 1) 結論：DIの最小形は「引数にする」だけ💡🫶
 
+![](./picture/di_ts_study_005_handover_basic.png)
+
 たとえば、こんな依存ってあるよね👇
 
 * 時間：`Date.now()` ⏰
@@ -25,6 +27,8 @@
 ---
 
 ## 2) まずは“直叩き版”を見よう😵‍💫（変更しづらい）
+
+![](./picture/di_ts_study_005_glued_clock.png)
 
 例：学習ログに「作った時刻」を付ける関数📚📝
 
@@ -85,6 +89,8 @@ console.log(createStudyLog("DIを勉強した！", systemClock));
 
 ## 4) “差し替え”が一気にラクになる🔄💖（Fake Clock）
 
+![](./picture/di_ts_study_005_fake_clock_freeze.png)
+
 たとえば「時刻を固定」したいとき👇（テスト・デモで超便利✨）
 
 ```ts
@@ -109,6 +115,8 @@ console.log(log);
 ---
 
 ## 5) 引数が増えそう？じゃあ `deps` にまとめる👜✨
+
+![](./picture/di_ts_study_005_deps_bag_grouping.png)
 
 ```mermaid
 flowchart LR
@@ -149,6 +157,8 @@ console.log(createStudyLog2("deps方式！", { clock: systemClock }));
 
 ## 6) “すぐ動かす”メモ🪄（最近のNodeはTSをそのまま実行OK）
 
+![](./picture/di_ts_study_005_node_ts_direct.png)
+
 最近の Node は、**“erasable な TypeScript 構文”だけ**なら、トランスパイル無しで `.ts` をそのまま実行できるよ（型注釈を消して実行する方式）✨
 `node example.ts` みたいに動く（v22.18.0 以降）([Node.js][1])
 
@@ -164,6 +174,8 @@ console.log(createStudyLog2("deps方式！", { clock: systemClock }));
 ---
 
 ## 7) よくあるつまずき集⚠️😺
+
+![](./picture/di_ts_study_005_hurdles_race.png)
 
 ## つまずき①「引数増えてだるい…」
 
@@ -182,6 +194,8 @@ console.log(createStudyLog2("deps方式！", { clock: systemClock }));
 ---
 
 ## 8) ミニ課題🎀📝（この章のゴール確認）
+
+![](./picture/di_ts_study_005_before_after_refactor.png)
 
 ## 課題A：`Date.now()` を `clock.now()` に置き換えよう⏰➡️💉
 

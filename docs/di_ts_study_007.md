@@ -29,6 +29,8 @@ TypeScriptは **型が実行時に消える** から、まずはこの「手動D
 
 ## 2) まず“引数地獄”を体験しよう😵‍💫🧨
 
+![](./picture/di_ts_study_007_argument_hell_queue.png)
+
 たとえば「ユーザー登録」のロジックを書きたいとして…
 
 ```ts
@@ -56,6 +58,7 @@ export async function registerUser(
 
 ## 3) 解決：deps注入（依存まとめ）👜✨
 
+![](./picture/di_ts_study_007_deps_suitcase_entry.png)
 ![](./picture/di_ts_study_007_deps_object.png)
 
 ### ✅ 発想はこれだけ！
@@ -82,6 +85,8 @@ export async function registerUser(
 
 ## 4) 依存の“最小インターフェース”を作ろう✂️📜
 
+![](./picture/di_ts_study_007_minimal_interface_cut.png)
+
 ここがDIのコツだよ〜！
 **でっかい依存（Dateやfetchそのまま）を渡すより、必要な形だけ渡す** のが読みやすい🧁
 
@@ -106,6 +111,8 @@ export type Logger = {
 ---
 
 ## 5) deps型（RegisterDeps）を作る👜🧩
+
+![](./picture/di_ts_study_007_deps_type_blueprint.png)
 
 depsは **Readonly** にしておくと、うっかり書き換え事故が減るよ🛡️✨
 
@@ -153,6 +160,8 @@ export async function registerUser(
 ---
 
 ## 7) 呼び出し側（Composition Rootっぽい所）で“本物deps”を組み立てる🏗️✨
+
+![](./picture/di_ts_study_007_packing_workbench.png)
 
 ```mermaid
 flowchart TD
@@ -214,6 +223,8 @@ const registerDeps = {
 
 ## 8) テストで deps を差し替える（超うれしい瞬間）🧪💕
 
+![](./picture/di_ts_study_007_test_bag_swap.png)
+
 この章は“テスト回”じゃないけど、**deps注入のご褒美**を1回だけ味見しよ😋
 
 ```ts
@@ -252,6 +263,8 @@ console.log(spyLoggerMessages); // ["start register"]
 ---
 
 ## 9) deps注入で“よくある地雷”⚠️😵‍💫
+
+![](./picture/di_ts_study_007_god_deps_burden.png)
 
 ### 地雷①：depsを“巨大な万能袋”にしちゃう👜💣
 

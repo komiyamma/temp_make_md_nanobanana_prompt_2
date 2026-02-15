@@ -10,6 +10,8 @@
 
 ## 1) I/Oってなに？（外の世界）🌍📦
 
+![](./picture/di_ts_study_009_io_chaos_street.png)
+
 I/Oは、**アプリの外側**とつながる行為だよ〜！
 
 たとえば👇
@@ -26,6 +28,8 @@ I/Oは便利だけど、**テストを不安定にしがち**（時間や通信�
 ---
 
 ## 2) Pureロジックってなに？（内側の世界）🫧
+
+![](./picture/di_ts_study_009_pure_bubble_lab.png)
 
 Pure（純粋）な関数は、ざっくり言うと👇
 
@@ -55,6 +59,8 @@ Pure（純粋）な関数は、ざっくり言うと👇
 
 ## 4) まずは「分離できてない例」😣
 
+![](./picture/di_ts_study_009_blender_mess.png)
+
 学習記録を保存する関数、ありがちなやつ👇（※わざとゴチャゴチャ）
 
 ```ts
@@ -83,6 +89,8 @@ export async function recordStudy(subject: string, minutes: number) {
 
 ## 5) 切り分けの手順（3ステップ）✂️✨
 
+![](./picture/di_ts_study_009_separation_steps.png)
+
 ### ✅ ステップ1：I/O行に「I/O」って印をつける🟥
 
 まずは目で見える化👀✨
@@ -98,6 +106,8 @@ export async function recordStudy(subject: string, minutes: number) {
 ---
 
 ## 6) 完成形サンプル：学習記録（CoreとShell）📚💕
+
+![](./picture/di_ts_study_009_engine_and_body.png)
 
 ```mermaid
 sequenceDiagram
@@ -206,6 +216,8 @@ export function createLocalStorageStudyRepo(): {
 ---
 
 ## 7) テストがどうラクになるか🧪💖
+
+![](./picture/di_ts_study_009_testing_ease.png)
 
 ### ✅ Pure（core）は「そのままテスト」できる！
 
