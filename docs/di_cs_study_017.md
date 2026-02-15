@@ -22,6 +22,9 @@ DIコンテナに対して、
 
 ### ✅ AddTransient：毎回新品🧼✨
 
+![transient_bubbles](./picture/di_cs_study_017_transient_bubbles.png)
+
+
 ![](./picture/di_cs_study_017_lifetimes.png)
 
 * **解決（Resolve）されるたびに新しいインスタンス**
@@ -29,11 +32,17 @@ DIコンテナに対して、
 
 ### ✅ AddSingleton：アプリで1個を共有👑
 
+![singleton_crown](./picture/di_cs_study_017_singleton_crown.png)
+
+
 * **アプリ全体で1個**（同じものを使い回す）
 * 共有＝便利だけど、**状態**を持たせると事故りやすい⚠️
   （スレッドとか同時実行とか…💦）
 
 ### ✅ AddScoped：スコープの中で共有🧺
+
+![scoped_basket](./picture/di_cs_study_017_scoped_basket.png)
+
 
 * **ある“範囲（Scope）”の中では同じもの**
 * Webだとだいたい「**1リクエスト＝1スコープ**」のイメージだよ🌐([Microsoft Learn][2])
@@ -44,6 +53,9 @@ DIコンテナに対して、
 ---
 
 ## 3) ミニ実験で体に入れる：GUIDで寿命チェック🧪✨
+
+![guid_experiment](./picture/di_cs_study_017_guid_experiment.png)
+
 
 ここからは、**同じサービスを2回取り出したら同一か？**を見ていくよ👀
 （Scopedは「スコープを作る」がポイント！）
@@ -157,6 +169,9 @@ graph TD
 ---
 
 ## 6) 迷ったらコレ：ライフタイム選びの超ざっくり指針🧭✨
+
+![lifetime_compass](./picture/di_cs_study_017_lifetime_compass.png)
+
 
 * とりあえず迷ったら **Transient**（状態を持たないならだいたい平和）🧼
 * 「重くて共有したい」「アプリ全体で同じでいい」→ **Singleton**👑

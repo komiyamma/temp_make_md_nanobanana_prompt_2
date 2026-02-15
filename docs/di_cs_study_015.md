@@ -24,6 +24,9 @@
 
 ## 1. 「DI」と「DIコンテナ」を混ぜないで！🧃🧊
 
+![method_vs_tool](./picture/di_cs_study_015_method_vs_tool.png)
+
+
 ### DI（依存性注入）💉
 
 * クラスが **依存（ILoggerとかDBとか）を自分で new しない**
@@ -37,6 +40,9 @@
 ---
 
 ## 2. 手動DIがいちばん強い場面（まずここからでOK）🥇✨
+
+![manual_di_strength](./picture/di_cs_study_015_manual_di_strength.png)
+
 
 第13〜14章でやった「Composition Root に new を集める」スタイルね📍
 
@@ -53,6 +59,9 @@
 ---
 
 ## 3. じゃあ、いつ「コンテナ必要かも…」になるの？🥺🧰
+
+![container_pain_scale](./picture/di_cs_study_015_container_pain_scale.png)
+
 
 ここからが本題！
 「つらさ（痛み）が出てきたら」っていうのを、具体的なサインにするよ📣✨
@@ -109,6 +118,9 @@
 ---
 
 ## 5. 判断のための “超かんたん診断” 🩺✨
+
+![diagnosis_checklist](./picture/di_cs_study_015_diagnosis_checklist.png)
+
 
 下の質問に「はい」が増えるほど、コンテナ導入が近いよ🧰
 
@@ -173,6 +185,9 @@ app.Run();
 ---
 
 ## 7. コンテナ導入の「最小の成功パターン」🌱✨
+
+![small_start_sprout](./picture/di_cs_study_015_small_start_sprout.png)
+
 
 この章では実装は次章（第16章）でガッツリやるとして、
 **“導入判断”としてのコツ**だけ先に押さえるよ😊

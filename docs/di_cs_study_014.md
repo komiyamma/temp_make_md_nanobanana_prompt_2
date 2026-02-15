@@ -30,6 +30,9 @@ Visual Studio も **Visual Studio 2026** が出てて、2026-01-13 に 18.2.0 �
 
 ## ありがちな地獄👹：「手動DIはOK、でも Program が読めない」
 
+![new_hell_nest](./picture/di_cs_study_014_new_hell_nest.png)
+
+
 例として、**学習記録ミニアプリ**を作るね📒✨
 依存は3つだけにするよ（時計・保存・通知）⏰💾🔔
 
@@ -57,6 +60,9 @@ await app.RunAsync();
 ---
 
 ## ✅ Step1：Composition Root を “レシピ” にする🍳📍
+
+![composition_root_recipe](./picture/di_cs_study_014_composition_root_recipe.png)
+
 
 ポイントは **「まず分解して、名前をつける」** ことだよ😊✨
 
@@ -109,6 +115,9 @@ sealed record AppSettings(string DataFilePath, bool PrettyJson)
 ---
 
 ## ✅ Step2：依存が増えたら “組み立てを分割” する🍰
+
+![split_assembly_cake](./picture/di_cs_study_014_split_assembly_cake.png)
+
 
 `BuildApp` も長くなってきたら、**分割してもOK**🙆‍♀️
 ただしルールはこれ👇
@@ -171,6 +180,9 @@ graph TD
 
 ## ✅ Step3：Factory化（＝作り方だけを別メソッドにする）🏭✨
 
+![factory_method_conveyor](./picture/di_cs_study_014_factory_method_conveyor.png)
+
+
 「設定が絡む」「ちょっと複雑」なやつは **Factory化**が超効くよ😊
 
 ### よくある対象🎯
@@ -209,6 +221,9 @@ Factoryは「便利だから全部Factoryにしよ！」じゃなくて、
 
 ## ✅ Step4：引数地獄になったら「Factory化」より先にやること🧠
 
+![argument_hell_stop](./picture/di_cs_study_014_argument_hell_stop.png)
+
+
 ここ超大事📣✨
 コンストラクタ引数が増えてきたとき、ありがちな誤解👇
 
@@ -227,6 +242,9 @@ Factoryは「便利だから全部Factoryにしよ！」じゃなくて、
 ---
 
 ## アンチパターン注意⚠️（手動DIでもやりがち）
+
+![god_factory_monster](./picture/di_cs_study_014_god_factory_monster.png)
+
 
 ### 1) ❌ “God Factory” 🦖
 

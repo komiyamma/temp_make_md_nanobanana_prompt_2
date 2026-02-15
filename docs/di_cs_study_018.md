@@ -17,6 +17,9 @@
 
 ### 2) Resolveってなに？🧩🎣
 
+![resolve_fishing](./picture/di_cs_study_018_resolve_fishing.png)
+
+
 DIコンテナの世界では、
 
 * **登録（Register）**：`builder.Services.Add...` で「こう作ってね」を覚えさせる📝
@@ -96,6 +99,9 @@ public sealed class App(IGreeter greeter)
 
 ### 5) “やっちゃダメ”例：クラス内Resolve（Service Locator）🚫🕳️
 
+![service_locator_trap](./picture/di_cs_study_018_service_locator_trap.png)
+
+
 次みたいに、クラスが `IServiceProvider` を握って、必要になったら取り出す…は **超ありがちだけど危険**😵‍💫
 
 ```csharp
@@ -141,6 +147,9 @@ graph TD
 
 ### 6) 「でもScoped使うとき、どこでResolveするの？」🧺🤔
 
+![scoped_resolve_boundary](./picture/di_cs_study_018_scoped_resolve_boundary.png)
+
+
 いい質問〜！✨
 **Scopedは“スコープ境界”が必要**だから、Consoleだと自分でスコープを作ることがあるよ🧺
 
@@ -163,6 +172,9 @@ await app.RunAsync();
 
 ### 7) ついでに超重要⚠️：「BuildServiceProvider」を途中で呼ばないで！🙅‍♀️
 
+![build_provider_warning](./picture/di_cs_study_018_build_provider_warning.png)
+
+
 登録中に `services.BuildServiceProvider()` を呼んで「ちょっと取り出して確認…」みたいなの、やりがちなんだけど…
 ガイドラインで **避けてね**って明言されてるよ⚠️ ([Microsoft Learn][2])
 
@@ -176,6 +188,9 @@ await app.RunAsync();
 ---
 
 ### 8) 章末まとめ📌✨（この章の“暗記”はこれだけでOK！）
+
+![summary_checklist](./picture/di_cs_study_018_summary_checklist.png)
+
 
 **Resolveの3ルール**だよ〜🧁💕
 
