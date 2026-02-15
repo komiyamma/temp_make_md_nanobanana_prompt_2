@@ -12,6 +12,9 @@
 
 ## まず結論！DIって何？💡
 
+![di_definition_waiter](./picture/di_cs_study_006_di_definition_waiter.png)
+
+
 ![](./picture/di_cs_study_006_scissors_cut.png)
 
 
@@ -25,6 +28,9 @@ DI（依存性注入）は、ほんとにシンプルで…
 ---
 
 ## “よくある失敗”から入ろう😵‍💫（newが中にある）
+
+![bad_pattern_internal_factory](./picture/di_cs_study_006_bad_pattern_internal_factory.png)
+
 
 例えば、こんな「クラスの中で全部 new する」コード、見覚えあるかも…👀💦
 
@@ -96,6 +102,9 @@ classDiagram
 
 ### ✅ ステップ1：依存を“引数で受け取れる形”にする（入口を作る）🚪
 
+![step1_interface_door](./picture/di_cs_study_006_step1_interface_door.png)
+
+
 まず「差し替え口」を作る（前の章の interface の復習だね🧷）
 
 ```csharp
@@ -113,6 +122,9 @@ public interface IReportRepository
 ---
 
 ### ✅ ステップ2：クラスの中の `new` をやめて、受け取る（注入）💉
+
+![step2_injection_liquid](./picture/di_cs_study_006_step2_injection_liquid.png)
+
 
 `ReportService` が **「自分で作る」**のをやめて、**「渡される」**にするよ✨
 
@@ -144,6 +156,9 @@ public class ReportService
 ---
 
 ### ✅ ステップ3：外側（Program側）で組み立てて渡す📦➡️
+
+![step3_assembly_lego](./picture/di_cs_study_006_step3_assembly_lego.png)
+
 
 ![](./picture/di_cs_study_006_assembly_puzzle.png)
 
@@ -187,6 +202,9 @@ sequenceDiagram
 
 ## 「差し替えできる」ってこういうこと🔁✨
 
+![swapping_mechanism_cartridge](./picture/di_cs_study_006_swapping_mechanism_cartridge.png)
+
+
 例えばログを「何もしない版」に変えたいだけなら…
 
 ```csharp
@@ -212,6 +230,9 @@ service.Export();
 ---
 
 ## ここ大事！「newが悪」じゃないよ😌🍵
+
+![new_location_map](./picture/di_cs_study_006_new_location_map.png)
+
 
 DIって「new禁止」じゃなくて、
 

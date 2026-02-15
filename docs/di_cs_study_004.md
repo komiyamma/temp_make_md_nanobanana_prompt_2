@@ -16,6 +16,9 @@
 
 ## 今日のキーワード📌🌸
 
+![soc_sorting_laundry](./picture/di_cs_study_004_soc_sorting_laundry.png)
+
+
 * **SoC（Separation of Concerns）**：関心ごとを分けること🍱
 * **I/O（外部とのやりとり）**：Console / ファイル / DB / ネット / 時刻 / 乱数 など🌐🗄️⏰🎲
 * **純粋ロジック（内側）**：計算・ルール・判断（外に触らない）🧠✨
@@ -35,6 +38,9 @@
   * 例：割引計算、合計算出、判定（合格/不合格）…
 
 イメージはこんな感じ👇
+
+![logic_io_boundary_gate](./picture/di_cs_study_004_logic_io_boundary_gate.png)
+
 
 ```mermaid
 flowchart TD
@@ -56,6 +62,9 @@ flowchart TD
 ---
 
 ## “混ざってるコード” のつらさを体験😵‍💫💦（Before）
+
+![mixed_code_chef](./picture/di_cs_study_004_mixed_code_chef.png)
+
 
 題材：**学割＋クーポンの最終価格**を計算するミニアプリ🍔🎫
 
@@ -106,12 +115,18 @@ class Program
 
 ### ✅ ステップ1：色分けして境界を見つける🎨
 
+![step1_coloring_code](./picture/di_cs_study_004_step1_coloring_code.png)
+
+
 コメントで **I/O** と **Logic** を印つけるだけでも、超効果あるよ😊
 
 * `Console.ReadLine()` / `Console.WriteLine()` → **I/O**
 * `int.Parse` / `if` / `計算` → **ロジック寄り**（※Parseは境界側）
 
 ### ✅ ステップ2：ロジックを “別クラス” に引っこ抜く🧲💗
+
+![step2_extraction_gold](./picture/di_cs_study_004_step2_extraction_gold.png)
+
 
 ロジック側を「入力を受け取って結果を返す」形にするのがコツ✨
 
@@ -134,6 +149,9 @@ public static class PriceCalculator
 ```
 
 ### ✅ ステップ3：Mainは “外側（I/O）” に徹する🎤✨
+
+![step3_main_conductor](./picture/di_cs_study_004_step3_main_conductor.png)
+
 
 ```csharp
 using System;

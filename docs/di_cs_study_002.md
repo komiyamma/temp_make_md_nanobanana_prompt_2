@@ -12,6 +12,9 @@
 
 ## 1) まず結論：依存＝「そのクラスが頼ってる相手」🤝💡
 
+![dependency_definition_lean](./picture/di_cs_study_002_dependency_definition_lean.png)
+
+
 “依存”ってむずかしそうだけど、超ざっくり言うとこれだけ👇
 
 > **依存 = その子（クラス）が、自力だけではできなくて、誰かの力を借りてる相手**✨
@@ -29,6 +32,9 @@ Microsoftの公式ドキュメントでも「依存＝あるオブジェクト�
 
 ## 2) “依存”って2種類あると思うとラク🍰✨
 
+![dependency_types_boxes](./picture/di_cs_study_002_dependency_types_boxes.png)
+
+
 初心者さんがつまずきやすいので、ここは分けちゃおう😊
 
 ### A. 設計の話の「依存」🧩（今回の主役）
@@ -44,6 +50,9 @@ Microsoftの公式ドキュメントでも「依存＝あるオブジェクト�
 ---
 
 ## 3) 依存があると何が困るの？（まだDIの解決策は出さないよ😌）
+
+![dependency_pain_points](./picture/di_cs_study_002_dependency_pain_points.png)
+
 
 ![fragile_tower](./picture/di_cs_study_002_fragile_tower.png)
 
@@ -66,6 +75,9 @@ DIはこの「つらさ」を減らすテクニックで、.NETでも“DIはIoC
 
 ### よく出る依存マーカー（見つけやすいやつ）✅
 
+![dependency_markers_checklist](./picture/di_cs_study_002_dependency_markers_checklist.png)
+
+
 * `new` してる（その場で作ってる）🧱
 * `DateTime.Now` / `DateTime.UtcNow`（今の時刻）⏰
 * `Guid.NewGuid()` / `Random`（毎回変わる）🎲
@@ -82,6 +94,9 @@ DIはこの「つらさ」を減らすテクニックで、.NETでも“DIはIoC
 ---
 
 ## 5) ミニ例でやってみよ〜✍️😊「依存を列挙する」練習
+
+![analyzing_code_magnify](./picture/di_cs_study_002_analyzing_code_magnify.png)
+
 
 下のコード、**依存を探す**だけやってみよう（まだ直さない！）
 
@@ -128,6 +143,9 @@ graph TD
 
 > **依存は「クラスの外の事情」ほど、テストや変更を難しくしがち**🧪💦
 
+![external_internal_boundary](./picture/di_cs_study_002_external_internal_boundary.png)
+
+
 ---
 
 ## 6) 今日のメイン課題🎒✨「あなたの過去コードから依存3つ探す」
@@ -135,6 +153,9 @@ graph TD
 やることはシンプルだよ😊🌸
 
 ### 手順（Visual Studioで）🪟🔎
+
+![search_workflow](./picture/di_cs_study_002_search_workflow.png)
+
 
 1. 自分の過去プロジェクトを開く
 2. ざっくり次を検索（プロジェクト全体検索）
