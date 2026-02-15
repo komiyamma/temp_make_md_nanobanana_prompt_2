@@ -7,6 +7,8 @@
 
 ## 1) まず「DIコンテナ」って何？🧩
 
+![](./picture/di_ts_study_025_container_concept.png)
+
 * **手動DI**：自分で “new” の順番を考えて、必要な依存（deps）を渡して組み立てる🏗️
 * **DIコンテナ**：
 
@@ -74,11 +76,15 @@ DIコンテナって、入れた瞬間から
 
 ## コスト①：エラーが “実行時” に寄りがち😱
 
+![](./picture/di_ts_study_025_cost_runtime_error.png)
+
 TypeScriptって **型が実行時に消える**から、コンテナは
 トークンやメタデータに頼ることが多いの。
 その結果「動かしてみたら失敗💥」が起きやすい⚠️
 
 ## コスト②：デコレータ系は “設定・ビルド” が増える🧩
+
+![](./picture/di_ts_study_025_decorator_complexity.png)
 
 デコレータ＋メタデータを使うDIは、だいたい
 “emitDecoratorMetadata” と “reflect-metadata” 系が絡むことが多いよ🧬（※ライブラリ次第）
@@ -97,6 +103,8 @@ TypeScript 5.0から **新しい（Stage 3）デコレータ**に対応したけ
 ---
 
 ## 5) 導入判断チェック（点数で決めるやつ）📝✨
+
+![](./picture/di_ts_study_025_score_check.png)
 
 各項目、当てはまったら **+1点**👇
 
@@ -150,6 +158,8 @@ flowchart TD
 
 ## 6) “導入しない” 場合に勝つ方法（手動DIを強くする）💪🌸
 
+![](./picture/di_ts_study_025_manual_di_strength.png)
+
 ## ✅ ルール1：Composition Rootにnewを集める📍
 
 * “使う場所” ではnewしない
@@ -168,6 +178,8 @@ flowchart TD
 ---
 
 ## 7) “導入する” と決めたら守ること（超重要3ルール）📜⚠️
+
+![](./picture/di_ts_study_025_container_rules.png)
 
 ## ルールA：container.resolve は “端っこだけ” 🧊
 

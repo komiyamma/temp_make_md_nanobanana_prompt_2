@@ -15,6 +15,8 @@
 
 ## 1) なんで「デコレータ無し」流派なの？🤔💡
 
+![](./picture/di_ts_study_028_no_decorator_rule.png)
+
 TypeScriptは“型が実行時に消える”ので、**型だけで自動注入**するのが難しい…って話が根っこにあるよ👻⚠️（＝実行時にはinterfaceが存在しない）([DEV Community][1])
 
 デコレータ系DI（例：tsyringe / inversify）は、実行時メタデータ（reflect-metadata等）やデコレータで情報を集めて注入する流れが多いのね🪄
@@ -37,6 +39,8 @@ TypeScriptは“型が実行時に消える”ので、**型だけで自動注�
 ここ超大事！これ守るだけで事故が激減するよ🧸💖
 
 ## ✅ ルールA：コンテナは **Composition Rootでだけ** 使う📍
+
+![](./picture/di_ts_study_028_composition_root_guard.png)
 
 * appの奥（ドメイン / ユースケース）から `container.resolve()` を呼ばない🙅‍♀️
 * 依存は **引数 or コンストラクタで受け取る**💉
@@ -61,6 +65,8 @@ graph TD
 ```
 
 ## ✅ ルールB：登録は “Factory中心” にする🏭
+
+![](./picture/di_ts_study_028_factory_center.png)
 
 * `new` を隠す（でも隠しすぎない）
 * 依存関係グラフが追いやすい👣
@@ -93,6 +99,8 @@ export function createToken<T>(description: string): Token<T> {
 ---
 
 ## 3-2) Provider（作り方）とLifetime（寿命）を定義🧪
+
+![](./picture/di_ts_study_028_lifetime_types.png)
 
 ```ts
 // container.ts
@@ -395,6 +403,8 @@ export async function handleRequest(root: Container, requestId: string) {
 ## 8) 絶対に踏みたくない地雷3つ💣😭（第28章の“守護神”）
 
 ## 💣地雷①：Service Locator化（どこでもresolveし始める）
+
+![](./picture/di_ts_study_028_service_locator_trap.png)
 
 * 症状：ユースケース内で `container.resolve()` してる
 * 結果：依存が見えなくなって、テストも読解も地獄🕳️

@@ -8,6 +8,8 @@ AI：Copilot / Codex等が使える前提🤖💡
 
 ## 第1章：DIPってなに？まずは超ざっくり掴む🧠✨
 
+![](./picture/dip_cs_index_concept.png)
+
 * 「依存」ってどういう意味？🔗
 * DIPが解決したい“怖い変更”😱
 * 今日できるようになること（ゴール）🎯
@@ -15,6 +17,8 @@ AI：Copilot / Codex等が使える前提🤖💡
 ---
 
 ## 第2章：現場で起きがちな“変更地獄”を見よう🔥😵
+
+![](./picture/dip_cs_index_change_hell.png)
 
 * DBやAPIが変わったらどうなる？🗄️➡️🌐
 * “影響範囲が読めない”状態とは？🌀
@@ -32,6 +36,8 @@ AI：Copilot / Codex等が使える前提🤖💡
 
 ## 第4章：DIPの目的は「上位（大事）を守る」🛡️❤️
 
+![](./picture/dip_cs_index_protect_logic.png)
+
 * 上位＝業務ルール（守りたい）🏰
 * 下位＝DB/HTTP/ファイル（変わりやすい）🌊
 * 依存が逆だと何が壊れる？💥
@@ -47,6 +53,8 @@ AI：Copilot / Codex等が使える前提🤖💡
 ---
 
 ## 第6章：DIPの定義をやさしく分解②（依存の逆転）🙃🔁
+
+![](./picture/dip_cs_index_inversion.png)
 
 * 逆転前：業務 → DB 😵
 * 逆転後：業務 → interface ← DB 😍
@@ -71,6 +79,8 @@ AI：Copilot / Codex等が使える前提🤖💡
 ---
 
 ## 第9章：interface入門（DIPの道具を準備）🧰🌟
+
+![](./picture/dip_cs_index_interface_tool.png)
 
 * interface＝「できることの約束」🤝
 * 例：`IUserRepository` の責務を決める📦
@@ -111,6 +121,8 @@ AI：Copilot / Codex等が使える前提🤖💡
 ---
 
 ## 第14章：DIPとDIの関係②（コンストラクタ注入から）💉🏗️
+
+![](./picture/dip_cs_index_constructor_injection.png)
 
 * コンストラクタ注入の基本形🧱
 * “newはどこでするの？”問題の答え📍

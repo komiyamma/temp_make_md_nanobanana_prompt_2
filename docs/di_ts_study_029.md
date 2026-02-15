@@ -7,6 +7,8 @@
 
 ## 1) デコレータDIって結局なに？🪄💉
 
+![](./picture/di_ts_study_029_decorator_mechanism.png)
+
 ざっくり言うと👇
 **クラスにデコレータ（例：`@Injectable()`）を付けて、DIコンテナが“自動で組み立て”してくれる**世界だよ〜🤖✨
 
@@ -54,6 +56,8 @@ import "reflect-metadata";
 
 ## 3) いちばんハマる所：interfaceは注入できない（= 実行時に消える）👻🫠
 
+![](./picture/di_ts_study_029_ghost_interface.png)
+
 デコレータDIって「コンストラクタの型を見て自動解決してくれる」感じに見えるんだけど…
 **interface / type は実行時に存在しない**から、そのままだと注入できないの🥲
 
@@ -78,6 +82,8 @@ Nestのエラーでも、まさにこう言ってるよ👇
 ---
 
 ## ルール②：interfaceを注入したいなら「トークン注入」にする🔑✨
+
+![](./picture/di_ts_study_029_token_injection.png)
 
 トークンは **`Symbol`** か **一意な文字列** にして、専用ファイルにまとめるのがおすすめ🧼
 
@@ -139,6 +145,8 @@ export class AppModule {}
 
 ## ルール⑤：Moduleの境界（exports/imports）をちゃんと守る🧱✨
 
+![](./picture/di_ts_study_029_module_boundary.png)
+
 DIエラーの王道はこれ👇
 「その provider、今の module から見えてないよ！」問題😭
 NestのFAQも、**providers / exports / imports** をまず確認してねって言ってるよ📌 ([docs.nestjs.com][2])
@@ -153,6 +161,8 @@ NestのFAQも、**providers / exports / imports** をまず確認してねって
 ---
 
 ## ルール⑦：循環依存は “直す” が基本。`forwardRef` は最終手段🧨
+
+![](./picture/di_ts_study_029_circular_ref.png)
 
 循環依存はできれば避けるのが基本。でも、どうしてもなら `forwardRef()` で回避できるよ、って公式にもある😌
 ただし「生成順が不定」などの注意もあるから、頼りすぎ注意⚠️ ([docs.nestjs.com][3])

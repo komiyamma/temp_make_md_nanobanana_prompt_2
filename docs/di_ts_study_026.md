@@ -88,12 +88,16 @@ sequenceDiagram
 
 ## ステップ1：token（鍵🔑）を作る
 
+![](./picture/di_ts_study_026_symbol_key.png)
+
 TypeScriptは実行時に`interface`が消えるから👻、「型そのものを鍵にする」のが難しいのね。
 そこで今日は **Symbolを鍵🔑にする**よ！（衝突しにくくて安全✨）
 
 ---
 
 ## ステップ2：コンテナ本体を実装しよう🛠️✨
+
+![](./picture/di_ts_study_026_register_resolve_flow.png)
 
 ポイントはこれ👇
 
@@ -165,6 +169,8 @@ export class Container {
   }
 }
 ```
+
+![](./picture/di_ts_study_026_singleton_vs_transient.png)
 
 ```mermaid
 classDiagram
@@ -241,6 +247,8 @@ export class Greeter {
 
 ## ステップ4：Composition Root（組み立て）を書く📍🚀
 
+![](./picture/di_ts_study_026_composition_root.png)
+
 「どこでnewするの？」問題はここで解決✨
 **登録と解決は“起動ファイル側”に寄せる**のがコツだよ😊
 
@@ -308,6 +316,8 @@ c.register(TOKENS.greeter, (cc) => {
 ---
 
 ## ステップ5：テストで差し替え🧪💖（ここがDIのご褒美🎁）
+
+![](./picture/di_ts_study_026_test_substitution.png)
 
 ClockをFakeにして、時間が固定されるテストを作るよ⏰✅
 
