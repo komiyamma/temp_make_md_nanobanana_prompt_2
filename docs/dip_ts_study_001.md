@@ -15,6 +15,9 @@
 
 ## 2) DIPの一言まとめ（超だいじ）💡🧠
 
+![dip_summary_shield](./picture/dip_ts_study_001_dip_summary_shield.png)
+
+
 **DIP：上位（やりたいこと・ルール）が、下位（道具・詳細）に振り回されないようにする考え方**🙅‍♀️✨
 
 もうちょい“ちゃんとした言い方”だと、DIPには有名な2つのルールがあるよ📜
@@ -43,6 +46,9 @@
 ---
 
 ## 4) DIPなしの世界：上位が下位にベッタリ😵‍💫🧷
+
+![no_dip_coupling](./picture/dip_ts_study_001_no_dip_coupling.png)
+
 
 たとえば「注文して支払いする」みたいな上位の処理が、決済の実装を直に知ってると…👇
 
@@ -83,6 +89,9 @@ graph TD
 ---
 
 ## 5) DIPの世界：上位は“約束（抽象）”だけを見る🤝🧩
+
+![with_dip_socket](./picture/dip_ts_study_001_with_dip_socket.png)
+
 
 DIPでは、上位（Checkout）は「決済のやり方」じゃなくて、
 **“決済してね”という約束（interface）**だけ見るようにするよ✨
@@ -142,6 +151,9 @@ class PayPayPayment implements PaymentGateway {
 
 ## 7) ここでの“上位/下位”の感覚（ふんわり予告）🧠🪜
 
+![high_low_metaphor](./picture/dip_ts_study_001_high_low_metaphor.png)
+
+
 * **上位**：アプリがやりたいこと・ルール（例：注文を確定する）📦✨
 * **下位**：外部API・DB・ファイル・時間などの道具（例：決済サービス）🧰🌐
 
@@ -151,6 +163,9 @@ class PayPayPayment implements PaymentGateway {
 ---
 
 ## 8) DIPとDIは別モノだよ（ここ大事）⚠️🤝
+
+![dip_vs_di_compass](./picture/dip_ts_study_001_dip_vs_di_compass.png)
+
 
 * **DIP**：設計のルール（依存の向きをどうするか）🧭
 * **DI**：実装テク（依存を外から渡すやり方）💉

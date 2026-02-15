@@ -46,6 +46,9 @@
 
 ## 15.3 まず“中心”を作る：Domain（User）👤✨
 
+![domain_user](./picture/dip_cs_study_015_domain_user.png)
+
+
 `Domain/User.cs` を作成👇
 
 ```csharp
@@ -61,6 +64,9 @@ public sealed record User(
 ---
 
 ## 15.4 次に“抽象”を作る：Application（IUserRepository）☁️🤝
+
+![interface_port](./picture/dip_cs_study_015_interface_port.png)
+
 
 `Application/IUserRepository.cs` を作成👇
 ここが **「上位が頼っていい窓口」** だよ🪟✨
@@ -81,6 +87,9 @@ public interface IUserRepository
 ---
 
 ## 15.5 “業務ロジック”を書く：UserRegistrationService🛡️❤️
+
+![service_logic](./picture/dip_cs_study_015_service_logic.png)
+
 
 `Application/UserRegistrationService.cs` を作成👇
 ポイントはこれ👇
@@ -127,6 +136,9 @@ public sealed class UserRegistrationService
 ---
 
 ## 15.6 実装その①：まずはInMemory（擬似DB）で動かす🧠✨
+
+![inmemory_repo](./picture/dip_cs_study_015_inmemory_repo.png)
+
 
 いきなりSQLiteに行くと“DB準備”で疲れちゃうから、最初はメモリ版で成功体験しよ〜🎉
 
@@ -216,6 +228,9 @@ Visual Studioなら
   （CLI派なら `dotnet add package Microsoft.Data.Sqlite` でもOK） ([Microsoft Learn][7])
 
 ### ② SQLite実装を書く（テーブルも自動作成）🧱✨
+
+![sqlite_repo](./picture/dip_cs_study_015_sqlite_repo.png)
+
 
 `Infrastructure/SqliteUserRepository.cs` を作成👇
 
@@ -398,6 +413,9 @@ foreach (var u in users)
 ---
 
 ## 15.10 デバッグで“依存の流れ”を追う🐞👀✨（ここ超たのしい）
+
+![debug_flow](./picture/dip_cs_study_015_debug_flow.png)
+
 
 ### ブレークポイントおすすめ場所📍
 

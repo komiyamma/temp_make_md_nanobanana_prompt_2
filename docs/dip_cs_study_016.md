@@ -15,6 +15,9 @@
 
 ## 2) まず「最新版」を入れて確認しよ🧰✨
 
+![tech_stack](./picture/dip_cs_study_016_tech_stack.png)
+
+
 現時点の最新版は **.NET 10.0.2（SDK 10.0.102 / C# 14.0）**だよ📦✨（2026-01-13リリース） ([Microsoft][1])
 
 ### ✅ SDKが入ってるかチェック（ターミナル）
@@ -73,6 +76,9 @@ dotnet sln add Dip.App/Dip.App.csproj
 
 ### ✅ 参照関係（ここがDIPのキモ！）🔁🧠
 
+![dependency_graph](./picture/dip_cs_study_016_dependency_graph.png)
+
+
 * `Dip.Core` は **どこにも依存しない**（最強の上位）🛡️
 * `Dip.Infrastructure` は `Dip.Core` に依存する（下位→抽象へ）⬅️
 * `Dip.App` は両方参照して“組み立てる”（newする場所）🧩
@@ -105,6 +111,9 @@ graph TD
 ## 5) コードを書くよ✍️✨（最小DIPサンプル）
 
 ### (1) Dip.Core：抽象（interface）と業務（Service）💎
+
+![core_layer](./picture/dip_cs_study_016_core_layer.png)
+
 
 **Dip.Core/User.cs**
 
@@ -152,6 +161,9 @@ public sealed class UserService
 
 ### (2) Dip.Infrastructure：具体（InMemory実装）🧱
 
+![infra_layer](./picture/dip_cs_study_016_infra_layer.png)
+
+
 **Dip.Infrastructure/InMemoryUserRepository.cs**
 
 ```csharp
@@ -175,6 +187,9 @@ public sealed class InMemoryUserRepository : IUserRepository
 ---
 
 ### (3) Dip.App：組み立て（newするのはここだけ）🚪✨
+
+![app_composition](./picture/dip_cs_study_016_app_composition.png)
+
 
 **Dip.App/Program.cs**
 
@@ -201,6 +216,9 @@ dotnet run --project Dip.App/Dip.App.csproj
 ---
 
 ## 7) VS Codeでデバッグする🐞🪄（ここが楽しい！）
+
+![debug_session](./picture/dip_cs_study_016_debug_session.png)
+
 
 ### ✅ まずやること
 

@@ -2,6 +2,9 @@
 
 ## 第1章：はじめに｜DIPってどんな子？🤝🌱
 
+![dip_concept](./picture/dip_ts_index_dip_concept.png)
+
+
 * この教材でできるようになること🎯
 * DIPの一言まとめ（上位が下位に振り回されない）🙅‍♀️
 * ざっくり例：支払い方法変更（クレカ→PayPay等）でも中身を守る💳➡️📱
@@ -9,6 +12,9 @@
 ---
 
 ## 第2章：そもそも「依存」って何？🔗👀✨
+
+![dependency_chain](./picture/dip_ts_index_dependency_chain.png)
+
 
 * import / new / 直接呼び出しが作る依存🧷
 * 依存が増えると何が困る？（修正が怖い・テストがつらい）😢🧪
@@ -18,6 +24,9 @@
 
 ## 第3章：設計の超ミニ前提｜“上位”と“下位”の感覚🧠🪜✨
 
+![high_low_level](./picture/dip_ts_index_high_low_level.png)
+
+
 * 上位：やりたいこと（業務ルール）💡
 * 下位：道具（DB/HTTP/ファイル/時間）🧰
 * “変更されやすいのは下位”あるある🌪️
@@ -25,6 +34,9 @@
 ---
 
 ## 第4章：DIPが必要になる「あるある地獄」🔥😵
+
+![dip_hell](./picture/dip_ts_index_dip_hell.png)
+
 
 * DB変更で業務ロジックが壊れる🗄️💥
 * API仕様変更でアプリ全体が巻き添え🌐💥
@@ -41,6 +53,9 @@
 ---
 
 ## 第6章：DIPの定義をやさしく（2つのルール）📜✨
+
+![dip_rules](./picture/dip_ts_index_dip_rules.png)
+
 
 * ルール①：上位モジュールは下位モジュールに依存しない🙅‍♀️
 * ルール②：どっちも“抽象”に依存する🧩
@@ -74,6 +89,9 @@
 
 ## 第10章：依存の向きを逆転させる（図で理解）🔄📈✨
 
+![invert_arrow](./picture/dip_ts_index_invert_arrow.png)
+
+
 * 依存の矢印はどこに向ける？🏹
 * 「内側＝方針」「外側＝詳細」🏠🌍
 * よくある配置ミス（抽象が外側にいる等）😵‍💫
@@ -89,6 +107,9 @@
 ---
 
 ## 第12章：DIってなに？DIPとの関係を整理🤝💉✨
+
+![dip_vs_di](./picture/dip_ts_index_dip_vs_di.png)
+
 
 * DIP：設計ルール（依存の向き）🧭
 * DI：実装テク（依存を外から渡す）🧺

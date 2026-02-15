@@ -23,6 +23,9 @@ AIを使うと速いけど、**事故りやすいポイント**もあるよ〜�
 
 ### ルール①：お願いは「小さく」出す🧩
 
+![safety_rules](./picture/dip_cs_study_017_safety_rules.png)
+
+
 * いきなり「全部DIPにして！」は危険⚠️
 * 「このクラスだけ」「このメソッドだけ」「この依存だけ」みたいに小さく切る✂️✨
 
@@ -81,6 +84,9 @@ Visual Studioでは Copilot Chat を開いて質問できるよ✨（メニュ�
 
 ### ② 右クリックの「Copilot Actions」が神😇✨
 
+![copilot_actions](./picture/dip_cs_study_017_copilot_actions.png)
+
+
 Visual Studio 2026 では、エディタ右クリックのメニューから **Explain / Optimize Selection / Generate Comments / Generate Tests / Add to Chat** みたいな“即実行”が使えるよ🪄✨([Microsoft Learn][2])
 
 * Explain：このクラス/選択範囲を説明して〜📚
@@ -117,6 +123,9 @@ Codex拡張には /review（変更レビュー）や /cloud（クラウド実行
 
 ## 17-6. AIに「interface候補」を複数案出させる🧠✨
 
+![interface_candidates](./picture/dip_cs_study_017_interface_candidates.png)
+
+
 DIPで一番悩むのが「どんなinterface切ればいいの？」問題だよね🥹
 AIに**複数案**を出させると、判断がラクになるよ〜！
 
@@ -151,6 +160,9 @@ DIP違反って、だいたいこういう形で潜むよ👇😈
 
 ### 違反検出プロンプト例🕵️‍♀️📝
 
+![violation_detective](./picture/dip_cs_study_017_violation_detective.png)
+
+
 > このプロジェクト（またはコード）で、DIP違反になりそうな点を列挙して。
 > 「上位層が下位層の具体に依存している箇所」を優先して、
 >
@@ -162,6 +174,9 @@ DIP違反って、だいたいこういう形で潜むよ👇😈
 ---
 
 ## 17-8. AIに「Fake実装＆テスト」を作らせる🧪✨
+
+![fake_block](./picture/dip_cs_study_017_fake_block.png)
+
 
 DIPの気持ちよさって、**Fakeに差し替えてテストが一瞬で通る**ところなの🥹💖
 
@@ -213,6 +228,9 @@ DIPの「依存」って“コードの依存”だけじゃなくて、ライ�
 ---
 
 ## 17-11. 最終まとめ：DIPを入れる順番（AI時代の鉄板）🚪🌟
+
+![implementation_steps](./picture/dip_cs_study_017_implementation_steps.png)
+
 
 最後に、AIを使うときの最強手順を置いとくね😊✨
 
