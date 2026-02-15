@@ -88,6 +88,8 @@ public sealed class UserService
 
 ## 3. Step1：Repositoryの「やること」を言語化しよう🗣️📦
 
+![repo_job_desc](./picture/dip_cs_study_010_repo_job_desc.png)
+
 ここ、めちゃ大事！🌟
 Repositoryは「DBを触るクラス」じゃなくて、**業務から見た“欲しい能力”**を定義するのがコツだよ🤝
 
@@ -99,6 +101,8 @@ Repositoryは「DBを触るクラス」じゃなくて、**業務から見た“
 ---
 
 ## 4. Step2：interface（抽象）を切り出す☁️✨
+
+![interface_extraction](./picture/dip_cs_study_010_interface_extraction.png)
 
 `IUserRepository` を作るよ😊
 “上位（UserService）が知るのはここまで” がゴール！
@@ -125,6 +129,8 @@ public sealed record User(Guid Id, string Email);
 ---
 
 ## 5. Step3：DB実装（具体）を `SqlUserRepository` として外へ🚪🗄️
+
+![implementation_exile](./picture/dip_cs_study_010_implementation_exile.png)
 
 ここが「外側の都合」だよ〜🌊
 SQL ServerでもSQLiteでも、APIでもファイルでも、**ここに押し込む**イメージ！
@@ -183,6 +189,8 @@ public sealed class SqlUserRepository : IUserRepository
 
 ## 6. Step4：UserServiceを“抽象だけ”に寄せる🛡️❤️
 
+![service_shield](./picture/dip_cs_study_010_service_shield.png)
+
 さっきまでDB直結だった `UserService` を、`IUserRepository` だけ知ってる状態にするよ！
 
 ```csharp
@@ -213,6 +221,8 @@ public sealed class UserService
 ---
 
 ## 7. Step5：「new」を1箇所に集める（とりあえずProgramだけ）🧲✨
+
+![new_magnet](./picture/dip_cs_study_010_new_magnet.png)
 
 まだDIコンテナの話は“次以降”でいいよ🙂
 この章では、**newを1箇所に閉じ込める**だけで十分えらい！💯
@@ -257,6 +267,8 @@ DBが変わっても、直すのは `SqlUserRepository` 側だけになりやす
 ➡️ **“今回の業務が必要な分だけ”**でOK👌✨
 
 ### ❷ Repositoryが“何でも屋”になる
+
+![general_store_repo](./picture/dip_cs_study_010_general_store_repo.png)
 
 ユーザー以外のSQLも突っ込み始めるとカオス🌀
 ➡️ **責務で分ける**（UserならUserだけ）📦

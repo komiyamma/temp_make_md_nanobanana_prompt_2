@@ -1,5 +1,7 @@
 # 第12章：DIPとSoC（関心の分離）で整理が加速🧩🔥
 
+![dip_guardian](./picture/dip_cs_study_012_dip_guardian.png)
+
 この章はひとことで言うと、**「DIPを“境界線のガードマン”にして、コードの担当エリア（関心）をきれいに分けようね」**って回です👮‍♀️✨
 SoC（Separation of Concerns＝関心の分離）は、アプリが大きくなるほど効いてきます💪🌱
 （Microsoftの設計ガイドでも、責務（concern）で分けると整理しやすくなるよ〜って話が出てきます📚）([Microsoft Learn][1])
@@ -7,6 +9,8 @@ SoC（Separation of Concerns＝関心の分離）は、アプリが大きくな�
 ---
 
 ## 12.1 まずSoCってなに？🧠🌷
+
+![soc_baskets](./picture/dip_cs_study_012_soc_baskets.png)
 
 SoCは、「**種類の違う仕事は混ぜない**」っていう考え方だよ🙅‍♀️🌀
 代表例だとこんな感じ👇
@@ -28,6 +32,8 @@ SoCは、こういう**“変更が伝染する事故”**を減らすための�
 
 ## 12.2 SoCだけだと“混ざりやすい”問題が残る😵‍💫➡️🧱
 
+![leaking_infrastructure](./picture/dip_cs_study_012_leaking_infrastructure.png)
+
 「よし！UI/業務/インフラを分けるぞ！」ってフォルダ分けしても…
 
 * 業務層の中で `new SqlUserRepository()` してしまう
@@ -43,6 +49,8 @@ DIPは「関心の分離」を**ルールとして守らせる**武器になり�
 ---
 
 ## 12.3 “中心”と“外側”を決めよう🎯🧅
+
+![onion_architecture](./picture/dip_cs_study_012_onion_architecture.png)
 
 SoCで整理するときの超大事なコツはこれ👇
 
@@ -62,6 +70,8 @@ SoCで整理するときの超大事なコツはこれ👇
 
 ## 12.4 DIPで“境界線”を作る✍️🚧
 
+![dip_border_control](./picture/dip_cs_study_012_dip_border_control.png)
+
 DIPの基本ムーブはこれ👇
 
 1. **中心側が「欲しい能力」を interface で宣言する**（抽象）☁️
@@ -76,6 +86,8 @@ SoCの「混ぜない」を、**依存関係の方向**で守れるようにな�
 ---
 
 ## 12.5 例：混ざってるコード（SoCが崩壊）🧨😵
+
+![messy_kitchen](./picture/dip_cs_study_012_messy_kitchen.png)
 
 ありがちな“全部入り”の例（イメージ）👇
 
