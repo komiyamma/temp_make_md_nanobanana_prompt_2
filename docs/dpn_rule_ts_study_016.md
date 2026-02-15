@@ -204,6 +204,9 @@ npx @eslint/config-inspector
 
 ブラウザで設定の“最終結果”を見れるよ👀💓([ESLint][9])
 
+![config_inspector_ui](./picture/dpn_rule_ts_study_016_config_inspector_ui.png)
+
+
 ---
 
 ## 16-6 依存を“見える化”する📈🗺️（dependency-cruiser / madge）
@@ -270,6 +273,9 @@ dot -Tsvg docs/deps.dot -o docs/deps.svg
 ```
 
 `docs/deps.svg` を開けば、依存が“絵”になるよ〜！📈😍
+
+![dependency_graph_viz](./picture/dpn_rule_ts_study_016_dependency_graph_viz.png)
+
 
 ---
 
@@ -342,6 +348,9 @@ jobs:
 
 ## 16-9 PRテンプレ（レビュー観点）💌✅
 
+![pr_checklist_template](./picture/dpn_rule_ts_study_016_pr_checklist_template.png)
+
+
 `.github/pull_request_template.md` に置いちゃおう📌
 
 ```md
@@ -364,6 +373,9 @@ jobs:
 ## 16-10 AIの使いどころ🤖🪄（この章は相性いい！）
 
 ### 境界ルール作りをAIに手伝ってもらう🧱
+
+![ai_boundary_help](./picture/dpn_rule_ts_study_016_ai_boundary_help.png)
+
 
 * 「このフォルダ構成に合わせて boundaries の element-types ルール案を作って。domain→adaptersは禁止で」
 * 「domain/app/adapters/contracts/shared の依存許可表を作って」

@@ -114,6 +114,9 @@ public static int CalcShippingFee(int total)
 
 ## 5-4. 「switch式・パターンマッチ」で分岐を読みやすくする🧠✨
 
+![switch_expression_table](./picture/dry_cs_study_005_switch_expression_table.png)
+
+
 ![dry_cs_study_005_railway_switch](./picture/dry_cs_study_005_railway_switch.png)
 
 
@@ -163,6 +166,9 @@ public static int CalcShippingFee(int total)
 
 ## 5-5. “条件と処理”をセットで近づける📍✨（散らさないコツ）
 
+![rule_list_collection](./picture/dry_cs_study_005_rule_list_collection.png)
+
+
 同じ条件が増える理由って、だいたいこれ👇
 **条件だけ別の場所に書かれて、処理も別の場所に書かれて、結果として何回も出てくる**😵‍💫
 
@@ -194,6 +200,9 @@ public static int CalcShippingFee(int total)
 ---
 
 ## 5-6. 演習：同じifが3回出るコードを「1回だけ」にする🎯🛠️
+
+![naming_conditions](./picture/dry_cs_study_005_naming_conditions.png)
+
 
 ### 🎮お題：送料条件が散ってる！
 
@@ -275,6 +284,9 @@ public static class Checkout
 ---
 
 ## 5-7. Copilot / Codex に頼むときのコツ🤖📝（丸投げ禁止だよ⚠️）
+
+![ai_logic_check](./picture/dry_cs_study_005_ai_logic_check.png)
+
 
 ### ✅おすすめプロンプト例
 

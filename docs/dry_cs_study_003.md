@@ -139,6 +139,9 @@ public static class Checkout
 
 ## 7) ステップ2：「違いだけ引数化」🧩✨（DRYが一気に進む）
 
+![argument_extraction](./picture/dry_cs_study_003_argument_extraction.png)
+
+
 今の2メソッド、まだ似てるよね？👀
 違うのは **割引の有無** だけ！
 
@@ -226,6 +229,9 @@ public static int CalcSomething(int x)
 
 ## 9) 命名のコツ 📛💡（ここで差がつく！）
 
+![naming_importance](./picture/dry_cs_study_003_naming_importance.png)
+
+
 メソッド抽出で超大事なのが **名前**！😺✨
 「何をしてるか」が名前で伝わると、コードが一気に読みやすくなるよ〜📖💕
 
@@ -239,6 +245,9 @@ public static int CalcSomething(int x)
 ---
 
 ## 10) AI活用（Copilot / Codex）🤖💖：使い方が上手い人になる！
+
+![ai_naming_proposal](./picture/dry_cs_study_003_ai_naming_proposal.png)
+
 
 AIはめちゃ便利だけど、**最後に読むのは自分**だよ〜😌🧠✨
 
@@ -260,6 +269,9 @@ AIはめちゃ便利だけど、**最後に読むのは自分**だよ〜😌🧠
 ---
 
 ## 11) 章末ミニチェック（できたら合格💮）😆✨
+
+![verify_behavior](./picture/dry_cs_study_003_verify_behavior.png)
+
 
 * [ ] 重複してる数行を選んで Extract Method できる ✂️
 * [ ] “違いだけ引数” を言葉にして、引数化できる 🧩

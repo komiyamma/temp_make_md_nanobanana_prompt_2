@@ -162,6 +162,9 @@ public static class Checkout
 
 ## 7) Step2：設定ファイルに出す（appsettings + Optionsパターン）⚙️📦✨
 
+![options_pattern_flow](./picture/dry_cs_study_004_options_pattern_flow.png)
+
+
 .NET は「設定をどこから読むか」を柔軟に差し替えできる仕組みが用意されてるよ〜📚 ([Microsoft Learn][1])
 そして「設定を型で受け取る」王道が **Options パターン**だよ😊 ([Microsoft Learn][4])
 
@@ -255,6 +258,9 @@ flowchart LR
 
 ## 8) じゃあ“秘密情報”はどうするの？（ついでに超重要）🔐😳
 
+![user_secrets_vault](./picture/dry_cs_study_004_user_secrets_vault.png)
+
+
 APIキーとかパスワードを appsettings に書くのは危険だよ〜💦
 開発中なら **User Secrets** が定番！ってMicrosoftがちゃんと言ってる🧠✨ ([Microsoft Learn][5])
 
@@ -267,6 +273,9 @@ dotnet user-secrets init
 ---
 
 ## 9) ルールの置き場所：定数にしない方がいい“決まり”がある 📜🧠
+
+![policy_class_book](./picture/dry_cs_study_004_policy_class_book.png)
+
 
 「割引率」「送料無料条件」みたいなやつは、実は **“値”というより“ルール”**なのね。
 
@@ -336,6 +345,9 @@ public sealed class ShippingPolicy
 ---
 
 ## 12) Copilot / AIの使い方（この章向け）🤖💡
+
+![ai_const_proposal](./picture/dry_cs_study_004_ai_const_proposal.png)
+
 
 おすすめプロンプト例（そのままコピペでOK）👇😆✨
 
