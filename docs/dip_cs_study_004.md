@@ -15,6 +15,9 @@
 
 ## 1) まず「上位」と「下位」ってなに？🏰🌊
 
+![castle_cliff](./picture/dip_cs_study_004_castle_cliff.png)
+
+
 ### ✅ 上位（大事）＝“業務ルール”や“価値そのもの”🏰❤️
 
 たとえばこんなやつ👇
@@ -61,6 +64,9 @@ DIPの定義としてよく引用されるのはこれ👇
 ---
 
 ## 3) 依存が逆だと何が壊れるの？💥😱（ありがちな地獄）
+
+![dragged_down](./picture/dip_cs_study_004_dragged_down.png)
+
 
 ### 😈 悪い形：業務がDB直結（上位 → 下位）
 
@@ -170,6 +176,9 @@ graph TD
 
 ## 6) ミニクイズ📝😄（上位？下位？）
 
+![quiz_show](./picture/dip_cs_study_004_quiz_show.png)
+
+
 次のうち「上位（守りたい）」っぽいのはどれ？（複数あり）👇
 
 1. 「購入金額が1万円以上なら送料無料」🚚
@@ -183,6 +192,9 @@ graph TD
 ---
 
 ## 7) 章末演習🧠✍️（自分のアプリでやってみよ）
+
+![sorting_hat](./picture/dip_cs_study_004_sorting_hat.png)
+
 
 あなたの作ってる（or 想像の）アプリでOK！
 次をメモしてみてね📝💕

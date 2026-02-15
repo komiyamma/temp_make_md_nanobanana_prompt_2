@@ -29,6 +29,9 @@
 
 ## 2) 依存が生まれる「よくある5パターン」🧷✨
 
+![detective_board](./picture/dip_cs_study_007_detective_board.png)
+
+
 ### ① 型名を書いたら、だいたい依存！📝➡️
 
 * 変数の型
@@ -134,6 +137,9 @@ flowchart LR
 
 ## 4) 例題で筋トレ💪😄（矢印を描こう）
 
+![arrow_weights](./picture/dip_cs_study_007_arrow_weights.png)
+
+
 ### 例題1：new 直書き（よくある）😈
 
 ```csharp
@@ -199,6 +205,9 @@ public class SqlUserRepository : IUserRepository
 
 ## 5) よくある混乱ポイント（ひっかけ集）⚠️😆
 
+![confusing_signpost](./picture/dip_cs_study_007_confusing_signpost.png)
+
+
 ### ① `using` がある＝依存？🤔
 
 `using Xxx;` は「名前解決を楽にする」だけで、**それ単体だと依存の本体じゃない**ことも多いよ🙂
@@ -230,6 +239,9 @@ Type.GetType("SqlUserRepository");
 ---
 
 ## 6) 小テスト📝😄（答え付き！）
+
+![exam_paper](./picture/dip_cs_study_007_exam_paper.png)
+
 
 ### Q1️⃣
 
@@ -294,6 +306,9 @@ public class A
 ---
 
 ## 7) IDEで「依存の矢印」を秒速で見つける👀⚡
+
+![xray_vision](./picture/dip_cs_study_007_xray_vision.png)
+
 
 ### Visual Studio：これだけ覚えればOK🛠️✨
 
