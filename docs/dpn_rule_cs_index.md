@@ -2,6 +2,9 @@
 
 ## 第1章 依存ってなに？怖さの正体を知ろう😱🔗
 
+![domino_effect](./picture/dpn_rule_cs_index_domino_effect.png)
+
+
 * 依存＝「矢印」➡️の感覚
 * 変更がどこまで波及する？💥
 * ありがちな事故例（UIがDB都合に引きずられる等）😭
@@ -11,6 +14,9 @@
 ---
 
 ## 第2章 Dependency Ruleの一言まとめ：矢印の向きを固定する🧭➡️
+
+![concentric_arrows](./picture/dpn_rule_cs_index_concentric_arrows.png)
+
 
 * “中心（方針）”は“外側（詳細）”に依存しない🎯
 * 「変わりやすいもの」に引っ張られない設計
@@ -30,6 +36,9 @@
 
 ## 第4章 まずは物理で守る：Visual Studioでプロジェクト分割📦🛠️
 
+![solution_structure](./picture/dpn_rule_cs_index_solution_structure.png)
+
+
 * Solutionに複数プロジェクトを作る（例：Domain/Application/Infra/UI）🏗️
 * まずは「分けるだけ」やる（ここでは参照ルールはまだ深追いしない）😊
 * 演習：テンプレで土台を作る🧱
@@ -47,6 +56,9 @@
 ---
 
 ## 第6章 依存を守る最重要テク：インターフェースの置き場所🧷🎯
+
+![interface_location](./picture/dpn_rule_cs_index_interface_location.png)
+
 
 * Interfaceは中心側に置く🏠
 * 実装は外側（Infra）に置く🧰
@@ -66,6 +78,9 @@
 
 ## 第8章 Composition Root：組み立ては“外側”でやる🏗️🧭
 
+![composition_root](./picture/dpn_rule_cs_index_composition_root.png)
+
+
 * どこで依存を組み立てるのが正解？（UI側に寄せる）📌
 * “中心は知らない”を徹底する😌
 * 演習：Program.cs等に組み立てを集約する🧩
@@ -83,6 +98,9 @@
 ---
 
 ## 第10章 “破れない”最短ルート①：参照を切って守る✂️🚫
+
+![cut_reference](./picture/dpn_rule_cs_index_cut_reference.png)
+
 
 * まずは一番強い方法＝プロジェクト参照の制御💪
 * 「守れない構造」を作らない設計🧱
@@ -139,6 +157,9 @@
 ---
 
 ## 第16章 仕上げプロジェクト：小さく作って、守り続ける🏁🎀
+
+![final_architecture](./picture/dpn_rule_cs_index_final_architecture.png)
+
 
 * ミニ題材：注文（Order）/会員（User）などで
   Domain / App / Infra / UI を分けて完成🛒🎮

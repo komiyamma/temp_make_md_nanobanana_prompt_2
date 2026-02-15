@@ -24,6 +24,9 @@
 
 ## 4.2 なんで“物理で分ける”と強いの？💪📦
 
+![physical_barrier](./picture/dpn_rule_cs_study_004_physical_barrier.png)
+
+
 同じプロジェクト内で namespace だけ分けても…
 
 * うっかり `using` 追加でズブズブ混ざる😇🔗
@@ -95,6 +98,9 @@ flowchart TD
 
 ### ② Domain を追加（Class Library）🏛️📦
 
+![vs_add_project](./picture/dpn_rule_cs_study_004_vs_add_project.png)
+
+
 1. Solution を右クリック → **Add** → **New Project**
 2. **Class Library** を選ぶ
 3. 名前：`MyApp.Domain`
@@ -134,6 +140,9 @@ flowchart TD
 
 ### ⑥ Solution Explorer を整える（見た目も設計）🧹✨
 
+![solution_folders](./picture/dpn_rule_cs_study_004_solution_folders.png)
+
+
 Solution の下に「Solution Folder」を作ると気持ちいいよ〜😊🎀
 
 * Solution を右クリック → **Add** → **New Solution Folder**
@@ -153,6 +162,9 @@ Solution の下に「Solution Folder」を作ると気持ちいいよ〜😊🎀
 ---
 
 ## 4.5 “箱”の実感を得るミニコード（まだ依存させない）🧪✨
+
+![initial_files_in_boxes](./picture/dpn_rule_cs_study_004_initial_files_in_boxes.png)
+
 
 ### Domain に “それっぽい型” を1個だけ置こう🏛️
 
@@ -213,6 +225,9 @@ public sealed class InfrastructureMarker { }
 
 ## 4.7 VS Code（CLI）で一気に作る版💻⚡
 
+![cli_creation](./picture/dpn_rule_cs_study_004_cli_creation.png)
+
+
 「操作よりコマンド派！」ならこれが早いよ😊✨
 `dotnet sln` でソリューションにプロジェクトを追加できるよ📦➡️🧩 ([Microsoft Learn][4])
 
@@ -262,6 +277,9 @@ dotnet build
 ---
 
 ## 4.9 AI活用（Copilot / Codex）で“設計の地図”を固める🤖🗺️✨
+
+![ai_structure_review](./picture/dpn_rule_cs_study_004_ai_structure_review.png)
+
 
 Visual Studio 2026 は AI 統合が強くなってる流れだよ🧠✨ ([Microsoft Learn][1])
 この章では「構成レビュー」と「命名」を AI に手伝わせるのが相性いいよ😊💕

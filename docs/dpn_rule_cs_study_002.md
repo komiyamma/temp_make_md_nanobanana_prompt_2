@@ -47,10 +47,16 @@
 
 ## 🌟 嬉しい①：変更が怖くなくなる😌🛡️
 
+![fortress_protection](./picture/dpn_rule_cs_study_002_fortress_protection.png)
+
+
 UIを変えても、DBを変えても、**中心のルールが巻き添えになりにくい**✨
 → 「ちょっと画面直しただけで、業務ロジックが壊れた😭」が減る！
 
 ## 🌟 嬉しい②：テストがめちゃ楽になる🧪💕
+
+![isolated_testing](./picture/dpn_rule_cs_study_002_isolated_testing.png)
+
 
 中心がDBやUIを知らなければ、**中心だけを軽くテストできる**✅
 （DB起動いらない！画面操作いらない！）
@@ -81,6 +87,9 @@ UIを変えても、DBを変えても、**中心のルールが巻き添えに�
 
 ## ❌ ダメな矢印（中心が外側に依存）😵‍💫
 
+![handcuffed_to_db](./picture/dpn_rule_cs_study_002_handcuffed_to_db.png)
+
+
 「注文合計を計算する」みたいな中心ルールが、DB詳細を知っちゃうパターン💥
 
 ```csharp
@@ -110,6 +119,9 @@ public class OrderService
 ---
 
 ## ✅ 良い矢印（外側が中心に合わせる）😊🧭
+
+![lock_and_key](./picture/dpn_rule_cs_study_002_lock_and_key.png)
+
 
 中心側は「欲しい能力」を **インターフェースで宣言**して、外側がそれを実装する✨
 
@@ -160,6 +172,9 @@ flowchart LR
 
 ## 6) “中心/外側”の見分け方：3秒ルール⏱️🧠
 
+![sorting_machine](./picture/dpn_rule_cs_study_002_sorting_machine.png)
+
+
 迷ったら、この質問を自分に投げるだけ！
 
 ## Q1：それって交換されがち？🔁
@@ -186,6 +201,9 @@ flowchart TD
 ## 7) ミニ演習（紙でも脳内でもOK）📝✨
 
 ## 演習A：中心/外側を分類してみよ📌🧺
+
+![classification_baskets](./picture/dpn_rule_cs_study_002_classification_baskets.png)
+
 
 次を「中心」「外側」に分けてみてね👇
 

@@ -12,6 +12,9 @@
 
 ## あるある①：何でもかんでもinterface化して、読むのがつらい📚💥
 
+![file_explosion](./picture/dip_ts_study_018_file_explosion.png)
+
+
 **症状**
 
 * `FooService` のために `FooService` / `FooServiceImpl` / `FooServiceMock` …みたいにファイル増殖🌱🌱🌱
@@ -24,6 +27,9 @@
 ---
 
 ## あるある②：「将来差し替えるかも」で先に作り込み（YAGNI破り）🔮🧱
+
+![crystal_ball_overengineering](./picture/dip_ts_study_018_crystal_ball_overengineering.png)
+
 
 **症状**
 
@@ -69,6 +75,9 @@
 
 ## あるある⑤：抽象の置き場所ミス（“内側”にない）🏠↔️🌍
 
+![misplaced_door](./picture/dip_ts_study_018_misplaced_door.png)
+
+
 **症状**
 
 * interface（抽象）が “外側（インフラ側）” に置かれて、上位が参照しに行く📦➡️📦
@@ -81,6 +90,9 @@
 ---
 
 ## 18-2. 「DIPを入れるべき？」判断の3つの軸🧭👀
+
+![decision_compass](./picture/dip_ts_study_018_decision_compass.png)
+
 
 ## 軸A：変更頻度（変わりやすい？）🌪️
 
@@ -102,6 +114,9 @@
 ## 18-3. 迷ったらこのルールでOK✅✨（実務で強い）
 
 ## ルール1：まず“シンプル”に作る（でも逃げ道は残す）🚪😊
+
+![escape_hatch](./picture/dip_ts_study_018_escape_hatch.png)
+
 
 いきなり大量interfaceを作らず、**後から抜ける構造**にしておくのが最強💡
 
@@ -145,6 +160,9 @@ mindmap
 
 
 ## 18-4. TypeScriptなら“軽量DIP”ができる🧩🧡（構造的型付けの強み）
+
+![shape_matching](./picture/dip_ts_study_018_shape_matching.png)
+
 
 TypeScriptは「形が同じならOK」な発想（構造的型付け）だから、**interfaceを別ファイルで量産しなくても**成立しやすいよ✨ ([TypeScript][3])
 
@@ -207,6 +225,9 @@ DIPは「将来のために複雑にする」のではなく、
 ---
 
 ## 18-7. 最終チェックリスト✅📝（ここがYESならDIP寄り）
+
+![checklist_stamp](./picture/dip_ts_study_018_checklist_stamp.png)
+
 
 * [ ] 外部I/O（HTTP/DB/ファイル/時間）に触れてる🌐🗄️📁⏰
 * [ ] 変更が起きやすい場所（仕様が揺れる・差し替えが現実的）🌪️

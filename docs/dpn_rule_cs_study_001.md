@@ -42,6 +42,9 @@
 
 ## 3) 依存は「悪」じゃないよ☺️🌱
 
+![dependency_direction_compass](./picture/dpn_rule_cs_study_001_dependency_direction_compass.png)
+
+
 ここ、超大事🫶✨
 依存はゼロにできないし、ゼロにする必要もないです。
 
@@ -55,6 +58,9 @@
 ---
 
 ## 4) 依存の種類をざっくり分ける🧺✨
+
+![dependency_types_baskets](./picture/dpn_rule_cs_study_001_dependency_types_baskets.png)
+
 
 初心者のうちは、まずこの3つだけでOKです😊
 
@@ -123,6 +129,9 @@ flowchart TD
 
 ## 事故B：中心がフレームワークに依存する🧲🧱
 
+![framework_squeeze](./picture/dpn_rule_cs_study_001_framework_squeeze.png)
+
+
 例えば、アプリの“中心っぽい”場所が、外の詳細に寄りかかると…
 
 * 業務ルールのクラスがEF Coreの型を直接使う
@@ -136,6 +145,9 @@ flowchart TD
 ---
 
 ## 事故C：便利Sharedが巨大化して全員が依存する😇📦
+
+![shared_bloat](./picture/dpn_rule_cs_study_001_shared_bloat.png)
+
 
 “便利だから”ってSharedに何でも入れると…
 
@@ -243,6 +255,9 @@ UI側に、同じメソッド呼び出しを10箇所くらい増やしてみて�
 
 ## 7) 依存を見抜くミニチェック✅👀
 
+![dependency_spotting](./picture/dpn_rule_cs_study_001_dependency_spotting.png)
+
+
 コードを見たとき、まずこれを探すと早いよ〜😊✨
 
 * `new 〇〇()` が多い（具体クラス固定）🧨
@@ -254,6 +269,9 @@ UI側に、同じメソッド呼び出しを10箇所くらい増やしてみて�
 ---
 
 ## 8) AI活用：依存関係を「文章＋簡易図」で説明させる🤖✍️➡️🗺️
+
+![ai_graphing](./picture/dpn_rule_cs_study_001_ai_graphing.png)
+
 
 Copilot / Codex みたいなAIが使える前提なら、こういう使い方が超便利😊✨
 （目的は“答えを出す”より、“理解を言語化して固める”ことだよ🧠💪）

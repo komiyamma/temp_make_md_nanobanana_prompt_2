@@ -23,6 +23,9 @@
 
 ## 1) ゴール：OrderService を“差し替え可能”にする🎯🔁
 
+![blind_order_service](./picture/dip_ts_study_019_blind_order_service.png)
+
+
 最終的にこうなれば勝ち🏆✨
 
 * OrderService（上位）が **Card/PayPay の詳細を知らない** 🙈
@@ -71,6 +74,9 @@ test/
 
 ## 3) まずは “DIPなし地獄” を見よう🔥😵（わざとやる）
 
+![dip_hell_chains](./picture/dip_ts_study_019_dip_hell_chains.png)
+
+
 「ありがちなやつ」👇（上位が下位を直接 `new` してる）
 
 ```ts
@@ -110,6 +116,9 @@ class EmailNotifier { send(_u: string, _m: string) {} }
 ```
 
 ### どこがしんどい？😢🌀
+
+![ripple_effect_crack](./picture/dip_ts_study_019_ripple_effect_crack.png)
+
 
 * PayPayの仕様変更 → OrderServiceBad まで巻き添え💥
 * Slack通知を追加 → OrderServiceBad の if/else が増殖🌱🌱🌱
@@ -240,6 +249,9 @@ export class OrderService {
 
 ## 6) 下位（adapters）を実装する🧰👩‍🔧
 
+![adapter_plugs](./picture/dip_ts_study_019_adapter_plugs.png)
+
+
 ### 6-1) 支払い：Card / PayPay 💳📱
 
 ```ts
@@ -306,6 +318,9 @@ export class SystemClock implements Clock {
 
 ## 7) 組み立て（差し替えスイッチ）は main.ts に置く🔧🚪
 
+![main_switchboard](./picture/dip_ts_study_019_main_switchboard.png)
+
+
 ここが「PayPayにする？」「Slackにする？」の選択場所✨
 
 ```ts
@@ -335,6 +350,9 @@ service.placeOrder("user-1", 1200).then(console.log);
 Vitest 4.0 が公開されていて、4.0.17 まで更新されています ([Vitest][3])
 
 ### 8-1) Fake を用意（本物いらない！最強💪）
+
+![fake_props_test](./picture/dip_ts_study_019_fake_props_test.png)
+
 
 ```ts
 // test/OrderService.test.ts
@@ -413,6 +431,9 @@ describe("OrderService", () => {
 ---
 
 ## 10) 最終チェックリスト✅✨（この章のゴール）
+
+![success_checklist](./picture/dip_ts_study_019_success_checklist.png)
+
 
 * 上位（OrderService）は **詳細を知らない**？🙆‍♀️
 * 抽象（ports）は **上位側に置かれている**？📌
