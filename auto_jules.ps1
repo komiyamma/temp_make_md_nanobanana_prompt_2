@@ -131,6 +131,7 @@ function Run-JulesForRange {
     git pull origin main
 
     Write-Host "✨ 範囲 $targetRange の全工程が完了しました！" -ForegroundColor Green
+    Start-Sleep -Seconds 60
     return $true
 }
 
