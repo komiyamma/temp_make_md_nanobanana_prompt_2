@@ -16,9 +16,15 @@ DRYで本当に避けたいのは、**同じ“知識（ルール）”が複数
 
 ## 1) 重複4種類まとめ🏷️✨
 
+![duplication_types_bins](./picture/dry_ts_study_002_duplication_types_bins.png)
+
+
 ![](./picture/dry_ts_study_002_duplication_types.png)（最初に全体像）
 
 ### ① コードの重複（処理コピペ）📄📄
+
+![code_photocopy](./picture/dry_ts_study_002_code_photocopy.png)
+
 
 **同じ処理がそのまま複数にある**パターン。
 
@@ -28,6 +34,9 @@ DRYで本当に避けたいのは、**同じ“知識（ルール）”が複数
 ---
 
 ### ② ルールの重複（知識の重複）🧠🧮
+
+![rule_scales](./picture/dry_ts_study_002_rule_scales.png)
+
 
 **同じ条件・計算・業務ルールが複数にある**パターン。
 コードが完全一致じゃなくても、**同じ意味**なら重複だよ！
@@ -39,6 +48,9 @@ DRYで本当に避けたいのは、**同じ“知識（ルール）”が複数
 
 ### ③ データの重複（文字列・キー・URL・数値）🏷️🔑
 
+![data_stickers](./picture/dry_ts_study_002_data_stickers.png)
+
+
 **“値”が散らばる**パターン。いわゆる *魔法の文字列* とか *マジックナンバー* 🎩💥
 
 * 例：`"PAID"` が10箇所、`"/api/cart"` が5箇所、`5000` があちこち
@@ -48,6 +60,9 @@ DRYで本当に避けたいのは、**同じ“知識（ルール）”が複数
 
 ### ④ 例外処理の重複（try/catchコピペ）🚨🧯
 
+![exception_sirens](./picture/dry_ts_study_002_exception_sirens.png)
+
+
 **同じエラー整形・同じログ・同じUI通知**が何回も出てくるパターン。
 
 * 例：`try { fetch... } catch { alert...; console.error... }` が3箇所
@@ -56,6 +71,9 @@ DRYで本当に避けたいのは、**同じ“知識（ルール）”が複数
 ---
 
 ## 2) 迷ったらこれ！分類のための質問リスト🧩💡
+
+![classification_flowchart_path](./picture/dry_ts_study_002_classification_flowchart_path.png)
+
 
 ![](./picture/dry_ts_study_002_classification_flowchart.png)
 

@@ -7,6 +7,9 @@
 
 ## 6-1. なんで「型」でDRYすると強いの？💪🧠
 
+![value_object_concept](./picture/dry_cs_study_006_value_object_concept.png)
+
+
 ![dry_cs_study_006_value_object](./picture/dry_cs_study_006_value_object.png)
 
 
@@ -25,6 +28,9 @@
 ---
 
 ## 6-2. まずはC#の“record”でイメージを掴もう📘✨
+
+![record_type_tablet](./picture/dry_cs_study_006_record_type_tablet.png)
+
 
 ![dry_cs_study_006_sealed_tablet](./picture/dry_cs_study_006_sealed_tablet.png)
 
@@ -56,6 +62,9 @@ Microsoftの公式ドキュメントでも、record（record class / record stru
 ## 6-4. 実例：Money（日本円）で「負数NG」「表示」「計算」を1か所化 💰✨
 
 ### よくある “散らばり地獄” 🌀
+
+![scattered_rules_map](./picture/dry_cs_study_006_scattered_rules_map.png)
+
 
 * `if (amount < 0) ...` が何回も出る
 * `amount.ToString("N0")` がいろんな場所で微妙に違う
@@ -125,6 +134,9 @@ public readonly record struct Money
 
 ## 6-5. “型があるとバリデーション重複が消える”の例 ✅🏷️
 
+![validation_gate](./picture/dry_cs_study_006_validation_gate.png)
+
+
 たとえば、こんなコードがあったとするね👇
 
 * API受信
@@ -153,6 +165,9 @@ flowchart LR
 ---
 
 ## 6-6. もう1個：DateRange（期間）で「開始<=終了」を1か所化 📅✨
+
+![daterange_ruler](./picture/dry_cs_study_006_daterange_ruler.png)
+
 
 ```csharp
 using System;

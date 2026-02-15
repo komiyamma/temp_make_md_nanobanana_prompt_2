@@ -2,12 +2,18 @@
 # TypeScript版：DRY（重複排除）教育コンテンツ（9章アウトライン）📚💖
 
 ## 第1章：DRYってなに？「コピペ禁止」より大事な話🧻✨
+
+![single_source_fountain](./picture/dry_ts_index_single_source_fountain.png)
+
 - **ゴール**：DRY＝「同じ知識（ルール）を複数に置かない」を体感する😊
 - **よくある事故**：仕様変更1回で直す場所が5か所…😱
 - **ミニ演習**：小さな“WETコード（重複だらけ）”を見て「どこが怖い？」を言葉にする📝
 - **AI活用🤖**：Copilot/AIに「重複っぽい箇所を指摘して」→最後は自分で理由づけ🧠 ([GitHub Docs][2])
 
 ## 第2章：重複の種類を見分けよう👀🔍（コード／ルール／データ／例外）
+
+![duplication_sorting_hat](./picture/dry_ts_index_duplication_sorting_hat.png)
+
 - **ゴール**：「これは重複！」を分類できるようになる✨
 - **4つの典型**：
   - ①同じ処理のコピペ📄
@@ -17,6 +23,9 @@
 - **ミニ演習**：サンプルに“重複ラベル”を貼る（分類クイズ）🏷️😆
 
 ## 第3章：まずは最強の基本技！関数抽出＆引数化✂️🧩
+
+![refactoring_scissors_tape](./picture/dry_ts_index_refactoring_scissors_tape.png)
+
 - **ゴール**：重複3か所→1か所へ、を安全にできる😊
 - **扱うこと**：
   - 関数抽出（小さく切る）
@@ -26,6 +35,9 @@
 - **AI活用🤖**：リファクタ案を出させて「読みやすさ」を採点する（命名チェック）📛
 
 ## 第4章：魔法の文字列を卒業！定数・辞書・ユニオン型でDRY🏷️✨
+
+![magic_string_graduate](./picture/dry_ts_index_magic_string_graduate.png)
+
 - **ゴール**：文字列コピペ（"paid" とか "pending" とか）で死なないようにする😇
 - **扱うこと**：
   - constの集約（1か所に置く）📌
@@ -50,6 +62,9 @@
 - **ミニ演習**：同じifが散らばってる→判定関数を作って1回にする🎯
 
 ## 第7章：エラー処理のDRY（try/catchコピペ地獄から脱出）🚨🧯
+
+![error_fire_station](./picture/dry_ts_index_error_fire_station.png)
+
 - **ゴール**：エラー処理を“毎回その場で”書かないようにする😊
 - **扱うこと**：
   - 共通のエラー整形（ユーザー向け文／ログ向け）📝

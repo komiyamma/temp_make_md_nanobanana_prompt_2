@@ -12,6 +12,9 @@
 
 ## 2. DRYって一言でいうと？🧻🧠
 
+![single_source_king](./picture/dry_ts_study_001_single_source_king.png)
+
+
 ![](./picture/dry_ts_study_001_single_source.png)
 
 DRY = **Don’t Repeat Yourself**（繰り返すな）だけど、ここで言う“繰り返し”は
@@ -29,6 +32,9 @@ DRY = **Don’t Repeat Yourself**（繰り返すな）だけど、ここで言�
 ---
 
 ## 3. よくある事故のストーリー📉😱
+
+![domino_propagation](./picture/dry_ts_study_001_domino_propagation.png)
+
 
 ![](./picture/dry_ts_study_001_domino_effect.png)（DRYが必要になる瞬間）
 
@@ -121,6 +127,9 @@ graph TD
 答えが「5か所…」なら、DRYの出番😇💦
 
 ### 合言葉③：名前をつけられる？📛✨
+
+![naming_wizard](./picture/dry_ts_study_001_naming_wizard.png)
+
 
 ルールに名前をつけられると、一気に“知識”として扱える💖
 例：`FREE_SHIPPING_THRESHOLD` とか `calcShipping()` とかね🚚✨
