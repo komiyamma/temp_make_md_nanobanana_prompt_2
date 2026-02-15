@@ -26,6 +26,7 @@
 ## 10-2. そもそも「依存の矢印」って何？🏹🤔
 
 ![](./picture/dip_ts_study_010_import_guard.png)
+![](./picture/dip_ts_study_010_arrow_direction.png)
 
 
 超ざっくり言うと、矢印（依存）はだいたいコレで発生するよ👇
@@ -73,6 +74,7 @@ export class OrderService {
 ## 10-4. DIPあり：矢印を“内側に向ける”🔄🏠✨
 
 ![](./picture/dip_ts_study_010_center_protection.png)
+![](./picture/dip_ts_study_010_dip_arrow_reversal.png)
 
 
 ここでDIPの2ルールを思い出すよ〜📜💡
@@ -132,6 +134,8 @@ export class StripePaymentGateway implements PaymentGateway {
 
 ## 10-5. 「内側＝方針」「外側＝詳細」ってどう見分ける？🕵️‍♀️🧠
 
+![](./picture/dip_ts_study_010_inner_outer_check.png)
+
 迷ったら、この質問でOKだよ👇
 
 ## ✅内側（方針）チェック🏠
@@ -151,6 +155,8 @@ export class StripePaymentGateway implements PaymentGateway {
 ## 10-6. TypeScriptならではの注意点（ここ、地味に大事）⚠️🧠✨
 
 ## ① `import type` を使うと「型だけ依存」になってスッキリ🧼📦
+
+![](./picture/dip_ts_study_010_import_type_clean.png)
 
 TypeScriptの型は **実行時には消える（eraseされる）** んだよね。([TypeScript][5])
 だから「型だけ参照したい」時に `import type` を使うと、
@@ -186,6 +192,8 @@ infra/PaymentGateway.ts  ← ここに置くのは事故りやすい
 ---
 
 ## ❌ミス2：抽象が“詳細の型”を返してしまう（漏れてる〜😱）
+
+![](./picture/dip_ts_study_010_leak_return_type.png)
 
 ```ts
 // ❌抽象の返り値が「Stripe専用型」みたいになってる

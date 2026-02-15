@@ -50,6 +50,8 @@ TypeScriptは **構造的型付け（Structural Typing）** が基本だよ〜�
 
 ## 7.4 いちばん大事：この章で覚える“最小セット”✅✨
 
+![](./picture/dip_ts_study_007_minimal_interface.png)
+
 この教材では、まずこれだけでOKだよ〜！🥳
 
 ### ✅ 1) メソッド（ふるまい）を書く
@@ -102,6 +104,8 @@ type User = {
 
 ### 🌟 違い1：`interface` は「同名で合体（マージ）」できる
 
+![](./picture/dip_ts_study_007_merging_risk.png)
+
 TypeScriptは `interface` を **後から足して合体** できる仕組みがあるよ（Declaration Merging）🧩
 公式に「interface merging」が説明されてる✨([TypeScript][2])
 
@@ -132,6 +136,8 @@ type PayResult =
 ---
 
 ## 7.6 DIPにつながる例：支払いを“差し替え可能”にする💳➡️📱✨
+
+![](./picture/dip_ts_study_007_payment_swap_demo.png)
 
 ここで「抽象（契約）」の気持ちよさを体験しよ〜！🥰
 
@@ -189,6 +195,8 @@ await service.checkout(1200);
 
 ## 7.7 もう1個：Repository（保存先を隠す）🗄️🚪✨
 
+![](./picture/dip_ts_study_007_repository_hide.png)
+
 「DBが変わっても業務ロジックは守りたい」ってときの定番！
 
 ```ts
@@ -234,6 +242,8 @@ classDiagram
 ---
 
 ## 7.9 VS Codeでミニ実験（最短で動かす）🧪💻✨
+
+![](./picture/dip_ts_study_007_vs_code_experiment.png)
 
 ### ① フォルダ作って初期化
 
