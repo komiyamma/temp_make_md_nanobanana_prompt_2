@@ -12,6 +12,9 @@
 
 ## 1) まず「依存が逆」ってどういう事故？😱🌀
 
+![bad_dependency_direction](./picture/dpn_rule_ts_study_007_bad_dependency_direction.png)
+
+
 ありがちな事故はこれ👇
 
 * `usecase/RegisterUser.ts` が
@@ -59,6 +62,9 @@ export class RegisterUser {
 
 ## 3) DIP（依存逆転）の考え方🔄🧠✨
 
+![inversion_moment](./picture/dpn_rule_ts_study_007_inversion_moment.png)
+
+
 ![](./picture/dpn_rule_ts_study_007_dip_inversion.png)
 
 ## 合言葉はこれ🗣️💡
@@ -95,6 +101,9 @@ graph TD
 ---
 
 ## Step 1: 契約（interface）を中心側に置く📜🧡
+
+![contract_in_center](./picture/dpn_rule_ts_study_007_contract_in_center.png)
+
 
 ```ts
 // src/domain/UserRepository.ts
@@ -135,6 +144,9 @@ export class RegisterUser {
 
 ## Step 3: 外側で実装する（DB版）🧰🗄️
 
+![implements_arrow](./picture/dpn_rule_ts_study_007_implements_arrow.png)
+
+
 （例として “Prismaっぽい” 実装にしてます。あなたのDB事情に置き換えてOK🙆‍♀️）
 
 ```ts
@@ -163,6 +175,9 @@ export class DbUserRepository implements UserRepository {
 ---
 
 ## Step 4: 外側で実装する（インメモリ版）🧠📦
+
+![memory_implementation](./picture/dpn_rule_ts_study_007_memory_implementation.png)
+
 
 テストやローカル動作用に超便利です😆
 
@@ -210,6 +225,9 @@ main();
 ---
 
 ## 5) 「中心→外側importしてる」を見つけるコツ🔎🕵️‍♀️
+
+![forbidden_import_check](./picture/dpn_rule_ts_study_007_forbidden_import_check.png)
+
 
 VS Codeでこれやると早いです💨
 
@@ -266,6 +284,9 @@ DBの行型やAPIレスポンス型は “境界” で変換する（第10章�
 ---
 
 ## 8) AI（Copilot/Codex）に頼むと爆速なところ🤖💨
+
+![ai_test_generation](./picture/dpn_rule_ts_study_007_ai_test_generation.png)
+
 
 そのままコピペで使える指示例だよ🪄
 

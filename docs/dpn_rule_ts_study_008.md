@@ -31,6 +31,9 @@ graph TD
 
 ## 2) なんで必要なの？（ないと何が困る？）😵‍💫💥
 
+![scattered_new](./picture/dpn_rule_ts_study_008_scattered_new.png)
+
+
 Composition Rootがない（=いろんな場所で `new` してる）と、こんな事故が起きがち👇
 
 * `app` の中で `new SqliteTodoRepository()` とかし始める
@@ -45,6 +48,9 @@ Composition Rootがない（=いろんな場所で `new` してる）と、こ�
 ---
 
 ## 3) Composition Rootはどこに置く？📁📌
+
+![main_entry_point](./picture/dpn_rule_ts_study_008_main_entry_point.png)
+
 
 基本はこのどれかでOKだよ😊
 
@@ -62,6 +68,9 @@ Composition Rootがない（=いろんな場所で `new` してる）と、こ�
 ---
 
 ## 4) まずは “手動DI” で十分😌🪶
+
+![manual_wiring](./picture/dpn_rule_ts_study_008_manual_wiring.png)
+
 
 この章では DIコンテナなしでいくよ！
 やることはこれだけ👇
@@ -112,6 +121,9 @@ export interface TodoRepository {
 ---
 
 ### 6-2. app：ユースケース（契約だけ見てる！）🧠🧩
+
+![app_unaware_of_adapter](./picture/dpn_rule_ts_study_008_app_unaware_of_adapter.png)
+
 
 ```ts
 // src/app/addTodo.ts
@@ -222,6 +234,9 @@ export function createHttpServer(deps: {
 
 ## 7) ここが本題！main.ts（Composition Root）🏗️📌✨
 
+![switching_implementation](./picture/dpn_rule_ts_study_008_switching_implementation.png)
+
+
 「作る・選ぶ・つなぐ・起動する」は全部ここ！💪
 
 ```ts
@@ -261,6 +276,9 @@ server.listen(3000, () => {
 ---
 
 ## 8) “オブジェクトグラフ”ってなに？🕸️✨
+
+![object_graph](./picture/dpn_rule_ts_study_008_object_graph.png)
+
 
 雑に絵にするとこんな感じだよ👇
 
@@ -323,6 +341,9 @@ if (process.env.NODE_ENV === "production") { ... }
 ## 10) ミニ演習👩‍💻📝（10〜20分でOK✨）
 
 ### 演習A：Repoを2種類にして切り替え🔁
+
+![env_switch](./picture/dpn_rule_ts_study_008_env_switch.png)
+
 
 * `InMemoryTodoRepository` に加えて `FileTodoRepository`（ファイル保存）を作った体でOK！📁
 * `main.ts` の1か所だけで切り替えられるようにしてみてね✨

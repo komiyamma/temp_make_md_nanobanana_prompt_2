@@ -10,10 +10,16 @@
 
 ### ✅ パッケージってなに？📦
 
+![package_definition](./picture/dpn_rule_ts_study_004_package_definition.png)
+
+
 `package.json` を持っている“ひとまとまり”だよ。
 「これは何者で、何に依存して、何を外に公開するか」を **はっきり書ける箱**って感じ😊
 
 ### ✅ workspacesってなに？🧺
+
+![workspace_links](./picture/dpn_rule_ts_study_004_workspace_links.png)
+
 
 1つのリポジトリの中で、複数パッケージをまとめて管理する仕組みだよ✨
 npmのworkspacesは、複数パッケージをまとめて扱えて、`npm install` のタイミングで **リンク（symlink）を自動で作ってくれる**から、手動の `npm link` が基本いらないよ〜っていう立ち位置🪄
@@ -62,6 +68,9 @@ graph TD
 
 ## 3) いつ必要？「進化の目安」早見表🧭✨
 
+![evolution_compass](./picture/dpn_rule_ts_study_004_evolution_compass.png)
+
+
 ### 🐣 まずはフォルダ境界でOK（パッケージ化はまだ早い）
 
 こんな感じなら、まずは第3章のフォルダで十分🙆‍♀️
@@ -99,6 +108,9 @@ graph TD
 
 ## 4) メリット/デメリット（正直にいくよ😎✨）
 
+![benefits_downsides_balance](./picture/dpn_rule_ts_study_004_benefits_downsides_balance.png)
+
+
 ### 👍 メリット（嬉しい）
 
 * 依存の向きが見えやすい👀📌
@@ -117,6 +129,9 @@ graph TD
 ---
 
 ## 5) 判断をミスらないチェックリスト✅📝
+
+![judgment_checklist](./picture/dpn_rule_ts_study_004_judgment_checklist.png)
+
 
 ### ✅ 今すぐmonorepoにしない方がいい（待て！）🚦
 
@@ -150,6 +165,9 @@ ToDoアプリ（例）を想像して、まずは3つに色分けしてみてね
 ---
 
 ## 7) ミニ演習②：超ミニ monorepo を“体験”してみよう👩‍💻✨
+
+![mini_monorepo_experience](./picture/dpn_rule_ts_study_004_mini_monorepo_experience.png)
+
 
 ここでは **npm workspaces** で「ローカルパッケージが自動リンクされる感じ」を味見するよ🧁
 （npm workspacesは `npm install` がリンクを自動で作る、って公式にも書かれてるよ） ([docs.npmjs.com][1])

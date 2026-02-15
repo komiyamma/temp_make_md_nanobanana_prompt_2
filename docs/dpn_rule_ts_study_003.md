@@ -17,6 +17,9 @@
 
 ## 2) “境界”ってなに？🤔🧱
 
+![boundary_definition](./picture/dpn_rule_ts_study_003_boundary_definition.png)
+
+
 境界はカンタンに言うと…
 
 **「混ぜない約束」🤝✨**
@@ -63,6 +66,9 @@ graph TD
 
 ### ✅ `domain/` に置くもの💎
 
+![domain_content](./picture/dpn_rule_ts_study_003_domain_content.png)
+
+
 * 業務ルール（例：料金計算、状態遷移、制約）
 * ドメインの型（Entity/Valueっぽいもの）
 * 例外じゃなくて「ドメインとしてのエラー」
@@ -91,6 +97,9 @@ graph TD
 ---
 
 ### ✅ `adapters/` に置くもの🌐
+
+![adapters_content](./picture/dpn_rule_ts_study_003_adapters_content.png)
+
 
 * DB実装（Repositoryの実体）
 * APIクライアント、HTTPハンドラ
@@ -236,6 +245,9 @@ graph TD
 
 ### あるある①：domain が adapters を import しちゃう💥
 
+![forbidden_import](./picture/dpn_rule_ts_study_003_forbidden_import.png)
+
+
 「ちょっと便利だから…」で `domain` から DB/HTTP を触り始めると終了😇
 → **domain は“概念とルール”だけ**にする💎
 
@@ -251,6 +263,9 @@ graph TD
 
 ## 8) VS Codeで“境界チェック”するコツ👀🔎✨
 
+![vscode_check](./picture/dpn_rule_ts_study_003_vscode_check.png)
+
+
 * `domain/` で検索：`from "../adapters"` が出たら即アウト🚨
 * `app/` で検索：`from "../adapters"` が出ても基本アウト（entryで組む）🚨
 * import を見て「矢印が内向きか？」だけ確認すればOK➡️🧡
@@ -258,6 +273,9 @@ graph TD
 ---
 
 ## 9) AIの使い方（この章で効くやつ）🤖✨
+
+![ai_folder_structure](./picture/dpn_rule_ts_study_003_ai_folder_structure.png)
+
 
 ### ① フォルダ地図を作らせる🗺️
 

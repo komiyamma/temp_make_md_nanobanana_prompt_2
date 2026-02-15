@@ -17,6 +17,9 @@
 
 ## 2) まずは一言で覚えよっ📌💕
 
+![three_layers_personified](./picture/dpn_rule_ts_study_005_three_layers_personified.png)
+
+
 層モデルって、難しそうに見えるけど、実はコレだけ👇
 
 * **Domain = ルール** 🏛️⚖️
@@ -61,6 +64,9 @@ graph RL
 
 ### A. Domain（ルール）って何を置くの？🏛️💕
 
+![domain_purity](./picture/dpn_rule_ts_study_005_domain_purity.png)
+
+
 **Domainに置くのは「業務として守りたい決まり」**だよ。
 
 たとえばToDoなら…
@@ -98,6 +104,9 @@ Domainは「ルール」だから、ここに **HTTP** とか **DB** の都合�
 ---
 
 ### B. Application（手順）って何を置くの？🧾🧡
+
+![application_orchestration](./picture/dpn_rule_ts_study_005_application_orchestration.png)
+
 
 Applicationは「ルールを使って、処理の流れを作る」係！🧑‍🍳✨
 よく **UseCase（ユースケース）** って呼ばれるよ。
@@ -150,6 +159,9 @@ Applicationは「手順」だから、**HTTPステータス**や**SQL**は知ら
 ---
 
 ### C. Adapters（外と話す）って何を置くの？🌍🔌
+
+![adapters_dirty_work](./picture/dpn_rule_ts_study_005_adapters_dirty_work.png)
+
 
 Adaptersは、Applicationの「お願い（interface）」を実装したり、HTTPとやり取りしたりする層だよ📮✨
 
@@ -281,6 +293,9 @@ graph TD
 
 ## 6) ミニ演習：仕分けクイズ〜！📝🎀
 
+![sorting_quiz](./picture/dpn_rule_ts_study_005_sorting_quiz.png)
+
+
 次の“モノ”はどこに置く？（Domain / Application / Adapters）👇
 
 1. `Todo` クラス（title空NG、complete()あり）
@@ -340,6 +355,9 @@ graph TD
 ```
 
 ### ③ 命名案（迷いを減らす魔法）📛🌸
+
+![ai_naming_help](./picture/dpn_rule_ts_study_005_ai_naming_help.png)
+
 
 ```txt
 この責務に合う命名を10個出して。
