@@ -42,6 +42,9 @@
 
 ## 3) この章で作る“破れない地図”🗺️🧱
 
+![unbreakable_map](./picture/dpn_rule_cs_study_010_unbreakable_map.png)
+
+
 まずは王道の4分割でいこう😊✨
 
 * **Domain**（中心・ルール）🏛️
@@ -93,6 +96,9 @@ flowchart TD
 
 ## 5) 演習②：わざと破って「コンパイルで止まる安心感」を味わう💥😆
 
+![compile_error_shield](./picture/dpn_rule_cs_study_010_compile_error_shield.png)
+
+
 ### 5-1) 悪い例：Domain から Infrastructure を参照しようとする😈
 
 例えば、Domainで「DB便利クラス」を呼びたくなるやつ…（あるある🥹）
@@ -117,6 +123,9 @@ flowchart TD
 
 ### 6-1) 何が起きるの？（推移参照の例）
 
+![transitive_leak_spyglass](./picture/dpn_rule_cs_study_010_transitive_leak_spyglass.png)
+
+
 * UI が Application を参照
 * Application が Domain を参照
 * すると UI から Domain の型が見えちゃう（ことがある）😇([Microsoft Learn][1])
@@ -136,6 +145,9 @@ graph LR
 ```
 
 ### 6-2) 解決策：`DisableTransitiveProjectReferences` を使う✅✨
+
+![disable_transitive_shutter](./picture/dpn_rule_cs_study_010_disable_transitive_shutter.png)
+
 
 UI側などの **参照元プロジェクト**に設定すると、
 **暗黙的（勝手に）入ってくる ProjectReference を無効化**できるよ！✂️🚫([Microsoft Learn][3])
@@ -190,6 +202,9 @@ UI側などの **参照元プロジェクト**に設定すると、
 
 ## 8) 参照の健康診断コマンド🔎🩺（めちゃ便利！）
 
+![dotnet_list_ref](./picture/dpn_rule_cs_study_010_dotnet_list_ref.png)
+
+
 「いま何を参照してる？」をすぐ見たいとき👇
 
 ```bash
@@ -205,6 +220,9 @@ dotnet list MyApp.UI/MyApp.UI.csproj reference
 AI導入済み前提なら、ここ超ラクできるよ〜！
 
 ### 9-1) 依存の混ざりポイントを見つけさせる
+
+![ai_scan_leaks](./picture/dpn_rule_cs_study_010_ai_scan_leaks.png)
+
 
 Copilot / Codex にこんな感じで投げる👇
 

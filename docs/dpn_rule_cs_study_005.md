@@ -28,6 +28,9 @@
 
 例：`.csproj` の中身（イメージ）👇
 
+![project_reference_link](./picture/dpn_rule_cs_study_005_project_reference_link.png)
+
+
 ```xml
 <ItemGroup>
   <ProjectReference Include="..\MyApp.Domain\MyApp.Domain.csproj" />
@@ -37,6 +40,9 @@
 ---
 
 ## 3) 参照ルールの基本形：内側は外側を見ない🧭🧅
+
+![inner_outer_rule](./picture/dpn_rule_cs_study_005_inner_outer_rule.png)
+
 
 （第4章で分けた前提で）典型の4プロジェクトを例にします👇
 
@@ -93,6 +99,9 @@ graph TD
 ## よくある “事故” 💥😭
 
 * Domain が Infra を参照し始める
+
+![domain_pollution](./picture/dpn_rule_cs_study_005_domain_pollution.png)
+
   → **Domain が EF Core や HTTP に汚染される**→ 変更の波が中心に侵入😱
 * App が UI の型（画面モデルとか）を参照
   → 入口の都合でユースケースが歪む😵
@@ -100,6 +109,9 @@ graph TD
 ---
 
 ## 5) Visual Studioで参照を貼る手順🔗🛠️
+
+![vs_add_reference](./picture/dpn_rule_cs_study_005_vs_add_reference.png)
+
 
 Solution Explorer で👇
 
@@ -170,6 +182,9 @@ MSBuildは、ソリューション配下に **Directory.Build.targets** を置�
 
 ### これでどうなる？🥹✨
 
+![build_error_stop](./picture/dpn_rule_cs_study_005_build_error_stop.png)
+
+
 * Domain に NG 参照が入った瞬間、**ビルドがエラーで止まる**🚨
 * 「うっかり追加しちゃった」を最速で検知できる💯
 
@@ -178,6 +193,9 @@ MSBuildは、ソリューション配下に **Directory.Build.targets** を置�
 ---
 
 ## 8) VS Code派のミニ補足：CLIで参照を貼る🧑‍💻✨
+
+![cli_command](./picture/dpn_rule_cs_study_005_cli_command.png)
+
 
 C# のプロジェクト参照は CLI でも追加できます👌
 
@@ -193,6 +211,9 @@ dotnet reference add .\MyApp.Domain\MyApp.Domain.csproj --project .\MyApp.Applic
 ---
 
 ## 9) AI（Copilot/Codex）で爆速に「規約文章」を作る🤖📝✨
+
+![ai_rule_writer](./picture/dpn_rule_cs_study_005_ai_rule_writer.png)
+
 
 チーム共有用の文章、AIに書かせると超ラクです💕
 

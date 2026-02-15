@@ -20,6 +20,9 @@
 
 ## 1) まず「new」が何を“固定”するの？🧨😱
 
+![new_chain_lock](./picture/dpn_rule_cs_study_007_new_chain_lock.png)
+
+
 `new` 自体は悪じゃないよ！🙂
 でも、**中心の層（Domain/Application）**で `new` して **外側の実装クラス**を作っちゃうと…
 
@@ -52,6 +55,9 @@ public sealed class PlaceOrderUseCase
 
 ## 2) DI（依存性注入）って、要するに何？🧸✨
 
+![milk_delivery_metaphor](./picture/dpn_rule_cs_study_007_milk_delivery_metaphor.png)
+
+
 DIはむずかしい呪文じゃなくて、超ざっくり言うと👇
 
 > **「必要な道具は、自分で買いに行かず（newしないで）持ってきてもらう」**📦➡️😊
@@ -68,6 +74,9 @@ DIはむずかしい呪文じゃなくて、超ざっくり言うと👇
 ![](./picture/dpn_rule_cs_study_007_constructor_injection.png)
 
 ポイントはコレ👇✨
+
+![bad_vs_good_dependency](./picture/dpn_rule_cs_study_007_bad_vs_good_dependency.png)
+
 
 ```mermaid
 classDiagram
@@ -165,6 +174,9 @@ public sealed class FakeOrderRepository : IOrderRepository
 
 ## 4-3) “同じUseCase”に、渡す物だけ変える🎁✨
 
+![cartridge_swap_slot](./picture/dpn_rule_cs_study_007_cartridge_swap_slot.png)
+
+
 ```csharp
 // ✅ 本番
 var prodRepo = new SqlOrderRepository();
@@ -180,6 +192,9 @@ var useCaseTest = new PlaceOrderUseCase(fakeRepo);
 ---
 
 ## 5) 演習②：.NET標準DIコンテナで「自動で渡す」を体験🧩✨
+
+![service_collection_box](./picture/dpn_rule_cs_study_007_service_collection_box.png)
+
 
 「渡すの忘れた〜😭」とかを減らすために、.NET のDIコンテナがよく使われます🧰
 （ASP.NET Core だと標準で `builder.Services.Add...` を使うやつね！） ([Microsoft Learn][4])
@@ -213,6 +228,9 @@ useCase.Execute(new Order(/* ... */));
 
 ## 6) ちょい注意：ライフタイム（寿命）って何？⏳🧪
 
+![lifetime_icons](./picture/dpn_rule_cs_study_007_lifetime_icons.png)
+
+
 登録するときに出てくるやつ👇
 
 * `AddTransient`：毎回新しい🆕
@@ -229,6 +247,9 @@ useCase.Execute(new Order(/* ... */));
 ## 7) よくあるつまづき集😵‍💫➡️😌
 
 ## つまづき①：コンストラクタ引数が増えすぎる〜😭
+
+![constructor_overflow](./picture/dpn_rule_cs_study_007_constructor_overflow.png)
+
 
 ✅ まずはOK！成長の証💮
 その上で、増えすぎたら次の手もあるよ👇

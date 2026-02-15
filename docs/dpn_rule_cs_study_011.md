@@ -7,6 +7,9 @@
 
 ## 1. なんで “公開しすぎ” が危ないの？😵‍💫💥
 
+![leaking_dam](./picture/dpn_rule_cs_study_011_leaking_dam.png)
+
+
 `public` を増やすと何が起きるかというと…
 
 * 他プロジェクトから **自由に触れる** 👆
@@ -46,6 +49,9 @@
 
 ### 3.2 “ファイル内だけ” に隠せる `file` 🫥📄
 
+![file_scope_hidden](./picture/dpn_rule_cs_study_011_file_scope_hidden.png)
+
+
 C# には **「その .cs ファイルの中でだけ見える型」** を作れる `file` 修飾子があるよ！
 トップレベル型を **ファイルローカル** にできる✨ ([Microsoft Learn][3])
 
@@ -62,6 +68,9 @@ file static class HiddenMapper
 ---
 
 ## 4. “依存が漏れる” 典型パターンあるある😇🧨
+
+![internal_implementation_box](./picture/dpn_rule_cs_study_011_internal_implementation_box.png)
+
 
 ### パターンA：Infraの実装が public になってる🧯
 
@@ -112,6 +121,9 @@ classDiagram
 
 ### 5.1 Domain（中心）🏰
 
+![domain_castle_gate](./picture/dpn_rule_cs_study_011_domain_castle_gate.png)
+
+
 **公開してOK（例）** ✅
 
 * Entity / ValueObject（外に出して良い形にしてるなら）
@@ -157,6 +169,9 @@ classDiagram
 
 ### 6.1 Application：入口だけ public、実装は internal🚪🧠
 
+![usecase_facade_mask](./picture/dpn_rule_cs_study_011_usecase_facade_mask.png)
+
+
 ```csharp
 // Application プロジェクト
 public interface IOrderUseCase
@@ -190,6 +205,9 @@ internal sealed class OrderUseCase : IOrderUseCase
 ---
 
 ### 6.2 Infrastructure：実装は internal、公開は AddInfrastructure だけ🏭🧩
+
+![infra_service_window](./picture/dpn_rule_cs_study_011_infra_service_window.png)
+
 
 ```csharp
 // Infrastructure プロジェクト
@@ -263,6 +281,9 @@ Mapperとか、変換の小物とかにピッタリ✨ ([Microsoft Learn][3])
 
 ## 8. テストはどうするの？🤔🧪（internal を見たい時）
 
+![internals_visible_keyhole](./picture/dpn_rule_cs_study_011_internals_visible_keyhole.png)
+
+
 「テストから internal を触りたい〜！」ってなるよね☺️
 そのときに使えるのが **InternalsVisibleTo** 👀✨
 
@@ -283,6 +304,9 @@ using System.Runtime.CompilerServices;
 ---
 
 ## 9. “公開API一覧” を作ろう🤖📋（AI活用コーナー）
+
+![ai_api_auditor](./picture/dpn_rule_cs_study_011_ai_api_auditor.png)
+
 
 ここ超おすすめ！✨
 AI に **「このプロジェクトの public は契約だから、一覧にしてレビュー」** させると強い💪🤖
