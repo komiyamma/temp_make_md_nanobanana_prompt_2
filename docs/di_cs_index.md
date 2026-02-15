@@ -18,6 +18,9 @@ C#初級〜中級／設計は超入門／Windows＋Visual Studio中心／AI拡�
 
 ## 第1章　はじめに：DIって結局なにが嬉しいの？🌈
 
+![di_concept_plug](./picture/di_cs_index_di_concept_plug.png)
+
+
 * ゴール：DIの“ごほうび”がイメージできる😊
 * 内容：変更が怖くない／テストしやすい／差し替えできる
 * ミニ演習：日常例（スマホ充電器・イヤホン等）で「差し替え」を言語化🔌
@@ -27,12 +30,18 @@ C#初級〜中級／設計は超入門／Windows＋Visual Studio中心／AI拡�
 
 ## 第2章　“依存”ってなに？まず言葉を怖くなくする🧩
 
+![dependency_puzzle](./picture/di_cs_index_dependency_puzzle.png)
+
+
 * ゴール：「依存＝それがないと困る相手」が言える
 * 内容：依存の例（時計・ログ・HTTP・DB）⏰🧾🌐🗄️
 * ミニ課題：自分の過去コードから「依存っぽいもの」3つ探す🔎
 * AI活用🤖：コード貼って「依存を列挙して」✨
 
 ## 第3章　失敗例：newだらけコードの“つらさ”を体験😵
+
+![new_hell_wires](./picture/di_cs_index_new_hell_wires.png)
+
 
 * ゴール：「なぜ困るのか」を体感する
 * 内容：差し替え不可／テストしにくい／変更が連鎖
@@ -47,6 +56,9 @@ C#初級〜中級／設計は超入門／Windows＋Visual Studio中心／AI拡�
 * AI活用🤖：「このコード、I/Oとロジックに分ける案を出して」
 
 ## 第5章　インターフェース超入門：差し替え口を作ろう🧷
+
+![interface_plug_socket](./picture/di_cs_index_interface_plug_socket.png)
+
 
 * ゴール：interface＝“取り替え可能な口”だと理解する
 * 内容：具体→抽象へ（クラスを直接持たない）
@@ -67,6 +79,9 @@ C#初級〜中級／設計は超入門／Windows＋Visual Studio中心／AI拡�
 * 演習：依存を自分でnewする版 vs 外から渡される版を比較👀
 
 ## 第8章　コンストラクタ注入（最重要）：まずはこれだけでOK🥇
+
+![constructor_injection_funnel](./picture/di_cs_index_constructor_injection_funnel.png)
+
 
 * ゴール：基本はコンストラクタ注入で十分と言える
 * 内容：必須依存はコンストラクタで固定📌
@@ -109,6 +124,9 @@ C#初級〜中級／設計は超入門／Windows＋Visual Studio中心／AI拡�
 
 ## 第13章　Composition Root：組み立て場所を1か所に集める📍
 
+![composition_root_assembly](./picture/di_cs_index_composition_root_assembly.png)
+
+
 * ゴール：依存を散らさない設計ができる
 * 内容：Main/Startupで組み立てる（手動DI）
 * 演習：Composition Rootを作ってnewをそこへ移動🚚
@@ -129,6 +147,9 @@ C#初級〜中級／設計は超入門／Windows＋Visual Studio中心／AI拡�
 * AI活用🤖：「この規模でコンテナ必要？」相談テンプレ作成
 
 ## 第16章　DIコンテナ入門：Microsoftの標準的なやつを使う🧩
+
+![di_container_toolbox](./picture/di_cs_index_di_container_toolbox.png)
+
 
 * ゴール：最小導入ができる
 * 内容：Microsoft.Extensions.DependencyInjection の雰囲気

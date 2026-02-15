@@ -10,6 +10,9 @@
 
 ## 1) インターフェースってなに？🧩
 
+![interface_shape_sorter](./picture/di_cs_study_005_interface_shape_sorter.png)
+
+
 ![](./picture/di_cs_study_005_usb_port.png)
 
 
@@ -28,6 +31,9 @@
 ---
 
 ## 2) なんで必要なの？（DIの前準備）💡
+
+![benefits_swiss_knife](./picture/di_cs_study_005_benefits_swiss_knife.png)
+
 
 インターフェースがあると、こうなるよ👇
 
@@ -54,6 +60,9 @@ Visual Studio で **Console App** を作って、プロジェクト名を `DiIoc
 
 ### 4-1) interface を作る（差し替え口🧷）
 
+![ilogger_blueprint](./picture/di_cs_study_005_ilogger_blueprint.png)
+
+
 ```csharp
 namespace DiIoc.Ch05;
 
@@ -70,6 +79,9 @@ public interface ILogger
 
 ### 4-2) 実装その1：Consoleに出すやつ🖥️
 
+![console_logger_robot](./picture/di_cs_study_005_console_logger_robot.png)
+
+
 ```csharp
 namespace DiIoc.Ch05;
 
@@ -83,6 +95,9 @@ public sealed class ConsoleLogger : ILogger
 ---
 
 ### 4-3) 実装その2：何もしないダミー🙈（テストで大活躍）
+
+![null_logger_mime](./picture/di_cs_study_005_null_logger_mime.png)
+
 
 ```csharp
 namespace DiIoc.Ch05;
@@ -99,6 +114,9 @@ public sealed class NullLogger : ILogger
 ---
 
 ### 4-4) 使う側（ビジネス側）は interface だけを見る👀✨
+
+![service_unaware_remote](./picture/di_cs_study_005_service_unaware_remote.png)
+
 
 ```csharp
 namespace DiIoc.Ch05;
@@ -174,6 +192,9 @@ Console.WriteLine(service.CreateGreeting("こみやんま"));
 ---
 
 ## 5) 命名のお作法：I を付けるのは定番だよ〜🅸
+
+![naming_convention_label](./picture/di_cs_study_005_naming_convention_label.png)
+
 
 `.NET` のガイドラインでも、interface は **I を付けよう**ってなってるよ😊 ([Microsoft Learn][4])
 だから `ILogger` / `IClock` / `IEmailSender` みたいになる✨
