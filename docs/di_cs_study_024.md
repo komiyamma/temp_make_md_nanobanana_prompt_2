@@ -151,6 +151,8 @@ public sealed class WeatherApiClient : IWeatherApiClient
 
 ### 4.3 DI登録：`AddHttpClient` で安全に注入する🧰💉
 
+![](./picture/di_cs_study_024_http_client_factory_pool.png)
+
 `IHttpClientFactory` を使うと、ハンドラのプールやDNSまわりを面倒みてくれて、ログも乗せやすいよ〜✨ ([Microsoft Learn][3])
 
 ```csharp
@@ -184,6 +186,8 @@ services.AddHttpClient<IWeatherApiClient, WeatherApiClient>(client =>
     options.Retry.DisableForUnsafeHttpMethods();
 });
 ```
+
+![](./picture/di_cs_study_024_resilience_shield.png)
 
 この「POSTは危ないからリトライ止めよう」って注意、公式にもはっきり書いてあるよ🧯 ([Microsoft Learn][4])
 
@@ -225,6 +229,8 @@ Console.WriteLine(await svc.GetMessageAsync("Tokyo", CancellationToken.None));
 ---
 
 ## 5. テストが“差し替えだけ”でできる🧪💖（ここがDIの気持ちよさ！）
+
+![](./picture/di_cs_study_024_testing_with_fake_api.png)
 
 外部APIを呼ばない Fake を作って差し替えるだけ〜🥳
 

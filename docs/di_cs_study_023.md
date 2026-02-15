@@ -116,12 +116,16 @@ public sealed class PaymentService
 
 ### 🌟ポイント
 
+![](./picture/di_cs_study_023_structured_logging_search.png)
+
 * `"Pay start: ... {UserId} ..."` の `{UserId}` は **構造化ログ**（あとで検索・集計しやすい）🔍✨
 * `ClearProviders()`→`AddConsole()` で「どこに出るか」を明確にできる（デバッグでも追いやすい）🧭 ([Microsoft Learn][6])
 
 ---
 
 ## 5) ログレベルの使い分け🚦✨（超ざっくりルール）
+
+![](./picture/di_cs_study_023_logging_levels_meter.png)
 
 * `LogTrace`：細かすぎる追跡（普段はOFF）🧵
 * `LogDebug`：開発中に便利（本番は抑えがち）🔧
@@ -153,6 +157,8 @@ catch (Exception ex)
 ---
 
 ## 7) スコープで「関連するログ」をひとまとまりにする🧺✨
+
+![](./picture/di_cs_study_023_scope_logging_trace.png)
 
 「このリクエストのログ全部に `TraceId` つけたい〜！」みたいな時に便利😊
 
