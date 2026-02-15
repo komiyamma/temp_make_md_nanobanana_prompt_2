@@ -32,6 +32,9 @@
 
 ## 3. DTOってなに？（箱📦）
 
+![dto_cardboard_box](./picture/dpn_rule_cs_study_009_dto_cardboard_box.png)
+
+
 DTO（Data Transfer Object）は、**境界を通るための“ただのデータ”**だよ🙂🌷
 ポイントは「**ロジックを持たない**」「**境界の外に漏れて困る型を含めない**」の2つ！
 
@@ -65,6 +68,9 @@ Portはだいたい **interface** で表現するのがC#では自然だよ😺
 ---
 
 ## 5. Adapterってなに？（変換器🔧）
+
+![adapter_converter](./picture/dpn_rule_cs_study_009_adapter_converter.png)
+
 
 Adapterは「Portに合わせて動く実装側」！
 **Web/API** も Adapter、**DBアクセス** も Adapter だよ〜🚪✨
@@ -116,6 +122,9 @@ flowchart LR
 ```
 
 ## 6.1 Domain（中心のさらに中心🌱）
+
+![domain_jewel](./picture/dpn_rule_cs_study_009_domain_jewel.png)
+
 
 ドメインは“業務の言葉”だけにしたい✨（JSONとかDBとか知らない🙅‍♀️）
 
@@ -217,6 +226,9 @@ public sealed class CreateOrderUseCase : ICreateOrderUseCase
 
 ## 6.3 Web Adapter（DTO📦 ＋ マッピング🔁）
 
+![dto_mapping_machine](./picture/dpn_rule_cs_study_009_dto_mapping_machine.png)
+
+
 Webは “外側の詳細” なので、DTOはここに置くのが自然😊🌸
 （Minimal API の形は aspnetcore-10.0 にも整理されてるよ🚀） ([Microsoft Learn][4])
 
@@ -317,6 +329,9 @@ public sealed class InMemoryOrderRepository : IOrderRepository
 
 ## 🚫 事故1：Controller/EndpointがDomainを返す
 
+![entity_leak_accident](./picture/dpn_rule_cs_study_009_entity_leak_accident.png)
+
+
 「動くからOK！」ってやりがちだけど、後で変更が怖くなる😱
 → **Response DTO**に変えて返すのが安心✨
 
@@ -326,6 +341,9 @@ Entityに `JsonPropertyName` とか付け始めたら赤信号🚥💥
 → WebのDTOはWebへ、DBのEntityはInfraへ📦
 
 ## 🚫 事故3：UseCaseがDTOを受け取る
+
+![usecase_pollution](./picture/dpn_rule_cs_study_009_usecase_pollution.png)
+
 
 中心が外側の都合に引っ張られるやつ😭
 → Command/Resultを挟もう✨
@@ -373,6 +391,9 @@ flowchart TD
 ---
 
 ## 10. AI（Copilot/Codex）に頼むと強いところ🤖💖
+
+![ai_mapping_gen](./picture/dpn_rule_cs_study_009_ai_mapping_gen.png)
+
 
 “境界の型”は作業量が地味に多いから、AIが超相性いいよ〜！🎯
 

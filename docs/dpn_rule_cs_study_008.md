@@ -25,6 +25,9 @@
 
 ## 2) なぜ“外側”に寄せるの？（Dependency Ruleとの接続）🧭➡️
 
+![new_factory_zone](./picture/dpn_rule_cs_study_008_new_factory_zone.png)
+
+
 Dependency Ruleの気持ちとしては👇
 
 * **中心（Domain/Application）は長生きしてほしい**🌳
@@ -49,6 +52,9 @@ var repo = new SqlOrderRepository(connectionString);
 
 ## 3) Composition Rootはどこに置く？📌
 
+![root_locations_map](./picture/dpn_rule_cs_study_008_root_locations_map.png)
+
+
 だいたいここです👇（全部“外側”！）
 
 * Webアプリ：`Program.cs`（ASP.NET Core）🌐
@@ -66,6 +72,9 @@ ASP.NET Coreの基本として **DIは標準機能**で、`Program.cs` が組み
 題材：**注文を作る（PlaceOrder）** 🛒💕
 
 ## 4-1. まずダメな例（中心が外側を知っちゃう）🙅‍♀️
+
+![dirty_connection_string](./picture/dpn_rule_cs_study_008_dirty_connection_string.png)
+
 
 ```csharp
 // Application層
@@ -145,6 +154,9 @@ useCase.Execute(new Order(/* ... */));
 
 ```mermaid
 sequenceDiagram
+
+![di_sequence_flow](./picture/dpn_rule_cs_study_008_di_sequence_flow.png)
+
     participant Main as Program.cs ("UI")
     participant DI as DI Container
     participant Infra as Repository ("Infra")
@@ -170,6 +182,9 @@ sequenceDiagram
 ---
 
 ## 5) Program.csが太りすぎ問題🥺 → “登録をまとめる”コツ🧩
+
+![extension_method_package](./picture/dpn_rule_cs_study_008_extension_method_package.png)
+
 
 Composition Rootは外側に置くけど、`Program.cs` が巨大になるのはあるある😇
 
@@ -275,6 +290,9 @@ ASP.NET CoreのDI/ホスティングはこの考え方が前提になってま�
 
 ## 演習A：newを追放して、Program.csに集約しよ✂️🏗️
 
+![cutting_new](./picture/dpn_rule_cs_study_008_cutting_new.png)
+
+
 1. Application層にある `new XxxRepository()` を探す🔎
 2. `IOrderRepository` に置き換える🧷
 3. 実装クラスはInfrastructureへ移動🧳
@@ -304,6 +322,9 @@ Program.cs（またはテスト側）で切り替えるだけにする💡
 ---
 
 ## 9) AI活用（Copilot / Codex想定）🤖✨
+
+![ai_trap_warning](./picture/dpn_rule_cs_study_008_ai_trap_warning.png)
+
 
 使いどころはここが強いです👇
 

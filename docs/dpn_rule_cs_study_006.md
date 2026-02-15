@@ -16,6 +16,9 @@
 
 は別モノ、という感覚です🧠🔁
 
+![dependency_inversion_flow](./picture/dpn_rule_cs_study_006_dependency_inversion_flow.png)
+
+
 Microsoftのアーキテクチャ解説でも、**“実行時の流れはそのままでも、コンパイル時の依存はインターフェースで反転できる”** って説明されています📚✨ ([Microsoft Learn][1])
 
 ---
@@ -57,6 +60,9 @@ flowchart TD
 ---
 
 ## 6-4. 正しい置き方（王道パターン）🏆✨
+
+![correct_placement_layers](./picture/dpn_rule_cs_study_006_correct_placement_layers.png)
+
 
 今回の王道はこれ👇
 
@@ -106,6 +112,9 @@ classDiagram
 
 ### ① Domain：注文エンティティ（超ミニ）📦
 
+![order_entity_pure](./picture/dpn_rule_cs_study_006_order_entity_pure.png)
+
+
 ```csharp
 namespace MyApp.Domain;
 
@@ -129,6 +138,9 @@ public sealed class Order
 
 ### ② Application：欲しいもの（Interface）をここに置く🧷🎯
 
+![iorderrepository_contract](./picture/dpn_rule_cs_study_006_iorderrepository_contract.png)
+
+
 「注文を保存したい」っていう **“欲求”** を Application 側が宣言します👇
 
 ```csharp
@@ -148,6 +160,9 @@ public interface IOrderRepository
 * Application は Application/Domain だけで完結させるのが美しいです🧼✨
 
 ### ③ Application：ユースケース（IOrderRepository を使う）📥
+
+![usecase_using_interface](./picture/dpn_rule_cs_study_006_usecase_using_interface.png)
+
 
 ```csharp
 using MyApp.Domain;
@@ -176,6 +191,9 @@ public sealed class PlaceOrderUseCase
 **PlaceOrderUseCase は DB のことを一切知らない** のに、保存はできる設計になってます😊✨
 
 ### ④ Infrastructure：実装を作る（Interface を実装する側）🧰
+
+![inmemory_implementation](./picture/dpn_rule_cs_study_006_inmemory_implementation.png)
+
 
 まずは簡単に InMemory 実装でOKです（DBは次の章以降で差し替えやすい✨）
 
@@ -261,6 +279,9 @@ internal static class Program
 ## 6-8. ミニ演習（超おすすめ）🧪💖
 
 ### 演習A：わざと失敗して “怖さ” を体験する😈💥
+
+![exercise_bad_move](./picture/dpn_rule_cs_study_006_exercise_bad_move.png)
+
 
 1. `IOrderRepository` を **Infrastructure** に移動してみる
 2. Application から使おうとする
