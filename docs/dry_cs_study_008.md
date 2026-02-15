@@ -30,6 +30,9 @@ DRYの本体は、ざっくり言うとこう👇
 
 ## 8.2 落とし穴①：「似てる」≠「同じルール」😵‍💫🌀
 
+![similar_but_different_fruit](./picture/dry_cs_study_008_similar_but_different_fruit.png)
+
+
 ![dry_cs_study_008_wrong_abstraction](./picture/dry_cs_study_008_wrong_abstraction.png)
 
 
@@ -73,6 +76,9 @@ public static int CalcShipping(int amount, bool isOverseas, bool includeDuty)
 
 ## 8.3 落とし穴②：共通化の目的は「コードを減らす」じゃない✂️❌➡️🧰✅
 
+![generic_plug_fail](./picture/dry_cs_study_008_generic_plug_fail.png)
+
+
 DRYで本当に欲しいのは「行数削減」じゃなくて👇
 
 * **変更箇所を減らす**🧩
@@ -106,6 +112,9 @@ public static decimal Calc(decimal baseValue, decimal rate, bool roundDown, bool
 ---
 
 ## 8.4 落とし穴③：Util地獄（CommonUtil.csが宇宙になる）🪐🐘🔥
+
+![util_hell_garbage_bin](./picture/dry_cs_study_008_util_hell_garbage_bin.png)
+
 
 ![dry_cs_study_008_swiss_army_knife](./picture/dry_cs_study_008_swiss_army_knife.png)
 
@@ -151,6 +160,9 @@ YAGNIは「たぶん必要になる機能を先に作らない」って考え方
 
 ### じゃあDRYはどうするの？🥺
 
+![rule_of_three_traffic_light](./picture/dry_cs_study_008_rule_of_three_traffic_light.png)
+
+
 ここで便利なのが、よく言われる **Rule of Three**（3回出たら抽出）🧩✨
 2回は様子見、3回目で「パターン確定！」って判断しやすいんだよね😊 ([ウィキペディア][3])
 
@@ -163,6 +175,9 @@ YAGNIは「たぶん必要になる機能を先に作らない」って考え方
 ---
 
 ## 8.6 DRYやりすぎを止める「判断の4軸」🧭✨
+
+![judgment_compass](./picture/dry_cs_study_008_judgment_compass.png)
+
 
 共通化したくなったら、この4つをチェックしてね👇😊
 
@@ -260,6 +275,9 @@ YAGNIは「たぶん必要になる機能を先に作らない」って考え方
 ## 8.9 ミニ演習：「悪い共通化」を“良い形”に直す🛠️✨
 
 ### お題：フラグ地獄の割引関数を救出する🆘
+
+![flag_hell_maze](./picture/dry_cs_study_008_flag_hell_maze.png)
+
 
 ```csharp
 public static int CalcDiscountedPrice(int price, bool isMember, bool isCampaign, bool roundDown)

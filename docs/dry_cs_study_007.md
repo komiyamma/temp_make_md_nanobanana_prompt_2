@@ -15,6 +15,9 @@ DRYって、がんばっても…気づくと戻るんですよね🥲
 
 ## 7.2 DRYを“仕組み化”する「3点セット」🔁✨
 
+![three_pillars_stool](./picture/dry_cs_study_007_three_pillars_stool.png)
+
+
 ### (A) テスト 🧪：変更しても安心の“保険”
 
 DRYはリファクタが多いので、**テストがあると一気に怖さが減ります**😌
@@ -53,6 +56,9 @@ mindmap
 
 ## 7.3 “最小のテスト”だけでいいよ作戦 🧪🌱
 
+![minimum_test_shield](./picture/dry_cs_study_007_minimum_test_shield.png)
+
+
 ![dry_cs_study_007_safety_net](./picture/dry_cs_study_007_safety_net.png)
 
 
@@ -70,6 +76,9 @@ mindmap
 ---
 
 ## 7.4 回すのがラクになると勝ち：Test Explorer ＆ dotnet test 🚀🧪
+
+![test_loop_infinity](./picture/dry_cs_study_007_test_loop_infinity.png)
+
 
 ![dry_cs_study_007_refactoring_loop](./picture/dry_cs_study_007_refactoring_loop.png)
 
@@ -146,6 +155,9 @@ Copilot Chat は、コンテキストをファイル等に置いて“自動で�
 
 ## 7.6 IDEで“重複を検知”して戻す 🛠️👀🔁
 
+![quick_action_wand](./picture/dry_cs_study_007_quick_action_wand.png)
+
+
 ### 7.6.1 Quick Actions（リファクタの入口）✨
 
 Visual Studio の Quick Actions は、**リファクタ・生成・修正**をワンアクションで出してくれます🪄
@@ -173,6 +185,9 @@ Visual Studio の「Architecture analysis & modeling tools」系の機能とし�
 ---
 
 ## 7.7 演習：「重複削除→テスト追加→安心してリファクタ」3点セット🌟🧪🔁
+
+![refactoring_shelf_organizer](./picture/dry_cs_study_007_refactoring_shelf_organizer.png)
+
 
 ここでは分かりやすく **送料＋割引**の例でいきます💰📦
 

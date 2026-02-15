@@ -34,6 +34,9 @@
 
 ## 9-3. 進め方（6ステップ固定）🔁✨
 
+![project_goal_clean_room](./picture/dry_cs_study_009_project_goal_clean_room.png)
+
+
 ![dry_cs_study_009_before_after](./picture/dry_cs_study_009_before_after.png)
 
 
@@ -111,6 +114,9 @@ public static class Checkout
 
 ## 9-5. まずは「重複ラベル」を貼ろう🏷️✨（ここ超大事！）
 
+![labeling_sticky_notes](./picture/dry_cs_study_009_labeling_sticky_notes.png)
+
+
 紙に付箋貼る気持ちで、コメントでもメモでもOKだよ📝😊
 
 * **ルール重複**：割引率、送料無料判定、クーポン適用条件🧮
@@ -121,6 +127,9 @@ public static class Checkout
 ---
 
 ## 9-6. “保険”の最小テストを入れる🧪🛡️
+
+![safety_cone_test](./picture/dry_cs_study_009_safety_cone_test.png)
+
 
 ここは「完璧なテスト」じゃなくていい！
 **“これが壊れたら困る”だけ守る**のが目的だよ😊✨
@@ -164,6 +173,9 @@ Visual Studioには **Copilot Chat** が統合されていて、コード理解�
 ---
 
 ## 9-7. 重複を消す（メソッド抽出→引数化）✂️🧩
+
+![method_surgeon](./picture/dry_cs_study_009_method_surgeon.png)
+
 
 ### 目標：`CalcTotal`の中の「割引」「クーポン」「送料」を分ける✨
 
@@ -217,6 +229,9 @@ public static class Checkout
 ---
 
 ## 9-8. 値・ルールの置き場所を整える（定数化）🗃️📌
+
+![constants_jewelry_box](./picture/dry_cs_study_009_constants_jewelry_box.png)
+
 
 ### まずは“散ってるデータ”を1か所に📦
 
