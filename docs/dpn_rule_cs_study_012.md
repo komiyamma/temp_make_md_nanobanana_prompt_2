@@ -38,6 +38,9 @@ flowchart LR
 
 ## 3) なんで必要なの？（あるある事故）😭💥
 
+![Broken Window](./picture/dpn_rule_cs_study_012_broken_window.png)
+
+
 * ある日だれかが Domain に Infrastructure を参照追加しちゃう📎😇
 * 「一旦動くからOKでしょ〜」で、DbContext とか HttpClient とかが Domain に侵入🧟‍♀️
 * 数週間後、「変更が怖い」「テストが重い」「取り返しがつかない」になる😱
@@ -146,6 +149,9 @@ public class ArchitectureTests
 
 ### 5-4) わざと壊して、赤くしてみよう❤️‍🔥🚨（超おすすめ）
 
+![Red Green Cycle](./picture/dpn_rule_cs_study_012_red_green_cycle.png)
+
+
 やることはシンプル👇
 
 1. **（一瞬だけ）Domain → Infrastructure の参照を追加**してみる📎😈
@@ -158,6 +164,9 @@ public class ArchitectureTests
 ---
 
 ## 6) ついでに入れると強い“定番ルール”セット📋✨
+
+![Rules Checklist](./picture/dpn_rule_cs_study_012_rules_checklist.png)
+
 
 最初から全部やるとしんどいので、**上から順に1本ずつ**がオススメです🍰💕
 
@@ -218,6 +227,9 @@ AIは早いけど、**最後の調整は人間の仕事**です🧑‍🔧💖
 ---
 
 ## 9) まとめ🏁🎀
+
+![Guard Dog](./picture/dpn_rule_cs_study_012_guard_dog.png)
+
 
 * アーキテクチャテストは「設計ルールの自動警備員」👮‍♀️🚨
 * まずは **1本だけ**入れて「赤→緑」を体験するのが最強🌈✅

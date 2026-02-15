@@ -52,6 +52,9 @@ graph TD
 
 ## 16.2 ソリューションを作る📦🛠️✨
 
+![Solution Tree](./picture/dpn_rule_cs_study_016_solution_tree.png)
+
+
 ### A) クリックで作る（Visual Studio）🖱️💖
 
 1. 新しいソリューション作成（空のソリューション）📁✨
@@ -104,6 +107,9 @@ dotnet add .\MiniShop.ArchTests\MiniShop.ArchTests.csproj reference .\MiniShop.A
 ---
 
 ## 16.3 Domain：業務ルールはここだけ🧠💎✨
+
+![Domain Guard](./picture/dpn_rule_cs_study_016_domain_guard.png)
+
 
 ### 目標🎯
 
@@ -182,6 +188,9 @@ public sealed class Order
 
 ## 16.4 Application：ユースケース（やりたいこと）を固定する🎯🧩✨
 
+![UseCase Orchestrator](./picture/dpn_rule_cs_study_016_usecase_orchestrator.png)
+
+
 `MiniShop.Application` に追加するよ〜😊
 
 ### Port（I/F）＋ UseCase 🧷🛠️
@@ -234,6 +243,9 @@ public sealed class PlaceOrderHandler
 ---
 
 ## 16.5 Infrastructure：詳細は差し替え可能に🧰🔁✨
+
+![Infra Plug](./picture/dpn_rule_cs_study_016_infra_plug.png)
+
 
 今回は「ちゃんとDBっぽい」達成感も欲しいので、**SQLite + EF Core**でいくよ〜！🐣➡️🐥✨
 EF Core は **10.0.2** 世代が最新ラインだよ〜 ([NuGet][2])
@@ -365,6 +377,9 @@ public sealed class EfOrderRepository : IOrderRepository
 ---
 
 ## 16.6 Api：Composition Root（組み立て）をここに集約🏗️🌐✨
+
+![Api Assembly](./picture/dpn_rule_cs_study_016_api_assembly.png)
+
 
 `MiniShop.Api` の `Program.cs` を整えるよ😊
 

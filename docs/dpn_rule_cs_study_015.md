@@ -68,6 +68,9 @@ public class Order
 
 ### ✅ OKパターンB：Application に “自前のログ口（Port）”を置く🧷🎯
 
+![Log Port](./picture/dpn_rule_cs_study_015_log_port.png)
+
+
 「ユースケース単位でログは欲しい。でも `ILogger` 依存は持ち込みたくない」
 そんな時は **Application にログ用インターフェースを定義**して、外側で実装（Adapter）するのがキレイ✨
 
@@ -176,6 +179,9 @@ public sealed class AppLogger<T> : IAppLogger
 
 ### まずは外側で Options パターン（型付き設定）を作る📦✨
 
+![Config Binding](./picture/dpn_rule_cs_study_015_config_binding.png)
+
+
 ASP.NET Core には **Options パターン**があって、`Bind` と `ValidateDataAnnotations` で「設定を型に束縛＋検証」できるよ✅ ([Microsoft Learn][2])
 
 #### appsettings.json（例）📝
@@ -214,6 +220,9 @@ builder.Services
 ---
 
 ### ✅ さらにDependency Rule寄り：中心には “ただの値オブジェクト” を渡す🎁✨
+
+![Pure Value](./picture/dpn_rule_cs_study_015_pure_value.png)
+
 
 Application に “設定そのもの”を渡すんじゃなくて、**使うための値だけ渡す**のが超キレイ😊
 
@@ -294,6 +303,9 @@ public sealed class Order
 
 ### ✅ 外側で “HTTP に翻訳”する（ProblemDetails が便利）🧾✨
 
+![Exception Mapping](./picture/dpn_rule_cs_study_015_exception_mapping.png)
+
+
 ASP.NET Core では **ProblemDetails（RFC 7807）**でエラー応答を揃えられるよ〜！
 `AddProblemDetails()` を呼ぶと、いくつかのミドルウェアが ProblemDetails を生成できるようになる（ExceptionHandlerMiddleware / StatusCodePagesMiddleware など）って整理が公式にあるよ📚 ([Microsoft Learn][3])
 
@@ -321,6 +333,9 @@ app.MapPost("/orders", (int itemCount, OrderPolicy policy) =>
 ---
 
 ### 💥 想定外例外は “グローバルに捕まえる”🪤✨
+
+![Global Net](./picture/dpn_rule_cs_study_015_global_net.png)
+
 
 ASP.NET Core には例外ハンドリングの仕組みがあって、`UseExceptionHandler` で例外をまとめて処理できるよ📌 ([Microsoft Learn][4])
 さらに **`IExceptionHandler`** を使うと、例外をタイプごとに順番に処理できる（複数登録可）って公式の説明があるよ🧠✨ ([Microsoft Learn][5])
