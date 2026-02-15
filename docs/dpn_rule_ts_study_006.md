@@ -19,6 +19,9 @@
 
 ## 6-1. “契約”ってなに？📜 ざっくり言うと…
 
+![contract_definition](./picture/dpn_rule_ts_study_006_contract_definition.png)
+
+
 ![](./picture/dpn_rule_ts_study_006_contract_shield.png)
 
 **契約（contract）**は、
@@ -43,6 +46,9 @@ Domain は外側に支配されない💪✨
 
 ## 6-2. TypeScriptの型は「形（shape）」を見る👀🧩
 
+![shape_matching](./picture/dpn_rule_ts_study_006_shape_matching.png)
+
+
 TypeScript は「この値はどんな形？」っていう **構造（shape）**で型チェックするよ。([TypeScript][2])
 だから、契約（interface/type）は **“形の約束”**としてすごく相性がいいの😊✨
 
@@ -56,6 +62,9 @@ graph LR
 ---
 
 ## 6-3. `interface` と `type`、どっち使うの？😵‍💫→こう考えると楽！
+
+![interface_vs_type](./picture/dpn_rule_ts_study_006_interface_vs_type.png)
+
 
 結論：**両方使う！** ただし役割で分けると迷いが減るよ🧠✨
 
@@ -76,6 +85,9 @@ graph LR
 ---
 
 ## 6-4. 契約の命名のコツ📛✨（ここ超大事！）
+
+![naming_cleanliness](./picture/dpn_rule_ts_study_006_naming_cleanliness.png)
+
 
 契約の名前は、「実装の匂い」を消すのがコツだよ🧼💕
 
@@ -142,6 +154,9 @@ export type User = {
 ---
 
 ## 6-6. Domainのユースケースは「契約だけ」見て書く✍️🧅
+
+![domain_using_contracts](./picture/dpn_rule_ts_study_006_domain_using_contracts.png)
+
 
 ```ts
 // src/domain/registerUser.ts
@@ -253,6 +268,9 @@ export const inMemoryUserRepository = {
 ---
 
 ## 6-9. “データ”の契約は `type` が気持ちいい🫧✨（Result型ちょい入門）
+
+![result_type](./picture/dpn_rule_ts_study_006_result_type.png)
+
 
 エラーを `throw` で投げるの、後で第11章で綺麗にするんだけど…
 準備として「成功/失敗」を `type` で表すとこうなるよ👇

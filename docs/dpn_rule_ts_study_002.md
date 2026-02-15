@@ -2,6 +2,9 @@
 
 ## 0) この章のゴール🏁
 
+![goal_checklist](./picture/dpn_rule_ts_study_002_goal_checklist.png)
+
+
 この章が終わったら、あなたがこう言えるようになるのがゴールだよ😊💕
 
 * 「Dependency Ruleって何？」→ **一言で説明できる**✨
@@ -67,6 +70,9 @@ graph TD
 
 ## 3) なぜ「中心を守る」のが正義なの？💪✨（変更の波🌊）
 
+![changing_outer_world](./picture/dpn_rule_ts_study_002_changing_outer_world.png)
+
+
 外側って、こんな理由でよく変わるよね👇
 
 * UIを変えたい（デザイン刷新）🎨
@@ -120,6 +126,9 @@ graph LR
 
 ## 5) よくある「事故の匂い」🐽💥（中心が汚染されてるサイン）
 
+![bad_dependency_signs](./picture/dpn_rule_ts_study_002_bad_dependency_signs.png)
+
+
 ### 🚨 サインA：中心に “DBの型” が出てくる
 
 例：「ドメインの中で Prisma の型を使ってる」みたいなやつ。
@@ -138,6 +147,9 @@ graph LR
 ---
 
 ## 6) ちいさな例で体感しよ🧪✨（ダメ🙅‍♀️→OK🙆‍♀️）
+
+![code_example_contrast](./picture/dpn_rule_ts_study_002_code_example_contrast.png)
+
 
 ### ❌ ダメ例：中心（domain）が外側（fetch）を知ってる😱
 
@@ -218,6 +230,9 @@ flowchart TD
 
 ## 7) ミニ演習：中心/外側を色分けしてみよ🎨📝（超だいじ！）
 
+![sorting_exercise](./picture/dpn_rule_ts_study_002_sorting_exercise.png)
+
+
 次の要素を「中心」「外側」に仕分けしてみてね👇（頭の中でOK！）
 
 * A. `Todo` 型（タイトル・完了フラグ）
@@ -249,6 +264,9 @@ flowchart TD
 ---
 
 ## 9) AI🤖に頼むと超はかどるプロンプト集💌✨
+
+![ai_prompt_help](./picture/dpn_rule_ts_study_002_ai_prompt_help.png)
+
 
 （CopilotでもCodex系でも、だいたい効くよ！）
 
