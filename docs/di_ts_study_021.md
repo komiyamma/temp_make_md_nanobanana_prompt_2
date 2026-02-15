@@ -10,6 +10,9 @@
 
 ## 1) まず“import地獄”って何がつらいの？😵‍💫📦
 
+![folder_maze](./picture/di_ts_study_021_folder_maze.png)
+
+
 よくある症状はこれ👇
 
 * 似たようなフォルダが増えて「どこに何があるの？」状態🙈
@@ -52,6 +55,9 @@ sequenceDiagram
 ---
 
 ## 3) “何をどこに置く？”早見表🔍✨
+
+![mail_sorting](./picture/di_ts_study_021_mail_sorting.png)
+
 
 ## domain（いちばんピュア💎）
 
@@ -149,6 +155,9 @@ src/
 
 ## 6) 移行手順（既存プロジェクトを3層へお引っ越し🚚）
 
+![moving_boxes](./picture/di_ts_study_021_moving_boxes.png)
+
+
 いきなり全部やると疲れるので、順番が大事〜！🥺💦
 
 ## Step 1：ファイルにラベルを貼る🏷️
@@ -180,6 +189,9 @@ new や実装の選択は入口に寄せると、DIが気持ちいい💉✨
 ---
 
 ## 7) 相対パスを短くしたい！→ pathsエイリアス🎀
+
+![path_portal](./picture/di_ts_study_021_path_portal.png)
+
 
 フォルダが整うと、次は import を読みやすくしたくなるよね😊
 

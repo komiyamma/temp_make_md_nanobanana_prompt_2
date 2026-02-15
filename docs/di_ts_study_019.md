@@ -30,6 +30,9 @@
 
 ## 2) 解決の合言葉：「設定（env）は依存」🔌💉
 
+![config_injection](./picture/di_ts_study_019_config_injection.png)
+
+
 つまり…
 
 * **設定を読む行為** ＝ 外部に依存してる
@@ -130,6 +133,9 @@ export function createConfig(env: EnvSource): Config {
 ポイント🌸
 
 * `z.coerce.number()` で `"3000"` → `3000` に変換できるのが最高👏
+
+![frozen_config](./picture/di_ts_study_019_frozen_config.png)
+
 * `Object.freeze` で “途中で書き換え不可” にして事故を減らす🧊
 
 ---
@@ -203,6 +209,9 @@ test("health endpoint", async () => {
 
 ## 5) フロント系の注意：`process.env` じゃない世界もある👀🌐
 
+![frontend_backend_zone](./picture/di_ts_study_019_frontend_backend_zone.png)
+
+
 ### Vite：`import.meta.env` を使う（`VITE_` だけ公開）🌱
 
 Viteは `import.meta.env` に値が入り、ビルド時に置換されるよ🧩 ([vitejs][5])
@@ -221,6 +230,8 @@ Next.js は `.env` を読み込めて、`NEXT_PUBLIC_` が付いたものはク�
 
 * **設定は途中で書き換えない**：不具合の温床なので `freeze` 推奨🧊
 * **起動時に検証して落とす**：実行途中で爆発より100倍マシ🧯（Zod / envalid / t3-env など）
+
+![startup_gatekeeper](./picture/di_ts_study_019_startup_gatekeeper.png)
 
   * envalid：envの検証・サニタイズ用の小さめライブラリ🧼 ([GitHub][8])
   * t3-env：サーバー/クライアント分離＋型安全を強く支援してくれる系🦾 ([Env][9])
