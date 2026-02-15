@@ -16,6 +16,8 @@
 
 ## 1) まず“ハードコード地獄”を卒業しよ😵➡️😊
 
+![](./picture/di_cs_study_022_hardcoding_mess.png)
+
 ### こういうの、見覚えある？🧩
 
 * APIのURLがコードに直書き🌐
@@ -94,6 +96,8 @@ public sealed class WeatherApiOptions
 * `[Required]` `[Range]` みたいに **バリデーション**も書ける✅（あとで起動時チェックするよ）
 
 ### (C) Program.cs で「設定→Options」へBindしてDI登録💉
+
+![](./picture/di_cs_study_022_options_binding_flow.png)
 
 （.NET 10 世代の書き方でOKだよ〜）([Microsoft][3])
 
@@ -225,6 +229,8 @@ public sealed class WeatherClient
 * 対策：`ValidateOnStart()`＋`ValidateDataAnnotations()` が超効く🛡️([Microsoft Learn][2])
 
 ### 事故②：設定ミスに気づくのが“実行中”💥
+
+![](./picture/di_cs_study_022_validate_on_start_gate.png)
 
 * 対策：やっぱり `ValidateOnStart()` ✅（起動時に落としてくれる）([Microsoft Learn][2])
 

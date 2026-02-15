@@ -70,6 +70,8 @@ classDiagram
 
 ### ① 依存が見えない（読む人が詰む）🙈📦
 
+![](./picture/di_cs_study_027_dependency_blindfold.png)
+
 コンストラクタに書かれてないから、
 
 * このクラス、何が必要なの？
@@ -92,6 +94,8 @@ DIの美味しさは「Fake差し替え」が簡単なことなのに、Service 
 ---
 
 ### ③ 実行時に壊れる（気づくのが遅い）💣🏃‍♀️
+
+![](./picture/di_cs_study_027_runtime_explosion_bomb.png)
 
 `GetService()` は「登録されてなければ `null`」になることが多いし、
 `GetRequiredService()` は「無ければ例外」で落ちます💥([Microsoft Learn][2])
@@ -147,6 +151,8 @@ Microsoftの公式ガイドでも、この形（`GetService`で取得するServi
 ---
 
 ## 4) 正しい形：コンストラクタ注入に直す💉✨
+
+![](./picture/di_cs_study_027_refactoring_to_constructor.png)
 
 「必要なものは最初に全部もらう」スタイルへ🔧
 

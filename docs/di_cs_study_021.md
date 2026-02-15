@@ -23,6 +23,8 @@
 
 ### 🌐 Web（ASP.NET Core）だと
 
+![](./picture/di_cs_study_021_web_request_scope.png)
+
 **だいたい「1リクエスト＝1スコープ」**のイメージでOK😊
 `AddScoped` は **「1リクエストの寿命」**として紹介されてるよ📘 ([Microsoft Learn][2])
 さらに、Webアプリでは scoped サービスは **リクエストの終わりで Dispose される**（片付けられる）って説明もあるよ🧹 ([Microsoft Learn][3])
@@ -60,6 +62,8 @@ graph TD
 ---
 
 ## 3) Scopedの“挙動”を手で触って理解しよう🧪✨（ConsoleでOK）
+
+![](./picture/di_cs_study_021_scope_lifecycle_visual.png)
 
 ### やりたいこと🎯
 
@@ -143,6 +147,8 @@ public sealed class Stamp : IStamp, IDisposable
 ## 5) Scopedで事故りがちなところ⚠️（ここ超大事！）
 
 ### 🚫 事故①：Singleton が Scoped を握りしめる（捕まえる）
+
+![](./picture/di_cs_study_021_singleton_capturing_scoped.png)
 
 例）Singletonサービスのコンストラクタで scoped を受け取る
 👉 すると scoped が **実質ずっと生き続ける**（or 破綻）みたいな変な状態に😱

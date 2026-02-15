@@ -25,6 +25,8 @@ DIがあると、**本物の代わりにモックを差し込める**から、�
 
 ## 2) 似た言葉の整理（ここ超大事）🧠✨
 
+![](./picture/di_cs_study_026_stub_vs_mock_balance.png)
+
 * **Stub（スタブ）**：テスト用に「戻り値を返す」係（例：常に `true` を返す）🎭
 * **Fake（フェイク）**：簡易実装（メモリDBみたいに動く）🧪
 * **Mock（モック）**：**呼び出しを検証**できる（回数・引数）🔍
@@ -68,6 +70,8 @@ graph TD
 ---
 
 ## 4) 実践：通知サービスが「1回だけ呼ばれた」を検証しよう🔔🧪
+
+![](./picture/di_cs_study_026_notification_verification.png)
 
 題材：
 「注文が確定したら、通知を1回送る」🛒➡️🔔
@@ -179,6 +183,8 @@ public sealed class OrderServiceTests_Moq
 ---
 
 ## 7) モック乱用しないコツ（超重要）🌿⚠️
+
+![](./picture/di_cs_study_026_over_mocking_warning.png)
 
 モックは便利だけど、やりすぎるとテストが壊れやすい😵‍💫
 
