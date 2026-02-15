@@ -53,20 +53,32 @@ svc.createUser("Mika"); // 💥 実行時に落ちる
 
 ### 落とし穴①：必須依存が“必須に見えない”🙈
 
+![hidden_requirement](./picture/di_ts_study_012_hidden_requirement.png)
+
+
 コンストラクタ注入なら「これがないと動かない」が一目で分かるよね？
 でもプロパティ注入だと、`new UserService()` が **普通にできちゃう**。これが事故の入口🚪💥
 
 ### 落とし穴②：`undefined`事故が“実行時”まで潜る🐟💣
+
+![runtime_accident](./picture/di_ts_study_012_runtime_accident.png)
+
 
 TypeScriptは本来「プロパティ初期化してね」ってチェックしてくれる（`strictPropertyInitialization`）。
 でも `!` を付けた瞬間、そのチェックをスルーできちゃうの😇 ([TypeScript][2])
 
 ### 落とし穴③：初期化順序・タイミング問題（特に継承）🧬⚡
 
+![relay_race](./picture/di_ts_study_012_relay_race.png)
+
+
 JavaScriptのクラス初期化順序は決まってて、**親→子の順**で進むよ。
 「親のconstructor内」で依存を使うと、子側の準備が終わってなくて事故ることがある🥶 ([TypeScript][3])
 
 ### 落とし穴④：テストがつらい🧪😵
+
+![test_pain](./picture/di_ts_study_012_test_pain.png)
+
 
 テストで `new UserService()` してメソッド呼ぶだけで落ちる、みたいな **地雷ユニット**になりがち。
 「テスト用に全部注入し忘れずにね」ゲームが始まる🎮💥
@@ -107,6 +119,9 @@ stateDiagram-v2
 
 ### ✅ 正解パターン：コンストラクタ注入（必須依存）
 
+![guard_duty](./picture/di_ts_study_012_guard_duty.png)
+
+
 ```ts
 interface Logger {
   info(message: string): void;
@@ -144,6 +159,9 @@ svc.createUser("Mika");
 
 ### ルールB：`!` で黙らせない（できれば）🙅‍♀️💥
 
+![silence_alarm](./picture/di_ts_study_012_silence_alarm.png)
+
+
 `logger!: Logger` は、事故の発見を遅らせやすい。
 可能なら「任意」扱いにしてガードを書く👇
 
@@ -166,6 +184,9 @@ class UserService {
 ---
 
 ## 7) ミニ課題（わざと事故→修理）🧪🔧✨
+
+![repair_shop](./picture/di_ts_study_012_repair_shop.png)
+
 
 **Step1💥**：最初のダメ例（`logger!`）で、注入せずに呼んで落としてみよ〜
 **Step2🔧**：それを **コンストラクタ注入**に直す

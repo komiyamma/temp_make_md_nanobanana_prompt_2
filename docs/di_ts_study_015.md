@@ -38,6 +38,9 @@ TypeScriptは型（interface）が実行時に消えるから、**「型だけ�
 
 ## 3) Factoryは3種類だけ覚えればOK😊🫶
 
+![factory_types](./picture/di_ts_study_015_factory_types.png)
+
+
 ### A. シンプルFactory（まずはこれ！）🍙
 
 * `createX(deps)` みたいに「必要な依存を渡すと、完成品が返る」
@@ -56,6 +59,9 @@ TypeScriptは型（interface）が実行時に消えるから、**「型だけ�
 ## 4) まず“地獄のComposition Root”を見よう😵‍💫➡️✨
 
 ### 😵‍💫 悪い例：main.ts が配線でパンパン
+
+![tangled_wires](./picture/di_ts_study_015_tangled_wires.png)
+
 
 ```ts
 // main.ts（悪い例：読めない…）
@@ -84,6 +90,9 @@ const listEntries = new ListEntriesUseCase(repo, logger);
 ---
 
 ## 5) Factoryで“生成”を分割して、配線を読み物にする📚✨
+
+![tidy_shelf](./picture/di_ts_study_015_tidy_shelf.png)
+
 
 ### ✅ ゴールの形（イメージ）🗺️
 
@@ -309,6 +318,9 @@ useCases.addEntry.execute("DIのFactoryわかった！🏭✨");
 
 ## 8) “設定つきFactory”で、差し替えをもっと楽に🔄🎛️
 
+![railroad_switch](./picture/di_ts_study_015_railroad_switch.png)
+
+
 たとえば開発中だけメモリ保存にしたい…みたいな時ね😊
 
 ```ts
@@ -378,6 +390,9 @@ export function createInfra(mode: RepoMode): AppDeps {
 
 ## 9) Factoryを“依存として注入”するパターン🪄（地味に強い）
 
+![vending_machine](./picture/di_ts_study_015_vending_machine.png)
+
+
 「毎回 new する相手」や「入力で作り分ける相手」は、Factory自体を依存にしちゃうとキレイ✨
 
 例：ID生成をユースケース側で使いたい（でもランダムはテスト困る🎲）
@@ -411,6 +426,9 @@ export class RandomIdFactory implements IdFactory {
 ## 10) Factoryでやりがちな地雷3つ🕳️⚠️（ここ超大事！）
 
 ### 地雷①：Factoryの中で“勝手にI/O”する😱
+
+![smoke_factory](./picture/di_ts_study_015_smoke_factory.png)
+
 
 * 例：Factory内でネットワークアクセス、ファイル読み込み、DB接続を即実行…
   → **作っただけで副作用**が起きると、デバッグがつらい😭

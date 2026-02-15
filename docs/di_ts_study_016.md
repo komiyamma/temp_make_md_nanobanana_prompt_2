@@ -40,6 +40,9 @@ flowchart LR
 
 ## 1) まず整理！DIとDIPは“別モノ”だよ⚠️
 
+![di_vs_dip](./picture/di_ts_study_016_di_vs_dip.png)
+
+
 混同しやすいので、最初にスッキリさせよ〜😊🌸
 
 ## DI（依存性注入）💉
@@ -96,6 +99,9 @@ TypeScriptでいう「抽象（契約）」は、だいたいこう👇
 
 ## 3) ありがちなDIP違反😵‍💫（上位がfetchに依存）
 
+![anchor_weight](./picture/di_ts_study_016_anchor_weight.png)
+
+
 まずは「ダメな例」を見て、“何がつらいか”を体で理解しよ〜🫠
 
 ```ts
@@ -122,6 +128,9 @@ export async function getGreeting(userId: string) {
 ここからが本番だよ〜！いくよっ💨💕
 
 ## Step A：契約（Port）を作る📜✨
+
+![blueprint_draft](./picture/di_ts_study_016_blueprint_draft.png)
+
 
 上位が欲しいのは「fetch」じゃなくて「データを取れること」だよね？
 だから **ApiClient型**を用意するよ🧩
@@ -163,6 +172,9 @@ export async function getGreeting(
 
 ## 5) 下位（詳細）は契約を満たして実装する🔧（Real / Fake）
 
+![cartridges](./picture/di_ts_study_016_cartridges.png)
+
+
 ## Step C：本物（infra）実装🌐
 
 ```ts
@@ -198,6 +210,9 @@ export function createFakeApiClient(data: Record<string, unknown>): ApiClient {
 
 ## 6) Composition Root（組み立て係）で“本物”を渡す🎀
 
+![puzzle_assembly](./picture/di_ts_study_016_puzzle_assembly.png)
+
+
 上位は「契約しか知らない」ので、最後に外側で組み立てるよ📍✨
 
 ```ts
@@ -216,6 +231,9 @@ main().catch(console.error);
 ---
 
 ## 7) テストが爆速で安定する🧪💖（DIPのご褒美）
+
+![test_sprint](./picture/di_ts_study_016_test_sprint.png)
+
 
 Vitestでサクッと体験しよ〜🥰
 （Vitest 4系が出てるよ🧪✨） ([Vitest][2])

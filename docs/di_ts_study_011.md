@@ -35,6 +35,9 @@
 
 ## 3) いつメソッド注入が向いてる？✅❌
 
+![decision_scale](./picture/di_ts_study_011_decision_scale.png)
+
+
 ### 向いてるケース✅🧤✨（必要な時だけ変わる）
 
 * **処理ごとに差し替えたい**（CSV/JSON、A社API/B社API など）🔁
@@ -49,6 +52,9 @@
 ---
 
 ## 4) まずは基本形：引数でそのまま渡す🧤
+
+![basic_structure](./picture/di_ts_study_011_basic_structure.png)
+
 
 例：ユーザー情報の取得（いつも必要）と、エクスポート（毎回変わる）を分けるよ😊
 
@@ -106,6 +112,9 @@ export class UserExportService {
 
 ## 5) 引数が増えてきたら…「depsオブジェクト」でまとめる👜✨
 
+![deps_bag](./picture/di_ts_study_011_deps_bag.png)
+
+
 メソッド注入って便利なんだけど、依存が増えるとこうなる😇💦
 `exportUser(id, formatter, writer, logger, clock, ...)`
 
@@ -133,6 +142,9 @@ export class UserExportService {
 
 ## 6) 使い分けのコツ（迷ったらこれ！）🧭💕
 
+![decision_flowchart](./picture/di_ts_study_011_decision_flowchart.png)
+
+
 判断ルールを“雑に”決めると強いよ✨
 
 * **「いつも必要」** → コンストラクタ注入🏗️
@@ -158,10 +170,16 @@ flowchart TD
 
 ### 落とし穴①：メソッド注入が“常に必要”になってる😵‍💫
 
+![pitfall_always](./picture/di_ts_study_011_pitfall_always.png)
+
+
 毎回 `deps` を渡すなら、**クラスの責務が重い**かも💦
 → 分割するか、関数DI寄りにするとスッキリするよ✨
 
 ### 落とし穴②：`any` で逃げる😇
+
+![pitfall_any](./picture/di_ts_study_011_pitfall_any.png)
+
 
 「formatterっぽい何か」で済ませると、差し替え時に壊れる💥
 → `interface` を小さく作って守ろう📜✨
@@ -181,6 +199,9 @@ flowchart TD
 * `JsonFormatter`
 
 ### 課題B：Writerを差し替えよう✍️
+
+![writer_swap](./picture/di_ts_study_011_writer_swap.png)
+
 
 * `ConsoleWriter`（コンソールに出す）
 * `MemoryWriter`（配列に貯める：テスト用）

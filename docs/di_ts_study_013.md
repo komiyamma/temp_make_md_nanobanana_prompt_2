@@ -27,6 +27,9 @@
 
 ## 2) DIとIoCの関係：混ざりやすいので整理しよ🧠💡
 
+![carpenter_tools](./picture/di_ts_study_013_carpenter_tools.png)
+
+
 * **DI（依存性注入）**：テクニック💉
   → 依存（LoggerとかClockとか）を **外から渡す** 方法
 * **IoC（制御の反転）**：設計の考え方🌀
@@ -38,6 +41,9 @@
 ---
 
 ## 3) まず“誰が作るの？”問題を見つけよう🔎🧱
+
+![detective_new](./picture/di_ts_study_013_detective_new.png)
+
 
 IoCの入口はここ！
 
@@ -56,6 +62,9 @@ IoCの入口はここ！
 ## 4) 体感コード：IoC “前” と “後” を比べる🧪💖
 
 ## ❌ IoC前：使う側が勝手に作ってる（主導権が内側）😵‍💫
+
+![overwhelmed_greet](./picture/di_ts_study_013_overwhelmed_greet.png)
+
 
 ```ts
 // greetUser.ts
@@ -91,6 +100,9 @@ export function greetUser(name: string): string {
 ---
 
 ## ✅ IoC後：組み立ては外、ロジックは受け取って使うだけ😊💉
+
+![relaxed_greet](./picture/di_ts_study_013_relaxed_greet.png)
+
 
 ```ts
 // ports.ts（「こういう機能が欲しい」という契約）
@@ -198,6 +210,9 @@ graph TD
 
 ## 6) “ここがIoCっぽい！”あるある例👀✨
 
+![hollywood_principle](./picture/di_ts_study_013_hollywood_principle.png)
+
+
 実はみんな、もうIoC体験してること多いよ😆
 
 * イベント：クリックしたら **ブラウザが**呼ぶ🖱️
@@ -233,6 +248,9 @@ graph TD
   → **本当に必要な最小限**にしよ😊✨
 
 ## 🚫 落とし穴2：内側でこっそり実装を選び始める🙈
+
+![sneaky_logic](./picture/di_ts_study_013_sneaky_logic.png)
+
 
 * `if (prod) new RealApi()` とかをロジック側に書くと、IoCが崩れる😣
   → **選ぶのは外側**の役目📍

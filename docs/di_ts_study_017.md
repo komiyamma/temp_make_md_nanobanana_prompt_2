@@ -18,6 +18,9 @@
 
 ## 2) そもそも “I/O” が混ざると何がつらいの？😵‍💫
 
+![shaky_lab](./picture/di_ts_study_017_shaky_lab.png)
+
+
 I/O（外の世界）って、たとえばこんなやつ👇
 
 * ネットワーク：`fetch` 🌐
@@ -35,6 +38,9 @@ I/O（外の世界）って、たとえばこんなやつ👇
 ---
 
 ## 3) SoCってなに？（超ざっくり）🍱✨
+
+![chef_waiter](./picture/di_ts_study_017_chef_waiter.png)
+
 
 **SoC = Separation of Concerns（関心ごとの分離）**
 つまり、役割をごちゃ混ぜにしないこと😊
@@ -119,6 +125,9 @@ export interface HttpClient {
 
 ### 5-3) アダプタ（実装）を作る🚚✨
 
+![capsule_wrapper](./picture/di_ts_study_017_capsule_wrapper.png)
+
+
 ```ts
 // ✅ fetch を包む “薄い” アダプタ
 export class FetchHttpClient implements HttpClient {
@@ -163,6 +172,9 @@ export async function getGreeting(
 
 ## 6) テストが一気にラクになる🧪💖（FakeでOK）
 
+![hammock_test](./picture/di_ts_study_017_hammock_test.png)
+
+
 ```ts
 class FakeHttpClient implements HttpClient {
   constructor(private data: Record<string, unknown>) {}
@@ -203,10 +215,16 @@ async function test() {
 
 ### 落とし穴①：アダプタが“便利屋”になって太る🐷💦
 
+![fat_adapter](./picture/di_ts_study_017_fat_adapter.png)
+
+
 「ここでもあれも…」で条件が増えると、結局そこが地獄になる😇
 ➡️ **アダプタは“橋渡し”だけ**！
 
 ### 落とし穴②：エラーが生のまま飛び出してくる💥
+
+![snake_box](./picture/di_ts_study_017_snake_box.png)
+
 
 `fetch` の失敗や `res.ok` をロジックが毎回書くのはつらい
 ➡️ **境界で最小限まとめる**（でもルールは入れない）

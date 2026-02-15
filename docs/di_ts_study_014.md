@@ -42,6 +42,9 @@ TypeScriptは型が実行時に消えるから、C#みたいに「型だけで�
 
 ## 3) まずは“依存の向き”ルールを1本だけ決めよう📏✨
 
+![traffic_control](./picture/di_ts_study_014_traffic_control.png)
+
+
 ここだけ守ると、世界が平和になる🕊️💕
 
 * `domain`（コアロジック）と `app`（ユースケース）は、**infraをimportしない**🚫
@@ -71,6 +74,9 @@ graph TD
 ## 4) ミニ例：Todoを追加する（Clock/Logger/Repo をDI）📝💉
 
 ## フォルダ構成（おすすめの最小形）🗂️✨
+
+![file_cabinet](./picture/di_ts_study_014_file_cabinet.png)
+
 
 ```text
 src/
@@ -211,6 +217,9 @@ export class MemoryTodoRepo implements TodoRepo {
 
 ## 6) ここが本題！Composition Root（組み立て）📍✨
 
+![chef_assembly](./picture/di_ts_study_014_chef_assembly.png)
+
+
 ## (D) entry：ブラウザ用 main（new と import の集中）🪟🚀
 
 ```ts
@@ -245,6 +254,9 @@ await addTodo.execute("レポート提出する📄✨");
 ---
 
 ## 7) Composition Rootがデカくなってきたら？🐘💦（太りすぎ対策）
+
+![power_strip](./picture/di_ts_study_014_power_strip.png)
+
 
 ## ✅ 合言葉：「new は entry、でも entry は“薄く”」🍃
 
@@ -283,6 +295,9 @@ return { ...todo };
 
 ## 8) import地雷の避け方💣🧯（TSなら特に大事！）
 
+![import_rooms](./picture/di_ts_study_014_import_rooms.png)
+
+
 ## ✅ ルール3つだけ🧷
 
 1. **環境依存の import は entry に寄せる**
@@ -297,6 +312,9 @@ return { ...todo };
 ---
 
 ## 9) テストでは Composition Root をどうする？🧪💖
+
+![lego_test](./picture/di_ts_study_014_lego_test.png)
+
 
 ## ✅ 基本：ユニットテストは“自分で組み立てる”
 
