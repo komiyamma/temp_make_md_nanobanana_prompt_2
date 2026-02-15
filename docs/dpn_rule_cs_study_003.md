@@ -21,6 +21,9 @@
 
 ## 3.1 まず「層」ってなに？🍰✨（超やさしい説明）
 
+![sorting_post_office](./picture/dpn_rule_cs_study_003_sorting_post_office.png)
+
+
 層（レイヤー）って、ひとことで言うと…
 
 **「責務の住所（住所分け）」** 🏠📦
@@ -37,6 +40,9 @@
 
 ## ✅ Domain（ドメイン）🧠💎
 
+![domain_rulebook](./picture/dpn_rule_cs_study_003_domain_rulebook.png)
+
+
 **いちばん中心！**
 アプリが何のために存在してるかの「核」だよ。
 
@@ -50,6 +56,9 @@
 
 ## ✅ Application（アプリケーション）🧭🧩
 
+![application_conductor](./picture/dpn_rule_cs_study_003_application_conductor.png)
+
+
 Domainを使って、**「やりたいこと（ユースケース）」を進行する係**だよ。
 
 * 例：「注文を作る」「会員登録する」「決済を開始する」🛒📝
@@ -62,6 +71,9 @@ Microsoftのガイドでも、中心（Application Core）にインターフェ�
 
 ## ✅ Infrastructure（インフラ）🛠️🗄️
 
+![infrastructure_toolbox](./picture/dpn_rule_cs_study_003_infrastructure_toolbox.png)
+
+
 **外側の“道具箱”**だよ〜！
 
 * DBアクセス（SQL Server / PostgreSQL / SQLite など）🗃️
@@ -71,6 +83,9 @@ Microsoftのガイドでも、中心（Application Core）にインターフェ�
 ---
 
 ## ✅ UI（ユーアイ）🖥️📱
+
+![ui_receptionist](./picture/dpn_rule_cs_study_003_ui_receptionist.png)
+
 
 **人や外部と接する入口**だよ〜！
 
@@ -130,6 +145,9 @@ flowchart TD
 ---
 
 ## 3.5 ミニ題材で「地図」を作ろう 🛒🗺️✨（Order例）
+
+![order_map_pins](./picture/dpn_rule_cs_study_003_order_map_pins.png)
+
 
 「注文」を例にすると、置き場所はこんな感じにするとスッキリしやすいよ〜😊
 
