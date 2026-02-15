@@ -10,6 +10,9 @@ Utility Types（Pick/Omit/Partialなど）は公式でまとまってるから�
 
 ## 5-1. まず「型の重複」ってどんな地獄？😇🔥
 
+![manual_update_fail](./picture/dry_ts_study_005_manual_update_fail.png)
+
+
 たとえば、こんなのよくある👇
 
 * APIから来る `User`
@@ -58,6 +61,9 @@ type UserUpdateInput = {
 ---
 
 ## 5-2. 型DRYの基本戦略はこれだけ！🎯✨
+
+![type_flow](./picture/dry_ts_study_005_type_flow.png)
+
 
 型DRYは、だいたいこの3つで勝てるよ💪💕
 
@@ -118,6 +124,9 @@ type UserCreateInput = Omit<User, "id" | "createdAt">;
 
 ## 5-5. Partial / Readonly：更新や扱いを安全にする🛡️✨
 
+![partial_readonly](./picture/dry_ts_study_005_partial_readonly.png)
+
+
 ### ✅ Partial：更新（PATCH）的なときに便利
 
 ```ts
@@ -160,6 +169,9 @@ const STATUS_LABEL: StatusLabelMap = {
 
 ## 5-7. 「入力DTO」「画面表示用」「保存用」で形がズレる問題📦😵‍💫
 
+![dto_viewmodel_transform](./picture/dry_ts_study_005_dto_viewmodel_transform.png)
+
+
 ここ、現場あるある〜〜〜！！😭💦
 でもズレるのは悪じゃないよ🙆‍♀️✨
 
@@ -201,6 +213,9 @@ flowchart LR
 ---
 
 ## 5-8. 「型は型から作る」も強い！（Creating Types from Types）🧩✨
+
+![value_to_type](./picture/dry_ts_study_005_value_to_type.png)
+
 
 TypeScript公式もここを超大事にしてるよ〜📚 ([TypeScript][3])
 たとえば `keyof` とか `typeof` とかで、**“手で書く型”を減らす**の！
@@ -299,6 +314,9 @@ GitHub Copilot側も、チャットやコンテキストのまとめ機能がど
 ---
 
 ## 5-11. よくある落とし穴（ここ回避できると強い！）🐙⚠️
+
+![partial_explosion](./picture/dry_ts_study_005_partial_explosion.png)
+
 
 * **なんでも `Partial<T>` にしちゃう** → バグの温床😇
 * **DTOと画面用の型を同一にしようとしすぎる** → 変更が連鎖して泣く😭

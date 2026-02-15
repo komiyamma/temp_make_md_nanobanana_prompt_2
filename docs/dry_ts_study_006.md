@@ -16,6 +16,9 @@
 
 ## 1) まず知ってほしい：ifは「分岐」だけじゃない🧠🪄
 
+![if_is_knowledge](./picture/dry_ts_study_006_if_is_knowledge.png)
+
+
 if文って、見た目はただの分岐だけど…
 本質は **「ルール（知識）の判定」** なんだよね👀✨
 
@@ -36,6 +39,9 @@ if文って、見た目はただの分岐だけど…
 
 ## 2) よくある“同じif増殖”パターン3つ😱📛
 
+![scattered_signs](./picture/dry_ts_study_006_scattered_signs.png)
+
+
 ### パターンA：同じ条件が散らばる（変更で死ぬ）💀
 
 「送料無料条件」が 3か所にある、とかね🫠
@@ -51,6 +57,9 @@ if文って、見た目はただの分岐だけど…
 ---
 
 ## 3) テク①：まずは「条件に名前をつける」📛✨（最速で効く！）
+
+![naming_condition](./picture/dry_ts_study_006_naming_condition.png)
+
 
 同じ条件が出てきたら、まずこれだけでも世界が変わるよ🌍💖
 
@@ -114,6 +123,9 @@ if (isFreeShippingEligible(subtotal, user.isMember)) {
 
 ### 4-2) TypeScriptらしく：型ガード（type predicate）で“型も絞る”🧠✨
 
+![narrowing_filter](./picture/dry_ts_study_006_narrowing_filter.png)
+
+
 TypeScriptは、条件によって型を絞り込む（ナローイング）機能があるよね🧩
 その中でも **自分で作れる最強フォーム**が「型ガード関数」💪
 
@@ -148,6 +160,9 @@ function showPaymentLabel(p: Payment) {
 ---
 
 ## 5) テク③：アサーション関数で「ここから先は安全」宣言🚨✅
+
+![assertion_gate](./picture/dry_ts_study_006_assertion_gate.png)
+
 
 ときどき「条件を満たさないなら例外で止めたい」場面があるよね🔥
 そういうときは **assertion functions** が便利！
