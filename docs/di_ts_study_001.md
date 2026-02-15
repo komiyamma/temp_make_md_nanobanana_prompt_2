@@ -7,6 +7,8 @@
 
 ## この章のゴール🎯🌸
 
+![](./picture/di_ts_study_001_goal_checklist.png)
+
 読み終わったら、こんなふうに言えたらOK🙆‍♀️✨
 
 * DIのメリットを **3つ** 言える（変更に強い／テストしやすい／差し替えできる）🎁
@@ -39,6 +41,8 @@ mindmap
 
 ### ① 変更に強い（直す場所が少ない）🛠️✨
 
+![](./picture/di_ts_study_001_modular_wall.png)
+
 たとえば「ログ出したい」ってなったときに、あちこちで `console.log` 直書きしてると…
 方針変更（ファイルに保存したい、外部サービスに送りたい）が来た瞬間、修正が地獄😵‍💫💥
 
@@ -47,6 +51,8 @@ DIだと「ログ係」を外から渡すので、**差し替え1か所**で済�
 ---
 
 ### ② テストしやすい（運ゲーが消える）🧪💖
+
+![](./picture/di_ts_study_001_stopped_dice.png)
 
 `Date.now()` や `Math.random()` がコードに直書きだと、テストがこうなる👇
 
@@ -60,6 +66,8 @@ DIで「時計」や「乱数」を外から渡せば、テストでは **固定
 
 ### ③ 差し替えできる（本番／開発／テストで入れ替え）🔄🌈
 
+![](./picture/di_ts_study_001_stage_set_swap.png)
+
 たとえば `fetch`（通信）みたいな外部I/Oは、環境や事情で変わりがち🌐
 最近のNodeでは `fetch` が安定扱いになった、みたいに“外側”は普通に変化する世界なんだよね📈 ([Node.js][1])
 
@@ -70,6 +78,8 @@ DIで外側を“部品化”しておくと、**本物 ↔ ダミー** の切�
 ## ミニ体験：DIなし→DIあり を見比べよう👀💉
 
 ### ❌ DIなし：中で勝手に依存を使う（固定化）🧱
+
+![](./picture/di_ts_study_001_hard_machine.png)
 
 ```ts
 // coupon.ts
@@ -88,6 +98,8 @@ export function issueCoupon(userId: string) {
 ---
 
 ### ✅ DIあり：依存を外から渡す（差し替えOK）🎁
+
+![](./picture/di_ts_study_001_soft_machine.png)
 
 ```ts
 // coupon.ts
@@ -125,6 +137,8 @@ const fixed = makeCouponService({
   random: () => 0.123,
 
 1. 「この関数の `Date.now()` と `Math.random()` をDIできる形にリファクタして。depsオブジェクトで注入したい」
+
+![](./picture/di_ts_study_001_ai_robot_menu.png)
 2. 「テストしやすいように、時間・乱数・ログを外から渡す設計案を3つ出して」
 3. 「“DIなし版”と“DIあり版”の差を初心者向けに、たとえ話で説明して」
 

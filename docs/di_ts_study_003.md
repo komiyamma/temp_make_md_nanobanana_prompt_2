@@ -7,6 +7,8 @@
 
 ## この章のゴール🎯💖
 
+![](./picture/di_ts_study_003_goal_checklist.png)
+
 * 「直接import＆直叩き」が、**なぜ差し替え不能**になるのか説明できる🗣️
 * テストで起きる「え、モックできない…」の原因がわかる🧪💥
 * 「困ったポイント」をコード上で発見して、印を付けられる🔎🟥
@@ -14,6 +16,8 @@
 ---
 
 ## 1) まず“つらい例”を見よう😣📦
+
+![](./picture/di_ts_study_003_code_chains.png)
 
 たとえば「ユーザーにウェルカムメール送る」みたいな処理✉️✨
 （※あえて“悪い書き方”）
@@ -41,6 +45,8 @@ export async function sendWelcome(userId: string) {
 
 ## つらい①：差し替えできない（本番固定）🔒
 
+![](./picture/di_ts_study_003_locked_door.png)
+
 * `sendMail` が本物固定だと、**テストでメール送っちゃう**💌💥
 * `getUserById` が本物固定だと、**テストでDBを触っちゃう**🗄️💥
 * “外部I/O”が混ざると、テストが遅い・不安定・準備だるいの三重苦😵‍💫
@@ -48,6 +54,8 @@ export async function sendWelcome(userId: string) {
 ---
 
 ## つらい②：テストでモックしにくい（特にESM）🧪⚠️
+
+![](./picture/di_ts_study_003_mocking_wall.png)
 
 ES Modules（`import ... from`）は、**importが先に評価される**性質があるから、
 「あとから差し替え（モック）したい」がやりにくいことがあるよ🥲
@@ -61,12 +69,16 @@ ES Modules（`import ... from`）は、**importが先に評価される**性質�
 
 ## つらい③：環境差（Node/ブラウザ）で詰む🪤🌐
 
+![](./picture/di_ts_study_003_fish_out_of_water.png)
+
 直接importで `fs` とか `localStorage` とかを握りしめると、環境が変わった瞬間に崩れる💥
 さらに、TypeScriptの `moduleResolution` は **Nodeの解決ルール（ESM/CJS）に合わせた設定が重要**で、ここを甘く見ると「動くはずが動かない」が起きやすいよ⚙️😵 ([TypeScript][3])
 
 ---
 
 ## つらい④：循環import（circular dependency）で“undefined事故”🌀😱
+
+![](./picture/di_ts_study_003_ouroboros_snakes.png)
 
 ```mermaid
 graph LR
@@ -88,6 +100,8 @@ graph LR
 ---
 
 ## 3) “ツラさ”を見える化するコツ🧠✨
+
+![](./picture/di_ts_study_003_red_stamp.png)
 
 次の3つを見つけたら、そこに **🟥 外部！** ってコメントを付けてね👇
 

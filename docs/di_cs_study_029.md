@@ -27,6 +27,8 @@
 
 ### ✅ ありがちな「原因（だいたいこれ！）」
 
+![](./picture/di_cs_study_029_god_class_hats.png)
+
 1. **責務過多（SRP違反）**：いろんな仕事を1人で抱えすぎ🧳💦
 2. **層の混線**：ドメイン処理なのにDB/HTTP/メールまで握ってる🍱⚡
 3. **横断関心事の混入**：ログ・リトライ・メトリクス等が本体にベタ貼り📌
@@ -39,6 +41,8 @@
 ## 3) 健康診断のやり方🩺🔎（チェックリスト付き✅）
 
 ### ステップA：引数を「種類」で並べ替える🧠🧩
+
+![](./picture/di_cs_study_029_sorting_boxes.png)
 
 コンストラクタ引数を、ざっくり4箱に分けてみてね📦✨
 
@@ -73,6 +77,8 @@ mindmap
 
 ### ステップB：この質問をしてみる🙋‍♀️💭
 
+![](./picture/di_cs_study_029_long_speech.png)
+
 * 「このクラスの**仕事を一言で**言うと？」🗣️
 
   * もし **“注文処理もして…通知もして…保存もして…”** みたいに増えたら、ほぼ責務過多！😵‍💫
@@ -85,6 +91,8 @@ mindmap
 ## 4) 直し方の王道パターン🥇✨（まずはこの順でOK）
 
 ### パターン①：責務で分割（Extract Class）✂️📦
+
+![](./picture/di_cs_study_029_toolkit_organizer.png)
 
 **依存の“まとまり”ごとに小さいサービスに切る**のが最強😊
 例：
@@ -106,6 +114,8 @@ mindmap
 ---
 
 ### パターン③：横断関心事は“仕組み側”へ🧾🧰
+
+![](./picture/di_cs_study_029_onion_layers.png)
 
 ログや計測は、できるだけ
 
@@ -272,6 +282,8 @@ public sealed class CheckoutService
 ## 6) よくある落とし穴🕳️😇（ここ踏む人多い！）
 
 * **依存を1つにまとめるだけ**（`CheckoutDependencies` みたいな袋）📦
+
+![](./picture/di_cs_study_029_dependency_bag_hiding.png)
   → 見た目だけ小さくなって、根本原因が残る🙅‍♀️
 * **ServiceProvider を注入して中で Resolve**（Service Locator化）🎣
   → 依存が見えなくなって、さらに悪化🚫（第27章のやつ！）
