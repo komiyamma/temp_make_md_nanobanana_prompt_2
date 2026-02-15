@@ -15,6 +15,9 @@
 
 ## 1) 環境依存ってなに？🤔🌍
 
+![browser_vs_node](./picture/di_ts_study_018_browser_vs_node.png)
+
+
 代表例はこんな感じ👇
 
 * ブラウザ：`localStorage` がある（キー/値で保存できる）🧺
@@ -27,6 +30,8 @@
 ---
 
 ## 2) ダメ例：中心のコードが `localStorage` 直叩き😣🧨
+
+![localstorage_crash](./picture/di_ts_study_018_localstorage_crash.png)
 
 ```ts
 // ❌ ブラウザ以外で落ちやすい例
@@ -47,6 +52,9 @@ Nodeで動かした瞬間、`localStorage is not defined` 💥 みたいにコ�
 ## 3) 解決の型：契約（interface）→ 実装2つ → 入口で注入📍💉
 
 ## まず「保存できる箱」の契約を作る🧩
+
+![contract_scroll](./picture/di_ts_study_018_contract_scroll.png)
+
 
 ブラウザは同期、Nodeは非同期になりがちなので、ここは **Promise で統一**しちゃうのがラクだよ🫶
 
@@ -92,6 +100,9 @@ export class ThemeService {
 
 ## 5) ブラウザ実装：LocalStorage版🪟🧺
 
+![browser_basket](./picture/di_ts_study_018_browser_basket.png)
+
+
 `Storage`（Web Storage API）の基本メソッドを使うよ〜🧸
 （`getItem / setItem / removeItem` など）([MDNウェブドキュメント][3])
 
@@ -117,6 +128,9 @@ export class LocalStorageStore implements KeyValueStore {
 ---
 
 ## 6) Node実装：ファイル保存版📄🗄️（fs/promises）
+
+![node_filing](./picture/di_ts_study_018_node_filing.png)
+
 
 Nodeの `fs/promises` は Promiseベースで扱えるよ✨([Node.js][2])
 ただし **同じファイルに同時書き込み**は注意（同期されないよ）って公式も言ってるので、ここでは「書き込みキュー」で安全寄りにするね🚦([Node.js][2])

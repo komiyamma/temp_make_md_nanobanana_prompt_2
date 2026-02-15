@@ -10,6 +10,9 @@
 
 ## 1) まず結論：テストが不安定になる“2大原因”😵‍💫
 
+![balancing_act](./picture/di_ts_study_022_balancing_act.png)
+
+
 ### ✅ 原因A：時間
 
 * `new Date()` / `Date.now()` がテストのたびに変わる⏰
@@ -142,6 +145,9 @@ classDiagram
 
 ## 6) テスト：Fakeを作って“固定”する🧪💖
 
+![time_master](./picture/di_ts_study_022_time_master.png)
+
+
 2026年1月時点だと、Vitest 4系が普通に使いやすいよ〜（4.0系が出てて、Fake TimersやsetSystemTimeも揃ってる）🧰✨ ([vitest.dev][1])
 
 ### 6-1) FakeClock / FakeRandom を用意
@@ -188,7 +194,13 @@ describe("CampaignCodeService", () => {
 
     expect(svc.issueCode()).toBe("20260117-1234")
   })
+})
+```
 
+![loaded_dice](./picture/di_ts_study_022_loaded_dice.png)
+
+```ts
+describe("CampaignCodeService (Random)", () => {
   it("乱数の並びを与えると、出力もその通りに並ぶ🎲", () => {
     const clock = new FakeClock(new Date("2026-01-17T00:00:00Z"))
     const random = new FakeRandom([0.0, 0.0001, 0.9999]) // -> 0000, 0001, 9999
@@ -236,6 +248,9 @@ Fake Timers は「どうにもならない時の必殺技」くらいの立ち�
 ## 8) よくある事故ポイント3つ⚠️😵‍💫
 
 1. **タイムゾーン事故**🌍
+
+![timezone_confusion](./picture/di_ts_study_022_timezone_confusion.png)
+
 
 * `new Date("2026-01-17")` とか、環境でズレることある
 * テストは `...Z`（UTC）で固定しちゃうのが安心💡
